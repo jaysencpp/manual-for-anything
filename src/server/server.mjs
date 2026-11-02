@@ -4,14 +4,13 @@ import { namedDrawing, editDrawing, drawingMetrics } from '../pipeline/drawing-f
 // The web app's server: the phone page (web/), and each film as it is made, streamed to the page. The page plays the
 // film in the browser (public/player.js) once its layout and required object drawings are ready. Faces, panels and
 // finales that arrive afterwards rebuild the program (film.mjs) at the player's current time.
-//   node server.mjs [--port 8080] [--host 127.0.0.1] [--live] [--speed 1] [--effort low] [--no-thinking]
+//   node server.mjs [--port 8080] [--host 127.0.0.1] [--live] [--speed 1] [--effort minimal] [--drawing-style layered] [--no-thinking]
 // Examples (the saved fixtures) replay a real run's recorded timings (timings.json's marks), with no model calls.
 // --live also takes a photo from the page and runs the whole pipeline on it (run.mjs, real model calls: it costs).
 // --host 0.0.0.0: reachable from a phone on the same network (with --live, anyone there can spend on models).
 // --speed: examples replay that many times faster (for working on the page; the default is the recorded pace).
-// --effort: the reasoning effort of every model call a photo run makes (plan, faces, panel, drawings, finale): minimal,
-// low (the default), medium, high, xhigh or max. More thinks longer before the first token. --no-thinking is
-// --effort minimal.
+// --effort: base reasoning effort: minimal (the default), low, medium, high, xhigh or max.
+// Stages have separate defaults/overrides in efforts.mjs. --no-thinking forces every stage to minimal.
 //
 // A film's events (GET /api/films/<id>/events, server-sent):
 //   state {ready, finished}   current availability before the saved event history
@@ -53,7 +52,7 @@ const args = process.argv.slice(2)
 const flag = (name, fallback) => (args.includes(name) ? args[args.indexOf(name) + 1] : fallback)
 const PORT = +flag('--port', 8080), HOST = flag('--host', '127.0.0.1'), LIVE = args.includes('--live'), SPEED = +flag('--speed', 1) || 1
 const EFFORTS = ['minimal', 'low', 'medium', 'high', 'xhigh', 'max']
-const EFFORT = flag('--effort', args.includes('--no-thinking') ? 'minimal' : 'low')
+const EFFORT = flag('--effort', 'minimal')
 if (!EFFORTS.includes(EFFORT)) { console.error(`--effort must be one of ${EFFORTS.join(', ')}`); process.exit(1) }
 // The plan's own effort (--plan-effort or PLAN_EFFORT), the rest's by default. Measured Oct 28: at low the planner
 // thought 4,600 tokens before its first object (44 s against ~6 s at minimal), holding up the cut-outs and everything

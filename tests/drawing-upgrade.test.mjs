@@ -122,10 +122,11 @@ test('transparent compound holes agree in the browser benchmark, film helper and
 })
 
 
-test('the established drawing style remains default and the layered candidate is explicitly selectable', () => {
-  assert.equal(drawingStyle([], {}), 'classic')
+test('layered drawings are default and classic remains explicitly selectable', () => {
+  assert.equal(drawingStyle([], {}), 'layered')
   assert.equal(drawingStyle(['--drawing-style', 'layered'], {}), 'layered')
   assert.equal(drawingStyle([], { DRAWING_STYLE: 'layered' }), 'layered')
+  assert.equal(drawingStyle([], { DRAWING_STYLE: 'classic' }), 'classic')
   assert.equal(drawingStyle(['--drawing-style', 'classic'], { DRAWING_STYLE: 'layered' }), 'classic')
   assert.throws(() => drawingStyle(['--drawing-style'], {}))
 })

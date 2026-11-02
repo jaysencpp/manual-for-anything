@@ -6,7 +6,7 @@ import { drawingMetrics } from './drawing-format.mjs'
 // the finale, all in parallel, and one complete illustration per everyday object → the engine's film. Every step is stamped in wall-clock
 // seconds from the start, and set against when the film, had it started playing as soon as it could, would need it.
 //
-//   node run.mjs <photo.png> <run dir> [--effort low] [--plan-effort low] [--no-thinking] [--no-finale] [--idea idea.json] [--drawings-from <run dir>]
+//   node run.mjs <photo.png> <run dir> [--effort minimal] [--plan-effort minimal] [--drawing-style layered] [--no-thinking] [--no-finale] [--idea idea.json] [--drawings-from <run dir>]
 // --idea: a project picked from the catalogue (catalogue.mjs), as {objects, project}: the plan makes that project, on
 // the catalogue's objects, and segmentation starts at once instead of waiting for the plan's object list; cut-outs
 // already in <run dir>/screens (copied from the film the project was picked beside) are used as they are.
