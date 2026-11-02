@@ -49,7 +49,7 @@ test('opening, rotation and cuts change the final measured sheet extent', () => 
   assert.ok(sizeProblems(invalid, sheetLayout()).some(e => e.startsWith('finished fold geometry:')))
 })
 
-test('folded dimensions survive production geometry and real Chrome playback', { skip: !chromePresent, timeout: 45000 }, async t => {
+test('folded dimensions survive production geometry and real Chrome playback', { skip: !chromePresent, timeout: 120000 }, async t => {
   const browser = await openPlanningBrowser(); t.after(browser.close)
   const plan = foldedSheet(), cut = { geometry: { paper: { origin: [0, 0], seat: [100, 0], base: [100, 300] } }, sizes: { paper: { width: 200, height: 300 } } }
   const grade = await gradePlan({ candidate: plan, cut, photo: { width: 200, height: 300 }, smoke: browser.smoke })

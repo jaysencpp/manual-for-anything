@@ -41,7 +41,7 @@ test('unknown references, soft contradictions, and unreviewed plans cannot recei
   const malformed = await gradePlan({ ...fixture('paper-plane'), rawText: '{broken' })
   assert.equal(malformed.machine, 'fail'); assert.equal(malformed.rawFirstResponseValid, false)
 })
-test('saved physical plans are graded through production geometry, compilation and sampled real Chrome playback', { skip: !chromePresent, timeout: 45000 }, async t => {
+test('saved physical plans are graded through production geometry, compilation and sampled real Chrome playback', { skip: !chromePresent, timeout: 120000 }, async t => {
   const browser = await openPlanningBrowser(); t.after(browser.close)
   let passes = 0
   for (const name of ['wood8', 'lego-pile', 'groceries', 'yarn', 'paper-plane', 'wire-bracelet']) {

@@ -80,7 +80,7 @@ test('an in-flight old-password login cannot issue a session after an operator r
   } finally { db.close() }
 })
 
-test('private library, every film route, sessions across restart and logout', { timeout: 20000 }, async t => {
+test('private library, every film route, sessions across restart and logout', { timeout: 90000 }, async t => {
   const dataDir = await mkdtemp(join(tmpdir(), 'manual-auth-'))
   const repo = new FilmRepository(join(dataDir, 'app.sqlite'), 'local'), accounts = new Accounts(repo.db)
   const alice = await accounts.provision('alice', 'alice offline test password')

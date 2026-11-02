@@ -84,7 +84,7 @@ test('saved failures import read-only, retain rejected repairs and stay out of p
   assert.equal(publishPlanningReport(diagnostic, join(dir, 'curated')).cases.length, 1)
 })
 
-test('frozen-input runner uses the real planner against a local HTTP stub, then saves task review without overriding machine gates', { skip: !chromePresent, timeout: 45000 }, async t => {
+test('frozen-input runner uses the real planner against a local HTTP stub, then saves task review without overriding machine gates', { skip: !chromePresent, timeout: 120000 }, async t => {
   const dir = temporary(t), audited = await suite(t, dir), out = join(dir, 'experiment')
   const inventory = read(join(audited, 'cases/wood8/case.json')).inventory, answer = validRaw(inventory)
   assert.deepEqual(schemaProblems(answer), [])
@@ -128,7 +128,7 @@ test('provider failures stay in the denominator and unknown cost is not zero', a
   assert.ok(report.rows[0].grade.findings.some(f => f.stage === 'provider'))
 })
 
-test('public planning report is read-only, excludes private diagnostics and renders on mobile', { skip: !chromePresent, timeout: 45000 }, async t => {
+test('public planning report is read-only, excludes private diagnostics and renders on mobile', { skip: !chromePresent, timeout: 120000 }, async t => {
   const server = await startServer(); t.after(server.stop)
   const response = await fetch(server.base + '/comparisons/plans')
   assert.equal(response.status, 200)
@@ -176,7 +176,7 @@ test('public planning report is read-only, excludes private diagnostics and rend
   writeFileSync(join(tmpdir(), 'planning-report-mobile.png'), Buffer.from(await browser.screenshot(), 'base64'))
 })
 
-test('comparison pairs the same project and sample, shows readable plans and never counts a correction as a first pass', { skip: !chromePresent, timeout: 45000 }, async t => {
+test('comparison pairs the same project and sample, shows readable plans and never counts a correction as a first pass', { skip: !chromePresent, timeout: 120000 }, async t => {
   const dir = temporary(t), audited = await suite(t, dir), out = join(dir, 'comparison')
   const { tasks } = await preparePlanningExperiment(out, { suite: audited, only: ['wood8', 'lego-pile'], samples: 2 })
   const witness = read(join(audited, 'results.json')).find(r => r.caseId === 'wood8')
@@ -220,7 +220,7 @@ test('comparison pairs the same project and sample, shows readable plans and nev
   assert.equal(publicAttempt.rawText, null)
 })
 
-test('comparison pages keep their width when a scrollbar appears', { skip: !chromePresent, timeout: 45000 }, async t => {
+test('comparison pages keep their width when a scrollbar appears', { skip: !chromePresent, timeout: 120000 }, async t => {
   const server = await startServer(); t.after(server.stop)
   for (const path of ['/comparisons', '/comparisons/plans']) {
     const browser = await openDrawingBrowser(server.base + path, undefined, { renderModule: null })

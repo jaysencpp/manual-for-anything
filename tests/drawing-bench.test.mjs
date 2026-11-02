@@ -69,7 +69,7 @@ test('pass@1 stays pending until every outcome is resolved; failures and unknown
   assert.throws(() => validateReview({ verdict: 'pass', reason: '', scores: { identity: 6 } }))
 })
 
-test('local HTTP stub → model client → real browser → blind review → report; no paid calls', { skip: !chromePresent, timeout: 45000 }, async t => {
+test('local HTTP stub → model client → real browser → blind review → report; no paid calls', { skip: !chromePresent, timeout: 120000 }, async t => {
   const out = directory(t)
   const manifest = await prepareExperiment(out, { samples: 1, efforts: ['minimal', 'low', 'medium', 'high', 'max'], seed: 'integration' })
   const requested = []

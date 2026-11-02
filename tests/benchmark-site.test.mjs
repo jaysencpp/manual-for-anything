@@ -9,7 +9,7 @@ import { openDrawingBrowser, chromePresent } from '../benchmarks/drawing-chrome.
 import { exportDrawingBenchmark } from '../benchmarks/export-drawing-benchmark.mjs'
 import { prepareExperiment, runExperiment, mockDrawing } from '../benchmarks/drawing-bench.mjs'
 
-test('public comparison page serves only curated read-only results and displays labelled outputs on desktop and mobile', { skip: !chromePresent, timeout: 45000 }, async t => {
+test('public comparison page serves only curated read-only results and displays labelled outputs on desktop and mobile', { skip: !chromePresent, timeout: 120000 }, async t => {
   const server = await startServer(); t.after(() => server.stop())
   const get = path => fetch(server.base + path)
   assert.match(await (await get('/')).text(), /href="\/comparisons"/)

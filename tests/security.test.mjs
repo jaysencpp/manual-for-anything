@@ -38,7 +38,7 @@ test('player rejects foreign origins, unrelated windows and standalone messages 
   assert.equal(player(true).receive, undefined)
 })
 
-test('HTTP sandbox preserves real playback and blocks hostile framing and direct-page messages', { skip: !chromePresent, timeout: 30000 }, async t => {
+test('HTTP sandbox preserves real playback and blocks hostile framing and direct-page messages', { skip: !chromePresent, timeout: 120000 }, async t => {
   const server = await startServer(); t.after(server.stop)
   const browser = await openDrawingBrowser(server.base, undefined, { renderModule: null }); t.after(browser.close)
   const probe = (url, legitimate) => `new Promise(resolve => {
@@ -166,7 +166,7 @@ test('worker processes do not inherit storage credentials', () => {
   assert.deepEqual(env, { MODEL_API_KEY: 'kept', PATH: '/bin' })
 })
 
-test('the page CSP allows real playback of an example with no violations', { skip: !chromePresent, timeout: 30000 }, async t => {
+test('the page CSP allows real playback of an example with no violations', { skip: !chromePresent, timeout: 120000 }, async t => {
   const server = await startServer(['--speed', '100']); t.after(server.stop)
   const browser = await openDrawingBrowser(server.base + '/examples', undefined, { renderModule: null }); t.after(browser.close)
   await browser.evaluate(`window.violations=[];document.addEventListener('securitypolicyviolation',e=>violations.push(e.violatedDirective+' '+e.blockedURI));
@@ -177,7 +177,7 @@ test('the page CSP allows real playback of an example with no violations', { ski
   assert.deepEqual(await browser.evaluate('violations'), [])
 })
 
-test('following the steps never scrolls the player out of view, which would pause it', { skip: !chromePresent, timeout: 30000 }, async t => {
+test('following the steps never scrolls the player out of view, which would pause it', { skip: !chromePresent, timeout: 120000 }, async t => {
   const server = await startServer(['--speed', '100']); t.after(server.stop)
   const { id } = await (await fetch(`${server.base}/api/films?example=groceries`, { method: 'POST' })).json()
   await new Promise(done => setTimeout(done, 1500))

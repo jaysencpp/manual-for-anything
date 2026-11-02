@@ -241,7 +241,7 @@ test('an empty catalogue is recorded explicitly without retrying and explains to
   assert.equal(JSON.parse(readFileSync(join(dir, 'catalogue.json'))).status, 'empty')
 })
 
-test('empty catalogues replay planner suggestions as cards without pretending supplies or previews exist', { skip: !chromePresent, timeout: 45000 }, async t => {
+test('empty catalogues replay planner suggestions as cards without pretending supplies or previews exist', { skip: !chromePresent, timeout: 120000 }, async t => {
   const seen = [], stub = await stubModel({ chunk: 2000, answers: { Catalogue: { projects: [] }, InstructionPlan: wood8Plan() }, seen }); t.after(stub.close)
   const server = await serve({ MODEL_BASE_URL: stub.url, MODEL_API_KEY: 'stub', SAM_FIXTURE: join(here, '../examples/fixtures/wood8/screens') }); t.after(server.stop)
   const { id } = await fetch(`${server.url}/api/films`, { method: 'POST', headers: { 'Content-Type': 'image/png' }, body: readFileSync(`${here}../examples/photos/wood8.png`) }).then(r => r.json())

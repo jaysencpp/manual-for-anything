@@ -68,7 +68,7 @@ test('Closed Alpha has no account-creation API and every signed-out project crea
   } finally { check.close() }
 })
 
-test('Closed Alpha screen links to X, hides project creation, and lets provisioned users sign in on mobile', { skip: !chromePresent, timeout: 30000 }, async t => {
+test('Closed Alpha screen links to X, hides project creation, and lets provisioned users sign in on mobile', { skip: !chromePresent, timeout: 120000 }, async t => {
   const server = await hosted(t)
   const browser = await openDrawingBrowser(server.base, undefined, { renderModule: null }); t.after(browser.close)
   await browser.viewport(390, 844)

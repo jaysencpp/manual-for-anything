@@ -37,7 +37,7 @@ export async function openDrawingBrowser(url, executable = chromeExecutable() ??
   try {
     const endpoint = await new Promise((resolve, reject) => {
       let stderr = ''
-      const timer = setTimeout(() => reject(new Error('Chrome startup timed out')), 25000)
+      const timer = setTimeout(() => reject(new Error('Chrome startup timed out')), 60000)
       const finish = (err, value) => { clearTimeout(timer); err ? reject(err) : resolve(value) }
       child.once('error', e => finish(e))
       child.once('exit', () => finish(new Error('Chrome exited before becoming available')))

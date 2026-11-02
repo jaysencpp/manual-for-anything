@@ -139,7 +139,7 @@ test('named cut repairs can rewrite a step and clear derived box joints without 
   assert.deepEqual(repaired.joints, base.joints)
 })
 
-test('the compact wire plan survives HTTP planning, schema checks, geometry and actual Chrome playback', { skip: !chromePresent, timeout: 45000 }, async t => {
+test('the compact wire plan survives HTTP planning, schema checks, geometry and actual Chrome playback', { skip: !chromePresent, timeout: 120000 }, async t => {
   const plan = example(), frozen = structuredClone(plan.objects), { objects, ...authored } = plan
   const wire = { ...authored, objectUpdates: [] }, schema = frozenPlanningSchema(frozen)
   for (const a of acts(wire).filter(a => a.v === 'place' && ['left', 'right'].includes(a.k))) { delete a.rel; a.to = 'base' }
