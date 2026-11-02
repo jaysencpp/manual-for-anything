@@ -2,7 +2,7 @@ import { drawingStyle } from '../src/pipeline/drawing-style.mjs'
 import { check as checkPanel } from '../src/pipeline/panel.mjs'
 import { createServer } from 'node:http'
 import { once } from 'node:events'
-import { openDrawingBrowser } from '../benchmarks/drawing-chrome.mjs'
+import { openDrawingBrowser, chromePresent } from '../benchmarks/drawing-chrome.mjs'
 import { renderDrawing } from '../benchmarks/drawing-render.mjs'
 import { helperFor, withUp } from '../src/film/helper.mjs'
 import test from 'node:test'
@@ -97,7 +97,7 @@ test('film layer edits save, update playback and undo without model calls', asyn
 })
 
 
-test('transparent compound holes agree in the browser benchmark, film helper and exported SVG', async () => {
+test('transparent compound holes agree in the browser benchmark, film helper and exported SVG', { skip: !chromePresent }, async () => {
   const ring = { width: 100, height: 100, parts: [{ id: 'ring', parent: null, pivot: [0, 0], shapes: [
     { id: 'outline', d: 'M10 10H90V90H10Z M30 30H70V70H30Z', fill: '#aabbcc', stroke: 'none', weight: 'none', fillRule: 'evenodd' },
   ] }] }

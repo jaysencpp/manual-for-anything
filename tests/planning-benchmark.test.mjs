@@ -11,7 +11,7 @@ import { read } from '../benchmarks/planning-data.mjs'
 import { schemaProblems } from '../benchmarks/planning-grade.mjs'
 import { PHYSICAL_PLAN_SCHEMA } from '../src/pipeline/plan-schema.mjs'
 import { stubModel, wood8Plan } from './support/stub-model.mjs'
-import { openDrawingBrowser } from '../benchmarks/drawing-chrome.mjs'
+import { openDrawingBrowser, chromePresent } from '../benchmarks/drawing-chrome.mjs'
 import { startServer } from './support/server.mjs'
 
 const fakeBrowser = async () => ({ smoke: async () => ({ frames: 12, standInArtwork: true }), close: async () => {} })
@@ -84,7 +84,7 @@ test('saved failures import read-only, retain rejected repairs and stay out of p
   assert.equal(publishPlanningReport(diagnostic, join(dir, 'curated')).cases.length, 1)
 })
 
-test('frozen-input runner uses the real planner against a local HTTP stub, then saves task review without overriding machine gates', { timeout: 45000 }, async t => {
+test('frozen-input runner uses the real planner against a local HTTP stub, then saves task review without overriding machine gates', { skip: !chromePresent, timeout: 120000 }, async t => {
   const dir = temporary(t), audited = await suite(t, dir), out = join(dir, 'experiment')
   const inventory = read(join(audited, 'cases/wood8/case.json')).inventory, answer = validRaw(inventory)
   assert.deepEqual(schemaProblems(answer), [])
@@ -128,7 +128,7 @@ test('provider failures stay in the denominator and unknown cost is not zero', a
   assert.ok(report.rows[0].grade.findings.some(f => f.stage === 'provider'))
 })
 
-test('public planning report is read-only, excludes private diagnostics and renders on mobile', { timeout: 45000 }, async t => {
+test('public planning report is read-only, excludes private diagnostics and renders on mobile', { skip: !chromePresent, timeout: 120000 }, async t => {
   const server = await startServer(); t.after(server.stop)
   const response = await fetch(server.base + '/comparisons/plans')
   assert.equal(response.status, 200)
@@ -176,7 +176,7 @@ test('public planning report is read-only, excludes private diagnostics and rend
   writeFileSync(join(tmpdir(), 'planning-report-mobile.png'), Buffer.from(await browser.screenshot(), 'base64'))
 })
 
-test('comparison pairs the same project and sample, shows readable plans and never counts a correction as a first pass', { timeout: 45000 }, async t => {
+test('comparison pairs the same project and sample, shows readable plans and never counts a correction as a first pass', { skip: !chromePresent, timeout: 120000 }, async t => {
   const dir = temporary(t), audited = await suite(t, dir), out = join(dir, 'comparison')
   const { tasks } = await preparePlanningExperiment(out, { suite: audited, only: ['wood8', 'lego-pile'], samples: 2 })
   const witness = read(join(audited, 'results.json')).find(r => r.caseId === 'wood8')
@@ -218,4 +218,21 @@ test('comparison pairs the same project and sample, shows readable plans and nev
   assert.ok(publicAttempt.plan.steps.length); assert.equal(publicAttempt.plan.steps[0].do, undefined)
   assert.deepEqual(publicAttempt.plan.design.size, failed.grade.normalizedPlan.design.size)
   assert.equal(publicAttempt.rawText, null)
+})
+
+test('comparison pages keep their width when a scrollbar appears', { skip: !chromePresent, timeout: 120000 }, async t => {
+  const server = await startServer(); t.after(server.stop)
+  for (const path of ['/comparisons', '/comparisons/plans']) {
+    const browser = await openDrawingBrowser(server.base + path, undefined, { renderModule: null })
+    try {
+      await browser.viewport(1280, 900)
+      // Scrollbars that take up space, as on Windows, on every platform: first a page too short to scroll, then a tall one.
+      // (a constructed stylesheet: these pages' CSP refuses inline styles)
+      const width = (minHeight) => browser.evaluate(`(()=>{const s=new CSSStyleSheet();s.replaceSync('::-webkit-scrollbar{width:15px}html{overflow-y:auto}main>*:not(nav){display:none!important}');document.adoptedStyleSheets=[s];document.body.style.minHeight=${JSON.stringify(minHeight)};
+        return new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(()=>done({main:document.querySelector('main').getBoundingClientRect().width,scrolls:document.documentElement.scrollHeight>innerHeight}))))})()`)
+      const short = await width('0'), tall = await width('5000px')
+      assert.equal(short.scrolls, false, `${path} is short`); assert.equal(tall.scrolls, true, `${path} is tall`)
+      assert.equal(tall.main, short.main, `${path} keeps its width`)
+    } finally { await browser.close() }
+  }
 })

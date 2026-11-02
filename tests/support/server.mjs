@@ -14,7 +14,7 @@ export function spawnServer(args = [], env = {}) {
   })
   child.serverErrors = ''
   child.stderr.on('data', chunk => { child.serverErrors += chunk })
-  if (owned) child.once('close', () => rmSync(dataDir, { recursive: true, force: true }))
+  if (owned) child.once('close', () => rmSync(dataDir, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 }))
   return child
 }
 export async function startServer(args = [], env = {}) {

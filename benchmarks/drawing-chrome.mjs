@@ -1,10 +1,21 @@
 import { spawn } from 'node:child_process'
-import { mkdtempSync, rmSync } from 'node:fs'
+import { existsSync, mkdtempSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import { delimiter, join } from 'node:path'
+
+// Where Chrome is on this machine, or null. Found by path: on Windows, running chrome.exe --version opens a browser.
+export function chromeExecutable(env = process.env, platform = process.platform, exists = existsSync) {
+  if (env.CHROME_BIN) return env.CHROME_BIN
+  if (platform === 'darwin') return ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/Applications/Chromium.app/Contents/MacOS/Chromium'].find(exists) ?? null
+  if (platform === 'win32') return [env.PROGRAMFILES, env['PROGRAMFILES(X86)'], env.LOCALAPPDATA].filter(Boolean).map(root => join(root, 'Google', 'Chrome', 'Application', 'chrome.exe')).find(exists) ?? null
+  for (const folder of (env.PATH || '').split(delimiter)) for (const name of ['google-chrome', 'google-chrome-stable', 'chromium', 'chromium-browser'])
+    if (folder && exists(join(folder, name))) return join(folder, name)
+  return null
+}
+export const chromePresent = !!chromeExecutable()
 
 // Dedicated browser, not the user's tabs. A persistent page avoids per-sample browser startup time.
-export async function openDrawingBrowser(url, executable = process.env.CHROME_BIN || 'google-chrome', { renderModule = '/assets/drawing-render.mjs' } = {}) {
+export async function openDrawingBrowser(url, executable = chromeExecutable() ?? 'google-chrome', { renderModule = '/assets/drawing-render.mjs' } = {}) {
   const profile = mkdtempSync(join(tmpdir(), 'drawing-bench-chrome-'))
   const child = spawn(executable, ['--headless', '--no-sandbox', '--disable-gpu', '--remote-debugging-port=0',
     `--user-data-dir=${profile}`, 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] })
@@ -19,13 +30,14 @@ export async function openDrawingBrowser(url, executable = process.env.CHROME_BI
       const exited = new Promise(resolve => child.once('exit', resolve))
       child.kill('SIGKILL'); await exited
     }
-    // Renderer children may finish writing just after the browser process exits.
-    rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 50 })
+    // Renderer children may finish writing just after the browser process exits, and Windows can keep the folder
+    // locked for a while. A leftover temporary profile is harmless; failing here would abort the caller's cleanup.
+    try { rmSync(profile, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 }) } catch {}
   }
   try {
     const endpoint = await new Promise((resolve, reject) => {
       let stderr = ''
-      const timer = setTimeout(() => reject(new Error('Chrome startup timed out')), 15000)
+      const timer = setTimeout(() => reject(new Error('Chrome startup timed out')), 60000)
       const finish = (err, value) => { clearTimeout(timer); err ? reject(err) : resolve(value) }
       child.once('error', e => finish(e))
       child.once('exit', () => finish(new Error('Chrome exited before becoming available')))
