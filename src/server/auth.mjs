@@ -74,7 +74,7 @@ export class Authentication extends Accounts {
     const now = Date.now()
     this.db.prepare('DELETE FROM login_limits WHERE until<=?').run(now)
     // One derivation at a time bounds CPU. There is deliberately no shared attempt counter: it would let anyone lock
-    // out every account. Per-address limits belong at the reverse proxy (deploy/nginx.conf).
+    // out every account. Per-address limits belong at the reverse proxy.
     if (this.busy) return { status: 429, error: 'Sign-in is busy. Try again in a moment.' }
     const key = `user:${username}`
     if ((this.db.prepare('SELECT attempts FROM login_limits WHERE key=?').get(key)?.attempts || 0) >= 10) {
