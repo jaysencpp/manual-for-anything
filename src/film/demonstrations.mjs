@@ -150,6 +150,9 @@ export function demonstrationDrawing(demo) {
   }`
 }
 
+// Long enough for a valid drawing on a busy machine, since a false refusal costs a paid repair; endless loops still stop here.
+const CHECK_MS = 250
+
 export function checkDemonstration(demo) {
   let drawing
   try { drawing = demonstrationDrawing(demo) } catch (error) { return error.message }
@@ -174,7 +177,7 @@ export function checkDemonstration(demo) {
         const result = draw(bounded.ctx, p, env, scene); if (result && typeof result.then === 'function') throw Error('Async drawing is unsupported'); bounded.finish(); }`)
     // A contextified host object would expose the host's Function through this.constructor: generated code must see
     // only its own global. (vm limits accidents; the worker also keeps no storage credentials. See job-worker.mjs.)
-    sample.runInContext(createContext(constants.DONT_CONTEXTIFY, { codeGeneration: { strings: false, wasm: false }, microtaskMode: 'afterEvaluate' }), { timeout: 40 })
+    sample.runInContext(createContext(constants.DONT_CONTEXTIFY, { codeGeneration: { strings: false, wasm: false }, microtaskMode: 'afterEvaluate' }), { timeout: CHECK_MS })
   } catch (e) { return `demonstration failed: ${e.message}` }
   return null
 }
