@@ -12,7 +12,8 @@ export function spawnWorker(command, args, { timeoutMs, graceMs = 5000, ...optio
   let forced, closed = false
   const signal = name => {
     try { if (grouped && child.pid) process.kill(-child.pid, name); else child.kill(name) }
-    catch (error) { if (error.code !== 'ESRCH') throw error }
+    // (a finished group answers ESRCH on Linux and EPERM on macOS; either way there is nothing left to stop)
+    catch (error) { if (error.code !== 'ESRCH' && error.code !== 'EPERM') throw error }
   }
   child.stopWorker = () => {
     if (closed || forced) return

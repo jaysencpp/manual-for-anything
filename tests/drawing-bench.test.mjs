@@ -5,10 +5,9 @@ import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { createServer } from 'node:http'
 import { once } from 'node:events'
-import { spawnSync } from 'node:child_process'
 import { EFFORTS, schedule, checkDrawing, checkPath, drawingSVG, prepareExperiment, verifyFrozen,
   validateReview, summarize, wilson, serveExperiment, runExperiment, mockDrawing } from '../benchmarks/drawing-bench.mjs'
-import { openDrawingBrowser } from '../benchmarks/drawing-chrome.mjs'
+import { openDrawingBrowser, chromePresent } from '../benchmarks/drawing-chrome.mjs'
 
 const read = file => JSON.parse(readFileSync(file, 'utf8'))
 function directory(t) {
@@ -70,7 +69,6 @@ test('pass@1 stays pending until every outcome is resolved; failures and unknown
   assert.throws(() => validateReview({ verdict: 'pass', reason: '', scores: { identity: 6 } }))
 })
 
-const chromePresent = spawnSync(process.env.CHROME_BIN || 'google-chrome', ['--version']).status === 0
 test('local HTTP stub → model client → real browser → blind review → report; no paid calls', { skip: !chromePresent, timeout: 45000 }, async t => {
   const out = directory(t)
   const manifest = await prepareExperiment(out, { samples: 1, efforts: ['minimal', 'low', 'medium', 'high', 'max'], seed: 'integration' })

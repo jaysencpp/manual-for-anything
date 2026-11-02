@@ -11,11 +11,10 @@ import { JobLimits } from '../src/server/job-limits.mjs'
 import { spawnWorker } from '../src/server/job-worker.mjs'
 import { FilmRepository } from '../src/server/repository.mjs'
 import { startServer } from './support/server.mjs'
-import { openDrawingBrowser } from '../benchmarks/drawing-chrome.mjs'
+import { openDrawingBrowser, chromePresent, chromeExecutable } from '../benchmarks/drawing-chrome.mjs'
 import { checkDemonstration } from '../src/film/demonstrations.mjs'
 import { check as checkPanel } from '../src/pipeline/panel.mjs'
 import { workerEnv } from '../src/server/job-worker.mjs'
-import { spawnSync } from 'node:child_process'
 import { createServer } from 'node:http'
 
 const playerSource = readFileSync(new URL('../public/player.js', import.meta.url), 'utf8')
@@ -39,7 +38,6 @@ test('player rejects foreign origins, unrelated windows and standalone messages 
   assert.equal(player(true).receive, undefined)
 })
 
-const chromePresent = spawnSync(process.env.CHROME_BIN || 'google-chrome', ['--version']).status === 0
 test('HTTP sandbox preserves real playback and blocks hostile framing and direct-page messages', { skip: !chromePresent, timeout: 30000 }, async t => {
   const server = await startServer(); t.after(server.stop)
   const browser = await openDrawingBrowser(server.base, undefined, { renderModule: null }); t.after(browser.close)
@@ -128,13 +126,22 @@ test('worker deadline escalates termination and kills descendants even when they
   const child = spawnWorker(process.execPath, ['-e', source], { timeoutMs: 500, graceMs: 100 })
   let output = ''; child.stdout.on('data', data => { output += data })
   await once(child, 'close')
-  assert.equal(child.timedOut, true); assert.equal(child.signalCode, 'SIGKILL')
+  assert.equal(child.timedOut, true)
+  // (Windows has no graceful signal: the first stop ends it outright, so it never needs escalating)
+  assert.equal(child.signalCode, process.platform === 'win32' ? 'SIGTERM' : 'SIGKILL')
   if (process.platform !== 'win32') {
     const pid = Number(output.trim()); assert.ok(pid > 0)
     // A killed child may briefly be a zombie awaiting the init reaper.
-    let stat
-    try { stat = readFileSync(`/proc/${pid}/stat`, 'utf8') } catch (error) { assert.equal(error.code, 'ENOENT') }
-    if (stat) assert.match(stat, /\) Z /)
+    if (process.platform === 'linux') {
+      let stat
+      try { stat = readFileSync(`/proc/${pid}/stat`, 'utf8') } catch (error) { assert.equal(error.code, 'ENOENT') }
+      if (stat) assert.match(stat, /\) Z /)
+    } else {
+      // No /proc here: signal 0 reports whether it still exists, once the system has reaped it.
+      const alive = () => { try { process.kill(pid, 0); return true } catch { return false } }
+      for (let i = 0; i < 40 && alive(); i++) await new Promise(done => setTimeout(done, 50))
+      assert.equal(alive(), false, 'descendant was killed')
+    }
   }
 })
 
@@ -184,4 +191,26 @@ test('following the steps never scrolls the player out of view, which would paus
   assert.ok(box.step >= 0, 'a step is highlighted')
   assert.equal(box.scrollY, 0, 'the page did not scroll to follow the step')
   assert.ok(box.top >= 0, `player still at the top of the page: ${JSON.stringify(box)}`)
+})
+
+test('a worker group that has already finished is not an error, on any platform', async () => {
+  const realKill = process.kill
+  for (const code of ['ESRCH', 'EPERM']) {
+    const child = spawnWorker(process.execPath, ['-e', ''], { timeoutMs: 5000 })
+    await once(child, 'spawn')
+    process.kill = () => { throw Object.assign(new Error(`kill ${code}`), { code }) }
+    try { assert.doesNotThrow(() => child.stopWorker()) } finally { process.kill = realKill }
+    await once(child, 'close')
+  }
+})
+
+test('Chrome is found where each platform installs it', () => {
+  const found = (...paths) => (path) => paths.includes(path)
+  const mac = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+  assert.equal(chromeExecutable({}, 'darwin', found(mac)), mac)
+  assert.equal(chromeExecutable({}, 'darwin', found()), null)
+  const win = join('C:\\PF', 'Google', 'Chrome', 'Application', 'chrome.exe')
+  assert.equal(chromeExecutable({ PROGRAMFILES: 'C:\\PF' }, 'win32', found(win)), win)
+  assert.equal(chromeExecutable({ CHROME_BIN: '/custom/chrome' }, 'darwin', found()), '/custom/chrome')
+  assert.equal(chromeExecutable({ PATH: '/usr/bin' }, 'linux', found('/usr/bin/chromium')), '/usr/bin/chromium')
 })
