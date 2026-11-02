@@ -28,7 +28,7 @@ npm run live
 | --- | --- | --- |
 | Recognize | Muse Wonder, minimal effort | Lists the objects in the photo |
 | Segment | SAM 3.1 | Cuts each object out of the photo |
-| Plan | Muse Wonder, low effort | Designs the project and writes structured steps, which are validated and repaired |
+| Plan | Muse Wonder, minimal effort | Designs the project and writes structured steps, which are validated and repaired |
 | Draw | Muse Wonder, minimal effort | Turns each cut-out into a vector drawing |
 
 Deterministic solvers then work out the geometry from the plan, and a fixed engine animates every step. Films play on a

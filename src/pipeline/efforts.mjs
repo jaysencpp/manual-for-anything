@@ -1,6 +1,6 @@
 export function stageEfforts(args, env = process.env) {
   const flag = (name, fallback) => args.includes(name) ? args[args.indexOf(name) + 1] : fallback
-  const base = flag('--effort', args.includes('--no-thinking') ? 'minimal' : 'low')
+  const base = flag('--effort', 'minimal')
   const defaults = { plan: base, perception: 'minimal', repair: 'low', drawing: 'minimal', catalogue: 'low' }
   const result = { base }
   for (const [stage, fallback] of Object.entries(defaults)) result[stage] = flag(`--${stage}-effort`, env[`${stage.toUpperCase()}_EFFORT`] || fallback)
