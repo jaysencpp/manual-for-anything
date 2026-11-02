@@ -219,3 +219,20 @@ test('comparison pairs the same project and sample, shows readable plans and nev
   assert.deepEqual(publicAttempt.plan.design.size, failed.grade.normalizedPlan.design.size)
   assert.equal(publicAttempt.rawText, null)
 })
+
+test('comparison pages keep their width when a scrollbar appears', { skip: !chromePresent, timeout: 45000 }, async t => {
+  const server = await startServer(); t.after(server.stop)
+  for (const path of ['/comparisons', '/comparisons/plans']) {
+    const browser = await openDrawingBrowser(server.base + path, undefined, { renderModule: null })
+    try {
+      await browser.viewport(1280, 900)
+      // Scrollbars that take up space, as on Windows, on every platform: first a page too short to scroll, then a tall one.
+      // (a constructed stylesheet: these pages' CSP refuses inline styles)
+      const width = (minHeight) => browser.evaluate(`(()=>{const s=new CSSStyleSheet();s.replaceSync('::-webkit-scrollbar{width:15px}html{overflow-y:auto}main>*:not(nav){display:none!important}');document.adoptedStyleSheets=[s];document.body.style.minHeight=${JSON.stringify(minHeight)};
+        return new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(()=>done({main:document.querySelector('main').getBoundingClientRect().width,scrolls:document.documentElement.scrollHeight>innerHeight}))))})()`)
+      const short = await width('0'), tall = await width('5000px')
+      assert.equal(short.scrolls, false, `${path} is short`); assert.equal(tall.scrolls, true, `${path} is tall`)
+      assert.equal(tall.main, short.main, `${path} keeps its width`)
+    } finally { await browser.close() }
+  }
+})

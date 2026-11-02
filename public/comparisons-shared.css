@@ -1,3 +1,6 @@
+/* Reserve scrollbar space from the start: pages must not shift sideways when their content loads and they begin to scroll. */
+html { scrollbar-gutter: stable; }
+
 @font-face { font-family:Inter; src:url('/assets/fonts/inter-400.ttf'); font-weight:400 }
 @font-face { font-family:Inter; src:url('/assets/fonts/inter-600.ttf'); font-weight:600 }
 @font-face { font-family:Inter; src:url('/assets/fonts/inter-700.ttf'); font-weight:700 }
