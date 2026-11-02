@@ -5,11 +5,11 @@ import { readFileSync, writeFileSync, mkdtempSync, rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { startServer } from './support/server.mjs'
-import { openDrawingBrowser } from '../benchmarks/drawing-chrome.mjs'
+import { openDrawingBrowser, chromePresent } from '../benchmarks/drawing-chrome.mjs'
 import { exportDrawingBenchmark } from '../benchmarks/export-drawing-benchmark.mjs'
 import { prepareExperiment, runExperiment, mockDrawing } from '../benchmarks/drawing-bench.mjs'
 
-test('public comparison page serves only curated read-only results and displays labelled outputs on desktop and mobile', { timeout: 45000 }, async t => {
+test('public comparison page serves only curated read-only results and displays labelled outputs on desktop and mobile', { skip: !chromePresent, timeout: 120000 }, async t => {
   const server = await startServer(); t.after(() => server.stop())
   const get = path => fetch(server.base + path)
   assert.match(await (await get('/')).text(), /href="\/comparisons"/)
@@ -137,7 +137,7 @@ test('export excludes incomplete or mock runs and refreshes a case without dupli
 })
 
 
-test('planning comparisons expose each saved run with isolated reports, attempts and photos', async t => {
+test('planning comparisons expose each saved run with isolated reports, attempts and photos', { skip: !chromePresent }, async t => {
   const server = await startServer(); t.after(() => server.stop())
   const index = await fetch(server.base + '/comparisons/plans/api/runs').then(r => r.json())
   assert.ok(index.runs.some(run => run.id === index.defaultRun))

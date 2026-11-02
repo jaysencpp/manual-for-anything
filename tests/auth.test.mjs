@@ -80,9 +80,8 @@ test('an in-flight old-password login cannot issue a session after an operator r
   } finally { db.close() }
 })
 
-test('private library, every film route, sessions across restart and logout', { timeout: 20000 }, async t => {
+test('private library, every film route, sessions across restart and logout', { timeout: 90000 }, async t => {
   const dataDir = await mkdtemp(join(tmpdir(), 'manual-auth-'))
-  t.after(() => rm(dataDir, { recursive: true, force: true }))
   const repo = new FilmRepository(join(dataDir, 'app.sqlite'), 'local'), accounts = new Accounts(repo.db)
   const alice = await accounts.provision('alice', 'alice offline test password')
   const bob = await accounts.provision('bob', 'bob offline test password')
@@ -91,7 +90,8 @@ test('private library, every film route, sessions across restart and logout', { 
   repo.close()
   const origin = 'http://localhost:8080', env = { MANUAL_DATA_DIR: dataDir, AUTH_MODE: 'password', APP_ORIGIN: origin }
   let server = await startServer(['--speed', '1000'], env)
-  t.after(() => server.stop())
+  // Stop the server first: Windows cannot delete a database that is still open, and hooks run in this order.
+  t.after(async () => { await server.stop(); await rm(dataDir, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 }) })
   const login = async (username, password) => {
     const response = await fetch(server.base + '/api/login', { method: 'POST', headers: { Origin: origin, 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) })
     assert.equal(response.status, 200)

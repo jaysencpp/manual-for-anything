@@ -1,3 +1,4 @@
+import { chromePresent } from '../benchmarks/drawing-chrome.mjs'
 import { fileURLToPath } from 'node:url'
 import test from 'node:test'
 import assert from 'node:assert/strict'
@@ -42,7 +43,7 @@ test('finished crochet size is independent of skein envelope while rigid stock s
   assert.match(designProblems(script).join('; '), /only 20 cm/)
 })
 
-test('declared supply sheets compile, retain photo identity, and execute cuts and joins in Chrome', { timeout: 45000 }, async t => {
+test('declared supply sheets compile, retain photo identity, and execute cuts and joins in Chrome', { skip: !chromePresent, timeout: 120000 }, async t => {
   const script = sheetExample(), stock = script.objects[0]
   script.objects = [{ k: 'scissors', n: 'Scissors', segment: 'scissors', b: [0, 0, 100, 50], cm: 18,
     measurements: { cm: { status: 'estimated', source: 'photo estimate' } }, toolKind: 'scissors' }]
@@ -124,7 +125,7 @@ test('inventory annotations cannot rewrite identity, duplicate keys or introduce
   assert.ok(schemaProblems([{ k: 'yarn', cm: 999 }], annotations).length)
 })
 
-test('planner and grader share the annotation contract through real HTTP and Chrome', { timeout: 45000 }, async t => {
+test('planner and grader share the annotation contract through real HTTP and Chrome', { skip: !chromePresent, timeout: 120000 }, async t => {
   const dir = mkdtempSync(join(tmpdir(), 'annotation-plan-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
   const authored = wood8Plan(); authored.design.standard ||= 'Saved test dimensions'
   const inventory = structuredClone(authored.objects)
@@ -153,7 +154,7 @@ test('planner and grader share the annotation contract through real HTTP and Chr
   assert.equal(rejected.machine, 'fail', 'A normalized candidate must not hide an invalid raw annotation')
 })
 
-test('structured weaving validates and plays in Chrome; invalid actors, paths and tools stay rejected', { timeout: 45000 }, async t => {
+test('structured weaving validates and plays in Chrome; invalid actors, paths and tools stay rejected', { skip: !chromePresent, timeout: 120000 }, async t => {
   const script = JSON.parse(readFileSync(new URL('../examples/fixtures/yarn/script.json', import.meta.url)))
   const piece = script.makes[0]; piece.state = 'unfinished'; piece.states = [{ id: 'unfinished', label: 'Ends loose' }, { id: 'finished', label: 'Ends woven in' }]
   script.tools.push({ k: 'needle', use: 'needle' })

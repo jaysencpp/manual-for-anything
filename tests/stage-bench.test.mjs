@@ -9,7 +9,7 @@ import { fixtureProjection } from '../benchmarks/stage-bench-cases.mjs'
 import { PERCEPTION_SCHEMA } from '../src/pipeline/plan-schema.mjs'
 import { read, save } from '../benchmarks/planning-data.mjs'
 import { stubModel } from './support/stub-model.mjs'
-import { openDrawingBrowser } from '../benchmarks/drawing-chrome.mjs'
+import { openDrawingBrowser, chromePresent } from '../benchmarks/drawing-chrome.mjs'
 
 const fakeBrowser = async () => ({ smoke: async () => ({ frames: 12 }), close: async () => {} })
 const options = { models: ['muse-spark-1.3'], efforts: ['low'], browserFactory: fakeBrowser }
@@ -140,7 +140,7 @@ test('browser infrastructure failures stop before spending and persist interrupt
   assert.equal(calls,1);assert.equal(read(join(out,'results.json')).length,1)
   await assert.rejects(()=>runStageExperiment(out),/already started|task schedule/)
 })
-test('mock results never become model success rates; local review page hides labels and protects writes', async t => {
+test('mock results never become model success rates; local review page hides labels and protects writes', { skip: !chromePresent }, async t => {
   const {out}=await single(t,'recognition','wood8-inventory')
   let report=await runStageExperiment(out,{mock:true})
   saveStageReview(out,{kind:'case',id:report.cases[0].id,verdict:'pass',reason:'Checked labels.'})

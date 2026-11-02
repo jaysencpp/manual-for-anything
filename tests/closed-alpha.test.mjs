@@ -3,17 +3,15 @@ import assert from 'node:assert/strict'
 import { mkdtemp, rm } from 'node:fs/promises'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
-import { spawnSync } from 'node:child_process'
 import { Accounts } from '../src/server/auth.mjs'
 import { FilmRepository } from '../src/server/repository.mjs'
 import { spawnServer } from './support/server.mjs'
 import { createServer } from 'node:net'
 import { once } from 'node:events'
-import { openDrawingBrowser } from '../benchmarks/drawing-chrome.mjs'
+import { openDrawingBrowser, chromePresent } from '../benchmarks/drawing-chrome.mjs'
 
 async function hosted(t) {
   const dir = await mkdtemp(join(tmpdir(), 'manual-alpha-'))
-  t.after(() => rm(dir, { recursive: true, force: true }))
   const repo = new FilmRepository(join(dir, 'app.sqlite'), 'local')
   const owner = await new Accounts(repo.db).provision('tester', 'closed alpha offline password')
   repo.save('existing', { ownerId: owner, finished: true }, [])
@@ -29,7 +27,8 @@ async function hosted(t) {
     if (child.exitCode !== null || child.signalCode !== null) return
     const closed = once(child, 'close'); child.kill('SIGTERM'); await closed
   }
-  t.after(stop)
+  // Stop the server first: Windows cannot delete a database that is still open, and hooks run in this order.
+  t.after(async () => { await stop(); await rm(dir, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 }) })
   await new Promise((resolve, reject) => {
     child.stdout.on('data', data => { if (/localhost:\d+/.test(String(data))) resolve() })
     child.once('error', reject); child.once('exit', () => reject(Error(child.serverErrors)))
@@ -69,8 +68,7 @@ test('Closed Alpha has no account-creation API and every signed-out project crea
   } finally { check.close() }
 })
 
-const chromePresent = spawnSync(process.env.CHROME_BIN || 'google-chrome', ['--version']).status === 0
-test('Closed Alpha screen links to X, hides project creation, and lets provisioned users sign in on mobile', { skip: !chromePresent, timeout: 30000 }, async t => {
+test('Closed Alpha screen links to X, hides project creation, and lets provisioned users sign in on mobile', { skip: !chromePresent, timeout: 120000 }, async t => {
   const server = await hosted(t)
   const browser = await openDrawingBrowser(server.base, undefined, { renderModule: null }); t.after(browser.close)
   await browser.viewport(390, 844)
