@@ -11,10 +11,10 @@ import { withTools } from '../src/solvers/tools.mjs'
 import { requiredDrawingKeys } from '../src/pipeline/artwork.mjs'
 
 const here = fileURLToPath(new URL('.', import.meta.url))
-const examples = readdirSync(`${here}../examples/fixtures`).filter((f) => existsSync(`${here}../examples/fixtures/${f}/timings.json`))
+const examples = readdirSync(`${here}../examples/published`).filter((f) => existsSync(`${here}../examples/published/${f}/timings.json`))
 
 async function serve() {
-  const child = spawnServer(['--port', '0', '--speed', '50'])
+  const child = spawnServer(['--port', '0', '--speed', '50', '--examples-dir', `${here}../examples/published`])
   const port = await new Promise((done, fail) => {
     child.stdout.on('data', (c) => { const m = /localhost:(\d+)/.exec(String(c)); if (m) done(+m[1]) })
     child.on('exit', (code) => fail(new Error(`server exited ${code}`)))
@@ -54,22 +54,15 @@ function plays({ source, duration }, screens) {
 test('every example streams, and every program it sends plays', async () => {
   const server = await serve()
   try {
+    const listed = await fetch(`${server.url}/api/examples`).then(r => r.json())
+    assert.deepEqual(listed.map(e => e.name).sort(), [
+      'eff644fe8c1940acbf39710424d45ee1', 'aebcd944e8ab4759a77609000a2aebb2', 'fbb4f34f20e941ee8d92f629bc9f64e2',
+    ].sort())
+    assert.equal((await fetch(`${server.url}/api/films?example=wood8`, { method: 'POST' })).status, 404)
     for (const name of examples) {
       const { id } = await fetch(`${server.url}/api/films?example=${name}`, { method: 'POST' }).then((r) => r.json())
       const all = await events(`${server.url}/api/films/${id}/events`)
       const types = all.map((e) => e.type)
-      // This old recording has no artwork for its photographed hook and scissors.
-      // It must now offer a retry rather than silently show their tracings.
-      if (name === 'yarn') {
-        assert.equal(types.at(-1), 'failed')
-        assert.match(all.at(-1).message, /object drawings: hook, scissors/)
-        assert.ok(!types.includes('film'))
-        for (const mode of ['live', 'replay']) {
-          const response = await fetch(`${server.url}/api/films/${id}/program?name=${mode}&t=0`)
-          assert.equal(response.status, 409)
-        }
-        continue
-      }
       assert.ok(types.includes('script') && types.includes('film'), `${name}: ${types.join(' ')}`)
       assert.equal(types.at(-1), 'done', name)
       assert.equal(all[0].type, 'state')
@@ -77,7 +70,7 @@ test('every example streams, and every program it sends plays', async () => {
       assert.deepEqual(reloaded[0], { type: 'state', ready: true, finished: true })
       assert.deepEqual(reloaded.slice(1), all.slice(1), 'reloading reuses the same generated film')
       assert.ok(types.indexOf('objects') < types.indexOf('film'), name)
-      const saved = readRun(`${here}../examples/fixtures/${name}`)
+      const saved = readRun(`${here}../examples/published/${name}`)
       const { geometry } = withTools(saved.script, saved.rawGeometry, saved.cutSizes, {})
       if (requiredDrawingKeys(saved.layout, geometry).length) {
         assert.ok(all.findIndex(e => e.type === 'stage' && e.name === 'drawings: all') < types.indexOf('film'), `${name}: drawings must finish before playback`)
@@ -100,7 +93,7 @@ test('photos are refused unless the server runs with --live', async () => {
   try {
     const res = await fetch(`${server.url}/api/films`, { method: 'POST', headers: { 'Content-Type': 'image/png' }, body: new Uint8Array(8) })
     assert.equal(res.status, 403)
-    const example = await fetch(`${server.url}/api/films?example=wood8`, { method: 'POST' }).then((r) => r.json())
+    const example = await fetch(`${server.url}/api/films?example=aebcd944e8ab4759a77609000a2aebb2`, { method: 'POST' }).then((r) => r.json())
     const revise = await fetch(`${server.url}/api/films/${example.id}/refine`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: 'Make it smaller.' }) })
     assert.equal(revise.status, 403)
     assert.equal((await fetch(`${server.url}/assets/fonts/..%2F..%2Fserver.mjs`)).status, 404)
