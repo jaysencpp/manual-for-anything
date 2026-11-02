@@ -1,0 +1,154 @@
+{
+  "row": {
+    "id": "52d726101fc2151bcc0c-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "52d726101fc2151bcc0c",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 75,
+          "duration": 60.149999999999984,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.12716,
+    "responseSeconds": 22.13286531099997,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Two-Colour Storage Basket",
+    "design": {
+      "purpose": "A sturdy open storage basket for yarn, toys or household items, made by one beginner using both photographed yarns.",
+      "size": [
+        26,
+        26,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place materials",
+        "c": "Place green yarn, blue yarn and hook ready."
+      },
+      {
+        "t": "Start green base",
+        "c": "Green: magic ring, Rnd 1: 6 sc; Rnd 2: inc in each stitch."
+      },
+      {
+        "t": "Grow the base",
+        "c": "Rnd 3: (sc, inc) six times; Rnd 4: (2 sc, inc) six times."
+      },
+      {
+        "t": "Finish flat base",
+        "c": "Rnd 5: (3 sc, inc) six times; check stitch count."
+      },
+      {
+        "t": "Turn the wall",
+        "c": "Rnd 6: sc in back loop only of every stitch."
+      },
+      {
+        "t": "Work green wall",
+        "c": "Rnds 7–8: sc in every stitch, join with sl st."
+      },
+      {
+        "t": "Join blue yarn",
+        "c": "Change to blue on final loop; Rnd 9: sc around."
+      },
+      {
+        "t": "Work blue wall",
+        "c": "Rnd 10: sc in every stitch, join with sl st."
+      },
+      {
+        "t": "Finish top round",
+        "c": "Rnd 11: sc around, sl st to join, fasten off."
+      },
+      {
+        "t": "Cut the tail",
+        "c": "Cut the tail, leaving enough yarn to weave in."
+      },
+      {
+        "t": "Weave in ends",
+        "c": "Weave all tails through nearby stitches with the hook."
+      }
+    ]
+  },
+  "rawText": null
+}

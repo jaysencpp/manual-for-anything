@@ -1,0 +1,131 @@
+{
+  "row": {
+    "id": "9921517016a0e8c08648-0",
+    "caseId": "lego-pile",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "high",
+    "trialId": "9921517016a0e8c08648",
+    "sample": 1,
+    "planningEffort": "high",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 35,
+          "duration": 25.700000000000003,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "brick-dark-red.cm: unconfirmed measurement",
+        "brick-green.cm: unconfirmed measurement",
+        "brick-red.cm: unconfirmed measurement",
+        "brick-orange.cm: unconfirmed measurement",
+        "plate-brown.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.113036,
+    "responseSeconds": 15.979970002000016,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "lego-pile",
+    "title": "LEGO build",
+    "request": "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces.",
+    "guidance": {
+      "messages": [
+        "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Twin Tower Desk Tray",
+    "design": {
+      "purpose": "A small desk tray for one person to hold rings, earrings or a USB stick between two raised end towers.",
+      "size": [
+        6.4,
+        1.6,
+        2.2
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place the plate",
+        "c": "Place the brown 2×8 plate flat on the table."
+      },
+      {
+        "t": "Add left base",
+        "c": "Press the dark red brick onto the left end."
+      },
+      {
+        "t": "Add right base",
+        "c": "Press the green brick onto the right end."
+      },
+      {
+        "t": "Raise left tower",
+        "c": "Stack the red brick fully on the dark red brick."
+      },
+      {
+        "t": "Raise right tower",
+        "c": "Stack the orange brick fully on the green brick."
+      }
+    ]
+  },
+  "rawText": null
+}

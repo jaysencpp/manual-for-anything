@@ -1,0 +1,660 @@
+{
+ "plan": {
+  "contractVersion": 2,
+  "design": {
+   "joins": "No rigid fastener. The torn strap edges are overlapped and closed with hand stitching: two parallel rows of backstitch through both fabric layers, knotted at both ends, which restores the carrying loop.",
+   "parts": [
+    {
+     "cm": 45,
+     "from": "black-fabric-bag",
+     "k": "black-fabric-bag",
+     "n": 1
+    }
+   ],
+   "purpose": "Repair the torn carrying loop on the black fabric bag so one person can carry it by that loop again without the tear opening.",
+   "size": [
+    45,
+    30,
+    12
+   ],
+   "standard": "Finished bag remains about 45 cm long; repair overlap 3 cm, stitch rows 5 mm apart, securely knotted",
+   "stands": "The repaired loop is closed by two stitched rows through double fabric; load passes through the overlap and the intact strap and bag panels on both sides of the tear."
+  },
+  "end": "Test, then carry normally",
+  "finale": [
+   {
+    "by": 45,
+    "k": "black-fabric-bag",
+    "to": null,
+    "v": "spin"
+   }
+  ],
+  "goals": [],
+  "ideas": [
+   {
+    "kind": "craft",
+    "pitch": "Hand-stitch the torn carrying loop closed and reinforced",
+    "title": "Stitch Torn Loop"
+   },
+   {
+    "kind": "craft",
+    "pitch": "Sew a fabric patch over the damaged strap area",
+    "title": "Patch Strap Area"
+   },
+   {
+    "kind": "craft",
+    "pitch": "Shorten strap and re-anchor intact section by stitching",
+    "title": "Re-anchor Strap"
+   }
+  ],
+  "joints": [],
+  "makes": [],
+  "mode": "physical",
+  "objects": [
+   {
+    "b": [
+     1,
+     1,
+     10,
+     10
+    ],
+    "cm": 45,
+    "k": "black-fabric-bag",
+    "measurements": {
+     "cm": {
+      "source": "estimated_from_single_photo",
+      "status": "estimated"
+     },
+     "w": {
+      "source": "estimated_from_single_photo",
+      "status": "estimated"
+     }
+    },
+    "n": "black fabric bag",
+    "part": {
+     "family": "sheet",
+     "size": [
+      45,
+      30,
+      0.3
+     ]
+    },
+    "segment": "fabric bag",
+    "state": "torn",
+    "states": [
+     {
+      "appearance": {
+       "height": 100,
+       "shapes": [
+        {
+         "d": "M5 20 H95 V85 H5 Z M35 35 L55 50 L40 60 L25 45 Z",
+         "fill": "#222222",
+         "stroke": "#111111"
+        }
+       ],
+       "width": 100
+      },
+      "id": "torn",
+      "label": "Torn loop"
+     },
+     {
+      "appearance": {
+       "height": 100,
+       "shapes": [
+        {
+         "d": "M5 20 H95 V85 H5 Z M30 38 H60 V55 H30 Z",
+         "fill": "#222222",
+         "stroke": "#111111"
+        }
+       ],
+       "width": 100
+      },
+      "id": "repaired",
+      "label": "Repaired loop"
+     }
+    ]
+   }
+  ],
+  "pick": 0,
+  "steps": [
+   {
+    "c": "Lay bag flat with torn loop uppermost",
+    "claims": [
+     "a1"
+    ],
+    "do": [
+     {
+      "id": "a1",
+      "intent": "place",
+      "k": "black-fabric-bag",
+      "rel": "floor",
+      "to": null,
+      "v": "place"
+     }
+    ],
+    "t": "Lay bag flat"
+   },
+   {
+    "c": "Straighten loop and check both torn edges meet",
+    "claims": [
+     "a2"
+    ],
+    "do": [
+     {
+      "effects": [
+       {
+        "k": "black-fabric-bag",
+        "state": "torn"
+       }
+      ],
+      "id": "a2",
+      "intent": "inspect the torn loop",
+      "k": "black-fabric-bag",
+      "requires": [
+       {
+        "k": "black-fabric-bag",
+        "state": "torn"
+       }
+      ],
+      "v": "demonstrate",
+      "x": 0.5
+     }
+    ],
+    "t": "Inspect tear"
+   },
+   {
+    "c": "Trim only loose frayed threads with scissors",
+    "claims": [
+     "a3"
+    ],
+    "do": [
+     {
+      "id": "a3",
+      "intent": "fit",
+      "k": "black-fabric-bag",
+      "v": "use",
+      "with": "scissors",
+      "x": 0.45
+     }
+    ],
+    "t": "Trim loose threads"
+   },
+   {
+    "c": "Overlap torn ends by 3 cm, lining edges up",
+    "claims": [
+     "a4"
+    ],
+    "do": [
+     {
+      "id": "a4",
+      "intent": "overlap torn ends 3 cm",
+      "k": "black-fabric-bag",
+      "label": "3 cm",
+      "v": "reshape",
+      "x": 0.5
+     }
+    ],
+    "t": "Overlap torn ends"
+   },
+   {
+    "c": "Thread needle with 60 cm doubled black thread, knot end",
+    "claims": [
+     "a5"
+    ],
+    "do": [
+     {
+      "id": "a5",
+      "intent": "thread needle",
+      "k": "black-fabric-bag",
+      "label": "60 cm",
+      "v": "demonstrate",
+      "x": 0.5
+     }
+    ],
+    "t": "Thread needle"
+   },
+   {
+    "c": "Backstitch first row across overlap, 5 mm from edge",
+    "claims": [
+     "a6"
+    ],
+    "do": [
+     {
+      "id": "a6",
+      "intent": "stitch",
+      "k": "black-fabric-bag",
+      "label": "5 mm",
+      "path": [
+       [
+        8,
+        45
+       ],
+       [
+        14,
+        45
+       ],
+       [
+        20,
+        45
+       ],
+       [
+        26,
+        45
+       ],
+       [
+        32,
+        45
+       ]
+      ],
+      "v": "use",
+      "with": "needle"
+     }
+    ],
+    "t": "Stitch first row"
+   },
+   {
+    "c": "Backstitch second row 5 mm beside first row",
+    "claims": [
+     "a7"
+    ],
+    "do": [
+     {
+      "id": "a7",
+      "intent": "stitch",
+      "k": "black-fabric-bag",
+      "label": "5 mm",
+      "path": [
+       [
+        8,
+        55
+       ],
+       [
+        14,
+        55
+       ],
+       [
+        20,
+        55
+       ],
+       [
+        26,
+        55
+       ],
+       [
+        32,
+        55
+       ]
+      ],
+      "v": "use",
+      "with": "needle"
+     }
+    ],
+    "t": "Stitch second row"
+   },
+   {
+    "c": "Make three small knots, trim thread to 5 mm",
+    "claims": [
+     "a8"
+    ],
+    "do": [
+     {
+      "effects": [
+       {
+        "k": "black-fabric-bag",
+        "state": "repaired"
+       }
+      ],
+      "id": "a8",
+      "intent": "knot and finish stitching",
+      "k": "black-fabric-bag",
+      "label": "5 mm",
+      "requires": [
+       {
+        "k": "black-fabric-bag",
+        "state": "torn"
+       }
+      ],
+      "v": "demonstrate",
+      "x": 0.5
+     }
+    ],
+    "t": "Knot and trim"
+   },
+   {
+    "c": "Pull loop firmly by hand; check stitches hold",
+    "claims": [
+     "a9"
+    ],
+    "do": [
+     {
+      "id": "a9",
+      "intent": "test repaired loop",
+      "k": "black-fabric-bag",
+      "v": "demonstrate",
+      "x": 0.5
+     }
+    ],
+    "t": "Test repair"
+   }
+  ],
+  "sub": "Hand-stitched strap repair",
+  "supplies": [
+   "black heavy-duty polyester thread"
+  ],
+  "tag": "45 cm bag \u00b7 30 min \u00b7 Easy",
+  "title": "Repair Torn Bag",
+  "tools": [
+   {
+    "k": "scissors",
+    "use": "scissors"
+   },
+   {
+    "k": "needle",
+    "use": "needle"
+   }
+  ],
+  "view": "side"
+ },
+ "patch": {
+  "steps": [
+   {
+    "at": 2,
+    "c": "Straighten loop and check both torn edges meet",
+    "claims": [
+     "a2"
+    ],
+    "do": [
+     {
+      "demo": {
+       "actors": [
+        "black-fabric-bag"
+       ],
+       "draw": "(ctx,p,env,scene) => { scene.draw('black-fabric-bag'); const q=scene.point('black-fabric-bag',[0.4,0.45]); ctx.strokeStyle='#ffffff'; ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(q.x-20,q.y); ctx.lineTo(q.x+20+10*p,q.y); ctx.stroke(); }"
+      },
+      "effects": [
+       {
+        "k": "black-fabric-bag",
+        "state": "torn"
+       }
+      ],
+      "focus": {
+       "bounds": [
+        0.2,
+        0.2,
+        0.6,
+        0.6
+       ],
+       "clearance": 0.1,
+       "k": "black-fabric-bag"
+      },
+      "id": "a2",
+      "intent": "inspect the torn loop",
+      "k": "black-fabric-bag",
+      "requires": [
+       {
+        "k": "black-fabric-bag",
+        "state": "torn"
+       }
+      ],
+      "v": "demonstrate"
+     }
+    ],
+    "t": "Inspect tear"
+   },
+   {
+    "at": 4,
+    "c": "Overlap torn ends by 3 cm, lining edges up",
+    "claims": [
+     "a4"
+    ],
+    "do": [
+     {
+      "effects": [
+       {
+        "k": "black-fabric-bag",
+        "state": "overlapped"
+       }
+      ],
+      "id": "a4",
+      "intent": "overlap torn ends 3 cm",
+      "k": "black-fabric-bag",
+      "label": "3 cm",
+      "requires": [
+       {
+        "k": "black-fabric-bag",
+        "state": "torn"
+       }
+      ],
+      "v": "reshape"
+     }
+    ],
+    "t": "Overlap torn ends"
+   },
+   {
+    "at": 5,
+    "c": "Thread needle with 60 cm doubled black thread, knot end",
+    "claims": [
+     "a5"
+    ],
+    "do": [
+     {
+      "demo": {
+       "actors": [
+        "black-fabric-bag"
+       ],
+       "draw": "(ctx,p,env,scene) => { scene.draw('black-fabric-bag'); const q=scene.point('black-fabric-bag',[0.5,0.5]); ctx.strokeStyle='#ffffff'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(q.x-30,q.y+20); ctx.lineTo(q.x-30+60*p,q.y-10); ctx.stroke(); }"
+      },
+      "effects": [
+       {
+        "k": "black-fabric-bag",
+        "state": "thread-needle"
+       }
+      ],
+      "focus": {
+       "bounds": [
+        0.25,
+        0.25,
+        0.5,
+        0.5
+       ],
+       "clearance": 0.1,
+       "k": "black-fabric-bag"
+      },
+      "id": "a5",
+      "intent": "thread needle",
+      "k": "black-fabric-bag",
+      "label": "60 cm",
+      "requires": [
+       {
+        "k": "black-fabric-bag",
+        "state": "overlapped"
+       }
+      ],
+      "v": "demonstrate"
+     }
+    ],
+    "t": "Thread needle"
+   },
+   {
+    "at": 6,
+    "c": "Backstitch first row across overlap, 5 mm from edge",
+    "claims": [
+     "a6"
+    ],
+    "do": [
+     {
+      "id": "a6",
+      "intent": "stitch",
+      "k": "black-fabric-bag",
+      "label": "5 mm",
+      "path": [
+       [
+        10,
+        14
+       ],
+       [
+        15,
+        14
+       ],
+       [
+        20,
+        14
+       ],
+       [
+        25,
+        14
+       ],
+       [
+        30,
+        14
+       ]
+      ],
+      "v": "use",
+      "with": "needle"
+     }
+    ],
+    "t": "Stitch first row"
+   },
+   {
+    "at": 7,
+    "c": "Backstitch second row 5 mm beside first row",
+    "claims": [
+     "a7"
+    ],
+    "do": [
+     {
+      "id": "a7",
+      "intent": "stitch",
+      "k": "black-fabric-bag",
+      "label": "5 mm",
+      "path": [
+       [
+        10,
+        16
+       ],
+       [
+        15,
+        16
+       ],
+       [
+        20,
+        16
+       ],
+       [
+        25,
+        16
+       ],
+       [
+        30,
+        16
+       ]
+      ],
+      "v": "use",
+      "with": "needle"
+     }
+    ],
+    "t": "Stitch second row"
+   },
+   {
+    "at": 8,
+    "c": "Make three small knots, trim thread to 5 mm",
+    "claims": [
+     "a8"
+    ],
+    "do": [
+     {
+      "demo": {
+       "actors": [
+        "black-fabric-bag"
+       ],
+       "draw": "(ctx,p,env,scene) => { scene.draw('black-fabric-bag'); const q=scene.point('black-fabric-bag',[0.65,0.55]); ctx.strokeStyle='#ffffff'; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(q.x,q.y,4+6*p,0,6.28); ctx.stroke(); }"
+      },
+      "effects": [
+       {
+        "k": "black-fabric-bag",
+        "state": "repaired"
+       }
+      ],
+      "focus": {
+       "bounds": [
+        0.3,
+        0.3,
+        0.5,
+        0.5
+       ],
+       "clearance": 0.1,
+       "k": "black-fabric-bag"
+      },
+      "id": "a8",
+      "intent": "knot and finish stitching",
+      "k": "black-fabric-bag",
+      "label": "5 mm",
+      "requires": [
+       {
+        "k": "black-fabric-bag",
+        "state": "thread-needle"
+       }
+      ],
+      "v": "demonstrate"
+     }
+    ],
+    "t": "Knot and trim"
+   },
+   {
+    "at": 9,
+    "c": "Pull loop firmly by hand; check stitches hold",
+    "claims": [
+     "a9"
+    ],
+    "do": [
+     {
+      "demo": {
+       "actors": [
+        "black-fabric-bag"
+       ],
+       "draw": "(ctx,p,env,scene) => { scene.draw('black-fabric-bag'); const q=scene.point('black-fabric-bag',[0.5,0.4]); ctx.strokeStyle='#ffffff'; ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(q.x,q.y); ctx.lineTo(q.x,q.y-10-15*p); ctx.stroke(); }"
+      },
+      "effects": [
+       {
+        "k": "black-fabric-bag",
+        "state": "test-repaired-loop"
+       }
+      ],
+      "focus": {
+       "bounds": [
+        0.2,
+        0.2,
+        0.6,
+        0.6
+       ],
+       "clearance": 0.1,
+       "k": "black-fabric-bag"
+      },
+      "id": "a9",
+      "intent": "test repaired loop",
+      "k": "black-fabric-bag",
+      "requires": [
+       {
+        "k": "black-fabric-bag",
+        "state": "repaired"
+       }
+      ],
+      "v": "demonstrate"
+     }
+    ],
+    "t": "Test repair"
+   }
+  ],
+  "supplies": [],
+  "tools": [
+   {
+    "k": "scissors",
+    "use": "scissors"
+   },
+   {
+    "k": "needle",
+    "use": "needle"
+   }
+  ]
+ }
+}

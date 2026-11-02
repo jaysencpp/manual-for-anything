@@ -1,0 +1,177 @@
+{
+  "row": {
+    "id": "22082af47d0c8940896b-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "22082af47d0c8940896b",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Unknown named cut cut-a"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "Unknown named cut cut-a"
+        }
+      ],
+      "warnings": [],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "Unknown named cut cut-a"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.0604455,
+    "responseSeconds": 35.279679015,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Wooden Planter Box",
+    "design": {
+      "purpose": "Outdoor planter for herbs and flowers: 43 cm long, holds 16 cm soil depth, serves one household",
+      "size": [
+        43,
+        20,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Stage boards",
+        "c": "Place two boards on ground"
+      },
+      {
+        "t": "Cut base",
+        "c": "Measure and cut 43 cm base"
+      },
+      {
+        "t": "Cut sides ends",
+        "c": "Measure and cut sides and ends"
+      },
+      {
+        "t": "Sand parts",
+        "c": "Sand all cut parts smooth"
+      },
+      {
+        "t": "Place base",
+        "c": "Set base flat on ground"
+      },
+      {
+        "t": "Place front",
+        "c": "Stand front on base"
+      },
+      {
+        "t": "Place back",
+        "c": "Stand back on base"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit left end between sides"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit right end between sides"
+      },
+      {
+        "t": "Screw front left",
+        "c": "Fasten front to left end"
+      },
+      {
+        "t": "Screw front right",
+        "c": "Fasten front to right end"
+      },
+      {
+        "t": "Screw back left",
+        "c": "Fasten back to left end"
+      },
+      {
+        "t": "Screw back right",
+        "c": "Fasten back to right end"
+      },
+      {
+        "t": "Screw base front",
+        "c": "Fasten base to front"
+      },
+      {
+        "t": "Screw base back",
+        "c": "Fasten base to back"
+      },
+      {
+        "t": "Screw base left",
+        "c": "Fasten base to left end"
+      },
+      {
+        "t": "Screw base right",
+        "c": "Fasten base to right end"
+      }
+    ]
+  },
+  "rawText": null
+}

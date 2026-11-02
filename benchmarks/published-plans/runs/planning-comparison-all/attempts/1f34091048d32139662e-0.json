@@ -1,0 +1,183 @@
+{
+  "row": {
+    "id": "1f34091048d32139662e-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "1f34091048d32139662e",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "a17: measured work position lies outside the part",
+            "design: the parts from board-a need 121.2 cm (40 + 40 + 14 + 14 + 12 and saw cuts) but board-a is 120 cm long: take parts from more objects, or make them shorter",
+            "design: the parts from board-c need 120.6 cm (18 + 18 + 84 and saw cuts) but board-c is 120 cm long: take parts from more objects, or make them shorter"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "a17: measured work position lies outside the part"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: the parts from board-a need 121.2 cm (40 + 40 + 14 + 14 + 12 and saw cuts) but board-a is 120 cm long: take parts from more objects, or make them shorter"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: the parts from board-c need 120.6 cm (18 + 18 + 84 and saw cuts) but board-c is 120 cm long: take parts from more objects, or make them shorter"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 2: the caption gives 14 cm, but no action carries it",
+        "step 3: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 5: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 7: the caption gives 10 mm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a17: measured work position lies outside the part",
+        "design: the parts from board-a need 121.2 cm (40 + 40 + 14 + 14 + 12 and saw cuts) but board-a is 120 cm long: take parts from more objects, or make them shorter",
+        "design: the parts from board-c need 120.6 cm (18 + 18 + 84 and saw cuts) but board-c is 120 cm long: take parts from more objects, or make them shorter"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.06805744999999999,
+    "responseSeconds": 62.05190578000003,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "Hold about 10 L soil for herbs: 40 cm trough, 20 cm soil depth, drained base on skids",
+      "size": [
+        40,
+        18,
+        24
+      ]
+    },
+    "steps": [
+      {
+        "t": "Lay out boards",
+        "c": "Lay all three boards flat on ground"
+      },
+      {
+        "t": "Mark wall cuts",
+        "c": "Mark 40, 40, 14 and 14 cm"
+      },
+      {
+        "t": "Cut side walls",
+        "c": "Saw wide board into 40, 40, 14, 14 cm"
+      },
+      {
+        "t": "Cut box bottom",
+        "c": "Saw second board into 40 and 80 cm"
+      },
+      {
+        "t": "Cut support feet",
+        "c": "Saw narrow board into 18, 18 and 84 cm"
+      },
+      {
+        "t": "Sand all parts",
+        "c": "Sand cut faces smooth on all parts"
+      },
+      {
+        "t": "Drill drain holes",
+        "c": "Drill five 10 mm holes through bottom"
+      },
+      {
+        "t": "Fit box together",
+        "c": "Fit bottom, sides, ends and feet together"
+      },
+      {
+        "t": "Screw base to walls",
+        "c": "Drive 10 screws up through base"
+      },
+      {
+        "t": "Screw box corners",
+        "c": "Drive 8 screws through sides into ends"
+      },
+      {
+        "t": "Screw on feet",
+        "c": "Drive 4 screws down into feet"
+      }
+    ]
+  },
+  "rawText": null
+}

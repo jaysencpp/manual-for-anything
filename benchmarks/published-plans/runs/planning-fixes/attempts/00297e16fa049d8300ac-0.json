@@ -1,0 +1,160 @@
+{
+  "row": {
+    "id": "00297e16fa049d8300ac-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "xhigh",
+    "trialId": "00297e16fa049d8300ac",
+    "sample": 1,
+    "planningEffort": "xhigh",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+          ]
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "structure",
+          "code": "inventory-change",
+          "message": "Plan changed the frozen inventory identity, dimensions or measurement provenance",
+          "rawOnly": true
+        },
+        {
+          "stage": "structure",
+          "code": "inventory-change",
+          "message": "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+        }
+      ],
+      "warnings": [
+        "scissors.cm: unconfirmed measurement",
+        "paper-sheet.cm: unconfirmed measurement",
+        "paper-sheet.w: unconfirmed measurement",
+        "paper-sheet.thick: unconfirmed measurement",
+        "Additional materials are required supplies, not objects observed in the photo.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.1355,
+    "responseSeconds": 25.308434023000007,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": {
+    "title": "Paper Snowflake Decoration",
+    "design": {
+      "purpose": "A flat six-pointed paper decoration for a window or card, made by one person.",
+      "size": [
+        20,
+        20,
+        0.1
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place paper sheet",
+        "c": "Place the 20 cm square sheet flat."
+      },
+      {
+        "t": "Fold first diagonal",
+        "c": "Fold top-right corner onto bottom-left corner."
+      },
+      {
+        "t": "Fold second diagonal",
+        "c": "Fold top-left corner onto bottom-right corner."
+      },
+      {
+        "t": "Fold right edge",
+        "c": "Fold top-right edge through top at 30°."
+      },
+      {
+        "t": "Fold left edge",
+        "c": "Fold top-left edge through top at 30°."
+      },
+      {
+        "t": "Trim wide end",
+        "c": "Cut straight across the wedge wide end."
+      },
+      {
+        "t": "Cut left notch",
+        "c": "Cut a triangular notch in left edge."
+      },
+      {
+        "t": "Cut right notch",
+        "c": "Cut a triangular notch in right edge."
+      },
+      {
+        "t": "Cut tip notch",
+        "c": "Cut a small notch across pointed tip."
+      },
+      {
+        "t": "Open snowflake",
+        "c": "Open sheet flat to reveal snowflake."
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,264 @@
+{
+  "row": {
+    "id": "6bec6c39716c6f3e2e72-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "low",
+    "trialId": "6bec6c39716c6f3e2e72",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "end-left: 18 cm part does not fit 14 cm gap",
+            "end-right: 18 cm part does not fit 14 cm gap",
+            "joint joint-front-left: Joint surfaces do not touch: side-front exit plane y=70 cm, end-left receiving plane y=68 cm (separation 2 cm). Position end-left relative to side-front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-front-right: Joint surfaces do not touch: side-front exit plane y=70 cm, end-right receiving plane y=68 cm (separation 2 cm). Position end-right relative to side-front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-back-left: Joint surfaces do not touch: side-back exit plane y=84 cm, end-left receiving plane y=86 cm (separation 2 cm). Position end-left relative to side-back; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-back-right: Joint surfaces do not touch: side-back exit plane y=84 cm, end-right receiving plane y=86 cm (separation 2 cm). Position end-right relative to side-back; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-base-front: Joint surfaces do not touch: side-front exit plane y=70 cm, base receiving plane y=68 cm (separation 2 cm). Position base relative to side-front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-base-back: Joint surfaces do not touch: side-back exit plane y=84 cm, base receiving plane y=86 cm (separation 2 cm). Position base relative to side-back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "end-left: 18 cm part does not fit 14 cm gap"
+        },
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "end-right: 18 cm part does not fit 14 cm gap"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-left: Joint surfaces do not touch: side-front exit plane y=70 cm, end-left receiving plane y=68 cm (separation 2 cm). Position end-left relative to side-front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-right: Joint surfaces do not touch: side-front exit plane y=70 cm, end-right receiving plane y=68 cm (separation 2 cm). Position end-right relative to side-front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-left: Joint surfaces do not touch: side-back exit plane y=84 cm, end-left receiving plane y=86 cm (separation 2 cm). Position end-left relative to side-back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-right: Joint surfaces do not touch: side-back exit plane y=84 cm, end-right receiving plane y=86 cm (separation 2 cm). Position end-right relative to side-back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-front: Joint surfaces do not touch: side-front exit plane y=70 cm, base receiving plane y=68 cm (separation 2 cm). Position base relative to side-front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-back: Joint surfaces do not touch: side-back exit plane y=84 cm, base receiving plane y=86 cm (separation 2 cm). Position base relative to side-back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 6: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 7: the caption gives 36 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a16: puts in screws-4, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a17: puts in screws-4, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a18: puts in screws-4, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a19: puts in screws-4, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a20: puts in screws-4, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a21: puts in screws-4, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a22: puts in screws-3, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a23: puts in screws-3, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.184648,
+    "responseSeconds": 46.56873238399997,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Herb Planter Box",
+    "design": {
+      "purpose": "A raised, drained planting box for one person to grow herbs or flowers, with at least 15 cm of soil depth above the base.",
+      "size": [
+        36,
+        18,
+        24
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for cutting."
+      },
+      {
+        "t": "Cut side boards",
+        "c": "Cut into 36, 36, 18, 18 and 10.8 cm pieces."
+      },
+      {
+        "t": "Place medium board",
+        "c": "Place the medium board flat for cutting."
+      },
+      {
+        "t": "Cut the base",
+        "c": "Cut a 36 cm base, leaving an 83.7 cm offcut."
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Place the narrow board flat for cutting."
+      },
+      {
+        "t": "Cut the feet",
+        "c": "Cut two 18 cm feet and keep the offcut aside."
+      },
+      {
+        "t": "Place the base",
+        "c": "Place the 36 cm base flat."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill five drainage holes through the base."
+      },
+      {
+        "t": "Sand the base",
+        "c": "Sand all cut edges of the base smooth."
+      },
+      {
+        "t": "Fit front side",
+        "c": "Stand the front side on the front of the base."
+      },
+      {
+        "t": "Fit back side",
+        "c": "Stand the back side on the back of the base."
+      },
+      {
+        "t": "Fit left end",
+        "c": "Fit the left end between the sides at the start."
+      },
+      {
+        "t": "Fit right end",
+        "c": "Fit the right end between the sides at the end."
+      },
+      {
+        "t": "Fit first foot",
+        "c": "Place the first foot crosswise under the base start."
+      },
+      {
+        "t": "Fit second foot",
+        "c": "Place the second foot crosswise under the base end."
+      },
+      {
+        "t": "Screw front left corner",
+        "c": "Drive screws through front side into left end."
+      },
+      {
+        "t": "Screw front right corner",
+        "c": "Drive screws through front side into right end."
+      },
+      {
+        "t": "Screw back left corner",
+        "c": "Drive screws through back side into left end."
+      },
+      {
+        "t": "Screw back right corner",
+        "c": "Drive screws through back side into right end."
+      },
+      {
+        "t": "Screw base front",
+        "c": "Drive screws through front side into base edge."
+      },
+      {
+        "t": "Screw base back",
+        "c": "Drive screws through back side into base edge."
+      },
+      {
+        "t": "Screw first foot",
+        "c": "Drive screws down through base into first foot."
+      },
+      {
+        "t": "Screw second foot",
+        "c": "Drive screws down through base into second foot."
+      }
+    ]
+  },
+  "rawText": null
+}

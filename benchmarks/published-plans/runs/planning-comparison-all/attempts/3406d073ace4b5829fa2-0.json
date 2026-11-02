@@ -1,0 +1,517 @@
+{
+  "row": {
+    "id": "3406d073ace4b5829fa2-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "high",
+    "trialId": "3406d073ace4b5829fa2",
+    "sample": 1,
+    "planningEffort": "high",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "joint joint-batten-a: needs two distinct known parts",
+            "joint joint-batten-b: needs two distinct known parts",
+            "joint joint-base-a: needs two distinct known parts",
+            "joint joint-base-b: needs two distinct known parts",
+            "joint joint-side-a-end-a: needs two distinct known parts",
+            "joint joint-side-a-end-b: needs two distinct known parts",
+            "joint joint-side-b-end-a: needs two distinct known parts",
+            "joint joint-side-b-end-b: needs two distinct known parts",
+            "step 8: k refers to unknown object side-a",
+            "step 8: k refers to unknown object side-b",
+            "step 8: k refers to unknown object end-a",
+            "step 8: k refers to unknown object end-b",
+            "step 8: k refers to unknown object base",
+            "step 8: k refers to unknown object batten-a",
+            "step 8: k refers to unknown object batten-b",
+            "step 9: k refers to unknown object batten-a",
+            "step 9: k refers to unknown object batten-b",
+            "step 9: to refers to unknown object batten-a",
+            "step 10: k refers to unknown object base",
+            "step 10: to refers to unknown object batten-a",
+            "step 10: also refers to unknown object batten-b",
+            "step 11: k refers to unknown object base",
+            "step 11: to refers to unknown object batten-a",
+            "step 11: to refers to unknown object batten-b",
+            "step 12: k refers to unknown object side-a",
+            "step 12: to refers to unknown object base",
+            "step 12: k refers to unknown object side-b",
+            "step 13: k refers to unknown object side-a",
+            "step 13: to refers to unknown object base",
+            "step 13: k refers to unknown object side-b",
+            "step 14: k refers to unknown object end-a",
+            "step 14: to refers to unknown object side-a",
+            "step 14: and refers to unknown object side-b",
+            "step 14: k refers to unknown object end-b",
+            "step 15: k refers to unknown object side-a",
+            "step 15: to refers to unknown object end-a",
+            "step 15: to refers to unknown object end-b",
+            "step 16: k refers to unknown object side-b",
+            "step 16: to refers to unknown object end-a",
+            "step 16: to refers to unknown object end-b",
+            "step 17: k refers to unknown object base"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "joint joint-batten-a: Both joint parts need numeric geometry",
+            "joint joint-batten-b: Both joint parts need numeric geometry",
+            "joint joint-base-a: Both joint parts need numeric geometry",
+            "joint joint-base-b: Both joint parts need numeric geometry",
+            "joint joint-side-a-end-a: Both joint parts need numeric geometry",
+            "joint joint-side-a-end-b: Both joint parts need numeric geometry",
+            "joint joint-side-b-end-a: Both joint parts need numeric geometry",
+            "joint joint-side-b-end-b: Both joint parts need numeric geometry"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-batten-a: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-batten-b: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-a: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-b: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-a-end-a: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-a-end-b: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-b-end-a: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-b-end-b: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object side-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object side-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object end-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object end-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object base"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object batten-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object batten-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 9: k refers to unknown object batten-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 9: k refers to unknown object batten-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 9: to refers to unknown object batten-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 10: k refers to unknown object base"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 10: to refers to unknown object batten-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 10: also refers to unknown object batten-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 11: k refers to unknown object base"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 11: to refers to unknown object batten-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 11: to refers to unknown object batten-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 12: k refers to unknown object side-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 12: to refers to unknown object base"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 12: k refers to unknown object side-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 13: k refers to unknown object side-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 13: to refers to unknown object base"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 13: k refers to unknown object side-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 14: k refers to unknown object end-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 14: to refers to unknown object side-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 14: and refers to unknown object side-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 14: k refers to unknown object end-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 15: k refers to unknown object side-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 15: to refers to unknown object end-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 15: to refers to unknown object end-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 16: k refers to unknown object side-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 16: to refers to unknown object end-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 16: to refers to unknown object end-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 17: k refers to unknown object base"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-batten-a: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-batten-b: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-a: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-b: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-side-a-end-a: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-side-a-end-b: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-side-b-end-a: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-side-b-end-b: Both joint parts need numeric geometry"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "joint joint-batten-a: needs two distinct known parts",
+        "joint joint-batten-b: needs two distinct known parts",
+        "joint joint-base-a: needs two distinct known parts",
+        "joint joint-base-b: needs two distinct known parts",
+        "joint joint-side-a-end-a: needs two distinct known parts",
+        "joint joint-side-a-end-b: needs two distinct known parts",
+        "joint joint-side-b-end-a: needs two distinct known parts",
+        "joint joint-side-b-end-b: needs two distinct known parts",
+        "step 8: k refers to unknown object side-a",
+        "step 8: k refers to unknown object side-b",
+        "step 8: k refers to unknown object end-a",
+        "step 8: k refers to unknown object end-b",
+        "step 8: k refers to unknown object base",
+        "step 8: k refers to unknown object batten-a",
+        "step 8: k refers to unknown object batten-b",
+        "step 9: k refers to unknown object batten-a",
+        "step 9: k refers to unknown object batten-b",
+        "step 9: to refers to unknown object batten-a",
+        "step 10: k refers to unknown object base",
+        "step 10: to refers to unknown object batten-a",
+        "step 10: also refers to unknown object batten-b",
+        "step 11: k refers to unknown object base",
+        "step 11: to refers to unknown object batten-a",
+        "step 11: to refers to unknown object batten-b",
+        "step 12: k refers to unknown object side-a",
+        "step 12: to refers to unknown object base",
+        "step 12: k refers to unknown object side-b",
+        "step 13: k refers to unknown object side-a",
+        "step 13: to refers to unknown object base",
+        "step 13: k refers to unknown object side-b",
+        "step 14: k refers to unknown object end-a",
+        "step 14: to refers to unknown object side-a",
+        "step 14: and refers to unknown object side-b",
+        "step 14: k refers to unknown object end-b",
+        "step 15: k refers to unknown object side-a",
+        "step 15: to refers to unknown object end-a",
+        "step 15: to refers to unknown object end-b",
+        "step 16: k refers to unknown object side-b",
+        "step 16: to refers to unknown object end-a",
+        "step 16: to refers to unknown object end-b",
+        "step 17: k refers to unknown object base"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.1537635,
+    "responseSeconds": 142.51614147699996,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Pine Trough Planter",
+    "design": {
+      "purpose": "Hold compost and herbs on patio for household",
+      "size": [
+        45,
+        18,
+        24
+      ]
+    },
+    "steps": [
+      {
+        "t": "Position wide board",
+        "c": "Lay wide board flat on ground"
+      },
+      {
+        "t": "Mark sides, ends",
+        "c": "Mark 45 cm sides and 14 cm ends"
+      },
+      {
+        "t": "Cut sides, ends",
+        "c": "Saw board into sides and ends"
+      },
+      {
+        "t": "Position middle board",
+        "c": "Lay middle board flat on ground"
+      },
+      {
+        "t": "Mark, cut base",
+        "c": "Mark 45 cm and saw base"
+      },
+      {
+        "t": "Position narrow board",
+        "c": "Lay narrow board flat on ground"
+      },
+      {
+        "t": "Mark, cut battens",
+        "c": "Mark 18 cm and saw battens"
+      },
+      {
+        "t": "Sand parts smooth",
+        "c": "Sand all cut parts smooth"
+      },
+      {
+        "t": "Lay battens",
+        "c": "Lay two battens flat apart"
+      },
+      {
+        "t": "Fit base",
+        "c": "Lay base across both battens"
+      },
+      {
+        "t": "Screw base battens",
+        "c": "Drive screws through base into battens"
+      },
+      {
+        "t": "Fit long sides",
+        "c": "Stand long sides on base edges"
+      },
+      {
+        "t": "Screw sides base",
+        "c": "Drive screws through sides into base"
+      },
+      {
+        "t": "Fit ends",
+        "c": "Fit ends between sides"
+      },
+      {
+        "t": "Screw ends front",
+        "c": "Drive screws through front into ends"
+      },
+      {
+        "t": "Screw ends back",
+        "c": "Drive screws through back into ends"
+      },
+      {
+        "t": "Drill drain holes",
+        "c": "Drill 5 drainage holes 8 mm in base"
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,33 @@
+You draw the reference panel of a short IKEA-style instruction film. The film's engine animates each step of the build (given at the end) on the left of the frame and writes the step's caption above it. Beside the animation, on the right, a step may also show a panel: the diagram a person who does this craft would read to follow that step exactly.
+
+Many crafts have their own diagram language, and their makers follow it more exactly than words: a crochet or knitting symbol chart (each stitch its standard symbol, worked round by round or row by row), origami's fold diagrams (valley and mountain lines, the standard arrows), a knot's over-and-under drawing, a sewing pattern piece (grainline, notches, seam allowance), a cutting diagram (every part laid out on its board or sheet, the offcut hatched), a wiring diagram, a planting plan, a quilt block's layout. Use the one this build's craft really uses, drawn by its own conventions; it need not be one of these. Give a step a panel only where it shows that step more exactly than the animation and its caption already do. A recipe's amounts, times and heat are in its captions; a panel would repeat them, so most recipes have none. If no step gains from one, answer {"panels": null}.
+
+What a panel must be:
+- Exact, from one source of truth. What to draw comes first from the operation facts (each step's quantities, sites and joints, given at the end), then from the script's objects and parts; the captions only explain them, and where a caption seems to disagree, draw the facts. Every count, size and order matches (a round of 12 stitches shows 12 symbols; a fold shown is the fold the step makes). Never draw what the script does not say. Use repeat elements referring to those operation IDs; the engine derives repeated marks and quantity labels from their sites/counts.
+- In the craft's own symbols, one for each distinct action, placed where it really goes: a crochet chart's increase is its own symbol (two stitches fanning out of one), each stitch sits over the one it is worked into and the rounds touch; an origami valley fold is dashed and a mountain fold dash-dotted, each with its arrow; a cutting diagram's parts are to scale on their board.
+- Cumulative, where the craft's diagram is: what earlier steps made stays, drawn in the ink at a lighter weight or alpha; what this step adds is drawn in the ink at full strength, its newest marks picked out in the accent, and the engine reveals its repeated marks as that step progresses, so the panel grows as the animation does. Nothing else in it moves: no drift, pulse or loop; at a given p it is the same picture.
+- Readable at a glance: one clear diagram, centred, filling the area; a key of at most three symbols where the diagram uses symbols ("× sc", "○ ch"), text at least 18 px. No title inside: the engine writes each step's label above the area.
+- Plain: no jokes, no decoration, no characters.
+
+Return structured diagram data. Do not write JavaScript. The engine renders these elements deterministically in a 400 by 400 panel with origin at upper left. Use at most 64 elements per step. Supported elements:
+- {"type":"path","x":0,"y":0,"d":"M20 40 L200 40","fill":"none","stroke":"#1d2b4f"} for a custom static diagram contour. Coordinates are local to x,y. Keep all geometry inside the panel.
+- {"type":"text","x":20,"y":30,"text":"× sc; ○ ch"} for a brief symbol key (18px).
+- {"type":"object","key":"an-existing-object-key","x":20,"y":40,"width":100,"height":200} to reuse the actual approved object artwork. Only keys present in the reference manifest are available. Prefer this to independently redrawing that same object. This shows the original object's state; use explicit diagram paths for a changed state.
+- {"type":"repeat","operation":"existing-operation-id","symbol":"cross","layout":"ring","x":50,"y":70,"width":280,"height":240}. The engine derives the number of marks from that operation's facts and reveals them with progress. Never provide your own count. Supported symbols: cross (single crochet), chain (chain stitch), increase (two stitches worked from one site), dot (a work site). Supported layouts: row, ring, sites (use the operation's actual normalized work sites). Choose a symbol matching what happens at EACH site, not the total resulting stitch count. An increase operation with six work sites shows six increases, not twelve increases. Reference each operation only once in a diagram. Earlier operations remain faint; the current operation builds with progress. Reserve 28px below repetitions for their engine-generated site count.
+
+If this vocabulary cannot represent a craft accurately, return panels null rather than inventing symbols or drawing repeated quantities by hand. The engine already supplies fold, reshape and strand panels; do not duplicate them. Static paths and text are for contours and keys, never a substitute for fact-derived repeated marks or quantity labels.
+The attached reference images, when present, establish the actual object identities and colours. Object reference manifest: {{references}}
+Answer with ONE JSON object:
+{"panels":{"diagrams":[{"step":0,"label":"Round 1","elements":[...]}]}}
+Or {"panels":null} when no additional diagram helps.
+
+The build: "{{title}}" ({{sub}}; a {{kind}}).
+
+The build, as the script wrote it:
+{{script}}
+
+The steps, numbered from 0 (the engine shows them from 1):
+{{steps}}
+
+The operation facts (authoritative), for every step:
+{{facts}}

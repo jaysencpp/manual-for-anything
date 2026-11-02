@@ -1,0 +1,58 @@
+@font-face { font-family:Inter; src:url('/assets/fonts/inter-400.ttf'); font-weight:400 }
+@font-face { font-family:Inter; src:url('/assets/fonts/inter-600.ttf'); font-weight:600 }
+@font-face { font-family:Inter; src:url('/assets/fonts/inter-700.ttf'); font-weight:700 }
+.comparison-page { margin:0; padding:0; max-width:none; background:#f3efe6; color:#1d2b4f; font:400 16px/1.45 Inter,system-ui,sans-serif }
+.comparison-page * { box-sizing:border-box }
+.comparison-page [hidden] { display:none!important }
+.comparison-page .bar { display:flex; align-items:center; gap:12px; width:100%; margin:0; padding:24px clamp(20px,4vw,56px); border-bottom:1px solid #d8d5cd }
+.comparison-page .brand { color:inherit; text-decoration:none; display:flex; align-items:center; gap:10px; font-size:16px; font-weight:650; letter-spacing:-.02em }
+.comparison-page main { width:min(1240px,100% - 48px); margin:0 auto; padding:56px 0 32px }
+.comparison-page .comparison-nav { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 32px }
+.comparison-page .comparison-nav a { padding:10px 20px; border:1px solid #c9ccc5; border-radius:30px; text-decoration:none; color:inherit; font-size:14px }
+.comparison-page .comparison-nav [aria-current="page"] { background:#1d2b4f; color:white; border-color:#1d2b4f }
+.comparison-page .intro { max-width:760px; margin-bottom:32px }
+.comparison-page .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:11px; font-weight:650; color:#5b665d; margin:0 0 12px }
+.comparison-page h1 { font-size:clamp(34px,5.5vw,64px); line-height:1.06; font-weight:550; letter-spacing:-.055em; margin:0 0 22px }
+.comparison-page h2 { font-size:28px; line-height:1.15; letter-spacing:-.035em; margin:0 0 16px; font-weight:550 }
+.comparison-page p { line-height:1.6 }
+.comparison-page .lede { font-size:17px; color:#58616d; max-width:590px }
+.comparison-page .cases { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 30px }
+.comparison-page .cases a, .comparison-page .cases button { font:inherit; font-size:14px; padding:10px 20px; border:1px solid #c9ccc5; border-radius:30px; text-decoration:none; color:inherit; background:transparent; cursor:pointer }
+.comparison-page .cases [aria-current="true"], .comparison-page .cases [aria-current="page"] { background:#1d2b4f; color:white; border-color:#1d2b4f }
+.comparison-page .model-tools { display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin:-10px 0 28px }
+.comparison-page .model-tools label { display:flex; align-items:center; gap:12px; font-size:13px; margin:0 }
+.comparison-page .model-tools select, .comparison-page .model-tools button { font:inherit; font-size:13px; color:inherit; padding:10px 14px; border:1px solid #c9ccc5; border-radius:8px; background:#fbfaf6 }
+.comparison-page .reference-panel { background:#fbfaf6; border:1px solid #d8d5cd; border-radius:16px; padding:24px; display:grid; grid-template-columns:minmax(180px,280px) 1fr; gap:32px; margin:0 }
+.comparison-page .reference-panel > * { min-width:0 }
+.comparison-page .reference-copy { padding:12px 0; min-width:0 }
+.comparison-page .reference-copy h2 { font-size:30px }
+.comparison-page .reference-copy>p { margin:8px 0 14px; font-size:14px }
+.comparison-page .results-heading { margin:44px 0 22px; display:flex; gap:20px; align-items:end; justify-content:space-between }
+.comparison-page .results-heading h2 { margin-bottom:0 }
+.comparison-page .results-heading>p { font-size:12px; color:#68717c; margin:0 }
+.comparison-page footer { margin-top:24px; padding:24px; display:flex; justify-content:space-between; gap:20px; font-size:12px; color:#68717c; border-top:1px solid #d8d5cd }
+.comparison-page footer a { color:inherit }
+.comparison-page :focus-visible { outline:3px solid #667f5e; outline-offset:4px }
+.planning-page #comparison { padding:0; background:transparent; border:0; border-radius:0; margin:0 }
+.planning-page #compare-photo { width:100%; height:260px; object-fit:contain; background:#eeece5; padding:12px; border-radius:10px }
+.planning-page #compare-inventory { font-size:14px }
+.planning-page .plan-cards { gap:20px }
+.planning-page .plan-card { padding:16px; border-radius:14px }
+.planning-page .plan-card h3 { font-size:19px; font-weight:600; letter-spacing:-.03em }
+.planning-page #technical { margin-top:44px }
+@media(max-width:850px) {
+  .comparison-page .reference-panel { grid-template-columns:minmax(140px,220px) 1fr; gap:20px }
+  .planning-page .plan-cards { grid-template-columns:repeat(2,minmax(0,1fr)) }
+}
+@media(max-width:560px) {
+  .comparison-page .bar { padding:18px 16px }
+  .comparison-page .brand { font-size:13px }
+  .comparison-page main { width:calc(100% - 32px); padding-top:36px }
+  .comparison-page .reference-panel { grid-template-columns:1fr; padding:16px; gap:10px }
+  .comparison-page .results-heading { align-items:start; flex-direction:column; gap:12px }
+  .planning-page #compare-photo { height:220px }
+  .planning-page .plan-cards, .planning-page .plan-cards.compare { grid-template-columns:1fr }
+}
+
+.comparison-page .run-tools { margin:0 0 12px }
+.planning-page #run-note { margin:0 0 28px; max-width:760px }

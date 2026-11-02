@@ -1,0 +1,398 @@
+{
+  "row": {
+    "id": "efa4a7621fbde50d9004-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "efa4a7621fbde50d9004",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "a13: declared fastener length must equal the planned driven depth",
+            "a13: fastening tool is incompatible with the fastener",
+            "a15: declared fastener length must equal the planned driven depth",
+            "a15: fastening tool is incompatible with the fastener",
+            "a17: declared fastener length must equal the planned driven depth",
+            "a17: fastening tool is incompatible with the fastener",
+            "a19: declared fastener length must equal the planned driven depth",
+            "a19: fastening tool is incompatible with the fastener",
+            "a21: declared fastener length must equal the planned driven depth",
+            "a21: fastening tool is incompatible with the fastener",
+            "a23: declared fastener length must equal the planned driven depth",
+            "a23: fastening tool is incompatible with the fastener",
+            "a25: declared fastener length must equal the planned driven depth",
+            "a25: fastening tool is incompatible with the fastener",
+            "a27: declared fastener length must equal the planned driven depth",
+            "a27: fastening tool is incompatible with the fastener"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "joint joint-front-left: a 4 cm fastener goes only 2 cm into left after passing 2 cm of front; it needs 5 cm: use 7–18 cm fasteners",
+            "joint joint-front-right: a 4 cm fastener goes only 2 cm into right after passing 2 cm of front; it needs 5 cm: use 7–18 cm fasteners",
+            "joint joint-back-left: a 4 cm fastener goes only 2 cm into left after passing 2 cm of back; it needs 5 cm: use 7–18 cm fasteners",
+            "joint joint-back-right: a 4 cm fastener goes only 2 cm into right after passing 2 cm of back; it needs 5 cm: use 7–18 cm fasteners",
+            "joint joint-base-front: a 4 cm fastener goes only 2 cm into front after passing 2 cm of base; it needs 5 cm: use 7–20 cm fasteners",
+            "joint joint-base-back: a 4 cm fastener goes only 2 cm into back after passing 2 cm of base; it needs 5 cm: use 7–20 cm fasteners",
+            "joint joint-base-left: a 4 cm fastener goes only 2 cm into left after passing 2 cm of base; it needs 5 cm: use 7–17 cm fasteners",
+            "joint joint-base-right: a 4 cm fastener goes only 2 cm into right after passing 2 cm of base; it needs 5 cm: use 7–17 cm fasteners"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a13: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a13: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a15: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a15: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a17: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a17: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a19: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a19: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a21: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a21: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a23: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a23: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a25: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a25: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a27: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a27: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "geometry",
+          "code": "stock-conservation",
+          "message": "joint joint-front-left: a 4 cm fastener goes only 2 cm into left after passing 2 cm of front; it needs 5 cm: use 7–18 cm fasteners"
+        },
+        {
+          "stage": "geometry",
+          "code": "stock-conservation",
+          "message": "joint joint-front-right: a 4 cm fastener goes only 2 cm into right after passing 2 cm of front; it needs 5 cm: use 7–18 cm fasteners"
+        },
+        {
+          "stage": "geometry",
+          "code": "stock-conservation",
+          "message": "joint joint-back-left: a 4 cm fastener goes only 2 cm into left after passing 2 cm of back; it needs 5 cm: use 7–18 cm fasteners"
+        },
+        {
+          "stage": "geometry",
+          "code": "stock-conservation",
+          "message": "joint joint-back-right: a 4 cm fastener goes only 2 cm into right after passing 2 cm of back; it needs 5 cm: use 7–18 cm fasteners"
+        },
+        {
+          "stage": "geometry",
+          "code": "stock-conservation",
+          "message": "joint joint-base-front: a 4 cm fastener goes only 2 cm into front after passing 2 cm of base; it needs 5 cm: use 7–20 cm fasteners"
+        },
+        {
+          "stage": "geometry",
+          "code": "stock-conservation",
+          "message": "joint joint-base-back: a 4 cm fastener goes only 2 cm into back after passing 2 cm of base; it needs 5 cm: use 7–20 cm fasteners"
+        },
+        {
+          "stage": "geometry",
+          "code": "stock-conservation",
+          "message": "joint joint-base-left: a 4 cm fastener goes only 2 cm into left after passing 2 cm of base; it needs 5 cm: use 7–17 cm fasteners"
+        },
+        {
+          "stage": "geometry",
+          "code": "stock-conservation",
+          "message": "joint joint-base-right: a 4 cm fastener goes only 2 cm into right after passing 2 cm of base; it needs 5 cm: use 7–17 cm fasteners"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 6: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 7: the caption gives 60 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a13: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a13: declared fastener length must equal the planned driven depth",
+        "a13: fastening tool is incompatible with the fastener",
+        "a15: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a15: declared fastener length must equal the planned driven depth",
+        "a15: fastening tool is incompatible with the fastener",
+        "a17: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a17: declared fastener length must equal the planned driven depth",
+        "a17: fastening tool is incompatible with the fastener",
+        "a19: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a19: declared fastener length must equal the planned driven depth",
+        "a19: fastening tool is incompatible with the fastener",
+        "a21: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a21: declared fastener length must equal the planned driven depth",
+        "a21: fastening tool is incompatible with the fastener",
+        "a23: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a23: declared fastener length must equal the planned driven depth",
+        "a23: fastening tool is incompatible with the fastener",
+        "a25: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a25: declared fastener length must equal the planned driven depth",
+        "a25: fastening tool is incompatible with the fastener",
+        "a27: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a27: declared fastener length must equal the planned driven depth",
+        "a27: fastening tool is incompatible with the fastener"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.142708,
+    "responseSeconds": 19.038583514999946,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Herb Planter Box",
+    "design": {
+      "purpose": "A rectangular outdoor planter for herbs or flowers, with at least 15 cm soil depth and drainage gaps around the base edges.",
+      "size": [
+        60,
+        20,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for cutting."
+      },
+      {
+        "t": "Cut the base",
+        "c": "Cut a 60 cm base; keep the 59.7 cm offcut."
+      },
+      {
+        "t": "Place second board",
+        "c": "Place the second board flat for cutting."
+      },
+      {
+        "t": "Cut front and back",
+        "c": "Cut 59 cm front and back; keep 1.4 cm offcut."
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Place the narrow board flat for cutting."
+      },
+      {
+        "t": "Cut both ends",
+        "c": "Cut two 16 cm ends; keep 87.4 cm offcut."
+      },
+      {
+        "t": "Place the base",
+        "c": "Place the 60 cm base flat on the floor."
+      },
+      {
+        "t": "Place the front",
+        "c": "Stand the front on the base front edge."
+      },
+      {
+        "t": "Place the back",
+        "c": "Stand the back on the base back edge."
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between front and back."
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between front and back."
+      },
+      {
+        "t": "Drill front left",
+        "c": "Drill two pilot holes at the front-left corner."
+      },
+      {
+        "t": "Screw front left",
+        "c": "Drive {count} screws at the front-left corner."
+      },
+      {
+        "t": "Drill front right",
+        "c": "Drill two pilot holes at the front-right corner."
+      },
+      {
+        "t": "Screw front right",
+        "c": "Drive {count} screws at the front-right corner."
+      },
+      {
+        "t": "Drill back left",
+        "c": "Drill two pilot holes at the back-left corner."
+      },
+      {
+        "t": "Screw back left",
+        "c": "Drive {count} screws at the back-left corner."
+      },
+      {
+        "t": "Drill back right",
+        "c": "Drill two pilot holes at the back-right corner."
+      },
+      {
+        "t": "Screw back right",
+        "c": "Drive {count} screws at the back-right corner."
+      },
+      {
+        "t": "Drill base front",
+        "c": "Drill two pilot holes up through base into front."
+      },
+      {
+        "t": "Screw base front",
+        "c": "Drive {count} screws up into the front."
+      },
+      {
+        "t": "Drill base back",
+        "c": "Drill two pilot holes up through base into back."
+      },
+      {
+        "t": "Screw base back",
+        "c": "Drive {count} screws up into the back."
+      },
+      {
+        "t": "Drill base left",
+        "c": "Drill two pilot holes up through base into left end."
+      },
+      {
+        "t": "Screw base left",
+        "c": "Drive {count} screws up into the left end."
+      },
+      {
+        "t": "Drill base right",
+        "c": "Drill two pilot holes up through base into right end."
+      },
+      {
+        "t": "Screw base right",
+        "c": "Drive {count} screws up into the right end."
+      },
+      {
+        "t": "Sand the edges",
+        "c": "Sand all cut edges smooth."
+      }
+    ]
+  },
+  "rawText": null
+}

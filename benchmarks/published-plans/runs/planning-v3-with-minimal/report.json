@@ -1,0 +1,2303 @@
+{
+  "mode": "live-planner",
+  "created": "2026-10-31T20:40:05.707Z",
+  "cases": [
+    {
+      "id": "wood8",
+      "title": "Wood build",
+      "diagnostic": false,
+      "qualification": {
+        "machine": "pass",
+        "eligibleForPilot": true,
+        "taskReview": "pending",
+        "reason": "Saved witness passes current machine gates; human task review remains pending."
+      },
+      "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+      "inventory": [
+        {
+          "k": "board-a",
+          "n": "wide weathered pine board",
+          "cm": 120,
+          "w": 20,
+          "thick": 2
+        },
+        {
+          "k": "board-b",
+          "n": "weathered pine board",
+          "cm": 120,
+          "w": 18,
+          "thick": 2
+        },
+        {
+          "k": "board-c",
+          "n": "narrow weathered pine board",
+          "cm": 120,
+          "w": 15,
+          "thick": 2
+        }
+      ],
+      "expectations": [
+        "Does this fulfill the request?",
+        "Are materials grounded and quantities sufficient?",
+        "Are steps complete and captions faithful?",
+        "Does the final result follow from shown operations?"
+      ]
+    },
+    {
+      "id": "scissors",
+      "title": "Scissors",
+      "diagnostic": true,
+      "qualification": {
+        "machine": "unqualified",
+        "eligibleForPilot": false,
+        "taskReview": "pending",
+        "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+      },
+      "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+      "inventory": [
+        {
+          "k": "scissors",
+          "n": "blue-handled scissors",
+          "cm": 20
+        }
+      ],
+      "expectations": [
+        "Does the proposed project have all essential materials?",
+        "Are additional supplies explicitly declared rather than invented as photographed objects?",
+        "Are the steps complete and consistent with the planned actions?",
+        "Does the stated result follow from the available materials and steps?"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "scheduled": 2,
+      "completed": 2,
+      "strictPasses": 0,
+      "strictFailures": 2,
+      "pending": 0,
+      "strictPassAt1": 0,
+      "strictWilson95": [
+        0,
+        0.6576197724933469
+      ],
+      "machinePassAt1": 0,
+      "rawFirstResponsePasses": 0,
+      "selectedMachinePasses": 0,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 15.350563549499988,
+      "knownCost": 0.22130880000000003,
+      "unknownCosts": 0,
+      "requestCount": 2,
+      "costPerStrictPass": null,
+      "silentBadPlans": 2,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 0,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "scheduled": 2,
+      "completed": 2,
+      "strictPasses": 0,
+      "strictFailures": 2,
+      "pending": 0,
+      "strictPassAt1": 0,
+      "strictWilson95": [
+        0,
+        0.6576197724933469
+      ],
+      "machinePassAt1": 0,
+      "rawFirstResponsePasses": 0,
+      "selectedMachinePasses": 0,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 28.75898542100001,
+      "knownCost": 0.2738528,
+      "unknownCosts": 0,
+      "requestCount": 2,
+      "costPerStrictPass": null,
+      "silentBadPlans": 0,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 0,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "scheduled": 2,
+      "completed": 2,
+      "strictPasses": 0,
+      "strictFailures": 1,
+      "pending": 1,
+      "strictPassAt1": null,
+      "strictWilson95": null,
+      "machinePassAt1": 0.5,
+      "rawFirstResponsePasses": 1,
+      "selectedMachinePasses": 1,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 42.37105676699999,
+      "knownCost": 0.33287279999999997,
+      "unknownCosts": 0,
+      "requestCount": 2,
+      "costPerStrictPass": null,
+      "silentBadPlans": 0,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 1,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "scheduled": 2,
+      "completed": 2,
+      "strictPasses": 0,
+      "strictFailures": 2,
+      "pending": 0,
+      "strictPassAt1": 0,
+      "strictWilson95": [
+        0,
+        0.6576197724933469
+      ],
+      "machinePassAt1": 0,
+      "rawFirstResponsePasses": 0,
+      "selectedMachinePasses": 0,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 18.213250267499994,
+      "knownCost": 0.081235,
+      "unknownCosts": 0,
+      "requestCount": 2,
+      "costPerStrictPass": null,
+      "silentBadPlans": 0,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 0,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "scheduled": 2,
+      "completed": 2,
+      "strictPasses": 0,
+      "strictFailures": 1,
+      "pending": 1,
+      "strictPassAt1": null,
+      "strictWilson95": null,
+      "machinePassAt1": 0.5,
+      "rawFirstResponsePasses": 1,
+      "selectedMachinePasses": 1,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 32.604121721,
+      "knownCost": 0.11493324999999999,
+      "unknownCosts": 0,
+      "requestCount": 2,
+      "costPerStrictPass": null,
+      "silentBadPlans": 0,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 1,
+          "strictPasses": 0
+        }
+      ]
+    }
+  ],
+  "failureCounts": {
+    "semantics/joint-geometry": 4,
+    "geometry/joint-geometry": 3,
+    "rawSchema/rawSchema-failure": 3,
+    "semantics/semantics-failure": 4,
+    "geometry/geometry-failure": 3,
+    "response/invalid-json": 2,
+    "structure/invalid-json": 2
+  },
+  "models": [
+    "muse-wonder-1.0",
+    "muse-spark-1.3"
+  ],
+  "efforts": [
+    "minimal",
+    "low",
+    "medium"
+  ],
+  "trials": [
+    {
+      "id": "93e9be7912e07c2d3651",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "d7417ed441911149e446",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "7626d9fd4df3cd6e19e9",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "681208641ad487a67d52",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-22082af47d0c8940896b",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-50c8520f8b00cd811632",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-6c694e9e49d81442173b",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-afbc59c5b0b1f048d5c2",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-7422bb05074284c0b7eb",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-81517d41ac19e2f8e64f",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-7ea3ae956f7b2e977187",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-fb6dd5830c64021dc3a4",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-9ea4d1a1a723c45ccea2",
+      "caseId": "scissors",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-ce2381e58a97282abbc0",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-1568344ec6ff3f41a127",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-8ab516412084536c9447",
+      "caseId": "scissors",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-61e743c09863f0df927b",
+      "caseId": "scissors",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-be4585f8225aa1e02073",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-76a7e4ad03b68332f096",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-76c1c43317041be686b4",
+      "caseId": "scissors",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    }
+  ],
+  "machinePasses": 7,
+  "strictPasses": 0,
+  "pendingHuman": 20,
+  "rows": [
+    {
+      "id": "93e9be7912e07c2d3651-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "93e9be7912e07c2d3651",
+      "sample": 1,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: cl1: attachment operation needs an explicit joint"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: cl1: attachment operation needs an explicit joint"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "screws-35: 3.5 cm, the depth its joints drive it",
+          "screws-40: 4 cm, the depth its joints drive it"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "cl1: attachment operation needs an explicit joint",
+          "f1: declared fastener length must equal the planned driven depth",
+          "f2: declared fastener length must equal the planned driven depth",
+          "f3: declared fastener length must equal the planned driven depth",
+          "f4: declared fastener length must equal the planned driven depth",
+          "f5: declared fastener length must equal the planned driven depth",
+          "f6: declared fastener length must equal the planned driven depth",
+          "f7: declared fastener length must equal the planned driven depth",
+          "f8: declared fastener length must equal the planned driven depth"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.15024,
+      "responseSeconds": 19.534018225999986,
+      "repairDecision": null
+    },
+    {
+      "id": "d7417ed441911149e446-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "d7417ed441911149e446",
+      "sample": 2,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "fail",
+            "errors": [
+              "joint front-left: Joint surfaces do not touch: front exit plane y=79 cm, left-end receiving plane y=77 cm (separation 2 cm). Position left-end relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+              "joint front-right: Joint surfaces do not touch: front exit plane y=79 cm, right-end receiving plane y=77 cm (separation 2 cm). Position right-end relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+              "joint back-left: Joint surfaces do not touch: back exit plane y=77 cm, left-end receiving plane y=79 cm (separation 2 cm). Position left-end relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+              "joint back-right: Joint surfaces do not touch: back exit plane y=77 cm, right-end receiving plane y=79 cm (separation 2 cm). Position right-end relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+            ]
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "geometry",
+            "code": "joint-geometry",
+            "message": "joint front-left: Joint surfaces do not touch: front exit plane y=79 cm, left-end receiving plane y=77 cm (separation 2 cm). Position left-end relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          },
+          {
+            "stage": "geometry",
+            "code": "joint-geometry",
+            "message": "joint front-right: Joint surfaces do not touch: front exit plane y=79 cm, right-end receiving plane y=77 cm (separation 2 cm). Position right-end relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          },
+          {
+            "stage": "geometry",
+            "code": "joint-geometry",
+            "message": "joint back-left: Joint surfaces do not touch: back exit plane y=77 cm, left-end receiving plane y=79 cm (separation 2 cm). Position left-end relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          },
+          {
+            "stage": "geometry",
+            "code": "joint-geometry",
+            "message": "joint back-right: Joint surfaces do not touch: back exit plane y=77 cm, right-end receiving plane y=79 cm (separation 2 cm). Position right-end relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          }
+        ],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 6: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 8: the caption gives 50 cm, but no action carries it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "step 14: caption made a count of its screws",
+          "step 15: caption made a count of its screws",
+          "step 16: caption made a count of its screws",
+          "step 17: caption made a count of its screws",
+          "step 18: caption made a count of its screws",
+          "step 19: caption made a count of its screws",
+          "step 20: caption made a count of its screws"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "f1: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f2: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f3: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f4: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f5: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f6: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f7: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f8: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0710688,
+      "responseSeconds": 11.16710887299999,
+      "repairDecision": null
+    },
+    {
+      "id": "7626d9fd4df3cd6e19e9-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "7626d9fd4df3cd6e19e9",
+      "sample": 1,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 74,
+            "duration": 49.999999999999986,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper-1.cm: unconfirmed measurement",
+          "paper-1.w: unconfirmed measurement",
+          "paper-1.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "step 1: the caption gives 21 cm, but no action carries it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet",
+          "a8: a cut through the folded sheet",
+          "a9: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.079116,
+      "responseSeconds": 7.145269472000015,
+      "repairDecision": null
+    },
+    {
+      "id": "681208641ad487a67d52-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "681208641ad487a67d52",
+      "sample": 2,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 74,
+            "duration": 49.999999999999986,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper-1.cm: unconfirmed measurement",
+          "paper-1.w: unconfirmed measurement",
+          "paper-1.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "step 1: the caption gives 21 cm, but no action carries it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet",
+          "a8: a cut through the folded sheet",
+          "a9: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.079396,
+      "responseSeconds": 6.286671172000002,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-22082af47d0c8940896b-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-22082af47d0c8940896b",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "fail",
+            "errors": [
+              "$.steps[2].do[0]: does not match any allowed schema branch",
+              "$.steps[3].do[0]: does not match any allowed schema branch",
+              "$.steps[4].do[0]: does not match any allowed schema branch",
+              "$.steps[5].do[0]: does not match any allowed schema branch"
+            ]
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: joint front-left: needs two distinct known parts; joint front-right: needs two distinct known parts; joint back-left: needs two distinct known parts; joint back-right: needs two distinct known parts; joint base-front: needs two distinct known parts; joint base-back: needs two distinct known parts; c1: intent cut needs a faithful demonstration, not place; c1: duplicate operation ID; c1: intent cut needs a faithful demonstration, not place; c1: duplicate operation ID; c2: intent cut needs a faithful demonstration, not place; joint front-left: no attachment operation; joint front-right: no attachment operation; joint back-left: no attachment operation; joint back-right: no attachment operation; joint base-front: no attachment operation; joint base-back: no attachment operation"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[2].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[4].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[5].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: joint front-left: needs two distinct known parts; joint front-right: needs two distinct known parts; joint back-left: needs two distinct known parts; joint back-right: needs two distinct known parts; joint base-front: needs two distinct known parts; joint base-back: needs two distinct known parts; c1: intent cut needs a faithful demonstration, not place; c1: duplicate operation ID; c1: intent cut needs a faithful demonstration, not place; c1: duplicate operation ID; c2: intent cut needs a faithful demonstration, not place; joint front-left: no attachment operation; joint front-right: no attachment operation; joint back-left: no attachment operation; joint back-right: no attachment operation; joint base-front: no attachment operation; joint base-back: no attachment operation"
+          }
+        ],
+        "warnings": [],
+        "corrections": [],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [
+          "joint front-left: needs two distinct known parts",
+          "joint front-right: needs two distinct known parts",
+          "joint back-left: needs two distinct known parts",
+          "joint back-right: needs two distinct known parts",
+          "joint base-front: needs two distinct known parts",
+          "joint base-back: needs two distinct known parts",
+          "c1: intent cut needs a faithful demonstration, not place",
+          "c1: duplicate operation ID",
+          "c2: intent cut needs a faithful demonstration, not place",
+          "joint front-left: no attachment operation",
+          "joint front-right: no attachment operation",
+          "joint back-left: no attachment operation",
+          "joint back-right: no attachment operation",
+          "joint base-front: no attachment operation",
+          "joint base-back: no attachment operation",
+          "step 5: work target board-a must name a piece declared in makes, not source material",
+          "step 5: work source to must name a distinct photographed material",
+          "step 5: work progress must be between 0 and 1",
+          "design: base is never made or used by the steps",
+          "design: front is never made or used by the steps",
+          "design: back is never made or used by the steps",
+          "design: left is never made or used by the steps",
+          "design: right is never made or used by the steps"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.048089,
+      "responseSeconds": 26.378689318,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-50c8520f8b00cd811632-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-50c8520f8b00cd811632",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "fail",
+            "errors": [
+              "joint foot-a-base: Fastener must enter the receiver without exiting its far face: foot-a is 20 cm and base 2 cm thick there, so a 3.5 cm fastener ends inside foot-a; use one longer than 20 cm and at most 22 cm (the fastener's cm and the joint's depthCm)",
+              "joint foot-b-base: Fastener must enter the receiver without exiting its far face: foot-b is 20 cm and base 2 cm thick there, so a 3.5 cm fastener ends inside foot-b; use one longer than 20 cm and at most 22 cm (the fastener's cm and the joint's depthCm)"
+            ]
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "geometry",
+            "code": "joint-geometry",
+            "message": "joint foot-a-base: Fastener must enter the receiver without exiting its far face: foot-a is 20 cm and base 2 cm thick there, so a 3.5 cm fastener ends inside foot-a; use one longer than 20 cm and at most 22 cm (the fastener's cm and the joint's depthCm)"
+          },
+          {
+            "stage": "geometry",
+            "code": "joint-geometry",
+            "message": "joint foot-b-base: Fastener must enter the receiver without exiting its far face: foot-b is 20 cm and base 2 cm thick there, so a 3.5 cm fastener ends inside foot-b; use one longer than 20 cm and at most 22 cm (the fastener's cm and the joint's depthCm)"
+          }
+        ],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 1: the caption gives 120 cm, but no action carries it",
+          "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 3: the caption gives 120 cm, but no action carries it",
+          "step 5: the caption gives 120 cm, but no action carries it",
+          "step 6: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 12: the caption gives 40 cm, but no action carries it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "joint foot-a-base: Fastener must enter the receiver without exiting its far face: foot-a is 20 cm and base 2 cm thick there, so a 3.5 cm fastener ends inside foot-a; use one longer than 20 cm and at most 22 cm (the fastener's cm and the joint's depthCm)",
+          "joint foot-b-base: Fastener must enter the receiver without exiting its far face: foot-b is 20 cm and base 2 cm thick there, so a 3.5 cm fastener ends inside foot-b; use one longer than 20 cm and at most 22 cm (the fastener's cm and the joint's depthCm)"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.16382,
+      "responseSeconds": 29.124219414,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-6c694e9e49d81442173b-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-6c694e9e49d81442173b",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "fail",
+            "errors": [
+              "$.steps[1].do[0]: does not match any allowed schema branch",
+              "$.steps[3].do[0]: does not match any allowed schema branch"
+            ]
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: joint j-front-left: needs two distinct known parts; joint j-front-right: needs two distinct known parts; joint j-back-left: needs two distinct known parts; joint j-back-right: needs two distinct known parts; joint j-base-front: needs two distinct known parts; joint j-base-back: needs two distinct known parts; c1: intent cut needs a faithful demonstration, not place; c1b: intent work needs a faithful demonstration, not measure; c2: intent cut needs a faithful demonstration, not place"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[1].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: joint j-front-left: needs two distinct known parts; joint j-front-right: needs two distinct known parts; joint j-back-left: needs two distinct known parts; joint j-back-right: needs two distinct known parts; joint j-base-front: needs two distinct known parts; joint j-base-back: needs two distinct known parts; c1: intent cut needs a faithful demonstration, not place; c1b: intent work needs a faithful demonstration, not measure; c2: intent cut needs a faithful demonstration, not place"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "step 2: claims c1b",
+          "goal base-b:assembled dropped: no step reaches it",
+          "step 10: caption made a count of its screws",
+          "step 11: caption made a count of its screws",
+          "step 12: caption made a count of its screws",
+          "step 13: caption made a count of its screws",
+          "step 14: caption made a count of its screws",
+          "step 15: caption made a count of its screws"
+        ],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [
+          "joint j-front-left: needs two distinct known parts",
+          "joint j-front-right: needs two distinct known parts",
+          "joint j-back-left: needs two distinct known parts",
+          "joint j-back-right: needs two distinct known parts",
+          "joint j-base-front: needs two distinct known parts",
+          "joint j-base-back: needs two distinct known parts",
+          "c1: intent cut needs a faithful demonstration, not place",
+          "c1b: operation is missing from the caption claims",
+          "c1b: intent work needs a faithful demonstration, not measure",
+          "c2: intent cut needs a faithful demonstration, not place",
+          "f1: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f2: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f3: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f4: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f5: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f6: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "unreached goal base-b:assembled",
+          "step 5: k refers to unknown object base-b",
+          "step 6: k refers to unknown object front-a",
+          "step 6: to refers to unknown object base-b",
+          "step 7: k refers to unknown object back-a",
+          "step 7: to refers to unknown object base-b",
+          "step 8: k refers to unknown object end-left",
+          "step 8: to refers to unknown object front-a",
+          "step 9: k refers to unknown object end-right",
+          "step 9: to refers to unknown object front-a",
+          "step 10: k refers to unknown object front-a",
+          "step 10: to refers to unknown object end-left",
+          "step 11: k refers to unknown object front-a",
+          "step 11: to refers to unknown object end-right",
+          "step 12: k refers to unknown object back-a",
+          "step 12: to refers to unknown object end-left",
+          "step 13: k refers to unknown object back-a",
+          "step 13: to refers to unknown object end-right",
+          "step 14: k refers to unknown object base-b",
+          "step 14: to refers to unknown object front-a",
+          "step 15: k refers to unknown object base-b",
+          "step 15: to refers to unknown object back-a"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.04049425,
+      "responseSeconds": 17.392069266,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-afbc59c5b0b1f048d5c2-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-afbc59c5b0b1f048d5c2",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 177,
+            "duration": 111.00000000000009,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 3: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 4: the caption gives 18 cm, but no action carries it",
+          "step 9: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 10: the caption gives 58 cm, but no action carries it",
+          "step 26: the caption names screws, but no action uses it",
+          "step 27: the caption names screws, but no action uses it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "screws: 4 cm → 7 cm, the length every joint they make needs"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.2013,
+      "responseSeconds": 48.089392458,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-7422bb05074284c0b7eb-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-7422bb05074284c0b7eb",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 90,
+            "duration": 75.39999999999998,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 1: the caption gives 16 cm, but no action carries it",
+          "step 3: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "screws: 4 cm → 7 cm, the length every joint they make needs"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.06684425,
+      "responseSeconds": 38.829554124000005,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-81517d41ac19e2f8e64f-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-81517d41ac19e2f8e64f",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "fail",
+            "errors": [
+              "$.steps[1].do[1]: does not match any allowed schema branch",
+              "$.steps[2].do[0]: does not match any allowed schema branch",
+              "$.steps[3].do[0]: does not match any allowed schema branch"
+            ]
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: joint joint-front-left: needs two distinct known parts; joint joint-front-right: needs two distinct known parts; joint joint-back-left: needs two distinct known parts; joint joint-back-right: needs two distinct known parts; joint joint-base-front: needs two distinct known parts; joint joint-base-back: needs two distinct known parts; c-board-c: intent work needs a faithful demonstration, not measure; c2-board-c: intent cut needs a faithful demonstration, not place; step 3: claim refers to a missing operation; cut-c: intent cut needs a faithful demonstration, not place; cut-a: intent cut needs a faithful demonstration, not place; joint joint-front-right: no attachment operation; joint joint-back-left: no attachment operation; joint joint-back-right: no attachment operation; joint joint-base-front: no attachment operation; joint joint-base-back: no attachment operation"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[1].do[1]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[2].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: joint joint-front-left: needs two distinct known parts; joint joint-front-right: needs two distinct known parts; joint joint-back-left: needs two distinct known parts; joint joint-back-right: needs two distinct known parts; joint joint-base-front: needs two distinct known parts; joint joint-base-back: needs two distinct known parts; c-board-c: intent work needs a faithful demonstration, not measure; c2-board-c: intent cut needs a faithful demonstration, not place; step 3: claim refers to a missing operation; cut-c: intent cut needs a faithful demonstration, not place; cut-a: intent cut needs a faithful demonstration, not place; joint joint-front-right: no attachment operation; joint joint-back-left: no attachment operation; joint joint-back-right: no attachment operation; joint joint-base-front: no attachment operation; joint joint-base-back: no attachment operation"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "goal base-panel:assembled dropped: no step reaches it",
+          "goal front-panel:assembled dropped: no step reaches it",
+          "step 8: caption made a count of its screws"
+        ],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [
+          "joint joint-front-left: needs two distinct known parts",
+          "joint joint-front-right: needs two distinct known parts",
+          "joint joint-back-left: needs two distinct known parts",
+          "joint joint-back-right: needs two distinct known parts",
+          "joint joint-base-front: needs two distinct known parts",
+          "joint joint-base-back: needs two distinct known parts",
+          "c-board-c: intent work needs a faithful demonstration, not measure",
+          "c2-board-c: intent cut needs a faithful demonstration, not place",
+          "step 3: claim refers to a missing operation",
+          "cut-c: intent cut needs a faithful demonstration, not place",
+          "cut-a: intent cut needs a faithful demonstration, not place",
+          "f-fl: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "unreached goal base-panel:assembled",
+          "unreached goal front-panel:assembled",
+          "joint joint-front-right: no attachment operation",
+          "joint joint-back-left: no attachment operation",
+          "joint joint-back-right: no attachment operation",
+          "joint joint-base-front: no attachment operation",
+          "joint joint-base-back: no attachment operation",
+          "step 5: k refers to unknown object base-panel",
+          "step 6: k refers to unknown object front-panel",
+          "step 6: to refers to unknown object base-panel",
+          "step 6: k refers to unknown object back-panel",
+          "step 7: k refers to unknown object left-panel",
+          "step 7: to refers to unknown object base-panel",
+          "step 7: k refers to unknown object right-panel",
+          "step 8: k refers to unknown object front-panel",
+          "step 8: to refers to unknown object left-panel"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.04074075,
+      "responseSeconds": 19.03443126899999,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-7ea3ae956f7b2e977187-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-7ea3ae956f7b2e977187",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: a7: measured work position lies outside the part"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "Invalid operation contract: a7: measured work position lies outside the part"
+          }
+        ],
+        "warnings": [],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a7: measured work position lies outside the part"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.1100328,
+      "responseSeconds": 28.39375142800002,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-fb6dd5830c64021dc3a4-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-fb6dd5830c64021dc3a4",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "fail",
+            "errors": [
+              "joint joint-front-left: Joint surfaces do not touch: front exit plane y=50 cm, end-left receiving plane y=56 cm (separation 6 cm). Position end-left relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+              "joint joint-front-right: Joint surfaces do not touch: front exit plane y=50 cm, end-right receiving plane y=56 cm (separation 6 cm). Position end-right relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+              "joint joint-back-left: Joint surfaces do not touch: back exit plane y=64 cm, end-left receiving plane y=58 cm (separation 6 cm). Position end-left relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+              "joint joint-back-right: Joint surfaces do not touch: back exit plane y=64 cm, end-right receiving plane y=58 cm (separation 6 cm). Position end-right relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+            ]
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "geometry",
+            "code": "joint-geometry",
+            "message": "joint joint-front-left: Joint surfaces do not touch: front exit plane y=50 cm, end-left receiving plane y=56 cm (separation 6 cm). Position end-left relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          },
+          {
+            "stage": "geometry",
+            "code": "joint-geometry",
+            "message": "joint joint-front-right: Joint surfaces do not touch: front exit plane y=50 cm, end-right receiving plane y=56 cm (separation 6 cm). Position end-right relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          },
+          {
+            "stage": "geometry",
+            "code": "joint-geometry",
+            "message": "joint joint-back-left: Joint surfaces do not touch: back exit plane y=64 cm, end-left receiving plane y=58 cm (separation 6 cm). Position end-left relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          },
+          {
+            "stage": "geometry",
+            "code": "joint-geometry",
+            "message": "joint joint-back-right: Joint surfaces do not touch: back exit plane y=64 cm, end-right receiving plane y=58 cm (separation 6 cm). Position end-right relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          }
+        ],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "step 11: caption made a count of its screws",
+          "step 12: caption made a count of its screws",
+          "step 13: caption made a count of its screws",
+          "step 14: caption made a count of its screws",
+          "step 15: caption made a count of its screws",
+          "step 16: caption made a count of its screws",
+          "step 17: caption made a count of its screws",
+          "step 18: caption made a count of its screws"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a11: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a12: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a13: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a14: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a15: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a16: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a17: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a18: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.1315728,
+      "responseSeconds": 36.652721075999985,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-9ea4d1a1a723c45ccea2-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-9ea4d1a1a723c45ccea2",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "step 7 (a7): the cut misses the sheet: its shape is off the folded sheet",
+              "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+            ]
+          },
+          "geometry": {
+            "status": "fail",
+            "errors": [
+              "finished fold geometry: step 7 (a7): the cut misses the sheet: its shape is off the folded sheet",
+              "finished fold geometry: step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+            ]
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 7 (a7): the cut misses the sheet: its shape is off the folded sheet"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 7 (a7): the cut misses the sheet: its shape is off the folded sheet"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+          }
+        ],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper.cm: unconfirmed measurement",
+          "paper.w: unconfirmed measurement",
+          "paper.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet",
+          "a8: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "step 7 (a7): the cut misses the sheet: its shape is off the folded sheet",
+          "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.03939725,
+      "responseSeconds": 15.176832409000001,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-ce2381e58a97282abbc0-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-ce2381e58a97282abbc0",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "fail",
+            "errors": [
+              "Invalid JSON: Unexpected end of JSON input"
+            ]
+          },
+          "rawSchema": {
+            "status": "not-recorded",
+            "errors": []
+          },
+          "structure": {
+            "status": "fail",
+            "errors": [
+              "No parsed plan candidate is available"
+            ]
+          },
+          "semantics": {
+            "status": "skipped",
+            "errors": []
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "response",
+            "code": "invalid-json",
+            "message": "Invalid JSON: Unexpected end of JSON input"
+          },
+          {
+            "stage": "structure",
+            "code": "invalid-json",
+            "message": "No parsed plan candidate is available"
+          }
+        ],
+        "warnings": [],
+        "corrections": [],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": null,
+      "responseSeconds": 8.209393030000001,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-1568344ec6ff3f41a127-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-1568344ec6ff3f41a127",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 67,
+            "duration": 46.89999999999999,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper.cm: unconfirmed measurement",
+          "paper.w: unconfirmed measurement",
+          "paper.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "step 1: the caption gives 21 cm, but no action carries it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet",
+          "a8: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.094396,
+      "responseSeconds": 18.585890956000004,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-8ab516412084536c9447-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-8ab516412084536c9447",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+            ]
+          },
+          "geometry": {
+            "status": "fail",
+            "errors": [
+              "finished fold geometry: step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+            ]
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+          }
+        ],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "square-paper.cm: unconfirmed measurement",
+          "square-paper.w: unconfirmed measurement",
+          "square-paper.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a5: a cut through the folded sheet",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0363245,
+      "responseSeconds": 15.795646522000002,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-61e743c09863f0df927b-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-61e743c09863f0df927b",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "step 3 (a3): folding \"top-right edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+              "step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+              "step 5 (a5): a cut's shape encloses nothing",
+              "step 6 (a6): the cut misses the sheet: its shape is off the folded sheet"
+            ]
+          },
+          "geometry": {
+            "status": "fail",
+            "errors": [
+              "finished fold geometry: step 3 (a3): folding \"top-right edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+              "finished fold geometry: step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+              "finished fold geometry: step 5 (a5): a cut's shape encloses nothing",
+              "finished fold geometry: step 6 (a6): the cut misses the sheet: its shape is off the folded sheet"
+            ]
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 3 (a3): folding \"top-right edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 5 (a5): a cut's shape encloses nothing"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 6 (a6): the cut misses the sheet: its shape is off the folded sheet"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 3 (a3): folding \"top-right edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 5 (a5): a cut's shape encloses nothing"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 6 (a6): the cut misses the sheet: its shape is off the folded sheet"
+          }
+        ],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper.cm: unconfirmed measurement",
+          "paper.w: unconfirmed measurement",
+          "paper.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a5: a cut through the folded sheet",
+          "a6: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "step 3 (a3): folding \"top-right edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+          "step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+          "step 5 (a5): a cut's shape encloses nothing",
+          "step 6 (a6): the cut misses the sheet: its shape is off the folded sheet"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0466775,
+      "responseSeconds": 23.657350383999997,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-be4585f8225aa1e02073-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-be4585f8225aa1e02073",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 67,
+            "duration": 46.89999999999999,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper.cm: unconfirmed measurement",
+          "paper.w: unconfirmed measurement",
+          "paper.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet",
+          "a8: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.040964,
+      "responseSeconds": 11.692021970999996,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-76a7e4ad03b68332f096-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-76a7e4ad03b68332f096",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "fail",
+            "errors": [
+              "Invalid JSON: Unexpected end of JSON input"
+            ]
+          },
+          "rawSchema": {
+            "status": "not-recorded",
+            "errors": []
+          },
+          "structure": {
+            "status": "fail",
+            "errors": [
+              "No parsed plan candidate is available"
+            ]
+          },
+          "semantics": {
+            "status": "skipped",
+            "errors": []
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "response",
+            "code": "invalid-json",
+            "message": "Invalid JSON: Unexpected end of JSON input"
+          },
+          {
+            "stage": "structure",
+            "code": "invalid-json",
+            "message": "No parsed plan candidate is available"
+          }
+        ],
+        "warnings": [],
+        "corrections": [],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": null,
+      "responseSeconds": 9.625385297000001,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-76c1c43317041be686b4-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-76c1c43317041be686b4",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 69,
+            "duration": 48.69999999999999,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper.cm: unconfirmed measurement",
+          "paper.w: unconfirmed measurement",
+          "paper.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "c1: a cut through the folded sheet",
+          "c2: a cut through the folded sheet",
+          "c3: a cut through the folded sheet",
+          "c4: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.033205,
+      "responseSeconds": 11.038213935000007,
+      "repairDecision": null
+    }
+  ],
+  "note": "Wonder minimal follow-up for v3. Exact saved user prompt, JSON schema and photo; current model client and normalize=true evaluator. Existing low/medium outputs re-evaluated with the same normalization and checks. No repairs or retries. Human task review remains pending. Public snapshot contains only curated cases; saved private-film histories remain local.",
+  "intervalNote": "Wilson intervals describe trials conditional on these fixed cases, not generalization to new objects. Inspect per-case results. Diagnostic cases are excluded from model rankings. Saved replays are never ranked as a controlled model experiment."
+}

@@ -1,0 +1,118 @@
+{
+  "row": {
+    "id": "wire-bracelet-witness",
+    "caseId": "wire-bracelet",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "saved-fixture",
+    "effort": "not-recorded",
+    "requestKind": "saved witness",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "design: the size is 7 × 7 × 1 cm but the steps build 45 × 0.6 × 0.6 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "geometry",
+          "code": "design-dimensions",
+          "message": "design: the size is 7 × 7 × 1 cm but the steps build 45 × 0.6 × 0.6 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+        }
+      ],
+      "warnings": [
+        "copper-wire.cm: unconfirmed measurement",
+        "copper-wire.thick: unconfirmed measurement",
+        "step 1: the caption gives 45 cm, but no action carries it",
+        "step 2: the caption gives 3 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": null,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": null,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": null,
+    "responseSeconds": null,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wire-bracelet",
+    "title": "Wire shaping",
+    "request": "Make a bracelet from this wire with supported strand operations and declared supplies.",
+    "guidance": {
+      "messages": [
+        "Make a bracelet from this wire with supported strand operations and declared supplies."
+      ]
+    },
+    "qualification": {
+      "machine": "fail",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Saved witness rejected: investigate the task/engine contract before ranking models on this case."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Beaded Wire Bracelet",
+    "steps": [
+      {
+        "t": "Lay the wire straight",
+        "c": "Lay the 45 cm wire straight in front of you"
+      },
+      {
+        "t": "Turn a stop",
+        "c": "Fold the last 3 cm back on itself to stop the beads"
+      },
+      {
+        "t": "Thread the beads",
+        "c": "Thread nine 1.2 cm beads, alternating blue and white, along the middle"
+      },
+      {
+        "t": "Close the ring",
+        "c": "Curl the wire into a ring and lay the end over the start with a 3 cm overlap"
+      }
+    ]
+  },
+  "rawText": null
+}

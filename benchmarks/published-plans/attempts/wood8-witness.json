@@ -1,0 +1,129 @@
+{
+  "row": {
+    "id": "wood8-witness",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "saved-fixture",
+    "effort": "not-recorded",
+    "requestKind": "saved witness",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 73,
+          "duration": 69.24999999999999,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 3: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": null,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": null,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": null,
+    "responseSeconds": null,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Rustic Planter Box",
+    "steps": [
+      {
+        "t": "Mark the cuts",
+        "c": "Mark board A at 80, 96 and 112 cm."
+      },
+      {
+        "t": "Cut base and ends",
+        "c": "Saw board A into an 80 cm base and two 16 cm ends."
+      },
+      {
+        "t": "Cut the sides",
+        "c": "Saw boards B and C each to 80 cm."
+      },
+      {
+        "t": "Fit sides to base",
+        "c": "Drive 8 screws, 70 mm long, up through the base into the sides."
+      },
+      {
+        "t": "Fit the ends",
+        "c": "Drive 16 screws, 70 mm long, through the sides into the ends."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill five 8 mm holes along the base."
+      }
+    ]
+  },
+  "rawText": null
+}

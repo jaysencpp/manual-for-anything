@@ -1,0 +1,164 @@
+{
+  "row": {
+    "id": "a318c39f8baf927f6368-0",
+    "caseId": "lego-pile",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "a318c39f8baf927f6368",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "brick-dark-red: invalid brick dimensions",
+            "brick-green: invalid brick dimensions",
+            "brick-red: invalid brick dimensions",
+            "brick-orange: invalid brick dimensions",
+            "plate-brown: invalid brick dimensions"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "brick-dark-red: invalid brick dimensions"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "brick-green: invalid brick dimensions"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "brick-red: invalid brick dimensions"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "brick-orange: invalid brick dimensions"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "plate-brown: invalid brick dimensions"
+        }
+      ],
+      "warnings": [
+        "brick-dark-red.cm: unconfirmed measurement",
+        "brick-green.cm: unconfirmed measurement",
+        "brick-red.cm: unconfirmed measurement",
+        "brick-orange.cm: unconfirmed measurement",
+        "plate-brown.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "brick-dark-red: invalid brick dimensions",
+        "brick-green: invalid brick dimensions",
+        "brick-red: invalid brick dimensions",
+        "brick-orange: invalid brick dimensions",
+        "plate-brown: invalid brick dimensions"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.03431145,
+    "responseSeconds": 32.23736951999995,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "lego-pile",
+    "title": "LEGO build",
+    "request": "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces.",
+    "guidance": {
+      "messages": [
+        "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Mini Display Bridge",
+    "design": {
+      "purpose": "Small toy bridge and display riser for cars and figures",
+      "size": [
+        6.4,
+        1.6,
+        2.24
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place left base",
+        "c": "Place green 2 by 2 brick"
+      },
+      {
+        "t": "Stack left pier",
+        "c": "Stack dark red brick on green"
+      },
+      {
+        "t": "Place right base",
+        "c": "Place red 2 by 2 brick"
+      },
+      {
+        "t": "Stack right pier",
+        "c": "Stack orange brick on red brick"
+      },
+      {
+        "t": "Seat deck plate",
+        "c": "Seat brown plate across both piers"
+      }
+    ]
+  },
+  "rawText": null
+}

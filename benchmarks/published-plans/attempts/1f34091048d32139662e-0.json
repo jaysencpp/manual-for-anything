@@ -1,0 +1,163 @@
+{
+  "row": {
+    "id": "1f34091048d32139662e-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "1f34091048d32139662e",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 96,
+          "duration": 69.39999999999996,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 2: the caption gives 14 cm, but no action carries it",
+        "step 5: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "screws: 4 cm → 7 cm, the length every joint they make needs"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.0810985,
+    "responseSeconds": 57.18391505499999,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Rustic Planter Box",
+    "design": {
+      "purpose": "Hold soil and plants outdoors for one household: 45 cm planter, 15+ cm soil depth.",
+      "size": [
+        45,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Lay out wide board",
+        "c": "Place wide board flat for cutting"
+      },
+      {
+        "t": "Mark side cuts",
+        "c": "Measure and mark 45, 45, 14 and 14 cm"
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Saw wide board into sides and ends"
+      },
+      {
+        "t": "Lay out base board",
+        "c": "Place second board flat for cutting"
+      },
+      {
+        "t": "Cut base to length",
+        "c": "Saw second board to 45 cm base"
+      },
+      {
+        "t": "Smooth parts",
+        "c": "Sand all cut parts smooth"
+      },
+      {
+        "t": "Place planter base",
+        "c": "Place base flat on ground"
+      },
+      {
+        "t": "Stand long sides",
+        "c": "Stand front and back on base"
+      },
+      {
+        "t": "Fit short ends",
+        "c": "Fit ends between front and back"
+      },
+      {
+        "t": "Screw base from below",
+        "c": "Drive screws up through the base"
+      },
+      {
+        "t": "Screw box corners",
+        "c": "Drive screws through the sides"
+      }
+    ]
+  },
+  "rawText": null
+}

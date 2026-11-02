@@ -1,0 +1,535 @@
+{
+  "row": {
+    "id": "e27f00cb08b1de50046d-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "minimal",
+    "trialId": "e27f00cb08b1de50046d",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "joint joint-a: needs two distinct known parts",
+            "joint joint-b: needs two distinct known parts",
+            "joint joint-c: needs two distinct known parts",
+            "joint joint-d: needs two distinct known parts",
+            "joint joint-e: needs two distinct known parts",
+            "joint joint-f: needs two distinct known parts",
+            "joint joint-g: needs two distinct known parts",
+            "joint joint-h: needs two distinct known parts",
+            "joint joint-i: needs two distinct known parts",
+            "joint joint-j: needs two distinct known parts",
+            "a8: declared fastener length must equal the planned driven depth",
+            "a8: fastening tool is incompatible with the fastener",
+            "a9: declared fastener length must equal the planned driven depth",
+            "a9: fastening tool is incompatible with the fastener",
+            "a12: declared fastener length must equal the planned driven depth",
+            "a12: fastening tool is incompatible with the fastener",
+            "a13: declared fastener length must equal the planned driven depth",
+            "a13: fastening tool is incompatible with the fastener",
+            "a14: declared fastener length must equal the planned driven depth",
+            "a14: fastening tool is incompatible with the fastener",
+            "a15: declared fastener length must equal the planned driven depth",
+            "a15: fastening tool is incompatible with the fastener",
+            "a18: declared fastener length must equal the planned driven depth",
+            "a18: fastening tool is incompatible with the fastener",
+            "a19: declared fastener length must equal the planned driven depth",
+            "a19: fastening tool is incompatible with the fastener",
+            "joint joint-f: no attachment operation",
+            "joint joint-h: no attachment operation",
+            "step 4: k refers to unknown object base-a",
+            "step 5: k refers to unknown object side-a",
+            "step 5: to refers to unknown object base-a",
+            "step 5: k refers to unknown object side-b",
+            "step 6: k refers to unknown object end-a",
+            "step 6: to refers to unknown object side-a",
+            "step 6: k refers to unknown object end-b",
+            "step 6: to refers to unknown object base-a",
+            "step 7: k refers to unknown object end-a",
+            "step 7: to refers to unknown object side-a",
+            "step 7: k refers to unknown object end-b",
+            "step 8: k refers to unknown object foot-a",
+            "step 8: to refers to unknown object base-a",
+            "step 8: k refers to unknown object foot-b",
+            "design: the parts from board-b need 120.9 cm (60 + 14 + 14 + 32 and saw cuts) but board-b is 120 cm long: take parts from more objects, or make them shorter",
+            "design: the parts from board-c need 120.6 cm (18 + 18 + 84 and saw cuts) but board-c is 120 cm long: take parts from more objects, or make them shorter",
+            "design: offcut-b is never made or used by the steps",
+            "design: offcut-c is never made or used by the steps"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "joint joint-a: Both joint parts need numeric geometry",
+            "joint joint-b: Both joint parts need numeric geometry",
+            "joint joint-c: Both joint parts need numeric geometry",
+            "joint joint-d: Both joint parts need numeric geometry",
+            "joint joint-e: Both joint parts need numeric geometry",
+            "joint joint-f: Both joint parts need numeric geometry",
+            "joint joint-g: Both joint parts need numeric geometry",
+            "joint joint-h: Both joint parts need numeric geometry",
+            "joint joint-i: Both joint parts need numeric geometry",
+            "joint joint-j: Both joint parts need numeric geometry"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-a: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-b: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-c: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-d: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-e: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-f: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-g: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-h: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-i: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-j: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a8: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a8: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a9: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a9: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a12: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a12: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a13: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a13: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a14: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a14: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a15: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a15: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a18: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a18: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a19: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a19: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-f: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-h: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 4: k refers to unknown object base-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object side-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: to refers to unknown object base-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object side-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: k refers to unknown object end-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: to refers to unknown object side-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: k refers to unknown object end-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: to refers to unknown object base-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: k refers to unknown object end-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: to refers to unknown object side-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: k refers to unknown object end-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object foot-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: to refers to unknown object base-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object foot-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: the parts from board-b need 120.9 cm (60 + 14 + 14 + 32 and saw cuts) but board-b is 120 cm long: take parts from more objects, or make them shorter"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: the parts from board-c need 120.6 cm (18 + 18 + 84 and saw cuts) but board-c is 120 cm long: take parts from more objects, or make them shorter"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: offcut-b is never made or used by the steps"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: offcut-c is never made or used by the steps"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-a: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-b: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-c: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-d: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-e: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-f: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-g: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-h: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-i: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-j: Both joint parts need numeric geometry"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 7: the caption names screws, but no action uses it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "joint joint-a: needs two distinct known parts",
+        "joint joint-b: needs two distinct known parts",
+        "joint joint-c: needs two distinct known parts",
+        "joint joint-d: needs two distinct known parts",
+        "joint joint-e: needs two distinct known parts",
+        "joint joint-f: needs two distinct known parts",
+        "joint joint-g: needs two distinct known parts",
+        "joint joint-h: needs two distinct known parts",
+        "joint joint-i: needs two distinct known parts",
+        "joint joint-j: needs two distinct known parts",
+        "a1b: operation is missing from the caption claims",
+        "a2b: operation is missing from the caption claims",
+        "a3b: operation is missing from the caption claims",
+        "a8: declared fastener length must equal the planned driven depth",
+        "a8: fastening tool is incompatible with the fastener",
+        "a9: declared fastener length must equal the planned driven depth",
+        "a9: fastening tool is incompatible with the fastener",
+        "a12: declared fastener length must equal the planned driven depth",
+        "a12: fastening tool is incompatible with the fastener",
+        "a13: declared fastener length must equal the planned driven depth",
+        "a13: fastening tool is incompatible with the fastener",
+        "a14: declared fastener length must equal the planned driven depth",
+        "a14: fastening tool is incompatible with the fastener",
+        "a15: declared fastener length must equal the planned driven depth",
+        "a15: fastening tool is incompatible with the fastener",
+        "a18: operation is missing from the caption claims",
+        "a18: declared fastener length must equal the planned driven depth",
+        "a18: fastening tool is incompatible with the fastener",
+        "a19: operation is missing from the caption claims",
+        "a19: declared fastener length must equal the planned driven depth",
+        "a19: fastening tool is incompatible with the fastener",
+        "unreached goal base-a:assembled",
+        "joint joint-f: no attachment operation",
+        "joint joint-h: no attachment operation",
+        "step 4: k refers to unknown object base-a",
+        "step 5: k refers to unknown object side-a",
+        "step 5: to refers to unknown object base-a",
+        "step 5: k refers to unknown object side-b",
+        "step 6: k refers to unknown object end-a",
+        "step 6: to refers to unknown object side-a",
+        "step 6: k refers to unknown object end-b",
+        "step 6: to refers to unknown object base-a",
+        "step 7: k refers to unknown object end-a",
+        "step 7: to refers to unknown object side-a",
+        "step 7: k refers to unknown object end-b",
+        "step 8: k refers to unknown object foot-a",
+        "step 8: to refers to unknown object base-a",
+        "step 8: k refers to unknown object foot-b",
+        "design: the parts from board-b need 120.9 cm (60 + 14 + 14 + 32 and saw cuts) but board-b is 120 cm long: take parts from more objects, or make them shorter",
+        "design: the parts from board-c need 120.6 cm (18 + 18 + 84 and saw cuts) but board-c is 120 cm long: take parts from more objects, or make them shorter",
+        "design: offcut-b is never made or used by the steps",
+        "design: offcut-c is never made or used by the steps"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.03558375,
+    "responseSeconds": 16.77927020899998,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Trough Planter",
+    "design": {
+      "purpose": "Trough planter for herbs and flowers, holds 15+ cm soil. Serves 1 household: 60 cm trough from 3 pine boards",
+      "size": [
+        60,
+        18,
+        24
+      ]
+    },
+    "steps": [
+      {
+        "t": "Cut sides",
+        "c": "Cut wide board into two sides"
+      },
+      {
+        "t": "Cut base ends",
+        "c": "Cut middle board into base and ends"
+      },
+      {
+        "t": "Cut feet",
+        "c": "Cut narrow board into feet"
+      },
+      {
+        "t": "Place drill base",
+        "c": "Place base, drill drain holes"
+      },
+      {
+        "t": "Fix long sides",
+        "c": "Fit long sides on base"
+      },
+      {
+        "t": "Fix ends",
+        "c": "Fit ends between sides"
+      },
+      {
+        "t": "Screw corners",
+        "c": "Screw ends to sides"
+      },
+      {
+        "t": "Attach feet",
+        "c": "Fix feet under base"
+      }
+    ]
+  },
+  "rawText": null
+}

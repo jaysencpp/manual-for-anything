@@ -1,0 +1,192 @@
+{
+  "row": {
+    "id": "ca9d0d9a3ef323665f77-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "ca9d0d9a3ef323665f77",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[4].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "$.steps[4].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "e2: Weaving ends needs distinct declared piece, yarn and needle actors",
+            "e2: weaving ends must target a declared textile piece",
+            "step 2: work target green-yarn must name a piece declared in makes, not source material",
+            "step 2: work source to must name a distinct photographed material",
+            "step 3: work target green-yarn must name a piece declared in makes, not source material",
+            "step 4: work target green-yarn must name a piece declared in makes, not source material",
+            "step 4: work source to must name a distinct photographed material",
+            "made piece mat: needs work operations that visibly create it"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[4].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[4].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "e2: Weaving ends needs distinct declared piece, yarn and needle actors"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "e2: weaving ends must target a declared textile piece"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 2: work target green-yarn must name a piece declared in makes, not source material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 2: work source to must name a distinct photographed material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 3: work target green-yarn must name a piece declared in makes, not source material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 4: work target green-yarn must name a piece declared in makes, not source material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 4: work source to must name a distinct photographed material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "made piece mat: needs work operations that visibly create it"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "e2: state change needs an explicit prior state for mat"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.038488,
+    "responseSeconds": 14.526878899,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Striped Table Mat",
+    "design": {
+      "purpose": "Flat striped table mat for one person: 30 cm wide x 40 cm long two-colour half-double crochet mat",
+      "size": [
+        30,
+        40,
+        2
+      ]
+    },
+    "steps": [
+      {
+        "t": "Lay out materials",
+        "c": "Set out yarn, hook and scissors"
+      },
+      {
+        "t": "Crochet green section",
+        "c": "Chain 15 and work 6 rows green hdc"
+      },
+      {
+        "t": "Crochet blue section",
+        "c": "Snip green, join blue, work 5 rows blue"
+      },
+      {
+        "t": "Crochet border row",
+        "c": "Join green, work 1 border row all round"
+      },
+      {
+        "t": "Finish and weave ends",
+        "c": "Snip tail and weave in all ends"
+      }
+    ]
+  },
+  "rawText": null
+}

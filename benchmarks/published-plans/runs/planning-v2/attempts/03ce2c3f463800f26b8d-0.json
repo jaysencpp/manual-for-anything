@@ -1,0 +1,145 @@
+{
+  "row": {
+    "id": "03ce2c3f463800f26b8d-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "03ce2c3f463800f26b8d",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 69,
+          "duration": 48.69999999999999,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "scissors.cm: unconfirmed measurement",
+        "paper-1.cm: unconfirmed measurement",
+        "paper-1.w: unconfirmed measurement",
+        "paper-1.thick: unconfirmed measurement",
+        "Additional materials are required supplies, not objects observed in the photo.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.0535288,
+    "responseSeconds": 11.805524272000001,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": {
+    "title": "Six-Point Snowflake",
+    "design": {
+      "purpose": "Make a decorative six-pointed snowflake for one window, from one square sheet.",
+      "size": [
+        21,
+        21,
+        0.5
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place paper flat",
+        "c": "Place the square paper flat on the table."
+      },
+      {
+        "t": "Fold corner to corner",
+        "c": "Fold the top-right corner onto the bottom-left corner."
+      },
+      {
+        "t": "Fold corner over",
+        "c": "Fold the top-left corner onto the bottom-right corner."
+      },
+      {
+        "t": "Fold right edge in",
+        "c": "Fold the top-right edge through the top point."
+      },
+      {
+        "t": "Fold left edge in",
+        "c": "Fold the top-left edge through the top point."
+      },
+      {
+        "t": "Cut across end",
+        "c": "Cut straight across the wide end of the wedge."
+      },
+      {
+        "t": "Cut side notches",
+        "c": "Cut a small triangle from each long edge."
+      },
+      {
+        "t": "Cut the tip",
+        "c": "Cut a small triangle from the pointed tip."
+      },
+      {
+        "t": "Open the snowflake",
+        "c": "Open the sheet out flat to reveal the snowflake."
+      }
+    ]
+  },
+  "rawText": null
+}

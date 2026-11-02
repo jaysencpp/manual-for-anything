@@ -1,0 +1,201 @@
+{
+  "row": {
+    "id": "4f3c4e598acc2442dd42-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "high",
+    "trialId": "4f3c4e598acc2442dd42",
+    "sample": 1,
+    "planningEffort": "high",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 142,
+          "duration": 104.8000000000001,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "step 3: the caption gives 15 mm, but no action carries it",
+        "step 11: the caption gives 15 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.172172,
+    "responseSeconds": 25.795495707000022,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Striped Chunky Cowl",
+    "design": {
+      "purpose": "A warm two-colour cowl for one adult, worked flat in half double crochet and seamed into a loop.",
+      "size": [
+        62,
+        12,
+        35
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place green yarn",
+        "c": "Place the green yarn on the work surface"
+      },
+      {
+        "t": "Place blue yarn",
+        "c": "Place the blue yarn beside the green yarn"
+      },
+      {
+        "t": "Make starting chain",
+        "c": "Ch 36 with green yarn and the 15 mm hook"
+      },
+      {
+        "t": "Work row 1",
+        "c": "Row 1: hdc in 3rd ch from hook and each ch across, 34 hdc"
+      },
+      {
+        "t": "Work row 2",
+        "c": "Row 2: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Work row 3",
+        "c": "Row 3: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Work row 4",
+        "c": "Row 4: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Work row 5",
+        "c": "Row 5: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Work row 6",
+        "c": "Row 6: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Work row 7",
+        "c": "Row 7: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Change to blue",
+        "c": "Finish last hdc with blue yarn, leaving a 15 cm green tail"
+      },
+      {
+        "t": "Work row 8",
+        "c": "Row 8: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Work row 9",
+        "c": "Row 9: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Work row 10",
+        "c": "Row 10: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Work row 11",
+        "c": "Row 11: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Work row 12",
+        "c": "Row 12: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Work row 13",
+        "c": "Row 13: ch 2, turn, hdc in each stitch across, 34 hdc"
+      },
+      {
+        "t": "Work row 14",
+        "c": "Row 14: ch 2, turn, hdc in each stitch across, 34 hdc, fasten off"
+      },
+      {
+        "t": "Cut blue tail",
+        "c": "Snip the blue yarn, leaving a 15 cm tail"
+      },
+      {
+        "t": "Trim green tail",
+        "c": "Snip the green starting tail to 15 cm if longer"
+      },
+      {
+        "t": "Seam the ends",
+        "c": "Fold panel, match short ends, slip stitch through both layers across"
+      },
+      {
+        "t": "Weave in ends",
+        "c": "Weave each tail through nearby stitches with the hook, then trim"
+      }
+    ]
+  },
+  "rawText": null
+}

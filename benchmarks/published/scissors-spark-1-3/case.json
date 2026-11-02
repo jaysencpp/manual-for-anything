@@ -1,0 +1,384 @@
+{
+  "id": "scissors-spark-1-3",
+  "objectId": "scissors",
+  "title": "Scissors",
+  "model": "muse-spark-1.3",
+  "provider": "Meta Model API",
+  "comparisonKey": "5afcdefa2978839c3235adced0ff2e30ca6b84ee9213a51459b42ac105d96d9b",
+  "generatedAt": "2026-10-31T11:33:03.047Z",
+  "samplesPerEffort": 1,
+  "maxTokens": 16384,
+  "width": 1597,
+  "height": 855,
+  "reference": "reference.png",
+  "source": "Saved SAM cut-out from film cba5d6ce5eff4a7fa06e20c66b67931f, screens/scissors.png",
+  "expectations": [
+    "One open pair of scissors: metal blades point left and blue handles sit at the right, matching the photographed view.",
+    "Preserve both separate handle openings and the gap between the open blades; leave these areas transparent.",
+    "Preserve the two thin blade shapes, tips and their overlap at the visible central pivot screw.",
+    "Keep the blue handles distinguishable from the grey metal blades, using flat colours and a few clean construction lines.",
+    "Follow the reference silhouette, position, proportions and opening angle. Do not close the scissors or add extra blades or handles.",
+    "Use the production flat vector style, without photographic reflections, texture, gradients or a background fill."
+  ],
+  "limitations": [
+    "Reuses the saved SAM cut-out from the user's scissors film; no additional segmentation calls. The object touches the crop boundary in places, so edge pixels alone do not establish a drawing defect.",
+    "This tests a single static drawing of open scissors, not articulation or cutting animation."
+  ],
+  "pricingNote": "Project pricing estimates checked 2026-10-27; not billing records.",
+  "rows": [
+    {
+      "id": "a49f635adf90",
+      "effort": "minimal",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 8.599388328000002,
+      "responseSeconds": 8.194257755999999,
+      "elapsedSeconds": 8.599388328000002,
+      "failureReason": null,
+      "cost": 0.01262675,
+      "actualModel": "muse-spark-1.3",
+      "inputTokens": 6528,
+      "outputTokens": 1051,
+      "reasoningTokens": 286,
+      "cachedInputTokens": 0,
+      "png": "minimal-1.png",
+      "svg": "minimal-1.svg"
+    },
+    {
+      "id": "cb776e81bb56",
+      "effort": "low",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 15.658220606000047,
+      "responseSeconds": 15.261192490999994,
+      "elapsedSeconds": 15.658220606000047,
+      "failureReason": null,
+      "cost": 0.02099925,
+      "actualModel": "muse-spark-1.3",
+      "inputTokens": 6528,
+      "outputTokens": 3021,
+      "reasoningTokens": 2081,
+      "cachedInputTokens": 0,
+      "png": "low-1.png",
+      "svg": "low-1.svg"
+    },
+    {
+      "id": "ad7f9b2cb1d9",
+      "effort": "medium",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 26.897910279999998,
+      "responseSeconds": 26.473697405999992,
+      "elapsedSeconds": 26.897910279999998,
+      "failureReason": null,
+      "cost": 0.03002625,
+      "actualModel": "muse-spark-1.3",
+      "inputTokens": 6528,
+      "outputTokens": 5145,
+      "reasoningTokens": 4274,
+      "cachedInputTokens": 0,
+      "png": "medium-1.png",
+      "svg": "medium-1.svg"
+    },
+    {
+      "id": "31dbb35db56d",
+      "effort": "high",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 39.868251871000005,
+      "responseSeconds": 39.44254616800001,
+      "elapsedSeconds": 39.868251871000005,
+      "failureReason": null,
+      "cost": 0.03993725,
+      "actualModel": "muse-spark-1.3",
+      "inputTokens": 6528,
+      "outputTokens": 7477,
+      "reasoningTokens": 6651,
+      "cachedInputTokens": 0,
+      "png": "high-1.png",
+      "svg": "high-1.svg"
+    },
+    {
+      "id": "0b07ac124b47",
+      "effort": "xhigh",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 36.921531753000004,
+      "responseSeconds": 36.5242771,
+      "elapsedSeconds": 36.921531753000004,
+      "failureReason": null,
+      "cost": 0.04379625,
+      "actualModel": "muse-spark-1.3",
+      "inputTokens": 6528,
+      "outputTokens": 8385,
+      "reasoningTokens": 7401,
+      "cachedInputTokens": 0,
+      "png": "xhigh-1.png",
+      "svg": "xhigh-1.svg"
+    },
+    {
+      "id": "0eb537a554ad",
+      "effort": "max",
+      "attempt": 1,
+      "status": "api-error",
+      "outcome": "fail",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": null,
+      "responseSeconds": null,
+      "elapsedSeconds": 154.48553840300005,
+      "failureReason": "The model response ended without a usable answer.",
+      "cost": null,
+      "actualModel": "muse-spark-1.3",
+      "inputTokens": null,
+      "outputTokens": null,
+      "reasoningTokens": null,
+      "cachedInputTokens": null,
+      "png": null,
+      "svg": null
+    }
+  ],
+  "groups": [
+    {
+      "effort": "minimal",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 8.194257755999999,
+      "medianUsableSeconds": 8.599388328000002,
+      "maxUsableSeconds": 8.599388328000002,
+      "medianCost": 0.01262675,
+      "knownCostTotal": 0.01262675,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "low",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 15.261192490999994,
+      "medianUsableSeconds": 15.658220606000047,
+      "maxUsableSeconds": 15.658220606000047,
+      "medianCost": 0.02099925,
+      "knownCostTotal": 0.02099925,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "medium",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 26.473697405999992,
+      "medianUsableSeconds": 26.897910279999998,
+      "maxUsableSeconds": 26.897910279999998,
+      "medianCost": 0.03002625,
+      "knownCostTotal": 0.03002625,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "high",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 39.44254616800001,
+      "medianUsableSeconds": 39.868251871000005,
+      "maxUsableSeconds": 39.868251871000005,
+      "medianCost": 0.03993725,
+      "knownCostTotal": 0.03993725,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "xhigh",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 36.5242771,
+      "medianUsableSeconds": 36.921531753000004,
+      "maxUsableSeconds": 36.921531753000004,
+      "medianCost": 0.04379625,
+      "knownCostTotal": 0.04379625,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "max",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 1,
+      "pending": 0,
+      "passAt1": 0,
+      "passAt1Wilson95": [
+        0,
+        0.7934506856227626
+      ],
+      "possiblePassRateRange": [
+        0,
+        0
+      ],
+      "technicalSuccesses": 0,
+      "apiFailures": 1,
+      "medianResponseSeconds": null,
+      "medianUsableSeconds": null,
+      "maxUsableSeconds": null,
+      "medianCost": null,
+      "knownCostTotal": 0,
+      "costUnknown": 1,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": [
+        {
+          "id": "0eb537a554ad",
+          "reason": "Meta response incomplete (finish reason: stop)"
+        }
+      ]
+    }
+  ],
+  "method": "Same saved cut-out, production prompt, model and token limit. Only reasoning effort changes. One request at a time, shuffled order, no retries or repairs.",
+  "conclusionLimit": "One object and one view. A single attempt per level cannot establish a reliable success rate or equivalence."
+}

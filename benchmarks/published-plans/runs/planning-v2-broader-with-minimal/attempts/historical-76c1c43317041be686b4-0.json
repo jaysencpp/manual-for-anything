@@ -1,0 +1,145 @@
+{
+  "row": {
+    "id": "historical-76c1c43317041be686b4-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "historical-76c1c43317041be686b4",
+    "sample": 2,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 60,
+          "duration": 43.79999999999999,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "scissors.cm: unconfirmed measurement",
+        "paper-square.cm: unconfirmed measurement",
+        "paper-square.w: unconfirmed measurement",
+        "paper-square.thick: unconfirmed measurement",
+        "Additional materials are required supplies, not objects observed in the photo.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "Declared additional materials compiled as separate supply actors",
+        "a6: a cut through the folded sheet",
+        "a7: a cut through the folded sheet"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.03193675,
+    "responseSeconds": 9.25366049499999,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": {
+    "title": "Paper Snowflake",
+    "design": {
+      "purpose": "Cut paper snowflake decoration for window or wall, for anyone",
+      "size": [
+        20,
+        20,
+        0.1
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place paper",
+        "c": "Lay square flat on table"
+      },
+      {
+        "t": "Fold diagonal",
+        "c": "Fold corner to corner to triangle"
+      },
+      {
+        "t": "Fold smaller",
+        "c": "Fold triangle in half again"
+      },
+      {
+        "t": "Fold third",
+        "c": "Fold right edge in at 30 degrees"
+      },
+      {
+        "t": "Fold wedge",
+        "c": "Fold left edge in at 30 degrees"
+      },
+      {
+        "t": "Trim end",
+        "c": "Cut wedge end straight across"
+      },
+      {
+        "t": "Cut pattern",
+        "c": "Cut two notches from sides"
+      },
+      {
+        "t": "Open star",
+        "c": "Open sheet to show snowflake"
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,216 @@
+{
+  "row": {
+    "id": "historical-afbc59c5b0b1f048d5c2-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "historical-afbc59c5b0b1f048d5c2",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Invalid operation contract: a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a17: fastening uses joint sites, not flat-sheet path or otherPath; a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a18: fastening uses joint sites, not flat-sheet path or otherPath; a19: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a19: fastening uses joint sites, not flat-sheet path or otherPath; a20: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a20: fastening uses joint sites, not flat-sheet path or otherPath; a21: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a21: fastening uses joint sites, not flat-sheet path or otherPath; a22: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a22: fastening uses joint sites, not flat-sheet path or otherPath; a23: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a23: fastening uses joint sites, not flat-sheet path or otherPath; a24: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a24: fastening uses joint sites, not flat-sheet path or otherPath"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "Invalid operation contract: a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a17: fastening uses joint sites, not flat-sheet path or otherPath; a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a18: fastening uses joint sites, not flat-sheet path or otherPath; a19: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a19: fastening uses joint sites, not flat-sheet path or otherPath; a20: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a20: fastening uses joint sites, not flat-sheet path or otherPath; a21: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a21: fastening uses joint sites, not flat-sheet path or otherPath; a22: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a22: fastening uses joint sites, not flat-sheet path or otherPath; a23: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a23: fastening uses joint sites, not flat-sheet path or otherPath; a24: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a24: fastening uses joint sites, not flat-sheet path or otherPath"
+        }
+      ],
+      "warnings": [],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a17: fastening uses joint sites, not flat-sheet path or otherPath",
+        "a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a18: fastening uses joint sites, not flat-sheet path or otherPath",
+        "a19: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a19: fastening uses joint sites, not flat-sheet path or otherPath",
+        "a20: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a20: fastening uses joint sites, not flat-sheet path or otherPath",
+        "a21: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a21: fastening uses joint sites, not flat-sheet path or otherPath",
+        "a22: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a22: fastening uses joint sites, not flat-sheet path or otherPath",
+        "a23: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a23: fastening uses joint sites, not flat-sheet path or otherPath",
+        "a24: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a24: fastening uses joint sites, not flat-sheet path or otherPath",
+        "a17: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+        "a18: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+        "a19: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+        "a20: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+        "a21: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+        "a22: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+        "a23: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+        "a24: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.246628,
+    "responseSeconds": 66.24935083,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "A weatherproof-looking open planter for herbs or flowers on a patio, for one person. Interior is about 36 × 16 cm with 18 cm side height, giving at least 15 cm soil depth when filled below the rim. Board-c is left as spare stock.",
+      "size": [
+        40,
+        20,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for cutting."
+      },
+      {
+        "t": "Mark base length",
+        "c": "Mark the 40 cm base length."
+      },
+      {
+        "t": "Cut the base",
+        "c": "Saw board into 40 cm base and offcut."
+      },
+      {
+        "t": "Place second board",
+        "c": "Place the second board flat for cutting."
+      },
+      {
+        "t": "Mark box sides",
+        "c": "Mark 40, 40, 16 and 16 cm parts."
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Saw out front, back, both ends and offcut."
+      },
+      {
+        "t": "Sand the parts",
+        "c": "Sand all cut parts smooth."
+      },
+      {
+        "t": "Place the base",
+        "c": "Place the base flat on the ground."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill three drainage holes through the base."
+      },
+      {
+        "t": "Stand the front",
+        "c": "Stand the front on the base front edge."
+      },
+      {
+        "t": "Stand the back",
+        "c": "Stand the back on the base back edge."
+      },
+      {
+        "t": "Fit left end",
+        "c": "Fit the left end between front and back."
+      },
+      {
+        "t": "Fit right end",
+        "c": "Fit the right end between front and back."
+      },
+      {
+        "t": "Fix front to left",
+        "c": "Drive screws through front into left end."
+      },
+      {
+        "t": "Fix front to right",
+        "c": "Drive screws through front into right end."
+      },
+      {
+        "t": "Fix back to left",
+        "c": "Drive screws through back into left end."
+      },
+      {
+        "t": "Fix back to right",
+        "c": "Drive screws through back into right end."
+      },
+      {
+        "t": "Fix base to front",
+        "c": "Drive screws through base into front."
+      },
+      {
+        "t": "Fix base to back",
+        "c": "Drive screws through base into back."
+      },
+      {
+        "t": "Fix base to left",
+        "c": "Drive screws through base into left end."
+      },
+      {
+        "t": "Fix base to right",
+        "c": "Drive screws through base into right end."
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,1216 @@
+{
+  "mode": "live-planner",
+  "created": "2026-10-31T20:41:24.590Z",
+  "cases": [
+    {
+      "id": "wood8",
+      "title": "Wood build",
+      "diagnostic": false,
+      "qualification": {
+        "machine": "pass",
+        "eligibleForPilot": true,
+        "taskReview": "pending",
+        "reason": "Saved witness passes current machine gates; human task review remains pending."
+      },
+      "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+      "inventory": [
+        {
+          "k": "board-a",
+          "n": "wide weathered pine board",
+          "cm": 120,
+          "w": 20,
+          "thick": 2
+        },
+        {
+          "k": "board-b",
+          "n": "weathered pine board",
+          "cm": 120,
+          "w": 18,
+          "thick": 2
+        },
+        {
+          "k": "board-c",
+          "n": "narrow weathered pine board",
+          "cm": 120,
+          "w": 15,
+          "thick": 2
+        }
+      ],
+      "expectations": [
+        "Does this fulfill the request?",
+        "Are materials grounded and quantities sufficient?",
+        "Are steps complete and captions faithful?",
+        "Does the final result follow from shown operations?"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "scheduled": 2,
+      "completed": 2,
+      "strictPasses": 0,
+      "strictFailures": 0,
+      "pending": 2,
+      "strictPassAt1": null,
+      "strictWilson95": null,
+      "machinePassAt1": 1,
+      "rawFirstResponsePasses": 1,
+      "selectedMachinePasses": 2,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 15.609222061499983,
+      "knownCost": 0.21938800000000003,
+      "unknownCosts": 0,
+      "requestCount": 2,
+      "costPerStrictPass": null,
+      "silentBadPlans": 0,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 2,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "scheduled": 2,
+      "completed": 2,
+      "strictPasses": 0,
+      "strictFailures": 0,
+      "pending": 2,
+      "strictPassAt1": null,
+      "strictWilson95": null,
+      "machinePassAt1": 1,
+      "rawFirstResponsePasses": 2,
+      "selectedMachinePasses": 2,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 19.4341975045,
+      "knownCost": 0.2077168,
+      "unknownCosts": 0,
+      "requestCount": 2,
+      "costPerStrictPass": null,
+      "silentBadPlans": 0,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 2,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "scheduled": 2,
+      "completed": 2,
+      "strictPasses": 0,
+      "strictFailures": 2,
+      "pending": 0,
+      "strictPassAt1": 0,
+      "strictWilson95": [
+        0,
+        0.6576197724933469
+      ],
+      "machinePassAt1": 0,
+      "rawFirstResponsePasses": 0,
+      "selectedMachinePasses": 0,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 24.28832885949999,
+      "knownCost": 0.276928,
+      "unknownCosts": 0,
+      "requestCount": 2,
+      "costPerStrictPass": null,
+      "silentBadPlans": 0,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 0,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "scheduled": 2,
+      "completed": 2,
+      "strictPasses": 0,
+      "strictFailures": 2,
+      "pending": 0,
+      "strictPassAt1": 0,
+      "strictWilson95": [
+        0,
+        0.6576197724933469
+      ],
+      "machinePassAt1": 0,
+      "rawFirstResponsePasses": 0,
+      "selectedMachinePasses": 0,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 14.592152685499993,
+      "knownCost": 0.07957475,
+      "unknownCosts": 0,
+      "requestCount": 2,
+      "costPerStrictPass": null,
+      "silentBadPlans": 1,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 0,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "scheduled": 2,
+      "completed": 2,
+      "strictPasses": 0,
+      "strictFailures": 0,
+      "pending": 2,
+      "strictPassAt1": null,
+      "strictWilson95": null,
+      "machinePassAt1": 1,
+      "rawFirstResponsePasses": 2,
+      "selectedMachinePasses": 2,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 30.8372750495,
+      "knownCost": 0.11051475,
+      "unknownCosts": 0,
+      "requestCount": 2,
+      "costPerStrictPass": null,
+      "silentBadPlans": 0,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 2,
+          "strictPasses": 0
+        }
+      ]
+    }
+  ],
+  "failureCounts": {
+    "rawSchema/rawSchema-failure": 2,
+    "semantics/semantics-failure": 3,
+    "structure/structure-failure": 1
+  },
+  "models": [
+    "muse-wonder-1.0",
+    "muse-spark-1.3"
+  ],
+  "efforts": [
+    "minimal",
+    "low",
+    "medium"
+  ],
+  "trials": [
+    {
+      "id": "93e9be7912e07c2d3651",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "d7417ed441911149e446",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-22082af47d0c8940896b",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-50c8520f8b00cd811632",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-6c694e9e49d81442173b",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-afbc59c5b0b1f048d5c2",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-7422bb05074284c0b7eb",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-81517d41ac19e2f8e64f",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-7ea3ae956f7b2e977187",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-fb6dd5830c64021dc3a4",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    }
+  ],
+  "machinePasses": 6,
+  "strictPasses": 0,
+  "pendingHuman": 10,
+  "rows": [
+    {
+      "id": "93e9be7912e07c2d3651-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "93e9be7912e07c2d3651",
+      "sample": 1,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 134,
+            "duration": 89.50000000000001,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+          "cut-c: compiled explicit stock cut with checked kerfs and offcut",
+          "Assembly placement compiled for base",
+          "Assembly placement compiled for front",
+          "Assembly placement compiled for back",
+          "Assembly placement compiled for left",
+          "Assembly placement compiled for right",
+          "box: compiled eight box joints and their measured work sites",
+          "step 12: caption made a count of its screws",
+          "step 13: caption made a count of its screws",
+          "step 14: caption made a count of its screws",
+          "step 15: caption made a count of its screws",
+          "step 16: caption made a count of its screws",
+          "step 17: caption made a count of its screws",
+          "step 18: caption made a count of its screws",
+          "step 19: caption made a count of its screws"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "f1: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f2: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f3: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f4: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f5: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f6: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f7: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f8: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.106204,
+      "responseSeconds": 14.300066193000006,
+      "repairDecision": null
+    },
+    {
+      "id": "d7417ed441911149e446-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "d7417ed441911149e446",
+      "sample": 2,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 132,
+            "duration": 83.1,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 1: the caption gives 120 cm, but no action carries it",
+          "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 3: the caption gives 120 cm, but no action carries it",
+          "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 5: the caption gives 120 cm, but no action carries it",
+          "step 6: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 7: the caption gives 20 cm, but no action carries it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+          "cut-b: compiled explicit stock cut with checked kerfs and offcut",
+          "cut-c: compiled explicit stock cut with checked kerfs and offcut",
+          "Assembly placement compiled for base",
+          "Assembly placement compiled for front",
+          "Assembly placement compiled for back",
+          "Assembly placement compiled for left",
+          "Assembly placement compiled for right",
+          "box: compiled eight box joints and their measured work sites"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.113184,
+      "responseSeconds": 16.91837792999996,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-22082af47d0c8940896b-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-22082af47d0c8940896b",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 92,
+            "duration": 68.99999999999997,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+          "cut-b: compiled explicit stock cut with checked kerfs and offcut",
+          "Assembly placement compiled for base",
+          "Assembly placement compiled for front",
+          "Assembly placement compiled for back",
+          "Assembly placement compiled for left",
+          "Assembly placement compiled for right",
+          "box: compiled eight box joints and their measured work sites"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.05700625,
+      "responseSeconds": 33.836875303,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-50c8520f8b00cd811632-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-50c8520f8b00cd811632",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 127,
+            "duration": 86,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 2: the caption gives 0.3 cm, but no action carries it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+          "cut-b: compiled explicit stock cut with checked kerfs and offcut",
+          "Assembly placement compiled for base",
+          "Assembly placement compiled for front",
+          "Assembly placement compiled for back",
+          "Assembly placement compiled for left",
+          "Assembly placement compiled for right",
+          "box: compiled eight box joints and their measured work sites"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.117444,
+      "responseSeconds": 17.373010436000005,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-6c694e9e49d81442173b-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-6c694e9e49d81442173b",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "fail",
+            "errors": [
+              "$.steps[2].do[0]: does not match any allowed schema branch"
+            ]
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "cut-a: show exactly one explicit cut action referencing this declaration"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[2].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "cut-a: show exactly one explicit cut action referencing this declaration"
+          }
+        ],
+        "warnings": [],
+        "corrections": [],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [
+          "cut-a: show exactly one explicit cut action referencing this declaration"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.04228,
+      "responseSeconds": 16.957487424,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-afbc59c5b0b1f048d5c2-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-afbc59c5b0b1f048d5c2",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: a2: intent mark needs a faithful demonstration, not measure; a5: intent mark needs a faithful demonstration, not measure"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "Invalid operation contract: a2: intent mark needs a faithful demonstration, not measure; a5: intent mark needs a faithful demonstration, not measure"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+          "cut-b: compiled explicit stock cut with checked kerfs and offcut",
+          "Assembly placement compiled for base",
+          "Assembly placement compiled for front",
+          "Assembly placement compiled for back",
+          "Assembly placement compiled for left",
+          "Assembly placement compiled for right",
+          "box: compiled eight box joints and their measured work sites"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a2: intent mark needs a faithful demonstration, not measure",
+          "a5: intent mark needs a faithful demonstration, not measure"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.137044,
+      "responseSeconds": 25.647570711000007,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-7422bb05074284c0b7eb-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-7422bb05074284c0b7eb",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 141,
+            "duration": 93.00000000000004,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 3: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+          "cut-b: compiled explicit stock cut with checked kerfs and offcut",
+          "Assembly placement compiled for base",
+          "Assembly placement compiled for front",
+          "Assembly placement compiled for back",
+          "Assembly placement compiled for left",
+          "Assembly placement compiled for right",
+          "box: compiled eight box joints and their measured work sites"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0535085,
+      "responseSeconds": 27.837674796000005,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-81517d41ac19e2f8e64f-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-81517d41ac19e2f8e64f",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "fail",
+            "errors": [
+              "$.steps[7].do[0]: does not match any allowed schema branch",
+              "$.steps[8].do[0]: does not match any allowed schema branch"
+            ]
+          },
+          "structure": {
+            "status": "fail",
+            "errors": [
+              "$.steps[7].do[0]: does not match any allowed schema branch",
+              "$.steps[8].do[0]: does not match any allowed schema branch"
+            ]
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[7].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[8].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "structure",
+            "code": "structure-failure",
+            "message": "$.steps[7].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "structure",
+            "code": "structure-failure",
+            "message": "$.steps[8].do[0]: does not match any allowed schema branch"
+          }
+        ],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+          "cut-b: compiled explicit stock cut with checked kerfs and offcut",
+          "Assembly placement compiled for base",
+          "Assembly placement compiled for front",
+          "Assembly placement compiled for back",
+          "Assembly placement compiled for left",
+          "Assembly placement compiled for right",
+          "box: compiled eight box joints and their measured work sites",
+          "step 10: caption made a count of its screws",
+          "step 11: caption made a count of its screws",
+          "step 12: caption made a count of its screws",
+          "step 13: caption made a count of its screws",
+          "step 14: caption made a count of its screws",
+          "step 15: caption made a count of its screws",
+          "step 16: caption made a count of its screws",
+          "step 17: caption made a count of its screws"
+        ],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [
+          "a10: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a11: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a12: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a13: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a14: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a15: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a16: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a17: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.03729475,
+      "responseSeconds": 12.226817946999988,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-7ea3ae956f7b2e977187-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-7ea3ae956f7b2e977187",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 134,
+            "duration": 90.35000000000002,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+          "cut-b: compiled explicit stock cut with checked kerfs and offcut",
+          "Assembly placement compiled for base",
+          "Assembly placement compiled for front",
+          "Assembly placement compiled for back",
+          "Assembly placement compiled for left",
+          "Assembly placement compiled for right",
+          "box: compiled eight box joints and their measured work sites"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0902728,
+      "responseSeconds": 21.49538457299999,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-fb6dd5830c64021dc3a4-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-fb6dd5830c64021dc3a4",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: m1: intent mark needs a faithful demonstration, not measure; m3: intent mark needs a faithful demonstration, not measure"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "Invalid operation contract: m1: intent mark needs a faithful demonstration, not measure; m3: intent mark needs a faithful demonstration, not measure"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+          "cut-b: compiled explicit stock cut with checked kerfs and offcut",
+          "Assembly placement compiled for base",
+          "Assembly placement compiled for front",
+          "Assembly placement compiled for back",
+          "Assembly placement compiled for left",
+          "Assembly placement compiled for right",
+          "box: compiled eight box joints and their measured work sites"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "m1: intent mark needs a faithful demonstration, not measure",
+          "m3: intent mark needs a faithful demonstration, not measure"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.139884,
+      "responseSeconds": 22.929087007999975,
+      "repairDecision": null
+    }
+  ],
+  "note": "Wonder minimal follow-up for v4-required. Exact saved user prompt, JSON schema and photo; current model client and normalize=true evaluator. Existing low/medium outputs re-evaluated with the same normalization and checks. No repairs or retries. Human task review remains pending. Public snapshot contains only curated cases; saved private-film histories remain local.",
+  "intervalNote": "Wilson intervals describe trials conditional on these fixed cases, not generalization to new objects. Inspect per-case results. Diagnostic cases are excluded from model rankings. Saved replays are never ranked as a controlled model experiment."
+}

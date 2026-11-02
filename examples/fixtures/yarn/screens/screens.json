@@ -1,0 +1,27 @@
+{
+ "green-yarn": {
+  "width": 1016,
+  "height": 1007,
+  "regions": []
+ },
+ "blue-yarn": {
+  "width": 985,
+  "height": 1048,
+  "regions": []
+ },
+ "hook": {
+  "width": 916,
+  "height": 493,
+  "regions": []
+ },
+ "scissors": {
+  "width": 646,
+  "height": 555,
+  "regions": []
+ },
+ "photo": {
+  "width": 1932,
+  "height": 1932,
+  "regions": []
+ }
+}

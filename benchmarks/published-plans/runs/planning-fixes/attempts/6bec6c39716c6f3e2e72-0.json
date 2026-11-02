@@ -1,0 +1,196 @@
+{
+  "row": {
+    "id": "6bec6c39716c6f3e2e72-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "low",
+    "trialId": "6bec6c39716c6f3e2e72",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 113,
+          "duration": 70.39999999999998,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 1: the caption gives 120 cm, but no action carries it",
+        "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 3: the caption gives 120 cm, but no action carries it",
+        "step 6: the caption gives 40 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "screws: 4 cm → 7 cm, the length every joint they make needs"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a12: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a13: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a14: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a15: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a16: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a17: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.173828,
+    "responseSeconds": 31.665431711999933,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Open Herb Planter",
+    "design": {
+      "purpose": "A drained outdoor planter for herbs or flowers for one household. Interior is about 36 × 16 cm and 18 cm deep, giving at least 15 cm soil depth.",
+      "size": [
+        40,
+        20,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the 120 cm wide board flat for cutting"
+      },
+      {
+        "t": "Cut the base",
+        "c": "Cut a 40 cm base; keep the 79.7 cm remainder"
+      },
+      {
+        "t": "Place second board",
+        "c": "Place the 120 cm board flat for cutting"
+      },
+      {
+        "t": "Cut four walls",
+        "c": "Cut 40, 40, 16 and 16 cm wall pieces"
+      },
+      {
+        "t": "Sand cut ends",
+        "c": "Sand the cut ends of all five planter parts"
+      },
+      {
+        "t": "Place the base",
+        "c": "Place the 40 cm base flat on the floor"
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill four drainage holes through the base"
+      },
+      {
+        "t": "Place front wall",
+        "c": "Stand the front wall on the base front edge"
+      },
+      {
+        "t": "Place back wall",
+        "c": "Stand the back wall on the base back edge"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between front and back"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between front and back"
+      },
+      {
+        "t": "Fix front to left",
+        "c": "Screw the front wall to the left end"
+      },
+      {
+        "t": "Fix front to right",
+        "c": "Screw the front wall to the right end"
+      },
+      {
+        "t": "Fix back to left",
+        "c": "Screw the back wall to the left end"
+      },
+      {
+        "t": "Fix back to right",
+        "c": "Screw the back wall to the right end"
+      },
+      {
+        "t": "Fix base to front",
+        "c": "Screw upward through base into front wall"
+      },
+      {
+        "t": "Fix base to back",
+        "c": "Screw upward through base into back wall"
+      }
+    ]
+  },
+  "rawText": null
+}

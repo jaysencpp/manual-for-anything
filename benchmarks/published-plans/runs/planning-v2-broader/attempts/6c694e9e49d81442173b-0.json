@@ -1,0 +1,439 @@
+{
+  "row": {
+    "id": "6c694e9e49d81442173b-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "6c694e9e49d81442173b",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[5].do[0]: does not match any allowed schema branch",
+            "$.steps[5].do[1]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "$.steps[5].do[0]: does not match any allowed schema branch",
+            "$.steps[5].do[1]: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "joint joint-front-left: needs two distinct known parts",
+            "joint joint-front-right: needs two distinct known parts",
+            "joint joint-back-left: needs two distinct known parts",
+            "joint joint-back-right: needs two distinct known parts",
+            "joint joint-base-front: needs two distinct known parts",
+            "joint joint-base-back: needs two distinct known parts",
+            "a10: declared fastener length must equal the planned driven depth",
+            "a10: fastening tool is incompatible with the fastener",
+            "a11: declared fastener length must equal the planned driven depth",
+            "a11: fastening tool is incompatible with the fastener",
+            "a12: declared fastener length must equal the planned driven depth",
+            "a12: fastening tool is incompatible with the fastener",
+            "joint joint-front-right: no attachment operation",
+            "joint joint-back-right: no attachment operation",
+            "joint joint-base-back: no attachment operation",
+            "step 3: k refers to unknown object base",
+            "step 4: k refers to unknown object base",
+            "step 5: k refers to unknown object front",
+            "step 5: to refers to unknown object base",
+            "step 5: k refers to unknown object back",
+            "step 6: k refers to unknown object left",
+            "step 6: to refers to unknown object base",
+            "step 6: k refers to unknown object right",
+            "step 7: k refers to unknown object front",
+            "step 7: to refers to unknown object left",
+            "step 8: k refers to unknown object back",
+            "step 8: to refers to unknown object left",
+            "step 8: k refers to unknown object base",
+            "step 8: to refers to unknown object front",
+            "design: offcut-a is never made or used by the steps",
+            "design: offcut-c is never made or used by the steps"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "joint joint-front-left: Both joint parts need numeric geometry",
+            "joint joint-front-right: Both joint parts need numeric geometry",
+            "joint joint-back-left: Both joint parts need numeric geometry",
+            "joint joint-back-right: Both joint parts need numeric geometry",
+            "joint joint-base-front: Both joint parts need numeric geometry",
+            "joint joint-base-back: Both joint parts need numeric geometry"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "fail",
+          "errors": [
+            "Task requires operation cut"
+          ]
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[5].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[5].do[1]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[5].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[5].do[1]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-front-left: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-front-right: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-back-left: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-back-right: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-front: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-back: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a10: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a10: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a11: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a11: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a12: declared fastener length must equal the planned driven depth"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a12: fastening tool is incompatible with the fastener"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-front-right: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-back-right: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-back: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 3: k refers to unknown object base"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 4: k refers to unknown object base"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object front"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: to refers to unknown object base"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object back"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: k refers to unknown object left"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: to refers to unknown object base"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: k refers to unknown object right"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: k refers to unknown object front"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: to refers to unknown object left"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object back"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: to refers to unknown object left"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object base"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: to refers to unknown object front"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: offcut-a is never made or used by the steps"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: offcut-c is never made or used by the steps"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-left: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-right: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-left: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-right: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-front: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-back: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "task",
+          "code": "task-failure",
+          "message": "Task requires operation cut"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 7: the caption names drill, but no action uses it",
+        "step 7: the caption names screws, but no action uses it",
+        "step 8: the caption names screws, but no action uses it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "joint joint-front-left: needs two distinct known parts",
+        "joint joint-front-right: needs two distinct known parts",
+        "joint joint-back-left: needs two distinct known parts",
+        "joint joint-back-right: needs two distinct known parts",
+        "joint joint-base-front: needs two distinct known parts",
+        "joint joint-base-back: needs two distinct known parts",
+        "a2: intent work needs a faithful demonstration, not use",
+        "a3: intent work needs a faithful demonstration, not use",
+        "a10: declared fastener length must equal the planned driven depth",
+        "a10: fastening tool is incompatible with the fastener",
+        "a11: declared fastener length must equal the planned driven depth",
+        "a11: fastening tool is incompatible with the fastener",
+        "a12: declared fastener length must equal the planned driven depth",
+        "a12: fastening tool is incompatible with the fastener",
+        "unreached goal base:assembled",
+        "unreached goal front:assembled",
+        "joint joint-front-right: no attachment operation",
+        "joint joint-back-right: no attachment operation",
+        "joint joint-base-back: no attachment operation",
+        "step 3: k refers to unknown object base",
+        "step 4: k refers to unknown object base",
+        "step 5: k refers to unknown object front",
+        "step 5: to refers to unknown object base",
+        "step 5: k refers to unknown object back",
+        "step 6: k refers to unknown object left",
+        "step 6: to refers to unknown object base",
+        "step 6: k refers to unknown object right",
+        "step 7: k refers to unknown object front",
+        "step 7: to refers to unknown object left",
+        "step 8: k refers to unknown object back",
+        "step 8: to refers to unknown object left",
+        "step 8: k refers to unknown object base",
+        "step 8: to refers to unknown object front",
+        "design: offcut-a is never made or used by the steps",
+        "design: offcut-c is never made or used by the steps"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.036807,
+    "responseSeconds": 14.297272886999998,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Trough Planter",
+    "design": {
+      "purpose": "Rectangular trough planter for herbs/flowers. Serves 1 household: holds ~9 L soil, 15 cm deep soil for roots",
+      "size": [
+        40,
+        20,
+        17
+      ]
+    },
+    "steps": [
+      {
+        "t": "Cut base",
+        "c": "Measure and cut 40 cm base from wide board"
+      },
+      {
+        "t": "Cut sides",
+        "c": "Cut front, back, ends from narrow board"
+      },
+      {
+        "t": "Sand parts",
+        "c": "Sand all cut ends smooth"
+      },
+      {
+        "t": "Place base",
+        "c": "Lay base flat in middle"
+      },
+      {
+        "t": "Place sides",
+        "c": "Stand front and back on base"
+      },
+      {
+        "t": "Place ends",
+        "c": "Fit ends between front and back"
+      },
+      {
+        "t": "Screw front",
+        "c": "Drill and screw front to ends"
+      },
+      {
+        "t": "Screw back and base",
+        "c": "Screw back to ends and base up"
+      }
+    ]
+  },
+  "rawText": null
+}

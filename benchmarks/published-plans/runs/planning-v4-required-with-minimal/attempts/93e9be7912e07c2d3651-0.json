@@ -1,0 +1,218 @@
+{
+  "row": {
+    "id": "93e9be7912e07c2d3651-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "93e9be7912e07c2d3651",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 134,
+          "duration": 89.50000000000001,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+        "cut-c: compiled explicit stock cut with checked kerfs and offcut",
+        "Assembly placement compiled for base",
+        "Assembly placement compiled for front",
+        "Assembly placement compiled for back",
+        "Assembly placement compiled for left",
+        "Assembly placement compiled for right",
+        "box: compiled eight box joints and their measured work sites",
+        "step 12: caption made a count of its screws",
+        "step 13: caption made a count of its screws",
+        "step 14: caption made a count of its screws",
+        "step 15: caption made a count of its screws",
+        "step 16: caption made a count of its screws",
+        "step 17: caption made a count of its screws",
+        "step 18: caption made a count of its screws",
+        "step 19: caption made a count of its screws"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "f1: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f2: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f3: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f4: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f5: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f6: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f7: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f8: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.106204,
+    "responseSeconds": 14.300066193000006,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Herb Planter Box",
+    "design": {
+      "purpose": "A weatherproof-looking outdoor planter for herbs or flowers for one household; interior about 41 × 11 cm with 20 cm soil depth before lining.",
+      "size": [
+        45,
+        15,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place board-a flat for cutting."
+      },
+      {
+        "t": "Cut side parts",
+        "c": "Cut front, back and two 11 cm ends."
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Place board-c flat for cutting."
+      },
+      {
+        "t": "Cut base",
+        "c": "Cut the 45 cm base from board-c."
+      },
+      {
+        "t": "Sand cut edges",
+        "c": "Sand all cut edges smooth."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill three 5 mm drainage holes in base."
+      },
+      {
+        "t": "Place base",
+        "c": "Place the base flat on the floor."
+      },
+      {
+        "t": "Place front",
+        "c": "Stand the front side on the base."
+      },
+      {
+        "t": "Place back",
+        "c": "Stand the back side on the base."
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between the sides."
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between the sides."
+      },
+      {
+        "t": "Fix front left",
+        "c": "Screw the front to the left end (2 screws)"
+      },
+      {
+        "t": "Fix front right",
+        "c": "Screw the front to the right end (2 screws)"
+      },
+      {
+        "t": "Fix back left",
+        "c": "Screw the back to the left end (2 screws)"
+      },
+      {
+        "t": "Fix back right",
+        "c": "Screw the back to the right end (2 screws)"
+      },
+      {
+        "t": "Fix base front",
+        "c": "Screw the base up into the front (2 screws)"
+      },
+      {
+        "t": "Fix base back",
+        "c": "Screw the base up into the back (2 screws)"
+      },
+      {
+        "t": "Fix base left",
+        "c": "Screw the base up into the left end (2 screws)"
+      },
+      {
+        "t": "Fix base right",
+        "c": "Screw the base up into the right end (2 screws)"
+      }
+    ]
+  },
+  "rawText": null
+}

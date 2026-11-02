@@ -1,0 +1,174 @@
+{
+  "row": {
+    "id": "ed95e12a26451a4bf6b0-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "xhigh",
+    "trialId": "ed95e12a26451a4bf6b0",
+    "sample": 1,
+    "planningEffort": "xhigh",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 115,
+          "duration": 75.24999999999999,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "step 15: the caption names tapestry-needle, but no action uses it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "d1: unmet state requirement cowl:unstarted"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.13992,
+    "responseSeconds": 107.171030359,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Chunky Two-Tone Cowl",
+    "design": {
+      "purpose": "Warm cowl for one adult: green-blue stripes, 60 cm around",
+      "size": [
+        30,
+        12,
+        28
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place yarn and tools",
+        "c": "Place yarns, hook, scissors, needle"
+      },
+      {
+        "t": "Make slip knot",
+        "c": "Make green slip knot on hook"
+      },
+      {
+        "t": "Show chain stitch",
+        "c": "Show yarn over, pull through loop"
+      },
+      {
+        "t": "Work foundation chain",
+        "c": "Chain 36 with green yarn"
+      },
+      {
+        "t": "Show ring join",
+        "c": "Show slip stitch to join ring"
+      },
+      {
+        "t": "Show half double",
+        "c": "Show half double crochet stitch"
+      },
+      {
+        "t": "Crochet green rounds",
+        "c": "Join ring, 10 rounds green hdc 36"
+      },
+      {
+        "t": "Snip green yarn",
+        "c": "Cut green, leave 15 cm tail"
+      },
+      {
+        "t": "Show color change",
+        "c": "Show join blue yarn in stitch"
+      },
+      {
+        "t": "Crochet blue stripe",
+        "c": "Work 4 rounds blue hdc 36"
+      },
+      {
+        "t": "Snip blue yarn",
+        "c": "Cut blue, leave 15 cm tail"
+      },
+      {
+        "t": "Show color change",
+        "c": "Show join green yarn in stitch"
+      },
+      {
+        "t": "Crochet green top",
+        "c": "Work 4 rounds green hdc 36"
+      },
+      {
+        "t": "Snip green yarn",
+        "c": "Cut green, leave 15 cm tail"
+      },
+      {
+        "t": "Weave in ends",
+        "c": "Weave tails inside with needle"
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,110 @@
+{
+ "effort": "low",
+ "noThinking": false,
+ "photo": {
+  "width": 1500,
+  "height": 1125
+ },
+ "begin": 14.82,
+ "firstFrameIfWaitingForAll": 45.95,
+ "filmSeconds": 41.6,
+ "needs": [
+  {
+   "what": "cut-outs (lift off the photo)",
+   "ready": 26.7,
+   "neededAt": 15.82,
+   "slack": -10.88
+  },
+  {
+   "what": "drawings (turn into drawings)",
+   "ready": 47.25,
+   "neededAt": 16.12,
+   "slack": -31.13
+  },
+  {
+   "what": "steps + layout (first step)",
+   "ready": 26.7,
+   "neededAt": 20.42,
+   "slack": -6.28
+  },
+  {
+   "what": "finale",
+   "ready": 50.3,
+   "neededAt": 47.82,
+   "slack": -2.48
+  }
+ ],
+ "marks": {
+  "start": 0,
+  "script: first object": 14.82,
+  "script: object list": 14.82,
+  "script: done": 17.69,
+  "SAM: cut-outs": 26.7,
+  "layout": 26.7,
+  "drawing: pepperjack": 39.68,
+  "drawing: corn": 42.55,
+  "drawing: chili-beans": 45.8,
+  "drawing: broth": 46.74,
+  "drawing: tomatoes": 47.25,
+  "drawings: all": 47.25,
+  "finale: written": 50.3,
+  "finale: checked": 50.3
+ },
+ "calls": {
+  "script": {
+   "seconds": 16.622,
+   "output": 1614,
+   "thinking": 235,
+   "cost": 0.1102504
+  },
+  "sam": {
+   "load": 8.1,
+   "segment": 1.29,
+   "scores": {
+    "chili-beans": 0.98,
+    "broth": 0.98,
+    "tomatoes": 0.98,
+    "corn": 0.97,
+    "pepperjack": 0.96
+   }
+  },
+  "draw pepperjack": {
+   "seconds": 11.272,
+   "output": 967,
+   "thinking": 0,
+   "cost": 0.0743858
+  },
+  "draw corn": {
+   "seconds": 13.868,
+   "output": 1073,
+   "thinking": 279,
+   "cost": 0.07156660000000001
+  },
+  "draw chili-beans": {
+   "seconds": 17.465,
+   "output": 1284,
+   "thinking": 330,
+   "cost": 0.0802448
+  },
+  "draw broth": {
+   "seconds": 18.44,
+   "output": 1418,
+   "thinking": 598,
+   "cost": 0.0818266
+  },
+  "draw tomatoes": {
+   "seconds": 19.047,
+   "output": 1488,
+   "thinking": 543,
+   "cost": 0.0825184
+  },
+  "finale": {
+   "seconds": 22.026,
+   "output": 2478,
+   "thinking": 296,
+   "cost": 0.1372016,
+   "problem": null
+  }
+ },
+ "cost": 0.638
+}

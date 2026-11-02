@@ -1,0 +1,251 @@
+{
+  "row": {
+    "id": "628d14a2a241b2d85913-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "628d14a2a241b2d85913",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "a17: attachment operation needs an explicit joint",
+            "a19: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "side-front: align currently requires upright parallel parts",
+            "side-back: align currently requires upright parallel parts",
+            "joint joint-front-left: Joint surfaces do not touch: side-front exit plane y=68 cm, side-left receiving plane y=23 cm (separation 45 cm). Position side-left relative to side-front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-front-right: Joint surfaces do not touch: side-front exit plane y=68 cm, side-right receiving plane y=23 cm (separation 45 cm). Position side-right relative to side-front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-back-left: Joint surfaces do not touch: side-back exit plane y=98 cm, side-left receiving plane y=143 cm (separation 45 cm). Position side-left relative to side-back; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-back-right: Joint surfaces do not touch: side-back exit plane y=98 cm, side-right receiving plane y=143 cm (separation 45 cm). Position side-right relative to side-back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a17: attachment operation needs an explicit joint"
+        },
+        {
+          "stage": "semantics",
+          "code": "stock-conservation",
+          "message": "a19: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path"
+        },
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "side-front: align currently requires upright parallel parts"
+        },
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "side-back: align currently requires upright parallel parts"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-left: Joint surfaces do not touch: side-front exit plane y=68 cm, side-left receiving plane y=23 cm (separation 45 cm). Position side-left relative to side-front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-right: Joint surfaces do not touch: side-front exit plane y=68 cm, side-right receiving plane y=23 cm (separation 45 cm). Position side-right relative to side-front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-left: Joint surfaces do not touch: side-back exit plane y=98 cm, side-left receiving plane y=143 cm (separation 45 cm). Position side-left relative to side-back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-right: Joint surfaces do not touch: side-back exit plane y=98 cm, side-right receiving plane y=143 cm (separation 45 cm). Position side-right relative to side-back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 6: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a17: attachment operation needs an explicit joint",
+        "a19: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.233648,
+    "responseSeconds": 62.31774078400014,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "A free-standing outdoor planter for herbs or flowers, with drainage through a 2 cm slot between the base slats. Built sizes assume the estimated board sizes are confirmed before cutting.",
+      "size": [
+        40,
+        36,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Confirm each board measures before marking any cuts"
+      },
+      {
+        "t": "Cut long sides",
+        "c": "Mark then saw across into the listed lengths"
+      },
+      {
+        "t": "Place second board",
+        "c": "Place the second board flat for marking"
+      },
+      {
+        "t": "Cut short sides",
+        "c": "Mark then saw across into the listed lengths"
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Place the narrow board flat for marking"
+      },
+      {
+        "t": "Cut base slats",
+        "c": "Mark then saw across into the listed lengths"
+      },
+      {
+        "t": "Sand all parts",
+        "c": "Sand cut edges and faces until splinter-free"
+      },
+      {
+        "t": "Lay front slat",
+        "c": "Lay the front base slat flat on the ground"
+      },
+      {
+        "t": "Lay back slat",
+        "c": "Lay the back slat parallel, leaving the drainage gap"
+      },
+      {
+        "t": "Stand front side",
+        "c": "Stand the front side against the front slat edge"
+      },
+      {
+        "t": "Stand back side",
+        "c": "Stand the back side against the back slat edge"
+      },
+      {
+        "t": "Fit left side",
+        "c": "Stand the left side on both slats between long sides"
+      },
+      {
+        "t": "Fit right side",
+        "c": "Stand the right side on both slats between long sides"
+      },
+      {
+        "t": "Square the box",
+        "c": "Check corners square and tops level before fastening"
+      },
+      {
+        "t": "Screw front-left corner",
+        "c": "Fasten the front-left corner through the front side"
+      },
+      {
+        "t": "Screw front-right corner",
+        "c": "Fasten the front-right corner through the front side"
+      },
+      {
+        "t": "Screw back-left corner",
+        "c": "Fasten the back-left corner through the back side"
+      },
+      {
+        "t": "Screw back-right corner",
+        "c": "Fasten the back-right corner through the back side"
+      },
+      {
+        "t": "Fix front slat",
+        "c": "Fasten the front base slat through the front side"
+      },
+      {
+        "t": "Fix back slat",
+        "c": "Fasten the back base slat through the back side"
+      },
+      {
+        "t": "Final sanding",
+        "c": "Remove clamps and sand any remaining rough spots"
+      }
+    ]
+  },
+  "rawText": null
+}

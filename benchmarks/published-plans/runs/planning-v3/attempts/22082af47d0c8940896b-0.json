@@ -1,0 +1,396 @@
+{
+  "row": {
+    "id": "22082af47d0c8940896b-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "22082af47d0c8940896b",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[2].do[0]: does not match any allowed schema branch",
+            "$.steps[3].do[0]: does not match any allowed schema branch",
+            "$.steps[4].do[0]: does not match any allowed schema branch",
+            "$.steps[5].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "$.steps[2].do[0]: does not match any allowed schema branch",
+            "$.steps[3].do[0]: does not match any allowed schema branch",
+            "$.steps[4].do[0]: does not match any allowed schema branch",
+            "$.steps[5].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "joint front-left: needs two distinct known parts",
+            "joint front-right: needs two distinct known parts",
+            "joint back-left: needs two distinct known parts",
+            "joint back-right: needs two distinct known parts",
+            "joint base-front: needs two distinct known parts",
+            "joint base-back: needs two distinct known parts",
+            "c1: intent cut needs a faithful demonstration, not place",
+            "c1: duplicate operation ID",
+            "c2: intent cut needs a faithful demonstration, not place",
+            "joint front-left: no attachment operation",
+            "joint front-right: no attachment operation",
+            "joint back-left: no attachment operation",
+            "joint back-right: no attachment operation",
+            "joint base-front: no attachment operation",
+            "joint base-back: no attachment operation",
+            "step 5: work target board-a must name a piece declared in makes, not source material",
+            "step 5: work source to must name a distinct photographed material",
+            "step 5: work progress must be between 0 and 1",
+            "design: base is never made or used by the steps",
+            "design: front is never made or used by the steps",
+            "design: back is never made or used by the steps",
+            "design: left is never made or used by the steps",
+            "design: right is never made or used by the steps"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "joint front-left: Both joint parts need numeric geometry",
+            "joint front-right: Both joint parts need numeric geometry",
+            "joint back-left: Both joint parts need numeric geometry",
+            "joint back-right: Both joint parts need numeric geometry",
+            "joint base-front: Both joint parts need numeric geometry",
+            "joint base-back: Both joint parts need numeric geometry"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "fail",
+          "errors": [
+            "Task requires operation cut"
+          ]
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[2].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[4].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[5].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[2].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[4].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[5].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint front-left: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint front-right: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint back-left: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint back-right: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint base-front: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint base-back: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "c1: intent cut needs a faithful demonstration, not place"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "c1: duplicate operation ID"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "c2: intent cut needs a faithful demonstration, not place"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint front-left: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint front-right: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint back-left: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint back-right: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint base-front: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint base-back: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 5: work target board-a must name a piece declared in makes, not source material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 5: work source to must name a distinct photographed material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 5: work progress must be between 0 and 1"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: base is never made or used by the steps"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: front is never made or used by the steps"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: back is never made or used by the steps"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: left is never made or used by the steps"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: right is never made or used by the steps"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint front-left: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint front-right: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint back-left: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint back-right: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint base-front: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint base-back: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "task",
+          "code": "task-failure",
+          "message": "Task requires operation cut"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 2: the caption gives 108 cm, but no action carries it",
+        "step 4: the caption gives 40 cm, but no action carries it",
+        "step 4: the caption gives 14 cm, but no action carries it",
+        "step 6: the caption gives 40 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "joint front-left: needs two distinct known parts",
+        "joint front-right: needs two distinct known parts",
+        "joint back-left: needs two distinct known parts",
+        "joint back-right: needs two distinct known parts",
+        "joint base-front: needs two distinct known parts",
+        "joint base-back: needs two distinct known parts",
+        "c1: intent cut needs a faithful demonstration, not place",
+        "c1: duplicate operation ID",
+        "c2: intent cut needs a faithful demonstration, not place",
+        "joint front-left: no attachment operation",
+        "joint front-right: no attachment operation",
+        "joint back-left: no attachment operation",
+        "joint back-right: no attachment operation",
+        "joint base-front: no attachment operation",
+        "joint base-back: no attachment operation",
+        "step 5: work target board-a must name a piece declared in makes, not source material",
+        "step 5: work source to must name a distinct photographed material",
+        "step 5: work progress must be between 0 and 1",
+        "design: base is never made or used by the steps",
+        "design: front is never made or used by the steps",
+        "design: back is never made or used by the steps",
+        "design: left is never made or used by the steps",
+        "design: right is never made or used by the steps"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.048089,
+    "responseSeconds": 26.378689318,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Pine Trough Planter",
+    "design": {
+      "purpose": "Hold soil and plants outdoors. Serves one household, 40 cm trough.",
+      "size": [
+        40,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Lay out boards",
+        "c": "Place wide and middle boards on ground"
+      },
+      {
+        "t": "Mark wide board",
+        "c": "Mark wide board at 40, 80, 94, 108 cm"
+      },
+      {
+        "t": "Cut long sides",
+        "c": "Cut wide board into sides and ends"
+      },
+      {
+        "t": "Cut wide board",
+        "c": "Cut wide board into 40 cm sides and 14 cm ends"
+      },
+      {
+        "t": "Cut sides ends",
+        "c": "Cut wide board into sides and ends"
+      },
+      {
+        "t": "Cut base",
+        "c": "Cut middle board into 40 cm base"
+      }
+    ]
+  },
+  "rawText": null
+}

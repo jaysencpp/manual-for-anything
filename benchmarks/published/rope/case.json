@@ -1,0 +1,362 @@
+{
+  "id": "rope",
+  "title": "Rope",
+  "model": "muse-wonder-1.0",
+  "provider": "Meta Model API",
+  "generatedAt": "2026-10-31T11:14:10.118Z",
+  "samplesPerEffort": 1,
+  "maxTokens": 16384,
+  "width": 891,
+  "height": 915,
+  "reference": "reference.png",
+  "source": "Saved SAM cut-out from film 9fa3d281fa144008bf5a9d3253b8faac, screens/rope.png",
+  "expectations": [
+    "One beige twisted rope bundle, diagonally oriented from upper left to lower right.",
+    "Preserve the large upper-left loop, lower-right loop and their white interior openings.",
+    "Preserve the central band of rope wraps and which visible strands pass over or under it.",
+    "Keep the visible rope ends and clear taped tip near the lower-right opening recognizable without adding hidden features.",
+    "Follow the photographed silhouette, position and proportions; do not turn it into a different knot or an uncoiled rope.",
+    "Use clean dark outlines and flat beige shades. Simplify fine fibres into a few construction lines; no photographic texture, gradients or white background fill."
+  ],
+  "limitations": [
+    "Reuses the saved transparent SAM cut-out from the user's rope film; no additional segmentation calls. Fine fringe detail may be lost in the mask.",
+    "This is one rope bundle in one view. It tests simplified drawing fidelity, not knot identification or physical knot correctness."
+  ],
+  "pricingNote": "Project pricing estimates checked 2026-10-27; not billing records.",
+  "rows": [
+    {
+      "id": "d52f42b8abc0",
+      "effort": "minimal",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 15.412880104000003,
+      "responseSeconds": 15.110583355999996,
+      "cost": 0.0483,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 5790,
+      "outputTokens": 1257,
+      "reasoningTokens": 232,
+      "cachedInputTokens": 0,
+      "png": "minimal-1.png",
+      "svg": "minimal-1.svg"
+    },
+    {
+      "id": "87cb61cd8648",
+      "effort": "low",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 29.201682529000013,
+      "responseSeconds": 28.899538088,
+      "cost": 0.08584,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 5790,
+      "outputTokens": 3134,
+      "reasoningTokens": 2048,
+      "cachedInputTokens": 0,
+      "png": "low-1.png",
+      "svg": "low-1.svg"
+    },
+    {
+      "id": "2d48eb74116a",
+      "effort": "medium",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 27.364299166000002,
+      "responseSeconds": 27.063756325000003,
+      "cost": 0.07792,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 5790,
+      "outputTokens": 2738,
+      "reasoningTokens": 1568,
+      "cachedInputTokens": 0,
+      "png": "medium-1.png",
+      "svg": "medium-1.svg"
+    },
+    {
+      "id": "a739e39d85df",
+      "effort": "high",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 30.073434885999994,
+      "responseSeconds": 29.785299567000003,
+      "cost": 0.09278,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 5790,
+      "outputTokens": 3481,
+      "reasoningTokens": 2280,
+      "cachedInputTokens": 0,
+      "png": "high-1.png",
+      "svg": "high-1.svg"
+    },
+    {
+      "id": "303614ae4d28",
+      "effort": "xhigh",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 29.098660856999995,
+      "responseSeconds": 28.804777431999987,
+      "cost": 0.08604,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 5790,
+      "outputTokens": 3144,
+      "reasoningTokens": 1969,
+      "cachedInputTokens": 0,
+      "png": "xhigh-1.png",
+      "svg": "xhigh-1.svg"
+    },
+    {
+      "id": "d44d188c94e2",
+      "effort": "max",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 30.536941863000013,
+      "responseSeconds": 30.246759931000007,
+      "cost": 0.1102,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 5790,
+      "outputTokens": 4352,
+      "reasoningTokens": 3321,
+      "cachedInputTokens": 0,
+      "png": "max-1.png",
+      "svg": "max-1.svg"
+    }
+  ],
+  "groups": [
+    {
+      "effort": "minimal",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 15.110583355999996,
+      "medianUsableSeconds": 15.412880104000003,
+      "maxUsableSeconds": 15.412880104000003,
+      "medianCost": 0.0483,
+      "knownCostTotal": 0.0483,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "low",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 28.899538088,
+      "medianUsableSeconds": 29.201682529000013,
+      "maxUsableSeconds": 29.201682529000013,
+      "medianCost": 0.08584,
+      "knownCostTotal": 0.08584,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "medium",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 27.063756325000003,
+      "medianUsableSeconds": 27.364299166000002,
+      "maxUsableSeconds": 27.364299166000002,
+      "medianCost": 0.07792,
+      "knownCostTotal": 0.07792,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "high",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 29.785299567000003,
+      "medianUsableSeconds": 30.073434885999994,
+      "maxUsableSeconds": 30.073434885999994,
+      "medianCost": 0.09278,
+      "knownCostTotal": 0.09278,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "xhigh",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 28.804777431999987,
+      "medianUsableSeconds": 29.098660856999995,
+      "maxUsableSeconds": 29.098660856999995,
+      "medianCost": 0.08604,
+      "knownCostTotal": 0.08604,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "max",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 30.246759931000007,
+      "medianUsableSeconds": 30.536941863000013,
+      "maxUsableSeconds": 30.536941863000013,
+      "medianCost": 0.1102,
+      "knownCostTotal": 0.1102,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 0
+      },
+      "failureReasons": []
+    }
+  ],
+  "method": "Same saved cut-out, production prompt, model and token limit. Only reasoning effort changes. One request at a time, shuffled order, no retries or repairs.",
+  "conclusionLimit": "One object and one view. A single attempt per level cannot establish a reliable success rate or equivalence."
+}

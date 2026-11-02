@@ -1,0 +1,189 @@
+{
+ "contractVersion": 2,
+ "design": {
+  "joins": "The wire ends are twisted together",
+  "parts": [
+   {
+    "cm": 45,
+    "from": "copper-wire",
+    "k": "copper-wire",
+    "n": 1
+   }
+  ],
+  "purpose": "A beaded bracelet for one wrist",
+  "size": [
+   7,
+   7,
+   1
+  ],
+  "standard": "45 cm of 0.6 cm wire with nine 1.2 cm beads, a ring about 6 cm across",
+  "stands": "The beads sit round the ring; the twisted ends hold it closed"
+ },
+ "end": "Wear it on your wrist",
+ "finale": [],
+ "goals": [
+  {
+   "k": "copper-wire",
+   "state": "bracelet"
+  }
+ ],
+ "ideas": [
+  {
+   "kind": "craft",
+   "pitch": "Wire bracelet with nine glass beads",
+   "title": "Beaded Wire Bracelet"
+  },
+  {
+   "kind": "craft",
+   "pitch": "Twisted cord bracelet from two lengths of string",
+   "title": "Twisted Cord Bracelet"
+  },
+  {
+   "kind": "craft",
+   "pitch": "Coiled wire spiral to hang a charm from",
+   "title": "Wire Spiral Pendant"
+  }
+ ],
+ "joints": [],
+ "makes": [],
+ "objects": [
+  {
+   "b": [
+    65,
+    110,
+    1030,
+    1315
+   ],
+   "cm": 45,
+   "k": "copper-wire",
+   "measurements": {
+    "cm": {
+     "source": "single photo estimate",
+     "status": "estimated"
+    },
+    "thick": {
+     "source": "single photo estimate",
+     "status": "estimated"
+    }
+   },
+   "n": "Copper craft wire",
+   "part": {
+    "family": "rod",
+    "size": [
+     45,
+     0.6,
+     0.6
+    ]
+   },
+   "segment": "coil of copper wire",
+   "state": "straight",
+   "states": [
+    {
+     "id": "straight",
+     "label": "Straight wire"
+    },
+    {
+     "id": "bracelet",
+     "label": "Bracelet"
+    }
+   ],
+   "thick": 0.6
+  }
+ ],
+ "pick": 0,
+ "rigs": [],
+ "steps": [
+  {
+   "t": "Lay the wire straight",
+   "c": "Lay the 45 cm wire straight in front of you",
+   "claims": [
+    "a1"
+   ],
+   "do": [
+    {
+     "id": "a1",
+     "v": "place",
+     "k": "copper-wire",
+     "intent": "place",
+     "rel": "floor",
+     "at": "middle",
+     "to": null
+    }
+   ]
+  },
+  {
+   "t": "Turn a stop",
+   "c": "Fold the last 3 cm back on itself to stop the beads",
+   "claims": [
+    "a2"
+   ],
+   "do": [
+    {
+     "id": "a2",
+     "v": "strand",
+     "k": "copper-wire",
+     "intent": "bend",
+     "op": "bend",
+     "at": "3 cm from the end",
+     "deg": 180,
+     "label": "180°"
+    }
+   ]
+  },
+  {
+   "t": "Thread the beads",
+   "c": "Thread nine 1.2 cm beads, alternating blue and white, along the middle",
+   "claims": [
+    "a3"
+   ],
+   "do": [
+    {
+     "id": "a3",
+     "v": "strand",
+     "k": "copper-wire",
+     "intent": "thread",
+     "op": "thread",
+     "n": 9,
+     "cm": 1.2,
+     "color": "blue, white",
+     "at": "middle"
+    }
+   ]
+  },
+  {
+   "t": "Close the ring",
+   "c": "Curl the wire into a ring and lay the end over the start with a 3 cm overlap",
+   "claims": [
+    "a4"
+   ],
+   "do": [
+    {
+     "id": "a4",
+     "v": "strand",
+     "k": "copper-wire",
+     "intent": "ring",
+     "op": "ring",
+     "cm": 3,
+     "requires": [
+      {
+       "k": "copper-wire",
+       "state": "straight"
+      }
+     ],
+     "effects": [
+      {
+       "k": "copper-wire",
+       "state": "bracelet"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sub": "Copper wire bracelet with nine glass beads",
+ "tag": "45 cm wire · 10 min · Easy",
+ "title": "Beaded Wire Bracelet",
+ "tools": [],
+ "view": "plan",
+ "mode": "physical"
+}

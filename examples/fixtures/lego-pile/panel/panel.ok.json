@@ -1,0 +1,13 @@
+{
+ "steps": [
+  1,
+  2,
+  3
+ ],
+ "labels": {
+  "1": "Legs 6 studs apart",
+  "2": "Legs: 2 bricks high",
+  "3": "2×8 seat, ends flush"
+ },
+ "draw": "(ctx, i, p, env) => { const ink = env.palette.ink, acc = env.palette.accent; const u = 40, x0 = 40, floorY = 290, ph = 20; const parts = [ {s:0, c:'#7a1e1e', x:0, w:2, z:0, h:3}, {s:1, c:'#2e8b3a', x:6, w:2, z:0, h:3}, {s:2, c:'#d22b2b', x:0, w:2, z:3, h:3}, {s:2, c:'#f08a1c', x:6, w:2, z:3, h:3}, {s:3, c:'#7b4a26', x:0, w:8, z:6, h:1} ]; const q = env.ease.out(p); ctx.lineJoin = 'round'; ctx.strokeStyle = ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(20, floorY); ctx.lineTo(380, floorY); ctx.stroke(); ctx.fillStyle = ink; ctx.font = `500 18px \"${env.font}\"`; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic'; for (let k = 0; k < 8; k++) { const cx = x0 + k * u + u / 2; ctx.globalAlpha = 0.6; ctx.fillText(String(k + 1), cx, floorY + 26); ctx.beginPath(); ctx.moveTo(x0 + k * u, floorY); ctx.lineTo(x0 + k * u, floorY + 6); ctx.stroke(); } ctx.globalAlpha = 1; for (const b of parts) { if (b.s > i) continue; const isNew = b.s === i; const dy = isNew ? -(1 - q) * 40 : 0; const a = isNew ? Math.min(1, p * 3) : 0.35; const x = x0 + b.x * u, w = b.w * u, h = b.h * ph, y = floorY - b.z * ph - h + dy; ctx.globalAlpha = a; if (isNew) { ctx.fillStyle = acc; ctx.fillRect(x - 5, y - 11, w + 10, h + 16); } ctx.fillStyle = b.c; ctx.strokeStyle = ink; ctx.lineWidth = isNew ? 2.5 : 1.5; for (let k = 0; k < b.w; k++) { const sx = x + k * u + 8; ctx.fillRect(sx, y - 6, u - 16, 6); ctx.strokeRect(sx, y - 6, u - 16, 6); } ctx.fillRect(x, y, w, h); ctx.strokeRect(x, y, w, h); } ctx.globalAlpha = 1; ctx.strokeStyle = ink; ctx.fillStyle = ink; ctx.lineWidth = 2; const dim = (xa, xb, yy, label) => { ctx.beginPath(); ctx.moveTo(xa, yy); ctx.lineTo(xb, yy); ctx.moveTo(xa, yy - 7); ctx.lineTo(xa, yy + 7); ctx.moveTo(xb, yy - 7); ctx.lineTo(xb, yy + 7); ctx.stroke(); ctx.font = `600 20px \"${env.font}\"`; ctx.fillText(label, (xa + xb) / 2, yy - 10); }; if (i === 1) { ctx.globalAlpha = Math.min(1, p * 2); dim(x0, x0 + 6 * u, 200, '6 studs'); } if (i === 2) { ctx.globalAlpha = Math.min(1, p * 2); dim(x0, x0 + 8 * u, 120, '2 bricks high each leg'); } if (i === 3) { ctx.globalAlpha = Math.min(1, p * 2); dim(x0, x0 + 8 * u, 120, '8 studs, ends flush'); } ctx.globalAlpha = 1; ctx.font = `500 18px \"${env.font}\"`; ctx.fillText('side view · studs numbered', 200, 370); }"
+}

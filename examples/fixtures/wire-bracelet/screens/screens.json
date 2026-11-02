@@ -1,0 +1,13 @@
+{
+ "copper-wire": {
+  "width": 1042,
+  "height": 1345,
+  "regions": []
+ },
+ "photo": {
+  "path": "photo.png",
+  "width": 1200,
+  "height": 1600,
+  "regions": []
+ }
+}

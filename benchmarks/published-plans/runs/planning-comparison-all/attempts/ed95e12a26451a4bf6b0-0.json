@@ -1,0 +1,152 @@
+{
+  "row": {
+    "id": "ed95e12a26451a4bf6b0-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "xhigh",
+    "trialId": "ed95e12a26451a4bf6b0",
+    "sample": 1,
+    "planningEffort": "xhigh",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 79,
+          "duration": 63.8,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a16: unmet state requirement basket:unfinished"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.1281825,
+    "responseSeconds": 93.13170289500002,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Striped Storage Basket",
+    "design": {
+      "purpose": "Hold yarn and household clutter on shelf",
+      "size": [
+        24,
+        24,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Arrange materials",
+        "c": "Set green, blue yarn, hook, scissors on table"
+      },
+      {
+        "t": "Start base",
+        "c": "Magic ring 6 single crochet, increase to 12"
+      },
+      {
+        "t": "Grow base",
+        "c": "Work rounds 3-4 to 24 single crochet"
+      },
+      {
+        "t": "Finish base",
+        "c": "Work rounds 5-6 to 36 single crochet"
+      },
+      {
+        "t": "Build sides",
+        "c": "Work 3 rounds even, 36 single crochet"
+      },
+      {
+        "t": "Stripe sides",
+        "c": "Work 2 blue rounds, 36 single crochet"
+      },
+      {
+        "t": "Continue sides",
+        "c": "Work 2 green, 1 blue rounds, 36 stitches"
+      },
+      {
+        "t": "Make handles",
+        "c": "Work handle round and top, 36 stitches"
+      },
+      {
+        "t": "Cut yarns",
+        "c": "Cut yarns leaving 15 cm tails"
+      },
+      {
+        "t": "Weave ends",
+        "c": "Weave tails into stitches to secure"
+      }
+    ]
+  },
+  "rawText": null
+}

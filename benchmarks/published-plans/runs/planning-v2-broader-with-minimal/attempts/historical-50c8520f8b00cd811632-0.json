@@ -1,0 +1,186 @@
+{
+  "row": {
+    "id": "historical-50c8520f8b00cd811632-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "low",
+    "trialId": "historical-50c8520f8b00cd811632",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Invalid operation contract: a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a11: fastening uses joint sites, not flat-sheet path or otherPath; a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a13: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a14: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a15: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a16: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "Invalid operation contract: a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a11: fastening uses joint sites, not flat-sheet path or otherPath; a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a13: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a14: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a15: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a16: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt"
+        }
+      ],
+      "warnings": [],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a11: fastening uses joint sites, not flat-sheet path or otherPath",
+        "a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a13: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a14: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a15: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a16: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a11: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.184888,
+    "responseSeconds": 44.248723028,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Herb Planter Box",
+    "design": {
+      "purpose": "A weatherproof-looking outdoor planter for herbs or flowers for one gardener; interior is about 36 × 14 cm with 20 cm planting depth before soil is added. Confirm all board dimensions before cutting because the photo sizes are estimates.",
+      "size": [
+        40,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for measuring and cutting"
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Mark and crosscut front, back and both 14 cm ends"
+      },
+      {
+        "t": "Place base board",
+        "c": "Place the second board flat for the base cut"
+      },
+      {
+        "t": "Cut the base",
+        "c": "Crosscut the 40 cm base, keeping the long offcut"
+      },
+      {
+        "t": "Sand all parts",
+        "c": "Sand cut edges and faces of all five box parts"
+      },
+      {
+        "t": "Place base",
+        "c": "Place the 40 cm base flat on the work surface"
+      },
+      {
+        "t": "Place front side",
+        "c": "Stand the front side on the base front edge"
+      },
+      {
+        "t": "Place back side",
+        "c": "Stand the back side on the base back edge"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between front and back at the start"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between front and back at the end"
+      },
+      {
+        "t": "Screw front to left",
+        "c": "Drive screws through front into the left end"
+      },
+      {
+        "t": "Screw front to right",
+        "c": "Drive screws through front into the right end"
+      },
+      {
+        "t": "Screw back to left",
+        "c": "Drive screws through back into the left end"
+      },
+      {
+        "t": "Screw back to right",
+        "c": "Drive screws through back into the right end"
+      },
+      {
+        "t": "Screw base to sides",
+        "c": "Drive screws up through base into front and back"
+      },
+      {
+        "t": "Screw base to ends",
+        "c": "Drive screws up through base into both ends"
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill two drainage holes through the base"
+      }
+    ]
+  },
+  "rawText": null
+}

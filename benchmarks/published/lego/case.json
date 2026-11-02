@@ -1,0 +1,376 @@
+{
+  "id": "lego",
+  "title": "LEGO brick",
+  "model": "muse-wonder-1.0",
+  "provider": "Meta Model API",
+  "generatedAt": "2026-10-31T10:52:29.412Z",
+  "samplesPerEffort": 1,
+  "maxTokens": 16384,
+  "width": 258,
+  "height": 255,
+  "reference": "reference.png",
+  "source": "instructions/fixtures/lego-pile/screens/brick-orange.png",
+  "expectations": [
+    "Orange 2×2 brick, viewed from above at an angle.",
+    "Four visible top studs arranged in two rows of two.",
+    "Top and two side faces keep the reference perspective and proportions.",
+    "Preserve the target silhouette and position for a photo-to-drawing cross-fade.",
+    "Exclude the blue neighbour at the left and the background; do not invent hidden features.",
+    "Flat orange shades with clean dark outlines; no textures or gradients."
+  ],
+  "limitations": [
+    "Saved segmentation contains background and a blue neighbour at the left edge. The production prompt tells the model to exclude them."
+  ],
+  "pricingNote": "Project pricing estimates checked 2026-10-27; not billing records.",
+  "rows": [
+    {
+      "id": "91ae3c1e07c7",
+      "effort": "minimal",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pass",
+      "visualVerdict": "pass",
+      "reviewReason": null,
+      "usableSeconds": 8.409285554,
+      "responseSeconds": 8.373864068,
+      "cost": 0.033228,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 2117,
+      "outputTokens": 1238,
+      "reasoningTokens": 339,
+      "cachedInputTokens": 0,
+      "png": "minimal-1.png",
+      "svg": "minimal-1.svg"
+    },
+    {
+      "id": "818d18b02efd",
+      "effort": "low",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pending",
+      "visualVerdict": "pending",
+      "reviewReason": null,
+      "usableSeconds": 17.001554562,
+      "responseSeconds": 16.971543335000003,
+      "cost": 0.060248,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 2117,
+      "outputTokens": 2589,
+      "reasoningTokens": 1975,
+      "cachedInputTokens": 0,
+      "png": "low-1.png",
+      "svg": "low-1.svg"
+    },
+    {
+      "id": "dd71a6e47a7e",
+      "effort": "medium",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pass",
+      "visualVerdict": "pass",
+      "reviewReason": null,
+      "usableSeconds": 22.635809933999997,
+      "responseSeconds": 22.604265526999995,
+      "cost": 0.083528,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 2117,
+      "outputTokens": 3753,
+      "reasoningTokens": 3096,
+      "cachedInputTokens": 0,
+      "png": "medium-1.png",
+      "svg": "medium-1.svg"
+    },
+    {
+      "id": "7b884f1c5fdf",
+      "effort": "high",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pass",
+      "visualVerdict": "pass",
+      "reviewReason": null,
+      "usableSeconds": 27.514526327,
+      "responseSeconds": 27.47618732299999,
+      "cost": 0.074468,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 2117,
+      "outputTokens": 3300,
+      "reasoningTokens": 2894,
+      "cachedInputTokens": 0,
+      "png": "high-1.png",
+      "svg": "high-1.svg"
+    },
+    {
+      "id": "4a2e527131c2",
+      "effort": "xhigh",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pass",
+      "visualVerdict": "pass",
+      "reviewReason": null,
+      "usableSeconds": 33.927887094,
+      "responseSeconds": 33.897434485,
+      "cost": 0.096668,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 2117,
+      "outputTokens": 4410,
+      "reasoningTokens": 3733,
+      "cachedInputTokens": 0,
+      "png": "xhigh-1.png",
+      "svg": "xhigh-1.svg"
+    },
+    {
+      "id": "4b4d8edcfa22",
+      "effort": "max",
+      "attempt": 1,
+      "status": "ready",
+      "outcome": "pass",
+      "visualVerdict": "pass",
+      "reviewReason": null,
+      "usableSeconds": 38.10971983299998,
+      "responseSeconds": 38.07552197199999,
+      "cost": 0.120028,
+      "actualModel": "muse-wonder-1.0",
+      "inputTokens": 2117,
+      "outputTokens": 5578,
+      "reasoningTokens": 4924,
+      "cachedInputTokens": 0,
+      "png": "max-1.png",
+      "svg": "max-1.svg"
+    }
+  ],
+  "groups": [
+    {
+      "effort": "minimal",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 1,
+      "failures": 0,
+      "pending": 0,
+      "passAt1": 1,
+      "passAt1Wilson95": [
+        0.20654931437723745,
+        1
+      ],
+      "possiblePassRateRange": [
+        1,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 8.373864068,
+      "medianUsableSeconds": 8.409285554,
+      "maxUsableSeconds": 8.409285554,
+      "medianCost": 0.033228,
+      "knownCostTotal": 0.033228,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": 0.033228,
+      "scores": {
+        "identity": 4,
+        "shape": 4,
+        "colour": 4,
+        "cleanliness": 5
+      },
+      "pairCounts": {
+        "wins": 2,
+        "ties": 1,
+        "losses": 2
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "low",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 0,
+      "failures": 0,
+      "pending": 1,
+      "passAt1": null,
+      "passAt1Wilson95": null,
+      "possiblePassRateRange": [
+        0,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 16.971543335000003,
+      "medianUsableSeconds": 17.001554562,
+      "maxUsableSeconds": 17.001554562,
+      "medianCost": 0.060248,
+      "knownCostTotal": 0.060248,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": null,
+      "scores": {
+        "identity": null,
+        "shape": null,
+        "colour": null,
+        "cleanliness": null
+      },
+      "pairCounts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 5
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "medium",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 1,
+      "failures": 0,
+      "pending": 0,
+      "passAt1": 1,
+      "passAt1Wilson95": [
+        0.20654931437723745,
+        1
+      ],
+      "possiblePassRateRange": [
+        1,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 22.604265526999995,
+      "medianUsableSeconds": 22.635809933999997,
+      "maxUsableSeconds": 22.635809933999997,
+      "medianCost": 0.083528,
+      "knownCostTotal": 0.083528,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": 0.083528,
+      "scores": {
+        "identity": 4,
+        "shape": 5,
+        "colour": 5,
+        "cleanliness": 5
+      },
+      "pairCounts": {
+        "wins": 3,
+        "ties": 2,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "high",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 1,
+      "failures": 0,
+      "pending": 0,
+      "passAt1": 1,
+      "passAt1Wilson95": [
+        0.20654931437723745,
+        1
+      ],
+      "possiblePassRateRange": [
+        1,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 27.47618732299999,
+      "medianUsableSeconds": 27.514526327,
+      "maxUsableSeconds": 27.514526327,
+      "medianCost": 0.074468,
+      "knownCostTotal": 0.074468,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": 0.074468,
+      "scores": {
+        "identity": 3,
+        "shape": 3,
+        "colour": 4,
+        "cleanliness": 5
+      },
+      "pairCounts": {
+        "wins": 1,
+        "ties": 0,
+        "losses": 4
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "xhigh",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 1,
+      "failures": 0,
+      "pending": 0,
+      "passAt1": 1,
+      "passAt1Wilson95": [
+        0.20654931437723745,
+        1
+      ],
+      "possiblePassRateRange": [
+        1,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 33.897434485,
+      "medianUsableSeconds": 33.927887094,
+      "maxUsableSeconds": 33.927887094,
+      "medianCost": 0.096668,
+      "knownCostTotal": 0.096668,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": 0.096668,
+      "scores": {
+        "identity": 4,
+        "shape": 4,
+        "colour": 5,
+        "cleanliness": 5
+      },
+      "pairCounts": {
+        "wins": 2,
+        "ties": 3,
+        "losses": 0
+      },
+      "failureReasons": []
+    },
+    {
+      "effort": "max",
+      "scheduled": 1,
+      "completed": 1,
+      "passes": 1,
+      "failures": 0,
+      "pending": 0,
+      "passAt1": 1,
+      "passAt1Wilson95": [
+        0.20654931437723745,
+        1
+      ],
+      "possiblePassRateRange": [
+        1,
+        1
+      ],
+      "technicalSuccesses": 1,
+      "apiFailures": 0,
+      "medianResponseSeconds": 38.07552197199999,
+      "medianUsableSeconds": 38.10971983299998,
+      "maxUsableSeconds": 38.10971983299998,
+      "medianCost": 0.120028,
+      "knownCostTotal": 0.120028,
+      "costUnknown": 0,
+      "costNotYetObserved": 0,
+      "estimatedCostPerPass": 0.120028,
+      "scores": {
+        "identity": 4,
+        "shape": 4,
+        "colour": 5,
+        "cleanliness": 5
+      },
+      "pairCounts": {
+        "wins": 3,
+        "ties": 2,
+        "losses": 0
+      },
+      "failureReasons": []
+    }
+  ],
+  "method": "Same saved cut-out, production prompt, model and token limit. Only reasoning effort changes. One request at a time, shuffled order, no retries or repairs.",
+  "conclusionLimit": "One object and one view. A single attempt per level cannot establish a reliable success rate or equivalence."
+}

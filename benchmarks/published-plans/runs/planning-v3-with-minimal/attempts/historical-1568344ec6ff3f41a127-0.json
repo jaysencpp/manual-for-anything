@@ -1,0 +1,151 @@
+{
+  "row": {
+    "id": "historical-1568344ec6ff3f41a127-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "historical-1568344ec6ff3f41a127",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 67,
+          "duration": 46.89999999999999,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "scissors.cm: unconfirmed measurement",
+        "paper.cm: unconfirmed measurement",
+        "paper.w: unconfirmed measurement",
+        "paper.thick: unconfirmed measurement",
+        "Additional materials are required supplies, not objects observed in the photo.",
+        "step 1: the caption gives 21 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "Declared additional materials compiled as separate supply actors",
+        "a6: a cut through the folded sheet",
+        "a7: a cut through the folded sheet",
+        "a8: a cut through the folded sheet"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.094396,
+    "responseSeconds": 18.585890956000004,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": {
+    "title": "Paper Snowflake",
+    "design": {
+      "purpose": "Make a six-pointed paper snowflake for display, using the photographed scissors and one added sheet of paper.",
+      "size": [
+        21,
+        21,
+        0.1
+      ]
+    },
+    "steps": [
+      {
+        "t": "Lay paper flat",
+        "c": "Lay the 21 cm square paper flat"
+      },
+      {
+        "t": "Fold diagonally",
+        "c": "Fold the top-right corner onto bottom-left"
+      },
+      {
+        "t": "Fold in half again",
+        "c": "Fold the top-left corner onto bottom-right"
+      },
+      {
+        "t": "Fold right edge in",
+        "c": "Fold the top-right edge through the top at 30°"
+      },
+      {
+        "t": "Fold left edge in",
+        "c": "Fold the top-left edge through the top at 30°"
+      },
+      {
+        "t": "Cut the wide end",
+        "c": "Cut straight across the wide end"
+      },
+      {
+        "t": "Notch one side",
+        "c": "Cut a triangular notch from one side"
+      },
+      {
+        "t": "Notch other side",
+        "c": "Cut a triangular notch from the other side"
+      },
+      {
+        "t": "Open the snowflake",
+        "c": "Open the sheet out flat"
+      }
+    ]
+  },
+  "rawText": null
+}

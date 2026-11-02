@@ -1,0 +1,203 @@
+{
+  "row": {
+    "id": "48cd967f0ff2b9a30246-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "minimal",
+    "trialId": "48cd967f0ff2b9a30246",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "w1: intent Crochet base Rnds 1-5 in green single crochet needs a faithful demonstration, not work",
+            "w2: intent Crochet sides Rnds 6-11 in blue single crochet, 48 sts each round needs a faithful demonstration, not work",
+            "w3: intent Crochet rim Rnd 12 slip stitch and finish needs a faithful demonstration, not work",
+            "d1: a demonstration needs drawing code",
+            "d1: invalid demonstration actors",
+            "d1: demonstration needs a focus region",
+            "d1: demonstration changes an undeclared actor",
+            "step 2: work source to must name a distinct photographed material",
+            "step 4: work source to must name a distinct photographed material",
+            "step 5: work source to must name a distinct photographed material"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "w1: intent Crochet base Rnds 1-5 in green single crochet needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "w2: intent Crochet sides Rnds 6-11 in blue single crochet, 48 sts each round needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "w3: intent Crochet rim Rnd 12 slip stitch and finish needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "d1: a demonstration needs drawing code"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "d1: invalid demonstration actors"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "d1: demonstration needs a focus region"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "d1: demonstration changes an undeclared actor"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 2: work source to must name a distinct photographed material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 4: work source to must name a distinct photographed material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 5: work source to must name a distinct photographed material"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "w1: intent Crochet base Rnds 1-5 in green single crochet needs a faithful demonstration, not work",
+        "w2: intent Crochet sides Rnds 6-11 in blue single crochet, 48 sts each round needs a faithful demonstration, not work",
+        "w3: intent Crochet rim Rnd 12 slip stitch and finish needs a faithful demonstration, not work",
+        "d1: a demonstration needs drawing code",
+        "d1: invalid demonstration actors",
+        "d1: demonstration needs a focus region",
+        "d1: demonstration must declare its resulting state",
+        "unreached goal basket:finished",
+        "step 2: work source to must name a distinct photographed material",
+        "step 4: work source to must name a distinct photographed material",
+        "step 5: work source to must name a distinct photographed material"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.03160125,
+    "responseSeconds": 11.976692192999995,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Striped Basket",
+    "design": {
+      "purpose": "Striped round storage basket for bedside or desk: holds books, yarn, remotes. Serves 1 household: uses 2 balls chunky wool, 15 mm hook, approx 24 cm wide x 18 cm high.",
+      "size": [
+        24,
+        24,
+        18
+      ]
+    },
+    "steps": [
+      {
+        "t": "Set up green",
+        "c": "Place green yarn and hook on table"
+      },
+      {
+        "t": "Crochet base",
+        "c": "Crochet green flat base rounds 1-5"
+      },
+      {
+        "t": "Add blue",
+        "c": "Change to blue yarn for sides"
+      },
+      {
+        "t": "Crochet sides",
+        "c": "Crochet blue side rounds 6-11"
+      },
+      {
+        "t": "Finish rim",
+        "c": "Finish rim and cut yarn tail"
+      },
+      {
+        "t": "Weave ends",
+        "c": "Weave in ends with hook"
+      }
+    ]
+  },
+  "rawText": null
+}

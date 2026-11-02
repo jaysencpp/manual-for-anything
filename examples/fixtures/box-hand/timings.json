@@ -1,0 +1,86 @@
+{
+ "effort": "low",
+ "noThinking": false,
+ "photo": {
+  "width": 570,
+  "height": 406
+ },
+ "begin": 16.99,
+ "firstFrameIfWaitingForAll": 37.46,
+ "filmSeconds": 54.95,
+ "needs": [
+  {
+   "what": "cut-outs (lift off the photo)",
+   "ready": 26.58,
+   "neededAt": 17.99,
+   "slack": -8.59
+  },
+  {
+   "what": "drawings (turn into drawings)",
+   "ready": 38.76,
+   "neededAt": 18.29,
+   "slack": -20.47
+  },
+  {
+   "what": "steps + layout (first step)",
+   "ready": 26.59,
+   "neededAt": 22.59,
+   "slack": -4
+  },
+  {
+   "what": "finale",
+   "ready": 45.44,
+   "neededAt": 63.34,
+   "slack": 17.9
+  }
+ ],
+ "marks": {
+  "start": 0,
+  "script: first object": 16.99,
+  "script: object list": 16.99,
+  "script: done": 19.88,
+  "SAM: cut-outs": 26.58,
+  "layout": 26.59,
+  "drawing: board-b": 34.73,
+  "drawing: board-a": 38.76,
+  "drawings: all": 38.76,
+  "finale: written": 45.43,
+  "finale: checked": 45.44
+ },
+ "calls": {
+  "script": {
+   "seconds": 19.117,
+   "output": 1956,
+   "thinking": 494,
+   "cost": 0.10618720000000001
+  },
+  "sam": {
+   "load": 6.3,
+   "segment": 1.18,
+   "scores": {
+    "board-a": 0.96,
+    "board-b": 0.97
+   }
+  },
+  "draw board-b": {
+   "seconds": 6.739,
+   "output": 687,
+   "thinking": 0,
+   "cost": 0.0683114
+  },
+  "draw board-a": {
+   "seconds": 10.97,
+   "output": 973,
+   "thinking": 214,
+   "cost": 0.0691354
+  },
+  "finale": {
+   "seconds": 17.87,
+   "output": 1864,
+   "thinking": 423,
+   "cost": 0.1309856,
+   "problem": null
+  }
+ },
+ "cost": 0.375
+}

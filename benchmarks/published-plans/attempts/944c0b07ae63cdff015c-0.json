@@ -1,0 +1,144 @@
+{
+  "row": {
+    "id": "944c0b07ae63cdff015c-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "944c0b07ae63cdff015c",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 56,
+          "duration": 41.79999999999999,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "step 7: the caption gives 25 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.106952,
+    "responseSeconds": 13.226790360999992,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Two-Colour Chunky Cowl",
+    "design": {
+      "purpose": "A warm two-colour cowl for one adult, crocheted flat in chunky single crochet and joined into a tube. Confirm enough yarn for about 25 × 60 cm before starting; skein quantity is not known from the photo.",
+      "size": [
+        60,
+        25,
+        2
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place green yarn",
+        "c": "Place the green yarn on the work surface"
+      },
+      {
+        "t": "Place blue yarn",
+        "c": "Place the blue yarn beside the green yarn"
+      },
+      {
+        "t": "Start green panel",
+        "c": "Ch 41 with green. Row 1: sc in 2nd ch, sc across"
+      },
+      {
+        "t": "Work green rows",
+        "c": "Rows 2–8: ch 1, turn, sc in each of 40 sts"
+      },
+      {
+        "t": "Work blue rows",
+        "c": "Rows 9–16: ch 1, turn, sc in each of 40 sts"
+      },
+      {
+        "t": "Cut seaming tail",
+        "c": "Fasten off, leaving a 60 cm blue tail for seaming"
+      },
+      {
+        "t": "Join short ends",
+        "c": "Fold panel, whipstitch the 25 cm ends together with tail"
+      },
+      {
+        "t": "Weave and trim ends",
+        "c": "Weave all tails through stitches and trim close"
+      }
+    ]
+  },
+  "rawText": null
+}

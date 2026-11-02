@@ -1,0 +1,22 @@
+{
+ "board-a": {
+  "width": 465,
+  "height": 123,
+  "regions": []
+ },
+ "board-b": {
+  "width": 465,
+  "height": 78,
+  "regions": []
+ },
+ "board-c": {
+  "width": 428,
+  "height": 52,
+  "regions": []
+ },
+ "photo": {
+  "width": 570,
+  "height": 406,
+  "regions": []
+ }
+}

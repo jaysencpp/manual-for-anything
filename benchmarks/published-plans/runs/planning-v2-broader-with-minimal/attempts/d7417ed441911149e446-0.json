@@ -1,0 +1,332 @@
+{
+  "row": {
+    "id": "d7417ed441911149e446-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "d7417ed441911149e446",
+    "sample": 2,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Invalid operation contract: m1: intent mark needs a faithful demonstration, not measure; m2: intent mark needs a faithful demonstration, not measure; m3: intent mark needs a faithful demonstration, not measure; m4: intent mark needs a faithful demonstration, not measure; m5: intent mark needs a faithful demonstration, not measure; m6: intent mark needs a faithful demonstration, not measure; m7: intent mark needs a faithful demonstration, not measure"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "Invalid operation contract: m1: intent mark needs a faithful demonstration, not measure; m2: intent mark needs a faithful demonstration, not measure; m3: intent mark needs a faithful demonstration, not measure; m4: intent mark needs a faithful demonstration, not measure; m5: intent mark needs a faithful demonstration, not measure; m6: intent mark needs a faithful demonstration, not measure; m7: intent mark needs a faithful demonstration, not measure"
+        }
+      ],
+      "warnings": [],
+      "corrections": [
+        "step 49: claims s2, s3, s4",
+        "step 50: claims s6"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "m1: intent mark needs a faithful demonstration, not measure",
+        "m2: intent mark needs a faithful demonstration, not measure",
+        "m3: intent mark needs a faithful demonstration, not measure",
+        "m4: intent mark needs a faithful demonstration, not measure",
+        "m5: intent mark needs a faithful demonstration, not measure",
+        "m6: intent mark needs a faithful demonstration, not measure",
+        "m7: intent mark needs a faithful demonstration, not measure",
+        "s2: operation is missing from the caption claims",
+        "s3: operation is missing from the caption claims",
+        "s4: operation is missing from the caption claims",
+        "s6: operation is missing from the caption claims",
+        "design: the steps cut rem-b1 (79.7 cm from board-b), which is not among the design's parts",
+        "design: back comes from board-b in the design but is cut from rem-b1",
+        "design: the steps cut rem-b2 (39.4 cm from rem-b1), which is not among the design's parts",
+        "design: left-end comes from board-b in the design but is cut from rem-b2",
+        "design: the steps cut rem-b3 (23.1 cm from rem-b2), which is not among the design's parts",
+        "design: right-end is 23.1 cm in the design but cut 16 cm",
+        "design: right-end comes from board-b in the design but is cut from rem-b3",
+        "design: the steps cut rem-c1 (83.7 cm from board-c), which is not among the design's parts",
+        "design: foot-b comes from board-c in the design but is cut from rem-c1",
+        "design: offcut-c comes from board-c in the design but is cut from rem-c1"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.219944,
+    "responseSeconds": 54.02189891199999,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Footed Herb Planter",
+    "design": {
+      "purpose": "A soil planter for one person to grow herbs on a patio; inside depth about 18 cm. Confirm board lengths and widths before cutting, as dimensions are estimated.",
+      "size": [
+        40,
+        20,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for cutting."
+      },
+      {
+        "t": "Mark base length",
+        "c": "Measure and mark 40 cm from one end."
+      },
+      {
+        "t": "Cut the base",
+        "c": "Saw across at the mark, keeping the 40 cm base."
+      },
+      {
+        "t": "Place side board",
+        "c": "Place the 18 cm board flat for cutting."
+      },
+      {
+        "t": "Mark front side",
+        "c": "Measure and mark the first 40 cm side."
+      },
+      {
+        "t": "Cut front side",
+        "c": "Saw across to make the front and the remaining length."
+      },
+      {
+        "t": "Place remainder",
+        "c": "Place the remaining side-board length flat."
+      },
+      {
+        "t": "Mark back side",
+        "c": "Measure and mark the next 40 cm side."
+      },
+      {
+        "t": "Cut back side",
+        "c": "Saw across to make the back and the remaining length."
+      },
+      {
+        "t": "Place end stock",
+        "c": "Place the shorter remaining length flat."
+      },
+      {
+        "t": "Mark left end",
+        "c": "Measure and mark a 16 cm end piece."
+      },
+      {
+        "t": "Cut left end",
+        "c": "Saw across to make the left end and remainder."
+      },
+      {
+        "t": "Place right-end stock",
+        "c": "Place the last side-board remainder flat."
+      },
+      {
+        "t": "Mark right end",
+        "c": "Measure and mark a 16 cm end piece."
+      },
+      {
+        "t": "Cut right end",
+        "c": "Saw across to make the right end and offcut."
+      },
+      {
+        "t": "Place foot board",
+        "c": "Place the narrow board flat for the feet."
+      },
+      {
+        "t": "Mark first foot",
+        "c": "Measure and mark a 36 cm foot."
+      },
+      {
+        "t": "Cut first foot",
+        "c": "Saw across to make the first foot and remainder."
+      },
+      {
+        "t": "Place foot remainder",
+        "c": "Place the remaining foot-board length flat."
+      },
+      {
+        "t": "Mark second foot",
+        "c": "Measure and mark another 36 cm foot."
+      },
+      {
+        "t": "Cut second foot",
+        "c": "Saw across to make the second foot and offcut."
+      },
+      {
+        "t": "Place base",
+        "c": "Place the base flat, good face down."
+      },
+      {
+        "t": "Place front side",
+        "c": "Stand the front on the base front edge."
+      },
+      {
+        "t": "Place back side",
+        "c": "Stand the back on the base back edge."
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between front and back."
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between front and back."
+      },
+      {
+        "t": "Drill front left",
+        "c": "Drill two pilot holes at the front-left corner."
+      },
+      {
+        "t": "Drill front right",
+        "c": "Drill two pilot holes at the front-right corner."
+      },
+      {
+        "t": "Drill back left",
+        "c": "Drill two pilot holes at the back-left corner."
+      },
+      {
+        "t": "Drill back right",
+        "c": "Drill two pilot holes at the back-right corner."
+      },
+      {
+        "t": "Screw front left",
+        "c": "Drive the front-left corner screws in firmly."
+      },
+      {
+        "t": "Screw front right",
+        "c": "Drive the front-right corner screws in firmly."
+      },
+      {
+        "t": "Screw back left",
+        "c": "Drive the back-left corner screws in firmly."
+      },
+      {
+        "t": "Screw back right",
+        "c": "Drive the back-right corner screws in firmly."
+      },
+      {
+        "t": "Drill base front",
+        "c": "Drill up through the base into the front."
+      },
+      {
+        "t": "Drill base back",
+        "c": "Drill up through the base into the back."
+      },
+      {
+        "t": "Drill base left",
+        "c": "Drill up through the base into the left end."
+      },
+      {
+        "t": "Drill base right",
+        "c": "Drill up through the base into the right end."
+      },
+      {
+        "t": "Screw base front",
+        "c": "Drive the base-to-front screws up firmly."
+      },
+      {
+        "t": "Screw base back",
+        "c": "Drive the base-to-back screws up firmly."
+      },
+      {
+        "t": "Screw base left",
+        "c": "Drive the base-to-left-end screws up firmly."
+      },
+      {
+        "t": "Screw base right",
+        "c": "Drive the base-to-right-end screws up firmly."
+      },
+      {
+        "t": "Place first foot",
+        "c": "Place first foot across under the base."
+      },
+      {
+        "t": "Place second foot",
+        "c": "Place second foot across under the base."
+      },
+      {
+        "t": "Drill first foot",
+        "c": "Drill up through the first foot into base."
+      },
+      {
+        "t": "Drill second foot",
+        "c": "Drill up through the second foot into base."
+      },
+      {
+        "t": "Screw first foot",
+        "c": "Drive the first-foot screws up firmly."
+      },
+      {
+        "t": "Screw second foot",
+        "c": "Drive the second-foot screws up firmly."
+      },
+      {
+        "t": "Sand the box",
+        "c": "Sand all outside edges until smooth."
+      },
+      {
+        "t": "Sand rim",
+        "c": "Sand the top rim and inside edges smooth."
+      }
+    ]
+  },
+  "rawText": null
+}

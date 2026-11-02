@@ -1,0 +1,220 @@
+{
+  "row": {
+    "id": "ee0ff34c3a467717e0c7-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "xhigh",
+    "trialId": "ee0ff34c3a467717e0c7",
+    "sample": 1,
+    "planningEffort": "xhigh",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "joint joint-leg-a-stretcher: Joint surfaces do not touch: leg-a exit plane x=16 cm, stretcher receiving plane x=18 cm (separation 2 cm). Position stretcher relative to leg-a; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-leg-b-stretcher: Joint surfaces do not touch: leg-b exit plane x=20 cm, stretcher receiving plane x=54 cm (separation 34 cm). Position stretcher relative to leg-b; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-leg-a-stretcher: Joint surfaces do not touch: leg-a exit plane x=16 cm, stretcher receiving plane x=18 cm (separation 2 cm). Position stretcher relative to leg-a; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-leg-b-stretcher: Joint surfaces do not touch: leg-b exit plane x=20 cm, stretcher receiving plane x=54 cm (separation 34 cm). Position stretcher relative to leg-b; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 3: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a10: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a11: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a13: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a14: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a20: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a21: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a22: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a23: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a24: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a25: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.527268,
+    "responseSeconds": 172.52010269299998,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Raised Herb Planter",
+    "design": {
+      "purpose": "A raised herb planter for one gardener, with an 18 cm usable soil fill above the base and a 50 cm working height.",
+      "size": [
+        40,
+        15,
+        50
+      ]
+    },
+    "steps": [
+      {
+        "t": "Cut Board A",
+        "c": "Place board A and cut sides and ends"
+      },
+      {
+        "t": "Cut Board B",
+        "c": "Place board B and cut legs and stretcher"
+      },
+      {
+        "t": "Cut Board C",
+        "c": "Place board C and cut the base"
+      },
+      {
+        "t": "Stand The Legs",
+        "c": "Stand both panel legs upright and parallel"
+      },
+      {
+        "t": "Fit The Stretcher",
+        "c": "Fit the stretcher between the panel legs"
+      },
+      {
+        "t": "Fix First Stretcher End",
+        "c": "Drive screws through leg into stretcher"
+      },
+      {
+        "t": "Fix Second Stretcher End",
+        "c": "Drive screws through leg into stretcher"
+      },
+      {
+        "t": "Place The Base",
+        "c": "Lay the base across both panel legs"
+      },
+      {
+        "t": "Fix Base To Leg",
+        "c": "Drive screws through base into first leg"
+      },
+      {
+        "t": "Fix Base To Leg",
+        "c": "Drive screws through base into second leg"
+      },
+      {
+        "t": "Drill Drainage Holes",
+        "c": "Drill drainage holes through the base"
+      },
+      {
+        "t": "Place Front Side",
+        "c": "Stand the front side on the base"
+      },
+      {
+        "t": "Place Back Side",
+        "c": "Stand the back side on the base"
+      },
+      {
+        "t": "Fit First End",
+        "c": "Fit first end between the sides"
+      },
+      {
+        "t": "Fit Second End",
+        "c": "Fit second end between the sides"
+      },
+      {
+        "t": "Fix Front Corner",
+        "c": "Drive screws through front into first end"
+      },
+      {
+        "t": "Fix Front Corner",
+        "c": "Drive screws through front into second end"
+      },
+      {
+        "t": "Fix Back Corner",
+        "c": "Drive screws through back into first end"
+      },
+      {
+        "t": "Fix Back Corner",
+        "c": "Drive screws through back into second end"
+      },
+      {
+        "t": "Fix Base To Front",
+        "c": "Drive screws upward through base into front"
+      },
+      {
+        "t": "Fix Base To Back",
+        "c": "Drive screws upward through base into back"
+      }
+    ]
+  },
+  "rawText": null
+}

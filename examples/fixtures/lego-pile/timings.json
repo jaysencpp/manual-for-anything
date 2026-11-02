@@ -1,0 +1,124 @@
+{
+ "effort": "low",
+ "noThinking": false,
+ "photo": {
+  "width": 1500,
+  "height": 1000
+ },
+ "begin": 18.73,
+ "firstFrameIfWaitingForAll": 58.33,
+ "filmSeconds": 23.5,
+ "needs": [
+  {
+   "what": "cut-outs (lift off the photo)",
+   "ready": 28.75,
+   "neededAt": 19.73,
+   "slack": -9.02
+  },
+  {
+   "what": "drawings (turn into drawings)",
+   "ready": 59.63,
+   "neededAt": 20.03,
+   "slack": -39.6
+  },
+  {
+   "what": "steps + layout (first step)",
+   "ready": 28.75,
+   "neededAt": 24.33,
+   "slack": -4.42
+  },
+  {
+   "what": "finale",
+   "ready": 40.68,
+   "neededAt": 33.63,
+   "slack": -7.05
+  },
+  {
+   "what": "panel",
+   "ready": 38.08,
+   "neededAt": 26.63,
+   "slack": -11.45
+  }
+ ],
+ "marks": {
+  "start": 0.01,
+  "script: first object": 18.73,
+  "script: object list": 18.73,
+  "script: done": 19.16,
+  "SAM: cut-outs": 28.75,
+  "layout": 28.75,
+  "drawing: brick-dark-red": 37.88,
+  "panel: checked": 38.08,
+  "drawing: brick-green": 39.05,
+  "drawing: brick-red": 39.8,
+  "finale: written": 40.68,
+  "finale: checked": 40.68,
+  "drawing: brick-orange": 44.26,
+  "drawing: plate-brown": 59.63,
+  "drawings: all": 59.63
+ },
+ "calls": {
+  "script": {
+   "seconds": 18.633,
+   "output": 1574,
+   "thinking": 513,
+   "cost": 0.1294358
+  },
+  "sam": {
+   "load": 6.5,
+   "segment": 1.22,
+   "scores": {
+    "brick-dark-red": 0.99,
+    "brick-green": 0.99,
+    "brick-red": 0.98,
+    "brick-orange": 0.99,
+    "plate-brown": 0.98
+   }
+  },
+  "draw brick-dark-red": {
+   "seconds": 7.589,
+   "output": 713,
+   "thinking": 199,
+   "cost": 0.0754562
+  },
+  "panel": {
+   "seconds": 18.349,
+   "output": 2012,
+   "thinking": 524,
+   "cost": 0.1340016,
+   "problem": null
+  },
+  "draw brick-green": {
+   "seconds": 8.79,
+   "output": 647,
+   "thinking": 133,
+   "cost": 0.07535739999999999
+  },
+  "draw brick-red": {
+   "seconds": 9.545,
+   "output": 759,
+   "thinking": 177,
+   "cost": 0.0757094
+  },
+  "finale": {
+   "seconds": 10.443,
+   "output": 881,
+   "thinking": 313,
+   "cost": 0.1136056,
+   "problem": null
+  },
+  "draw brick-orange": {
+   "seconds": 13.963,
+   "output": 1239,
+   "thinking": 392,
+   "cost": 0.08873520000000001
+  },
+  "draw plate-brown": {
+   "seconds": 29.342,
+   "output": 3321,
+   "thinking": 728,
+   "cost": 0.1325508
+  }
+ },
+ "cost": 0.825
+}

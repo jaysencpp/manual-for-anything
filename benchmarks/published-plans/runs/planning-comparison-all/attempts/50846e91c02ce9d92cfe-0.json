@@ -1,0 +1,129 @@
+{
+  "row": {
+    "id": "50846e91c02ce9d92cfe-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "xhigh",
+    "trialId": "50846e91c02ce9d92cfe",
+    "sample": 1,
+    "planningEffort": "xhigh",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 46,
+          "duration": 33.599999999999994,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "scissors.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.14671375,
+    "responseSeconds": 111.652758192,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": {
+    "title": "Tuned Scissors",
+    "design": {
+      "purpose": "Restore household scissors to smooth cutting",
+      "size": [
+        20,
+        8,
+        2
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place scissors",
+        "c": "Set scissors flat in middle"
+      },
+      {
+        "t": "Inspect blades",
+        "c": "Measure 20 cm blades, check pivot"
+      },
+      {
+        "t": "Brush pivot clean",
+        "c": "Brush lint from pivot area"
+      },
+      {
+        "t": "Brush blades clean",
+        "c": "Brush both blades to remove dust"
+      },
+      {
+        "t": "Snug the pivot",
+        "c": "Turn pivot screw snug"
+      },
+      {
+        "t": "Test the action",
+        "c": "Open and close smoothly"
+      }
+    ]
+  },
+  "rawText": null
+}

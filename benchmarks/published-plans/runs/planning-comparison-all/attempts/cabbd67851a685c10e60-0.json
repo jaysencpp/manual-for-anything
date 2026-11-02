@@ -1,0 +1,252 @@
+{
+  "row": {
+    "id": "cabbd67851a685c10e60-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "high",
+    "trialId": "cabbd67851a685c10e60",
+    "sample": 1,
+    "planningEffort": "high",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "joint joint-front-basefront: Joint surfaces do not touch: front-side exit plane y=71.5 cm, base-front receiving plane y=69.5 cm (separation 2 cm). Position base-front relative to front-side; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-back-baseback: Joint surfaces do not touch: back-side exit plane y=100.5 cm, base-back receiving plane y=102.5 cm (separation 2 cm). Position base-back relative to back-side; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-basefront: Joint surfaces do not touch: front-side exit plane y=71.5 cm, base-front receiving plane y=69.5 cm (separation 2 cm). Position base-front relative to front-side; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-baseback: Joint surfaces do not touch: back-side exit plane y=100.5 cm, base-back receiving plane y=102.5 cm (separation 2 cm). Position base-back relative to back-side; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 9: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "joint joint-front-basefront: Joint surfaces do not touch: front-side exit plane y=71.5 cm, base-front receiving plane y=69.5 cm (separation 2 cm). Position base-front relative to front-side; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+        "joint joint-back-baseback: Joint surfaces do not touch: back-side exit plane y=100.5 cm, base-back receiving plane y=102.5 cm (separation 2 cm). Position base-back relative to back-side; an independent floor placement does not define a second row. Change the placement, not just the face names."
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.459328,
+    "responseSeconds": 136.803629959,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Raised Herb Planter",
+    "design": {
+      "purpose": "A raised patio planter for herbs or one small shrub, filled to about 17 cm deep with compost over drained base planks.",
+      "size": [
+        29,
+        36,
+        40
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Lay the wide board flat for marking"
+      },
+      {
+        "t": "Mark wide board",
+        "c": "Measure and mark 29 cm sections"
+      },
+      {
+        "t": "Cut wide board",
+        "c": "Saw the wide board into planter sides"
+      },
+      {
+        "t": "Place medium board",
+        "c": "Lay the medium board flat for marking"
+      },
+      {
+        "t": "Mark medium board",
+        "c": "Measure and mark base and feet"
+      },
+      {
+        "t": "Cut medium board",
+        "c": "Saw out the base plank and feet"
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Lay the narrow board flat for marking"
+      },
+      {
+        "t": "Mark narrow board",
+        "c": "Measure and mark the rear base plank"
+      },
+      {
+        "t": "Cut narrow board",
+        "c": "Saw out the rear base plank"
+      },
+      {
+        "t": "Stand first foot",
+        "c": "Stand the first foot across the footprint"
+      },
+      {
+        "t": "Stand second foot",
+        "c": "Stand the second foot beside the first"
+      },
+      {
+        "t": "Fit front base",
+        "c": "Lay the front base across both feet"
+      },
+      {
+        "t": "Fit rear base",
+        "c": "Lay the rear base touching the front"
+      },
+      {
+        "t": "Drill front drainage",
+        "c": "Drill 10 mm drainage holes in front base"
+      },
+      {
+        "t": "Drill rear drainage",
+        "c": "Drill 10 mm drainage holes in rear base"
+      },
+      {
+        "t": "Fix front base foot",
+        "c": "Drive screws through front base into foot"
+      },
+      {
+        "t": "Fix front base foot",
+        "c": "Drive screws through front base into foot"
+      },
+      {
+        "t": "Fix rear base foot",
+        "c": "Drive screws through rear base into foot"
+      },
+      {
+        "t": "Fix rear base foot",
+        "c": "Drive screws through rear base into foot"
+      },
+      {
+        "t": "Fit front side",
+        "c": "Stand the front side on the base"
+      },
+      {
+        "t": "Fit back side",
+        "c": "Stand the back side on the base"
+      },
+      {
+        "t": "Fit left end",
+        "c": "Fit the left end between the sides"
+      },
+      {
+        "t": "Fit right end",
+        "c": "Fit the right end between the sides"
+      },
+      {
+        "t": "Drill corner pilots",
+        "c": "Drill 3 mm pilot holes at corners"
+      },
+      {
+        "t": "Fix front left corner",
+        "c": "Drive screws through front into left end"
+      },
+      {
+        "t": "Fix front right corner",
+        "c": "Drive screws through front into right end"
+      },
+      {
+        "t": "Fix back left corner",
+        "c": "Drive screws through back into left end"
+      },
+      {
+        "t": "Fix back right corner",
+        "c": "Drive screws through back into right end"
+      },
+      {
+        "t": "Fix front to base",
+        "c": "Drive screws through front side into base"
+      },
+      {
+        "t": "Fix back to base",
+        "c": "Drive screws through back side into base"
+      },
+      {
+        "t": "Sand the planter",
+        "c": "Sand cut edges and corners lightly"
+      }
+    ]
+  },
+  "rawText": null
+}

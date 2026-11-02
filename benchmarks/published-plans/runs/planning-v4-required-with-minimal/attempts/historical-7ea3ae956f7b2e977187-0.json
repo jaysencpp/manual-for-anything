@@ -1,0 +1,201 @@
+{
+  "row": {
+    "id": "historical-7ea3ae956f7b2e977187-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "low",
+    "trialId": "historical-7ea3ae956f7b2e977187",
+    "sample": 2,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 134,
+          "duration": 90.35000000000002,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+        "cut-b: compiled explicit stock cut with checked kerfs and offcut",
+        "Assembly placement compiled for base",
+        "Assembly placement compiled for front",
+        "Assembly placement compiled for back",
+        "Assembly placement compiled for left",
+        "Assembly placement compiled for right",
+        "box: compiled eight box joints and their measured work sites"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.0902728,
+    "responseSeconds": 21.49538457299999,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "A compact open planter for herbs or flowers on a patio, with 20 cm deep sides for soil and drainage holes in the base.",
+      "size": [
+        40,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place board A",
+        "c": "Place board A flat for cutting"
+      },
+      {
+        "t": "Cut side parts",
+        "c": "Cut front, back and both ends"
+      },
+      {
+        "t": "Place board B",
+        "c": "Place board B flat for cutting"
+      },
+      {
+        "t": "Cut base",
+        "c": "Cut the base from board B"
+      },
+      {
+        "t": "Sand all parts",
+        "c": "Sand cut edges smooth on all parts"
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill three drainage holes through base"
+      },
+      {
+        "t": "Place base",
+        "c": "Place base flat on the floor"
+      },
+      {
+        "t": "Place front",
+        "c": "Stand front on base front edge"
+      },
+      {
+        "t": "Place back",
+        "c": "Stand back on base back edge"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit left end between front and back"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit right end between front and back"
+      },
+      {
+        "t": "Fix front left",
+        "c": "Drive 2 screws through the front into the left end"
+      },
+      {
+        "t": "Fix front right",
+        "c": "Drive 2 screws through the front into the right end"
+      },
+      {
+        "t": "Fix back left",
+        "c": "Drive 2 screws through the back into the left end"
+      },
+      {
+        "t": "Fix back right",
+        "c": "Drive 2 screws through the back into the right end"
+      },
+      {
+        "t": "Fix base front",
+        "c": "Drive 2 screws through the base into the front"
+      },
+      {
+        "t": "Fix base back",
+        "c": "Drive 2 screws through the base into the back"
+      },
+      {
+        "t": "Fix base left",
+        "c": "Drive 2 screws through the base into the left end"
+      },
+      {
+        "t": "Fix base right",
+        "c": "Drive 2 screws through the base into the right end"
+      }
+    ]
+  },
+  "rawText": null
+}

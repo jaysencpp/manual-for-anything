@@ -1,0 +1,260 @@
+{
+ "contractVersion": 2,
+ "design": {
+  "joins": "No fasteners; folded edges hold by creases pressed flat",
+  "parts": [
+   {
+    "cm": 29.7,
+    "from": "paper-sheet",
+    "k": "paper-sheet",
+    "n": 1
+   }
+  ],
+  "purpose": "A paper dart that flies straight across a room, for one person",
+  "size": [
+   21,
+   10,
+   4
+  ],
+  "standard": "A4 sheet 21 x 29.7 cm folded to a 29.7 cm long dart",
+  "stands": "Nose folds add weight at the front; two equal wings give lift and balance"
+ },
+ "end": "Throw it across the room",
+ "finale": [
+  {
+   "by": 0,
+   "k": "paper-sheet",
+   "to": null,
+   "v": "throw"
+  }
+ ],
+ "goals": [
+  {
+   "k": "paper-sheet",
+   "state": "dart"
+  }
+ ],
+ "ideas": [
+  {
+   "kind": "craft",
+   "pitch": "Folded dart plane that flies straight and far",
+   "title": "Classic Dart Paper Plane"
+  },
+  {
+   "kind": "craft",
+   "pitch": "Folded crane with flapping wings for display",
+   "title": "Origami Crane"
+  },
+  {
+   "kind": "craft",
+   "pitch": "Folded and cut snowflake for a window",
+   "title": "Cut Paper Snowflake"
+  }
+ ],
+ "joints": [],
+ "makes": [],
+ "objects": [
+  {
+   "b": [
+    65,
+    110,
+    1030,
+    1315
+   ],
+   "cm": 29.7,
+   "k": "paper-sheet",
+   "measurements": {
+    "cm": {
+     "source": "single photo estimate",
+     "status": "estimated"
+    }
+   },
+   "n": "A4 white paper sheet",
+   "part": {
+    "family": "sheet",
+    "size": [
+     21,
+     29.7,
+     0.05
+    ]
+   },
+   "segment": "white paper sheet",
+   "state": "flat",
+   "states": [
+    {
+     "id": "flat",
+     "label": "Flat sheet"
+    },
+    {
+     "id": "dart",
+     "label": "Dart"
+    }
+   ]
+  }
+ ],
+ "pick": 0,
+ "rigs": [],
+ "steps": [
+  {
+   "t": "Lay the sheet flat",
+   "c": "Lay the A4 sheet flat, short edge facing you",
+   "claims": [
+    "a1"
+   ],
+   "do": [
+    {
+     "id": "a1",
+     "intent": "place",
+     "v": "place",
+     "k": "paper-sheet",
+     "rel": "floor",
+     "at": "middle",
+     "to": null
+    }
+   ]
+  },
+  {
+   "t": "Crease the centre",
+   "c": "Fold in half lengthways, crease, then unfold",
+   "claims": [
+    "a2"
+   ],
+   "do": [
+    {
+     "id": "a2",
+     "intent": "fold",
+     "v": "fold",
+     "k": "paper-sheet",
+     "move": "left edge",
+     "onto": "right edge",
+     "unfold": true,
+     "name": "centre crease"
+    }
+   ]
+  },
+  {
+   "t": "Fold nose corners",
+   "c": "Fold both top corners in to the centre crease",
+   "claims": [
+    "a3",
+    "a4"
+   ],
+   "do": [
+    {
+     "id": "a3",
+     "intent": "fold",
+     "v": "fold",
+     "k": "paper-sheet",
+     "move": "top-left",
+     "onto": "centre crease"
+    },
+    {
+     "id": "a4",
+     "intent": "fold",
+     "v": "fold",
+     "k": "paper-sheet",
+     "move": "top-right",
+     "onto": "centre crease"
+    }
+   ]
+  },
+  {
+   "t": "Narrow the nose",
+   "c": "Fold the new slanted edges in to the centre crease",
+   "claims": [
+    "a5",
+    "a6"
+   ],
+   "do": [
+    {
+     "id": "a5",
+     "intent": "fold",
+     "v": "fold",
+     "k": "paper-sheet",
+     "move": "top-left edge",
+     "onto": "centre crease"
+    },
+    {
+     "id": "a6",
+     "intent": "fold",
+     "v": "fold",
+     "k": "paper-sheet",
+     "move": "top-right edge",
+     "onto": "centre crease"
+    }
+   ]
+  },
+  {
+   "t": "Fold in half",
+   "c": "Fold in half along the centre crease, folds outside",
+   "claims": [
+    "a7"
+   ],
+   "do": [
+    {
+     "id": "a7",
+     "intent": "fold",
+     "v": "fold",
+     "k": "paper-sheet",
+     "move": "left edge",
+     "onto": "right edge",
+     "crease": "mountain"
+    }
+   ]
+  },
+  {
+   "t": "Fold the wings",
+   "c": "Fold each wing down to the base, turning over between",
+   "claims": [
+    "a8",
+    "a9",
+    "a10"
+   ],
+   "do": [
+    {
+     "id": "a8",
+     "intent": "fold",
+     "v": "fold",
+     "k": "paper-sheet",
+     "move": "right edge",
+     "onto": "left edge",
+     "layers": "top"
+    },
+    {
+     "id": "a9",
+     "intent": "turn",
+     "v": "fold",
+     "k": "paper-sheet",
+     "move": "over"
+    },
+    {
+     "id": "a10",
+     "intent": "fold",
+     "v": "fold",
+     "k": "paper-sheet",
+     "move": "left edge",
+     "onto": "right edge",
+     "layers": "top",
+     "requires": [
+      {
+       "k": "paper-sheet",
+       "state": "flat"
+      }
+     ],
+     "effects": [
+      {
+       "k": "paper-sheet",
+       "state": "dart"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sub": "Folded A4 dart that flies",
+ "tag": "29.7 cm long · 5 min · Easy",
+ "title": "Classic Dart Plane",
+ "tools": [],
+ "view": "plan",
+ "mode": "physical"
+}

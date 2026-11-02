@@ -1,0 +1,230 @@
+{
+  "row": {
+    "id": "aff19162a45f2eb3d6ea-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "aff19162a45f2eb3d6ea",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "b1: intent work green base start needs a faithful demonstration, not work",
+            "c1: intent work base to full width needs a faithful demonstration, not work",
+            "d1: intent work lower sides needs a faithful demonstration, not work",
+            "e2: intent work upper sides in blue needs a faithful demonstration, not work",
+            "f1: a demonstration needs drawing code",
+            "f1: invalid demonstration actors",
+            "f1: focus must belong to a demonstration actor",
+            "f1: demonstration changes an undeclared actor",
+            "step 2: work source to must name a distinct photographed material",
+            "step 3: work source to must name a distinct photographed material",
+            "step 4: work source to must name a distinct photographed material",
+            "step 5: work source to must name a distinct photographed material",
+            "made piece basket: work progress must increase and finish at 1"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "design: the size is 24 × 24 × 18 cm but the steps build 46 × 6.7 × 2 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "b1: intent work green base start needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "c1: intent work base to full width needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "d1: intent work lower sides needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "e2: intent work upper sides in blue needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "f1: a demonstration needs drawing code"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "f1: invalid demonstration actors"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "f1: focus must belong to a demonstration actor"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "f1: demonstration changes an undeclared actor"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 2: work source to must name a distinct photographed material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 3: work source to must name a distinct photographed material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 4: work source to must name a distinct photographed material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 5: work source to must name a distinct photographed material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "made piece basket: work progress must increase and finish at 1"
+        },
+        {
+          "stage": "geometry",
+          "code": "design-dimensions",
+          "message": "design: the size is 24 × 24 × 18 cm but the steps build 46 × 6.7 × 2 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "b1: intent work green base start needs a faithful demonstration, not work",
+        "c1: intent work base to full width needs a faithful demonstration, not work",
+        "d1: intent work lower sides needs a faithful demonstration, not work",
+        "e2: intent work upper sides in blue needs a faithful demonstration, not work",
+        "f1: a demonstration needs drawing code",
+        "f1: invalid demonstration actors",
+        "f1: focus must belong to a demonstration actor",
+        "f1: demonstration must declare its resulting state",
+        "step 2: work source to must name a distinct photographed material",
+        "step 3: work source to must name a distinct photographed material",
+        "step 4: work source to must name a distinct photographed material",
+        "step 5: work source to must name a distinct photographed material",
+        "made piece basket: work progress must increase and finish at 1"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.03844375,
+    "responseSeconds": 20.434426428999984,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Striped Basket",
+    "design": {
+      "purpose": "Chunky two-tone storage basket for one person to hold yarn, toys or bedside things. Uses both balls: green base and lower sides, blue upper sides.",
+      "size": [
+        24,
+        24,
+        18
+      ]
+    },
+    "steps": [
+      {
+        "t": "Set out materials",
+        "c": "Place green yarn, blue yarn and hook together"
+      },
+      {
+        "t": "Start round base",
+        "c": "Magic ring, 6 single crochet, then 12 stitches"
+      },
+      {
+        "t": "Grow base flat",
+        "c": "Work Rnd 3 to 18, Rnd 4 to 24, Rnd 5 to 30"
+      },
+      {
+        "t": "Build lower sides",
+        "c": "Work 3 rounds of 30 single crochet in green"
+      },
+      {
+        "t": "Add blue band",
+        "c": "Cut green, join blue, work 3 rounds of 30"
+      },
+      {
+        "t": "Finish and weave ends",
+        "c": "Cut blue, fasten off, weave in all tails"
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,193 @@
+{
+  "row": {
+    "id": "aff19162a45f2eb3d6ea-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "aff19162a45f2eb3d6ea",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "a10: demonstration failed: undeclared actor",
+            "step 2: work target green-yarn must name a piece declared in makes, not source material",
+            "step 2: work source to must name a distinct photographed material",
+            "step 3: work target green-yarn must name a piece declared in makes, not source material",
+            "step 4: work target green-yarn must name a piece declared in makes, not source material",
+            "step 5: work target green-yarn must name a piece declared in makes, not source material",
+            "step 5: work source to must name a distinct photographed material",
+            "made piece basket: needs work operations that visibly create it",
+            "step 6 (a9): a strand operation is one of bend, coil, ring, knot, twist, thread, straighten, as \"op\""
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "a10: demonstration failed: undeclared actor"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 2: work target green-yarn must name a piece declared in makes, not source material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 2: work source to must name a distinct photographed material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 3: work target green-yarn must name a piece declared in makes, not source material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 4: work target green-yarn must name a piece declared in makes, not source material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 5: work target green-yarn must name a piece declared in makes, not source material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 5: work source to must name a distinct photographed material"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "made piece basket: needs work operations that visibly create it"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 6 (a9): a strand operation is one of bend, coil, ring, knot, twist, thread, straighten, as \"op\""
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a10: unmet state requirement basket:started",
+        "step 6 (a9): a strand operation is one of bend, coil, ring, knot, twist, thread, straighten, as \"op\""
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.04222525,
+    "responseSeconds": 20.326033751999958,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Striped Basket",
+    "design": {
+      "purpose": "Striped storage basket for yarn, toys, bedside: green and blue jumbo crochet, holds shape",
+      "size": [
+        22,
+        22,
+        16
+      ]
+    },
+    "steps": [
+      {
+        "t": "Lay out materials",
+        "c": "Set yarns, hook and scissors out"
+      },
+      {
+        "t": "Crochet green base",
+        "c": "Start green ring and work base"
+      },
+      {
+        "t": "Widen to full width",
+        "c": "Join blue and grow to 36 stitches"
+      },
+      {
+        "t": "Crochet basket sides",
+        "c": "Work striped sides in rounds"
+      },
+      {
+        "t": "Finish top edge",
+        "c": "Work final green round to finish"
+      },
+      {
+        "t": "Snip yarn tail",
+        "c": "Snip blue tail with scissors"
+      },
+      {
+        "t": "Weave in ends",
+        "c": "Weave all tails inside basket"
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,204 @@
+{
+  "row": {
+    "id": "7f1a5da76b6d484d0052-0",
+    "caseId": "lego-pile",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "7f1a5da76b6d484d0052",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[0].do[0]: does not match any allowed schema branch",
+            "$.steps[1].do[0]: does not match any allowed schema branch",
+            "$.steps[2].do[0]: does not match any allowed schema branch",
+            "$.steps[3].do[0]: does not match any allowed schema branch",
+            "$.steps[4].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "Plan changed the frozen inventory identity, dimensions or measurement provenance",
+            "$.steps[0].do[0]: does not match any allowed schema branch",
+            "$.steps[1].do[0]: does not match any allowed schema branch",
+            "$.steps[2].do[0]: does not match any allowed schema branch",
+            "$.steps[3].do[0]: does not match any allowed schema branch",
+            "$.steps[4].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "structure",
+          "code": "inventory-change",
+          "message": "Plan changed the frozen inventory identity, dimensions or measurement provenance",
+          "rawOnly": true
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[0].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[1].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[2].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[4].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "inventory-change",
+          "message": "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[0].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[1].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[2].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[4].do[0]: does not match any allowed schema branch"
+        }
+      ],
+      "warnings": [
+        "brick-dark-red.cm: unconfirmed measurement",
+        "brick-green.cm: unconfirmed measurement",
+        "brick-red.cm: unconfirmed measurement",
+        "brick-orange.cm: unconfirmed measurement",
+        "plate-brown.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "unreached goal plate-brown:bridge",
+        "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.037133,
+    "responseSeconds": 17.497046360000038,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "lego-pile",
+    "title": "LEGO build",
+    "request": "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces.",
+    "guidance": {
+      "messages": [
+        "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Desk Bridge Riser",
+    "design": {
+      "purpose": "Low desk riser to lift a phone, notes or small tools with cable space under, serves 1 desk user",
+      "size": [
+        6.4,
+        1.6,
+        2.2
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place left foot",
+        "c": "Set dark red 2x2 as left pier foot"
+      },
+      {
+        "t": "Stack left pier",
+        "c": "Stack green 2x2 on left foot"
+      },
+      {
+        "t": "Place right foot",
+        "c": "Set red 2x2 as right pier foot"
+      },
+      {
+        "t": "Stack right pier",
+        "c": "Stack orange 2x2 on right foot"
+      },
+      {
+        "t": "Place bridge top",
+        "c": "Bridge brown plate across both piers"
+      }
+    ]
+  },
+  "rawText": null
+}

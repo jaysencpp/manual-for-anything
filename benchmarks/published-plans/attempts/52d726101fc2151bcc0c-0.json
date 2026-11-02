@@ -1,0 +1,251 @@
+{
+  "row": {
+    "id": "52d726101fc2151bcc0c-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "52d726101fc2151bcc0c",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[0].do[0]: does not match any allowed schema branch",
+            "$.steps[9].do[0]: does not match any allowed schema branch",
+            "$.steps[14].do[0]: does not match any allowed schema branch",
+            "$.steps[15].do[0]: does not match any allowed schema branch",
+            "$.steps[18].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "$.steps[0].do[0]: does not match any allowed schema branch",
+            "$.steps[9].do[0]: does not match any allowed schema branch",
+            "$.steps[14].do[0]: does not match any allowed schema branch",
+            "$.steps[15].do[0]: does not match any allowed schema branch",
+            "$.steps[18].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[0].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[9].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[14].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[15].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[18].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[0].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[9].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[14].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[15].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[18].do[0]: does not match any allowed schema branch"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "a1: demonstration must declare its resulting state",
+        "a10: demonstration must declare its resulting state",
+        "a15: demonstration must declare its resulting state",
+        "a16: demonstration must declare its resulting state",
+        "a19: demonstration must declare its resulting state"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.155972,
+    "responseSeconds": 26.27557427900005,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Chunky Storage Basket",
+    "design": {
+      "purpose": "A sturdy open storage basket for yarn, toys or bathroom items, for one maker; green base and lower wall, blue upper wall.",
+      "size": [
+        24,
+        24,
+        14
+      ]
+    },
+    "steps": [
+      {
+        "t": "Make magic ring",
+        "c": "Make a magic ring with green yarn"
+      },
+      {
+        "t": "Work round 1",
+        "c": "Rnd 1: 6 sc in ring, pull tight"
+      },
+      {
+        "t": "Work round 2",
+        "c": "Rnd 2: inc in each stitch, 12 sc"
+      },
+      {
+        "t": "Work round 3",
+        "c": "Rnd 3: *sc, inc* repeat, 18 sc"
+      },
+      {
+        "t": "Work round 4",
+        "c": "Rnd 4: *2 sc, inc* repeat, 24 sc"
+      },
+      {
+        "t": "Work round 5",
+        "c": "Rnd 5: *3 sc, inc* repeat, 30 sc"
+      },
+      {
+        "t": "Start basket wall",
+        "c": "Rnd 6: sc in back loop only, 30 sc"
+      },
+      {
+        "t": "Work round 7",
+        "c": "Rnd 7: sc in each stitch, 30 sc"
+      },
+      {
+        "t": "Work round 8",
+        "c": "Rnd 8: sc in each stitch, 30 sc"
+      },
+      {
+        "t": "Change to blue",
+        "c": "Complete last stitch with blue yarn"
+      },
+      {
+        "t": "Work round 9",
+        "c": "Rnd 9: sc in each stitch, 30 sc"
+      },
+      {
+        "t": "Work round 10",
+        "c": "Rnd 10: sc in each stitch, 30 sc"
+      },
+      {
+        "t": "Work round 11",
+        "c": "Rnd 11: sc each stitch, sl st to join"
+      },
+      {
+        "t": "Cut blue tail",
+        "c": "Snip blue yarn, leave a 15 cm tail"
+      },
+      {
+        "t": "Fasten off yarn",
+        "c": "Pull tail through last loop and tighten"
+      },
+      {
+        "t": "Weave in tails",
+        "c": "Weave both tails through nearby stitches"
+      },
+      {
+        "t": "Trim green tail",
+        "c": "Snip green tail close to work"
+      },
+      {
+        "t": "Trim blue tail",
+        "c": "Snip blue tail close to work"
+      },
+      {
+        "t": "Shape the basket",
+        "c": "Push base flat and shape wall upright"
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,189 @@
+{
+  "row": {
+    "id": "ab0c4133911205710f1b-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "low",
+    "trialId": "ab0c4133911205710f1b",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[3].do[0]: does not match any allowed schema branch",
+            "$.steps[7].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "$.steps[3].do[0]: does not match any allowed schema branch",
+            "$.steps[7].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "a6: demonstration failed: Unsupported drawing property",
+            "a10: demonstration failed: Unsupported drawing property"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[7].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[7].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "semantics",
+          "code": "unsupported-operation",
+          "message": "a6: demonstration failed: Unsupported drawing property"
+        },
+        {
+          "stage": "semantics",
+          "code": "unsupported-operation",
+          "message": "a10: demonstration failed: Unsupported drawing property"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "step 9: the caption gives 28 cm, but no action carries it",
+        "step 9: the caption gives 84 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "a6: demonstration failed: Unsupported drawing property",
+        "a6: demonstration must declare its resulting state",
+        "a10: demonstration failed: Unsupported drawing property",
+        "a10: demonstration must declare its resulting state"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.119232,
+    "responseSeconds": 15.315329977000015,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Two-Tone Chunky Scarf",
+    "design": {
+      "purpose": "A warm two-colour chunky scarf for one adult, worked flat in single crochet: green for the first half and blue for the second half. Yarn amounts must be checked before starting because yardage is not visible.",
+      "size": [
+        28,
+        84,
+        2
+      ]
+    },
+    "steps": [
+      {
+        "t": "Set out materials",
+        "c": "Place green yarn, blue yarn and hook on the work surface."
+      },
+      {
+        "t": "Start chain in green",
+        "c": "Ch 16. Row 1: sc in 2nd ch from hook and each ch across."
+      },
+      {
+        "t": "Work green half",
+        "c": "Rows 2-18: ch 1, turn, sc in each of 14 sts across."
+      },
+      {
+        "t": "Change to blue yarn",
+        "c": "Change to blue in the last stitch of row 18."
+      },
+      {
+        "t": "Work blue half",
+        "c": "Rows 19-36: ch 1, turn, sc in each of 14 sts across."
+      },
+      {
+        "t": "Snip blue tail",
+        "c": "Fasten off and snip blue yarn, leaving a 15 cm tail."
+      },
+      {
+        "t": "Trim green tail",
+        "c": "Snip green starting tail to 15 cm if longer."
+      },
+      {
+        "t": "Weave in ends",
+        "c": "Weave each tail through 3 sts, then back through 2 sts."
+      },
+      {
+        "t": "Lay flat and check",
+        "c": "Lay scarf flat, smooth edges, check 28 cm by 84 cm."
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,212 @@
+{
+  "row": {
+    "id": "d7417ed441911149e446-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "d7417ed441911149e446",
+    "sample": 2,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 132,
+          "duration": 83.1,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 1: the caption gives 120 cm, but no action carries it",
+        "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 3: the caption gives 120 cm, but no action carries it",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 5: the caption gives 120 cm, but no action carries it",
+        "step 6: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 7: the caption gives 20 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+        "cut-b: compiled explicit stock cut with checked kerfs and offcut",
+        "cut-c: compiled explicit stock cut with checked kerfs and offcut",
+        "Assembly placement compiled for base",
+        "Assembly placement compiled for front",
+        "Assembly placement compiled for back",
+        "Assembly placement compiled for left",
+        "Assembly placement compiled for right",
+        "box: compiled eight box joints and their measured work sites"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.113184,
+    "responseSeconds": 16.91837792999996,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "A weatherproof-looking outdoor planter for herbs or flowers for one gardener; fill to below the 15 cm end height.",
+      "size": [
+        50,
+        20,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the 120 cm wide board flat for cutting."
+      },
+      {
+        "t": "Cut base",
+        "c": "Saw the 50 cm base from the wide board."
+      },
+      {
+        "t": "Place second board",
+        "c": "Place the 120 cm board flat for cutting."
+      },
+      {
+        "t": "Cut long sides",
+        "c": "Saw the 50 cm front and back boards."
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Place the 120 cm narrow board flat."
+      },
+      {
+        "t": "Cut short ends",
+        "c": "Saw the 16 cm left and right ends."
+      },
+      {
+        "t": "Place base",
+        "c": "Place the 50 × 20 cm base flat."
+      },
+      {
+        "t": "Place front",
+        "c": "Stand the front on the base front edge."
+      },
+      {
+        "t": "Place back",
+        "c": "Stand the back on the base back edge."
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between the sides."
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between the sides."
+      },
+      {
+        "t": "Fix front left",
+        "c": "Drive 2 screws through the front"
+      },
+      {
+        "t": "Fix front right",
+        "c": "Drive 2 screws through the front"
+      },
+      {
+        "t": "Fix back left",
+        "c": "Drive 2 screws through the back"
+      },
+      {
+        "t": "Fix back right",
+        "c": "Drive 2 screws through the back"
+      },
+      {
+        "t": "Fix base front",
+        "c": "Drive 2 screws through the base"
+      },
+      {
+        "t": "Fix base back",
+        "c": "Drive 2 screws through the base"
+      },
+      {
+        "t": "Fix base left",
+        "c": "Drive 2 screws through the base"
+      },
+      {
+        "t": "Fix base right",
+        "c": "Drive 2 screws through the base"
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill two 8 mm drainage holes in base."
+      }
+    ]
+  },
+  "rawText": null
+}

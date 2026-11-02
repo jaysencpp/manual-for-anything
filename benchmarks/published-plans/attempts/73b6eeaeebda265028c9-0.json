@@ -1,0 +1,131 @@
+{
+  "row": {
+    "id": "73b6eeaeebda265028c9-0",
+    "caseId": "lego-pile",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "max",
+    "trialId": "73b6eeaeebda265028c9",
+    "sample": 1,
+    "planningEffort": "max",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 35,
+          "duration": 25.700000000000003,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "brick-dark-red.cm: unconfirmed measurement",
+        "brick-green.cm: unconfirmed measurement",
+        "brick-red.cm: unconfirmed measurement",
+        "brick-orange.cm: unconfirmed measurement",
+        "plate-brown.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.189676,
+    "responseSeconds": 44.683225267000005,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "lego-pile",
+    "title": "LEGO build",
+    "request": "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces.",
+    "guidance": {
+      "messages": [
+        "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Two-Level Display Stand",
+    "design": {
+      "purpose": "Display two small lightweight figures or trinkets at two heights on a desk or shelf.",
+      "size": [
+        6.4,
+        1.6,
+        2.24
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place brown plate",
+        "c": "Lay brown 2×8 plate flat, corner at studs 0, 0."
+      },
+      {
+        "t": "Add green brick",
+        "c": "Press green 2×2 brick onto plate at studs 0, 0."
+      },
+      {
+        "t": "Add dark-red brick",
+        "c": "Press dark red 2×2 brick alongside at studs 2, 0."
+      },
+      {
+        "t": "Stack red brick",
+        "c": "Stack red 2×2 brick on green at studs 0, 0."
+      },
+      {
+        "t": "Stack orange brick",
+        "c": "Stack orange 2×2 brick on dark red at studs 0, 0."
+      }
+    ]
+  },
+  "rawText": null
+}

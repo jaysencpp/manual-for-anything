@@ -1,0 +1,32 @@
+{
+ "chili-beans": {
+  "width": 204,
+  "height": 244,
+  "regions": []
+ },
+ "broth": {
+  "width": 189,
+  "height": 245,
+  "regions": []
+ },
+ "tomatoes": {
+  "width": 179,
+  "height": 221,
+  "regions": []
+ },
+ "corn": {
+  "width": 145,
+  "height": 180,
+  "regions": []
+ },
+ "pepperjack": {
+  "width": 304,
+  "height": 170,
+  "regions": []
+ },
+ "photo": {
+  "width": 1500,
+  "height": 1125,
+  "regions": []
+ }
+}

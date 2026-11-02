@@ -1,0 +1,406 @@
+{
+  "row": {
+    "id": "81517d41ac19e2f8e64f-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "81517d41ac19e2f8e64f",
+    "sample": 2,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[1].do[1]: does not match any allowed schema branch",
+            "$.steps[2].do[0]: does not match any allowed schema branch",
+            "$.steps[3].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "$.steps[1].do[1]: does not match any allowed schema branch",
+            "$.steps[2].do[0]: does not match any allowed schema branch",
+            "$.steps[3].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "joint joint-front-left: needs two distinct known parts",
+            "joint joint-front-right: needs two distinct known parts",
+            "joint joint-back-left: needs two distinct known parts",
+            "joint joint-back-right: needs two distinct known parts",
+            "joint joint-base-front: needs two distinct known parts",
+            "joint joint-base-back: needs two distinct known parts",
+            "c-board-c: intent work needs a faithful demonstration, not measure",
+            "c2-board-c: intent cut needs a faithful demonstration, not place",
+            "step 3: claim refers to a missing operation",
+            "cut-c: intent cut needs a faithful demonstration, not place",
+            "cut-a: intent cut needs a faithful demonstration, not place",
+            "joint joint-front-right: no attachment operation",
+            "joint joint-back-left: no attachment operation",
+            "joint joint-back-right: no attachment operation",
+            "joint joint-base-front: no attachment operation",
+            "joint joint-base-back: no attachment operation",
+            "step 5: k refers to unknown object base-panel",
+            "step 6: k refers to unknown object front-panel",
+            "step 6: to refers to unknown object base-panel",
+            "step 6: k refers to unknown object back-panel",
+            "step 7: k refers to unknown object left-panel",
+            "step 7: to refers to unknown object base-panel",
+            "step 7: k refers to unknown object right-panel",
+            "step 8: k refers to unknown object front-panel",
+            "step 8: to refers to unknown object left-panel"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "joint joint-front-left: Both joint parts need numeric geometry",
+            "joint joint-front-right: Both joint parts need numeric geometry",
+            "joint joint-back-left: Both joint parts need numeric geometry",
+            "joint joint-back-right: Both joint parts need numeric geometry",
+            "joint joint-base-front: Both joint parts need numeric geometry",
+            "joint joint-base-back: Both joint parts need numeric geometry"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "fail",
+          "errors": [
+            "Task requires operation cut"
+          ]
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[1].do[1]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[2].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[1].do[1]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[2].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-front-left: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-front-right: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-back-left: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-back-right: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-front: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-back: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "c-board-c: intent work needs a faithful demonstration, not measure"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "c2-board-c: intent cut needs a faithful demonstration, not place"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 3: claim refers to a missing operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "cut-c: intent cut needs a faithful demonstration, not place"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "cut-a: intent cut needs a faithful demonstration, not place"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-front-right: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-back-left: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-back-right: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-front: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-back: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object base-panel"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: k refers to unknown object front-panel"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: to refers to unknown object base-panel"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: k refers to unknown object back-panel"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: k refers to unknown object left-panel"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: to refers to unknown object base-panel"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: k refers to unknown object right-panel"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object front-panel"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: to refers to unknown object left-panel"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-left: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-right: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-left: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-right: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-front: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-back: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "task",
+          "code": "task-failure",
+          "message": "Task requires operation cut"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 4: the caption gives 40 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "joint joint-front-left: needs two distinct known parts",
+        "joint joint-front-right: needs two distinct known parts",
+        "joint joint-back-left: needs two distinct known parts",
+        "joint joint-back-right: needs two distinct known parts",
+        "joint joint-base-front: needs two distinct known parts",
+        "joint joint-base-back: needs two distinct known parts",
+        "c-board-c: intent work needs a faithful demonstration, not measure",
+        "c2-board-c: intent cut needs a faithful demonstration, not place",
+        "step 3: claim refers to a missing operation",
+        "cut-c: intent cut needs a faithful demonstration, not place",
+        "cut-a: intent cut needs a faithful demonstration, not place",
+        "f-fl: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "unreached goal base-panel:assembled",
+        "unreached goal front-panel:assembled",
+        "joint joint-front-right: no attachment operation",
+        "joint joint-back-left: no attachment operation",
+        "joint joint-back-right: no attachment operation",
+        "joint joint-base-front: no attachment operation",
+        "joint joint-base-back: no attachment operation",
+        "step 5: k refers to unknown object base-panel",
+        "step 6: k refers to unknown object front-panel",
+        "step 6: to refers to unknown object base-panel",
+        "step 6: k refers to unknown object back-panel",
+        "step 7: k refers to unknown object left-panel",
+        "step 7: to refers to unknown object base-panel",
+        "step 7: k refers to unknown object right-panel",
+        "step 8: k refers to unknown object front-panel",
+        "step 8: to refers to unknown object left-panel"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.04074075,
+    "responseSeconds": 19.03443126899999,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Pine Planter Box",
+    "design": {
+      "purpose": "Small outdoor planter for herbs/flowers, serves 1 household. Uses 40 cm base, 15 cm soil depth.",
+      "size": [
+        40,
+        20,
+        15
+      ]
+    },
+    "steps": [
+      {
+        "t": "Position boards",
+        "c": "Place two boards on ground for cutting"
+      },
+      {
+        "t": "Mark and prepare",
+        "c": "Cut narrow board into four sides"
+      },
+      {
+        "t": "Cut sides",
+        "c": "Saw narrow board into sides and ends"
+      },
+      {
+        "t": "Cut base",
+        "c": "Saw wide board into 40 cm base"
+      },
+      {
+        "t": "Place base",
+        "c": "Place base panel flat on ground"
+      },
+      {
+        "t": "Place sides",
+        "c": "Stand front and back on base"
+      },
+      {
+        "t": "Place ends",
+        "c": "Fit ends between front and back"
+      },
+      {
+        "t": "Screw front left",
+        "c": "Drive 2 screws through front left end"
+      }
+    ]
+  },
+  "rawText": null
+}

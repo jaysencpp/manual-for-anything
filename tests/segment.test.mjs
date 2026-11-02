@@ -1,0 +1,168 @@
+// Segmentation against a local stub of the Responses API (no network, no tokens).
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import { createServer } from 'node:http'
+import { once } from 'node:events'
+import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
+import { join } from 'node:path'
+import { tmpdir } from 'node:os'
+import sharp from 'sharp'
+import { associate, overlap, maskEvidence } from '../src/pipeline/mask-selection.mjs'
+import { Segmenter, segmentPhoto, principalAxis, rotated } from '../src/pipeline/segment.mjs'
+
+// The protocol's own example record: a 5 × 5 box at (10, 20) and its one_bit mask.
+const record = id => `${id}<|box;x1=10;y1=20;x2=14;y2=24;w=100;h=80|><|mask;x=0;y=0;data=5,5,!!!!!(QO(0lu8?|>`
+const EXPECTED = [1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1]
+const photo = { width: 100, height: 80, jpeg: Buffer.from('jpeg') }
+
+async function stub(t, respond) {
+  const seen = []
+  const server = createServer((req, res) => {
+    let body = ''
+    req.on('data', c => { body += c })
+    req.on('end', () => {
+      const parsed = body ? JSON.parse(body) : null
+      seen.push({ url: req.url, auth: req.headers.authorization, body: parsed })
+      respond(req, res, parsed, seen.length)
+    })
+  })
+  server.listen(0, '127.0.0.1'); await once(server, 'listening')
+  t.after(() => { server.closeAllConnections(); server.close() })
+  return { seen, base: `http://127.0.0.1:${server.address().port}`, env: { META_BASE_URL: `http://127.0.0.1:${server.address().port}/v1/`, MODEL_API_KEY: 'test-key' } }
+}
+const answer = (res, text) => { res.writeHead(200, { 'Content-Type': 'application/json' }); res.end(JSON.stringify({ output: [{ type: 'message', content: [{ type: 'output_text', text }] }] })) }
+const samples = (req, res, body) => {
+  const text = body.input[0].content[0].text
+  answer(res, text === 'nothing' ? '' : `<0f>${(text.startsWith('<0f>') ? [1] : [0, 1]).map(record).join(',')}`)
+}
+
+test('find places box-local masks in the photo and sends the expected request', async t => {
+  const { seen, env } = await stub(t, samples)
+  const found = await new Segmenter(photo, { env }).find('board')
+  assert.equal(found.masks.length, 2)
+  assert.deepEqual(found.boxes[0], [10, 20, 15, 25])
+  const placed = []
+  for (let y = 20; y < 25; y++) for (let x = 10; x < 15; x++) placed.push(found.masks[0][y * 100 + x])
+  assert.deepEqual(placed, EXPECTED)
+  assert.equal(found.masks[0].reduce((a, v) => a + v, 0), EXPECTED.reduce((a, v) => a + v, 0))
+  assert.equal(seen.at(-1).url, '/v1/responses'); assert.equal(seen.at(-1).auth, 'Bearer test-key'); assert.equal(seen.at(-1).body.model, 'sam-3.1')
+  assert.match(seen.at(-1).body.input[0].content[1].image_url, /^data:image\/jpeg;base64,/)
+})
+
+test('nothing found is empty, not an error', async t => {
+  const { env } = await stub(t, samples)
+  assert.deepEqual((await new Segmenter(photo, { env }).find('nothing')).masks, [])
+})
+
+test('boxes ask once and come back in order', async t => {
+  const { seen, env } = await stub(t, samples)
+  const { masks } = await new Segmenter(photo, { env }).byBoxes([[8, 18, 17, 27], [40, 40, 60, 60]])
+  assert.match(seen.at(-1).body.input[0].content[0].text, /<\|box;x1=8;y1=18;x2=16;y2=26;w=100;h=80\|>/)
+  assert.ok(masks[0].some(Boolean)); assert.ok(!masks[1].some(Boolean))
+})
+
+test('more boxes than one request allows go out in batches and come back in order', async t => {
+  const { seen, env } = await stub(t, (req, res, body) => {
+    const ids = [...body.input[0].content[0].text.matchAll(/(\d+)<\|box/g)].map(m => +m[1])
+    if (ids.length > 16) { res.writeHead(400, { 'Content-Type': 'application/json' }); return res.end(JSON.stringify({ error: { message: `${ids.length} objects exceed this model's limit of 16` } })) }
+    answer(res, ids.includes(18) ? `<0f>${record(18)}` : '')
+  })
+  const boxes = Array.from({ length: 28 }, (_, i) => [i, 0, i + 5, 5])
+  const { masks, scores } = await new Segmenter(photo, { env }).byBoxes(boxes)
+  assert.equal(seen.length, 2)
+  assert.equal(masks.length, 28)
+  masks.forEach((mask, i) => assert.equal(mask.some(Boolean), i === 17, `box ${i}`))
+  assert.equal(scores[17], 1)
+})
+
+test('redirects never reach their destination with credentials', async t => {
+  const captured = await stub(t, (req, res) => { res.writeHead(200); res.end('{}') })
+  for (const code of [301, 302, 303, 307, 308]) {
+    const redirect = await stub(t, (req, res) => { res.writeHead(code, { Location: `${captured.base}/capture` }); res.end() })
+    await assert.rejects(new Segmenter(photo, { env: redirect.env }).find('board'), new RegExp(`SAM API HTTP ${code}`))
+    assert.equal(redirect.seen.length, 1)
+  }
+  assert.equal(captured.seen.length, 0)
+})
+
+test('production rejects an insecure endpoint override', () => {
+  assert.throws(() => new Segmenter(photo, { env: { NODE_ENV: 'production', META_BASE_URL: 'http://example.invalid/', MODEL_API_KEY: 'k' } }), /must use HTTPS/)
+})
+
+test('a gateway timeout retries, and a key in an error message is redacted', async t => {
+  const { seen, env } = await stub(t, (req, res, body, n) => {
+    if (n === 1) { res.writeHead(504); return res.end() }
+    samples(req, res, body)
+  })
+  assert.equal((await new Segmenter(photo, { env }).find('board')).masks.length, 2)
+  assert.equal(seen.length, 2)
+  const failing = await stub(t, (req, res) => { res.writeHead(401, { 'Content-Type': 'application/json' }); res.end(JSON.stringify({ error: { message: 'bad key test-key' } })) })
+  await assert.rejects(new Segmenter(photo, { env: failing.env }).find('board'), error => { assert.match(error.message, /401: bad key \*\*\*/); return true })
+  assert.equal(failing.seen.length, 1, 'authentication errors are not retried')
+})
+
+test('the cut-out pipeline writes every file and preserves the missing-mask fallback', async t => {
+  const { env } = await stub(t, samples)
+  const dir = mkdtempSync(join(tmpdir(), 'segment-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
+  const file = join(dir, 'photo.png')
+  await sharp({ create: { width: 100, height: 80, channels: 3, background: 'tan' } }).png().toFile(file)
+  const result = await segmentPhoto(file, { objects: [
+    { key: 'board', name: 'board', segment: 'board', box: [8, 18, 10, 10] },
+    { key: 'missing', name: 'nothing', box: [50, 40, 10, 10] },
+  ] }, dir, { env })
+  const read = name => JSON.parse(readFileSync(join(dir, name), 'utf8'))
+  const screens = read('screens.json'), geometry = read('geometry.json'), evidence = read('perception.json')
+  assert.deepEqual(Object.keys(screens), ['board', 'missing']); assert.deepEqual(Object.keys(geometry), ['board', 'missing'])
+  assert.match(result.log, /no mask found, cut out as the box/)
+  assert.ok(evidence.missing.warnings.length); assert.equal(evidence.board.method, 'semantic')
+  assert.equal(geometry.board.color, '#d2b48c')
+  for (const [key, size] of Object.entries(screens)) {
+    const meta = await sharp(join(dir, `${key}.png`)).metadata()
+    assert.equal(meta.channels, 4); assert.equal(meta.width, size.width); assert.equal(meta.height, size.height)
+  }
+})
+
+test('a long slanted object is found along its axis and turned level about its middle', () => {
+  const width = 200, height = 200, turn = Math.PI / 6, rgba = new Uint8Array(width * height * 4), xs = [], ys = []
+  for (let d = -80; d <= 80; d += 0.25) for (let w = -4; w <= 4; w += 0.25) {
+    const x = Math.round(100 + d * Math.cos(turn) - w * Math.sin(turn)), y = Math.round(100 + d * Math.sin(turn) + w * Math.cos(turn))
+    rgba.fill(255, (y * width + x) * 4, (y * width + x) * 4 + 4); xs.push(x); ys.push(y)
+  }
+  const { axis, large, small } = principalAxis(xs, ys)
+  assert.ok(Math.abs(Math.abs(Math.atan2(axis[1], axis[0])) - turn) < 0.01); assert.ok(large > 20 * small)
+  const level = rotated(rgba, width, height, turn, [100.5, 100.5]), rows = new Set(), columns = new Set()
+  for (let y = 0; y < height; y++) for (let x = 0; x < width; x++) if (level[(y * width + x) * 4 + 3] > 128) { rows.add(y); columns.add(x) }
+  assert.ok(rows.size <= 12, `${rows.size} rows`); assert.ok(columns.size >= 155, `${columns.size} columns`)
+})
+
+test('distinct objects cannot receive the same mask', () => {
+  assert.deepEqual(associate([[0, 0, 100, 100], [70, 0, 170, 100]], [[75, 0, 165, 100], [0, 0, 90, 100]], [0.95, 0.9]), { 0: 1, 1: 0 })
+})
+test('low-confidence or unrelated masks do not replace the box result', () => {
+  assert.deepEqual(associate([[0, 0, 10, 10]], [[100, 100, 110, 110], [0, 0, 10, 10]], [1, 0.2]), {})
+})
+test('a mask already used by another object is excluded', () => {
+  assert.deepEqual(associate([[0, 0, 10, 10]], [[0, 0, 10, 10]], [0.99], [0]), {})
+})
+test('geometry outweighs small confidence differences', () => {
+  assert.deepEqual(associate([[0, 0, 10, 10]], [[0, 0, 10, 10], [5, 5, 15, 15]], [0.7, 0.99]), { 0: 0 })
+})
+test('a box off by about its size still takes its class instance, and the nearest of two is taken once', () => {
+  assert.deepEqual(associate([[244, 200, 897, 305]], [[250, 350, 930, 490]], [0.9]), { 0: 0 })
+  assert.deepEqual(associate([[0, 0, 100, 100], [300, 0, 400, 100]], [[320, 120, 420, 220], [10, 120, 110, 220]], [0.9, 0.9]), { 0: 1, 1: 0 })
+})
+test('overlap handles empty and identical boxes', () => {
+  assert.equal(overlap([0, 0, 10, 10], [0, 0, 10, 10]), 1); assert.equal(overlap([0, 0, 0, 0], [0, 0, 0, 0]), 0)
+})
+test('confident segmentation never confirms identity or scale; disagreement stays visible', () => {
+  const good = maskEvidence([0, 0, 10, 10], [0, 0, 10, 10], 0.99, 'semantic')
+  assert.equal(good.boxIoU, 1); assert.equal(good.identityVerified, false); assert.equal(good.scaleVerified, false); assert.deepEqual(good.warnings, [])
+  assert.equal(maskEvidence([0, 0, 10, 10], [100, 100, 110, 110], 0.2, 'box').warnings.length, 2)
+})
+
+test('npm run live explains a missing key instead of starting without one', async () => {
+  const { spawnSync } = await import('node:child_process')
+  const { fileURLToPath } = await import('node:url')
+  const result = spawnSync(process.execPath, [fileURLToPath(new URL('../scripts/live.mjs', import.meta.url))], { env: { ...process.env, MODEL_API_KEY: '', META_API_KEY: '' }, input: '', encoding: 'utf8' })
+  assert.equal(result.status, 1); assert.match(result.stderr, /MODEL_API_KEY/)
+})

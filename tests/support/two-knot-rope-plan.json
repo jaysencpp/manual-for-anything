@@ -1,0 +1,201 @@
+{
+ "assembly": null,
+ "contractVersion": 2,
+ "cuts": [],
+ "design": {
+  "joins": "Two overhand stopper knots, one tied at each end of the whole rope; no fasteners.",
+  "parts": [
+   {
+    "cm": 62,
+    "from": "rope",
+    "k": "rope",
+    "n": 1
+   }
+  ],
+  "purpose": "A sturdy hand-held tug toy for supervised play with one medium dog.",
+  "size": [
+   40,
+   6,
+   5
+  ],
+  "standard": "About 40 cm overall with a knot about 6 cm wide at each end, leaving a clear central grip.",
+  "stands": "The thick twisted rope carries the pull; the bulky end knots give purchase and stop hands and mouth sliding off."
+ },
+ "end": "Offer for supervised tug play",
+ "finale": [
+  {
+   "by": 180,
+   "k": "rope",
+   "to": null,
+   "v": "spin"
+  }
+ ],
+ "goals": [],
+ "ideas": [
+  {
+   "title": "Stopper-Knot Dog Tug",
+   "kind": "craft",
+   "pitch": "Sturdy pull toy with stopper knots each end"
+  },
+  {
+   "kind": "craft",
+   "pitch": "Flat spiral rope mat for bowls or plants",
+   "title": "Coiled Rope Mat"
+  },
+  {
+   "kind": "craft",
+   "pitch": "Closed rope ring for tossing and catching games",
+   "title": "Rope Ring Toss"
+  }
+ ],
+ "joints": [],
+ "materials": [],
+ "mode": "physical",
+ "pick": 0,
+ "steps": [
+  {
+   "c": "Lay the whole 62 cm rope flat.",
+   "claims": [
+    "a1"
+   ],
+   "do": [
+    {
+     "at": "middle",
+     "id": "a1",
+     "intent": "place",
+     "k": "rope",
+     "rel": "floor",
+     "to": null,
+     "v": "place"
+    }
+   ],
+   "t": "Lay out rope"
+  },
+  {
+   "c": "Straighten the rope fully before knotting.",
+   "claims": [
+    "a2"
+   ],
+   "do": [
+    {
+     "id": "a2",
+     "intent": "straighten",
+     "k": "rope",
+     "op": "straighten",
+     "v": "strand"
+    }
+   ],
+   "t": "Straighten rope"
+  },
+  {
+   "c": "Loop the end over, under, then back through.",
+   "claims": [
+    "a3"
+   ],
+   "do": [
+    {
+     "at": "end",
+     "id": "a3",
+     "intent": "knot",
+     "k": "rope",
+     "name": "overhand",
+     "op": "knot",
+     "v": "strand"
+    }
+   ],
+   "t": "Tie first knot"
+  },
+  {
+   "c": "Pull the first stopper knot firm.",
+   "claims": [
+    "a4"
+   ],
+   "do": [
+    {
+     "at": "end",
+     "id": "a4",
+     "intent": "apply",
+     "k": "rope",
+     "v": "use"
+    }
+   ],
+   "t": "Tighten first knot"
+  },
+  {
+   "c": "Loop the other end over, under, then through.",
+   "claims": [
+    "a5"
+   ],
+   "do": [
+    {
+     "at": "start",
+     "id": "a5",
+     "intent": "knot",
+     "k": "rope",
+     "name": "overhand",
+     "op": "knot",
+     "v": "strand"
+    }
+   ],
+   "t": "Tie second knot"
+  },
+  {
+   "c": "Pull the second stopper knot firm.",
+   "claims": [
+    "a6"
+   ],
+   "do": [
+    {
+     "at": "start",
+     "id": "a6",
+     "intent": "apply",
+     "k": "rope",
+     "v": "use"
+    }
+   ],
+   "t": "Tighten second knot"
+  }
+ ],
+ "sub": "Two-knot twisted jute pull toy",
+ "supplies": [
+  "Tape or thread for sealing cut ends"
+ ],
+ "tag": "40 × 6 × 5 cm · 15 min · Easy",
+ "title": "Stopper-Knot Dog Tug",
+ "tools": [
+  {
+   "k": "scissors",
+   "use": "scissors"
+  }
+ ],
+ "view": "plan",
+ "objects": [
+  {
+   "b": [
+    2,
+    2,
+    890,
+    916
+   ],
+   "cm": 62,
+   "k": "rope",
+   "measurements": {
+    "cm": {
+     "source": "visual-estimate",
+     "status": "estimated"
+    }
+   },
+   "n": "twisted jute rope coil",
+   "segment": "rope",
+   "part": {
+    "family": "rod",
+    "shape": "rod",
+    "size": [
+     62,
+     2,
+     2
+    ]
+   }
+  }
+ ]
+}

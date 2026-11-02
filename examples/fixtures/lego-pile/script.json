@@ -1,0 +1,283 @@
+{
+ "objects": [
+  {
+   "k": "brick-dark-red",
+   "n": "dark red 2×2 brick",
+   "b": [
+    98,
+    352,
+    236,
+    200
+   ],
+   "cm": 1.6,
+   "part": {
+    "family": "brick",
+    "studs": [
+     2,
+     2
+    ],
+    "plates": 3,
+    "shape": "brick",
+    "side_studs": false
+   },
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "brick-green",
+   "n": "green 2×2 brick",
+   "b": [
+    105,
+    540,
+    245,
+    220
+   ],
+   "cm": 1.6,
+   "part": {
+    "family": "brick",
+    "studs": [
+     2,
+     2
+    ],
+    "plates": 3,
+    "shape": "brick",
+    "side_studs": false
+   },
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "brick-red",
+   "n": "red 2×2 brick",
+   "b": [
+    1158,
+    393,
+    235,
+    190
+   ],
+   "cm": 1.6,
+   "part": {
+    "family": "brick",
+    "studs": [
+     2,
+     2
+    ],
+    "plates": 3,
+    "shape": "brick",
+    "side_studs": false
+   },
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "brick-orange",
+   "n": "orange 2×2 brick",
+   "b": [
+    1230,
+    690,
+    255,
+    250
+   ],
+   "cm": 1.6,
+   "part": {
+    "family": "brick",
+    "studs": [
+     2,
+     2
+    ],
+    "plates": 3,
+    "shape": "brick",
+    "side_studs": false
+   },
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "plate-brown",
+   "n": "brown 2×8 plate",
+   "b": [
+    380,
+    488,
+    690,
+    350
+   ],
+   "cm": 6.4,
+   "part": {
+    "family": "brick",
+    "studs": [
+     8,
+     2
+    ],
+    "plates": 1,
+    "shape": "plate",
+    "side_studs": false
+   },
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  }
+ ],
+ "ideas": [
+  {
+   "title": "Park Bench",
+   "kind": "build",
+   "pitch": "A two-leg bench with a long brown seat"
+  },
+  {
+   "title": "Low Table",
+   "kind": "build",
+   "pitch": "A small table on four short brick legs"
+  },
+  {
+   "title": "Footbridge",
+   "kind": "build",
+   "pitch": "A plank bridge spanning two brick piers"
+  }
+ ],
+ "pick": 0,
+ "title": "Park Bench",
+ "sub": "a small brick bench",
+ "tag": "5 parts · 2 min · Easy",
+ "view": "iso",
+ "tools": [],
+ "steps": [
+  {
+   "t": "Set the left leg",
+   "c": "Place the dark red 2×2 brick at the left.",
+   "do": [
+    {
+     "v": "place",
+     "k": "brick-dark-red",
+     "rel": "floor",
+     "studs": [
+      0,
+      0
+     ],
+     "id": "op-1",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-1"
+   ]
+  },
+  {
+   "t": "Set the right leg",
+   "c": "Place the green 2×2 brick 6 studs to the right.",
+   "do": [
+    {
+     "v": "place",
+     "k": "brick-green",
+     "rel": "floor",
+     "studs": [
+      6,
+      0
+     ],
+     "id": "op-2",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-2"
+   ]
+  },
+  {
+   "t": "Raise both legs",
+   "c": "Press red onto dark red, orange onto green, studs aligned.",
+   "do": [
+    {
+     "v": "place",
+     "k": "brick-red",
+     "to": "brick-dark-red",
+     "rel": "on",
+     "studs": [
+      0,
+      0
+     ],
+     "id": "op-3",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "brick-orange",
+     "to": "brick-green",
+     "rel": "on",
+     "studs": [
+      0,
+      0
+     ],
+     "id": "op-4",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-3",
+    "op-4"
+   ]
+  },
+  {
+   "t": "Lay the seat",
+   "c": "Press the 2×8 brown plate across both legs, ends flush.",
+   "do": [
+    {
+     "v": "place",
+     "k": "plate-brown",
+     "to": "brick-red",
+     "rel": "on",
+     "studs": [
+      0,
+      0
+     ],
+     "id": "op-5",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-5"
+   ]
+  }
+ ],
+ "rigs": [],
+ "finale": [
+  {
+   "v": "turn",
+   "k": "plate-brown",
+   "to": null,
+   "by": 30
+  }
+ ],
+ "end": "Set it in your brick park",
+ "joints": [],
+ "goals": [],
+ "contractVersion": 2,
+ "mode": "physical",
+ "design": {
+  "purpose": "Park Bench",
+  "basis": "Illustrative saved photo estimates; confirm all dimensions before making.",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "parts": []
+ }
+}

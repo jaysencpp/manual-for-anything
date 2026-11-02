@@ -1,0 +1,195 @@
+{
+  "row": {
+    "id": "de8e13e656a6ab4d26b7-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "high",
+    "trialId": "de8e13e656a6ab4d26b7",
+    "sample": 1,
+    "planningEffort": "high",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.objects[0].part: does not match any allowed schema branch",
+            "$.objects[1].part: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "$.objects[0].part: does not match any allowed schema branch",
+            "$.objects[1].part: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.objects[0].part: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.objects[1].part: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.objects[0].part: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.objects[1].part: does not match any allowed schema branch"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "a6: unmet state requirement cowl:started"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.1119975,
+    "responseSeconds": 82.66321766299998,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Chunky Striped Cowl",
+    "design": {
+      "purpose": "Warm cowl for one adult: 36 sts around",
+      "size": [
+        30,
+        20,
+        28
+      ]
+    },
+    "steps": [
+      {
+        "t": "Lay out materials",
+        "c": "Place yarns, hook and scissors on table"
+      },
+      {
+        "t": "Chain foundation",
+        "c": "With green ch 36, keep loose"
+      },
+      {
+        "t": "Join ring",
+        "c": "Join chain into ring without twist"
+      },
+      {
+        "t": "Work first green",
+        "c": "Work 6 rounds green, 36 hdc each round"
+      },
+      {
+        "t": "Cut green tail",
+        "c": "Cut green leaving 15 cm tail"
+      },
+      {
+        "t": "Join blue yarn",
+        "c": "Join blue with slip stitch to start"
+      },
+      {
+        "t": "Work blue stripe",
+        "c": "Work 3 rounds blue, 36 hdc each round"
+      },
+      {
+        "t": "Cut blue tail",
+        "c": "Cut blue leaving 15 cm tail"
+      },
+      {
+        "t": "Join green yarn",
+        "c": "Join green with slip stitch to start"
+      },
+      {
+        "t": "Work second green",
+        "c": "Work 6 rounds green, 36 hdc each round"
+      },
+      {
+        "t": "Cut green again",
+        "c": "Cut green leaving 15 cm tail"
+      },
+      {
+        "t": "Join blue again",
+        "c": "Join blue with slip stitch to start"
+      },
+      {
+        "t": "Work final blue",
+        "c": "Work 3 rounds blue, 36 hdc each round"
+      },
+      {
+        "t": "Cut final tail",
+        "c": "Cut blue leaving 15 cm tail"
+      },
+      {
+        "t": "Weave in ends",
+        "c": "Weave in all tails securely"
+      }
+    ]
+  },
+  "rawText": null
+}

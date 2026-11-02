@@ -1,0 +1,135 @@
+{
+  "row": {
+    "id": "b99d584ac66c36adf86a-0",
+    "caseId": "lego-pile",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "b99d584ac66c36adf86a",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 42,
+          "duration": 28.000000000000004,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "brick-dark-red.cm: unconfirmed measurement",
+        "brick-green.cm: unconfirmed measurement",
+        "brick-red.cm: unconfirmed measurement",
+        "brick-orange.cm: unconfirmed measurement",
+        "plate-brown.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.085776,
+    "responseSeconds": 9.772205752999987,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "lego-pile",
+    "title": "LEGO build",
+    "request": "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces.",
+    "guidance": {
+      "messages": [
+        "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Desk Pen Rest",
+    "design": {
+      "purpose": "A compact connected stand for holding a pen, stylus, or charging cable across two brick towers on a desk.",
+      "size": [
+        6.4,
+        1.6,
+        2.3
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place the plate",
+        "c": "Place the brown 2×8 plate flat as the base."
+      },
+      {
+        "t": "Add left tower base",
+        "c": "Press the dark red brick onto the left end."
+      },
+      {
+        "t": "Add right tower base",
+        "c": "Press the red brick onto the right end."
+      },
+      {
+        "t": "Raise left tower",
+        "c": "Press the green brick squarely onto the dark red brick."
+      },
+      {
+        "t": "Raise right tower",
+        "c": "Press the orange brick squarely onto the red brick."
+      },
+      {
+        "t": "Check the stand",
+        "c": "Check both towers are fully pressed down and level."
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,190 @@
+{
+  "row": {
+    "id": "historical-6c694e9e49d81442173b-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "historical-6c694e9e49d81442173b",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[5].do[0]: does not match any allowed schema branch",
+            "$.steps[5].do[1]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Invalid operation contract: joint joint-front-left: needs two distinct known parts; joint joint-front-right: needs two distinct known parts; joint joint-back-left: needs two distinct known parts; joint joint-back-right: needs two distinct known parts; joint joint-base-front: needs two distinct known parts; joint joint-base-back: needs two distinct known parts; a10: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; joint joint-front-right: no attachment operation; joint joint-back-right: no attachment operation; joint joint-base-back: no attachment operation"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[5].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[5].do[1]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "Invalid operation contract: joint joint-front-left: needs two distinct known parts; joint joint-front-right: needs two distinct known parts; joint joint-back-left: needs two distinct known parts; joint joint-back-right: needs two distinct known parts; joint joint-base-front: needs two distinct known parts; joint joint-base-back: needs two distinct known parts; a10: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; joint joint-front-right: no attachment operation; joint joint-back-right: no attachment operation; joint joint-base-back: no attachment operation"
+        }
+      ],
+      "warnings": [],
+      "corrections": [
+        "a2: intent work is a use of saw",
+        "a3: intent work is a use of saw",
+        "goal base:assembled dropped: no step reaches it",
+        "goal front:assembled dropped: no step reaches it"
+      ],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "joint joint-front-left: needs two distinct known parts",
+        "joint joint-front-right: needs two distinct known parts",
+        "joint joint-back-left: needs two distinct known parts",
+        "joint joint-back-right: needs two distinct known parts",
+        "joint joint-base-front: needs two distinct known parts",
+        "joint joint-base-back: needs two distinct known parts",
+        "a2: intent work needs a faithful demonstration, not use",
+        "a3: intent work needs a faithful demonstration, not use",
+        "a10: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+        "unreached goal base:assembled",
+        "unreached goal front:assembled",
+        "joint joint-front-right: no attachment operation",
+        "joint joint-back-right: no attachment operation",
+        "joint joint-base-back: no attachment operation",
+        "step 3: k refers to unknown object base",
+        "step 4: k refers to unknown object base",
+        "step 5: k refers to unknown object front",
+        "step 5: to refers to unknown object base",
+        "step 5: k refers to unknown object back",
+        "step 6: k refers to unknown object left",
+        "step 6: to refers to unknown object base",
+        "step 6: k refers to unknown object right",
+        "step 7: k refers to unknown object front",
+        "step 7: to refers to unknown object left",
+        "step 8: k refers to unknown object back",
+        "step 8: to refers to unknown object left",
+        "step 8: k refers to unknown object base",
+        "step 8: to refers to unknown object front",
+        "design: offcut-a is never made or used by the steps",
+        "design: offcut-c is never made or used by the steps"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.036807,
+    "responseSeconds": 14.297272886999998,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Trough Planter",
+    "design": {
+      "purpose": "Rectangular trough planter for herbs/flowers. Serves 1 household: holds ~9 L soil, 15 cm deep soil for roots",
+      "size": [
+        40,
+        20,
+        17
+      ]
+    },
+    "steps": [
+      {
+        "t": "Cut base",
+        "c": "Measure and cut 40 cm base from wide board"
+      },
+      {
+        "t": "Cut sides",
+        "c": "Cut front, back, ends from narrow board"
+      },
+      {
+        "t": "Sand parts",
+        "c": "Sand all cut ends smooth"
+      },
+      {
+        "t": "Place base",
+        "c": "Lay base flat in middle"
+      },
+      {
+        "t": "Place sides",
+        "c": "Stand front and back on base"
+      },
+      {
+        "t": "Place ends",
+        "c": "Fit ends between front and back"
+      },
+      {
+        "t": "Screw front",
+        "c": "Drill and screw front to ends"
+      },
+      {
+        "t": "Screw back and base",
+        "c": "Screw back to ends and base up"
+      }
+    ]
+  },
+  "rawText": null
+}

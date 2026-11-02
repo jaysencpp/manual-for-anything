@@ -1,0 +1,196 @@
+{
+  "row": {
+    "id": "7422bb05074284c0b7eb-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "7422bb05074284c0b7eb",
+    "sample": 2,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 132,
+          "duration": 80.9,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 3: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.0535085,
+    "responseSeconds": 27.837674796000005,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Pine Planter Box",
+    "design": {
+      "purpose": "open planter for herbs and flowers, holds soil 15 cm deep",
+      "size": [
+        42,
+        20,
+        15
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Set wide board on ground"
+      },
+      {
+        "t": "Mark base",
+        "c": "Mark base length on board"
+      },
+      {
+        "t": "Cut base",
+        "c": "Saw wide board to length"
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Set narrow board on ground"
+      },
+      {
+        "t": "Mark sides",
+        "c": "Mark sides and ends"
+      },
+      {
+        "t": "Cut sides",
+        "c": "Saw narrow board into parts"
+      },
+      {
+        "t": "Sand parts",
+        "c": "Smooth all cut parts"
+      },
+      {
+        "t": "Place base",
+        "c": "Lay base flat"
+      },
+      {
+        "t": "Place front",
+        "c": "Stand front on base"
+      },
+      {
+        "t": "Place back",
+        "c": "Stand back on base"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit left end between sides"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit right end between sides"
+      },
+      {
+        "t": "Screw front left",
+        "c": "Fix front to left end"
+      },
+      {
+        "t": "Screw front right",
+        "c": "Fix front to right end"
+      },
+      {
+        "t": "Screw back left",
+        "c": "Fix back to left end"
+      },
+      {
+        "t": "Screw back right",
+        "c": "Fix back to right end"
+      },
+      {
+        "t": "Screw base front",
+        "c": "Fix base to front"
+      },
+      {
+        "t": "Screw base back",
+        "c": "Fix base to back"
+      },
+      {
+        "t": "Screw base left",
+        "c": "Fix base to left end"
+      },
+      {
+        "t": "Screw base right",
+        "c": "Fix base to right end"
+      }
+    ]
+  },
+  "rawText": null
+}

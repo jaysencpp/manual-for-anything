@@ -1,0 +1,184 @@
+{
+  "row": {
+    "id": "historical-6c694e9e49d81442173b-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "historical-6c694e9e49d81442173b",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[2].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "cut-a: show exactly one explicit cut action referencing this declaration"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[2].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "cut-a: show exactly one explicit cut action referencing this declaration"
+        }
+      ],
+      "warnings": [],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "cut-a: show exactly one explicit cut action referencing this declaration"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.04228,
+    "responseSeconds": 16.957487424,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Trough Planter",
+    "design": {
+      "purpose": "Hold soil and plants for balcony or garden use; 40 cm trough for herbs or flowers",
+      "size": [
+        40,
+        20,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place boards",
+        "c": "Place boards for marking and cutting"
+      },
+      {
+        "t": "Mark base",
+        "c": "Measure base at 40 cm on wide board"
+      },
+      {
+        "t": "Cut base",
+        "c": "Cut 40 cm base from wide board"
+      },
+      {
+        "t": "Mark sides",
+        "c": "Measure front back ends on second board"
+      },
+      {
+        "t": "Cut sides",
+        "c": "Cut front back left right to length"
+      },
+      {
+        "t": "Place base",
+        "c": "Place 40x20 cm base flat"
+      },
+      {
+        "t": "Place front",
+        "c": "Stand 40 cm front on base"
+      },
+      {
+        "t": "Place back",
+        "c": "Stand 40 cm back on base"
+      },
+      {
+        "t": "Place ends",
+        "c": "Fit 16 cm ends between sides"
+      },
+      {
+        "t": "Screw front left",
+        "c": "Drive 2 screws through front left corner"
+      },
+      {
+        "t": "Screw front right",
+        "c": "Drive 2 screws through front right corner"
+      },
+      {
+        "t": "Screw back left",
+        "c": "Drive 2 screws through back left corner"
+      },
+      {
+        "t": "Screw back right",
+        "c": "Drive 2 screws through back right corner"
+      },
+      {
+        "t": "Screw base front",
+        "c": "Drive 2 screws up through base front"
+      },
+      {
+        "t": "Screw base back",
+        "c": "Drive 2 screws up through base back"
+      },
+      {
+        "t": "Screw base left",
+        "c": "Drive 2 screws up through base left"
+      },
+      {
+        "t": "Screw base right",
+        "c": "Drive 2 screws up through base right"
+      }
+    ]
+  },
+  "rawText": null
+}

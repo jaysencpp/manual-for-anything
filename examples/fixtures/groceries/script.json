@@ -1,0 +1,355 @@
+{
+ "objects": [
+  {
+   "k": "chili-beans",
+   "n": "can of chili beans",
+   "b": [
+    18,
+    712,
+    178,
+    248
+   ],
+   "cm": 11,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "broth",
+   "n": "can of chicken broth",
+   "b": [
+    178,
+    722,
+    184,
+    244
+   ],
+   "cm": 11,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "tomatoes",
+   "n": "can of diced tomatoes with green chilies",
+   "b": [
+    1225,
+    700,
+    168,
+    218
+   ],
+   "cm": 11,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "corn",
+   "n": "can of sweet corn",
+   "b": [
+    1295,
+    528,
+    122,
+    172
+   ],
+   "cm": 11,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "pepperjack",
+   "n": "pepper jack cheese block",
+   "b": [
+    490,
+    712,
+    280,
+    170
+   ],
+   "cm": 15,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  }
+ ],
+ "ideas": [
+  {
+   "title": "Bean and Corn Chili",
+   "kind": "recipe",
+   "pitch": "Quick pantry chili topped with melted pepper jack"
+  },
+  {
+   "title": "Tomato Corn Soup",
+   "kind": "recipe",
+   "pitch": "Light brothy soup of tomatoes, corn and beans"
+  },
+  {
+   "title": "Cheesy Bean Skillet",
+   "kind": "recipe",
+   "pitch": "Thick beans and corn baked under bubbling cheese"
+  }
+ ],
+ "pick": 0,
+ "title": "Bean and Corn Chili",
+ "sub": "quick pantry chili with cheese",
+ "tag": "Serves 4 · 30 min · Easy",
+ "tools": [
+  {
+   "k": "pot",
+   "use": "pot"
+  },
+  {
+   "k": "spoon",
+   "use": "spoon"
+  },
+  {
+   "k": "board",
+   "use": "board"
+  },
+  {
+   "k": "knife",
+   "use": "knife"
+  },
+  {
+   "k": "bowl",
+   "use": "bowl"
+  },
+  {
+   "k": "ladle",
+   "use": "ladle"
+  }
+ ],
+ "steps": [
+  {
+   "t": "Set pot on heat",
+   "c": "Place a large pot on medium heat.",
+   "do": [
+    {
+     "v": "place",
+     "k": "pot",
+     "to": null,
+     "rel": "floor",
+     "at": "middle",
+     "id": "op-1",
+     "intent": "place"
+    },
+    {
+     "v": "heat",
+     "k": "pot",
+     "to": "pot",
+     "level": "medium",
+     "id": "op-2",
+     "intent": "heat"
+    }
+   ],
+   "claims": [
+    "op-1",
+    "op-2"
+   ]
+  },
+  {
+   "t": "Add tomatoes and broth",
+   "c": "Pour in diced tomatoes with juice and 1 can broth.",
+   "do": [
+    {
+     "v": "pour",
+     "k": "tomatoes",
+     "to": "pot",
+     "color": "#c8402a",
+     "id": "op-3",
+     "intent": "pour"
+    },
+    {
+     "v": "pour",
+     "k": "broth",
+     "to": "pot",
+     "color": "#d9a441",
+     "id": "op-4",
+     "intent": "pour"
+    }
+   ],
+   "claims": [
+    "op-3",
+    "op-4"
+   ]
+  },
+  {
+   "t": "Add beans and corn",
+   "c": "Add chili beans with sauce and drained corn; stir.",
+   "do": [
+    {
+     "v": "pour",
+     "k": "chili-beans",
+     "to": "pot",
+     "color": "#7a3b26",
+     "id": "op-5",
+     "intent": "pour"
+    },
+    {
+     "v": "pour",
+     "k": "corn",
+     "to": "pot",
+     "color": "#f0c93a",
+     "id": "op-6",
+     "intent": "pour"
+    },
+    {
+     "v": "stir",
+     "k": "spoon",
+     "to": "pot",
+     "id": "op-7",
+     "intent": "stir"
+    }
+   ],
+   "claims": [
+    "op-5",
+    "op-6",
+    "op-7"
+   ]
+  },
+  {
+   "t": "Simmer until thick",
+   "c": "Simmer uncovered 20 minutes on low, stirring now and then.",
+   "do": [
+    {
+     "v": "heat",
+     "k": "pot",
+     "to": "pot",
+     "label": "20 min",
+     "level": "low",
+     "id": "op-8",
+     "intent": "heat"
+    },
+    {
+     "v": "stir",
+     "k": "spoon",
+     "to": "pot",
+     "id": "op-9",
+     "intent": "stir"
+    }
+   ],
+   "claims": [
+    "op-8",
+    "op-9"
+   ]
+  },
+  {
+   "t": "Cube the cheese",
+   "c": "Cut 100 g pepper jack into small cubes.",
+   "do": [
+    {
+     "v": "place",
+     "k": "board",
+     "to": null,
+     "rel": "floor",
+     "at": "right",
+     "id": "op-10",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "pepperjack",
+     "to": "board",
+     "rel": "on",
+     "at": "middle",
+     "id": "op-11",
+     "intent": "place"
+    },
+    {
+     "v": "cut",
+     "k": "pepperjack",
+     "with": "knife",
+     "into": "cubes",
+     "label": "100 g",
+     "id": "op-12",
+     "intent": "cut"
+    }
+   ],
+   "claims": [
+    "op-10",
+    "op-11",
+    "op-12"
+   ]
+  },
+  {
+   "t": "Serve with cheese",
+   "c": "Ladle into bowls; top each with cheese cubes.",
+   "do": [
+    {
+     "v": "place",
+     "k": "bowl",
+     "to": null,
+     "rel": "floor",
+     "at": "left",
+     "id": "op-13",
+     "intent": "place"
+    },
+    {
+     "v": "pour",
+     "k": "pot",
+     "to": "bowl",
+     "color": "#8a3a22",
+     "with": "ladle",
+     "id": "op-14",
+     "intent": "pour"
+    },
+    {
+     "v": "sprinkle",
+     "k": "pepperjack",
+     "to": "bowl",
+     "color": "#f3ead0",
+     "id": "op-15",
+     "intent": "sprinkle"
+    }
+   ],
+   "claims": [
+    "op-13",
+    "op-14",
+    "op-15"
+   ]
+  }
+ ],
+ "rigs": [],
+ "finale": [
+  {
+   "v": "heat",
+   "k": "bowl",
+   "to": null
+  },
+  {
+   "v": "stir",
+   "k": "spoon",
+   "to": "bowl"
+  }
+ ],
+ "end": "Eat hot, with crackers alongside.",
+ "view": "side",
+ "joints": [],
+ "goals": [],
+ "contractVersion": 2,
+ "mode": "physical",
+ "design": {
+  "purpose": "Bean and Corn Chili",
+  "basis": "Illustrative saved photo estimates; confirm all dimensions before making.",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "parts": []
+ }
+}

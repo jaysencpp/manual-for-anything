@@ -1,0 +1,150 @@
+{
+  "row": {
+    "id": "54e08b6163485dbe8411-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "54e08b6163485dbe8411",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+        }
+      ],
+      "warnings": [
+        "scissors.cm: unconfirmed measurement",
+        "paper-sheet.cm: unconfirmed measurement",
+        "paper-sheet.w: unconfirmed measurement",
+        "paper-sheet.thick: unconfirmed measurement",
+        "Additional materials are required supplies, not objects observed in the photo.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.03891225,
+    "responseSeconds": 16.949759576000012,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": {
+    "title": "Paper Snowflake",
+    "design": {
+      "purpose": "cut paper snowflake decoration for window or card",
+      "size": [
+        21,
+        21,
+        0.05
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place paper",
+        "c": "Place A4 sheet flat on table"
+      },
+      {
+        "t": "Cut square",
+        "c": "Cut A4 to 21 cm square"
+      },
+      {
+        "t": "Fold diagonal",
+        "c": "Fold top-right to bottom-left"
+      },
+      {
+        "t": "Fold triangle",
+        "c": "Fold top-left to bottom-right"
+      },
+      {
+        "t": "Fold wedge",
+        "c": "Fold right edge to make wedge"
+      },
+      {
+        "t": "Fold wedge",
+        "c": "Fold left edge to make wedge"
+      },
+      {
+        "t": "Cut tip",
+        "c": "Trim wide end straight across"
+      },
+      {
+        "t": "Cut pattern",
+        "c": "Cut two notches along sides"
+      },
+      {
+        "t": "Open snowflake",
+        "c": "Open sheet to show snowflake"
+      }
+    ]
+  },
+  "rawText": null
+}

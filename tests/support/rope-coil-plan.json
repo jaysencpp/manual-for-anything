@@ -1,0 +1,192 @@
+{
+ "assembly": null,
+ "confirmations": [
+  "Confirm the uncoiled rope is 35 cm long and about 2 cm thick before coiling; a longer rope will make a larger mat."
+ ],
+ "contractVersion": 2,
+ "cuts": [],
+ "design": {
+  "joins": "The flat spiral is held turn to turn with hot glue applied between adjacent turns; no fasteners are used.",
+  "parts": [
+   {
+    "cm": 35,
+    "from": "rope-1",
+    "k": "rope-1",
+    "n": 1
+   }
+  ],
+  "purpose": "A flat coiled rope mat for one mug or small plant pot, made from the photographed rope.",
+  "size": [
+   11,
+   11,
+   2
+  ],
+  "standard": "A mug mat about 10-12 cm across, at least as wide as a mug base, one rope thickness high.",
+  "stands": "The spiral lies flat; each turn touches and is glued to the next, so the disc stays together and spreads the load across the table."
+ },
+ "end": "Set a mug on it",
+ "finale": [
+  {
+   "by": 180,
+   "k": "rope-1",
+   "to": null,
+   "v": "spin"
+  }
+ ],
+ "goals": [],
+ "ideas": [
+  {
+   "kind": "craft",
+   "pitch": "Flat spiral rope mat for a mug or plant",
+   "title": "Coiled Rope Mat"
+  },
+  {
+   "kind": "craft",
+   "pitch": "Thick rope ring for tossing or hanging storage",
+   "title": "Rope Ring"
+  },
+  {
+   "kind": "craft",
+   "pitch": "Knotted rope loop as a sturdy carry handle",
+   "title": "Rope Handle Loop"
+  }
+ ],
+ "joints": [],
+ "makes": [],
+ "materials": [],
+ "mode": "physical",
+ "pick": 0,
+ "steps": [
+  {
+   "c": "Lay the 35 cm rope out straight on the table.",
+   "claims": [
+    "a1"
+   ],
+   "do": [
+    {
+     "id": "a1",
+     "intent": "place",
+     "k": "rope-1",
+     "rel": "floor",
+     "to": null,
+     "v": "place"
+    }
+   ],
+   "t": "Lay rope out"
+  },
+  {
+   "c": "Coil the rope flat into a spiral, 1 cm centre hole.",
+   "claims": [
+    "a2"
+   ],
+   "do": [
+    {
+     "id": "a2",
+     "intent": "coil",
+     "k": "rope-1",
+     "label": "1 cm",
+     "op": "coil",
+     "radius": 1,
+     "side": "right",
+     "v": "strand"
+    }
+   ],
+   "t": "Coil the spiral"
+  },
+  {
+   "c": "Glue between each turn and the next, all round.",
+   "claims": [
+    "a3"
+   ],
+   "do": [
+    {
+     "id": "a3",
+     "intent": "apply",
+     "k": "rope-1",
+     "to": "rope-1",
+     "v": "use",
+     "with": "glue"
+    }
+   ],
+   "t": "Glue the turns"
+  },
+  {
+   "c": "Press the coil flat by hand until the glue holds.",
+   "claims": [
+    "a4"
+   ],
+   "do": [
+    {
+     "id": "a4",
+     "intent": "apply",
+     "k": "rope-1",
+     "v": "use"
+    }
+   ],
+   "t": "Press flat"
+  },
+  {
+   "c": "Leave the mat flat until the glue is set.",
+   "claims": [
+    "a5"
+   ],
+   "do": [
+    {
+     "id": "a5",
+     "intent": "place",
+     "k": "rope-1",
+     "rel": "floor",
+     "to": null,
+     "v": "place"
+    }
+   ],
+   "t": "Let glue set"
+  }
+ ],
+ "sub": "Coiled and glued flat",
+ "supplies": [
+  "Hot glue or strong craft glue"
+ ],
+ "tag": "11 × 11 × 2 cm · 15 min · Easy",
+ "title": "Coiled Rope Mat",
+ "tools": [
+  {
+   "k": "glue",
+   "use": "glue"
+  }
+ ],
+ "view": "plan",
+ "objects": [
+  {
+   "b": [
+    2,
+    3,
+    890,
+    915
+   ],
+   "cm": 35,
+   "k": "rope-1",
+   "measurements": {
+    "cm": {
+     "source": "estimated from photo geometry",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "estimated from photo geometry",
+     "status": "estimated"
+    }
+   },
+   "n": "Coiled natural-fibre rope",
+   "segment": "rope",
+   "part": {
+    "family": "rod",
+    "shape": "rope",
+    "size": [
+     35,
+     2,
+     2
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,258 @@
+{
+  "row": {
+    "id": "cca1ac40bb676cd32223-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "high",
+    "trialId": "cca1ac40bb676cd32223",
+    "sample": 1,
+    "planningEffort": "high",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "step 1: k refers to unknown object paper",
+            "step 3: k refers to unknown object paper",
+            "step 4: k refers to unknown object paper",
+            "step 5: k refers to unknown object paper",
+            "step 6: k refers to unknown object paper",
+            "step 7: k refers to unknown object paper",
+            "step 8: k refers to unknown object paper",
+            "step 9: k refers to unknown object paper",
+            "step 3 (a3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+            "step 4 (a4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+            "step 5 (a5): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+            "step 6 (a6): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+            "step 7 (a7): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+            "step 8 (a8): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+            "step 8 (a9): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+            "step 9 (a10): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+            "design: paper comes from supply-paper, which is not an object"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 1: k refers to unknown object paper"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 3: k refers to unknown object paper"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 4: k refers to unknown object paper"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object paper"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: k refers to unknown object paper"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: k refers to unknown object paper"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object paper"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 9: k refers to unknown object paper"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 3 (a3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 4 (a4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 5 (a5): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 6 (a6): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 7 (a7): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 8 (a8): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 8 (a9): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 9 (a10): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: paper comes from supply-paper, which is not an object"
+        }
+      ],
+      "warnings": [
+        "scissors.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "step 1: k refers to unknown object paper",
+        "step 3: k refers to unknown object paper",
+        "step 4: k refers to unknown object paper",
+        "step 5: k refers to unknown object paper",
+        "step 6: k refers to unknown object paper",
+        "step 7: k refers to unknown object paper",
+        "step 8: k refers to unknown object paper",
+        "step 9: k refers to unknown object paper",
+        "step 3 (a3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+        "step 4 (a4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+        "step 5 (a5): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+        "step 6 (a6): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+        "step 7 (a7): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+        "step 8 (a8): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+        "step 8 (a9): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+        "step 9 (a10): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+        "design: paper comes from supply-paper, which is not an object"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.07539875,
+    "responseSeconds": 52.05790903700004,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": {
+    "title": "Six-Point Snowflake",
+    "design": {
+      "purpose": "Window decoration for one room, for all ages",
+      "size": [
+        15,
+        15,
+        0.2
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place paper",
+        "c": "Place square paper in middle"
+      },
+      {
+        "t": "Place scissors",
+        "c": "Place scissors to right of paper"
+      },
+      {
+        "t": "Fold diagonal",
+        "c": "Fold top-right onto bottom-left"
+      },
+      {
+        "t": "Fold triangle",
+        "c": "Fold top-left onto bottom-right"
+      },
+      {
+        "t": "Fold third one",
+        "c": "Fold top-right edge through top 30 degrees"
+      },
+      {
+        "t": "Fold third two",
+        "c": "Fold top-left edge through top 30 degrees"
+      },
+      {
+        "t": "Trim end",
+        "c": "Trim wide end straight off"
+      },
+      {
+        "t": "Cut notches",
+        "c": "Cut side notches out"
+      },
+      {
+        "t": "Open snowflake",
+        "c": "Open paper to reveal snowflake"
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,192 @@
+{
+  "row": {
+    "id": "historical-61e743c09863f0df927b-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "historical-61e743c09863f0df927b",
+    "sample": 2,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "step 3 (a3): folding \"top-right edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+            "step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+            "step 5 (a5): a cut's shape encloses nothing",
+            "step 6 (a6): the cut misses the sheet: its shape is off the folded sheet"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "finished fold geometry: step 3 (a3): folding \"top-right edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+            "finished fold geometry: step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+            "finished fold geometry: step 5 (a5): a cut's shape encloses nothing",
+            "finished fold geometry: step 6 (a6): the cut misses the sheet: its shape is off the folded sheet"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 3 (a3): folding \"top-right edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 5 (a5): a cut's shape encloses nothing"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 6 (a6): the cut misses the sheet: its shape is off the folded sheet"
+        },
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "finished fold geometry: step 3 (a3): folding \"top-right edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+        },
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "finished fold geometry: step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold"
+        },
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "finished fold geometry: step 5 (a5): a cut's shape encloses nothing"
+        },
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "finished fold geometry: step 6 (a6): the cut misses the sheet: its shape is off the folded sheet"
+        }
+      ],
+      "warnings": [
+        "scissors.cm: unconfirmed measurement",
+        "paper.cm: unconfirmed measurement",
+        "paper.w: unconfirmed measurement",
+        "paper.thick: unconfirmed measurement",
+        "Additional materials are required supplies, not objects observed in the photo.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "Declared additional materials compiled as separate supply actors",
+        "a5: a cut through the folded sheet",
+        "a6: a cut through the folded sheet"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "step 3 (a3): folding \"top-right edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+        "step 4 (a4): folding \"top-left edge\" onto \"undefined\" moves the whole sheet: that is turning it over, not a fold",
+        "step 5 (a5): a cut's shape encloses nothing",
+        "step 6 (a6): the cut misses the sheet: its shape is off the folded sheet"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.0466775,
+    "responseSeconds": 23.657350383999997,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": {
+    "title": "Paper Snowflake",
+    "design": {
+      "purpose": "Table decoration: one lacy six-point paper snowflake",
+      "size": [
+        10,
+        10,
+        0.02
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place paper",
+        "c": "Place square paper flat on table"
+      },
+      {
+        "t": "Fold diagonal",
+        "c": "Bring top-right corner to bottom-left corner"
+      },
+      {
+        "t": "Fold first third",
+        "c": "Fold right edge to centre"
+      },
+      {
+        "t": "Fold second third",
+        "c": "Fold left edge to centre"
+      },
+      {
+        "t": "Trim wide end",
+        "c": "Trim wedge end straight across with scissors"
+      },
+      {
+        "t": "Cut side notch",
+        "c": "Cut small triangle from side with scissors"
+      },
+      {
+        "t": "Open snowflake",
+        "c": "Open paper to reveal snowflake"
+      }
+    ]
+  },
+  "rawText": null
+}

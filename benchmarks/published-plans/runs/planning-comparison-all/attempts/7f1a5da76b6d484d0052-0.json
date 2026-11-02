@@ -1,0 +1,172 @@
+{
+  "row": {
+    "id": "7f1a5da76b6d484d0052-0",
+    "caseId": "lego-pile",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "7f1a5da76b6d484d0052",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+          ]
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "brick-dark-red: invalid brick dimensions",
+            "brick-green: invalid brick dimensions",
+            "brick-red: invalid brick dimensions",
+            "brick-orange: invalid brick dimensions",
+            "plate-brown: invalid brick dimensions",
+            "design.size is missing: the finished width × depth × height in cm"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "structure",
+          "code": "inventory-change",
+          "message": "Plan changed the frozen inventory identity, dimensions or measurement provenance",
+          "rawOnly": true
+        },
+        {
+          "stage": "structure",
+          "code": "inventory-change",
+          "message": "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "brick-dark-red: invalid brick dimensions"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "brick-green: invalid brick dimensions"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "brick-red: invalid brick dimensions"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "brick-orange: invalid brick dimensions"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "plate-brown: invalid brick dimensions"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design.size is missing: the finished width × depth × height in cm"
+        }
+      ],
+      "warnings": [
+        "brick-dark-red.cm: unconfirmed measurement",
+        "brick-green.cm: unconfirmed measurement",
+        "brick-red.cm: unconfirmed measurement",
+        "brick-orange.cm: unconfirmed measurement",
+        "plate-brown.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "brick-dark-red: invalid brick dimensions",
+        "brick-green: invalid brick dimensions",
+        "brick-red: invalid brick dimensions",
+        "brick-orange: invalid brick dimensions",
+        "plate-brown: invalid brick dimensions",
+        "design.size is missing: the finished width × depth × height in cm",
+        "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.036879,
+    "responseSeconds": 19.746361036000074,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "lego-pile",
+    "title": "LEGO build",
+    "request": "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces.",
+    "guidance": {
+      "messages": [
+        "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Desk Tray Dock",
+    "design": {
+      "purpose": "Raised desk tray and phone dock for one person: 6.4x1.6cm tray with 4-stud stop"
+    },
+    "steps": [
+      {
+        "t": "Place feet",
+        "c": "Place two 2x2 bricks as feet"
+      },
+      {
+        "t": "Place tray plate",
+        "c": "Bridge brown plate across both feet"
+      },
+      {
+        "t": "Add front stop",
+        "c": "Stud two 2x2 bricks on front end"
+      }
+    ]
+  },
+  "rawText": null
+}

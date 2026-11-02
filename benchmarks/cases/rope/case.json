@@ -1,0 +1,19 @@
+{
+  "key": "rope",
+  "name": "twisted jute rope",
+  "image": "reference.png",
+  "source": "Saved SAM cut-out from film 9fa3d281fa144008bf5a9d3253b8faac, screens/rope.png",
+  "reference": { "target": { "key": "rope", "name": "twisted jute rope", "approximateBox": [4, 4, 3560, 3656] }, "neighbors": [] },
+  "expectations": [
+    "One beige twisted rope bundle, diagonally oriented from upper left to lower right.",
+    "Preserve the large upper-left loop, lower-right loop and their white interior openings.",
+    "Preserve the central band of rope wraps and which visible strands pass over or under it.",
+    "Keep the visible rope ends and clear taped tip near the lower-right opening recognizable without adding hidden features.",
+    "Follow the photographed silhouette, position and proportions; do not turn it into a different knot or an uncoiled rope.",
+    "Use clean dark outlines and flat beige shades. Simplify fine fibres into a few construction lines; no photographic texture, gradients or white background fill."
+  ],
+  "knownInputLimitations": [
+    "Reuses the saved transparent SAM cut-out from the user's rope film; no additional segmentation calls. Fine fringe detail may be lost in the mask.",
+    "This is one rope bundle in one view. It tests simplified drawing fidelity, not knot identification or physical knot correctness."
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "row": {
+    "id": "historical-7422bb05074284c0b7eb-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "historical-7422bb05074284c0b7eb",
+    "sample": 2,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Invalid operation contract: a11: fastening uses joint sites, not flat-sheet path or otherPath; joint j-front-right: no attachment operation; joint j-back-left: no attachment operation; joint j-back-right: no attachment operation; joint j-base-front: no attachment operation; joint j-base-back: no attachment operation; joint j-base-left: no attachment operation; joint j-base-right: no attachment operation"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "Invalid operation contract: a11: fastening uses joint sites, not flat-sheet path or otherPath; joint j-front-right: no attachment operation; joint j-back-left: no attachment operation; joint j-back-right: no attachment operation; joint j-base-front: no attachment operation; joint j-base-back: no attachment operation; joint j-base-left: no attachment operation; joint j-base-right: no attachment operation"
+        }
+      ],
+      "warnings": [],
+      "corrections": [
+        "step 9: caption made a count of its screws"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a11: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a11: fastening uses joint sites, not flat-sheet path or otherPath",
+        "joint j-front-right: no attachment operation",
+        "joint j-back-left: no attachment operation",
+        "joint j-back-right: no attachment operation",
+        "joint j-base-front: no attachment operation",
+        "joint j-base-back: no attachment operation",
+        "joint j-base-left: no attachment operation",
+        "joint j-base-right: no attachment operation",
+        "a11: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.038787199999999994,
+    "responseSeconds": 32.611851016,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "Serves herbs/flowers: 45 cm trough, 18 cm wide, 20 cm deep soil volume from 2 boards",
+      "size": [
+        45,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Cut side boards",
+        "c": "Cut wide board into sides and ends"
+      },
+      {
+        "t": "Cut base board",
+        "c": "Cut second board into 45 cm base"
+      },
+      {
+        "t": "Drill base holes",
+        "c": "Drill four drain holes in base"
+      },
+      {
+        "t": "Place base",
+        "c": "Lay base flat on ground"
+      },
+      {
+        "t": "Place front",
+        "c": "Stand front on base front edge"
+      },
+      {
+        "t": "Place back",
+        "c": "Stand back on base back edge"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit left end between sides"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit right end between sides"
+      },
+      {
+        "t": "Screw front left",
+        "c": "Drive 2 screws through front into left end"
+      }
+    ]
+  },
+  "rawText": null
+}

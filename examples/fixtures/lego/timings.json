@@ -1,0 +1,132 @@
+{
+ "effort": "low",
+ "noThinking": false,
+ "photo": {
+  "width": 317,
+  "height": 384
+ },
+ "begin": 20.13,
+ "firstFrameIfWaitingForAll": 56.64,
+ "filmSeconds": 25.8,
+ "needs": [
+  {
+   "what": "cut-outs (lift off the photo)",
+   "ready": 34.66,
+   "neededAt": 21.13,
+   "slack": -13.53
+  },
+  {
+   "what": "drawings (turn into drawings)",
+   "ready": 57.94,
+   "neededAt": 21.43,
+   "slack": -36.51
+  },
+  {
+   "what": "steps + layout (first step)",
+   "ready": 34.67,
+   "neededAt": 25.73,
+   "slack": -8.94
+  },
+  {
+   "what": "finale",
+   "ready": 45.9,
+   "neededAt": 37.33,
+   "slack": -8.57
+  },
+  {
+   "what": "panel",
+   "ready": 39.13,
+   "neededAt": 28.03,
+   "slack": -11.1
+  }
+ ],
+ "marks": {
+  "start": 0.01,
+  "script: first object": 20.13,
+  "script: object list": 20.13,
+  "script: done": 21.84,
+  "SAM: cut-outs": 34.66,
+  "layout": 34.67,
+  "panel: checked": 39.13,
+  "drawing: red-round": 45.49,
+  "drawing: tan-grille": 45.72,
+  "finale: written": 45.9,
+  "finale: checked": 45.9,
+  "drawing: lime": 49.04,
+  "drawing: dark-red": 52.48,
+  "drawing: red-long": 57.13,
+  "drawing: brown-log": 57.94,
+  "drawings: all": 57.94
+ },
+ "calls": {
+  "script": {
+   "seconds": 21.057,
+   "output": 1986,
+   "thinking": 678,
+   "cost": 0.1325692
+  },
+  "sam": {
+   "load": 8.8,
+   "segment": 1.59,
+   "scores": {
+    "brown-log": 0.98,
+    "red-long": 0.98,
+    "dark-red": 0.98,
+    "tan-grille": 0.98,
+    "lime": 0.98,
+    "red-round": 0.97
+   }
+  },
+  "panel": {
+   "seconds": 16.718,
+   "output": 1795,
+   "thinking": 568,
+   "cost": 0.1317016,
+   "problem": null
+  },
+  "draw red-round": {
+   "seconds": 9.505,
+   "output": 747,
+   "thinking": 140,
+   "cost": 0.0681962
+  },
+  "draw tan-grille": {
+   "seconds": 9.924,
+   "output": 947,
+   "thinking": 233,
+   "cost": 0.0731102
+  },
+  "finale": {
+   "seconds": 10.129,
+   "output": 846,
+   "thinking": 315,
+   "cost": 0.11516960000000001,
+   "problem": null
+  },
+  "draw lime": {
+   "seconds": 13.168,
+   "output": 1237,
+   "thinking": 390,
+   "cost": 0.0785082
+  },
+  "draw dark-red": {
+   "seconds": 16.833,
+   "output": 1263,
+   "thinking": 562,
+   "cost": 0.0791258
+  },
+  "draw red-long": {
+   "seconds": 21.544,
+   "output": 1844,
+   "thinking": 689,
+   "cost": 0.09919420000000001
+  },
+  "draw brown-log": {
+   "seconds": 22.404,
+   "output": 1178,
+   "thinking": 246,
+   "cost": 0.0777852
+  }
+ },
+ "cost": 0.855
+}

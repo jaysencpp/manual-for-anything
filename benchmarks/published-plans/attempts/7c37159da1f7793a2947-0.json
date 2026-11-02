@@ -1,0 +1,234 @@
+{
+  "row": {
+    "id": "7c37159da1f7793a2947-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "max",
+    "trialId": "7c37159da1f7793a2947",
+    "sample": 1,
+    "planningEffort": "max",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 196,
+          "duration": 128.65000000000012,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 3: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "screws: 3.5 cm → 7 cm, the length every joint they make needs"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.405128,
+    "responseSeconds": 98.339634458,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "A compact planter for one gardener to grow herbs or flowering plants on a patio, balcony or sunny windowsill, with drainage and room for at least 15 cm of soil.",
+      "size": [
+        40,
+        20,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for cutting."
+      },
+      {
+        "t": "Mark base length",
+        "c": "Mark the base at 40 cm."
+      },
+      {
+        "t": "Cut base piece",
+        "c": "Cut a 40 cm base, leaving 79.7 cm offcut."
+      },
+      {
+        "t": "Place second board",
+        "c": "Place the second board flat for cutting."
+      },
+      {
+        "t": "Mark planter sides",
+        "c": "Mark lines at 40, 80, 96 and 112 cm."
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Cut 40, 40, 16, 16 and 6.8 cm pieces."
+      },
+      {
+        "t": "Sand cut pieces",
+        "c": "Sand cut edges and faces until smooth."
+      },
+      {
+        "t": "Place planter base",
+        "c": "Place the base flat."
+      },
+      {
+        "t": "Place front side",
+        "c": "Stand the front side on the base front edge."
+      },
+      {
+        "t": "Place back side",
+        "c": "Stand the back side on the base back edge."
+      },
+      {
+        "t": "Fit left end",
+        "c": "Fit the left end between the sides."
+      },
+      {
+        "t": "Fit right end",
+        "c": "Fit the right end between the sides."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill three 8 mm holes through the base."
+      },
+      {
+        "t": "Drill corner pilots",
+        "c": "Drill two pilot holes at the front-left corner."
+      },
+      {
+        "t": "Screw front-left corner",
+        "c": "Drive screws through front into left end."
+      },
+      {
+        "t": "Drill corner pilots",
+        "c": "Drill two pilot holes at the front-right corner."
+      },
+      {
+        "t": "Screw front-right corner",
+        "c": "Drive screws through front into right end."
+      },
+      {
+        "t": "Drill corner pilots",
+        "c": "Drill two pilot holes at the back-left corner."
+      },
+      {
+        "t": "Screw back-left corner",
+        "c": "Drive screws through back into left end."
+      },
+      {
+        "t": "Drill corner pilots",
+        "c": "Drill two pilot holes at the back-right corner."
+      },
+      {
+        "t": "Screw back-right corner",
+        "c": "Drive screws through back into right end."
+      },
+      {
+        "t": "Drill base pilots",
+        "c": "Drill three pilot holes through the base front edge."
+      },
+      {
+        "t": "Screw base to front",
+        "c": "Drive screws up through base into front."
+      },
+      {
+        "t": "Drill base pilots",
+        "c": "Drill three pilot holes through the base back edge."
+      },
+      {
+        "t": "Screw base to back",
+        "c": "Drive screws up through base into back."
+      },
+      {
+        "t": "Drill base pilots",
+        "c": "Drill two pilot holes through the base left edge."
+      },
+      {
+        "t": "Screw base to left",
+        "c": "Drive screws up through base into left end."
+      },
+      {
+        "t": "Drill base pilots",
+        "c": "Drill two pilot holes through the base right edge."
+      },
+      {
+        "t": "Screw base to right",
+        "c": "Drive screws up through base into right end."
+      }
+    ]
+  },
+  "rawText": null
+}

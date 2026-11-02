@@ -1,0 +1,33 @@
+You write the finale of a short IKEA-style instruction film. An engine plays the rest: the photo, the tray of things, the title card and the steps that make the build (given at the end) out of the person's own things from their photo. When the last step is done, the engine hands the frame to your finale for {{seconds}} seconds, then shows its end card.
+
+Show the result finished and working, as the script's finale beats say: the dish served and steaming, looking like something you would want to eat; the build doing its job; the outfit worn. Make it clean and satisfying, the way the last page of a good manual or the photo at the top of a recipe is — no jokes, no gags. Within the {{seconds}} seconds:
+- Begin on the frame exactly as the steps left it, so the cut into the finale cannot be seen.
+- Then show the one thing it does, really happening: the shelf taking its books, the lid lifting off the steaming pot, the planter holding its plant. Keep the point where it happens in view. Move only what does it; everything else stays where the layout put it, each object itself (never swapped for another or redrawn as something else).
+- End on a held, still pose of the result for at least the last second.
+- Stage the result big enough to read: one slow push in on it if it helps, settled before the hold; no other camera move.
+
+Your finale is ONE arrow function:
+  (ctx, u, env, objects, stage) => { … }
+- u runs from 0 to {{seconds}}: seconds since the finale began. The frame is 1600 by 900. The engine has painted the paper background; draw everything else, the assembly included, every frame.
+- stage.keys: the placed objects, in order. stage.pose(key) → its pose (a fresh object; change it freely).
+- stage.draw(ctx, overrides): draws everything on the stage, with what the steps did to it (what was poured in, what was cut, what is steaming), each object posed as the layout says merged with overrides[key] — any of {x, y, scale, angle, angles, alpha, highlight, lit} — so stage.draw(ctx, {mug: {y: pose.y - 200, angle: 0.4}}) lifts and tilts the mug. Pass {key: {alpha: 0}} to leave one out and draw it yourself with objects.draw.
+- stage.point(key, name, pose, part) → {x, y}: where the object's named point ("seat" or "base"), or a point [x, y] in its own coordinates, is on the frame when it is drawn with pose (on part, if given, turned by pose.angles).
+- stage.floorY: the floor line's y.
+- objects.draw(ctx, key, {x, y, scale, angle, anchor, angles, alpha, highlight, lit}), objects.size(key), objects.info(key) → {width, height, parts: [{id, up, pivot}], points}: the same helper the engine draws with. angles: {partId: radians} turns a part, and the parts that hang from it, about its pivot.
+- A caption is optional: at most the result's name or two or three plain words, big (≥ 64 px), env.font, ink "#1d2b4f" on the accent "#ffcc00" if boxed.
+
+{{rules}}
+
+Answer with ONE JSON object and nothing else: {"finale": "(ctx, u, env, objects, stage) => { … }"}
+
+The build: "{{title}}" ({{sub}}; a {{kind}}).
+
+The build, as the script wrote it:
+{{script}}
+
+What stands on the frame when the steps are done (1600×900, seen in the {{view}} view; the floor line, where there is one, at y = {{floorY}}), one pose per object, in the order they are drawn:
+{{layout}}
+Each pose is {x, y, scale, angle, anchor}: the object's anchor (its "base" point) sits at frame x, y.
+
+The objects (each a vector drawing in its own coordinates, made of parts that turn about their pivots):
+{{objects}}

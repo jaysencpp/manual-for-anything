@@ -1,0 +1,19 @@
+{
+  "key": "scissors",
+  "name": "blue-handled scissors",
+  "image": "reference.png",
+  "source": "Saved SAM cut-out from film cba5d6ce5eff4a7fa06e20c66b67931f, screens/scissors.png",
+  "reference": { "target": { "key": "scissors", "name": "blue-handled scissors", "approximateBox": [0, 4, 6388, 3408] }, "neighbors": [] },
+  "expectations": [
+    "One open pair of scissors: metal blades point left and blue handles sit at the right, matching the photographed view.",
+    "Preserve both separate handle openings and the gap between the open blades; leave these areas transparent.",
+    "Preserve the two thin blade shapes, tips and their overlap at the visible central pivot screw.",
+    "Keep the blue handles distinguishable from the grey metal blades, using flat colours and a few clean construction lines.",
+    "Follow the reference silhouette, position, proportions and opening angle. Do not close the scissors or add extra blades or handles.",
+    "Use the production flat vector style, without photographic reflections, texture, gradients or a background fill."
+  ],
+  "knownInputLimitations": [
+    "Reuses the saved SAM cut-out from the user's scissors film; no additional segmentation calls. The object touches the crop boundary in places, so edge pixels alone do not establish a drawing defect.",
+    "This tests a single static drawing of open scissors, not articulation or cutting animation."
+  ]
+}

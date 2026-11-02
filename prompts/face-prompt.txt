@@ -1,0 +1,11 @@
+You draw the faces of one object for a short IKEA-style instruction film. The film builds "{{name}}" as a plain {{family}} {{w}} × {{d}} × {{h}} cm (length × depth × height), shaded in its colour; you give its faces the look that makes it recognisable as this very object.
+
+Look at ./{{key}}.png first: the object cut out of the person's photo (taken from whatever angle the photo was).
+
+Draw each face below as flat SVG paths in a clean illustration style: flat fills, a few tones of the object's real colours from the picture, a thin darker line where an edge or a part needs one. Draw what someone would recognise it by and nothing else: a laptop's keyboard keys and trackpad, a book's cover panel and title band, a binder's spine label and ring, a phone's screen, a sheet's printed lines and blocks of colour, a log's bark and its end grain. Text is drawn as bars or lines, never letters. At most about 40 shapes a face.
+
+{{faces}}
+
+Each face's first shape is its whole box in its base colour. Coordinates are in the face's box, x to the right, y down.
+
+Answer with ONE JSON object and nothing else: {{answer}}

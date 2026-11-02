@@ -1,0 +1,203 @@
+{
+  "row": {
+    "id": "historical-afbc59c5b0b1f048d5c2-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "historical-afbc59c5b0b1f048d5c2",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Invalid operation contract: a2: intent mark needs a faithful demonstration, not measure; a5: intent mark needs a faithful demonstration, not measure"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "Invalid operation contract: a2: intent mark needs a faithful demonstration, not measure; a5: intent mark needs a faithful demonstration, not measure"
+        }
+      ],
+      "warnings": [],
+      "corrections": [
+        "cut-a: compiled explicit stock cut with checked kerfs and offcut",
+        "cut-b: compiled explicit stock cut with checked kerfs and offcut",
+        "Assembly placement compiled for base",
+        "Assembly placement compiled for front",
+        "Assembly placement compiled for back",
+        "Assembly placement compiled for left",
+        "Assembly placement compiled for right",
+        "box: compiled eight box joints and their measured work sites"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a2: intent mark needs a faithful demonstration, not measure",
+        "a5: intent mark needs a faithful demonstration, not measure"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.137044,
+    "responseSeconds": 25.647570711000007,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "A drained outdoor planter for herbs or flowers, sized for one person to move when empty.",
+      "size": [
+        40,
+        20,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for marking"
+      },
+      {
+        "t": "Mark base length",
+        "c": "Mark the base at 40 cm"
+      },
+      {
+        "t": "Cut base",
+        "c": "Saw the base from the wide board"
+      },
+      {
+        "t": "Place second board",
+        "c": "Place the second board flat for marking"
+      },
+      {
+        "t": "Mark side pieces",
+        "c": "Mark sides and ends along the board"
+      },
+      {
+        "t": "Cut side pieces",
+        "c": "Saw front, back and both ends"
+      },
+      {
+        "t": "Sand all pieces",
+        "c": "Sand cut edges smooth on all pieces"
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill three drainage holes through base"
+      },
+      {
+        "t": "Place base",
+        "c": "Place the base flat on the ground"
+      },
+      {
+        "t": "Place front side",
+        "c": "Stand the front side on the base"
+      },
+      {
+        "t": "Place back side",
+        "c": "Stand the back side on the base"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between the sides"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between the sides"
+      },
+      {
+        "t": "Fix front left",
+        "c": "Fix the front to the left end"
+      },
+      {
+        "t": "Fix front right",
+        "c": "Fix the front to the right end"
+      },
+      {
+        "t": "Fix back left",
+        "c": "Fix the back to the left end"
+      },
+      {
+        "t": "Fix back right",
+        "c": "Fix the back to the right end"
+      },
+      {
+        "t": "Fix base front",
+        "c": "Fix the base to the front side"
+      },
+      {
+        "t": "Fix base back",
+        "c": "Fix the base to the back side"
+      },
+      {
+        "t": "Fix base left",
+        "c": "Fix the base to the left end"
+      },
+      {
+        "t": "Fix base right",
+        "c": "Fix the base to the right end"
+      }
+    ]
+  },
+  "rawText": null
+}

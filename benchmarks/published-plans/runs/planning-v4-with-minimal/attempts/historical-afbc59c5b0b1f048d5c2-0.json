@@ -1,0 +1,185 @@
+{
+  "row": {
+    "id": "historical-afbc59c5b0b1f048d5c2-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "historical-afbc59c5b0b1f048d5c2",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Unknown named cut cut-a"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "Unknown named cut cut-a"
+        }
+      ],
+      "warnings": [],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "Unknown named cut cut-a"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.13,
+    "responseSeconds": 18.24059159099999,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Drained Planter Box",
+    "design": {
+      "purpose": "A weatherproof-looking outdoor planter for herbs or flowers for one gardener; soil depth is the 20 cm wall height above the base.",
+      "size": [
+        40,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for cutting."
+      },
+      {
+        "t": "Cut wall parts",
+        "c": "Cut front, back and both ends."
+      },
+      {
+        "t": "Place base board",
+        "c": "Place the second board flat for cutting."
+      },
+      {
+        "t": "Cut base",
+        "c": "Cut the planter base."
+      },
+      {
+        "t": "Sand cut edges",
+        "c": "Sand all cut edges smooth."
+      },
+      {
+        "t": "Place base",
+        "c": "Place the base flat on the ground."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill drainage holes through the base."
+      },
+      {
+        "t": "Place front wall",
+        "c": "Stand the front wall on the base."
+      },
+      {
+        "t": "Place back wall",
+        "c": "Stand the back wall on the base."
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between the walls."
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between the walls."
+      },
+      {
+        "t": "Fix front to left",
+        "c": "Screw the front wall to the left end."
+      },
+      {
+        "t": "Fix front to right",
+        "c": "Screw the front wall to the right end."
+      },
+      {
+        "t": "Fix back to left",
+        "c": "Screw the back wall to the left end."
+      },
+      {
+        "t": "Fix back to right",
+        "c": "Screw the back wall to the right end."
+      },
+      {
+        "t": "Fix base to front",
+        "c": "Screw the base up into the front wall."
+      },
+      {
+        "t": "Fix base to back",
+        "c": "Screw the base up into the back wall."
+      },
+      {
+        "t": "Fix base to left",
+        "c": "Screw the base up into the left end."
+      },
+      {
+        "t": "Fix base to right",
+        "c": "Screw the base up into the right end."
+      }
+    ]
+  },
+  "rawText": null
+}

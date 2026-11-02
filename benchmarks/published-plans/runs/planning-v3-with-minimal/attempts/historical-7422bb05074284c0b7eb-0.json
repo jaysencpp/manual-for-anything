@@ -1,0 +1,155 @@
+{
+  "row": {
+    "id": "historical-7422bb05074284c0b7eb-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "historical-7422bb05074284c0b7eb",
+    "sample": 2,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 90,
+          "duration": 75.39999999999998,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 1: the caption gives 16 cm, but no action carries it",
+        "step 3: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "screws: 4 cm → 7 cm, the length every joint they make needs"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.06684425,
+    "responseSeconds": 38.829554124000005,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "Hold soil and plants outdoors for household use, serves as 43 cm trough planter",
+      "size": [
+        43,
+        20,
+        18
+      ]
+    },
+    "steps": [
+      {
+        "t": "Mark board B",
+        "c": "Mark two 43 cm and two 16 cm lengths"
+      },
+      {
+        "t": "Cut sides",
+        "c": "Cut board B into sides and ends"
+      },
+      {
+        "t": "Cut base",
+        "c": "Cut 43 cm base from board A"
+      },
+      {
+        "t": "Sand parts",
+        "c": "Sand all five box parts smooth"
+      },
+      {
+        "t": "Place base",
+        "c": "Lay base flat on work surface"
+      },
+      {
+        "t": "Place sides",
+        "c": "Stand front and back on base"
+      },
+      {
+        "t": "Place ends",
+        "c": "Fit ends between front and back"
+      },
+      {
+        "t": "Screw base",
+        "c": "Drive 8 screws up through the base"
+      },
+      {
+        "t": "Screw corners",
+        "c": "Drive 8 screws through the sides"
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,723 @@
+{
+ "objects": [
+  {
+   "k": "board-a",
+   "n": "short reclaimed pine board",
+   "b": [
+    23,
+    227,
+    185,
+    435
+   ],
+   "cm": 62,
+   "w": 20,
+   "thick": 2.5,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "w": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "thick": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "board-b",
+   "n": "long reclaimed pine board",
+   "b": [
+    360,
+    100,
+    210,
+    556
+   ],
+   "cm": 78,
+   "w": 20,
+   "thick": 2.5,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "w": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "thick": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  }
+ ],
+ "ideas": [
+  {
+   "title": "Rustic Planter Box",
+   "kind": "build",
+   "pitch": "Small open box for herbs or a potted plant"
+  },
+  {
+   "title": "Floating Wall Shelf",
+   "kind": "build",
+   "pitch": "One weathered board shelf on two hidden brackets"
+  },
+  {
+   "title": "Serving Tray",
+   "kind": "build",
+   "pitch": "Low-sided wooden tray with board ends as handles"
+  }
+ ],
+ "pick": 0,
+ "title": "Rustic Planter Box",
+ "sub": "open box from reclaimed boards",
+ "tag": "30 × 20 × 20 cm · 1 hour · Easy",
+ "view": "iso",
+ "tools": [
+  {
+   "k": "tape",
+   "use": "tape"
+  },
+  {
+   "k": "pencil",
+   "use": "pencil"
+  },
+  {
+   "k": "saw",
+   "use": "saw"
+  },
+  {
+   "k": "sander",
+   "use": "sander"
+  },
+  {
+   "k": "glue",
+   "use": "glue"
+  },
+  {
+   "k": "drill",
+   "use": "drill"
+  },
+  {
+   "k": "screws",
+   "use": "screw",
+   "cm": 8
+  }
+ ],
+ "steps": [
+  {
+   "t": "Mark the cuts",
+   "c": "Long board: mark at 30 and 60 cm. Short board: 30, 45, 60 cm.",
+   "do": [
+    {
+     "v": "place",
+     "k": "board-b",
+     "rel": "floor",
+     "id": "op-1",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "board-a",
+     "rel": "parallel",
+     "to": "board-b",
+     "gap": 5,
+     "side": "+",
+     "id": "op-2",
+     "intent": "place"
+    },
+    {
+     "v": "measure",
+     "k": "board-b",
+     "label": "30 + 30 cm",
+     "with": "tape",
+     "id": "op-3",
+     "intent": "measure"
+    },
+    {
+     "v": "use",
+     "k": "board-b",
+     "with": "pencil",
+     "cm": [
+      30,
+      60
+     ],
+     "id": "op-4",
+     "intent": "mark"
+    },
+    {
+     "v": "use",
+     "k": "board-a",
+     "with": "pencil",
+     "cm": [
+      30,
+      45,
+      60
+     ],
+     "id": "op-5",
+     "intent": "mark"
+    }
+   ],
+   "claims": [
+    "op-1",
+    "op-2",
+    "op-3",
+    "op-4",
+    "op-5"
+   ]
+  },
+  {
+   "t": "Cut the parts",
+   "c": "Saw a 30 cm base, two 30 cm sides, two 15 cm ends.",
+   "do": [
+    {
+     "v": "cut",
+     "k": "board-b",
+     "with": "saw",
+     "into": [
+      {
+       "k": "base",
+       "label": "30 cm",
+       "cm": 30
+      },
+      {
+       "k": "side-a",
+       "label": "30 cm",
+       "cm": 30
+      }
+     ],
+     "id": "op-6",
+     "intent": "cut"
+    },
+    {
+     "v": "cut",
+     "k": "board-a",
+     "with": "saw",
+     "into": [
+      {
+       "k": "side-b",
+       "label": "30 cm",
+       "cm": 30
+      },
+      {
+       "k": "end-a",
+       "label": "15 cm",
+       "cm": 15
+      },
+      {
+       "k": "end-b",
+       "label": "15 cm",
+       "cm": 15
+      }
+     ],
+     "id": "op-7",
+     "intent": "cut"
+    }
+   ],
+   "claims": [
+    "op-6",
+    "op-7"
+   ]
+  },
+  {
+   "t": "Sand the edges",
+   "c": "Sand every cut edge with 120 grit until smooth.",
+   "do": [
+    {
+     "v": "use",
+     "k": "base",
+     "with": "sander",
+     "at": "middle",
+     "id": "op-8",
+     "intent": "sand"
+    },
+    {
+     "v": "use",
+     "k": "side-a",
+     "with": "sander",
+     "at": "middle",
+     "id": "op-9",
+     "intent": "sand"
+    },
+    {
+     "v": "use",
+     "k": "side-b",
+     "with": "sander",
+     "at": "middle",
+     "id": "op-10",
+     "intent": "sand"
+    },
+    {
+     "v": "use",
+     "k": "end-a",
+     "with": "sander",
+     "at": "middle",
+     "id": "op-11",
+     "intent": "sand"
+    },
+    {
+     "v": "use",
+     "k": "end-b",
+     "with": "sander",
+     "at": "middle",
+     "id": "op-12",
+     "intent": "sand"
+    }
+   ],
+   "claims": [
+    "op-8",
+    "op-9",
+    "op-10",
+    "op-11",
+    "op-12"
+   ]
+  },
+  {
+   "t": "Fix the sides",
+   "c": "Drive 6 screws, 80 mm long, up through the base into the sides.",
+   "do": [
+    {
+     "v": "place",
+     "k": "base",
+     "rel": "floor",
+     "id": "op-13",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "side-a",
+     "rel": "on",
+     "to": "base",
+     "side": "front",
+     "stand": "edge",
+     "id": "op-14",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "side-b",
+     "rel": "on",
+     "to": "base",
+     "side": "back",
+     "stand": "edge",
+     "id": "op-15",
+     "intent": "place"
+    },
+    {
+     "v": "use",
+     "k": "base",
+     "with": "drill",
+     "face": "lower",
+     "part": "screws",
+     "n": 3,
+     "id": "op-16-0",
+     "intent": "fasten",
+     "to": "side-a",
+     "joint": "joint-op-16-0",
+     "sites": [
+      {
+       "x": 0.15,
+       "lat": -0.4375
+      },
+      {
+       "x": 0.5,
+       "lat": -0.4375
+      },
+      {
+       "x": 0.85,
+       "lat": -0.4375
+      }
+     ],
+     "depthCm": 8,
+     "label": "80 mm",
+     "turn": true
+    },
+    {
+     "v": "use",
+     "k": "base",
+     "with": "drill",
+     "face": "lower",
+     "part": "screws",
+     "n": 3,
+     "id": "op-17-0",
+     "intent": "fasten",
+     "to": "side-b",
+     "joint": "joint-op-17-0",
+     "sites": [
+      {
+       "x": 0.15,
+       "lat": 0.4375
+      },
+      {
+       "x": 0.5,
+       "lat": 0.4375
+      },
+      {
+       "x": 0.85,
+       "lat": 0.4375
+      }
+     ],
+     "depthCm": 8,
+     "label": "80 mm",
+     "turn": true
+    }
+   ],
+   "claims": [
+    "op-13",
+    "op-14",
+    "op-15",
+    "op-16-0",
+    "op-17-0"
+   ],
+   "caption": {
+    "template": "Drive {count} screws, 80 mm long, up through the base into the sides.",
+    "actions": [
+     "op-16-0",
+     "op-17-0"
+    ]
+   }
+  },
+  {
+   "t": "Fit the ends",
+   "c": "Drive 8 screws, 80 mm long, through the sides into the ends.",
+   "do": [
+    {
+     "v": "place",
+     "k": "end-a",
+     "rel": "between",
+     "to": "side-a",
+     "and": "side-b",
+     "at": "start",
+     "stand": "edge",
+     "id": "op-18",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "end-b",
+     "rel": "between",
+     "to": "side-a",
+     "and": "side-b",
+     "at": "end",
+     "stand": "edge",
+     "id": "op-19",
+     "intent": "place"
+    },
+    {
+     "v": "use",
+     "k": "side-a",
+     "with": "drill",
+     "face": "front",
+     "part": "screws",
+     "n": 2,
+     "id": "op-20-0",
+     "intent": "fasten",
+     "to": "end-a",
+     "joint": "joint-op-20-0",
+     "sites": [
+      {
+       "x": 0.0125,
+       "lat": 0
+      },
+      {
+       "x": 0.07083333333333333,
+       "lat": 0
+      }
+     ],
+     "depthCm": 8,
+     "label": "80 mm"
+    },
+    {
+     "v": "use",
+     "k": "side-a",
+     "with": "drill",
+     "face": "front",
+     "part": "screws",
+     "n": 2,
+     "id": "op-20-1",
+     "intent": "fasten",
+     "to": "end-b",
+     "joint": "joint-op-20-1",
+     "sites": [
+      {
+       "x": 0.9291666666666667,
+       "lat": 0
+      },
+      {
+       "x": 0.9875,
+       "lat": 0
+      }
+     ],
+     "depthCm": 8,
+     "label": "80 mm"
+    },
+    {
+     "v": "use",
+     "k": "side-b",
+     "with": "drill",
+     "face": "back",
+     "part": "screws",
+     "n": 2,
+     "id": "op-21-0",
+     "intent": "fasten",
+     "to": "end-a",
+     "joint": "joint-op-21-0",
+     "sites": [
+      {
+       "x": 0.0125,
+       "lat": 0
+      },
+      {
+       "x": 0.07083333333333333,
+       "lat": 0
+      }
+     ],
+     "depthCm": 8,
+     "label": "80 mm"
+    },
+    {
+     "v": "use",
+     "k": "side-b",
+     "with": "drill",
+     "face": "back",
+     "part": "screws",
+     "n": 2,
+     "id": "op-21-1",
+     "intent": "fasten",
+     "to": "end-b",
+     "joint": "joint-op-21-1",
+     "sites": [
+      {
+       "x": 0.9291666666666667,
+       "lat": 0
+      },
+      {
+       "x": 0.9875,
+       "lat": 0
+      }
+     ],
+     "depthCm": 8,
+     "label": "80 mm"
+    }
+   ],
+   "claims": [
+    "op-18",
+    "op-19",
+    "op-20-0",
+    "op-20-1",
+    "op-21-0",
+    "op-21-1"
+   ],
+   "caption": {
+    "template": "Drive {count} screws, 80 mm long, through the sides into the ends.",
+    "actions": [
+     "op-20-0",
+     "op-20-1",
+     "op-21-0",
+     "op-21-1"
+    ]
+   }
+  },
+  {
+   "t": "Drill drain holes",
+   "c": "Drill three 8 mm drainage holes through the base.",
+   "do": [
+    {
+     "v": "use",
+     "k": "base",
+     "with": "drill",
+     "x": [
+      0.25,
+      0.5,
+      0.75
+     ],
+     "n": 3,
+     "face": "lower",
+     "turn": true,
+     "label": "8 mm",
+     "id": "op-22",
+     "intent": "drill"
+    }
+   ],
+   "claims": [
+    "op-22"
+   ]
+  }
+ ],
+ "finale": [
+  {
+   "v": "turn",
+   "k": "base",
+   "to": null,
+   "by": 30
+  }
+ ],
+ "end": "Fill with soil and plant herbs",
+ "joints": [
+  {
+   "id": "joint-op-16-0",
+   "a": "base",
+   "b": "side-a",
+   "method": "fasten",
+   "face": "lower",
+   "otherFace": "lower",
+   "sites": [
+    {
+     "x": 0.15,
+     "lat": -0.4375
+    },
+    {
+     "x": 0.5,
+     "lat": -0.4375
+    },
+    {
+     "x": 0.85,
+     "lat": -0.4375
+    }
+   ],
+   "depthCm": 8
+  },
+  {
+   "id": "joint-op-17-0",
+   "a": "base",
+   "b": "side-b",
+   "method": "fasten",
+   "face": "lower",
+   "otherFace": "lower",
+   "sites": [
+    {
+     "x": 0.15,
+     "lat": 0.4375
+    },
+    {
+     "x": 0.5,
+     "lat": 0.4375
+    },
+    {
+     "x": 0.85,
+     "lat": 0.4375
+    }
+   ],
+   "depthCm": 8
+  },
+  {
+   "id": "joint-op-20-0",
+   "a": "side-a",
+   "b": "end-a",
+   "method": "fasten",
+   "face": "front",
+   "otherFace": "front",
+   "sites": [
+    {
+     "x": 0.0125,
+     "lat": 0
+    },
+    {
+     "x": 0.07083333333333333,
+     "lat": 0
+    }
+   ],
+   "depthCm": 8
+  },
+  {
+   "id": "joint-op-20-1",
+   "a": "side-a",
+   "b": "end-b",
+   "method": "fasten",
+   "face": "front",
+   "otherFace": "front",
+   "sites": [
+    {
+     "x": 0.9291666666666667,
+     "lat": 0
+    },
+    {
+     "x": 0.9875,
+     "lat": 0
+    }
+   ],
+   "depthCm": 8
+  },
+  {
+   "id": "joint-op-21-0",
+   "a": "side-b",
+   "b": "end-a",
+   "method": "fasten",
+   "face": "back",
+   "otherFace": "back",
+   "sites": [
+    {
+     "x": 0.0125,
+     "lat": 0
+    },
+    {
+     "x": 0.07083333333333333,
+     "lat": 0
+    }
+   ],
+   "depthCm": 8
+  },
+  {
+   "id": "joint-op-21-1",
+   "a": "side-b",
+   "b": "end-b",
+   "method": "fasten",
+   "face": "back",
+   "otherFace": "back",
+   "sites": [
+    {
+     "x": 0.9291666666666667,
+     "lat": 0
+    },
+    {
+     "x": 0.9875,
+     "lat": 0
+    }
+   ],
+   "depthCm": 8
+  }
+ ],
+ "goals": [],
+ "contractVersion": 2,
+ "mode": "physical",
+ "design": {
+  "purpose": "Rustic Planter Box",
+  "basis": "Illustrative saved photo estimates; confirm all dimensions before making.",
+  "size": [
+   30,
+   20,
+   22.5
+  ],
+  "parts": [
+   {
+    "k": "base",
+    "from": "board-b",
+    "cm": 30
+   },
+   {
+    "k": "side-a",
+    "from": "board-b",
+    "cm": 30
+   },
+   {
+    "k": "side-b",
+    "from": "board-a",
+    "cm": 30
+   },
+   {
+    "k": "end-a",
+    "from": "board-a",
+    "cm": 15
+   },
+   {
+    "k": "end-b",
+    "from": "board-a",
+    "cm": 15
+   }
+  ]
+ }
+}

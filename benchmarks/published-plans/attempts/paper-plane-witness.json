@@ -1,0 +1,123 @@
+{
+  "row": {
+    "id": "paper-plane-witness",
+    "caseId": "paper-plane",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "saved-fixture",
+    "effort": "not-recorded",
+    "requestKind": "saved witness",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "design: the size is 21 × 10 × 4 cm but the steps build 29.7 × 21 × 0.1 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "geometry",
+          "code": "design-dimensions",
+          "message": "design: the size is 21 × 10 × 4 cm but the steps build 29.7 × 21 × 0.1 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+        }
+      ],
+      "warnings": [
+        "paper-sheet.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": null,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": null,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": null,
+    "responseSeconds": null,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "paper-plane",
+    "title": "Paper folds",
+    "request": "Make a paper dart from the photographed sheet, showing the folds and resulting shape.",
+    "guidance": {
+      "messages": [
+        "Make a paper dart from the photographed sheet, showing the folds and resulting shape."
+      ]
+    },
+    "qualification": {
+      "machine": "fail",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Saved witness rejected: investigate the task/engine contract before ranking models on this case."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Classic Dart Plane",
+    "steps": [
+      {
+        "t": "Lay the sheet flat",
+        "c": "Lay the A4 sheet flat, short edge facing you"
+      },
+      {
+        "t": "Crease the centre",
+        "c": "Fold in half lengthways, crease, then unfold"
+      },
+      {
+        "t": "Fold nose corners",
+        "c": "Fold both top corners in to the centre crease"
+      },
+      {
+        "t": "Narrow the nose",
+        "c": "Fold the new slanted edges in to the centre crease"
+      },
+      {
+        "t": "Fold in half",
+        "c": "Fold in half along the centre crease, folds outside"
+      },
+      {
+        "t": "Fold the wings",
+        "c": "Fold each wing down to the base, turning over between"
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,168 @@
+{
+  "row": {
+    "id": "753c410ca435b7a0ae21-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "753c410ca435b7a0ae21",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 75,
+          "duration": 55.29999999999999,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "step 2: the caption gives 15 mm, but no action carries it",
+        "step 11: the caption names yarn-needle, but no action uses it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "declared state striped-scarf:unfinished",
+        "declared state striped-scarf:as-found",
+        "striped-scarf starts as-found",
+        "declared state striped-scarf:finished"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a9: undeclared result state striped-scarf:unfinished",
+        "a9: state change needs an explicit prior state for striped-scarf",
+        "a11: unmet state requirement striped-scarf:unfinished",
+        "a11: undeclared result state striped-scarf:finished",
+        "unreached goal striped-scarf:finished"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.100996,
+    "responseSeconds": 11.647674405000002,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Striped Chunky Scarf",
+    "design": {
+      "purpose": "A warm two-colour striped scarf for one adult, worked in chunky single crochet with the photographed green and blue yarn and 15 mm hook. Check that each skein contains enough yarn before starting; add a matching third skein if either colour runs short.",
+      "size": [
+        28,
+        150,
+        1.5
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place green yarn",
+        "c": "Place the green yarn ready to work from."
+      },
+      {
+        "t": "Chain foundation",
+        "c": "Ch 17 with green yarn and 15 mm hook."
+      },
+      {
+        "t": "Work first row",
+        "c": "Row 1: sc in 2nd ch from hook and each ch, 16 sc."
+      },
+      {
+        "t": "Work green stripe",
+        "c": "Rows 2–15: ch 1, turn, 16 sc in green."
+      },
+      {
+        "t": "Finish green half",
+        "c": "Rows 16–30: ch 1, turn, 16 sc in green."
+      },
+      {
+        "t": "Cut green yarn",
+        "c": "Cut green yarn, leaving a 15 cm tail."
+      },
+      {
+        "t": "Place blue yarn",
+        "c": "Place the blue yarn ready to join."
+      },
+      {
+        "t": "Work blue stripe",
+        "c": "Join blue in last stitch; rows 31–45: 16 sc."
+      },
+      {
+        "t": "Finish blue half",
+        "c": "Rows 46–60: ch 1, turn, 16 sc in blue; fasten off."
+      },
+      {
+        "t": "Cut blue yarn",
+        "c": "Cut blue yarn, leaving a 15 cm tail."
+      },
+      {
+        "t": "Weave in ends",
+        "c": "Weave all tails in with the yarn needle."
+      }
+    ]
+  },
+  "rawText": null
+}

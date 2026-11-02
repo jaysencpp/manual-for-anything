@@ -1,0 +1,185 @@
+{
+  "row": {
+    "id": "93e9be7912e07c2d3651-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "93e9be7912e07c2d3651",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Unknown named cut cut-base"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "Unknown named cut cut-base"
+        }
+      ],
+      "warnings": [],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "Unknown named cut cut-base"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.10806,
+    "responseSeconds": 15.993329977000016,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Herb Planter",
+    "design": {
+      "purpose": "A weatherproof-looking open planter for herbs or flowers for one gardener; soil depth about 20 cm once lined and filled by the user.",
+      "size": [
+        40,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place base board",
+        "c": "Lay the 18 cm board flat for cutting."
+      },
+      {
+        "t": "Cut the base",
+        "c": "Saw the 40 cm base, allowing saw kerf."
+      },
+      {
+        "t": "Place side board",
+        "c": "Lay the 20 cm board flat for cutting."
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Saw front, back and both 14 cm ends."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill three 10 mm drainage holes in base."
+      },
+      {
+        "t": "Sand the parts",
+        "c": "Sand all cut edges smooth by hand."
+      },
+      {
+        "t": "Place the base",
+        "c": "Place the 40 × 18 cm base flat."
+      },
+      {
+        "t": "Place front side",
+        "c": "Stand the front side on the base front edge."
+      },
+      {
+        "t": "Place back side",
+        "c": "Stand the back side on the base back edge."
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between the sides."
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between the sides."
+      },
+      {
+        "t": "Fix front-left corner",
+        "c": "Drive the front-left corner screws."
+      },
+      {
+        "t": "Fix front-right corner",
+        "c": "Drive the front-right corner screws."
+      },
+      {
+        "t": "Fix back-left corner",
+        "c": "Drive the back-left corner screws."
+      },
+      {
+        "t": "Fix back-right corner",
+        "c": "Drive the back-right corner screws."
+      },
+      {
+        "t": "Fix base to front",
+        "c": "Drive screws up through base into front."
+      },
+      {
+        "t": "Fix base to back",
+        "c": "Drive screws up through base into back."
+      },
+      {
+        "t": "Fix base to left",
+        "c": "Drive screws up through base into left end."
+      },
+      {
+        "t": "Fix base to right",
+        "c": "Drive screws up through base into right end."
+      }
+    ]
+  },
+  "rawText": null
+}

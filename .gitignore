@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+node_modules/
+data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+# Local generation output. Published comparison data under benchmarks/ is tracked.
+runs/
+!benchmarks/published-plans/runs/

@@ -1,0 +1,196 @@
+{
+ "provider": "meta",
+ "model": "muse-wonder-1.0",
+ "sam": "api",
+ "effort": "minimal",
+ "planEffort": "minimal",
+ "noThinking": false,
+ "finaleEnabled": true,
+ "begin": 10.14,
+ "costEstimated": true,
+ "firstFrameIfWaitingForAll": 38.39,
+ "filmSeconds": 50,
+ "needs": [
+  {
+   "what": "cut-outs (lift off the photo)",
+   "ready": 24.8,
+   "neededAt": 11.14,
+   "slack": -13.66
+  },
+  {
+   "what": "drawings (turn into drawings)",
+   "ready": 28.31,
+   "neededAt": 11.44,
+   "slack": -16.87
+  },
+  {
+   "what": "steps + layout (first step)",
+   "ready": 28.31,
+   "neededAt": 15.74,
+   "slack": -12.57
+  },
+  {
+   "what": "finale",
+   "ready": 28.31,
+   "neededAt": 51.54,
+   "slack": 23.23
+  },
+  {
+   "what": "panel",
+   "ready": 46.29,
+   "neededAt": 18.04,
+   "slack": -28.25
+  }
+ ],
+ "marks": {
+  "start": 0.59,
+  "script: first object": 9.89,
+  "script: object list": 10.14,
+  "SAM: cut-outs": 24.8,
+  "traced": 25.34,
+  "script: done": 28.3,
+  "layout": 28.31,
+  "drawings: all": 28.31,
+  "finale: checked": 28.31,
+  "drawing: paper": 44.95,
+  "panel: checked": 46.29
+ },
+ "calls": {
+  "catalogue": {
+   "provider": "meta",
+   "model": "muse-wonder-1.0",
+   "seconds": 11.524045862,
+   "firstTokenSeconds": 4.451235564999999,
+   "output": 1278,
+   "thinking": 127,
+   "usage": {
+    "completion_tokens": 1278,
+    "prompt_tokens": 5603,
+    "total_tokens": 6881,
+    "completion_tokens_details": {
+     "reasoning_tokens": 127
+    },
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    }
+   },
+   "cost": 0.047972,
+   "costEstimated": true,
+   "attempts": 1
+  },
+  "sam": {
+   "load": 0,
+   "segment": 14.01,
+   "scores": {
+    "paper": 0.95
+   }
+  },
+  "script": {
+   "provider": "meta",
+   "model": "muse-wonder-1.0",
+   "seconds": 27.709634247999997,
+   "firstTokenSeconds": 6.551906443999999,
+   "output": 1211,
+   "thinking": 316,
+   "usage": {
+    "prompt_tokens": 10207,
+    "completion_tokens": 1211
+   },
+   "cost": 0.065048,
+   "costEstimated": true,
+   "attempts": 1,
+   "planAttempts": 1,
+   "patches": 0,
+   "firstPassValid": true,
+   "promptVersion": "3e7aa9afbb",
+   "effort": "minimal",
+   "validationHistory": [
+    {
+     "valid": true,
+     "errors": [],
+     "warnings": [
+      "paper.cm: unconfirmed measurement",
+      "plan has outside the requested 4\u20137 steps",
+      "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+     ],
+     "soft": []
+    }
+   ],
+   "requests": [
+    {
+     "provider": "meta",
+     "model": "muse-wonder-1.0",
+     "seconds": 12.266021058,
+     "firstTokenSeconds": 6.551906443999999,
+     "output": 1211,
+     "thinking": 316,
+     "usage": {
+      "completion_tokens": 1211,
+      "prompt_tokens": 10207,
+      "total_tokens": 11418,
+      "completion_tokens_details": {
+       "reasoning_tokens": 316
+      },
+      "prompt_tokens_details": {
+       "cached_tokens": 0
+      }
+     },
+     "cost": 0.065048,
+     "costEstimated": true,
+     "attempts": 1
+    }
+   ]
+  },
+  "finale": {
+   "provider": "deterministic",
+   "seconds": 0,
+   "cost": 0
+  },
+  "draw paper": {
+   "provider": "meta",
+   "model": "muse-wonder-1.0",
+   "seconds": 16.741090061,
+   "firstTokenSeconds": 12.990908258000003,
+   "output": 894,
+   "thinking": 607,
+   "usage": {
+    "completion_tokens": 894,
+    "prompt_tokens": 6151,
+    "total_tokens": 7045,
+    "completion_tokens_details": {
+     "reasoning_tokens": 607
+    },
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    }
+   },
+   "cost": 0.042484,
+   "costEstimated": true,
+   "attempts": 1
+  },
+  "panel": {
+   "provider": "meta",
+   "model": "muse-wonder-1.0",
+   "seconds": 17.980080428,
+   "firstTokenSeconds": 7.008484646999998,
+   "output": 2373,
+   "thinking": 237,
+   "usage": {
+    "completion_tokens": 2373,
+    "prompt_tokens": 2902,
+    "total_tokens": 5275,
+    "completion_tokens_details": {
+     "reasoning_tokens": 237
+    },
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    }
+   },
+   "cost": 0.059068,
+   "costEstimated": true,
+   "attempts": 1,
+   "problem": null
+  }
+ },
+ "cost": 0.215
+}

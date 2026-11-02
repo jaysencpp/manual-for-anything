@@ -1,0 +1,178 @@
+{
+  "row": {
+    "id": "cd15aef165b3cb551c95-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "cd15aef165b3cb551c95",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.objects[0].part: does not match any allowed schema branch",
+            "$.objects[1].part: does not match any allowed schema branch",
+            "$.objects[3].part: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "$.objects[0].part: does not match any allowed schema branch",
+            "$.objects[1].part: does not match any allowed schema branch",
+            "$.objects[3].part: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.objects[0].part: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.objects[1].part: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.objects[3].part: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.objects[0].part: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.objects[1].part: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.objects[3].part: does not match any allowed schema branch"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "step 4: the caption gives 10 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.06157975,
+    "responseSeconds": 39.41039181299997,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Chunky Two-Tone Basket",
+    "design": {
+      "purpose": "Hold yarn, toys and bedside bits for one user: green base, blue sides, green rim",
+      "size": [
+        22,
+        22,
+        12
+      ]
+    },
+    "steps": [
+      {
+        "t": "Set out materials",
+        "c": "Set out yarn, hook and scissors"
+      },
+      {
+        "t": "Start green base",
+        "c": "Ch 2, 6 sc in 2nd ch. Rnd 2: inc in each (12)."
+      },
+      {
+        "t": "Grow base circle",
+        "c": "Rnd 3: [sc, inc] x6 (18). Rnd 4: [2 sc, inc] x6 (24). Rnd 5: [3 sc, inc] x6 (30)."
+      },
+      {
+        "t": "Cut green tail",
+        "c": "Cut green leaving 10 cm tail"
+      },
+      {
+        "t": "Change to blue",
+        "c": "Join blue and start wall"
+      },
+      {
+        "t": "Work blue sides",
+        "c": "Rnd 6-7: 30 sc in blue. Rnd 8: 30 sc in blue back loop."
+      },
+      {
+        "t": "Work green rim",
+        "c": "Rnd 9: 30 sc in green for rim"
+      },
+      {
+        "t": "Finish and weave",
+        "c": "Cut yarn and weave all tails"
+      }
+    ]
+  },
+  "rawText": null
+}

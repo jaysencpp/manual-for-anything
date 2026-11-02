@@ -1,0 +1,15 @@
+The rules every program the film runs keeps:
+- ctx is a CanvasRenderingContext2D, already scaled to the units given above. Draw everything every call.
+- It is a pure function of its arguments: frames are drawn in any order, so keep no state between calls, and never read
+  the clock, use Math.random, timers, the network, the DOM or anything outside its arguments. These words are refused
+  anywhere in the code, even as your own names and in comments: window, globalThis, self, top, parent, opener, location,
+  history, open, document, defaultView, caches, cookie, crypto, eval, Function, Date, performance — call a variable topY
+  or isOpen, never top or open. (ctx.textBaseline = "top" is the one use allowed.)
+- env.palette.ink, .accent, .background (CSS colours); env.font, a font family name (ctx.font = `600 24px "${env.font}"`);
+  env.ease.linear / in / out / inOut / expoOut / back (each takes 0..1, clamps, returns 0..1); env.random(i), a number in
+  0..1, always the same for the same i; env.kit.span(t, from, to), 0..1 progress between two times;
+  env.kit.spring(u, {bounce}), 0..1 progress that overshoots and settles by 1 (bounce 0 to 0.9);
+  env.kit.along(points, s) → {x, y, angle}, the point s (0..1) along a smooth curve through [[x, y], …].
+- Drawn the way a manual's page is: flat fills and plain strokes in the ink, no gradients, shadows, blur, ctx.filter or
+  texture, and a background that never moves. Keep browser drawing work small: move only what shows the work,
+  and hold still once it is done.

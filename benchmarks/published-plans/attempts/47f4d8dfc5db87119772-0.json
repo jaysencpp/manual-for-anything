@@ -1,0 +1,157 @@
+{
+  "row": {
+    "id": "47f4d8dfc5db87119772-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "47f4d8dfc5db87119772",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+          ]
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "structure",
+          "code": "inventory-change",
+          "message": "Plan changed the frozen inventory identity, dimensions or measurement provenance",
+          "rawOnly": true
+        },
+        {
+          "stage": "structure",
+          "code": "inventory-change",
+          "message": "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+        }
+      ],
+      "warnings": [
+        "scissors.cm: unconfirmed measurement",
+        "paper-1.cm: unconfirmed measurement",
+        "paper-1.w: unconfirmed measurement",
+        "paper-1.thick: unconfirmed measurement",
+        "Additional materials are required supplies, not objects observed in the photo.",
+        "step 1: the caption gives 21 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.07838,
+    "responseSeconds": 7.2349774889999825,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": {
+    "title": "Paper Snowflake",
+    "design": {
+      "purpose": "A decorative six-pointed paper snowflake for a window, made by one adult or child with supervision.",
+      "size": [
+        21,
+        21,
+        0.1
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place paper",
+        "c": "Place the 21 cm square paper flat"
+      },
+      {
+        "t": "Fold diagonally",
+        "c": "Fold top-right corner onto bottom-left corner"
+      },
+      {
+        "t": "Fold again",
+        "c": "Fold top-left corner onto bottom-right corner"
+      },
+      {
+        "t": "Narrow wedge",
+        "c": "Fold top-right edge through top at 30°"
+      },
+      {
+        "t": "Complete wedge",
+        "c": "Fold top-left edge through top at 30°"
+      },
+      {
+        "t": "Trim wide end",
+        "c": "Cut straight across the wide end"
+      },
+      {
+        "t": "Cut side notch",
+        "c": "Cut a notch from one side edge"
+      },
+      {
+        "t": "Cut other notch",
+        "c": "Cut a notch from the other side edge"
+      },
+      {
+        "t": "Open snowflake",
+        "c": "Open the sheet out flat again"
+      }
+    ]
+  },
+  "rawText": null
+}

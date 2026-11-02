@@ -1,0 +1,27 @@
+{
+ "batten-a": {
+  "width": 417,
+  "height": 60,
+  "regions": []
+ },
+ "batten-b": {
+  "width": 464,
+  "height": 91,
+  "regions": []
+ },
+ "batten-c": {
+  "width": 456,
+  "height": 91,
+  "regions": []
+ },
+ "batten-d": {
+  "width": 414,
+  "height": 94,
+  "regions": []
+ },
+ "photo": {
+  "width": 550,
+  "height": 550,
+  "regions": []
+ }
+}

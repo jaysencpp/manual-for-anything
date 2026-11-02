@@ -1,0 +1,267 @@
+{
+ "objects": [
+  {
+   "k": "green-yarn",
+   "n": "green chunky wool yarn",
+   "b": [
+    55,
+    150,
+    1015,
+    1015
+   ],
+   "k2": null,
+   "cm": 20,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "blue-yarn",
+   "n": "blue chunky wool yarn",
+   "b": [
+    880,
+    540,
+    990,
+    1010
+   ],
+   "cm": 20,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "hook",
+   "n": "15 mm wooden crochet hook",
+   "b": [
+    338,
+    1498,
+    915,
+    434
+   ],
+   "tip": [
+    350,
+    1515
+   ],
+   "cm": 20,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "scissors",
+   "n": "black scissors",
+   "b": [
+    385,
+    1355,
+    640,
+    505
+   ],
+   "tip": [
+    392,
+    1362
+   ],
+   "cm": 18,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  }
+ ],
+ "ideas": [
+  {
+   "title": "Two-Tone Chunky Trivet",
+   "kind": "craft",
+   "pitch": "Round single-crochet pot mat in green and blue rings"
+  },
+  {
+   "title": "Chunky Striped Cowl",
+   "kind": "craft",
+   "pitch": "Short flat strip in two stripes, seamed into a cowl"
+  },
+  {
+   "title": "Chunky Ball Pillow",
+   "kind": "craft",
+   "pitch": "Small stuffed amigurumi ball cushion in green and blue"
+  }
+ ],
+ "pick": 0,
+ "title": "Two-Tone Chunky Trivet",
+ "sub": "round crocheted pot mat",
+ "tag": "25 cm \u00b7 4 rounds \u00b7 1 hour \u00b7 Beginner",
+ "tools": [],
+ "makes": [
+  {
+   "k": "trivet",
+   "n": "round two-tone trivet",
+   "shape": "round",
+   "size": 1.3,
+   "cm": 25,
+   "weight": "jumbo",
+   "rows": 4,
+   "start": 6,
+   "stitches": 24,
+   "colors": [
+    "#a9c9a4",
+    "#8fa9e8"
+   ]
+  }
+ ],
+ "steps": [
+  {
+   "t": "Start magic ring",
+   "c": "Green: magic ring, ch 1. Rnd 1: 6 sc in ring, pull tight.",
+   "do": [
+    {
+     "v": "place",
+     "k": "green-yarn",
+     "to": null,
+     "rel": "floor",
+     "at": "left",
+     "id": "op-1",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "blue-yarn",
+     "to": null,
+     "rel": "floor",
+     "at": "right",
+     "id": "op-2",
+     "intent": "place"
+    },
+    {
+     "v": "work",
+     "k": "trivet",
+     "to": "green-yarn",
+     "with": "hook",
+     "p": 0.25,
+     "id": "op-3",
+     "intent": "work"
+    }
+   ],
+   "claims": [
+    "op-1",
+    "op-2",
+    "op-3"
+   ]
+  },
+  {
+   "t": "Increase round two",
+   "c": "Rnd 2: 2 sc in each st around. 12 sts.",
+   "do": [
+    {
+     "v": "work",
+     "k": "trivet",
+     "to": "green-yarn",
+     "with": "hook",
+     "p": 0.5,
+     "id": "op-4",
+     "intent": "work"
+    }
+   ],
+   "claims": [
+    "op-4"
+   ]
+  },
+  {
+   "t": "Increase round three",
+   "c": "Rnd 3: *sc 1, 2 sc in next*; repeat around. 18 sts.",
+   "do": [
+    {
+     "v": "work",
+     "k": "trivet",
+     "to": "green-yarn",
+     "with": "hook",
+     "p": 0.75,
+     "id": "op-5",
+     "intent": "work"
+    }
+   ],
+   "claims": [
+    "op-5"
+   ]
+  },
+  {
+   "t": "Change to blue",
+   "c": "Join blue. Rnd 4: *sc 2, 2 sc in next*; repeat. 24 sts.",
+   "do": [
+    {
+     "v": "work",
+     "k": "trivet",
+     "to": "blue-yarn",
+     "with": "hook",
+     "p": 1,
+     "id": "op-6",
+     "intent": "work"
+    }
+   ],
+   "claims": [
+    "op-6"
+   ]
+  },
+  {
+   "t": "Cut and finish",
+   "c": "Sl st to join, cut yarn 15 cm, weave in ends.",
+   "do": [
+    {
+     "v": "cut",
+     "k": "blue-yarn",
+     "to": null,
+     "into": "snip",
+     "with": "scissors",
+     "label": "15 cm",
+     "id": "op-7",
+     "intent": "cut"
+    }
+   ],
+   "claims": [
+    "op-7"
+   ]
+  }
+ ],
+ "rigs": [
+  {
+   "k": "scissors",
+   "pivot": [
+    640,
+    1585
+   ],
+   "split": "above"
+  }
+ ],
+ "finale": [
+  {
+   "v": "turn",
+   "k": "trivet",
+   "to": null,
+   "by": 360
+  }
+ ],
+ "end": "Set a hot pot on it",
+ "view": "side",
+ "joints": [],
+ "goals": [],
+ "contractVersion": 2,
+ "mode": "physical",
+ "design": {
+  "purpose": "Two-Tone Chunky Trivet",
+  "basis": "Illustrative saved photo estimates; confirm all dimensions before making.",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "parts": []
+ }
+}

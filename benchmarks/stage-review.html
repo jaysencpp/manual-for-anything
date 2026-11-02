@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task benchmark review</title>
+<style>
+body{font:16px system-ui;margin:24px auto;max-width:1200px;padding:0 16px;color:#182530;background:#faf9f5}button,select,textarea{font:inherit;padding:8px;max-width:100%}button{cursor:pointer}label{display:block;margin:10px 0}textarea{display:block;width:95%;min-height:75px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}canvas{width:100%;height:auto;background:white}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:500px;overflow:auto;background:white;padding:16px}#message{min-height:24px}table{border-collapse:collapse}td,th{text-align:left;padding:8px;border-bottom:1px solid #ccc}.scroll{overflow:auto}@media(max-width:750px){.grid{grid-template-columns:1fr}}
+</style>
+<h1 id="title">Task benchmark review</h1><p id="note"></p>
+<button id="labels">Reveal model, effort, timing and costs</button> <span id="mode">Blind review</span>
+<p id="message" role="status"></p>
+<label>Case <select id="case"></select></label>
+<div class="grid"><section><canvas id="photo"></canvas><label>Box overlay <select id="overlay"><option value="expected">Expected objects</option><option value="output">Predicted objects</option><option value="none">Photo only</option></select></label>
+<details><summary>Frozen task, labels and baseline</summary><pre id="input"></pre></details>
+<p id="qualification"></p><label>Case qualification <select id="case-verdict"><option>pending</option><option>pass</option><option>fail</option></select></label><label>Reason <textarea id="case-reason"></textarea></label><button id="save-case">Save case qualification</button>
+</section><section><label>Attempt <select id="attempt"></select></label><p id="meta"></p><pre id="output"></pre><pre id="checks"></pre>
+<label>Task acceptance <select id="verdict"><option>pending</option><option>pass</option><option>fail</option></select></label><label>Reason <textarea id="reason"></textarea></label><button id="save-attempt">Save task review</button></section></div>
+<h2>Comparison</h2><p>Only qualified cases contribute to aggregate results. Pending reviews remain unresolved. Mock runs never estimate model quality.</p><div id="report" class="scroll"></div>
+<script type="module" src="/stage-review.mjs"></script></html>

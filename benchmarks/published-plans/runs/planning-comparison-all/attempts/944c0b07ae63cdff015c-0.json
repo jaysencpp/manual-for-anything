@@ -1,0 +1,163 @@
+{
+  "row": {
+    "id": "944c0b07ae63cdff015c-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "944c0b07ae63cdff015c",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 86,
+          "duration": 66.19999999999999,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a13: unmet state requirement cowl:flat",
+        "a13: undeclared result state cowl:joined",
+        "a14: unmet state requirement cowl:joined",
+        "a14: undeclared result state cowl:finished"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.10726,
+    "responseSeconds": 13.503166130000027,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Striped Chunky Cowl",
+    "design": {
+      "purpose": "A warm two-colour chunky neck cowl for one adult, crocheted flat in single crochet and joined end to end. Green for rows 1-8 and blue for rows 9-16.",
+      "size": [
+        60,
+        25,
+        2
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place green yarn",
+        "c": "Place green yarn on the table"
+      },
+      {
+        "t": "Place blue yarn",
+        "c": "Place blue yarn beside it"
+      },
+      {
+        "t": "Chain foundation",
+        "c": "Ch 21 with green yarn"
+      },
+      {
+        "t": "Work row 1",
+        "c": "Row 1: sc in 2nd ch and each ch, 20 sc"
+      },
+      {
+        "t": "Work rows 2-4",
+        "c": "Rows 2-4: ch 1, turn, 20 sc each row"
+      },
+      {
+        "t": "Work rows 5-8",
+        "c": "Rows 5-8: ch 1, turn, 20 sc each row"
+      },
+      {
+        "t": "Change to blue",
+        "c": "Join blue, cut green leaving 15 cm tail"
+      },
+      {
+        "t": "Work rows 9-12",
+        "c": "Rows 9-12: ch 1, turn, 20 sc each row"
+      },
+      {
+        "t": "Work rows 13-16",
+        "c": "Rows 13-16: ch 1, turn, 20 sc each row"
+      },
+      {
+        "t": "Fasten off",
+        "c": "Fasten off, cut blue leaving 40 cm tail"
+      },
+      {
+        "t": "Join ends",
+        "c": "Whipstitch short ends together with blue tail"
+      },
+      {
+        "t": "Weave in tails",
+        "c": "Weave all tails into nearby stitches, trim ends"
+      }
+    ]
+  },
+  "rawText": null
+}

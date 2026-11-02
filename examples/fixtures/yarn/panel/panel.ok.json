@@ -1,0 +1,15 @@
+{
+ "steps": [
+  0,
+  1,
+  2,
+  3
+ ],
+ "labels": {
+  "0": "Ring, ch 1, Rnd 1: 6 sc",
+  "1": "Rnd 2: 12 sc",
+  "2": "Rnd 3: 18 sc",
+  "3": "Rnd 4 in blue: 24 sc"
+ },
+ "draw": "(ctx, i, p, env) => { const ink = env.palette.ink, acc = env.palette.accent; const cx = 200, cy = 180; const R = [0, 40, 74, 108, 142]; const N = [0, 6, 12, 18, 24]; const col = ['', '#a9c9a4', '#a9c9a4', '#a9c9a4', '#8fa9e8']; const par = (r, k) => { if (r === 1) return { j: k, inc: false }; if (r === 2) return { j: Math.floor(k / 2), inc: true }; if (r === 3) { const g = Math.floor(k / 3), m = k % 3; return { j: g * 2 + (m === 0 ? 0 : 1), inc: m > 0 }; } const g = Math.floor(k / 4), m = k % 4; return { j: g * 3 + (m < 2 ? m : 2), inc: m >= 2 }; }; const ang = (r, k) => -Math.PI / 2 + (k + 0.5) * 2 * Math.PI / N[r]; const pos = (r, k) => [cx + R[r] * Math.cos(ang(r, k)), cy + R[r] * Math.sin(ang(r, k))]; const cur = i + 1; for (let r = cur; r >= 1; r--) { ctx.beginPath(); ctx.arc(cx, cy, R[r] + 16, 0, Math.PI * 2); ctx.fillStyle = col[r]; ctx.globalAlpha = r === cur ? 0.35 : 0.2; ctx.fill(); ctx.globalAlpha = 1; ctx.beginPath(); ctx.arc(cx, cy, R[r] - 17 > 0 ? R[r] - 17 : 0, 0, Math.PI * 2); ctx.fillStyle = '#ffffff'; if (r === 1) ctx.fill(); } ctx.globalAlpha = cur === 1 ? 1 : 0.4; ctx.strokeStyle = ink; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(cx, cy, 14, 0, Math.PI * 2); ctx.stroke(); ctx.beginPath(); ctx.ellipse(cx, cy - 26, 5, 9, 0, 0, Math.PI * 2); ctx.stroke(); ctx.globalAlpha = 1; const cross = (x, y, a, s) => { ctx.save(); ctx.translate(x, y); ctx.rotate(a); ctx.beginPath(); ctx.moveTo(-s, -s); ctx.lineTo(s, s); ctx.moveTo(s, -s); ctx.lineTo(-s, s); ctx.stroke(); ctx.restore(); }; for (let r = 1; r <= cur; r++) { const isCur = r === cur; const shown = isCur ? Math.min(N[r], Math.ceil(p * N[r] - 1e-9)) : N[r]; for (let k = 0; k < shown; k++) { const [x, y] = pos(r, k); const pr = par(r, k); const base = r === 1 ? [cx + 14 * Math.cos(ang(1, k)), cy + 14 * Math.sin(ang(1, k))] : pos(r - 1, pr.j); const newest = isCur && k >= shown - 2; if (newest) { ctx.beginPath(); ctx.arc(x, y, 12, 0, Math.PI * 2); ctx.fillStyle = acc; ctx.fill(); } ctx.globalAlpha = isCur ? 1 : 0.4; ctx.strokeStyle = ink; ctx.lineWidth = isCur ? 2.5 : 2; ctx.beginPath(); const dx = x - base[0], dy = y - base[1], d = Math.hypot(dx, dy); ctx.moveTo(base[0] + dx / d * 6, base[1] + dy / d * 6); ctx.lineTo(x - dx / d * 9, y - dy / d * 9); ctx.stroke(); cross(x, y, ang(r, k) + Math.PI / 4, 6); ctx.globalAlpha = 1; } } ctx.fillStyle = ink; ctx.strokeStyle = ink; ctx.lineWidth = 2.5; ctx.font = `500 20px \"${env.font}\"`; ctx.textBaseline = 'middle'; cross(52, 365, Math.PI / 4, 7); ctx.fillText('sc', 66, 365); ctx.beginPath(); ctx.moveTo(150, 375); ctx.lineTo(142, 356); ctx.moveTo(150, 375); ctx.lineTo(158, 356); ctx.stroke(); ctx.fillText('2 sc in one st', 168, 365); ctx.beginPath(); ctx.ellipse(318, 365, 5, 9, 0, 0, Math.PI * 2); ctx.stroke(); ctx.fillText('ch', 330, 365); }"
+}

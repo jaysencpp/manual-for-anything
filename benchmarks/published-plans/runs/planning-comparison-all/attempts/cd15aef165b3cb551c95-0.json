@@ -1,0 +1,190 @@
+{
+  "row": {
+    "id": "cd15aef165b3cb551c95-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "cd15aef165b3cb551c95",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "b1: intent Crochet base start needs a faithful demonstration, not work",
+            "b2: intent Crochet base grow needs a faithful demonstration, not work",
+            "b3: intent Crochet side start needs a faithful demonstration, not work",
+            "b4: intent Crochet stripe needs a faithful demonstration, not work",
+            "b5: intent Crochet top finish needs a faithful demonstration, not work",
+            "c1: intent Cut yarn needs a faithful demonstration, not cut",
+            "c2: intent Cut yarn needs a faithful demonstration, not cut"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "b1: intent Crochet base start needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "b2: intent Crochet base grow needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "b3: intent Crochet side start needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "b4: intent Crochet stripe needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "b5: intent Crochet top finish needs a faithful demonstration, not work"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "c1: intent Cut yarn needs a faithful demonstration, not cut"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "c2: intent Cut yarn needs a faithful demonstration, not cut"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "b1: intent Crochet base start needs a faithful demonstration, not work",
+        "b1: state change needs an explicit prior state for basket",
+        "b2: intent Crochet base grow needs a faithful demonstration, not work",
+        "b3: intent Crochet side start needs a faithful demonstration, not work",
+        "b4: intent Crochet stripe needs a faithful demonstration, not work",
+        "b5: intent Crochet top finish needs a faithful demonstration, not work",
+        "c1: intent Cut yarn needs a faithful demonstration, not cut",
+        "c2: intent Cut yarn needs a faithful demonstration, not cut"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.06696125,
+    "responseSeconds": 56.053846350999954,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Chunky Striped Basket",
+    "design": {
+      "purpose": "holds toys and yarn: uses green and blue chunky wool",
+      "size": [
+        24,
+        24,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Set out materials",
+        "c": "Place yarn, hook and scissors on table"
+      },
+      {
+        "t": "Crochet base rounds 1-3",
+        "c": "Work Rnd 1-3 in green to 18 sts"
+      },
+      {
+        "t": "Crochet base rounds 4-6",
+        "c": "Work Rnd 4-6 in green to 36 sts"
+      },
+      {
+        "t": "Crochet side round 7",
+        "c": "Work Rnd 7 in green to 36 sts"
+      },
+      {
+        "t": "Crochet stripe rounds 8-10",
+        "c": "Work Rnd 8-10 in blue to 36 sts"
+      },
+      {
+        "t": "Crochet top rounds 11-12",
+        "c": "Work Rnd 11-12 in green to 36 sts"
+      },
+      {
+        "t": "Cut yarn tails",
+        "c": "Cut both yarns leaving 10 cm tails"
+      },
+      {
+        "t": "Weave in ends",
+        "c": "Weave in both tails securely"
+      }
+    ]
+  },
+  "rawText": null
+}

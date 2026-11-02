@@ -1,0 +1,44 @@
+{
+ "objects": [
+  {
+   "key": "green-yarn",
+   "name": "green chunky wool yarn",
+   "box": [
+    55,
+    150,
+    1015,
+    1015
+   ]
+  },
+  {
+   "key": "blue-yarn",
+   "name": "blue chunky wool yarn",
+   "box": [
+    880,
+    540,
+    990,
+    1010
+   ]
+  },
+  {
+   "key": "hook",
+   "name": "15 mm wooden crochet hook",
+   "box": [
+    338,
+    1498,
+    915,
+    434
+   ]
+  },
+  {
+   "key": "scissors",
+   "name": "black scissors",
+   "box": [
+    385,
+    1355,
+    640,
+    505
+   ]
+  }
+ ]
+}

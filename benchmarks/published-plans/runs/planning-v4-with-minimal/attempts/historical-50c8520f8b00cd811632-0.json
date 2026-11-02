@@ -1,0 +1,199 @@
+{
+  "row": {
+    "id": "historical-50c8520f8b00cd811632-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "low",
+    "trialId": "historical-50c8520f8b00cd811632",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Invalid operation contract: f1: unknown joint box-front-left; f2: unknown joint box-front-right; f3: unknown joint box-back-left; f4: unknown joint box-back-right; f5: unknown joint box-base-front; f6: unknown joint box-base-back; f7: unknown joint box-base-left; f8: unknown joint box-base-right"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "Invalid operation contract: f1: unknown joint box-front-left; f2: unknown joint box-front-right; f3: unknown joint box-back-left; f4: unknown joint box-back-right; f5: unknown joint box-base-front; f6: unknown joint box-base-back; f7: unknown joint box-base-left; f8: unknown joint box-base-right"
+        }
+      ],
+      "warnings": [],
+      "corrections": [
+        "cut-base: compiled explicit stock cut with checked kerfs and offcut",
+        "cut-sides: compiled explicit stock cut with checked kerfs and offcut"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "f1: unknown joint box-front-left",
+        "f2: unknown joint box-front-right",
+        "f3: unknown joint box-back-left",
+        "f4: unknown joint box-back-right",
+        "f5: unknown joint box-base-front",
+        "f6: unknown joint box-base-back",
+        "f7: unknown joint box-base-left",
+        "f8: unknown joint box-base-right"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.13028,
+    "responseSeconds": 18.790472965,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "A drained outdoor planter for herbs or flowers, made from two weathered pine boards. Board-c is left unused for a future repair or matching planter.",
+      "size": [
+        40,
+        20,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the 120 cm wide board flat for cutting."
+      },
+      {
+        "t": "Mark base length",
+        "c": "Mark the base at 40 cm from one end."
+      },
+      {
+        "t": "Cut the base",
+        "c": "Saw the 40 cm base from the wide board."
+      },
+      {
+        "t": "Place second board",
+        "c": "Place the 120 cm board flat for cutting."
+      },
+      {
+        "t": "Mark sides and ends",
+        "c": "Mark 40, 40, 16 and 16 cm in order."
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Saw front, back and both 16 cm ends."
+      },
+      {
+        "t": "Place the base",
+        "c": "Place the 40 × 20 cm base flat."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill two 8 mm drainage holes through the base."
+      },
+      {
+        "t": "Place front side",
+        "c": "Stand the front side on the base front edge."
+      },
+      {
+        "t": "Place back side",
+        "c": "Stand the back side on the base back edge."
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between the front and back."
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between the front and back."
+      },
+      {
+        "t": "Fix front to left",
+        "c": "Drive {count} screws through the front into the left end"
+      },
+      {
+        "t": "Fix front to right",
+        "c": "Drive {count} screws through the front into the right end"
+      },
+      {
+        "t": "Fix back to left",
+        "c": "Drive {count} screws through the back into the left end"
+      },
+      {
+        "t": "Fix back to right",
+        "c": "Drive {count} screws through the back into the right end"
+      },
+      {
+        "t": "Fix base to front",
+        "c": "Drive {count} screws through the base into the front"
+      },
+      {
+        "t": "Fix base to back",
+        "c": "Drive {count} screws through the base into the back"
+      },
+      {
+        "t": "Fix base to left",
+        "c": "Drive {count} screws through the base into the left end"
+      },
+      {
+        "t": "Fix base to right",
+        "c": "Drive {count} screws through the base into the right end"
+      }
+    ]
+  },
+  "rawText": null
+}

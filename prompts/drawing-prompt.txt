@@ -1,0 +1,19 @@
+Redraw one object cut out of a photo as clean vector line art for an IKEA-style instruction film. It is {{name}}.
+
+In this folder: {{key}}.png is the transparent cut-out ({{width}}×{{height}}); {{key}}-x4.png is the same four times larger on grey. Look at both.
+
+Draw it in the cut-out's own coordinates times 4, in a {{width4}}×{{height4}} canvas: same view, location and proportions, because the film cross-fades from the photo to your drawing. The cut-out can contain background or a separate neighboring object: draw ONLY the requested object, leaving the rest transparent. Follow that object's visible silhouette, not every opaque pixel of an imperfect mask. Where something in front hides its surface, continue that surface inside the object's outline; do not invent hidden extensions.
+
+Identification hints in drawing coordinates, approximate boxes [x,y,width,height]: {{reference}}
+Neighbors are separate objects, not parts to include. Their boxes can overlap the target, so use visual identity rather than erasing whole boxes. For example, a separate milk frother beside a coffee machine must not become part of the machine drawing.
+
+Style — an IKEA manual in colour: flat fills in the object's OWN colours as the photo shows them, at full strength (a red brick is red, a lemon is yellow, a white mug is white) — one flat colour per face, a lighter shade of it for lit faces and a darker one for shadowed faces; outlines in "#1d2b4f", stroke width 3, round joins; a few interior lines for edges, seams and labels; no texture, no gradients, no photographic detail. Simple and confident: 3–12 shapes a part.
+
+Preserve visible damage and construction details that explain a repair: torn edges, detached straps, split seams and openings must remain recognizable in their photographed positions. Do not redraw a damaged object as already repaired. Ignore hands and background surfaces included in the cut-out.
+
+Parts: {{parts}}
+A pivot is [x, y] in the drawing's (×4) coordinates.
+
+Answer with ONE JSON object and nothing else:
+{"width": {{width4}}, "height": {{height4}}, "parts": [{"id", "parent", "pivot": [x, y], "shapes": [{"d": "<SVG path data>", "fill": "<colour or none>", "stroke": "<colour or none>"}]}]}
+Parts are listed parents first; shapes within a part are drawn back to front.

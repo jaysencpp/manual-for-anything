@@ -1,0 +1,228 @@
+{
+  "row": {
+    "id": "historical-6c694e9e49d81442173b-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "historical-6c694e9e49d81442173b",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[1].do[0]: does not match any allowed schema branch",
+            "$.steps[3].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Invalid operation contract: joint j-front-left: needs two distinct known parts; joint j-front-right: needs two distinct known parts; joint j-back-left: needs two distinct known parts; joint j-back-right: needs two distinct known parts; joint j-base-front: needs two distinct known parts; joint j-base-back: needs two distinct known parts; c1: intent cut needs a faithful demonstration, not place; c1b: intent work needs a faithful demonstration, not measure; c2: intent cut needs a faithful demonstration, not place"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[1].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[3].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "Invalid operation contract: joint j-front-left: needs two distinct known parts; joint j-front-right: needs two distinct known parts; joint j-back-left: needs two distinct known parts; joint j-back-right: needs two distinct known parts; joint j-base-front: needs two distinct known parts; joint j-base-back: needs two distinct known parts; c1: intent cut needs a faithful demonstration, not place; c1b: intent work needs a faithful demonstration, not measure; c2: intent cut needs a faithful demonstration, not place"
+        }
+      ],
+      "warnings": [],
+      "corrections": [
+        "step 2: claims c1b",
+        "goal base-b:assembled dropped: no step reaches it",
+        "step 10: caption made a count of its screws",
+        "step 11: caption made a count of its screws",
+        "step 12: caption made a count of its screws",
+        "step 13: caption made a count of its screws",
+        "step 14: caption made a count of its screws",
+        "step 15: caption made a count of its screws"
+      ],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "joint j-front-left: needs two distinct known parts",
+        "joint j-front-right: needs two distinct known parts",
+        "joint j-back-left: needs two distinct known parts",
+        "joint j-back-right: needs two distinct known parts",
+        "joint j-base-front: needs two distinct known parts",
+        "joint j-base-back: needs two distinct known parts",
+        "c1: intent cut needs a faithful demonstration, not place",
+        "c1b: operation is missing from the caption claims",
+        "c1b: intent work needs a faithful demonstration, not measure",
+        "c2: intent cut needs a faithful demonstration, not place",
+        "f1: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f2: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f3: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f4: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f5: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f6: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "unreached goal base-b:assembled",
+        "step 5: k refers to unknown object base-b",
+        "step 6: k refers to unknown object front-a",
+        "step 6: to refers to unknown object base-b",
+        "step 7: k refers to unknown object back-a",
+        "step 7: to refers to unknown object base-b",
+        "step 8: k refers to unknown object end-left",
+        "step 8: to refers to unknown object front-a",
+        "step 9: k refers to unknown object end-right",
+        "step 9: to refers to unknown object front-a",
+        "step 10: k refers to unknown object front-a",
+        "step 10: to refers to unknown object end-left",
+        "step 11: k refers to unknown object front-a",
+        "step 11: to refers to unknown object end-right",
+        "step 12: k refers to unknown object back-a",
+        "step 12: to refers to unknown object end-left",
+        "step 13: k refers to unknown object back-a",
+        "step 13: to refers to unknown object end-right",
+        "step 14: k refers to unknown object base-b",
+        "step 14: to refers to unknown object front-a",
+        "step 15: k refers to unknown object base-b",
+        "step 15: to refers to unknown object back-a"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.04049425,
+    "responseSeconds": 17.392069266,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Trough Planter",
+    "design": {
+      "purpose": "Small trough planter for herbs/flowers, soil depth 20 cm. Serves 1 household: 39x18x20 cm box from 5 parts.",
+      "size": [
+        39,
+        18,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Mark board A",
+        "c": "Measure and mark board A cuts"
+      },
+      {
+        "t": "Saw board A",
+        "c": "Cut board A into 39,39,14,14 cm"
+      },
+      {
+        "t": "Mark board B",
+        "c": "Mark base 39 cm on board B"
+      },
+      {
+        "t": "Saw base",
+        "c": "Cut one 39 cm base from board B"
+      },
+      {
+        "t": "Place base",
+        "c": "Place 39x18 cm base flat"
+      },
+      {
+        "t": "Place front",
+        "c": "Place 39 cm front on base"
+      },
+      {
+        "t": "Place back",
+        "c": "Place 39 cm back on base"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit 14 cm left end between sides"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit 14 cm right end between sides"
+      },
+      {
+        "t": "Screw front left",
+        "c": "Drive 2 screws through the front left"
+      },
+      {
+        "t": "Screw front right",
+        "c": "Drive 2 screws through the front right"
+      },
+      {
+        "t": "Screw back left",
+        "c": "Drive 2 screws through the back left"
+      },
+      {
+        "t": "Screw back right",
+        "c": "Drive 2 screws through the back right"
+      },
+      {
+        "t": "Screw base front",
+        "c": "Drive 3 screws through the base front"
+      },
+      {
+        "t": "Screw base back",
+        "c": "Drive 3 screws through the base back"
+      }
+    ]
+  },
+  "rawText": null
+}

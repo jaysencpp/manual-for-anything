@@ -1,0 +1,172 @@
+{
+  "row": {
+    "id": "a31e7bf9047685966740-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "a31e7bf9047685966740",
+    "sample": 2,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "a14: weaving path must stay inside the focus region"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "a14: weaving path must stay inside the focus region"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a14: weaving path must stay inside the focus region"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.144536,
+    "responseSeconds": 21.78150086700001,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Chunky Stripe Scarf",
+    "design": {
+      "purpose": "A warm two-tone scarf for one adult, about 88 cm long. Yarn quantity must be confirmed; if either skein runs short, finish at a colour boundary and weave in the end.",
+      "size": [
+        22,
+        88,
+        2
+      ]
+    },
+    "steps": [
+      {
+        "t": "Set out green",
+        "c": "Place green yarn and hook on work surface"
+      },
+      {
+        "t": "Chain foundation",
+        "c": "Foundation: ch 14 with green yarn"
+      },
+      {
+        "t": "Work row one",
+        "c": "Row 1: sc in 2nd ch, 13 sc total"
+      },
+      {
+        "t": "Work green rows",
+        "c": "Rows 2-10: ch 1, turn, 13 sc each row"
+      },
+      {
+        "t": "Finish green half",
+        "c": "Rows 11-20: ch 1, turn, 13 sc each row"
+      },
+      {
+        "t": "Cut green yarn",
+        "c": "Cut green yarn, leaving a 15 cm tail"
+      },
+      {
+        "t": "Set out blue",
+        "c": "Place blue yarn beside the scarf"
+      },
+      {
+        "t": "Work blue rows",
+        "c": "Join blue, rows 21-30: 13 sc each row"
+      },
+      {
+        "t": "Finish blue half",
+        "c": "Rows 31-40: ch 1, turn, 13 sc each row"
+      },
+      {
+        "t": "Cut blue yarn",
+        "c": "Fasten off, cut blue leaving a 15 cm tail"
+      },
+      {
+        "t": "Set out needle",
+        "c": "Place the yarn needle ready for finishing"
+      },
+      {
+        "t": "Weave green ends",
+        "c": "Weave the green tails into green stitches"
+      },
+      {
+        "t": "Weave blue end",
+        "c": "Weave the blue tail into blue stitches"
+      },
+      {
+        "t": "Trim tails",
+        "c": "Trim woven tails flush with scissors"
+      }
+    ]
+  },
+  "rawText": null
+}

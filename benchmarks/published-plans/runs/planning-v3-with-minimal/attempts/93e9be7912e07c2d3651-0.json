@@ -1,0 +1,244 @@
+{
+  "row": {
+    "id": "93e9be7912e07c2d3651-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "93e9be7912e07c2d3651",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Invalid operation contract: cl1: attachment operation needs an explicit joint"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "Invalid operation contract: cl1: attachment operation needs an explicit joint"
+        }
+      ],
+      "warnings": [],
+      "corrections": [
+        "screws-35: 3.5 cm, the depth its joints drive it",
+        "screws-40: 4 cm, the depth its joints drive it"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "cl1: attachment operation needs an explicit joint",
+        "f1: declared fastener length must equal the planned driven depth",
+        "f2: declared fastener length must equal the planned driven depth",
+        "f3: declared fastener length must equal the planned driven depth",
+        "f4: declared fastener length must equal the planned driven depth",
+        "f5: declared fastener length must equal the planned driven depth",
+        "f6: declared fastener length must equal the planned driven depth",
+        "f7: declared fastener length must equal the planned driven depth",
+        "f8: declared fastener length must equal the planned driven depth"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.15024,
+    "responseSeconds": 19.534018225999986,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "A drained outdoor planter for herbs or flowers, for one person to use on a patio.",
+      "size": [
+        58,
+        20,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for cutting."
+      },
+      {
+        "t": "Cut the base",
+        "c": "Cut a 58 cm base; keep the 61.4 cm offcut."
+      },
+      {
+        "t": "Place second board",
+        "c": "Place the second board flat for cutting."
+      },
+      {
+        "t": "Cut long sides",
+        "c": "Cut two 58 cm sides; keep the 3.4 cm offcut."
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Place the narrow board flat for cutting."
+      },
+      {
+        "t": "Cut the ends",
+        "c": "Cut two 16 cm ends; keep the 87.4 cm offcut."
+      },
+      {
+        "t": "Sand cut edges",
+        "c": "Sand every cut edge until smooth."
+      },
+      {
+        "t": "Lay the base",
+        "c": "Lay the 58 × 20 cm base flat."
+      },
+      {
+        "t": "Fit front side",
+        "c": "Stand the front side on the base front edge."
+      },
+      {
+        "t": "Fit back side",
+        "c": "Stand the back side on the base back edge."
+      },
+      {
+        "t": "Fit left end",
+        "c": "Fit the 16 cm left end between the sides."
+      },
+      {
+        "t": "Fit right end",
+        "c": "Fit the 16 cm right end between the sides."
+      },
+      {
+        "t": "Clamp first corner",
+        "c": "Clamp the front-left corner square."
+      },
+      {
+        "t": "Drill front left",
+        "c": "Drill pilot holes at the marked front-left sites."
+      },
+      {
+        "t": "Fix front left",
+        "c": "Drive screws through the front into the left end."
+      },
+      {
+        "t": "Drill front right",
+        "c": "Drill pilot holes at the front-right sites."
+      },
+      {
+        "t": "Fix front right",
+        "c": "Drive screws through the front into the right end."
+      },
+      {
+        "t": "Drill back left",
+        "c": "Drill pilot holes at the back-left sites."
+      },
+      {
+        "t": "Fix back left",
+        "c": "Drive screws through the back into the left end."
+      },
+      {
+        "t": "Drill back right",
+        "c": "Drill pilot holes at the back-right sites."
+      },
+      {
+        "t": "Fix back right",
+        "c": "Drive screws through the back into the right end."
+      },
+      {
+        "t": "Drill base front",
+        "c": "Drill upward pilot holes through base into front side."
+      },
+      {
+        "t": "Fix base front",
+        "c": "Drive screws up through base into front side."
+      },
+      {
+        "t": "Drill base back",
+        "c": "Drill upward pilot holes through base into back side."
+      },
+      {
+        "t": "Fix base back",
+        "c": "Drive screws up through base into back side."
+      },
+      {
+        "t": "Drill base left",
+        "c": "Drill upward pilot hole through base into left end."
+      },
+      {
+        "t": "Fix base left",
+        "c": "Drive a screw up through base into left end."
+      },
+      {
+        "t": "Drill base right",
+        "c": "Drill upward pilot hole through base into right end."
+      },
+      {
+        "t": "Fix base right",
+        "c": "Drive a screw up through base into right end."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill six evenly spaced drainage holes in the base."
+      },
+      {
+        "t": "Check the planter",
+        "c": "Check all corners square and every screw seated."
+      }
+    ]
+  },
+  "rawText": null
+}

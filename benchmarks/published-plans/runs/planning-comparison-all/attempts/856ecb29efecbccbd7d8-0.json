@@ -1,0 +1,148 @@
+{
+  "row": {
+    "id": "856ecb29efecbccbd7d8-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "xhigh",
+    "trialId": "856ecb29efecbccbd7d8",
+    "sample": 1,
+    "planningEffort": "xhigh",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 60,
+          "duration": 52.69999999999999,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a9: demonstration must declare its resulting state"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.18368,
+    "responseSeconds": 41.15221830500005,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Two-Tone Chunky Cowl",
+    "design": {
+      "purpose": "A warm two-tone neck cowl for one adult, worked in the round with the photographed green and blue chunky wool and 15 mm hook.",
+      "size": [
+        20,
+        20,
+        24
+      ]
+    },
+    "steps": [
+      {
+        "t": "Chain and join",
+        "c": "Green: chain 32, slip stitch to join ring."
+      },
+      {
+        "t": "Work round 1",
+        "c": "Round 1: chain 2, work 32 double crochet."
+      },
+      {
+        "t": "Work round 2",
+        "c": "Round 2: chain 2, work 32 double crochet."
+      },
+      {
+        "t": "Finish green rounds",
+        "c": "Round 3: 32 double crochet, change to blue."
+      },
+      {
+        "t": "Work round 4",
+        "c": "Round 4: chain 2, work 32 double crochet."
+      },
+      {
+        "t": "Work round 5",
+        "c": "Round 5: chain 2, work 32 double crochet."
+      },
+      {
+        "t": "Work round 6",
+        "c": "Round 6: 32 double crochet, slip stitch, fasten off."
+      },
+      {
+        "t": "Cut yarn tail",
+        "c": "Cut blue yarn, leaving a 15 cm tail."
+      },
+      {
+        "t": "Weave in ends",
+        "c": "Weave both tails through nearby stitches, then trim."
+      }
+    ]
+  },
+  "rawText": null
+}

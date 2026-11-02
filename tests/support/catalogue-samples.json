@@ -1,0 +1,125 @@
+{
+ "note": "Hand-written test data for the catalogue (thumbs.test.mjs, catalogue.test.mjs and a stubbed model server). Not model output: no model was called to make it.",
+ "wood8": [
+  {"title": "Planter Box", "kind": "build", "pitch": "Long open-top box for herbs or flowers", "minutes": 60, "level": "easy", "uses": ["board-a", "board-b", "board-c"], "needs": ["saw", "drill", "screw", "tape"],
+   "look": [
+    {"s": "box", "p": [2, 2, 0], "d": [76, 16, 2], "c": "#b89a72", "m": "grain"},
+    {"s": "box", "p": [2, 2, 12], "d": [76, 16, 4], "c": "#5a3d2b", "m": "dots"},
+    {"s": "box", "p": [0, 18, 0], "d": [80, 2, 18], "c": "#b89a72", "m": "grain"},
+    {"s": "box", "p": [0, 2, 0], "d": [2, 16, 18], "c": "#b89a72"},
+    {"s": "box", "p": [78, 2, 0], "d": [2, 16, 18], "c": "#b89a72"},
+    {"s": "box", "p": [0, 0, 0], "d": [80, 2, 18], "c": "#b89a72", "m": "grain"}]},
+  {"title": "Wall Shelf", "kind": "build", "pitch": "One board on two brackets, for books or plants", "minutes": 40, "level": "easy", "uses": ["board-b", "board-c"], "needs": ["saw", "drill", "screw", "level"],
+   "look": [
+    {"s": "box", "p": [0, 0, 16], "d": [70, 18, 2], "c": "#b89a72", "m": "grain"},
+    {"s": "box", "p": [10, 3, 0], "d": [2, 15, 16], "c": "#a88a62"},
+    {"s": "box", "p": [58, 3, 0], "d": [2, 15, 16], "c": "#a88a62"},
+    {"s": "cyl", "p": [24, 5, 18], "d": [9, 9, 10], "c": "#c4673f", "open": true, "f": "#4e7a3a", "m": "dots"},
+    {"s": "box", "p": [44, 4, 18], "d": [3, 12, 18], "c": "#2f5d8a"},
+    {"s": "box", "p": [47.5, 4, 18], "d": [3, 12, 15], "c": "#d9a33a"}]},
+  {"title": "Garden Bench", "kind": "build", "pitch": "Low two-person bench with a board seat", "minutes": 90, "level": "medium", "uses": ["board-a", "board-b", "board-c"], "needs": ["saw", "drill", "screw", "square"],
+   "look": [
+    {"s": "box", "p": [0, 0, 40], "d": [110, 20, 2], "c": "#b89a72", "m": "grain"},
+    {"s": "box", "p": [10, 1, 0], "d": [2, 18, 40], "c": "#a88a62"},
+    {"s": "box", "p": [98, 1, 0], "d": [2, 18, 40], "c": "#a88a62"},
+    {"s": "box", "p": [12, 9, 26], "d": [86, 2, 14], "c": "#a88a62", "m": "grain"}]},
+  {"title": "Step Stool", "kind": "build", "pitch": "Sturdy step for reaching high shelves", "minutes": 50, "level": "medium", "uses": ["board-a", "board-b"], "needs": ["saw", "drill", "screw"],
+   "look": [
+    {"s": "box", "p": [0, 0, 24], "d": [38, 20, 2], "c": "#b89a72", "m": "grain"},
+    {"s": "box", "p": [3, 0, 0], "d": [2, 18, 24], "c": "#a88a62"},
+    {"s": "box", "p": [33, 0, 0], "d": [2, 18, 24], "c": "#a88a62"},
+    {"s": "box", "p": [5, 16, 10], "d": [28, 2, 14], "c": "#a88a62"}]},
+  {"title": "Small Bookcase", "kind": "build", "pitch": "Two-shelf case for paperbacks", "minutes": 120, "level": "medium", "uses": ["board-a", "board-b", "board-c"], "needs": ["saw", "drill", "screw", "square"],
+   "look": [
+    {"s": "box", "p": [0, 0, 0], "d": [2, 18, 58], "c": "#b89a72"},
+    {"s": "box", "p": [2, 0, 0], "d": [42, 18, 2], "c": "#b89a72", "m": "grain"},
+    {"s": "box", "p": [2, 0, 28], "d": [42, 18, 2], "c": "#b89a72", "m": "grain"},
+    {"s": "box", "p": [4, 3, 2], "d": [3, 13, 20], "c": "#2f5d8a"},
+    {"s": "box", "p": [7.5, 3, 2], "d": [3, 13, 18], "c": "#c4673f"},
+    {"s": "box", "p": [11, 3, 2], "d": [2.5, 13, 21], "c": "#d9a33a"},
+    {"s": "box", "p": [24, 3, 30], "d": [3, 13, 19], "c": "#4e7a3a"},
+    {"s": "box", "p": [27.5, 3, 30], "d": [3, 13, 21], "c": "#2f5d8a"},
+    {"s": "box", "p": [2, 0, 56], "d": [42, 18, 2], "c": "#b89a72", "m": "grain"},
+    {"s": "box", "p": [44, 0, 0], "d": [2, 18, 58], "c": "#b89a72"}]},
+  {"title": "Serving Tray", "kind": "build", "pitch": "Flat tray with raised rims and handles", "minutes": 45, "level": "easy", "uses": ["board-a", "board-c"], "needs": ["saw", "drill", "screw", "sander"],
+   "look": [
+    {"s": "box", "p": [0, 0, 0], "d": [50, 34, 2], "c": "#b89a72", "m": "grain"},
+    {"s": "box", "p": [2, 32, 2], "d": [46, 2, 4], "c": "#a88a62"},
+    {"s": "box", "p": [0, 0, 2], "d": [2, 34, 8], "c": "#a88a62"},
+    {"s": "box", "p": [48, 0, 2], "d": [2, 34, 8], "c": "#a88a62"},
+    {"s": "box", "p": [2, 0, 2], "d": [46, 2, 4], "c": "#a88a62"}]},
+  {"title": "Birdhouse", "kind": "build", "pitch": "Pitched-roof box with a round entrance", "minutes": 75, "level": "medium", "uses": ["board-c"], "needs": ["saw", "drill", "nail", "hammer"],
+   "look": [
+    {"s": "box", "p": [0, 0, 0], "d": [15, 15, 18], "c": "#b89a72", "m": "grain"},
+    {"s": "cyl", "p": [5, -0.2, 9], "d": [5, 0.4, 5], "axis": "y", "c": "#3a2a1f"},
+    {"s": "box", "p": [-2.5, -2, 20.85], "d": [11, 19, 1.5], "r": [0, -35, 0], "c": "#8c6a48", "m": "grain"},
+    {"s": "box", "p": [6.5, -2, 20.85], "d": [11, 19, 1.5], "r": [0, 35, 0], "c": "#8c6a48", "m": "grain"}]},
+  {"title": "Shoe Rack", "kind": "build", "pitch": "Two slatted shelves for four pairs", "minutes": 80, "level": "medium", "uses": ["board-a", "board-b", "board-c"], "needs": ["saw", "drill", "screw"],
+   "look": [
+    {"s": "box", "p": [0, 0, 0], "d": [2, 18, 36], "c": "#a88a62"},
+    {"s": "box", "p": [2, 0, 6], "d": [56, 18, 2], "c": "#b89a72", "m": "grain"},
+    {"s": "box", "p": [2, 0, 26], "d": [56, 18, 2], "c": "#b89a72", "m": "grain"},
+    {"s": "box", "p": [6, 5, 28], "d": [24, 9, 7], "c": "#33415c"},
+    {"s": "box", "p": [32, 5, 8], "d": [24, 9, 7], "c": "#8a3b2a"},
+    {"s": "box", "p": [58, 0, 0], "d": [2, 18, 36], "c": "#a88a62"}]}
+ ],
+ "groceries": [
+  {"title": "Bean and Corn Chili", "kind": "recipe", "pitch": "Quick pantry chili under melted pepper jack", "minutes": 35, "level": "easy", "serves": 4, "uses": ["chili-beans", "broth", "tomatoes", "corn", "pepperjack"], "needs": ["pot", "knife", "board", "spoon"],
+   "look": [
+    {"s": "cone", "p": [0, 0, 0], "d": [18, 18, 8], "t": 1.6, "c": "#e8e2d4", "open": true, "f": "#9c3b22", "m": "dots"},
+    {"s": "box", "p": [7, 6, 7.4], "d": [1.4, 1.4, 1.2], "c": "#f2dca0"},
+    {"s": "box", "p": [10, 9, 7.4], "d": [1.4, 1.4, 1.2], "c": "#f2dca0"}]},
+  {"title": "Tomato Corn Soup", "kind": "recipe", "pitch": "Light brothy soup of tomatoes, corn and beans", "minutes": 25, "level": "easy", "serves": 4, "uses": ["broth", "tomatoes", "corn", "chili-beans"], "needs": ["pot", "ladle"],
+   "look": [
+    {"s": "cone", "p": [0, 0, 0], "d": [17, 17, 7], "t": 1.5, "c": "#2f5d8a", "open": true, "f": "#c75b2f", "m": "dots"},
+    {"s": "cyl", "p": [20, 4, 0], "d": [10, 10, 1.2], "c": "#e8e2d4"},
+    {"s": "box", "p": [21, 6, 1.2], "d": [8, 6, 2], "c": "#d9a35a", "m": "grain"}]},
+  {"title": "Cheesy Bean Skillet", "kind": "recipe", "pitch": "Beans and corn baked under bubbling cheese", "minutes": 30, "level": "easy", "serves": 3, "uses": ["chili-beans", "corn", "tomatoes", "pepperjack"], "needs": ["pan", "knife", "board"],
+   "look": [
+    {"s": "cyl", "p": [0, 0, 0], "d": [26, 26, 5], "c": "#2b2b30", "open": true, "f": "#e6b84a", "m": "dots"},
+    {"s": "box", "p": [26, 11, 3], "d": [16, 3, 2], "c": "#2b2b30"}]},
+  {"title": "Corn and Cheese Quesadilla Filling", "kind": "recipe", "pitch": "Spiced corn and cheese, ready to fold", "minutes": 15, "level": "easy", "serves": 2, "uses": ["corn", "pepperjack", "tomatoes"], "needs": ["pan", "knife"],
+   "look": [
+    {"s": "cyl", "p": [0, 0, 0], "d": [24, 24, 1], "c": "#e8e2d4"},
+    {"s": "cone", "p": [4, 4, 1], "d": [16, 16, 1.6], "t": 0.9, "c": "#e7c98a", "m": "dots"}]}
+ ],
+ "yarn": [
+  {"title": "Two-Tone Trivet", "kind": "craft", "pitch": "Round single-crochet pot mat in two colours", "minutes": 90, "level": "easy", "uses": ["green-yarn", "blue-yarn", "hook", "scissors"], "needs": ["needle"],
+   "look": [
+    {"s": "cyl", "p": [0, 0, 0], "d": [20, 20, 1.2], "c": "#4f8a4b", "m": "rings"},
+    {"s": "cyl", "p": [4, 4, 1.2], "d": [12, 12, 0.3], "c": "#3f6fa8", "m": "rings"}]},
+  {"title": "Striped Cowl", "kind": "craft", "pitch": "Short chunky strip seamed into a loop", "minutes": 180, "level": "medium", "uses": ["green-yarn", "blue-yarn", "hook"], "needs": ["needle", "scissors"],
+   "look": [
+    {"s": "cyl", "p": [0, 0, 0], "d": [26, 26, 18], "c": "#4f8a4b", "open": true, "m": "stripes"}]},
+  {"title": "Ball Cushion", "kind": "craft", "pitch": "Small stuffed amigurumi ball", "minutes": 150, "level": "medium", "uses": ["green-yarn", "blue-yarn", "hook"], "needs": ["needle"],
+   "look": [
+    {"s": "ball", "p": [0, 0, 0], "d": [24, 24, 22], "c": "#3f6fa8", "m": "stripes"}]},
+  {"title": "Granny Square Coasters", "kind": "craft", "pitch": "Four chunky square coasters", "minutes": 120, "level": "easy", "uses": ["green-yarn", "blue-yarn", "hook"], "needs": ["needle"],
+   "look": [
+    {"s": "box", "p": [0, 0, 0], "d": [11, 11, 0.8], "c": "#4f8a4b", "m": "rings"},
+    {"s": "box", "p": [12, 0, 0], "d": [11, 11, 0.8], "c": "#3f6fa8", "m": "rings"},
+    {"s": "box", "p": [0, 12, 0], "d": [11, 11, 0.8], "c": "#3f6fa8", "m": "rings"},
+    {"s": "box", "p": [12, 12, 0], "d": [11, 11, 0.8], "c": "#4f8a4b", "m": "rings"}]}
+ ],
+ "lego-pile": [
+  {"title": "Park Bench", "kind": "build", "pitch": "Two-leg bench with a long brown seat", "minutes": 3, "level": "easy", "uses": ["brick-dark-red", "brick-green", "plate-brown"], "needs": [],
+   "look": [
+    {"s": "brick", "p": [0, 0, 0], "d": [2, 2, 3], "c": "#8a1f1f"},
+    {"s": "brick", "p": [4.8, 0, 0], "d": [2, 2, 3], "c": "#3f8a3a"},
+    {"s": "brick", "p": [0, 0, 0.96], "d": [8, 2, 1], "c": "#7a4a2a"}]},
+  {"title": "Low Table", "kind": "build", "pitch": "Small table on four brick legs", "minutes": 3, "level": "easy", "uses": ["brick-dark-red", "brick-green", "brick-red", "brick-orange", "plate-brown"], "needs": [],
+   "look": [
+    {"s": "brick", "p": [0, 0, 0], "d": [2, 2, 3], "c": "#8a1f1f"},
+    {"s": "brick", "p": [4.8, 0, 0], "d": [2, 2, 3], "c": "#3f8a3a"},
+    {"s": "brick", "p": [0, 0, 0.96], "d": [8, 2, 1], "c": "#7a4a2a"},
+    {"s": "brick", "p": [1.6, 0, 1.28], "d": [2, 2, 3], "c": "#d94a2a"},
+    {"s": "brick", "p": [3.2, 0, 1.28], "d": [2, 2, 3], "c": "#f08a24"}]},
+  {"title": "Footbridge", "kind": "build", "pitch": "Plank bridge between two brick piers", "minutes": 4, "level": "easy", "uses": ["brick-dark-red", "brick-green", "brick-red", "brick-orange", "plate-brown"], "needs": [],
+   "look": [
+    {"s": "brick", "p": [0, 0, 0], "d": [2, 2, 3], "c": "#8a1f1f"},
+    {"s": "brick", "p": [0, 0, 0.96], "d": [2, 2, 3], "c": "#d94a2a"},
+    {"s": "brick", "p": [4.8, 0, 0], "d": [2, 2, 3], "c": "#3f8a3a"},
+    {"s": "brick", "p": [4.8, 0, 0.96], "d": [2, 2, 3], "c": "#f08a24"},
+    {"s": "brick", "p": [0, 0, 1.92], "d": [8, 2, 1], "c": "#7a4a2a"}]}
+ ]
+}

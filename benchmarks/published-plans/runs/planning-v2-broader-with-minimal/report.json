@@ -1,0 +1,4333 @@
+{
+  "mode": "live-planner",
+  "created": "2026-10-31T20:37:19.713Z",
+  "cases": [
+    {
+      "id": "wood8",
+      "title": "Wood build",
+      "diagnostic": false,
+      "qualification": {
+        "machine": "pass",
+        "eligibleForPilot": true,
+        "taskReview": "pending",
+        "reason": "Saved witness passes current machine gates; human task review remains pending."
+      },
+      "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+      "inventory": [
+        {
+          "k": "board-a",
+          "n": "wide weathered pine board",
+          "cm": 120,
+          "w": 20,
+          "thick": 2
+        },
+        {
+          "k": "board-b",
+          "n": "weathered pine board",
+          "cm": 120,
+          "w": 18,
+          "thick": 2
+        },
+        {
+          "k": "board-c",
+          "n": "narrow weathered pine board",
+          "cm": 120,
+          "w": 15,
+          "thick": 2
+        }
+      ],
+      "expectations": [
+        "Does this fulfill the request?",
+        "Are materials grounded and quantities sufficient?",
+        "Are steps complete and captions faithful?",
+        "Does the final result follow from shown operations?"
+      ]
+    },
+    {
+      "id": "lego-pile",
+      "title": "LEGO build",
+      "diagnostic": false,
+      "qualification": {
+        "machine": "pass",
+        "eligibleForPilot": true,
+        "taskReview": "pending",
+        "reason": "Saved witness passes current machine gates; human task review remains pending."
+      },
+      "request": "Make a useful connected LEGO build with the photographed bricks and plate, without inventing pieces.",
+      "inventory": [
+        {
+          "k": "brick-dark-red",
+          "n": "dark red 2×2 brick",
+          "cm": 1.6
+        },
+        {
+          "k": "brick-green",
+          "n": "green 2×2 brick",
+          "cm": 1.6
+        },
+        {
+          "k": "brick-red",
+          "n": "red 2×2 brick",
+          "cm": 1.6
+        },
+        {
+          "k": "brick-orange",
+          "n": "orange 2×2 brick",
+          "cm": 1.6
+        },
+        {
+          "k": "plate-brown",
+          "n": "brown 2×8 plate",
+          "cm": 6.4
+        }
+      ],
+      "expectations": [
+        "Does this fulfill the request?",
+        "Are materials grounded and quantities sufficient?",
+        "Are steps complete and captions faithful?",
+        "Does the final result follow from shown operations?"
+      ]
+    },
+    {
+      "id": "yarn",
+      "title": "Yarn",
+      "diagnostic": false,
+      "qualification": {
+        "machine": "pass",
+        "eligibleForPilot": true,
+        "taskReview": "pending",
+        "reason": "Saved witness passes current machine gates; human task review remains pending."
+      },
+      "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+      "inventory": [
+        {
+          "k": "green-yarn",
+          "n": "green chunky wool yarn",
+          "cm": 20
+        },
+        {
+          "k": "blue-yarn",
+          "n": "blue chunky wool yarn",
+          "cm": 20
+        },
+        {
+          "k": "hook",
+          "n": "15 mm wooden crochet hook",
+          "cm": 20
+        },
+        {
+          "k": "scissors",
+          "n": "black scissors",
+          "cm": 18
+        }
+      ],
+      "expectations": [
+        "Does this fulfill the request?",
+        "Are materials grounded and quantities sufficient?",
+        "Are steps complete and captions faithful?",
+        "Does the final result follow from shown operations?"
+      ]
+    },
+    {
+      "id": "scissors",
+      "title": "Scissors",
+      "diagnostic": true,
+      "qualification": {
+        "machine": "unqualified",
+        "eligibleForPilot": false,
+        "taskReview": "pending",
+        "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+      },
+      "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+      "inventory": [
+        {
+          "k": "scissors",
+          "n": "blue-handled scissors",
+          "cm": 20
+        }
+      ],
+      "expectations": [
+        "Does the proposed project have all essential materials?",
+        "Are additional supplies explicitly declared rather than invented as photographed objects?",
+        "Are the steps complete and consistent with the planned actions?",
+        "Does the stated result follow from the available materials and steps?"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "scheduled": 6,
+      "completed": 6,
+      "strictPasses": 0,
+      "strictFailures": 1,
+      "pending": 5,
+      "strictPassAt1": null,
+      "strictWilson95": null,
+      "machinePassAt1": 0.8333333333333334,
+      "rawFirstResponsePasses": 3,
+      "selectedMachinePasses": 5,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 10.915448602000005,
+      "knownCost": 0.6650175999999999,
+      "unknownCosts": 0,
+      "requestCount": 6,
+      "costPerStrictPass": null,
+      "silentBadPlans": 1,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 1,
+          "strictPasses": 0
+        },
+        {
+          "caseId": "lego-pile",
+          "completed": 2,
+          "machinePasses": 2,
+          "strictPasses": 0
+        },
+        {
+          "caseId": "yarn",
+          "completed": 2,
+          "machinePasses": 2,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "scheduled": 6,
+      "completed": 6,
+      "strictPasses": 0,
+      "strictFailures": 3,
+      "pending": 3,
+      "strictPassAt1": null,
+      "strictWilson95": null,
+      "machinePassAt1": 0.5,
+      "rawFirstResponsePasses": 2,
+      "selectedMachinePasses": 3,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 21.8370667975,
+      "knownCost": 0.6063808,
+      "unknownCosts": 0,
+      "requestCount": 6,
+      "costPerStrictPass": null,
+      "silentBadPlans": 0,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 0,
+          "strictPasses": 0
+        },
+        {
+          "caseId": "lego-pile",
+          "completed": 2,
+          "machinePasses": 1,
+          "strictPasses": 0
+        },
+        {
+          "caseId": "yarn",
+          "completed": 2,
+          "machinePasses": 2,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "scheduled": 6,
+      "completed": 6,
+      "strictPasses": 0,
+      "strictFailures": 4,
+      "pending": 2,
+      "strictPassAt1": null,
+      "strictWilson95": null,
+      "machinePassAt1": 0.3333333333333333,
+      "rawFirstResponsePasses": 2,
+      "selectedMachinePasses": 2,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 27.977426031500002,
+      "knownCost": 0.8298896,
+      "unknownCosts": 0,
+      "requestCount": 6,
+      "costPerStrictPass": null,
+      "silentBadPlans": 0,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 0,
+          "strictPasses": 0
+        },
+        {
+          "caseId": "lego-pile",
+          "completed": 2,
+          "machinePasses": 2,
+          "strictPasses": 0
+        },
+        {
+          "caseId": "yarn",
+          "completed": 2,
+          "machinePasses": 0,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "scheduled": 6,
+      "completed": 6,
+      "strictPasses": 0,
+      "strictFailures": 3,
+      "pending": 3,
+      "strictPassAt1": null,
+      "strictWilson95": null,
+      "machinePassAt1": 0.5,
+      "rawFirstResponsePasses": 2,
+      "selectedMachinePasses": 3,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 15.077693413,
+      "knownCost": 0.1842233,
+      "unknownCosts": 0,
+      "requestCount": 6,
+      "costPerStrictPass": null,
+      "silentBadPlans": 0,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 0,
+          "strictPasses": 0
+        },
+        {
+          "caseId": "lego-pile",
+          "completed": 2,
+          "machinePasses": 2,
+          "strictPasses": 0
+        },
+        {
+          "caseId": "yarn",
+          "completed": 2,
+          "machinePasses": 1,
+          "strictPasses": 0
+        }
+      ]
+    },
+    {
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "scheduled": 6,
+      "completed": 6,
+      "strictPasses": 0,
+      "strictFailures": 4,
+      "pending": 2,
+      "strictPassAt1": null,
+      "strictWilson95": null,
+      "machinePassAt1": 0.3333333333333333,
+      "rawFirstResponsePasses": 2,
+      "selectedMachinePasses": 2,
+      "selectedStrictPasses": 0,
+      "medianInitialSeconds": 29.3434472355,
+      "knownCost": 0.23419494999999999,
+      "unknownCosts": 0,
+      "requestCount": 6,
+      "costPerStrictPass": null,
+      "silentBadPlans": 1,
+      "perCase": [
+        {
+          "caseId": "wood8",
+          "completed": 2,
+          "machinePasses": 0,
+          "strictPasses": 0
+        },
+        {
+          "caseId": "lego-pile",
+          "completed": 2,
+          "machinePasses": 2,
+          "strictPasses": 0
+        },
+        {
+          "caseId": "yarn",
+          "completed": 2,
+          "machinePasses": 0,
+          "strictPasses": 0
+        }
+      ]
+    }
+  ],
+  "failureCounts": {
+    "semantics/semantics-failure": 8,
+    "semantics/joint-geometry": 8,
+    "rawSchema/rawSchema-failure": 5,
+    "structure/structure-failure": 1,
+    "semantics/state-contract": 1,
+    "semantics/unknown-reference": 2,
+    "geometry/geometry-failure": 2,
+    "response/invalid-json": 1,
+    "structure/invalid-json": 1
+  },
+  "models": [
+    "muse-wonder-1.0",
+    "muse-spark-1.3"
+  ],
+  "efforts": [
+    "minimal",
+    "low",
+    "medium"
+  ],
+  "trials": [
+    {
+      "id": "93e9be7912e07c2d3651",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "d7417ed441911149e446",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "e509e5460a4acb0ecc64",
+      "caseId": "lego-pile",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "09bcff3f3b30c25bb529",
+      "caseId": "lego-pile",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "7b2219d903a8414a9ec5",
+      "caseId": "yarn",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "4eb8e4a721a5159e0680",
+      "caseId": "yarn",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "7626d9fd4df3cd6e19e9",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "681208641ad487a67d52",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-22082af47d0c8940896b",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-50c8520f8b00cd811632",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-6c694e9e49d81442173b",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-afbc59c5b0b1f048d5c2",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-7422bb05074284c0b7eb",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-81517d41ac19e2f8e64f",
+      "caseId": "wood8",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-7ea3ae956f7b2e977187",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-fb6dd5830c64021dc3a4",
+      "caseId": "wood8",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-f9c06bdd5ca7203321d1",
+      "caseId": "lego-pile",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-552882d317d9c852df98",
+      "caseId": "lego-pile",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-a81341e5fca1f39cdbd4",
+      "caseId": "lego-pile",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-d95370e9fab031291b57",
+      "caseId": "lego-pile",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-cfa5e5b5aff28627e2d2",
+      "caseId": "lego-pile",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-3de3de7e42016ac0fc38",
+      "caseId": "lego-pile",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-6f075cf280d773afef8b",
+      "caseId": "lego-pile",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-64699641c5dfe7cf51e4",
+      "caseId": "lego-pile",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-ca9d0d9a3ef323665f77",
+      "caseId": "yarn",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-26fe8ea560f7df4331f3",
+      "caseId": "yarn",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-87a2689112ea4e70699d",
+      "caseId": "yarn",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-76780d1d6337ac4f800c",
+      "caseId": "yarn",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-a31e7bf9047685966740",
+      "caseId": "yarn",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-2f4ad1112662f967da4c",
+      "caseId": "yarn",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-532fae7259fcc87944ee",
+      "caseId": "yarn",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-57118dec918015ac0912",
+      "caseId": "yarn",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-9ea4d1a1a723c45ccea2",
+      "caseId": "scissors",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-ce2381e58a97282abbc0",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-1568344ec6ff3f41a127",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-8ab516412084536c9447",
+      "caseId": "scissors",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 1,
+      "status": "complete"
+    },
+    {
+      "id": "historical-61e743c09863f0df927b",
+      "caseId": "scissors",
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-be4585f8225aa1e02073",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-76a7e4ad03b68332f096",
+      "caseId": "scissors",
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    },
+    {
+      "id": "historical-76c1c43317041be686b4",
+      "caseId": "scissors",
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "round": 2,
+      "status": "complete"
+    }
+  ],
+  "machinePasses": 21,
+  "strictPasses": 0,
+  "pendingHuman": 40,
+  "rows": [
+    {
+      "id": "93e9be7912e07c2d3651-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "93e9be7912e07c2d3651",
+      "sample": 1,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 118,
+            "duration": 87.7,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "board-a.cm: unconfirmed measurement",
+          "board-a.w: unconfirmed measurement",
+          "board-a.thick: unconfirmed measurement",
+          "board-b.cm: unconfirmed measurement",
+          "board-b.w: unconfirmed measurement",
+          "board-b.thick: unconfirmed measurement",
+          "board-c.cm: unconfirmed measurement",
+          "board-c.w: unconfirmed measurement",
+          "board-c.thick: unconfirmed measurement",
+          "step 1: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "step 10: caption made a count of its screws",
+          "step 11: caption made a count of its screws",
+          "step 12: caption made a count of its screws",
+          "step 13: caption made a count of its screws",
+          "screws: 3.5 cm → 7 cm, the length every joint they make needs"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a12: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a13: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a14: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a15: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a16: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a17: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a18: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a19: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.203768,
+      "responseSeconds": 53.359642167,
+      "repairDecision": null
+    },
+    {
+      "id": "d7417ed441911149e446-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "d7417ed441911149e446",
+      "sample": 2,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: m1: intent mark needs a faithful demonstration, not measure; m2: intent mark needs a faithful demonstration, not measure; m3: intent mark needs a faithful demonstration, not measure; m4: intent mark needs a faithful demonstration, not measure; m5: intent mark needs a faithful demonstration, not measure; m6: intent mark needs a faithful demonstration, not measure; m7: intent mark needs a faithful demonstration, not measure"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "Invalid operation contract: m1: intent mark needs a faithful demonstration, not measure; m2: intent mark needs a faithful demonstration, not measure; m3: intent mark needs a faithful demonstration, not measure; m4: intent mark needs a faithful demonstration, not measure; m5: intent mark needs a faithful demonstration, not measure; m6: intent mark needs a faithful demonstration, not measure; m7: intent mark needs a faithful demonstration, not measure"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "step 49: claims s2, s3, s4",
+          "step 50: claims s6"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "m1: intent mark needs a faithful demonstration, not measure",
+          "m2: intent mark needs a faithful demonstration, not measure",
+          "m3: intent mark needs a faithful demonstration, not measure",
+          "m4: intent mark needs a faithful demonstration, not measure",
+          "m5: intent mark needs a faithful demonstration, not measure",
+          "m6: intent mark needs a faithful demonstration, not measure",
+          "m7: intent mark needs a faithful demonstration, not measure",
+          "s2: operation is missing from the caption claims",
+          "s3: operation is missing from the caption claims",
+          "s4: operation is missing from the caption claims",
+          "s6: operation is missing from the caption claims",
+          "design: the steps cut rem-b1 (79.7 cm from board-b), which is not among the design's parts",
+          "design: back comes from board-b in the design but is cut from rem-b1",
+          "design: the steps cut rem-b2 (39.4 cm from rem-b1), which is not among the design's parts",
+          "design: left-end comes from board-b in the design but is cut from rem-b2",
+          "design: the steps cut rem-b3 (23.1 cm from rem-b2), which is not among the design's parts",
+          "design: right-end is 23.1 cm in the design but cut 16 cm",
+          "design: right-end comes from board-b in the design but is cut from rem-b3",
+          "design: the steps cut rem-c1 (83.7 cm from board-c), which is not among the design's parts",
+          "design: foot-b comes from board-c in the design but is cut from rem-c1",
+          "design: offcut-c comes from board-c in the design but is cut from rem-c1"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.219944,
+      "responseSeconds": 54.02189891199999,
+      "repairDecision": null
+    },
+    {
+      "id": "e509e5460a4acb0ecc64-0",
+      "caseId": "lego-pile",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "e509e5460a4acb0ecc64",
+      "sample": 1,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 38,
+            "duration": 25.700000000000003,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "brick-dark-red.cm: unconfirmed measurement",
+          "brick-green.cm: unconfirmed measurement",
+          "brick-red.cm: unconfirmed measurement",
+          "brick-orange.cm: unconfirmed measurement",
+          "plate-brown.cm: unconfirmed measurement",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "goal plate-brown:assembled dropped: no step reaches it"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "unreached goal plate-brown:assembled"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.077096,
+      "responseSeconds": 8.213025699999983,
+      "repairDecision": null
+    },
+    {
+      "id": "09bcff3f3b30c25bb529-0",
+      "caseId": "lego-pile",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "09bcff3f3b30c25bb529",
+      "sample": 2,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 36,
+            "duration": 25.700000000000003,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "brick-dark-red.cm: unconfirmed measurement",
+          "brick-green.cm: unconfirmed measurement",
+          "brick-red.cm: unconfirmed measurement",
+          "brick-orange.cm: unconfirmed measurement",
+          "plate-brown.cm: unconfirmed measurement",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.083336,
+      "responseSeconds": 9.164561572000006,
+      "repairDecision": null
+    },
+    {
+      "id": "7b2219d903a8414a9ec5-0",
+      "caseId": "yarn",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "7b2219d903a8414a9ec5",
+      "sample": 1,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 64,
+            "duration": 49.49999999999999,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "green-yarn.cm: unconfirmed measurement",
+          "blue-yarn.cm: unconfirmed measurement",
+          "hook.cm: unconfirmed measurement",
+          "scissors.cm: unconfirmed measurement",
+          "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+          "step 9: the caption names needle, but no action uses it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.038836800000000005,
+      "responseSeconds": 11.014012335000007,
+      "repairDecision": null
+    },
+    {
+      "id": "4eb8e4a721a5159e0680-0",
+      "caseId": "yarn",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "4eb8e4a721a5159e0680",
+      "sample": 2,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 80,
+            "duration": 59.79999999999999,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "green-yarn.cm: unconfirmed measurement",
+          "blue-yarn.cm: unconfirmed measurement",
+          "hook.cm: unconfirmed measurement",
+          "scissors.cm: unconfirmed measurement",
+          "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+          "step 3: the caption gives 15 mm, but no action carries it",
+          "step 12: the caption names yarn-needle, but no action uses it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.042036800000000006,
+      "responseSeconds": 10.816884869,
+      "repairDecision": null
+    },
+    {
+      "id": "7626d9fd4df3cd6e19e9-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "7626d9fd4df3cd6e19e9",
+      "sample": 1,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 67,
+            "duration": 46.89999999999999,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper-1.cm: unconfirmed measurement",
+          "paper-1.w: unconfirmed measurement",
+          "paper-1.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "step 1: the caption gives 24 cm, but no action carries it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet",
+          "a8: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0275344,
+      "responseSeconds": 7.850511635999981,
+      "repairDecision": null
+    },
+    {
+      "id": "681208641ad487a67d52-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "minimal",
+      "trialId": "681208641ad487a67d52",
+      "sample": 2,
+      "planningEffort": "minimal",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 67,
+            "duration": 46.89999999999999,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper-sheet.cm: unconfirmed measurement",
+          "paper-sheet.w: unconfirmed measurement",
+          "paper-sheet.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "step 1: the caption gives 20 cm, but no action carries it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet",
+          "a8: a cut through the folded sheet",
+          "paper is paper-sheet, used whole"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "step 1: k refers to unknown object paper",
+          "step 2: k refers to unknown object paper",
+          "step 3: k refers to unknown object paper",
+          "step 4: k refers to unknown object paper",
+          "step 5: k refers to unknown object paper",
+          "step 6: k refers to unknown object paper",
+          "step 7: k refers to unknown object paper",
+          "step 8: k refers to unknown object paper",
+          "step 9: k refers to unknown object paper",
+          "step 2 (a2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 3 (a3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 4 (a4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 5 (a5): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 6 (a6): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 7 (a7): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 8 (a8): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 9 (a9): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0263144,
+      "responseSeconds": 5.877584432999982,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-22082af47d0c8940896b-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-22082af47d0c8940896b",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: joint j-front-left: needs two distinct known parts; joint j-front-right: needs two distinct known parts; joint j-back-left: needs two distinct known parts; joint j-back-right: needs two distinct known parts; joint j-base-front: needs two distinct known parts; joint j-base-back: needs two distinct known parts; joint j-base-left: needs two distinct known parts; joint j-base-right: needs two distinct known parts; a4: intent cut needs a faithful demonstration, not use; a6: intent cut needs a faithful demonstration, not use"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: joint j-front-left: needs two distinct known parts; joint j-front-right: needs two distinct known parts; joint j-back-left: needs two distinct known parts; joint j-back-right: needs two distinct known parts; joint j-base-front: needs two distinct known parts; joint j-base-back: needs two distinct known parts; joint j-base-left: needs two distinct known parts; joint j-base-right: needs two distinct known parts; a4: intent cut needs a faithful demonstration, not use; a6: intent cut needs a faithful demonstration, not use"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "a3: intent work is a use of saw",
+          "screw-side: 3.5 cm, the depth its joints drive it",
+          "screw-base: 4 cm, the depth its joints drive it",
+          "goal base:planted dropped: no step reaches it",
+          "step 13: caption made a count of its screws",
+          "step 14: caption made a count of its screws",
+          "step 15: caption made a count of its screws",
+          "step 16: caption made a count of its screws",
+          "step 17: caption made a count of its screws",
+          "step 18: caption made a count of its screws",
+          "step 19: caption made a count of its screws",
+          "step 20: caption made a count of its screws"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "joint j-front-left: needs two distinct known parts",
+          "joint j-front-right: needs two distinct known parts",
+          "joint j-back-left: needs two distinct known parts",
+          "joint j-back-right: needs two distinct known parts",
+          "joint j-base-front: needs two distinct known parts",
+          "joint j-base-back: needs two distinct known parts",
+          "joint j-base-left: needs two distinct known parts",
+          "joint j-base-right: needs two distinct known parts",
+          "a3: intent work needs a faithful demonstration, not use",
+          "a4: intent cut needs a faithful demonstration, not use",
+          "a6: intent cut needs a faithful demonstration, not use",
+          "a13: puts in screw-side, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a13: declared fastener length must equal the planned driven depth",
+          "a14: puts in screw-side, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a14: declared fastener length must equal the planned driven depth",
+          "a15: puts in screw-side, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a15: declared fastener length must equal the planned driven depth",
+          "a16: puts in screw-side, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a16: declared fastener length must equal the planned driven depth",
+          "a17: puts in screw-base, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a17: declared fastener length must equal the planned driven depth",
+          "a18: puts in screw-base, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a18: declared fastener length must equal the planned driven depth",
+          "a19: puts in screw-base, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a19: declared fastener length must equal the planned driven depth",
+          "a20: puts in screw-base, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a20: declared fastener length must equal the planned driven depth",
+          "unreached goal base:planted",
+          "step 7: k refers to unknown object base",
+          "step 8: k refers to unknown object front",
+          "step 8: to refers to unknown object base",
+          "step 9: k refers to unknown object back",
+          "step 9: to refers to unknown object base",
+          "step 10: k refers to unknown object left",
+          "step 10: to refers to unknown object front",
+          "step 11: k refers to unknown object right",
+          "step 11: to refers to unknown object front",
+          "step 12: k refers to unknown object base",
+          "step 13: k refers to unknown object front",
+          "step 13: to refers to unknown object left",
+          "step 14: k refers to unknown object front",
+          "step 14: to refers to unknown object right",
+          "step 15: k refers to unknown object back",
+          "step 15: to refers to unknown object left",
+          "step 16: k refers to unknown object back",
+          "step 16: to refers to unknown object right",
+          "step 17: k refers to unknown object base",
+          "step 17: to refers to unknown object front",
+          "step 18: k refers to unknown object base",
+          "step 18: to refers to unknown object back",
+          "step 19: k refers to unknown object base",
+          "step 19: to refers to unknown object left",
+          "step 20: k refers to unknown object base",
+          "step 20: to refers to unknown object right"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.05495025,
+      "responseSeconds": 30.032604146,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-50c8520f8b00cd811632-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-50c8520f8b00cd811632",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a11: fastening uses joint sites, not flat-sheet path or otherPath; a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a13: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a14: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a15: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a16: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a11: fastening uses joint sites, not flat-sheet path or otherPath; a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a13: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a14: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a15: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a16: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt"
+          }
+        ],
+        "warnings": [],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a11: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a13: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a14: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a15: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a16: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a11: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.184888,
+      "responseSeconds": 44.248723028,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-6c694e9e49d81442173b-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-6c694e9e49d81442173b",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "fail",
+            "errors": [
+              "$.steps[5].do[0]: does not match any allowed schema branch",
+              "$.steps[5].do[1]: does not match any allowed schema branch"
+            ]
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: joint joint-front-left: needs two distinct known parts; joint joint-front-right: needs two distinct known parts; joint joint-back-left: needs two distinct known parts; joint joint-back-right: needs two distinct known parts; joint joint-base-front: needs two distinct known parts; joint joint-base-back: needs two distinct known parts; a10: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; joint joint-front-right: no attachment operation; joint joint-back-right: no attachment operation; joint joint-base-back: no attachment operation"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[5].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[5].do[1]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: joint joint-front-left: needs two distinct known parts; joint joint-front-right: needs two distinct known parts; joint joint-back-left: needs two distinct known parts; joint joint-back-right: needs two distinct known parts; joint joint-base-front: needs two distinct known parts; joint joint-base-back: needs two distinct known parts; a10: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; joint joint-front-right: no attachment operation; joint joint-back-right: no attachment operation; joint joint-base-back: no attachment operation"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "a2: intent work is a use of saw",
+          "a3: intent work is a use of saw",
+          "goal base:assembled dropped: no step reaches it",
+          "goal front:assembled dropped: no step reaches it"
+        ],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [
+          "joint joint-front-left: needs two distinct known parts",
+          "joint joint-front-right: needs two distinct known parts",
+          "joint joint-back-left: needs two distinct known parts",
+          "joint joint-back-right: needs two distinct known parts",
+          "joint joint-base-front: needs two distinct known parts",
+          "joint joint-base-back: needs two distinct known parts",
+          "a2: intent work needs a faithful demonstration, not use",
+          "a3: intent work needs a faithful demonstration, not use",
+          "a10: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a11: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a12: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "unreached goal base:assembled",
+          "unreached goal front:assembled",
+          "joint joint-front-right: no attachment operation",
+          "joint joint-back-right: no attachment operation",
+          "joint joint-base-back: no attachment operation",
+          "step 3: k refers to unknown object base",
+          "step 4: k refers to unknown object base",
+          "step 5: k refers to unknown object front",
+          "step 5: to refers to unknown object base",
+          "step 5: k refers to unknown object back",
+          "step 6: k refers to unknown object left",
+          "step 6: to refers to unknown object base",
+          "step 6: k refers to unknown object right",
+          "step 7: k refers to unknown object front",
+          "step 7: to refers to unknown object left",
+          "step 8: k refers to unknown object back",
+          "step 8: to refers to unknown object left",
+          "step 8: k refers to unknown object base",
+          "step 8: to refers to unknown object front",
+          "design: offcut-a is never made or used by the steps",
+          "design: offcut-c is never made or used by the steps"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.036807,
+      "responseSeconds": 14.297272886999998,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-afbc59c5b0b1f048d5c2-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-afbc59c5b0b1f048d5c2",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a17: fastening uses joint sites, not flat-sheet path or otherPath; a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a18: fastening uses joint sites, not flat-sheet path or otherPath; a19: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a19: fastening uses joint sites, not flat-sheet path or otherPath; a20: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a20: fastening uses joint sites, not flat-sheet path or otherPath; a21: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a21: fastening uses joint sites, not flat-sheet path or otherPath; a22: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a22: fastening uses joint sites, not flat-sheet path or otherPath; a23: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a23: fastening uses joint sites, not flat-sheet path or otherPath; a24: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a24: fastening uses joint sites, not flat-sheet path or otherPath"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a17: fastening uses joint sites, not flat-sheet path or otherPath; a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a18: fastening uses joint sites, not flat-sheet path or otherPath; a19: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a19: fastening uses joint sites, not flat-sheet path or otherPath; a20: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a20: fastening uses joint sites, not flat-sheet path or otherPath; a21: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a21: fastening uses joint sites, not flat-sheet path or otherPath; a22: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a22: fastening uses joint sites, not flat-sheet path or otherPath; a23: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a23: fastening uses joint sites, not flat-sheet path or otherPath; a24: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt; a24: fastening uses joint sites, not flat-sheet path or otherPath"
+          }
+        ],
+        "warnings": [],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a17: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a17: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a18: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a18: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a19: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a19: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a20: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a20: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a21: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a21: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a22: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a22: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a23: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a23: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a24: fastening needs an explicit part reference to a declared screw, nail, dowel or bolt",
+          "a24: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a17: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a18: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a19: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a20: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a21: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a22: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a23: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a24: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.246628,
+      "responseSeconds": 66.24935083,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-7422bb05074284c0b7eb-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-7422bb05074284c0b7eb",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: a11: fastening uses joint sites, not flat-sheet path or otherPath; joint j-front-right: no attachment operation; joint j-back-left: no attachment operation; joint j-back-right: no attachment operation; joint j-base-front: no attachment operation; joint j-base-back: no attachment operation; joint j-base-left: no attachment operation; joint j-base-right: no attachment operation"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: a11: fastening uses joint sites, not flat-sheet path or otherPath; joint j-front-right: no attachment operation; joint j-back-left: no attachment operation; joint j-back-right: no attachment operation; joint j-base-front: no attachment operation; joint j-base-back: no attachment operation; joint j-base-left: no attachment operation; joint j-base-right: no attachment operation"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "step 9: caption made a count of its screws"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a11: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a11: fastening uses joint sites, not flat-sheet path or otherPath",
+          "joint j-front-right: no attachment operation",
+          "joint j-back-left: no attachment operation",
+          "joint j-back-right: no attachment operation",
+          "joint j-base-front: no attachment operation",
+          "joint j-base-back: no attachment operation",
+          "joint j-base-left: no attachment operation",
+          "joint j-base-right: no attachment operation",
+          "a11: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.038787199999999994,
+      "responseSeconds": 32.611851016,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-81517d41ac19e2f8e64f-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-81517d41ac19e2f8e64f",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "fail",
+            "errors": [
+              "$.steps[1].do[1]: does not match any allowed schema branch"
+            ]
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: joint j-front-left: needs two distinct known parts; joint j-front-right: needs two distinct known parts; joint j-back-left: needs two distinct known parts; joint j-back-right: needs two distinct known parts; joint j-base-front: needs two distinct known parts; joint j-base-back: needs two distinct known parts; joint j-base-left: needs two distinct known parts; joint j-base-right: needs two distinct known parts; c1a: intent cut needs a faithful demonstration, not place"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[1].do[1]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: joint j-front-left: needs two distinct known parts; joint j-front-right: needs two distinct known parts; joint j-back-left: needs two distinct known parts; joint j-back-right: needs two distinct known parts; joint j-base-front: needs two distinct known parts; joint j-base-back: needs two distinct known parts; joint j-base-left: needs two distinct known parts; joint j-base-right: needs two distinct known parts; c1a: intent cut needs a faithful demonstration, not place"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "c1: intent work is a use of saw",
+          "c2: intent work is a use of saw",
+          "goal base-1:assembled dropped: no step reaches it",
+          "step 11: caption made a count of its screws",
+          "step 12: caption made a count of its screws",
+          "step 13: caption made a count of its screws",
+          "step 14: caption made a count of its screws",
+          "step 15: caption made a count of its screws",
+          "step 16: caption made a count of its screws",
+          "step 17: caption made a count of its screws"
+        ],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [
+          "joint j-front-left: needs two distinct known parts",
+          "joint j-front-right: needs two distinct known parts",
+          "joint j-back-left: needs two distinct known parts",
+          "joint j-back-right: needs two distinct known parts",
+          "joint j-base-front: needs two distinct known parts",
+          "joint j-base-back: needs two distinct known parts",
+          "joint j-base-left: needs two distinct known parts",
+          "joint j-base-right: needs two distinct known parts",
+          "c1: intent work needs a faithful demonstration, not use",
+          "c1a: intent cut needs a faithful demonstration, not place",
+          "c2: intent work needs a faithful demonstration, not use",
+          "f1: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f2: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f3: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f4: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f5: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f6: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f7: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "f8: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "unreached goal base-1:assembled",
+          "step 5: k refers to unknown object base-1",
+          "step 6: k refers to unknown object base-1",
+          "step 7: k refers to unknown object front-1",
+          "step 7: to refers to unknown object base-1",
+          "step 8: k refers to unknown object back-1",
+          "step 8: to refers to unknown object base-1",
+          "step 9: k refers to unknown object left-1",
+          "step 9: to refers to unknown object front-1",
+          "step 10: k refers to unknown object right-1",
+          "step 10: to refers to unknown object front-1",
+          "step 11: k refers to unknown object front-1",
+          "step 11: to refers to unknown object left-1",
+          "step 12: k refers to unknown object front-1",
+          "step 12: to refers to unknown object right-1",
+          "step 13: k refers to unknown object back-1",
+          "step 13: to refers to unknown object left-1",
+          "step 14: k refers to unknown object back-1",
+          "step 14: to refers to unknown object right-1",
+          "step 15: k refers to unknown object base-1",
+          "step 15: to refers to unknown object front-1",
+          "step 16: k refers to unknown object base-1",
+          "step 16: to refers to unknown object back-1",
+          "step 17: k refers to unknown object base-1",
+          "step 17: to refers to unknown object left-1",
+          "step 17: to refers to unknown object right-1"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.023121700000000002,
+      "responseSeconds": 19.07543781599999,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-7ea3ae956f7b2e977187-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-7ea3ae956f7b2e977187",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: a15: measured work position lies outside the part; a16: fastening uses joint sites, not flat-sheet path or otherPath"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: a15: measured work position lies outside the part; a16: fastening uses joint sites, not flat-sheet path or otherPath"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "step 16: caption made a count of its screws",
+          "step 17: caption made a count of its screws",
+          "step 18: caption made a count of its screws",
+          "step 19: caption made a count of its screws",
+          "step 20: caption made a count of its screws",
+          "step 21: caption made a count of its screws",
+          "step 22: caption made a count of its screws",
+          "step 23: caption made a count of its screws",
+          "step 24: caption made a count of its screws",
+          "step 25: caption made a count of its screws"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a15: measured work position lies outside the part",
+          "a16: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a16: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a17: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a18: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a19: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a20: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a21: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a22: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a23: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a24: puts in screws-30, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a25: puts in screws-30, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.181008,
+      "responseSeconds": 37.577398763000005,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-fb6dd5830c64021dc3a4-0",
+      "caseId": "wood8",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-fb6dd5830c64021dc3a4",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: a16: fastening uses joint sites, not flat-sheet path or otherPath; a17: fastening uses joint sites, not flat-sheet path or otherPath; a18: fastening uses joint sites, not flat-sheet path or otherPath; a19: fastening uses joint sites, not flat-sheet path or otherPath; a20: fastening uses joint sites, not flat-sheet path or otherPath; a21: fastening uses joint sites, not flat-sheet path or otherPath"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "joint-geometry",
+            "message": "Invalid operation contract: a16: fastening uses joint sites, not flat-sheet path or otherPath; a17: fastening uses joint sites, not flat-sheet path or otherPath; a18: fastening uses joint sites, not flat-sheet path or otherPath; a19: fastening uses joint sites, not flat-sheet path or otherPath; a20: fastening uses joint sites, not flat-sheet path or otherPath; a21: fastening uses joint sites, not flat-sheet path or otherPath"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "step 9: caption made a count of its screws",
+          "step 10: caption made a count of its screws",
+          "step 11: caption made a count of its screws",
+          "step 12: caption made a count of its screws",
+          "step 13: caption made a count of its screws",
+          "step 14: caption made a count of its screws"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a16: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a16: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a17: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a17: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a18: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a18: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a19: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a19: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a20: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a20: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a21: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+          "a21: fastening uses joint sites, not flat-sheet path or otherPath",
+          "a16: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a17: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a18: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a19: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a20: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path",
+          "a21: tool path needs 2–48 distinct points in centimetres inside a known sheet; crochet pieces declared in makes are not flat stock. For sewing or folding a shaped or assembled piece, use demonstrate with actors, focus and effects rather than adding a sheet path"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.12441680000000001,
+      "responseSeconds": 34.821722630999986,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-f9c06bdd5ca7203321d1-0",
+      "caseId": "lego-pile",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-f9c06bdd5ca7203321d1",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 36,
+            "duration": 25.700000000000003,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "brick-dark-red.cm: unconfirmed measurement",
+          "brick-green.cm: unconfirmed measurement",
+          "brick-red.cm: unconfirmed measurement",
+          "brick-orange.cm: unconfirmed measurement",
+          "plate-brown.cm: unconfirmed measurement",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.03719175,
+      "responseSeconds": 15.628507927000001,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-552882d317d9c852df98-0",
+      "caseId": "lego-pile",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-552882d317d9c852df98",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 35,
+            "duration": 25.700000000000003,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "brick-dark-red.cm: unconfirmed measurement",
+          "brick-green.cm: unconfirmed measurement",
+          "brick-red.cm: unconfirmed measurement",
+          "brick-orange.cm: unconfirmed measurement",
+          "plate-brown.cm: unconfirmed measurement",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0409275,
+      "responseSeconds": 19.483575527999996,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-a81341e5fca1f39cdbd4-0",
+      "caseId": "lego-pile",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-a81341e5fca1f39cdbd4",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "fail",
+            "errors": [
+              "$.steps[5].do[0]: does not match any allowed schema branch"
+            ]
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: a6: intent fit needs a faithful demonstration, not place"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[5].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "Invalid operation contract: a6: intent fit needs a faithful demonstration, not place"
+          }
+        ],
+        "warnings": [],
+        "corrections": [],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [
+          "a6: intent fit needs a faithful demonstration, not place"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0467648,
+      "responseSeconds": 12.569739241000002,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-d95370e9fab031291b57-0",
+      "caseId": "lego-pile",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-d95370e9fab031291b57",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 35,
+            "duration": 25.700000000000003,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "brick-dark-red.cm: unconfirmed measurement",
+          "brick-green.cm: unconfirmed measurement",
+          "brick-red.cm: unconfirmed measurement",
+          "brick-orange.cm: unconfirmed measurement",
+          "plate-brown.cm: unconfirmed measurement",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.144916,
+      "responseSeconds": 34.173351196,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-cfa5e5b5aff28627e2d2-0",
+      "caseId": "lego-pile",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-cfa5e5b5aff28627e2d2",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 35,
+            "duration": 25.700000000000003,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "brick-dark-red.cm: unconfirmed measurement",
+          "brick-green.cm: unconfirmed measurement",
+          "brick-red.cm: unconfirmed measurement",
+          "brick-orange.cm: unconfirmed measurement",
+          "plate-brown.cm: unconfirmed measurement",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.032946,
+      "responseSeconds": 10.573979980000004,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-3de3de7e42016ac0fc38-0",
+      "caseId": "lego-pile",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-3de3de7e42016ac0fc38",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 35,
+            "duration": 25.700000000000003,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "brick-dark-red.cm: unconfirmed measurement",
+          "brick-green.cm: unconfirmed measurement",
+          "brick-red.cm: unconfirmed measurement",
+          "brick-orange.cm: unconfirmed measurement",
+          "plate-brown.cm: unconfirmed measurement",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.099476,
+      "responseSeconds": 17.141941451000005,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-6f075cf280d773afef8b-0",
+      "caseId": "lego-pile",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-6f075cf280d773afef8b",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 35,
+            "duration": 25.700000000000003,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "brick-dark-red.cm: unconfirmed measurement",
+          "brick-green.cm: unconfirmed measurement",
+          "brick-red.cm: unconfirmed measurement",
+          "brick-orange.cm: unconfirmed measurement",
+          "plate-brown.cm: unconfirmed measurement",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.029695799999999998,
+      "responseSeconds": 26.843084915000013,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-64699641c5dfe7cf51e4-0",
+      "caseId": "lego-pile",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-64699641c5dfe7cf51e4",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 35,
+            "duration": 25.700000000000003,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "brick-dark-red.cm: unconfirmed measurement",
+          "brick-green.cm: unconfirmed measurement",
+          "brick-red.cm: unconfirmed measurement",
+          "brick-orange.cm: unconfirmed measurement",
+          "plate-brown.cm: unconfirmed measurement",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0342384,
+      "responseSeconds": 10.591405903000005,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-ca9d0d9a3ef323665f77-0",
+      "caseId": "yarn",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-ca9d0d9a3ef323665f77",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "fail",
+            "errors": [
+              "$.steps[4].do[0]: does not match any allowed schema branch"
+            ]
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: e2: Weaving ends needs distinct declared piece, yarn and needle actors; e2: weaving ends must target a declared textile piece"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[4].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "Invalid operation contract: e2: Weaving ends needs distinct declared piece, yarn and needle actors; e2: weaving ends must target a declared textile piece"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "mat is green-yarn, used whole",
+          "declared state green-yarn:finished",
+          "declared state green-yarn:as-found",
+          "green-yarn starts as-found"
+        ],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [
+          "e2: state change needs an explicit prior state for mat"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.038488,
+      "responseSeconds": 14.526878899,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-26fe8ea560f7df4331f3-0",
+      "caseId": "yarn",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-26fe8ea560f7df4331f3",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 76,
+            "duration": 55.29999999999999,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "green-yarn.cm: unconfirmed measurement",
+          "blue-yarn.cm: unconfirmed measurement",
+          "hook.cm: unconfirmed measurement",
+          "scissors.cm: unconfirmed measurement",
+          "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0754448,
+      "responseSeconds": 19.007102595999996,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-87a2689112ea4e70699d-0",
+      "caseId": "yarn",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-87a2689112ea4e70699d",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "fail",
+            "errors": [
+              "$.steps[8].do[0]: does not match any allowed schema branch"
+            ]
+          },
+          "structure": {
+            "status": "fail",
+            "errors": [
+              "$.steps[8].do[0]: does not match any allowed schema branch"
+            ]
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "rawSchema",
+            "code": "rawSchema-failure",
+            "message": "$.steps[8].do[0]: does not match any allowed schema branch"
+          },
+          {
+            "stage": "structure",
+            "code": "structure-failure",
+            "message": "$.steps[8].do[0]: does not match any allowed schema branch"
+          }
+        ],
+        "warnings": [
+          "green-yarn.cm: unconfirmed measurement",
+          "blue-yarn.cm: unconfirmed measurement",
+          "hook.cm: unconfirmed measurement",
+          "scissors.cm: unconfirmed measurement",
+          "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [
+          "w6: state change needs an explicit prior state for mat",
+          "d1: state change needs an explicit prior state for mat"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.032762349999999996,
+      "responseSeconds": 28.654290325,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-76780d1d6337ac4f800c-0",
+      "caseId": "yarn",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-76780d1d6337ac4f800c",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "made piece scarf: work progress must increase and finish at 1"
+            ]
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "made piece scarf: work progress must increase and finish at 1"
+          }
+        ],
+        "warnings": [
+          "green-yarn.cm: unconfirmed measurement",
+          "blue-yarn.cm: unconfirmed measurement",
+          "hook.cm: unconfirmed measurement",
+          "scissors.cm: unconfirmed measurement",
+          "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "made piece scarf: work progress must increase and finish at 1"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0699168,
+      "responseSeconds": 16.83406497,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-a31e7bf9047685966740-0",
+      "caseId": "yarn",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-a31e7bf9047685966740",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: a14: weaving path must stay inside the focus region"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "Invalid operation contract: a14: weaving path must stay inside the focus region"
+          }
+        ],
+        "warnings": [],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a14: weaving path must stay inside the focus region"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.144536,
+      "responseSeconds": 21.78150086700001,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-2f4ad1112662f967da4c-0",
+      "caseId": "yarn",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-2f4ad1112662f967da4c",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 88,
+            "duration": 64.29999999999998,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "green-yarn.cm: unconfirmed measurement",
+          "blue-yarn.cm: unconfirmed measurement",
+          "hook.cm: unconfirmed measurement",
+          "scissors.cm: unconfirmed measurement",
+          "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a5: state change needs an explicit prior state for scarf"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.08403680000000001,
+      "responseSeconds": 24.66703099900001,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-532fae7259fcc87944ee-0",
+      "caseId": "yarn",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-532fae7259fcc87944ee",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "skipped",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "Invalid operation contract: mat: duplicate states; a11: Weaving ends needs distinct declared piece, yarn and needle actors; a11: weaving ends must target a declared textile piece; a12: Weaving ends needs distinct declared piece, yarn and needle actors; a12: weaving ends must target a declared textile piece"
+            ]
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "state-contract",
+            "message": "Invalid operation contract: mat: duplicate states; a11: Weaving ends needs distinct declared piece, yarn and needle actors; a11: weaving ends must target a declared textile piece; a12: Weaving ends needs distinct declared piece, yarn and needle actors; a12: weaving ends must target a declared textile piece"
+          }
+        ],
+        "warnings": [],
+        "corrections": [
+          "mat is green-yarn, used whole",
+          "declared state green-yarn:unfinished",
+          "green-yarn starts unfinished",
+          "declared state green-yarn:partial",
+          "declared state green-yarn:finished"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "mat: duplicate states"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.037071849999999996,
+      "responseSeconds": 34.655392721,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-57118dec918015ac0912-0",
+      "caseId": "yarn",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-57118dec918015ac0912",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 60,
+            "duration": 44.649999999999984,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "green-yarn.cm: unconfirmed measurement",
+          "blue-yarn.cm: unconfirmed measurement",
+          "hook.cm: unconfirmed measurement",
+          "scissors.cm: unconfirmed measurement",
+          "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "a10: requires mat:finished, the state it is in, not unfinished"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "a10: unmet state requirement mat:unfinished"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.01566885,
+      "responseSeconds": 15.633125510000012,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-9ea4d1a1a723c45ccea2-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-9ea4d1a1a723c45ccea2",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "step 1: k refers to unknown object paper",
+              "step 2: k refers to unknown object paper",
+              "step 3: k refers to unknown object paper",
+              "step 4: k refers to unknown object paper",
+              "step 5: k refers to unknown object paper",
+              "step 6: k refers to unknown object paper",
+              "step 7: k refers to unknown object paper",
+              "step 8: k refers to unknown object paper",
+              "step 2 (f1): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 3 (f2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 4 (f3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 5 (f4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 6 (c1): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 7 (c2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 7 (c3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 8 (o1): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "design.size is missing: the finished width × depth × height in cm"
+            ]
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 1: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 2: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 3: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 4: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 5: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 6: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 7: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 8: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 2 (f1): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 3 (f2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 4 (f3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 5 (f4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 6 (c1): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 7 (c2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 7 (c3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 8 (o1): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "design.size is missing: the finished width × depth × height in cm"
+          }
+        ],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "c1: a cut through the folded sheet",
+          "c2: a cut through the folded sheet",
+          "c3: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "step 1: k refers to unknown object paper",
+          "step 2: k refers to unknown object paper",
+          "step 3: k refers to unknown object paper",
+          "step 4: k refers to unknown object paper",
+          "step 5: k refers to unknown object paper",
+          "step 6: k refers to unknown object paper",
+          "step 7: k refers to unknown object paper",
+          "step 8: k refers to unknown object paper",
+          "step 2 (f1): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 3 (f2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 4 (f3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 5 (f4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 6 (c1): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 7 (c2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 7 (c3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 8 (o1): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "design.size is missing: the finished width × depth × height in cm"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0480315,
+      "responseSeconds": 24.953914593,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-ce2381e58a97282abbc0-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-ce2381e58a97282abbc0",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "step 7 (a7): the cut misses the sheet: its shape is off the folded sheet",
+              "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+            ]
+          },
+          "geometry": {
+            "status": "fail",
+            "errors": [
+              "finished fold geometry: step 7 (a7): the cut misses the sheet: its shape is off the folded sheet",
+              "finished fold geometry: step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+            ]
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 7 (a7): the cut misses the sheet: its shape is off the folded sheet"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 7 (a7): the cut misses the sheet: its shape is off the folded sheet"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+          }
+        ],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper-sheet.cm: unconfirmed measurement",
+          "paper-sheet.w: unconfirmed measurement",
+          "paper-sheet.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet",
+          "a8: a cut through the folded sheet",
+          "a9: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "step 7 (a7): the cut misses the sheet: its shape is off the folded sheet",
+          "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0913,
+      "responseSeconds": 9.935972535999998,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-1568344ec6ff3f41a127-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-1568344ec6ff3f41a127",
+      "sample": 1,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "fail",
+            "errors": [
+              "Invalid JSON: Unexpected end of JSON input"
+            ]
+          },
+          "rawSchema": {
+            "status": "not-recorded",
+            "errors": []
+          },
+          "structure": {
+            "status": "fail",
+            "errors": [
+              "No parsed plan candidate is available"
+            ]
+          },
+          "semantics": {
+            "status": "skipped",
+            "errors": []
+          },
+          "geometry": {
+            "status": "skipped",
+            "errors": []
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "skipped",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "response",
+            "code": "invalid-json",
+            "message": "Invalid JSON: Unexpected end of JSON input"
+          },
+          {
+            "stage": "structure",
+            "code": "invalid-json",
+            "message": "No parsed plan candidate is available"
+          }
+        ],
+        "warnings": [],
+        "corrections": [],
+        "rawSchemaValid": false,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": null,
+      "responseSeconds": 14.985671005999997,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-8ab516412084536c9447-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-8ab516412084536c9447",
+      "sample": 1,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 61,
+            "duration": 47.29999999999999,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper-a.cm: unconfirmed measurement",
+          "paper-a.w: unconfirmed measurement",
+          "paper-a.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.033896,
+      "responseSeconds": 11.449131570000006,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-61e743c09863f0df927b-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "medium",
+      "trialId": "historical-61e743c09863f0df927b",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "fail",
+        "strict": "fail",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "fail",
+            "errors": [
+              "step 1: k refers to unknown object paper",
+              "step 2: k refers to unknown object paper",
+              "step 3: k refers to unknown object paper",
+              "step 4: k refers to unknown object paper",
+              "step 5: k refers to unknown object paper",
+              "step 6: k refers to unknown object paper",
+              "step 7: k refers to unknown object paper",
+              "step 2 (a2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 3 (a3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 4 (a4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 4 (a5): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 5 (a6): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 6 (a7): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 6 (a8): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "step 7 (a9): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "design: paper comes from paper-sheet, which is not an object"
+            ]
+          },
+          "geometry": {
+            "status": "fail",
+            "errors": [
+              "finished fold geometry: step 2 (a2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "finished fold geometry: step 3 (a3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "finished fold geometry: step 4 (a4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "finished fold geometry: step 4 (a5): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "finished fold geometry: step 5 (a6): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "finished fold geometry: step 6 (a7): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "finished fold geometry: step 6 (a8): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+              "finished fold geometry: step 7 (a9): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+            ]
+          },
+          "execution": {
+            "status": "skipped",
+            "errors": []
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 1: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 2: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 3: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 4: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 5: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 6: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "unknown-reference",
+            "message": "step 7: k refers to unknown object paper"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 2 (a2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 3 (a3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 4 (a4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 4 (a5): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 5 (a6): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 6 (a7): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 6 (a8): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "step 7 (a9): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "semantics",
+            "code": "semantics-failure",
+            "message": "design: paper comes from paper-sheet, which is not an object"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 2 (a2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 3 (a3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 4 (a4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 4 (a5): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 5 (a6): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 6 (a7): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 6 (a8): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          },
+          {
+            "stage": "geometry",
+            "code": "geometry-failure",
+            "message": "finished fold geometry: step 7 (a9): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)"
+          }
+        ],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "step 5: the caption gives 2 cm, but no action carries it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet",
+          "a8: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [
+          "step 1: k refers to unknown object paper",
+          "step 2: k refers to unknown object paper",
+          "step 3: k refers to unknown object paper",
+          "step 4: k refers to unknown object paper",
+          "step 5: k refers to unknown object paper",
+          "step 6: k refers to unknown object paper",
+          "step 7: k refers to unknown object paper",
+          "step 2 (a2): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 3 (a3): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 4 (a4): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 4 (a5): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 5 (a6): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 6 (a7): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 6 (a8): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "step 7 (a9): a fold needs one sheet: an object of the photo, or a part cut from one with its \"cm\" (the key it was cut into)",
+          "design: paper comes from paper-sheet, which is not an object"
+        ],
+        "rawFirstResponseValid": false,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.04203475,
+      "responseSeconds": 19.706451284000003,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-be4585f8225aa1e02073-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "medium",
+      "trialId": "historical-be4585f8225aa1e02073",
+      "sample": 2,
+      "planningEffort": "medium",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 67,
+            "duration": 46.89999999999999,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper-1.cm: unconfirmed measurement",
+          "paper-1.w: unconfirmed measurement",
+          "paper-1.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet",
+          "a8: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0416944,
+      "responseSeconds": 13.279661833000006,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-76a7e4ad03b68332f096-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-wonder-1.0",
+      "effort": "low",
+      "trialId": "historical-76a7e4ad03b68332f096",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 74,
+            "duration": 49.999999999999986,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper-sheet.cm: unconfirmed measurement",
+          "paper-sheet.w: unconfirmed measurement",
+          "paper-sheet.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "step 1: the caption gives 21 cm, but no action carries it",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet",
+          "a8: a cut through the folded sheet",
+          "a9: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.0336144,
+      "responseSeconds": 9.681199420000004,
+      "repairDecision": null
+    },
+    {
+      "id": "historical-76c1c43317041be686b4-0",
+      "caseId": "scissors",
+      "attemptIndex": 0,
+      "first": true,
+      "selected": true,
+      "model": "muse-spark-1.3",
+      "effort": "low",
+      "trialId": "historical-76c1c43317041be686b4",
+      "sample": 2,
+      "planningEffort": "low",
+      "requestKind": "initial plan",
+      "grade": {
+        "machine": "pass",
+        "strict": "pending",
+        "humanReview": {
+          "verdict": "pending",
+          "reason": ""
+        },
+        "grades": {
+          "response": {
+            "status": "pass",
+            "errors": []
+          },
+          "rawSchema": {
+            "status": "pass",
+            "errors": []
+          },
+          "structure": {
+            "status": "pass",
+            "errors": []
+          },
+          "semantics": {
+            "status": "pass",
+            "errors": []
+          },
+          "geometry": {
+            "status": "pass",
+            "errors": []
+          },
+          "execution": {
+            "status": "pass",
+            "errors": [],
+            "frames": 60,
+            "duration": 43.79999999999999,
+            "standInArtwork": true,
+            "browser": "Chrome",
+            "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+          },
+          "task": {
+            "status": "pass",
+            "errors": []
+          }
+        },
+        "findings": [],
+        "warnings": [
+          "scissors.cm: unconfirmed measurement",
+          "paper-square.cm: unconfirmed measurement",
+          "paper-square.w: unconfirmed measurement",
+          "paper-square.thick: unconfirmed measurement",
+          "Additional materials are required supplies, not objects observed in the photo.",
+          "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+        ],
+        "corrections": [
+          "Declared additional materials compiled as separate supply actors",
+          "a6: a cut through the folded sheet",
+          "a7: a cut through the folded sheet"
+        ],
+        "rawSchemaValid": true,
+        "rawPlanProblems": [],
+        "rawFirstResponseValid": true,
+        "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+      },
+      "cost": 0.03193675,
+      "responseSeconds": 9.25366049499999,
+      "repairDecision": null
+    }
+  ],
+  "note": "Wonder minimal follow-up for v2-broader. Exact saved user prompt, JSON schema and photo; current model client and normalize=true evaluator. Existing low/medium outputs re-evaluated with the same normalization and checks. No repairs or retries. Human task review remains pending. Public snapshot contains only curated cases; saved private-film histories remain local.",
+  "intervalNote": "Wilson intervals describe trials conditional on these fixed cases, not generalization to new objects. Inspect per-case results. Diagnostic cases are excluded from model rankings. Saved replays are never ranked as a controlled model experiment."
+}

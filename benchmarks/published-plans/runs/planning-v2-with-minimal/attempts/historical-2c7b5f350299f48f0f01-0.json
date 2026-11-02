@@ -1,0 +1,100 @@
+{
+  "row": {
+    "id": "historical-2c7b5f350299f48f0f01-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "low",
+    "trialId": "historical-2c7b5f350299f48f0f01",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "fail",
+          "errors": [
+            "Invalid JSON: Unterminated string in JSON at position 66148 (line 1 column 66149)"
+          ]
+        },
+        "rawSchema": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "No parsed plan candidate is available"
+          ]
+        },
+        "semantics": {
+          "status": "skipped",
+          "errors": []
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "response",
+          "code": "invalid-json",
+          "message": "Invalid JSON: Unterminated string in JSON at position 66148 (line 1 column 66149)"
+        },
+        {
+          "stage": "structure",
+          "code": "invalid-json",
+          "message": "No parsed plan candidate is available"
+        }
+      ],
+      "warnings": [],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": null,
+    "responseSeconds": 64.665167868,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": null,
+  "rawText": null
+}

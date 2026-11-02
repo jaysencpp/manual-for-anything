@@ -1,0 +1,246 @@
+{
+  "row": {
+    "id": "7ea3ae956f7b2e977187-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "low",
+    "trialId": "7ea3ae956f7b2e977187",
+    "sample": 2,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "f1: unknown joint box-front-left",
+            "f2: unknown joint box-front-right",
+            "f3: unknown joint box-back-left",
+            "f4: unknown joint box-back-right",
+            "f5: unknown joint box-base-front",
+            "f6: unknown joint box-base-back",
+            "f7: unknown joint box-base-left",
+            "f8: unknown joint box-base-right"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f1: unknown joint box-front-left"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f2: unknown joint box-front-right"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f3: unknown joint box-back-left"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f4: unknown joint box-back-right"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f5: unknown joint box-base-front"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f6: unknown joint box-base-back"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f7: unknown joint box-base-left"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f8: unknown joint box-base-right"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "f1: unknown joint box-front-left",
+        "f2: unknown joint box-front-right",
+        "f3: unknown joint box-back-left",
+        "f4: unknown joint box-back-right",
+        "f5: unknown joint box-base-front",
+        "f6: unknown joint box-base-back",
+        "f7: unknown joint box-base-left",
+        "f8: unknown joint box-base-right"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.0914768,
+    "responseSeconds": 23.418145833999997,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "A weatherproof-looking outdoor planter for herbs or flowers for one gardener; interior about 36 × 14 cm with 20 cm soil depth.",
+      "size": [
+        40,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for cutting."
+      },
+      {
+        "t": "Cut side parts",
+        "c": "Cut front, back and both 14 cm ends."
+      },
+      {
+        "t": "Place base board",
+        "c": "Place the second board flat for cutting."
+      },
+      {
+        "t": "Cut base",
+        "c": "Cut the 40 cm base panel."
+      },
+      {
+        "t": "Sand parts",
+        "c": "Sand all cut edges smooth."
+      },
+      {
+        "t": "Place base",
+        "c": "Place the base flat on the floor."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill two 10 mm drainage holes."
+      },
+      {
+        "t": "Place front",
+        "c": "Stand the front side on the base."
+      },
+      {
+        "t": "Place back",
+        "c": "Stand the back side on the base."
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between the sides."
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between the sides."
+      },
+      {
+        "t": "Fix front left",
+        "c": "Screw the front to the left end."
+      },
+      {
+        "t": "Fix front right",
+        "c": "Screw the front to the right end."
+      },
+      {
+        "t": "Fix back left",
+        "c": "Screw the back to the left end."
+      },
+      {
+        "t": "Fix back right",
+        "c": "Screw the back to the right end."
+      },
+      {
+        "t": "Fix base front",
+        "c": "Screw the base up into the front."
+      },
+      {
+        "t": "Fix base back",
+        "c": "Screw the base up into the back."
+      },
+      {
+        "t": "Fix base left",
+        "c": "Screw the base up into the left end."
+      },
+      {
+        "t": "Fix base right",
+        "c": "Screw the base up into the right end."
+      }
+    ]
+  },
+  "rawText": null
+}

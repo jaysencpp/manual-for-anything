@@ -1,0 +1,444 @@
+{
+  "row": {
+    "id": "fae901b859e963f008f5-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "fae901b859e963f008f5",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+          ]
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "joint joint-base-side-a: needs two distinct known parts",
+            "joint joint-base-side-b: needs two distinct known parts",
+            "joint joint-side-a-end-a: needs two distinct known parts",
+            "joint joint-side-a-end-b: needs two distinct known parts",
+            "joint joint-side-b-end-a: needs two distinct known parts",
+            "joint joint-side-b-end-b: needs two distinct known parts",
+            "joint joint-base-cleat-1: needs two distinct known parts",
+            "joint joint-base-cleat-2: needs two distinct known parts",
+            "joint joint-base-cleat-3: needs two distinct known parts",
+            "joint joint-base-side-a: no attachment operation",
+            "joint joint-base-side-b: no attachment operation",
+            "joint joint-side-a-end-a: no attachment operation",
+            "joint joint-side-a-end-b: no attachment operation",
+            "joint joint-side-b-end-a: no attachment operation",
+            "joint joint-side-b-end-b: no attachment operation",
+            "joint joint-base-cleat-2: no attachment operation",
+            "joint joint-base-cleat-3: no attachment operation",
+            "step 5: k refers to unknown object base-1",
+            "step 5: k refers to unknown object side-a",
+            "step 5: k refers to unknown object side-b",
+            "step 5: k refers to unknown object end-a",
+            "step 5: k refers to unknown object end-b",
+            "step 5: k refers to unknown object cleat-1",
+            "step 5: k refers to unknown object cleat-2",
+            "step 5: k refers to unknown object cleat-3",
+            "step 6: k refers to unknown object base-1",
+            "step 7: k refers to unknown object cleat-1",
+            "step 7: to refers to unknown object base-1",
+            "step 7: k refers to unknown object cleat-2",
+            "step 7: k refers to unknown object cleat-3",
+            "step 8: k refers to unknown object base-1",
+            "step 8: to refers to unknown object cleat-1"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "joint joint-base-side-a: Both joint parts need numeric geometry",
+            "joint joint-base-side-b: Both joint parts need numeric geometry",
+            "joint joint-side-a-end-a: Both joint parts need numeric geometry",
+            "joint joint-side-a-end-b: Both joint parts need numeric geometry",
+            "joint joint-side-b-end-a: Both joint parts need numeric geometry",
+            "joint joint-side-b-end-b: Both joint parts need numeric geometry",
+            "joint joint-base-cleat-1: Both joint parts need numeric geometry",
+            "joint joint-base-cleat-2: Both joint parts need numeric geometry",
+            "joint joint-base-cleat-3: Both joint parts need numeric geometry"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "structure",
+          "code": "inventory-change",
+          "message": "Plan changed the frozen inventory identity, dimensions or measurement provenance",
+          "rawOnly": true
+        },
+        {
+          "stage": "structure",
+          "code": "inventory-change",
+          "message": "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-side-a: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-side-b: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-a-end-a: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-a-end-b: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-b-end-a: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-b-end-b: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-cleat-1: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-cleat-2: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-cleat-3: needs two distinct known parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-side-a: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-side-b: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-a-end-a: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-a-end-b: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-b-end-a: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-side-b-end-b: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-cleat-2: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "joint joint-base-cleat-3: no attachment operation"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object base-1"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object side-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object side-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object end-a"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object end-b"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object cleat-1"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object cleat-2"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 5: k refers to unknown object cleat-3"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 6: k refers to unknown object base-1"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: k refers to unknown object cleat-1"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: to refers to unknown object base-1"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: k refers to unknown object cleat-2"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 7: k refers to unknown object cleat-3"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: k refers to unknown object base-1"
+        },
+        {
+          "stage": "semantics",
+          "code": "unknown-reference",
+          "message": "step 8: to refers to unknown object cleat-1"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-side-a: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-side-b: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-side-a-end-a: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-side-a-end-b: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-side-b-end-a: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-side-b-end-b: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-cleat-1: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-cleat-2: Both joint parts need numeric geometry"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-base-cleat-3: Both joint parts need numeric geometry"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 2: the caption gives 40 cm, but no action carries it",
+        "step 4: the caption gives 20 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "joint joint-base-side-a: needs two distinct known parts",
+        "joint joint-base-side-b: needs two distinct known parts",
+        "joint joint-side-a-end-a: needs two distinct known parts",
+        "joint joint-side-a-end-b: needs two distinct known parts",
+        "joint joint-side-b-end-a: needs two distinct known parts",
+        "joint joint-side-b-end-b: needs two distinct known parts",
+        "joint joint-base-cleat-1: needs two distinct known parts",
+        "joint joint-base-cleat-2: needs two distinct known parts",
+        "joint joint-base-cleat-3: needs two distinct known parts",
+        "a12: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "unreached goal base-1:assembled",
+        "unreached goal side-a:fixed",
+        "unreached goal side-b:fixed",
+        "joint joint-base-side-a: no attachment operation",
+        "joint joint-base-side-b: no attachment operation",
+        "joint joint-side-a-end-a: no attachment operation",
+        "joint joint-side-a-end-b: no attachment operation",
+        "joint joint-side-b-end-a: no attachment operation",
+        "joint joint-side-b-end-b: no attachment operation",
+        "joint joint-base-cleat-2: no attachment operation",
+        "joint joint-base-cleat-3: no attachment operation",
+        "step 5: k refers to unknown object base-1",
+        "step 5: k refers to unknown object side-a",
+        "step 5: k refers to unknown object side-b",
+        "step 5: k refers to unknown object end-a",
+        "step 5: k refers to unknown object end-b",
+        "step 5: k refers to unknown object cleat-1",
+        "step 5: k refers to unknown object cleat-2",
+        "step 5: k refers to unknown object cleat-3",
+        "step 6: k refers to unknown object base-1",
+        "step 7: k refers to unknown object cleat-1",
+        "step 7: to refers to unknown object base-1",
+        "step 7: k refers to unknown object cleat-2",
+        "step 7: k refers to unknown object cleat-3",
+        "step 8: k refers to unknown object base-1",
+        "step 8: to refers to unknown object cleat-1",
+        "Plan changed the frozen inventory identity, dimensions or measurement provenance"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.04137225,
+    "responseSeconds": 21.879267591999845,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Herb Trough Planter",
+    "design": {
+      "purpose": "Small trough planter for herbs for one household, serves as 40x20 cm window box with 16 cm soil depth",
+      "size": [
+        40,
+        20,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Mark boards",
+        "c": "Measure and mark all cuts"
+      },
+      {
+        "t": "Cut base",
+        "c": "Cut base 40 cm from wide board"
+      },
+      {
+        "t": "Cut sides ends",
+        "c": "Cut sides and ends from board"
+      },
+      {
+        "t": "Cut battens",
+        "c": "Cut three 20 cm battens"
+      },
+      {
+        "t": "Sand parts",
+        "c": "Sand cut edges smooth"
+      },
+      {
+        "t": "Place base",
+        "c": "Place base flat on ground"
+      },
+      {
+        "t": "Place battens",
+        "c": "Place battens under base"
+      },
+      {
+        "t": "Fix battens",
+        "c": "Drill pilots then drive screws"
+      }
+    ]
+  },
+  "rawText": null
+}

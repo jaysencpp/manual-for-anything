@@ -1,0 +1,293 @@
+{
+ "contractVersion": 2,
+ "design": {
+  "purpose": "A six-pointed paper snowflake to tape flat to a window",
+  "standard": "A 21 cm square from A4, folded into a 30° wedge",
+  "size": [
+   21,
+   21,
+   0.05
+  ],
+  "parts": [
+   {
+    "k": "square",
+    "from": "paper",
+    "cm": 21,
+    "n": 1
+   }
+  ],
+  "joins": "None: one sheet, folded and cut",
+  "stands": "Lies flat; six folds give twelve mirrored sections"
+ },
+ "end": "Tape it flat to a window",
+ "finale": [
+  {
+   "v": "turn",
+   "k": "square",
+   "to": null,
+   "by": 0
+  }
+ ],
+ "goals": [],
+ "ideas": [
+  {
+   "kind": "craft",
+   "pitch": "Long, pointed dart plane that flies straight",
+   "title": "Performance Dart Plane"
+  },
+  {
+   "kind": "craft",
+   "pitch": "Flapping bird folded from one square-trimmed sheet",
+   "title": "Origami Crane"
+  },
+  {
+   "kind": "other",
+   "pitch": "Folded envelope with a sealed pointed flap",
+   "title": "Paper Envelope"
+  }
+ ],
+ "joints": [],
+ "makes": [],
+ "objects": [
+  {
+   "b": [
+    245,
+    165,
+    735,
+    1180
+   ],
+   "cm": 29.7,
+   "k": "paper",
+   "measurements": {
+    "cm": {
+     "source": "single photo estimate",
+     "status": "estimated"
+    }
+   },
+   "n": "white A4 paper sheet",
+   "part": {
+    "family": "sheet",
+    "size": [
+     21,
+     29.7,
+     0.05
+    ]
+   },
+   "segment": "white paper sheet"
+  }
+ ],
+ "pick": 0,
+ "steps": [
+  {
+   "t": "Lay the sheet flat",
+   "c": "Lay the A4 sheet flat, short edge facing you",
+   "claims": [
+    "a1"
+   ],
+   "do": [
+    {
+     "id": "a1",
+     "intent": "place",
+     "v": "place",
+     "k": "paper",
+     "rel": "floor",
+     "at": "middle",
+     "to": null
+    }
+   ]
+  },
+  {
+   "t": "Cut a square",
+   "c": "Cut a 21 cm square off one end",
+   "claims": [
+    "a2"
+   ],
+   "do": [
+    {
+     "id": "a2",
+     "intent": "cut",
+     "v": "cut",
+     "k": "paper",
+     "with": "scissors",
+     "label": "21 cm",
+     "into": [
+      {
+       "k": "square",
+       "cm": 21,
+       "label": "21 cm"
+      },
+      {
+       "k": "offcut",
+       "cm": 8.7,
+       "label": "8.7 cm"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "Fold a triangle",
+   "c": "Fold corner to corner, then in half again",
+   "claims": [
+    "a3",
+    "a4"
+   ],
+   "do": [
+    {
+     "id": "a3",
+     "intent": "fold",
+     "v": "fold",
+     "k": "square",
+     "move": "top-right",
+     "onto": "bottom-left"
+    },
+    {
+     "id": "a4",
+     "intent": "fold",
+     "v": "fold",
+     "k": "square",
+     "move": "top-left",
+     "onto": "bottom-right"
+    }
+   ]
+  },
+  {
+   "t": "Fold in thirds",
+   "c": "Fold each side over at 30° to a narrow wedge",
+   "claims": [
+    "a5",
+    "a6"
+   ],
+   "do": [
+    {
+     "id": "a5",
+     "intent": "fold",
+     "v": "fold",
+     "k": "square",
+     "move": "top-right edge",
+     "through": "top",
+     "deg": 30,
+     "label": "30°"
+    },
+    {
+     "id": "a6",
+     "intent": "fold",
+     "v": "fold",
+     "k": "square",
+     "move": "top-left edge",
+     "through": "top",
+     "deg": 30,
+     "label": "30°"
+    }
+   ]
+  },
+  {
+   "t": "Cut the pattern",
+   "c": "Trim the wide end, then cut notches along the sides",
+   "claims": [
+    "a7",
+    "a8",
+    "a9"
+   ],
+   "do": [
+    {
+     "id": "a7",
+     "intent": "cut",
+     "v": "fold",
+     "move": "cut",
+     "k": "square",
+     "with": "scissors",
+     "shape": [
+      [
+       -0.1,
+       0.8
+      ],
+      [
+       1.1,
+       0.8
+      ],
+      [
+       1.1,
+       1.1
+      ],
+      [
+       -0.1,
+       1.1
+      ]
+     ]
+    },
+    {
+     "id": "a8",
+     "intent": "cut",
+     "v": "fold",
+     "move": "cut",
+     "k": "square",
+     "with": "scissors",
+     "shape": [
+      [
+       -0.1,
+       0.35
+      ],
+      [
+       0.45,
+       0.5
+      ],
+      [
+       -0.1,
+       0.65
+      ]
+     ]
+    },
+    {
+     "id": "a9",
+     "intent": "cut",
+     "v": "fold",
+     "move": "cut",
+     "k": "square",
+     "with": "scissors",
+     "shape": [
+      [
+       0.55,
+       0.55
+      ],
+      [
+       0.75,
+       0.62
+      ],
+      [
+       0.55,
+       0.7
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "t": "Open it out",
+   "c": "Unfold the snowflake carefully and press it flat",
+   "claims": [
+    "a10"
+   ],
+   "do": [
+    {
+     "id": "a10",
+     "intent": "fold",
+     "v": "fold",
+     "k": "square",
+     "move": "open"
+    }
+   ]
+  }
+ ],
+ "sub": "Folded and cut window snowflake",
+ "tag": "19 cm across · 15 min · Easy",
+ "title": "Paper Snowflake",
+ "tools": [
+  {
+   "k": "scissors",
+   "use": "scissors"
+  }
+ ],
+ "view": "plan",
+ "mode": "physical"
+}

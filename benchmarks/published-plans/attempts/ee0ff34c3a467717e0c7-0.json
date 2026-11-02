@@ -1,0 +1,211 @@
+{
+  "row": {
+    "id": "ee0ff34c3a467717e0c7-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "xhigh",
+    "trialId": "ee0ff34c3a467717e0c7",
+    "sample": 1,
+    "planningEffort": "xhigh",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 145,
+          "duration": 90.60000000000004,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 5: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "screws: 5 cm → 7 cm, the length every joint they make needs"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a12: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a13: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a14: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a15: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a16: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a17: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a18: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a19: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.355428,
+    "responseSeconds": 103.72211206600001,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Herb Planter Box",
+    "design": {
+      "purpose": "A raised outdoor herb planter for one person, giving 20 cm soil depth for three small herb plants; sizes are provisional until the photographed boards are measured.",
+      "size": [
+        44,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Lay the wide board flat for measuring and cutting"
+      },
+      {
+        "t": "Measure wide board",
+        "c": "Measure the full board before marking any cuts"
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Cut 44, 44, 14 and 14 cm pieces, leaving offcut"
+      },
+      {
+        "t": "Place second board",
+        "c": "Lay the second board flat for cutting"
+      },
+      {
+        "t": "Cut planter base",
+        "c": "Cut the 44 cm base, leaving the spare length"
+      },
+      {
+        "t": "Place base",
+        "c": "Lay the base flat in its final position"
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill four drainage holes through the base"
+      },
+      {
+        "t": "Place front side",
+        "c": "Stand the front side on the front base edge"
+      },
+      {
+        "t": "Place back side",
+        "c": "Stand the back side on the back base edge"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between front and back"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between front and back"
+      },
+      {
+        "t": "Screw front left",
+        "c": "Drive two screws through front into left end"
+      },
+      {
+        "t": "Screw front right",
+        "c": "Drive two screws through front into right end"
+      },
+      {
+        "t": "Screw back left",
+        "c": "Drive two screws through back into left end"
+      },
+      {
+        "t": "Screw back right",
+        "c": "Drive two screws through back into right end"
+      },
+      {
+        "t": "Fix base to front",
+        "c": "Drive two screws upward through base into front"
+      },
+      {
+        "t": "Fix base to back",
+        "c": "Drive two screws upward through base into back"
+      },
+      {
+        "t": "Fix base to left",
+        "c": "Drive two screws upward through base into left end"
+      },
+      {
+        "t": "Fix base to right",
+        "c": "Drive two screws upward through base into right end"
+      },
+      {
+        "t": "Sand outside faces",
+        "c": "Sand all four outside faces smooth"
+      },
+      {
+        "t": "Check rim level",
+        "c": "Hold a level across the rim and check"
+      }
+    ]
+  },
+  "rawText": null
+}

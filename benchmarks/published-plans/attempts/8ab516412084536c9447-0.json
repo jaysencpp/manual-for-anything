@@ -1,0 +1,142 @@
+{
+  "row": {
+    "id": "8ab516412084536c9447-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "8ab516412084536c9447",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "design: the size is 10.5 × 29.7 × 2 cm but the steps build 21 × 29.7 × 0 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "geometry",
+          "code": "design-dimensions",
+          "message": "design: the size is 10.5 × 29.7 × 2 cm but the steps build 21 × 29.7 × 0 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+        }
+      ],
+      "warnings": [
+        "scissors.cm: unconfirmed measurement",
+        "paper-a.cm: unconfirmed measurement",
+        "paper-a.w: unconfirmed measurement",
+        "paper-a.thick: unconfirmed measurement",
+        "Additional materials are required supplies, not objects observed in the photo.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "design: the size is 10.5 × 29.7 × 2 cm but the steps build 21 × 29.7 × 0 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.033896,
+    "responseSeconds": 11.449131570000006,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": {
+    "title": "Paper Dart Plane",
+    "design": {
+      "purpose": "Make a fast straight-flying paper dart for one child or adult using one A4 sheet and the photographed scissors for trimming. Serves play: 1 plane.",
+      "size": [
+        10.5,
+        29.7,
+        2
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place paper",
+        "c": "Lay A4 sheet flat portrait"
+      },
+      {
+        "t": "Make centre crease",
+        "c": "Fold in half lengthways and open"
+      },
+      {
+        "t": "Fold nose point",
+        "c": "Fold top corners to centre"
+      },
+      {
+        "t": "Sharpen point",
+        "c": "Fold slanted edges to centre"
+      },
+      {
+        "t": "Fold in half",
+        "c": "Fold plane in half outward"
+      },
+      {
+        "t": "Fold first wing",
+        "c": "Fold top wing down"
+      },
+      {
+        "t": "Fold second wing",
+        "c": "Turn over and fold wing"
+      }
+    ]
+  },
+  "rawText": null
+}

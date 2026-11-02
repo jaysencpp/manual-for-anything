@@ -1,0 +1,107 @@
+{
+  "row": {
+    "id": "28f40f459dbd5787d700-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": false,
+    "model": "muse-spark-1.3",
+    "effort": "max",
+    "trialId": "28f40f459dbd5787d700",
+    "sample": 1,
+    "planningEffort": "max",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "fail",
+          "errors": [
+            "Invalid JSON: Unterminated string in JSON at position 1186 (line 1 column 1187)"
+          ]
+        },
+        "rawSchema": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "No parsed plan candidate is available"
+          ]
+        },
+        "semantics": {
+          "status": "skipped",
+          "errors": []
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "response",
+          "code": "invalid-json",
+          "message": "Invalid JSON: Unterminated string in JSON at position 1186 (line 1 column 1187)"
+        },
+        {
+          "stage": "structure",
+          "code": "invalid-json",
+          "message": "No parsed plan candidate is available"
+        },
+        {
+          "stage": "provider",
+          "code": "provider-timeout",
+          "message": "The operation was aborted due to timeout"
+        }
+      ],
+      "warnings": [],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": null,
+    "responseSeconds": 180.00458136799998,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": null,
+  "rawText": null
+}

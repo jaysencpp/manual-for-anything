@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f3efe6"><title>Drawing comparisons · Manual for anything</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/comparisons.css">
+<link rel="stylesheet" href="/comparisons-shared.css">
+</head>
+<body class="comparison-page">
+<header class="bar"><a class="brand" href="/">▧ <span>Manual for anything</span></a></header>
+<main>
+  <nav class="comparison-nav" aria-label="Comparison type"><a href="/comparisons" aria-current="page">Drawings</a><a href="/comparisons/plans">Plans</a></nav>
+  <div class="intro"><p class="eyebrow">Drawing comparisons</p><h1>How much thinking<br>makes a better drawing?</h1><p class="lede">One object. The same prompt. Six effort levels. Compare the actual vector drawings, what they cost and how long they took.</p></div>
+  <nav id="cases" class="cases" aria-label="Comparison objects"></nav>
+  <div id="model-tools" class="model-tools" hidden><label>Model <select id="model-select"></select></label><button id="compare-models" type="button" hidden>Compare models side by side</button></div>
+  <p id="status" role="status" aria-live="polite">Loading results…</p>
+  <div id="experiment" hidden>
+    <section class="reference-panel" aria-labelledby="case-title">
+      <button id="reference-button" class="reference-image image-button" aria-label="Enlarge reference"><img id="reference" alt="Saved segmentation cut-out used for every attempt"></button>
+      <div class="reference-copy"><p class="eyebrow">The reference</p><h2 id="case-title"></h2><p id="case-description"></p><dl id="facts" class="facts"></dl><p id="input-note" class="subtle"></p><details><summary>What counts as a good drawing?</summary><ul id="expectations"></ul></details></div>
+    </section>
+    <div class="results-heading"><div><p class="eyebrow">Actual first attempts</p><h2 id="results-title">Same object, different effort.</h2></div><p>Click any drawing to enlarge it.<br>Labels include estimated USD cost.</p></div>
+    <p id="comparison-note" class="subtle" hidden>Models use identical frozen inputs and output limits. Runs happened separately; provider traffic and caching can affect time and cost. Each pair below uses the same effort level.</p>
+    <section id="outputs" class="outputs" aria-label="Generated drawings by effort"></section>
+    <section class="method"><p class="eyebrow">Reading these results</p><h2>A comparison, not a verdict.</h2><p id="method"></p><p id="conclusion"></p><p>The technical check confirms that a drawing parses and renders. A visual pass means a reviewer also accepted its fidelity and clarity. Unreviewed drawings remain pending.</p><p id="pricing" class="subtle"></p><details><summary>Input details and full measurements</summary><p id="source"></p><ul id="limitations"></ul><a id="data-download">Download results JSON</a></details></section>
+  </div>
+</main>
+<dialog id="zoom"><div class="zoom-bar"><h2 id="zoom-title"></h2><button id="close-zoom" aria-label="Close enlarged image">Close ×</button></div><img id="zoom-image" alt=""><p id="zoom-details"></p></dialog>
+<footer>Made from what you have. <a href="/">Back to the app</a></footer>
+<script type="module" src="/comparisons.js"></script>
+</body>
+</html>

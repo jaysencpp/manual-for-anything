@@ -1,0 +1,102 @@
+{
+ "effort": "low",
+ "noThinking": false,
+ "photo": {
+  "width": 550,
+  "height": 550
+ },
+ "begin": 14.85,
+ "firstFrameIfWaitingForAll": 36.44,
+ "filmSeconds": 75.7,
+ "needs": [
+  {
+   "what": "cut-outs (lift off the photo)",
+   "ready": 26.08,
+   "neededAt": 15.85,
+   "slack": -10.23
+  },
+  {
+   "what": "drawings (turn into drawings)",
+   "ready": 37.74,
+   "neededAt": 16.15,
+   "slack": -21.59
+  },
+  {
+   "what": "steps + layout (first step)",
+   "ready": 26.09,
+   "neededAt": 20.45,
+   "slack": -5.64
+  },
+  {
+   "what": "finale",
+   "ready": 46.63,
+   "neededAt": 81.95,
+   "slack": 35.32
+  }
+ ],
+ "marks": {
+  "start": 0,
+  "script: first object": 14.85,
+  "script: object list": 14.85,
+  "script: done": 19.09,
+  "SAM: cut-outs": 26.08,
+  "layout": 26.09,
+  "drawing: batten-b": 33.71,
+  "drawing: batten-c": 34.06,
+  "drawing: batten-a": 36.25,
+  "drawing: batten-d": 37.74,
+  "drawings: all": 37.74,
+  "finale: written": 46.63,
+  "finale: checked": 46.63
+ },
+ "calls": {
+  "script": {
+   "seconds": 18.216,
+   "output": 1956,
+   "thinking": 302,
+   "cost": 0.112714
+  },
+  "sam": {
+   "load": 7.3,
+   "segment": 1.33,
+   "scores": {
+    "batten-a": 0.91,
+    "batten-b": 0.94,
+    "batten-c": 0.97,
+    "batten-d": 0.97
+   }
+  },
+  "draw batten-b": {
+   "seconds": 5.744,
+   "output": 460,
+   "thinking": 0,
+   "cost": 0.0621958
+  },
+  "draw batten-c": {
+   "seconds": 6.418,
+   "output": 520,
+   "thinking": 0,
+   "cost": 0.06329180000000001
+  },
+  "draw batten-a": {
+   "seconds": 8.439,
+   "output": 662,
+   "thinking": 212,
+   "cost": 0.06340380000000001
+  },
+  "draw batten-d": {
+   "seconds": 10.046,
+   "output": 706,
+   "thinking": 240,
+   "cost": 0.0668038
+  },
+  "finale": {
+   "seconds": 19.062,
+   "output": 2061,
+   "thinking": 502,
+   "cost": 0.1393656,
+   "problem": null
+  }
+ },
+ "cost": 0.508
+}

@@ -1,0 +1,88 @@
+{
+ "effort": "low",
+ "noThinking": false,
+ "photo": {
+  "width": 1932,
+  "height": 1932
+ },
+ "begin": 16.67,
+ "firstFrameIfWaitingForAll": 53.54,
+ "filmSeconds": 35.8,
+ "needs": [
+  {
+   "what": "cut-outs (lift off the photo)",
+   "ready": 27.18,
+   "neededAt": 17.67,
+   "slack": -9.51
+  },
+  {
+   "what": "drawings (turn into drawings)",
+   "ready": 54.84,
+   "neededAt": 17.97,
+   "slack": -36.87
+  },
+  {
+   "what": "steps + layout (first step)",
+   "ready": 27.18,
+   "neededAt": 22.27,
+   "slack": -4.91
+  },
+  {
+   "what": "finale",
+   "ready": 54.8,
+   "neededAt": 43.87,
+   "slack": -10.93
+  }
+ ],
+ "marks": {
+  "start": 0,
+  "script: first object": 16.67,
+  "script: object list": 16.67,
+  "script: done": 17.25,
+  "SAM: cut-outs": 27.18,
+  "layout": 27.18,
+  "drawing: green-yarn": 51.73,
+  "finale: written": 54.8,
+  "finale: refused (refused words: top)": 54.8,
+  "drawing: blue-yarn": 54.84,
+  "drawings: all": 54.84
+ },
+ "calls": {
+  "script": {
+   "seconds": 16.411,
+   "output": 1488,
+   "thinking": 319,
+   "cost": 0.1320914
+  },
+  "sam": {
+   "load": 6.4,
+   "segment": 1.21,
+   "scores": {
+    "green-yarn": 0.99,
+    "blue-yarn": 1,
+    "hook": 0.98,
+    "scissors": 0.86
+   }
+  },
+  "draw green-yarn": {
+   "seconds": 17.386,
+   "output": 1334,
+   "thinking": 175,
+   "cost": 0.1214626
+  },
+  "finale": {
+   "seconds": 20.525,
+   "output": 2095,
+   "thinking": 646,
+   "cost": 0.1279816,
+   "problem": "refused words: top"
+  },
+  "draw blue-yarn": {
+   "seconds": 20.457,
+   "output": 1750,
+   "thinking": 349,
+   "cost": 0.1301034
+  }
+ },
+ "cost": 0.512
+}

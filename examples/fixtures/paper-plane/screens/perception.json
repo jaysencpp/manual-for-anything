@@ -1,0 +1,11 @@
+{
+ "paper-sheet": {
+  "maskConfidence": 0.8049,
+  "boxIoU": 0.928,
+  "method": "semantic",
+  "identityVerified": false,
+  "scaleVerified": false,
+  "warnings": [],
+  "query": "white paper sheet"
+ }
+}

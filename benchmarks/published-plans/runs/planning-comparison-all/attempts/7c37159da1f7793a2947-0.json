@@ -1,0 +1,107 @@
+{
+  "row": {
+    "id": "7c37159da1f7793a2947-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": false,
+    "model": "muse-wonder-1.0",
+    "effort": "max",
+    "trialId": "7c37159da1f7793a2947",
+    "sample": 1,
+    "planningEffort": "max",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "fail",
+          "errors": [
+            "Invalid JSON: Unexpected end of JSON input"
+          ]
+        },
+        "rawSchema": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "No parsed plan candidate is available"
+          ]
+        },
+        "semantics": {
+          "status": "skipped",
+          "errors": []
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "response",
+          "code": "invalid-json",
+          "message": "Invalid JSON: Unexpected end of JSON input"
+        },
+        {
+          "stage": "structure",
+          "code": "invalid-json",
+          "message": "No parsed plan candidate is available"
+        },
+        {
+          "stage": "provider",
+          "code": "provider-timeout",
+          "message": "The operation was aborted due to timeout"
+        }
+      ],
+      "warnings": [],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": null,
+    "responseSeconds": null,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": null,
+  "rawText": null
+}

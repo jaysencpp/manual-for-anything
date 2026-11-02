@@ -1,0 +1,32 @@
+{
+ "brick-dark-red": {
+  "width": 242,
+  "height": 203,
+  "regions": []
+ },
+ "brick-green": {
+  "width": 247,
+  "height": 229,
+  "regions": []
+ },
+ "brick-red": {
+  "width": 237,
+  "height": 196,
+  "regions": []
+ },
+ "brick-orange": {
+  "width": 258,
+  "height": 255,
+  "regions": []
+ },
+ "plate-brown": {
+  "width": 694,
+  "height": 168,
+  "regions": []
+ },
+ "photo": {
+  "width": 1500,
+  "height": 1000,
+  "regions": []
+ }
+}

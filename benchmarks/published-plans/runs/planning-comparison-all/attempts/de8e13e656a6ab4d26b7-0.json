@@ -1,0 +1,160 @@
+{
+  "row": {
+    "id": "de8e13e656a6ab4d26b7-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "high",
+    "trialId": "de8e13e656a6ab4d26b7",
+    "sample": 1,
+    "planningEffort": "high",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "design: basket is 24 cm but green-yarn is only 20 cm long"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "design: the size is 24 × 24 × 16 cm but the steps build 72 × 6.7 × 2 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "stock-conservation",
+          "message": "design: basket is 24 cm but green-yarn is only 20 cm long"
+        },
+        {
+          "stage": "geometry",
+          "code": "design-dimensions",
+          "message": "design: the size is 24 × 24 × 16 cm but the steps build 72 × 6.7 × 2 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "step 9: the caption names needle, but no action uses it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a14: demonstration must declare its resulting state",
+        "design: basket is 24 cm but green-yarn is only 20 cm long"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.07979625,
+    "responseSeconds": 63.35116660200001,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Two-Tone Chunky Basket",
+    "design": {
+      "purpose": "Holds toys, skeins and bedside items for one adult",
+      "size": [
+        24,
+        24,
+        16
+      ]
+    },
+    "steps": [
+      {
+        "t": "Set out materials",
+        "c": "Set green, blue yarn and hook on table"
+      },
+      {
+        "t": "Start green base",
+        "c": "Magic ring, 6 sc. Rnd 2: 2 sc each, 12 sts"
+      },
+      {
+        "t": "Grow base circle",
+        "c": "Rnds 3 to 4: grow to 24 sts"
+      },
+      {
+        "t": "Turn for wall",
+        "c": "Rnd 5: back loop 24 sc in green"
+      },
+      {
+        "t": "Change to blue",
+        "c": "Cut green, join blue with slip stitch"
+      },
+      {
+        "t": "Crochet blue wall",
+        "c": "Rnds 6 to 8: 24 sc in blue"
+      },
+      {
+        "t": "Change to green",
+        "c": "Cut blue, join green with slip stitch"
+      },
+      {
+        "t": "Crochet green rim",
+        "c": "Rnds 9 to 10: 24 sc in green"
+      },
+      {
+        "t": "Finish and weave",
+        "c": "Cut yarn, weave ends inside with needle"
+      }
+    ]
+  },
+  "rawText": null
+}

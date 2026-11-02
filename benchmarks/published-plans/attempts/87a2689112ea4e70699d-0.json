@@ -1,0 +1,164 @@
+{
+  "row": {
+    "id": "87a2689112ea4e70699d-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "87a2689112ea4e70699d",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[8].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "$.steps[8].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[8].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[8].do[0]: does not match any allowed schema branch"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "w6: state change needs an explicit prior state for mat",
+        "d1: state change needs an explicit prior state for mat"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.032762349999999996,
+    "responseSeconds": 28.654290325,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Striped Table Mat",
+    "design": {
+      "purpose": "Striped chunky table mat for one place setting, worked flat and reversible",
+      "size": [
+        36,
+        24,
+        1
+      ]
+    },
+    "steps": [
+      {
+        "t": "Arrange materials",
+        "c": "Place green yarn, blue yarn and hook on table"
+      },
+      {
+        "t": "Chain and rows 1-2",
+        "c": "With green, ch 21, work rows 1-2 in sc"
+      },
+      {
+        "t": "Work rows 3-4",
+        "c": "With blue, work rows 3-4 in sc, 20 sc"
+      },
+      {
+        "t": "Work rows 5-6",
+        "c": "With green, work rows 5-6 in sc, 20 sc"
+      },
+      {
+        "t": "Work rows 7-8",
+        "c": "With blue, work rows 7-8 in sc, 20 sc"
+      },
+      {
+        "t": "Work rows 9-10",
+        "c": "With green, work rows 9-10 in sc, 20 sc"
+      },
+      {
+        "t": "Work rows 11-12",
+        "c": "With blue, work rows 11-12 in sc, 20 sc"
+      },
+      {
+        "t": "Cut final tail",
+        "c": "Snip blue yarn leaving 15 cm tail"
+      },
+      {
+        "t": "Weave start end",
+        "c": "Weave green start tail into mat"
+      },
+      {
+        "t": "Weave final end",
+        "c": "Weave blue end tail into mat"
+      }
+    ]
+  },
+  "rawText": null
+}

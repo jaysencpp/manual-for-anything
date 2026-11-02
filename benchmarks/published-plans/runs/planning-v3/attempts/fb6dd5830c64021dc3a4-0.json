@@ -1,0 +1,222 @@
+{
+  "row": {
+    "id": "fb6dd5830c64021dc3a4-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "fb6dd5830c64021dc3a4",
+    "sample": 2,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "joint joint-front-left: Joint surfaces do not touch: front exit plane y=50 cm, end-left receiving plane y=56 cm (separation 6 cm). Position end-left relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-front-right: Joint surfaces do not touch: front exit plane y=50 cm, end-right receiving plane y=56 cm (separation 6 cm). Position end-right relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-back-left: Joint surfaces do not touch: back exit plane y=64 cm, end-left receiving plane y=58 cm (separation 6 cm). Position end-left relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-back-right: Joint surfaces do not touch: back exit plane y=64 cm, end-right receiving plane y=58 cm (separation 6 cm). Position end-right relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-left: Joint surfaces do not touch: front exit plane y=50 cm, end-left receiving plane y=56 cm (separation 6 cm). Position end-left relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-right: Joint surfaces do not touch: front exit plane y=50 cm, end-right receiving plane y=56 cm (separation 6 cm). Position end-right relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-left: Joint surfaces do not touch: back exit plane y=64 cm, end-left receiving plane y=58 cm (separation 6 cm). Position end-left relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-right: Joint surfaces do not touch: back exit plane y=64 cm, end-right receiving plane y=58 cm (separation 6 cm). Position end-right relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a11: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a12: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a13: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a14: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a15: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a16: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a17: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a18: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.1315728,
+    "responseSeconds": 36.652721075999985,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Pine Planter Box",
+    "design": {
+      "purpose": "A weathered pine planter for herbs or flowers on a patio, with 20 cm soil depth and drainage holes in the base.",
+      "size": [
+        40,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for cutting"
+      },
+      {
+        "t": "Cut side boards",
+        "c": "Cut front, back, ends and offcut to length"
+      },
+      {
+        "t": "Place base board",
+        "c": "Place the base board flat for cutting"
+      },
+      {
+        "t": "Cut base board",
+        "c": "Cut the base and keep the offcut aside"
+      },
+      {
+        "t": "Place base",
+        "c": "Place the base flat on the floor"
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill three drainage holes through the base"
+      },
+      {
+        "t": "Place front side",
+        "c": "Stand the front side on the base front edge"
+      },
+      {
+        "t": "Place back side",
+        "c": "Stand the back side on the base back edge"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the left end between the front and back"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the right end between the front and back"
+      },
+      {
+        "t": "Fix front left corner",
+        "c": "Screw the front to the left end"
+      },
+      {
+        "t": "Fix front right corner",
+        "c": "Screw the front to the right end"
+      },
+      {
+        "t": "Fix back left corner",
+        "c": "Screw the back to the left end"
+      },
+      {
+        "t": "Fix back right corner",
+        "c": "Screw the back to the right end"
+      },
+      {
+        "t": "Fix base to front",
+        "c": "Screw up through the base into the front"
+      },
+      {
+        "t": "Fix base to back",
+        "c": "Screw up through the base into the back"
+      },
+      {
+        "t": "Fix base to left",
+        "c": "Screw up through the base into the left end"
+      },
+      {
+        "t": "Fix base to right",
+        "c": "Screw up through the base into the right end"
+      },
+      {
+        "t": "Sand top edges",
+        "c": "Sand the top edges smooth all round"
+      }
+    ]
+  },
+  "rawText": null
+}

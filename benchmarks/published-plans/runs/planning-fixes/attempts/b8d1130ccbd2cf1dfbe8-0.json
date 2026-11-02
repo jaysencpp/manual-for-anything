@@ -1,0 +1,152 @@
+{
+  "row": {
+    "id": "b8d1130ccbd2cf1dfbe8-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "xhigh",
+    "trialId": "b8d1130ccbd2cf1dfbe8",
+    "sample": 1,
+    "planningEffort": "xhigh",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "design: the steps cut base-off (79.7 cm from board-b), which is not among the design's parts",
+            "design: the steps cut side-off (10.8 cm from board-a), which is not among the design's parts"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: the steps cut base-off (79.7 cm from board-b), which is not among the design's parts"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "design: the steps cut side-off (10.8 cm from board-a), which is not among the design's parts"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 1: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "design: the steps cut base-off (79.7 cm from board-b), which is not among the design's parts",
+        "design: the steps cut side-off (10.8 cm from board-a), which is not among the design's parts"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.1290618,
+    "responseSeconds": 127.02872379399999,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Pine Window Planter",
+    "design": {
+      "purpose": "Hold soil and plants outdoors for a gardener",
+      "size": [
+        40,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Cut the base",
+        "c": "Lay board flat and cut 40 cm base"
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Cut board into 40 cm sides and 14 cm ends"
+      },
+      {
+        "t": "Drill drain holes",
+        "c": "Place base flat and drill five 8 mm holes"
+      },
+      {
+        "t": "Assemble the box",
+        "c": "Set sides on base and ends between sides"
+      },
+      {
+        "t": "Screw the corners",
+        "c": "Drive screws through front and back into ends"
+      },
+      {
+        "t": "Screw the base",
+        "c": "Drive screws up through base into sides"
+      }
+    ]
+  },
+  "rawText": null
+}

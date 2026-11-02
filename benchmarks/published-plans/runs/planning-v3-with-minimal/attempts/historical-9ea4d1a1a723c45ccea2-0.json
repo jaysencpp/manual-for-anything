@@ -1,0 +1,175 @@
+{
+  "row": {
+    "id": "historical-9ea4d1a1a723c45ccea2-0",
+    "caseId": "scissors",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "historical-9ea4d1a1a723c45ccea2",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "step 7 (a7): the cut misses the sheet: its shape is off the folded sheet",
+            "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "finished fold geometry: step 7 (a7): the cut misses the sheet: its shape is off the folded sheet",
+            "finished fold geometry: step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 7 (a7): the cut misses the sheet: its shape is off the folded sheet"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+        },
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "finished fold geometry: step 7 (a7): the cut misses the sheet: its shape is off the folded sheet"
+        },
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "finished fold geometry: step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+        }
+      ],
+      "warnings": [
+        "scissors.cm: unconfirmed measurement",
+        "paper.cm: unconfirmed measurement",
+        "paper.w: unconfirmed measurement",
+        "paper.thick: unconfirmed measurement",
+        "Additional materials are required supplies, not objects observed in the photo.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "Declared additional materials compiled as separate supply actors",
+        "a6: a cut through the folded sheet",
+        "a7: a cut through the folded sheet",
+        "a8: a cut through the folded sheet"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "step 7 (a7): the cut misses the sheet: its shape is off the folded sheet",
+        "step 8 (a8): the cut misses the sheet: its shape is off the folded sheet"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.03939725,
+    "responseSeconds": 15.176832409000001,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "scissors",
+    "title": "Scissors",
+    "request": "Create a useful manual from the scissors-only photo. Original upload had no additional project request.",
+    "guidance": {
+      "messages": []
+    },
+    "qualification": {
+      "machine": "unqualified",
+      "eligibleForPilot": false,
+      "taskReview": "pending",
+      "reason": "Scissors-only input. Task and material sufficiency remain unqualified; compare automated check results as a diagnostic, excluded from reliability rankings."
+    },
+    "reviewQuestions": [
+      "Does the proposed project have all essential materials?",
+      "Are additional supplies explicitly declared rather than invented as photographed objects?",
+      "Are the steps complete and consistent with the planned actions?",
+      "Does the stated result follow from the available materials and steps?"
+    ]
+  },
+  "plan": {
+    "title": "Paper Snowflake",
+    "design": {
+      "purpose": "Cut six-point paper snowflake decoration for window, about 20 cm across",
+      "size": [
+        20,
+        20,
+        0.02
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place paper",
+        "c": "Place square sheet flat on table"
+      },
+      {
+        "t": "Fold diagonally",
+        "c": "Bring corner to opposite corner"
+      },
+      {
+        "t": "Fold again",
+        "c": "Bring other corner to opposite corner"
+      },
+      {
+        "t": "Fold third",
+        "c": "Fold side edge to narrow wedge"
+      },
+      {
+        "t": "Fold fourth",
+        "c": "Fold other side edge to narrow wedge"
+      },
+      {
+        "t": "Trim end",
+        "c": "Trim wide end straight off"
+      },
+      {
+        "t": "Notch side",
+        "c": "Cut small notch from side"
+      },
+      {
+        "t": "Notch other",
+        "c": "Cut small notch other side"
+      },
+      {
+        "t": "Open snowflake",
+        "c": "Open sheet to show snowflake"
+      }
+    ]
+  },
+  "rawText": null
+}

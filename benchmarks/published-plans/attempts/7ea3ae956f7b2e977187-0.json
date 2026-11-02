@@ -1,0 +1,240 @@
+{
+  "row": {
+    "id": "7ea3ae956f7b2e977187-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "low",
+    "trialId": "7ea3ae956f7b2e977187",
+    "sample": 2,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "a15: measured work position lies outside the part"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "a15: measured work position lies outside the part"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 1: the caption gives 18 cm, but no action carries it",
+        "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 3: the caption gives 15 cm, but no action carries it",
+        "step 5: the caption gives 20 cm, but no action carries it",
+        "step 6: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 8: the caption gives 18 cm, but no action carries it",
+        "step 10: the caption gives 44 cm, but no action carries it",
+        "step 11: the caption gives 44 cm, but no action carries it",
+        "step 12: the caption gives 14 cm, but no action carries it",
+        "step 13: the caption gives 14 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a15: measured work position lies outside the part",
+        "a16: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a17: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a18: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a19: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a20: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a21: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a22: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a23: puts in screws-40, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a24: puts in screws-30, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a25: puts in screws-30, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.181008,
+    "responseSeconds": 37.577398763000005,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Herb Planter",
+    "design": {
+      "purpose": "A drained outdoor planter for herbs or flowers for one person, using all three weathered boards. Interior is about 40 × 14 × 15 cm, so fill with about 8 litres of compost to 2 cm below the rim.",
+      "size": [
+        44,
+        18,
+        19
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place base board",
+        "c": "Place the 18 cm-wide board flat for cutting"
+      },
+      {
+        "t": "Cut the base",
+        "c": "Cut a 44 cm base; keep the 75.7 cm offcut"
+      },
+      {
+        "t": "Place side board",
+        "c": "Place the 15 cm-wide board flat for cutting"
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Cut 44, 44, 14 and 14 cm planter sides"
+      },
+      {
+        "t": "Place foot board",
+        "c": "Place the 20 cm-wide board flat for cutting"
+      },
+      {
+        "t": "Cut the feet",
+        "c": "Cut two 18 cm feet; keep the offcut"
+      },
+      {
+        "t": "Sand the parts",
+        "c": "Sand all cut edges of the seven planter parts"
+      },
+      {
+        "t": "Place the base",
+        "c": "Place the 44 × 18 cm base flat"
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill three drainage holes through the base"
+      },
+      {
+        "t": "Place the front",
+        "c": "Stand the 44 cm front on the base front edge"
+      },
+      {
+        "t": "Place the back",
+        "c": "Stand the 44 cm back on the base back edge"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit the 14 cm left end between the sides"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the 14 cm right end between the sides"
+      },
+      {
+        "t": "Place first foot",
+        "c": "Turn the first foot crosswise under the base"
+      },
+      {
+        "t": "Place second foot",
+        "c": "Turn the second foot crosswise under the base"
+      },
+      {
+        "t": "Fix front to left end",
+        "c": "Drive screws through the front into the left end"
+      },
+      {
+        "t": "Fix front to right end",
+        "c": "Drive screws through the front into the right end"
+      },
+      {
+        "t": "Fix back to left end",
+        "c": "Drive screws through the back into the left end"
+      },
+      {
+        "t": "Fix back to right end",
+        "c": "Drive screws through the back into the right end"
+      },
+      {
+        "t": "Fix base to front",
+        "c": "Drive screws upward through base into front"
+      },
+      {
+        "t": "Fix base to back",
+        "c": "Drive screws upward through base into back"
+      },
+      {
+        "t": "Fix base to left end",
+        "c": "Drive screws upward through base into left end"
+      },
+      {
+        "t": "Fix base to right end",
+        "c": "Drive screws upward through base into right end"
+      },
+      {
+        "t": "Fix first foot",
+        "c": "Drive screws upward through first foot into base"
+      },
+      {
+        "t": "Fix second foot",
+        "c": "Drive screws upward through second foot into base"
+      }
+    ]
+  },
+  "rawText": null
+}

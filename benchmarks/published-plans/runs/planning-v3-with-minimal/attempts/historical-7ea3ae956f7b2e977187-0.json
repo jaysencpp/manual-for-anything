@@ -1,0 +1,209 @@
+{
+  "row": {
+    "id": "historical-7ea3ae956f7b2e977187-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "low",
+    "trialId": "historical-7ea3ae956f7b2e977187",
+    "sample": 2,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "skipped",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "Invalid operation contract: a7: measured work position lies outside the part"
+          ]
+        },
+        "geometry": {
+          "status": "skipped",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "skipped",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "Invalid operation contract: a7: measured work position lies outside the part"
+        }
+      ],
+      "warnings": [],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a7: measured work position lies outside the part"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.1100328,
+    "responseSeconds": 28.39375142800002,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Raised Herb Planter",
+    "design": {
+      "purpose": "A raised open planter for herbs or flowers for one gardener; interior about 36 × 14 cm with 20 cm soil depth above the base, filled to 15 cm by the user after filming.",
+      "size": [
+        40,
+        24,
+        24
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the 120 cm wide board flat for cutting."
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Cut front 40, back 40, ends 14 cm each, keep offcut."
+      },
+      {
+        "t": "Place base board",
+        "c": "Place the 120 cm board flat for cutting."
+      },
+      {
+        "t": "Cut base",
+        "c": "Cut the 40 cm base and keep the offcut."
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Place the 120 cm narrow board flat for cutting."
+      },
+      {
+        "t": "Cut feet",
+        "c": "Cut two 24 cm feet and keep the offcut."
+      },
+      {
+        "t": "Sand cut parts",
+        "c": "Sand all cut edges of the planter parts smooth."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill three drainage holes through the base."
+      },
+      {
+        "t": "Place base",
+        "c": "Place the 40 × 18 cm base flat."
+      },
+      {
+        "t": "Place front side",
+        "c": "Stand the front side on the base front edge."
+      },
+      {
+        "t": "Place back side",
+        "c": "Stand the back side on the base back edge."
+      },
+      {
+        "t": "Place first end",
+        "c": "Fit the first 14 cm end between the sides."
+      },
+      {
+        "t": "Place second end",
+        "c": "Fit the second 14 cm end between the sides."
+      },
+      {
+        "t": "Fix front left corner",
+        "c": "Drive screws through front into first end."
+      },
+      {
+        "t": "Fix front right corner",
+        "c": "Drive screws through front into second end."
+      },
+      {
+        "t": "Fix back left corner",
+        "c": "Drive screws through back into first end."
+      },
+      {
+        "t": "Fix back right corner",
+        "c": "Drive screws through back into second end."
+      },
+      {
+        "t": "Fix base to front",
+        "c": "Drive screws upward through base into front."
+      },
+      {
+        "t": "Fix base to back",
+        "c": "Drive screws upward through base into back."
+      },
+      {
+        "t": "Fix base left end",
+        "c": "Drive a screw upward through base into first end."
+      },
+      {
+        "t": "Fix base right end",
+        "c": "Drive a screw upward through base into second end."
+      },
+      {
+        "t": "Place first foot",
+        "c": "Place first foot under base, 6 cm from its start."
+      },
+      {
+        "t": "Place second foot",
+        "c": "Place second foot under base, 28 cm from its start."
+      },
+      {
+        "t": "Fix first foot",
+        "c": "Drive short screws through base into first foot."
+      },
+      {
+        "t": "Fix second foot",
+        "c": "Drive short screws through base into second foot."
+      }
+    ]
+  },
+  "rawText": null
+}

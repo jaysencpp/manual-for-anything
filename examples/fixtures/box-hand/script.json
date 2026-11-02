@@ -1,0 +1,480 @@
+{
+ "objects": [
+  {
+   "k": "board-a",
+   "n": "weathered pine board",
+   "b": [
+    150,
+    28,
+    402,
+    188
+   ],
+   "cm": 121,
+   "w": 14.57943925233645,
+   "thick": 2,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "w": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "thick": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "board-b",
+   "n": "weathered pine board",
+   "b": [
+    72,
+    45,
+    430,
+    242
+   ],
+   "cm": 120,
+   "w": 24,
+   "thick": 2,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "w": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "thick": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  }
+ ],
+ "ideas": [
+  {
+   "title": "Planter Box",
+   "kind": "build",
+   "pitch": "an open box"
+  }
+ ],
+ "pick": 0,
+ "title": "Planter Box",
+ "sub": "A 40 cm open planter",
+ "tag": "2 hours · Easy",
+ "view": "iso",
+ "tools": [
+  {
+   "k": "saw",
+   "use": "saw"
+  },
+  {
+   "k": "drill",
+   "use": "drill"
+  },
+  {
+   "k": "screws",
+   "use": "screw",
+   "cm": 7
+  },
+  {
+   "k": "pencil",
+   "use": "pencil"
+  },
+  {
+   "k": "glue",
+   "use": "glue"
+  },
+  {
+   "k": "clamp",
+   "use": "clamp"
+  }
+ ],
+ "steps": [
+  {
+   "t": "Cut the sides",
+   "c": "Cut two 40 cm sides and two 20 cm ends.",
+   "do": [
+    {
+     "v": "cut",
+     "k": "board-a",
+     "with": "saw",
+     "into": [
+      {
+       "k": "side-a",
+       "label": "40 cm",
+       "cm": 40
+      },
+      {
+       "k": "side-b",
+       "label": "40 cm",
+       "cm": 40
+      },
+      {
+       "k": "end-a",
+       "label": "20 cm",
+       "cm": 20
+      },
+      {
+       "k": "end-b",
+       "label": "20 cm",
+       "cm": 20
+      }
+     ],
+     "id": "op-1",
+     "intent": "cut"
+    }
+   ],
+   "claims": [
+    "op-1"
+   ]
+  },
+  {
+   "t": "Cut the base",
+   "c": "Cut a 40 cm base; set the offcut aside.",
+   "do": [
+    {
+     "v": "cut",
+     "k": "board-b",
+     "with": "saw",
+     "into": [
+      {
+       "k": "base",
+       "label": "40 cm",
+       "cm": 40
+      },
+      {
+       "k": "offcut",
+       "label": "80 cm",
+       "cm": 80
+      }
+     ],
+     "id": "op-2",
+     "intent": "cut"
+    }
+   ],
+   "claims": [
+    "op-2"
+   ]
+  },
+  {
+   "t": "Stand the sides",
+   "c": "Stand both sides on edge along the base.",
+   "do": [
+    {
+     "v": "place",
+     "k": "base",
+     "rel": "floor",
+     "id": "op-3",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "side-a",
+     "rel": "on",
+     "to": "base",
+     "side": "front",
+     "stand": "edge",
+     "id": "op-4",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "side-b",
+     "rel": "on",
+     "to": "base",
+     "side": "back",
+     "stand": "edge",
+     "id": "op-5",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-3",
+    "op-4",
+    "op-5"
+   ]
+  },
+  {
+   "t": "Fit the ends",
+   "c": "Fit the ends between the sides at both ends.",
+   "do": [
+    {
+     "v": "place",
+     "k": "end-a",
+     "rel": "between",
+     "to": "side-a",
+     "and": "side-b",
+     "at": "start",
+     "id": "op-6",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "end-b",
+     "rel": "between",
+     "to": "side-a",
+     "and": "side-b",
+     "at": "end",
+     "id": "op-7",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-6",
+    "op-7"
+   ]
+  },
+  {
+   "t": "Glue and clamp",
+   "c": "Glue both ends of each end; clamp across the box.",
+   "do": [
+    {
+     "v": "use",
+     "k": "end-a",
+     "with": "glue",
+     "x": [
+      0.06,
+      0.94
+     ],
+     "id": "op-8",
+     "intent": "apply"
+    },
+    {
+     "v": "use",
+     "k": "end-b",
+     "with": "glue",
+     "x": [
+      0.06,
+      0.94
+     ],
+     "id": "op-9",
+     "intent": "apply"
+    },
+    {
+     "v": "use",
+     "k": "side-a",
+     "with": "clamp",
+     "face": "front",
+     "at": "middle",
+     "id": "op-10",
+     "intent": "apply"
+    }
+   ],
+   "claims": [
+    "op-8",
+    "op-9",
+    "op-10"
+   ]
+  },
+  {
+   "t": "Screw the corners",
+   "c": "Drive 4 screws, 70 mm long, through the sides into the ends.",
+   "do": [
+    {
+     "v": "use",
+     "k": "side-a",
+     "with": "drill",
+     "part": "screws",
+     "face": "front",
+     "id": "op-11-0",
+     "intent": "fasten",
+     "to": "end-a",
+     "joint": "joint-op-11-0",
+     "sites": [
+      {
+       "x": 0.025,
+       "lat": 0
+      }
+     ],
+     "n": 1,
+     "depthCm": 7,
+     "label": "70 mm"
+    },
+    {
+     "v": "use",
+     "k": "side-a",
+     "with": "drill",
+     "part": "screws",
+     "face": "front",
+     "id": "op-11-1",
+     "intent": "fasten",
+     "to": "end-b",
+     "joint": "joint-op-11-1",
+     "sites": [
+      {
+       "x": 0.975,
+       "lat": 0
+      }
+     ],
+     "n": 1,
+     "depthCm": 7,
+     "label": "70 mm"
+    },
+    {
+     "v": "use",
+     "k": "side-b",
+     "with": "drill",
+     "part": "screws",
+     "face": "back",
+     "id": "op-12-0",
+     "intent": "fasten",
+     "to": "end-a",
+     "joint": "joint-op-12-0",
+     "sites": [
+      {
+       "x": 0.025,
+       "lat": 0
+      }
+     ],
+     "n": 1,
+     "depthCm": 7,
+     "label": "70 mm"
+    },
+    {
+     "v": "use",
+     "k": "side-b",
+     "with": "drill",
+     "part": "screws",
+     "face": "back",
+     "id": "op-12-1",
+     "intent": "fasten",
+     "to": "end-b",
+     "joint": "joint-op-12-1",
+     "sites": [
+      {
+       "x": 0.975,
+       "lat": 0
+      }
+     ],
+     "n": 1,
+     "depthCm": 7,
+     "label": "70 mm"
+    }
+   ],
+   "claims": [
+    "op-11-0",
+    "op-11-1",
+    "op-12-0",
+    "op-12-1"
+   ],
+   "caption": {
+    "template": "Drive {count} screws, 70 mm long, through the sides into the ends.",
+    "actions": [
+     "op-11-0",
+     "op-11-1",
+     "op-12-0",
+     "op-12-1"
+    ]
+   }
+  }
+ ],
+ "rigs": [],
+ "finale": [],
+ "end": "Line it and plant.",
+ "joints": [
+  {
+   "id": "joint-op-11-0",
+   "a": "side-a",
+   "b": "end-a",
+   "method": "fasten",
+   "face": "front",
+   "otherFace": "front",
+   "sites": [
+    {
+     "x": 0.025,
+     "lat": 0
+    }
+   ],
+   "depthCm": 7
+  },
+  {
+   "id": "joint-op-11-1",
+   "a": "side-a",
+   "b": "end-b",
+   "method": "fasten",
+   "face": "front",
+   "otherFace": "front",
+   "sites": [
+    {
+     "x": 0.975,
+     "lat": 0
+    }
+   ],
+   "depthCm": 7
+  },
+  {
+   "id": "joint-op-12-0",
+   "a": "side-b",
+   "b": "end-a",
+   "method": "fasten",
+   "face": "back",
+   "otherFace": "back",
+   "sites": [
+    {
+     "x": 0.025,
+     "lat": 0
+    }
+   ],
+   "depthCm": 7
+  },
+  {
+   "id": "joint-op-12-1",
+   "a": "side-b",
+   "b": "end-b",
+   "method": "fasten",
+   "face": "back",
+   "otherFace": "back",
+   "sites": [
+    {
+     "x": 0.975,
+     "lat": 0
+    }
+   ],
+   "depthCm": 7
+  }
+ ],
+ "goals": [],
+ "contractVersion": 2,
+ "mode": "physical",
+ "design": {
+  "purpose": "Planter Box",
+  "basis": "Illustrative saved photo estimates; confirm all dimensions before making.",
+  "size": [
+   40,
+   24,
+   16.579439
+  ],
+  "parts": [
+   {
+    "k": "side-a",
+    "from": "board-a",
+    "cm": 40
+   },
+   {
+    "k": "side-b",
+    "from": "board-a",
+    "cm": 40
+   },
+   {
+    "k": "end-a",
+    "from": "board-a",
+    "cm": 20
+   },
+   {
+    "k": "end-b",
+    "from": "board-a",
+    "cm": 20
+   },
+   {
+    "k": "base",
+    "from": "board-b",
+    "cm": 40
+   }
+  ]
+ }
+}

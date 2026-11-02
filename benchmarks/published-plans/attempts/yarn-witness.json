@@ -1,0 +1,119 @@
+{
+  "row": {
+    "id": "yarn-witness",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "saved-fixture",
+    "effort": "not-recorded",
+    "requestKind": "saved witness",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 39,
+          "duration": 35.79999999999999,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": null,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": null,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": null,
+    "responseSeconds": null,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Two-Tone Chunky Trivet",
+    "steps": [
+      {
+        "t": "Start magic ring",
+        "c": "Green: magic ring, ch 1. Rnd 1: 6 sc in ring, pull tight."
+      },
+      {
+        "t": "Increase round two",
+        "c": "Rnd 2: 2 sc in each st around. 12 sts."
+      },
+      {
+        "t": "Increase round three",
+        "c": "Rnd 3: *sc 1, 2 sc in next*; repeat around. 18 sts."
+      },
+      {
+        "t": "Change to blue",
+        "c": "Join blue. Rnd 4: *sc 2, 2 sc in next*; repeat. 24 sts."
+      },
+      {
+        "t": "Cut and finish",
+        "c": "Sl st to join, cut yarn 15 cm, weave in ends."
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,250 @@
+{
+  "row": {
+    "id": "6c694e9e49d81442173b-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "6c694e9e49d81442173b",
+    "sample": 1,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "f1: unknown joint box-front-left",
+            "f2: unknown joint box-front-right",
+            "f3: unknown joint box-back-left",
+            "f4: unknown joint box-back-right",
+            "f5: unknown joint box-base-front",
+            "f6: unknown joint box-base-back",
+            "f7: unknown joint box-base-left",
+            "f8: unknown joint box-base-right"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "design: the size is 45 × 18 × 20 cm but the steps build 45 × 34 × 4 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f1: unknown joint box-front-left"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f2: unknown joint box-front-right"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f3: unknown joint box-back-left"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f4: unknown joint box-back-right"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f5: unknown joint box-base-front"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f6: unknown joint box-base-back"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f7: unknown joint box-base-left"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "f8: unknown joint box-base-right"
+        },
+        {
+          "stage": "geometry",
+          "code": "design-dimensions",
+          "message": "design: the size is 45 × 18 × 20 cm but the steps build 45 × 34 × 4 cm (width × depth × height): make the parts and their placing give the designed size, or correct the design if it was wrong"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "f1: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f1: unknown joint box-front-left",
+        "f2: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f2: unknown joint box-front-right",
+        "f3: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f3: unknown joint box-back-left",
+        "f4: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f4: unknown joint box-back-right",
+        "f5: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f5: unknown joint box-base-front",
+        "f6: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f6: unknown joint box-base-back",
+        "f7: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f7: unknown joint box-base-left",
+        "f8: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "f8: unknown joint box-base-right",
+        "unreached goal box:assembled"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.0402835,
+    "responseSeconds": 18.754489467000006,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Pine Planter",
+    "design": {
+      "purpose": "Rectangular planter for herbs and flowers, holds soil 18 cm deep. Base 45x18 cm from board-b, sides 20 cm high from board-a.",
+      "size": [
+        45,
+        18,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place board A",
+        "c": "Place wide board and mark cuts"
+      },
+      {
+        "t": "Saw sides",
+        "c": "Cut front, back and two ends"
+      },
+      {
+        "t": "Place board B",
+        "c": "Place second board and mark base"
+      },
+      {
+        "t": "Saw base",
+        "c": "Cut 45 cm base"
+      },
+      {
+        "t": "Drill base",
+        "c": "Drill drain holes in base"
+      },
+      {
+        "t": "Place base",
+        "c": "Place base flat"
+      },
+      {
+        "t": "Place front",
+        "c": "Place front side"
+      },
+      {
+        "t": "Place back",
+        "c": "Place back side"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit left end between sides"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit right end between sides"
+      },
+      {
+        "t": "Screw front left",
+        "c": "Drive 2 screws front to left end"
+      },
+      {
+        "t": "Screw front right",
+        "c": "Drive 2 screws front to right end"
+      },
+      {
+        "t": "Screw back left",
+        "c": "Drive 2 screws back to left end"
+      },
+      {
+        "t": "Screw back right",
+        "c": "Drive 2 screws back to right end"
+      },
+      {
+        "t": "Screw base sides",
+        "c": "Drive 2 screws base to sides"
+      },
+      {
+        "t": "Screw base ends",
+        "c": "Drive 2 screws base to ends"
+      }
+    ]
+  },
+  "rawText": null
+}

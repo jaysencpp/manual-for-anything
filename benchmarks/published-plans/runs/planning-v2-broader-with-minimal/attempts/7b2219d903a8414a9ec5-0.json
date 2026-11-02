@@ -1,0 +1,148 @@
+{
+  "row": {
+    "id": "7b2219d903a8414a9ec5-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "7b2219d903a8414a9ec5",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 64,
+          "duration": 49.49999999999999,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "step 9: the caption names needle, but no action uses it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.038836800000000005,
+    "responseSeconds": 11.014012335000007,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Striped Lap Blanket",
+    "design": {
+      "purpose": "Serves one person as a warm lap blanket: chunky two-colour striped rectangle worked in single crochet, using the green yarn then the blue yarn. Confirm enough yarn for the stated size before starting; yardage is not known from the photograph.",
+      "size": [
+        80,
+        1,
+        100
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place green yarn",
+        "c": "Place the green yarn on the work surface."
+      },
+      {
+        "t": "Place blue yarn",
+        "c": "Place the blue yarn beside the green yarn."
+      },
+      {
+        "t": "Chain foundation",
+        "c": "Ch 31 with green yarn; foundation ready for 30 stitches."
+      },
+      {
+        "t": "Work row 1",
+        "c": "Row 1: sc in 2nd ch from hook and each ch across, 30 sc. Ch 1, turn."
+      },
+      {
+        "t": "Work green rows",
+        "c": "Rows 2-10: ch 1, turn, 30 sc across each row, green stripes."
+      },
+      {
+        "t": "Cut green yarn",
+        "c": "Cut the green yarn, leaving a 15 cm tail."
+      },
+      {
+        "t": "Work blue rows",
+        "c": "Rows 11-20: join blue, ch 1, turn, 30 sc across each row."
+      },
+      {
+        "t": "Fasten off",
+        "c": "Fasten off and cut blue yarn, leaving a 15 cm tail."
+      },
+      {
+        "t": "Weave in ends",
+        "c": "Weave in all tails with the needle, working back and forth."
+      }
+    ]
+  },
+  "rawText": null
+}

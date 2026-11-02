@@ -1,0 +1,258 @@
+{
+  "row": {
+    "id": "fb6dd5830c64021dc3a4-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "fb6dd5830c64021dc3a4",
+    "sample": 2,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "a12: unknown joint box-front-left",
+            "a13: unknown joint box-front-right",
+            "a14: unknown joint box-back-left",
+            "a15: unknown joint box-back-right",
+            "a16: unknown joint box-base-front",
+            "a17: unknown joint box-base-back",
+            "a18: unknown joint box-base-left",
+            "a19: unknown joint box-base-right"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a12: unknown joint box-front-left"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a13: unknown joint box-front-right"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a14: unknown joint box-back-left"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a15: unknown joint box-back-right"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a16: unknown joint box-base-front"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a17: unknown joint box-base-back"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a18: unknown joint box-base-left"
+        },
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a19: unknown joint box-base-right"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 1: the caption gives 20 cm, but no action carries it",
+        "step 3: the caption gives 15 cm, but no action carries it",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 5: the caption gives 40 cm, but no action carries it",
+        "step 9: the caption gives 11 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a12: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a12: unknown joint box-front-left",
+        "a13: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a13: unknown joint box-front-right",
+        "a14: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a14: unknown joint box-back-left",
+        "a15: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a15: unknown joint box-back-right",
+        "a16: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a16: unknown joint box-base-front",
+        "a17: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a17: unknown joint box-base-back",
+        "a18: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a18: unknown joint box-base-left",
+        "a19: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a19: unknown joint box-base-right"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.1278,
+    "responseSeconds": 18.427726427000017,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Herb Planter Box",
+    "design": {
+      "purpose": "A weatherproof-look open planter for herbs or flowers, with 20 cm soil depth and drainage holes in the base.",
+      "size": [
+        40,
+        15,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Lay the 20 cm board flat for cutting."
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Saw into front, back and two 11 cm ends."
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Lay the 15 cm board flat for cutting."
+      },
+      {
+        "t": "Cut the base",
+        "c": "Saw the 40 cm base from this board."
+      },
+      {
+        "t": "Place base flat",
+        "c": "Place the 40 cm base flat."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill three 10 mm drainage holes through base."
+      },
+      {
+        "t": "Place front side",
+        "c": "Stand the front on the base front edge."
+      },
+      {
+        "t": "Place back side",
+        "c": "Stand the back on the base back edge."
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit one 11 cm end between the sides."
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit the other end between the sides."
+      },
+      {
+        "t": "Sand the box",
+        "c": "Sand all outside faces and top edges smooth."
+      },
+      {
+        "t": "Screw front to left",
+        "c": "Fix the front to the left end."
+      },
+      {
+        "t": "Screw front to right",
+        "c": "Fix the front to the right end."
+      },
+      {
+        "t": "Screw back to left",
+        "c": "Fix the back to the left end."
+      },
+      {
+        "t": "Screw back to right",
+        "c": "Fix the back to the right end."
+      },
+      {
+        "t": "Screw base to front",
+        "c": "Fix the base up into the front side."
+      },
+      {
+        "t": "Screw base to back",
+        "c": "Fix the base up into the back side."
+      },
+      {
+        "t": "Screw base to left",
+        "c": "Fix the base up into the left end."
+      },
+      {
+        "t": "Screw base to right",
+        "c": "Fix the base up into the right end."
+      }
+    ]
+  },
+  "rawText": null
+}

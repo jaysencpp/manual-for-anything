@@ -1,0 +1,726 @@
+{
+ "objects": [
+  {
+   "k": "batten-a",
+   "n": "wooden batten",
+   "b": [
+    0,
+    45,
+    357,
+    320
+   ],
+   "cm": 40,
+   "w": 2.5,
+   "thick": 2.5,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "w": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "thick": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "batten-b",
+   "n": "wooden batten",
+   "b": [
+    62,
+    50,
+    330,
+    360
+   ],
+   "cm": 40,
+   "w": 2.5,
+   "thick": 2.5,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "w": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "thick": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "batten-c",
+   "n": "wooden batten",
+   "b": [
+    133,
+    55,
+    292,
+    365
+   ],
+   "cm": 40,
+   "w": 2.5,
+   "thick": 2.5,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "w": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "thick": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "batten-d",
+   "n": "wooden batten",
+   "b": [
+    208,
+    63,
+    282,
+    400
+   ],
+   "cm": 40,
+   "w": 2.5,
+   "thick": 2.5,
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "w": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    },
+    "thick": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  }
+ ],
+ "ideas": [
+  {
+   "title": "Square Batten Frame",
+   "kind": "build",
+   "pitch": "A glued and screwed 40 cm square frame for a board or print"
+  },
+  {
+   "title": "Small Wall Rack",
+   "kind": "build",
+   "pitch": "Two-rail rack screwed to the wall for hanging tools"
+  },
+  {
+   "title": "Plant Stand Base",
+   "kind": "build",
+   "pitch": "Low square frame that lifts a pot off the floor"
+  }
+ ],
+ "pick": 0,
+ "title": "Square Batten Frame",
+ "sub": "40 cm screwed wooden frame",
+ "tag": "40 × 40 cm · 45 min · Easy",
+ "view": "plan",
+ "tools": [
+  {
+   "k": "tape",
+   "use": "tape"
+  },
+  {
+   "k": "pencil",
+   "use": "pencil"
+  },
+  {
+   "k": "square",
+   "use": "square"
+  },
+  {
+   "k": "saw",
+   "use": "saw"
+  },
+  {
+   "k": "glue",
+   "use": "glue"
+  },
+  {
+   "k": "clamp",
+   "use": "clamp"
+  },
+  {
+   "k": "drill",
+   "use": "drill"
+  },
+  {
+   "k": "screws",
+   "use": "screw",
+   "cm": 8
+  },
+  {
+   "k": "sander",
+   "use": "sander"
+  }
+ ],
+ "steps": [
+  {
+   "t": "Mark the rails",
+   "c": "Mark 35 cm on two battens with a square and pencil.",
+   "do": [
+    {
+     "v": "place",
+     "k": "batten-c",
+     "rel": "floor",
+     "id": "op-1",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "batten-d",
+     "rel": "floor",
+     "id": "op-2",
+     "intent": "place"
+    },
+    {
+     "v": "measure",
+     "k": "batten-c",
+     "label": "35 cm",
+     "with": "tape",
+     "id": "op-3",
+     "intent": "measure"
+    },
+    {
+     "v": "use",
+     "k": "batten-c",
+     "with": "pencil",
+     "cm": [
+      35
+     ],
+     "id": "op-4",
+     "intent": "mark"
+    },
+    {
+     "v": "use",
+     "k": "batten-d",
+     "with": "pencil",
+     "cm": [
+      35
+     ],
+     "id": "op-5",
+     "intent": "mark"
+    }
+   ],
+   "claims": [
+    "op-1",
+    "op-2",
+    "op-3",
+    "op-4",
+    "op-5"
+   ]
+  },
+  {
+   "t": "Cut the rails",
+   "c": "Saw both battens square at the mark: two 35 cm rails.",
+   "do": [
+    {
+     "v": "cut",
+     "k": "batten-c",
+     "with": "saw",
+     "into": [
+      {
+       "k": "rail-a",
+       "label": "35 cm",
+       "cm": 35
+      },
+      {
+       "k": "offcut-a",
+       "label": "5 cm",
+       "cm": 5
+      }
+     ],
+     "id": "op-6",
+     "intent": "cut"
+    },
+    {
+     "v": "cut",
+     "k": "batten-d",
+     "with": "saw",
+     "into": [
+      {
+       "k": "rail-b",
+       "label": "35 cm",
+       "cm": 35
+      },
+      {
+       "k": "offcut-b",
+       "label": "5 cm",
+       "cm": 5
+      }
+     ],
+     "id": "op-7",
+     "intent": "cut"
+    }
+   ],
+   "claims": [
+    "op-6",
+    "op-7"
+   ]
+  },
+  {
+   "t": "Lay out frame",
+   "c": "Lay the 40 cm sides parallel, 35 cm apart; rails between.",
+   "do": [
+    {
+     "v": "place",
+     "k": "batten-a",
+     "rel": "floor",
+     "id": "op-8",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "batten-b",
+     "to": "batten-a",
+     "rel": "parallel",
+     "gap": 35,
+     "side": "+",
+     "id": "op-9",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "rail-a",
+     "to": "batten-a",
+     "and": "batten-b",
+     "rel": "between",
+     "at": "start",
+     "id": "op-10",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "rail-b",
+     "to": "batten-a",
+     "and": "batten-b",
+     "rel": "between",
+     "at": "end",
+     "id": "op-11",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-8",
+    "op-9",
+    "op-10",
+    "op-11"
+   ]
+  },
+  {
+   "t": "Glue and clamp",
+   "c": "Glue the rail ends, check corners square, clamp tight.",
+   "do": [
+    {
+     "v": "use",
+     "k": "rail-a",
+     "with": "glue",
+     "face": "start",
+     "x": [
+      0.06,
+      0.94
+     ],
+     "id": "op-12",
+     "intent": "apply"
+    },
+    {
+     "v": "use",
+     "k": "rail-b",
+     "with": "glue",
+     "face": "start",
+     "x": [
+      0.06,
+      0.94
+     ],
+     "id": "op-13",
+     "intent": "apply"
+    },
+    {
+     "v": "use",
+     "k": "rail-a",
+     "with": "glue",
+     "face": "end",
+     "x": [
+      0.06,
+      0.94
+     ],
+     "id": "op-14",
+     "intent": "apply"
+    },
+    {
+     "v": "use",
+     "k": "rail-b",
+     "with": "glue",
+     "face": "end",
+     "x": [
+      0.06,
+      0.94
+     ],
+     "id": "op-15",
+     "intent": "apply"
+    },
+    {
+     "v": "measure",
+     "k": "batten-a",
+     "with": "square",
+     "x": [
+      0.03,
+      0.97
+     ],
+     "id": "op-16",
+     "intent": "measure"
+    },
+    {
+     "v": "measure",
+     "k": "batten-b",
+     "with": "square",
+     "x": [
+      0.03,
+      0.97
+     ],
+     "id": "op-17",
+     "intent": "measure"
+    },
+    {
+     "v": "use",
+     "k": "batten-a",
+     "with": "clamp",
+     "at": "middle",
+     "id": "op-18",
+     "intent": "apply"
+    },
+    {
+     "v": "use",
+     "k": "batten-b",
+     "with": "clamp",
+     "at": "middle",
+     "id": "op-19",
+     "intent": "apply"
+    }
+   ],
+   "claims": [
+    "op-12",
+    "op-13",
+    "op-14",
+    "op-15",
+    "op-16",
+    "op-17",
+    "op-18",
+    "op-19"
+   ]
+  },
+  {
+   "t": "Screw the corners",
+   "c": "Pre-drill 3 mm pilot holes; drive 8 screws, 80 mm long, into the four corners.",
+   "do": [
+    {
+     "v": "use",
+     "k": "batten-a",
+     "with": "drill",
+     "face": "front",
+     "x": [
+      0.03,
+      0.97
+     ],
+     "label": "3 mm",
+     "id": "op-20",
+     "intent": "drill"
+    },
+    {
+     "v": "use",
+     "k": "batten-b",
+     "with": "drill",
+     "face": "front",
+     "x": [
+      0.03,
+      0.97
+     ],
+     "label": "3 mm",
+     "id": "op-21",
+     "intent": "drill"
+    },
+    {
+     "v": "use",
+     "k": "batten-a",
+     "with": "drill",
+     "face": "front",
+     "part": "screws",
+     "n": 2,
+     "label": "80 mm",
+     "id": "op-22-0",
+     "intent": "fasten",
+     "to": "rail-a",
+     "joint": "joint-op-22-0",
+     "sites": [
+      {
+       "x": 0.009375,
+       "lat": 0
+      },
+      {
+       "x": 0.053125,
+       "lat": 0
+      }
+     ],
+     "depthCm": 8
+    },
+    {
+     "v": "use",
+     "k": "batten-a",
+     "with": "drill",
+     "face": "front",
+     "part": "screws",
+     "n": 2,
+     "label": "80 mm",
+     "id": "op-22-1",
+     "intent": "fasten",
+     "to": "rail-b",
+     "joint": "joint-op-22-1",
+     "sites": [
+      {
+       "x": 0.946875,
+       "lat": 0
+      },
+      {
+       "x": 0.990625,
+       "lat": 0
+      }
+     ],
+     "depthCm": 8
+    },
+    {
+     "v": "use",
+     "k": "batten-b",
+     "with": "drill",
+     "face": "back",
+     "part": "screws",
+     "n": 2,
+     "label": "80 mm",
+     "id": "op-23-0",
+     "intent": "fasten",
+     "to": "rail-a",
+     "joint": "joint-op-23-0",
+     "sites": [
+      {
+       "x": 0.009375,
+       "lat": 0
+      },
+      {
+       "x": 0.053125,
+       "lat": 0
+      }
+     ],
+     "depthCm": 8
+    },
+    {
+     "v": "use",
+     "k": "batten-b",
+     "with": "drill",
+     "face": "back",
+     "part": "screws",
+     "n": 2,
+     "label": "80 mm",
+     "id": "op-23-1",
+     "intent": "fasten",
+     "to": "rail-b",
+     "joint": "joint-op-23-1",
+     "sites": [
+      {
+       "x": 0.946875,
+       "lat": 0
+      },
+      {
+       "x": 0.990625,
+       "lat": 0
+      }
+     ],
+     "depthCm": 8
+    }
+   ],
+   "claims": [
+    "op-20",
+    "op-21",
+    "op-22-0",
+    "op-22-1",
+    "op-23-0",
+    "op-23-1"
+   ],
+   "caption": {
+    "template": "Pre-drill 3 mm pilot holes; drive {count} screws, 80 mm long, into the four corners.",
+    "actions": [
+     "op-22-0",
+     "op-22-1",
+     "op-23-0",
+     "op-23-1"
+    ]
+   }
+  },
+  {
+   "t": "Sand smooth",
+   "c": "Once glue sets, sand all faces and edges with 120 grit.",
+   "do": [
+    {
+     "v": "use",
+     "k": "batten-a",
+     "with": "sander",
+     "id": "op-24",
+     "intent": "sand"
+    },
+    {
+     "v": "use",
+     "k": "batten-b",
+     "with": "sander",
+     "id": "op-25",
+     "intent": "sand"
+    },
+    {
+     "v": "use",
+     "k": "rail-a",
+     "with": "sander",
+     "id": "op-26",
+     "intent": "sand"
+    },
+    {
+     "v": "use",
+     "k": "rail-b",
+     "with": "sander",
+     "id": "op-27",
+     "intent": "sand"
+    }
+   ],
+   "claims": [
+    "op-24",
+    "op-25",
+    "op-26",
+    "op-27"
+   ]
+  }
+ ],
+ "rigs": [],
+ "finale": [
+  {
+   "v": "turn",
+   "k": "batten-a",
+   "to": null,
+   "by": 90
+  }
+ ],
+ "end": "Mount a board or hang it.",
+ "joints": [
+  {
+   "id": "joint-op-22-0",
+   "a": "batten-a",
+   "b": "rail-a",
+   "method": "fasten",
+   "face": "front",
+   "otherFace": "front",
+   "sites": [
+    {
+     "x": 0.009375,
+     "lat": 0
+    },
+    {
+     "x": 0.053125,
+     "lat": 0
+    }
+   ],
+   "depthCm": 8
+  },
+  {
+   "id": "joint-op-22-1",
+   "a": "batten-a",
+   "b": "rail-b",
+   "method": "fasten",
+   "face": "front",
+   "otherFace": "front",
+   "sites": [
+    {
+     "x": 0.946875,
+     "lat": 0
+    },
+    {
+     "x": 0.990625,
+     "lat": 0
+    }
+   ],
+   "depthCm": 8
+  },
+  {
+   "id": "joint-op-23-0",
+   "a": "batten-b",
+   "b": "rail-a",
+   "method": "fasten",
+   "face": "back",
+   "otherFace": "back",
+   "sites": [
+    {
+     "x": 0.009375,
+     "lat": 0
+    },
+    {
+     "x": 0.053125,
+     "lat": 0
+    }
+   ],
+   "depthCm": 8
+  },
+  {
+   "id": "joint-op-23-1",
+   "a": "batten-b",
+   "b": "rail-b",
+   "method": "fasten",
+   "face": "back",
+   "otherFace": "back",
+   "sites": [
+    {
+     "x": 0.946875,
+     "lat": 0
+    },
+    {
+     "x": 0.990625,
+     "lat": 0
+    }
+   ],
+   "depthCm": 8
+  }
+ ],
+ "goals": [],
+ "contractVersion": 2,
+ "mode": "physical",
+ "design": {
+  "purpose": "Square Batten Frame",
+  "basis": "Illustrative saved photo estimates; confirm all dimensions before making.",
+  "size": [
+   40,
+   40,
+   2.5
+  ],
+  "parts": [
+   {
+    "k": "rail-a",
+    "from": "batten-c",
+    "cm": 35
+   },
+   {
+    "k": "rail-b",
+    "from": "batten-d",
+    "cm": 35
+   }
+  ]
+ }
+}

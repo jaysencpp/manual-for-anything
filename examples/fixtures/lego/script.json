@@ -1,0 +1,332 @@
+{
+ "objects": [
+  {
+   "k": "brown-log",
+   "n": "brown 1×4 log brick",
+   "b": [
+    15,
+    205,
+    128,
+    82
+   ],
+   "cm": 3.2,
+   "part": {
+    "family": "brick",
+    "studs": [
+     4,
+     1
+    ],
+    "plates": 3,
+    "shape": "log",
+    "side_studs": false
+   },
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "red-long",
+   "n": "red 1×4 brick with side studs",
+   "b": [
+    8,
+    295,
+    128,
+    75
+   ],
+   "cm": 3.2,
+   "part": {
+    "family": "brick",
+    "studs": [
+     4,
+     1
+    ],
+    "plates": 3,
+    "shape": "brick",
+    "side_studs": true
+   },
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "dark-red",
+   "n": "dark red 1×2 masonry brick",
+   "b": [
+    122,
+    28,
+    84,
+    62
+   ],
+   "cm": 1.6,
+   "part": {
+    "family": "brick",
+    "studs": [
+     2,
+     1
+    ],
+    "plates": 3,
+    "shape": "brick",
+    "side_studs": false
+   },
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "tan-grille",
+   "n": "tan 1×2 grille brick",
+   "b": [
+    12,
+    140,
+    86,
+    65
+   ],
+   "cm": 1.6,
+   "part": {
+    "family": "brick",
+    "studs": [
+     2,
+     1
+    ],
+    "plates": 3,
+    "shape": "grille",
+    "side_studs": false
+   },
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "lime",
+   "n": "lime 1×2 brick with side studs",
+   "b": [
+    12,
+    12,
+    78,
+    52
+   ],
+   "cm": 1.6,
+   "part": {
+    "family": "brick",
+    "studs": [
+     2,
+     1
+    ],
+    "plates": 3,
+    "shape": "brick",
+    "side_studs": true
+   },
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  },
+  {
+   "k": "red-round",
+   "n": "red 1×1 round brick",
+   "b": [
+    258,
+    212,
+    40,
+    55
+   ],
+   "cm": 0.8,
+   "part": {
+    "family": "brick",
+    "studs": [
+     1,
+     1
+    ],
+    "plates": 3,
+    "shape": "round",
+    "side_studs": false
+   },
+   "measurements": {
+    "cm": {
+     "status": "estimated",
+     "source": "Saved example photo estimate; not measured or confirmed"
+    }
+   }
+  }
+ ],
+ "ideas": [
+  {
+   "title": "Little Brick House",
+   "kind": "build",
+   "pitch": "A small log-walled cottage with a round chimney"
+  },
+  {
+   "title": "Brick Wall Section",
+   "kind": "build",
+   "pitch": "A staggered, bonded wall using running-bond overlaps"
+  },
+  {
+   "title": "Lookout Tower",
+   "kind": "build",
+   "pitch": "A narrow stacked tower topped with a round lamp"
+  }
+ ],
+ "pick": 0,
+ "title": "Little Brick House",
+ "sub": "a small cottage wall build",
+ "tag": "6 bricks · 5 min · Easy",
+ "view": "iso",
+ "tools": [],
+ "steps": [
+  {
+   "t": "Lay the base",
+   "c": "Set the brown 1×4 log brick flat on the table.",
+   "do": [
+    {
+     "v": "place",
+     "k": "brown-log",
+     "rel": "floor",
+     "studs": [
+      0,
+      0
+     ],
+     "id": "op-1",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-1"
+   ]
+  },
+  {
+   "t": "Add the wall",
+   "c": "Press the red 1×4 brick squarely onto all four log studs.",
+   "do": [
+    {
+     "v": "place",
+     "k": "red-long",
+     "rel": "on",
+     "to": "brown-log",
+     "studs": [
+      0,
+      0
+     ],
+     "id": "op-2",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-2"
+   ]
+  },
+  {
+   "t": "Set two bricks",
+   "c": "Fit dark red 1×2 on the left, tan grille 1×2 on the right.",
+   "do": [
+    {
+     "v": "place",
+     "k": "dark-red",
+     "rel": "on",
+     "to": "red-long",
+     "studs": [
+      0,
+      0
+     ],
+     "id": "op-3",
+     "intent": "place"
+    },
+    {
+     "v": "place",
+     "k": "tan-grille",
+     "rel": "on",
+     "to": "red-long",
+     "studs": [
+      2,
+      0
+     ],
+     "id": "op-4",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-3",
+    "op-4"
+   ]
+  },
+  {
+   "t": "Lock the joint",
+   "c": "Bridge both 1×2 bricks with the lime 1×2, centred over the seam.",
+   "do": [
+    {
+     "v": "place",
+     "k": "lime",
+     "rel": "on",
+     "to": "dark-red",
+     "studs": [
+      1,
+      0
+     ],
+     "id": "op-5",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-5"
+   ]
+  },
+  {
+   "t": "Add the chimney",
+   "c": "Press the red 1×1 round brick onto the right stud of the grille brick.",
+   "do": [
+    {
+     "v": "place",
+     "k": "red-round",
+     "rel": "on",
+     "to": "tan-grille",
+     "studs": [
+      1,
+      0
+     ],
+     "id": "op-6",
+     "intent": "place"
+    }
+   ],
+   "claims": [
+    "op-6"
+   ]
+  }
+ ],
+ "rigs": [],
+ "finale": [
+  {
+   "v": "turn",
+   "k": "brown-log",
+   "to": null,
+   "by": 360
+  }
+ ],
+ "end": "Display it on a shelf.",
+ "joints": [],
+ "goals": [],
+ "contractVersion": 2,
+ "mode": "physical",
+ "design": {
+  "purpose": "Little Brick House",
+  "basis": "Illustrative saved photo estimates; confirm all dimensions before making.",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "parts": []
+ }
+}

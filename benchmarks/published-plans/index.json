@@ -1,0 +1,198 @@
+{
+  "runs": [
+    {
+      "id": "planning-v4-required-with-minimal",
+      "title": "V4 REQUIRED · with Wonder minimal",
+      "created": "2026-10-31T20:41:24.590Z",
+      "cases": 1,
+      "attempts": 10,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "minimal",
+        "low",
+        "medium"
+      ]
+    },
+    {
+      "id": "planning-v4-with-minimal",
+      "title": "V4 · with Wonder minimal",
+      "created": "2026-10-31T20:40:53.372Z",
+      "cases": 1,
+      "attempts": 10,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "minimal",
+        "low",
+        "medium"
+      ]
+    },
+    {
+      "id": "planning-v3-with-minimal",
+      "title": "V3 · with Wonder minimal",
+      "created": "2026-10-31T20:40:05.707Z",
+      "cases": 2,
+      "attempts": 20,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "minimal",
+        "low",
+        "medium"
+      ]
+    },
+    {
+      "id": "planning-v2-broader-with-minimal",
+      "title": "V2 BROADER · with Wonder minimal",
+      "created": "2026-10-31T20:37:19.713Z",
+      "cases": 4,
+      "attempts": 40,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "minimal",
+        "low",
+        "medium"
+      ]
+    },
+    {
+      "id": "planning-v2-with-minimal",
+      "title": "V2 · with Wonder minimal",
+      "created": "2026-10-31T20:36:59.486Z",
+      "cases": 2,
+      "attempts": 10,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "minimal",
+        "low",
+        "medium"
+      ]
+    },
+    {
+      "id": "planning-v4-required",
+      "title": "V4 required · wood",
+      "created": "2026-10-31T20:03:13.521Z",
+      "cases": 1,
+      "attempts": 8,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "low",
+        "medium"
+      ]
+    },
+    {
+      "id": "planning-v4",
+      "title": "V4 · wood",
+      "created": "2026-10-31T19:56:36.741Z",
+      "cases": 1,
+      "attempts": 8,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "low",
+        "medium"
+      ]
+    },
+    {
+      "id": "planning-v3",
+      "title": "V3 · wood and scissors",
+      "created": "2026-10-31T19:37:22.615Z",
+      "cases": 2,
+      "attempts": 16,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "low",
+        "medium"
+      ]
+    },
+    {
+      "id": "planning-v2-broader",
+      "title": "V2 · four projects",
+      "created": "2026-10-31T19:19:27.116Z",
+      "cases": 4,
+      "attempts": 32,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "low",
+        "medium"
+      ]
+    },
+    {
+      "id": "planning-v2",
+      "title": "V2 · yarn and scissors",
+      "created": "2026-10-31T19:14:41.088Z",
+      "cases": 2,
+      "attempts": 8,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "low",
+        "medium"
+      ]
+    },
+    {
+      "id": "planning-fixes",
+      "title": "Planning fixes · six effort levels",
+      "created": "2026-10-31T17:35:24.307Z",
+      "cases": 4,
+      "attempts": 48,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "minimal",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ]
+    },
+    {
+      "id": "planning-comparison-all",
+      "title": "Original · six effort levels",
+      "created": "2026-10-31T15:12:22.826Z",
+      "cases": 4,
+      "attempts": 48,
+      "models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "efforts": [
+        "minimal",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ]
+    }
+  ],
+  "defaultRun": "planning-v4-required-with-minimal"
+}

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3efe6">
+<title>Manual for anything</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<aside id="library" class="library sidebar" aria-label="Your projects" hidden>
+  <div class="sidebar-top"><span class="sidebar-brand">Your workspace</span><button id="close-sidebar" type="button" aria-label="Collapse sidebar"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="16" height="14" rx="3"/><path d="M7 3v14"/></svg></button></div>
+  <a class="new-project" href="/" data-page><span aria-hidden="true">＋</span> New project</a>
+  <h2 id="library-heading" class="sr-only">Project history</h2>
+  <nav class="project-history" aria-labelledby="library-heading">
+    <p id="films-status" class="note" role="status">Loading your projects…</p>
+    <ul id="saved-films" class="saved-films"></ul>
+    <button id="more-films" type="button" hidden>Load more</button>
+  </nav>
+  <div class="account-menu"><span id="account-name"></span><button id="sign-out" type="button" hidden>Sign out</button></div>
+</aside>
+<button id="sidebar-scrim" class="sidebar-scrim" type="button" aria-label="Close sidebar" tabindex="-1" hidden></button>
+<div id="app-content" class="app-content">
+<header class="bar">
+  <button id="toggle-sidebar" class="sidebar-toggle" type="button" aria-label="Open sidebar" aria-controls="library" aria-expanded="false" hidden><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="16" height="14" rx="3"/><path d="M7 3v14"/></svg></button>
+  <a id="home-link" class="mark" href="/" aria-label="Manual for anything, home"><span class="mark-box" aria-hidden="true"></span><span class="mark-name">Manual for anything</span></a>
+  <span id="release-status" class="release-status" hidden>Closed Alpha</span>
+</header>
+
+<main id="sign-in" class="content-page sign-in" hidden>
+  <p class="eyebrow">Closed Alpha</p>
+  <h1>Your films, whenever you need them.</h1>
+  <p class="lede">Sign in to create projects or open your saved films.</p>
+  <p id="alpha-access" class="alpha-access">Public sign-up is closed. Accounts are created by the owner. For access, contact <a href="https://x.com/josendev" target="_blank" rel="noopener noreferrer">@josendev on X</a>.</p>
+  <form id="login-form">
+    <label for="login-username">Username</label>
+    <input id="login-username" name="username" autocomplete="username" required maxlength="100" autocapitalize="none" spellcheck="false">
+    <label for="login-password">Password</label>
+    <input id="login-password" name="password" type="password" autocomplete="current-password" required maxlength="256">
+    <button id="login-submit" type="submit">Sign in</button>
+    <p id="login-status" class="note" role="status"></p>
+  </form>
+  <p class="note">Need a password reset? Contact <a href="https://x.com/josendev" target="_blank" rel="noopener noreferrer">@josendev on X</a>.</p>
+</main>
+
+<main id="home" class="home" hidden>
+  <div class="home-center">
+    <h1>What would you like to make?</h1>
+    <p class="home-intro">A photo of your things. A manual for what comes next.</p>
+    <form id="photo-form" class="composer">
+      <div class="photo-entry">
+        <button id="shoot" type="button"><span class="add-symbol" aria-hidden="true">＋</span><span id="photo-button-label">Add a photo</span></button>
+        <p class="photo-entry-hint">Take a picture or choose one</p>
+      </div>
+      <div id="photo-preview" class="photo-preview" hidden>
+        <img id="preview-image" alt="Selected photo">
+        <button id="remove-photo" type="button" aria-label="Remove photo"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="m2 2 8 8M10 2l-8 8"/></svg></button>
+      </div>
+      <label class="sr-only" for="photo-guidance">Optional notes</label>
+      <textarea id="photo-guidance" rows="3" maxlength="2000" placeholder="Any ideas, tools, or constraints? (optional)"></textarea>
+      <div class="composer-actions">
+        <input id="photo" type="file" accept="image/*" hidden>
+        <button id="make-manual" type="submit" disabled>Make my manual <span aria-hidden="true">↑</span></button>
+      </div>
+      <p id="upload-status" class="note" role="status" hidden></p>
+    </form>
+    <p id="live-note" class="note" hidden>This demo plays saved examples. Try one below.</p>
+    <a class="try-example" href="/examples" data-page>Try an example <span aria-hidden="true">↗</span></a>
+  </div>
+</main>
+
+<main id="examples-page" class="content-page" hidden>
+  <p class="eyebrow">A little inspiration</p>
+  <h1>One photo. Something new.</h1>
+  <p class="lede">Start with everyday things. See the step-by-step manual they become.</p>
+  <ul id="examples" class="examples"></ul>
+  <p id="examples-status" class="note" role="status">Loading examples…</p>
+</main>
+
+<main id="terms-page" class="content-page prose" hidden>
+  <p class="eyebrow">About this prototype</p>
+  <h1>Terms</h1>
+  <p>Manual for anything is an experimental hackathon demo that turns photos and notes into generated instructions.</p>
+  <h2>Using the demo</h2>
+  <p>Upload photos you have permission to use. Review the generated steps before following them: the system can misidentify objects, miss details, and make mistakes.</p>
+  <h2>Use your judgment</h2>
+  <p>Check materials, measurements, tools, and equipment instructions yourself. Generated manuals are not a substitute for professional advice or equipment safety instructions.</p>
+  <p>These are prototype usage notes. Formal service terms have not yet been published.</p>
+</main>
+
+<main id="privacy-page" class="content-page prose" hidden>
+  <p class="eyebrow">About your uploads</p>
+  <h1>Privacy</h1>
+  <p>Your photo and optional notes are sent to this server to create a manual. Generation uses configured AI services to interpret the photo and produce instructions and artwork.</p>
+  <h2>Saved results</h2>
+  <p>The prototype saves uploads, generated results, and diagnostic files. Hosted deployments store files in Microsoft Azure Storage. On a hosted app, saved films are private to the account that created them. A film link requires signing in to that account. Local development uses a shared local account for this installation.</p>
+  <h2>Before uploading</h2>
+  <p>Avoid photos or notes containing personal or sensitive information.</p>
+  <h2>How long we keep your data</h2>
+  <p>We keep your photos, notes and generated films until you ask us to delete them, and no later than 90 days after the alpha ends. Message <a href="https://x.com/josendev" target="_blank" rel="noopener noreferrer">@josendev on X</a> and we'll delete them within 30 days. Backups may keep copies for up to 35 more days.</p>
+  <p>This prototype has no self-service deletion control. A full privacy policy has not yet been published.</p>
+</main>
+
+<main id="making" class="making" hidden>
+  <div class="film">
+  <section class="stage">
+    <div id="screen" class="screen">
+      <img id="snap" alt="Your photo">
+      <div id="scan" class="scan" aria-hidden="true"></div>
+      <ul id="chips" class="chips" aria-live="polite"></ul>
+    </div>
+    <p id="now" class="now" role="status" hidden><i aria-hidden="true"></i><span></span><time></time></p>
+    <div class="controls" id="controls" hidden>
+      <button id="play" class="play" aria-label="Pause"><span></span></button>
+      <div class="track" id="track"><div class="ticks" id="ticks"></div><div class="fill" id="fill"></div><input id="scrub" type="range" min="0" max="1000" value="0" aria-label="Film position"></div>
+      <span id="clock" class="clock">0:00</span>
+    </div>
+  </section>
+
+  <section class="side">
+    <div class="titles">
+      <a id="back-first" class="back" href="/" hidden>← Back to the first film</a>
+      <p id="kicker" class="kicker">Reading your photo…</p>
+      <h1 id="title" class="title"></h1>
+      <p id="sub" class="sub"></p>
+    </div>
+    <ol id="steps" class="steps"></ol>
+    <button id="replay" class="replay" hidden>Watch again</button>
+    <button id="retry-film" class="replay" hidden>Retry generation</button>
+    <p id="retry-status" class="note" role="status" hidden></p>
+    <a id="edit-artwork" class="back" href="/" hidden>Adjust object drawings</a>
+    <form id="refine-form" class="guidance" hidden>
+      <label for="refine-message">What would you like to change?</label>
+      <p class="note" id="refine-hint">Correct what we found, choose a different project, or ask for a clearer step.</p>
+      <ul id="guidance-history" class="guidance-history" aria-label="Your requests" hidden></ul>
+      <textarea id="refine-message" rows="3" maxlength="2000" required aria-describedby="refine-hint" placeholder="That’s fabric, not paper. Make a no-sew version."></textarea>
+      <button id="refine-submit" type="submit">Revise the manual</button>
+      <p id="refine-status" class="note" role="status" hidden></p>
+      <a id="previous-film" class="back" href="/" hidden>← Previous version</a>
+    </form>
+    <details class="made" open>
+      <summary>How it was made</summary>
+      <ol id="log" class="log"></ol>
+    </details>
+    <div id="ideas-box" class="ideas-box" hidden>
+      <h2>Other ideas from this photo</h2>
+      <ul id="ideas" class="ideas"></ul>
+    </div>
+  </section>
+  </div>
+
+  <section id="more" class="more" hidden>
+    <h2>Other ideas from this photo</h2>
+    <div id="cat-tools" class="cat-tools" role="toolbar" aria-label="Filter the ideas">
+      <div id="cat-kinds" class="seg"></div>
+      <button id="cat-quick" class="pill" aria-pressed="false">Under 30 min</button>
+      <button id="cat-nothing" class="pill" aria-pressed="false">Nothing extra to get</button>
+      <label class="sort">Sort <select id="cat-sort"><option value="best">Best first</option><option value="quick">Quickest</option><option value="easy">Easiest</option></select></label>
+    </div>
+    <p id="cat-note" class="note" hidden></p>
+    <ul id="cat-grid" class="cat-grid" aria-live="polite"></ul>
+  </section>
+</main>
+
+<footer class="site-footer"><span>Made from what you have.</span><nav aria-label="Footer"><a href="/examples" data-page>Examples</a><a href="/comparisons">Comparisons</a><a href="/terms" data-page>Terms</a><a href="/privacy" data-page>Privacy</a></nav></footer>
+
+</div>
+<script src="/app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+{
+  "row": {
+    "id": "efa4a7621fbde50d9004-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "minimal",
+    "trialId": "efa4a7621fbde50d9004",
+    "sample": 1,
+    "planningEffort": "minimal",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "a14: attachment operation needs an explicit joint"
+          ]
+        },
+        "geometry": {
+          "status": "fail",
+          "errors": [
+            "end-a: 26 cm part does not fit -43 cm gap",
+            "end-b: 26 cm part does not fit -43 cm gap",
+            "joint joint-front-end-a: Joint surfaces do not touch: front exit plane y=70 cm, end-a receiving plane y=76.5 cm (separation 6.5 cm). Position end-a relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-front-end-b: Joint surfaces do not touch: front exit plane y=70 cm, end-b receiving plane y=76.5 cm (separation 6.5 cm). Position end-b relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-back-end-a: Joint surfaces do not touch: back exit plane y=55 cm, end-a receiving plane y=102.5 cm (separation 47.5 cm). Position end-a relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names.",
+            "joint joint-back-end-b: Joint surfaces do not touch: back exit plane y=55 cm, end-b receiving plane y=102.5 cm (separation 47.5 cm). Position end-b relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+          ]
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "joint-geometry",
+          "message": "a14: attachment operation needs an explicit joint"
+        },
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "end-a: 26 cm part does not fit -43 cm gap"
+        },
+        {
+          "stage": "geometry",
+          "code": "geometry-failure",
+          "message": "end-b: 26 cm part does not fit -43 cm gap"
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-end-a: Joint surfaces do not touch: front exit plane y=70 cm, end-a receiving plane y=76.5 cm (separation 6.5 cm). Position end-a relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-front-end-b: Joint surfaces do not touch: front exit plane y=70 cm, end-b receiving plane y=76.5 cm (separation 6.5 cm). Position end-b relative to front; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-end-a: Joint surfaces do not touch: back exit plane y=55 cm, end-a receiving plane y=102.5 cm (separation 47.5 cm). Position end-a relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        },
+        {
+          "stage": "geometry",
+          "code": "joint-geometry",
+          "message": "joint joint-back-end-b: Joint surfaces do not touch: back exit plane y=55 cm, end-b receiving plane y=102.5 cm (separation 47.5 cm). Position end-b relative to back; an independent floor placement does not define a second row. Change the placement, not just the face names."
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 4: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 6: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "profile end-b: outline points outside its 26 × 18 cm are cut back to it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "a14: attachment operation needs an explicit joint",
+        "a15: declared fastener length must equal the planned driven depth",
+        "a16: declared fastener length must equal the planned driven depth",
+        "a17: declared fastener length must equal the planned driven depth",
+        "a18: declared fastener length must equal the planned driven depth"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.139928,
+    "responseSeconds": 29.098161811999976,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Planter Box",
+    "design": {
+      "purpose": "A free-standing outdoor planter for herbs or flowers for one household, with about 15 cm usable soil depth above the base and drainage through base gaps and holes.",
+      "size": [
+        56,
+        30,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for cutting."
+      },
+      {
+        "t": "Cut front and end",
+        "c": "Cut a 56 cm front and a 26 cm end; keep the offcut aside."
+      },
+      {
+        "t": "Place second board",
+        "c": "Place the second board flat for cutting."
+      },
+      {
+        "t": "Cut back and end",
+        "c": "Cut a 56 cm back and a 26 cm end; keep the offcut aside."
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Place the narrow board flat for cutting."
+      },
+      {
+        "t": "Cut base slats",
+        "c": "Cut two 52 cm base slats; keep the offcut aside."
+      },
+      {
+        "t": "Sand cut parts",
+        "c": "Sand all cut edges lightly."
+      },
+      {
+        "t": "Lay first base",
+        "c": "Lay the first base slat flat."
+      },
+      {
+        "t": "Lay second base",
+        "c": "Lay the second base slat beside the first, leaving a 0 cm drainage edge aligned."
+      },
+      {
+        "t": "Fit front panel",
+        "c": "Stand the front panel on the front edge of the base."
+      },
+      {
+        "t": "Fit back panel",
+        "c": "Stand the back panel on the back edge of the base."
+      },
+      {
+        "t": "Fit first end",
+        "c": "Fit the first end between the front and back at the start."
+      },
+      {
+        "t": "Fit second end",
+        "c": "Fit the second end between the front and back at the end."
+      },
+      {
+        "t": "Clamp first corner",
+        "c": "Clamp the front to the first end."
+      },
+      {
+        "t": "Screw first corner",
+        "c": "Drive screws through the front into the first end."
+      },
+      {
+        "t": "Screw front again",
+        "c": "Drive screws through the front into the second end."
+      },
+      {
+        "t": "Screw back corner",
+        "c": "Drive screws through the back into the first end."
+      },
+      {
+        "t": "Screw last corner",
+        "c": "Drive screws through the back into the second end."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill three drainage holes in each base slat."
+      },
+      {
+        "t": "Check square",
+        "c": "Check the box is square and all panels are fixed."
+      }
+    ]
+  },
+  "rawText": null
+}

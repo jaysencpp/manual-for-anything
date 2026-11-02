@@ -1,0 +1,195 @@
+{
+  "row": {
+    "id": "4f3c4e598acc2442dd42-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "high",
+    "trialId": "4f3c4e598acc2442dd42",
+    "sample": 1,
+    "planningEffort": "high",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "design: green-yarn is 28 cm but green-yarn is only 20 cm long"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "semantics",
+          "code": "stock-conservation",
+          "message": "design: green-yarn is 28 cm but green-yarn is only 20 cm long"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [
+        "design: green-yarn is 28 cm but green-yarn is only 20 cm long"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.14158,
+    "responseSeconds": 24.167998699999995,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Chunky Storage Basket",
+    "design": {
+      "purpose": "A sturdy two-tone storage basket for yarn, toys or household items, made by one beginner using both skeins.",
+      "size": [
+        28,
+        28,
+        20
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place green yarn",
+        "c": "Place green yarn on the work surface"
+      },
+      {
+        "t": "Place blue yarn",
+        "c": "Place blue yarn beside the green yarn"
+      },
+      {
+        "t": "Start magic ring",
+        "c": "Green: magic ring, chain 1 to start"
+      },
+      {
+        "t": "Work round 1",
+        "c": "Round 1: 6 single crochet in ring"
+      },
+      {
+        "t": "Work round 2",
+        "c": "Round 2: 2 single crochet in each stitch, 12"
+      },
+      {
+        "t": "Work round 3",
+        "c": "Round 3: repeat sc, 2 sc six times, 18"
+      },
+      {
+        "t": "Work round 4",
+        "c": "Round 4: repeat 2 sc, sc, sc six times, 24"
+      },
+      {
+        "t": "Work round 5",
+        "c": "Round 5: repeat sc, sc, sc, 2 sc six times, 30"
+      },
+      {
+        "t": "Turn up sides",
+        "c": "Round 6: single crochet in back loop only, 30"
+      },
+      {
+        "t": "Work round 7",
+        "c": "Round 7: single crochet in each stitch, 30"
+      },
+      {
+        "t": "Work round 8",
+        "c": "Round 8: single crochet in each stitch, 30; join blue"
+      },
+      {
+        "t": "Cut green yarn",
+        "c": "Cut green yarn, leaving a 15 cm tail"
+      },
+      {
+        "t": "Work round 9",
+        "c": "Round 9: blue single crochet in each stitch, 30"
+      },
+      {
+        "t": "Work round 10",
+        "c": "Round 10: blue single crochet in each stitch, 30"
+      },
+      {
+        "t": "Work round 11",
+        "c": "Round 11: blue single crochet in each stitch, 30"
+      },
+      {
+        "t": "Work round 12",
+        "c": "Round 12: blue single crochet in each stitch, 30"
+      },
+      {
+        "t": "Work round 13",
+        "c": "Round 13: blue single crochet in each stitch, 30, slip stitch"
+      },
+      {
+        "t": "Fasten off blue",
+        "c": "Cut blue yarn, leaving a 15 cm tail; pull through"
+      },
+      {
+        "t": "Weave in tails",
+        "c": "Weave both tails into nearby stitches with hook"
+      },
+      {
+        "t": "Trim tail ends",
+        "c": "Trim woven tails flush with the basket wall"
+      }
+    ]
+  },
+  "rawText": null
+}

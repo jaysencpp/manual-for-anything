@@ -1,0 +1,231 @@
+{
+  "row": {
+    "id": "historical-afbc59c5b0b1f048d5c2-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "medium",
+    "trialId": "historical-afbc59c5b0b1f048d5c2",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 177,
+          "duration": 111.00000000000009,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 3: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 4: the caption gives 18 cm, but no action carries it",
+        "step 9: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "step 10: the caption gives 58 cm, but no action carries it",
+        "step 26: the caption names screws, but no action uses it",
+        "step 27: the caption names screws, but no action uses it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [
+        "screws: 4 cm → 7 cm, the length every joint they make needs"
+      ],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.2013,
+    "responseSeconds": 48.089392458,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Weathered Pine Planter",
+    "design": {
+      "purpose": "Outdoor planter for herbs or flowers for one gardener; soil depth about 18 cm above the base, with drainage holes and raised feet.",
+      "size": [
+        58,
+        18,
+        22
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Place the wide board flat for cutting."
+      },
+      {
+        "t": "Sand wide board",
+        "c": "Sand both faces and edges smooth."
+      },
+      {
+        "t": "Cut front and back",
+        "c": "Cut 58 cm front, 58 cm back, 3.4 cm offcut."
+      },
+      {
+        "t": "Place medium board",
+        "c": "Place the 18 cm board flat for cutting."
+      },
+      {
+        "t": "Sand medium board",
+        "c": "Sand both faces and edges smooth."
+      },
+      {
+        "t": "Cut base and ends",
+        "c": "Cut 58 cm base, two 14 cm ends, offcut."
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Place the narrow board flat for cutting."
+      },
+      {
+        "t": "Sand narrow board",
+        "c": "Sand both faces and edges smooth."
+      },
+      {
+        "t": "Cut two feet",
+        "c": "Cut two 18 cm feet and keep offcut."
+      },
+      {
+        "t": "Place base",
+        "c": "Place the 58 cm base flat."
+      },
+      {
+        "t": "Drill drainage holes",
+        "c": "Drill five drainage holes through the base."
+      },
+      {
+        "t": "Place front side",
+        "c": "Stand front on base at front edge."
+      },
+      {
+        "t": "Place back side",
+        "c": "Stand back on base at back edge."
+      },
+      {
+        "t": "Place first end",
+        "c": "Fit first end between sides at start."
+      },
+      {
+        "t": "Place second end",
+        "c": "Fit second end between sides at end."
+      },
+      {
+        "t": "Fasten front left",
+        "c": "Drive 2 screws through the front into the first end"
+      },
+      {
+        "t": "Fasten front right",
+        "c": "Drive 2 screws through the front into the second end"
+      },
+      {
+        "t": "Fasten back left",
+        "c": "Drive 2 screws through the back into the first end"
+      },
+      {
+        "t": "Fasten back right",
+        "c": "Drive 2 screws through the back into the second end"
+      },
+      {
+        "t": "Fasten base front",
+        "c": "Drive 2 screws through the base into the front"
+      },
+      {
+        "t": "Fasten base back",
+        "c": "Drive 2 screws through the base into the back"
+      },
+      {
+        "t": "Fasten base left",
+        "c": "Drive 2 screws through the base into the first end"
+      },
+      {
+        "t": "Fasten base right",
+        "c": "Drive 2 screws through the base into the second end"
+      },
+      {
+        "t": "Place first foot",
+        "c": "Place first foot under base near start."
+      },
+      {
+        "t": "Place second foot",
+        "c": "Place second foot under base near end."
+      },
+      {
+        "t": "Fasten first foot",
+        "c": "Drive 2 screws through the first foot into the base"
+      },
+      {
+        "t": "Fasten second foot",
+        "c": "Drive 2 screws through the second foot into the base"
+      }
+    ]
+  },
+  "rawText": null
+}

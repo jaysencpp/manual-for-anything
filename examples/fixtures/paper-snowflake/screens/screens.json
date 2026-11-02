@@ -1,0 +1,13 @@
+{
+ "paper": {
+  "width": 935,
+  "height": 1265,
+  "regions": []
+ },
+ "photo": {
+  "path": "photo.png",
+  "width": 1200,
+  "height": 1600,
+  "regions": []
+ }
+}

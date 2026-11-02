@@ -1,0 +1,200 @@
+{
+  "row": {
+    "id": "cd15aef165b3cb551c95-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "medium",
+    "trialId": "cd15aef165b3cb551c95",
+    "sample": 1,
+    "planningEffort": "medium",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[9].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "$.steps[9].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "fail",
+          "errors": [
+            "a6: intent cut needs a faithful demonstration, not use",
+            "a8: intent cut needs a faithful demonstration, not use",
+            "a10: intent cut needs a faithful demonstration, not use",
+            "made piece wrap: work progress must increase and finish at 1"
+          ]
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[9].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[9].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "a6: intent cut needs a faithful demonstration, not use"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "a8: intent cut needs a faithful demonstration, not use"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "a10: intent cut needs a faithful demonstration, not use"
+        },
+        {
+          "stage": "semantics",
+          "code": "semantics-failure",
+          "message": "made piece wrap: work progress must increase and finish at 1"
+        }
+      ],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "step 2: the caption gives 15 cm, but no action carries it",
+        "step 5: the caption gives 15 cm, but no action carries it",
+        "step 7: the caption gives 15 cm, but no action carries it",
+        "step 9: the caption gives 15 cm, but no action carries it",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "a6: intent cut needs a faithful demonstration, not use",
+        "a8: intent cut needs a faithful demonstration, not use",
+        "a10: intent cut needs a faithful demonstration, not use",
+        "a11: state change needs an explicit prior state for wrap",
+        "made piece wrap: work progress must increase and finish at 1"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.0484075,
+    "responseSeconds": 23.597671045,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Chunky Striped Wrap",
+    "design": {
+      "purpose": "Warm wrap for one adult: 22 x 110 cm striped rectangle, 12 hdc per row, 66 rows",
+      "size": [
+        22,
+        110,
+        2
+      ]
+    },
+    "steps": [
+      {
+        "t": "Set out materials",
+        "c": "Set green and blue yarn and hook nearby"
+      },
+      {
+        "t": "Chain foundation",
+        "c": "Ch 13 with green, leaving 15 cm tail"
+      },
+      {
+        "t": "Work first row",
+        "c": "Row 1: Hdc 12 across in green"
+      },
+      {
+        "t": "Work green block",
+        "c": "Rows 2-24: Hdc 12 across in green"
+      },
+      {
+        "t": "Change to blue",
+        "c": "Snip green, join blue, 15 cm tails"
+      },
+      {
+        "t": "Work blue stripe",
+        "c": "Rows 25-42: Hdc 12 across in blue"
+      },
+      {
+        "t": "Change to green",
+        "c": "Snip blue, join green, 15 cm tails"
+      },
+      {
+        "t": "Work final block",
+        "c": "Rows 43-66: Hdc 12 across in green"
+      },
+      {
+        "t": "Fasten off",
+        "c": "Snip green leaving 15 cm tail"
+      },
+      {
+        "t": "Weave green ends",
+        "c": "Weave green tails into wrap"
+      },
+      {
+        "t": "Weave blue ends",
+        "c": "Weave blue tails into wrap"
+      }
+    ]
+  },
+  "rawText": null
+}

@@ -1,0 +1,191 @@
+{
+  "row": {
+    "id": "649da83740917d66cb27-0",
+    "caseId": "yarn",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-wonder-1.0",
+    "effort": "max",
+    "trialId": "649da83740917d66cb27",
+    "sample": 1,
+    "planningEffort": "max",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "pass",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 137,
+          "duration": 99.20000000000007,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "green-yarn.cm: unconfirmed measurement",
+        "blue-yarn.cm: unconfirmed measurement",
+        "hook.cm: unconfirmed measurement",
+        "scissors.cm: unconfirmed measurement",
+        "Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": true,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": true,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.407412,
+    "responseSeconds": 97.35151666299998,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "yarn",
+    "title": "Yarn",
+    "request": "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps.",
+    "guidance": {
+      "messages": [
+        "Make a useful crochet piece with the photographed yarn and tools, with consistent counts and complete steps."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Two-Tone Storage Basket",
+    "design": {
+      "purpose": "A small storage basket for one person's yarn, toys or a folded throw beside a sofa. Green forms the base and lower sides; blue forms the upper sides.",
+      "size": [
+        28,
+        28,
+        14
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place materials ready",
+        "c": "Place both yarns, hook and scissors ready."
+      },
+      {
+        "t": "Make starting ring",
+        "c": "Chain 4 in green; slip stitch into ring."
+      },
+      {
+        "t": "Work round 1",
+        "c": "Round 1: chain 1, work 6 single crochet in ring, join."
+      },
+      {
+        "t": "Work round 2",
+        "c": "Round 2: work 2 single crochet in each stitch; 12 total, join."
+      },
+      {
+        "t": "Work round 3",
+        "c": "Round 3: (sc, inc = 2 sc) repeat 6 times; 18 total."
+      },
+      {
+        "t": "Work round 4",
+        "c": "Round 4: repeat (sc in 2, inc) 6 times; 24 total."
+      },
+      {
+        "t": "Work round 5",
+        "c": "Round 5: repeat (sc in 3, inc) 6 times; 30 total."
+      },
+      {
+        "t": "Work round 6",
+        "c": "Round 6: repeat (sc in 4, inc) 6 times; 36 total."
+      },
+      {
+        "t": "Work round 7",
+        "c": "Round 7: back-loop-only sc in each stitch; 36 total, join."
+      },
+      {
+        "t": "Work round 8",
+        "c": "Round 8: sc in each stitch in green; 36 total, join."
+      },
+      {
+        "t": "Join blue yarn",
+        "c": "Pull blue loop through final green loop to change colour."
+      },
+      {
+        "t": "Cut green tail",
+        "c": "Cut green yarn, leaving a 10 cm tail."
+      },
+      {
+        "t": "Work round 9",
+        "c": "Round 9: sc in each stitch in blue; 36 total, join."
+      },
+      {
+        "t": "Work round 10",
+        "c": "Round 10: sc in each stitch in blue; 36 total, join."
+      },
+      {
+        "t": "Work round 11",
+        "c": "Round 11: sc in each stitch in blue; 36 total, join."
+      },
+      {
+        "t": "Work round 12",
+        "c": "Round 12: sc in each stitch in blue; 36 total, join."
+      },
+      {
+        "t": "Cut blue tail",
+        "c": "Cut blue yarn, leaving a 15 cm tail."
+      },
+      {
+        "t": "Fasten off tail",
+        "c": "Pull the 15 cm blue tail fully through loop."
+      },
+      {
+        "t": "Weave in tails",
+        "c": "With hook, weave both tails through nearby stitches inside basket."
+      },
+      {
+        "t": "Shape the basket",
+        "c": "Press base flat and shape sides upright by hand."
+      }
+    ]
+  },
+  "rawText": null
+}

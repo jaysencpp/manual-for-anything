@@ -1,0 +1,215 @@
+{
+  "row": {
+    "id": "81517d41ac19e2f8e64f-0",
+    "caseId": "wood8",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "muse-spark-1.3",
+    "effort": "low",
+    "trialId": "81517d41ac19e2f8e64f",
+    "sample": 2,
+    "planningEffort": "low",
+    "requestKind": "initial plan",
+    "grade": {
+      "machine": "fail",
+      "strict": "fail",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "pass",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "fail",
+          "errors": [
+            "$.steps[7].do[0]: does not match any allowed schema branch",
+            "$.steps[8].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "structure": {
+          "status": "fail",
+          "errors": [
+            "$.steps[7].do[0]: does not match any allowed schema branch",
+            "$.steps[8].do[0]: does not match any allowed schema branch"
+          ]
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "skipped",
+          "errors": []
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[7].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "rawSchema",
+          "code": "rawSchema-failure",
+          "message": "$.steps[8].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[7].do[0]: does not match any allowed schema branch"
+        },
+        {
+          "stage": "structure",
+          "code": "structure-failure",
+          "message": "$.steps[8].do[0]: does not match any allowed schema branch"
+        }
+      ],
+      "warnings": [
+        "board-a.cm: unconfirmed measurement",
+        "board-a.w: unconfirmed measurement",
+        "board-a.thick: unconfirmed measurement",
+        "board-b.cm: unconfirmed measurement",
+        "board-b.w: unconfirmed measurement",
+        "board-b.thick: unconfirmed measurement",
+        "board-c.cm: unconfirmed measurement",
+        "board-c.w: unconfirmed measurement",
+        "board-c.thick: unconfirmed measurement",
+        "step 2: cut list leaves insufficient allowance for an assumed 3 mm saw kerf",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": false,
+      "rawPlanProblems": [
+        "a10: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a11: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a12: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a13: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a14: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a15: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a16: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}",
+        "a17: puts in screws, so its step needs \"caption\":{\"template\":\"… {count} …\",\"actions\":[its fastening action ids]}"
+      ],
+      "rawFirstResponseValid": false,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": 0.03729475,
+    "responseSeconds": 12.226817946999988,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "wood8",
+    "title": "Wood build",
+    "request": "Build a useful planter from the available boards, keeping cuts within stock and every joint executable.",
+    "guidance": {
+      "messages": [
+        "Build a useful planter from the available boards, keeping cuts within stock and every joint executable."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Pine Planter Box",
+    "design": {
+      "purpose": "Open planter box for herbs/flowers, holds soil 40x16x15 cm for one windowsill or patio",
+      "size": [
+        40,
+        20,
+        17
+      ]
+    },
+    "steps": [
+      {
+        "t": "Place wide board",
+        "c": "Set wide board on ground"
+      },
+      {
+        "t": "Cut base",
+        "c": "Saw 40 cm base off board"
+      },
+      {
+        "t": "Place narrow board",
+        "c": "Set narrow board on ground"
+      },
+      {
+        "t": "Cut sides and ends",
+        "c": "Saw front back ends off board"
+      },
+      {
+        "t": "Place base",
+        "c": "Lay base flat in middle"
+      },
+      {
+        "t": "Place front",
+        "c": "Stand front on base front"
+      },
+      {
+        "t": "Place back",
+        "c": "Stand back on base back"
+      },
+      {
+        "t": "Place left end",
+        "c": "Fit left end between sides"
+      },
+      {
+        "t": "Place right end",
+        "c": "Fit right end between sides"
+      },
+      {
+        "t": "Screw front to left",
+        "c": "Drive 2 screws through the front"
+      },
+      {
+        "t": "Screw front to right",
+        "c": "Drive 2 screws through the front"
+      },
+      {
+        "t": "Screw back to left",
+        "c": "Drive 2 screws through the back"
+      },
+      {
+        "t": "Screw back to right",
+        "c": "Drive 2 screws through the back"
+      },
+      {
+        "t": "Screw base to front",
+        "c": "Drive 2 screws through the base"
+      },
+      {
+        "t": "Screw base to back",
+        "c": "Drive 2 screws through the base"
+      },
+      {
+        "t": "Screw base to left",
+        "c": "Drive 2 screws through the base"
+      },
+      {
+        "t": "Screw base to right",
+        "c": "Drive 2 screws through the base"
+      }
+    ]
+  },
+  "rawText": null
+}

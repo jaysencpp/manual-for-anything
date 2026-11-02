@@ -1,0 +1,124 @@
+{
+  "row": {
+    "id": "groceries-witness",
+    "caseId": "groceries",
+    "attemptIndex": 0,
+    "first": true,
+    "selected": true,
+    "model": "saved-fixture",
+    "effort": "not-recorded",
+    "requestKind": "saved witness",
+    "grade": {
+      "machine": "pass",
+      "strict": "pending",
+      "humanReview": {
+        "verdict": "pending",
+        "reason": ""
+      },
+      "grades": {
+        "response": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "rawSchema": {
+          "status": "not-recorded",
+          "errors": []
+        },
+        "structure": {
+          "status": "pass",
+          "errors": []
+        },
+        "semantics": {
+          "status": "pass",
+          "errors": []
+        },
+        "geometry": {
+          "status": "pass",
+          "errors": []
+        },
+        "execution": {
+          "status": "pass",
+          "errors": [],
+          "frames": 60,
+          "duration": 41.599999999999994,
+          "standInArtwork": true,
+          "browser": "Chrome",
+          "note": "Sampled real Canvas playback with deterministic stand-ins, not a full visual film review."
+        },
+        "task": {
+          "status": "pass",
+          "errors": []
+        }
+      },
+      "findings": [],
+      "warnings": [
+        "chili-beans.cm: unconfirmed measurement",
+        "broth.cm: unconfirmed measurement",
+        "tomatoes.cm: unconfirmed measurement",
+        "corn.cm: unconfirmed measurement",
+        "pepperjack.cm: unconfirmed measurement",
+        "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+      ],
+      "corrections": [],
+      "rawSchemaValid": null,
+      "rawPlanProblems": [],
+      "rawFirstResponseValid": null,
+      "limitation": "Deterministic stand-in artwork and sampled browser playback; does not establish visual quality, physical feasibility or full provider success."
+    },
+    "cost": null,
+    "responseSeconds": null,
+    "repairDecision": null
+  },
+  "case": {
+    "id": "groceries",
+    "title": "Groceries",
+    "request": "Make a meal with these groceries, declaring ordinary cooking tools and useful quantities and times.",
+    "guidance": {
+      "messages": [
+        "Make a meal with these groceries, declaring ordinary cooking tools and useful quantities and times."
+      ]
+    },
+    "qualification": {
+      "machine": "pass",
+      "eligibleForPilot": true,
+      "taskReview": "pending",
+      "reason": "Saved witness passes current machine gates; human task review remains pending."
+    },
+    "reviewQuestions": [
+      "Does this fulfill the request?",
+      "Are materials grounded and quantities sufficient?",
+      "Are steps complete and captions faithful?",
+      "Does the final result follow from shown operations?"
+    ]
+  },
+  "plan": {
+    "title": "Bean and Corn Chili",
+    "steps": [
+      {
+        "t": "Set pot on heat",
+        "c": "Place a large pot on medium heat."
+      },
+      {
+        "t": "Add tomatoes and broth",
+        "c": "Pour in diced tomatoes with juice and 1 can broth."
+      },
+      {
+        "t": "Add beans and corn",
+        "c": "Add chili beans with sauce and drained corn; stir."
+      },
+      {
+        "t": "Simmer until thick",
+        "c": "Simmer uncovered 20 minutes on low, stirring now and then."
+      },
+      {
+        "t": "Cube the cheese",
+        "c": "Cut 100 g pepper jack into small cubes."
+      },
+      {
+        "t": "Serve with cheese",
+        "c": "Ladle into bowls; top each with cheese cubes."
+      }
+    ]
+  },
+  "rawText": null
+}
