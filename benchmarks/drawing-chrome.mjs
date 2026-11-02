@@ -30,13 +30,14 @@ export async function openDrawingBrowser(url, executable = chromeExecutable() ??
       const exited = new Promise(resolve => child.once('exit', resolve))
       child.kill('SIGKILL'); await exited
     }
-    // Renderer children may finish writing just after the browser process exits.
-    rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 50 })
+    // Renderer children may finish writing just after the browser process exits, and Windows can keep the folder
+    // locked for a while. A leftover temporary profile is harmless; failing here would abort the caller's cleanup.
+    try { rmSync(profile, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 }) } catch {}
   }
   try {
     const endpoint = await new Promise((resolve, reject) => {
       let stderr = ''
-      const timer = setTimeout(() => reject(new Error('Chrome startup timed out')), 15000)
+      const timer = setTimeout(() => reject(new Error('Chrome startup timed out')), 25000)
       const finish = (err, value) => { clearTimeout(timer); err ? reject(err) : resolve(value) }
       child.once('error', e => finish(e))
       child.once('exit', () => finish(new Error('Chrome exited before becoming available')))

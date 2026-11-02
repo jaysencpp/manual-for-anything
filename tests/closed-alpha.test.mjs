@@ -12,7 +12,6 @@ import { openDrawingBrowser, chromePresent } from '../benchmarks/drawing-chrome.
 
 async function hosted(t) {
   const dir = await mkdtemp(join(tmpdir(), 'manual-alpha-'))
-  t.after(() => rm(dir, { recursive: true, force: true }))
   const repo = new FilmRepository(join(dir, 'app.sqlite'), 'local')
   const owner = await new Accounts(repo.db).provision('tester', 'closed alpha offline password')
   repo.save('existing', { ownerId: owner, finished: true }, [])
@@ -28,7 +27,8 @@ async function hosted(t) {
     if (child.exitCode !== null || child.signalCode !== null) return
     const closed = once(child, 'close'); child.kill('SIGTERM'); await closed
   }
-  t.after(stop)
+  // Stop the server first: Windows cannot delete a database that is still open, and hooks run in this order.
+  t.after(async () => { await stop(); await rm(dir, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 }) })
   await new Promise((resolve, reject) => {
     child.stdout.on('data', data => { if (/localhost:\d+/.test(String(data))) resolve() })
     child.once('error', reject); child.once('exit', () => reject(Error(child.serverErrors)))

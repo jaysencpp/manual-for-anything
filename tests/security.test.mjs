@@ -212,5 +212,5 @@ test('Chrome is found where each platform installs it', () => {
   const win = join('C:\\PF', 'Google', 'Chrome', 'Application', 'chrome.exe')
   assert.equal(chromeExecutable({ PROGRAMFILES: 'C:\\PF' }, 'win32', found(win)), win)
   assert.equal(chromeExecutable({ CHROME_BIN: '/custom/chrome' }, 'darwin', found()), '/custom/chrome')
-  assert.equal(chromeExecutable({ PATH: '/usr/bin' }, 'linux', found('/usr/bin/chromium')), '/usr/bin/chromium')
+  assert.equal(chromeExecutable({ PATH: '/usr/bin' }, 'linux', found(join('/usr/bin', 'chromium'))), join('/usr/bin', 'chromium'))
 })
