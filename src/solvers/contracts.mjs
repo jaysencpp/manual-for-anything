@@ -1,5 +1,5 @@
 import { operationSites, entities } from './operations.mjs'
-import { checkDemonstration } from '../film/demonstrations.mjs'
+import { checkDemonstration, traceStrokes } from '../film/demonstrations.mjs'
 import { TOOL_KINDS } from './tools.mjs'
 import { sheetSize } from './fold.mjs'
 import { strandSize, strandOp } from './strand.mjs'
@@ -153,6 +153,17 @@ export function validateContract(script, { confirmedMeasurements = script.measur
           if (!yarn || !/yarn|wool|thread|skein/i.test(`${yarn.k} ${yarn.n} ${yarn.segment}`)) errors.push(`${label}: weaving ends needs photographed yarn`)
           const b = a.focus?.bounds
           if (!b || list(a.demo.path).some(q => !Array.isArray(q) || q[0] < b[0] || q[1] < b[1] || q[0] > b[0]+b[2] || q[1] > b[1]+b[3])) errors.push(`${label}: weaving path must stay inside the focus region`)
+        }
+        if (a.demo?.technique === 'trace') {
+          if (a.k !== a.demo.sheet || a.focus?.k !== a.demo.sheet) errors.push(`${label}: tracing works on its sheet: k and focus.k are demo.sheet`)
+          const tool = declared.get(a.demo.tool)
+          if (!tool || !((tool.use || tool.toolKind) === 'pencil' || /\b(pens?|pencils?|markers?|crayons?|chalk|charcoal)\b/i.test(`${tool.n || ''} ${tool.segment || ''}`)))
+            errors.push(`${label}: tracing needs a declared pencil (a tools "use":"pencil", or a photographed pen, pencil, marker, crayon or chalk)`)
+          if (!list(a.effects).some((e) => e.k === a.demo.sheet)) errors.push(`${label}: tracing must declare the sheet's state after it`)
+          const b = a.focus?.bounds
+          let strokes = []; try { strokes = traceStrokes(a.demo.strokes) } catch { /* checkDemonstration reports it */ }
+          if (b && strokes.some((s) => s.points.some((q) => q[0] < b[0] - 0.01 || q[1] < b[1] - 0.01 || q[0] > b[0] + b[2] + 0.01 || q[1] > b[1] + b[3] + 0.01)))
+            errors.push(`${label}: traced strokes must stay inside the focus region`)
         }
       } else if (a.demo) errors.push(`${label}: drawing code requires the demonstrate verb`)
       if (a.v === 'reshape') {

@@ -12,7 +12,7 @@ import { helperFor } from './helper.mjs'
 import { data } from '../pipeline/words.mjs'
 import { SIZE } from '../pipeline/panel.mjs'
 import { operationSites, operationFacts, entities } from '../solvers/operations.mjs'
-import { demonstrationSources, checkDemonstration, drawingContext, demonstrationFrame, paleOn, demoPoint, demoPose } from './demonstrations.mjs'
+import { demonstrationSources, checkDemonstration, drawingContext, demonstrationFrame, paleOn, demoPoint, demoPose, demoFraction, traceStrokes, TRACE_COLOR } from './demonstrations.mjs'
 import { morph } from '../solvers/reshape.mjs'
 import { runFolds, foldLength, foldKind, openLength, transforms } from '../solvers/fold.mjs'
 import { runStrands, strandLength, strandKit } from '../solvers/strand.mjs'
@@ -209,8 +209,11 @@ export function program({ script, vectors, boxes, geometry, sizes, layout, photo
   // A package emptied into a pot waits in the tray and is used up, as a can is; it never stands on the stage.
   const unpacked = new Set(times.acts.filter((a) => a.unpacked).map((a) => a.k))
   if (unpacked.size) layout = { ...layout, order: layout.order.filter((k) => !unpacked.has(k)), extras: [...new Set([...(layout.extras || []), ...unpacked])] }
-  const acts = times.acts.map((a, demoIndex) => ({ ...a, demoIndex, ...(a.demo ? { demo: { actors: a.demo.actors } } : {}) }))
+  // (a traced drawing is the film's own code, not the model's: its pencil may reach past the sheet it draws on)
+  const acts = times.acts.map((a, demoIndex) => ({ ...a, demoIndex, ...(a.demo ? { demo: { actors: a.demo.actors, ...(a.demo.technique === 'trace' ? { unclipped: true } : {}) } } : {}) }))
     .filter((a) => known(a.k) && (!a.to || known(a.to)))
+  const traced = new Set(times.acts.filter((a) => a.v === 'demonstrate' && a.demo?.technique === 'trace')
+    .flatMap((a) => (a.effects || []).filter((e) => e.k === a.demo.sheet).map((e) => `${e.k}/${e.state}`)))
   // When each placed thing lands: its "place" verb, or — standing there without one — the first verb that needs it.
   const placedAt = {}
   for (const a of acts) if (a.v === 'place' && placedAt[a.k] == null) placedAt[a.k] = a.at
@@ -516,8 +519,16 @@ export function program({ script, vectors, boxes, geometry, sizes, layout, photo
     flatParts: Object.fromEntries([...sheetParts(script)].filter(([k]) => sheets[k]).map(([k, p]) => [k, p])),
     sheetCuts: acts.filter((a) => a.v === 'cut' && Array.isArray(a.into) && a.into.some((p) => p.size)),
     initialStates: Object.fromEntries(entities(script).filter((o) => o.state).map((o) => [o.k, o.state])),
+    // (a state a tracing reaches is the sheet as drawn plus its traced lines, which the film keeps on it: a drawing of
+    // that state from the plan would cover the sheet and draw the lines a second time)
     appearances: Object.fromEntries(entities(script).filter((o) => o.states).map((o) => [o.k,
-      Object.fromEntries(o.states.filter((s) => s.appearance).map((s) => [s.id, s.appearance]))])),
+      Object.fromEntries(o.states.filter((s) => s.appearance && !traced.has(`${o.k}/${s.id}`)).map((s) => [s.id, s.appearance]))])),
+    // Each traced sheet's lines, from when each tracing ends: drawn over the sheet in the same place the tracing drew them.
+    traces: acts.filter((a) => a.v === 'demonstrate' && times.acts[a.demoIndex].demo?.technique === 'trace').reduce((out, a) => {
+      const demo = times.acts[a.demoIndex].demo
+      ;(out[demo.sheet] ||= []).push({ at: a.at + a.len, color: demo.color || TRACE_COLOR, strokes: traceStrokes(demo.strokes) })
+      return out
+    }, {}),
     steps: script.steps.map((s) => ({ t: s.t, c: s.c })), starts: times.starts, acts, placedAt,
     // The end card's lists: all inputs the film used (including photographed stock), and the cut
     // list (each length a cut makes, with how many; spare stock left out).
@@ -688,6 +699,7 @@ export function program({ script, vectors, boxes, geometry, sizes, layout, photo
   const stirMove = ${stirOffset.toString()};
   const drawingContext = ${drawingContext.toString()};
   const demoPosition = ${demoPoint.toString()};
+  const demoFraction = ${demoFraction.toString()};
   const demoDrawingPose = ${demoPose.toString()};
   const demoFrame = ${demonstrationFrame.toString()};
   const activeDemo = D.demoSpans.find((a) => t >= a.at && t < a.at + a.len);
@@ -1928,7 +1940,23 @@ export function program({ script, vectors, boxes, geometry, sizes, layout, photo
   let stageZoom = 1;
   const readableTag = (label, x, y, alpha) => { const size = Math.max(22, Math.ceil(17 / stageZoom)); tag(label, x, y, { size, h: size + 8, alpha }); };
   const reshaping = (key) => D.reshapes.find((r) => r.k === key && t >= r.at && t < r.at + r.len);
-  const plain = (key, o) => !o.asPhoto && !o.still && reshaping(key) ? reshapeDraw(key, o, reshaping(key))
+  // A traced sheet's finished lines, over whatever draws it, mapped as the tracing's scene.point01 maps them.
+  const tracedLines = (key, o) => {
+    const done = (D.traces[key] || []).filter((tr) => t >= tr.at); if (!done.length || (o.alpha ?? 1) <= 0) return;
+    const s = sizeOf(key), at = (q) => objects.point(key, [q[0] * s.width, q[1] * s.height], o);
+    const a = at([0, 0]), b = at([1, 0]), lw = Math.max(1.2, Math.hypot(b.x - a.x, b.y - a.y) * 0.006);
+    ctx.save(); ctx.globalAlpha = o.alpha ?? 1; ctx.lineWidth = lw; ctx.lineCap = "round"; ctx.lineJoin = "round";
+    for (const tr of done) {
+      const P = tr.strokes.map((st) => st.points.map(at));
+      ctx.strokeStyle = tr.color; ctx.fillStyle = tr.color; ctx.beginPath();
+      for (const pts of P) { ctx.moveTo(pts[0].x, pts[0].y); for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y); }
+      ctx.stroke();
+      tr.strokes.forEach((st, j) => { if (!st.fill) return; ctx.beginPath(); ctx.moveTo(P[j][0].x, P[j][0].y); for (let i = 1; i < P[j].length; i++) ctx.lineTo(P[j][i].x, P[j][i].y); ctx.closePath(); ctx.fill(); });
+    }
+    ctx.restore();
+  };
+  const plain = (key, o) => { const drawn = drawPlain(key, o); if (D.traces[key] && !o.asPhoto) tracedLines(key, o); return drawn; };
+  const drawPlain = (key, o) => !o.asPhoto && !o.still && reshaping(key) ? reshapeDraw(key, o, reshaping(key))
     : !o.asPhoto && D.appearances[key] && D.appearances[key][stateNow[key]] && (!D.sheets[key] || D.stateEvents.some((a) => t >= a.at && a.effects.some((e) => e.k === key) && !D.sheets[key].folds.some((f) => t >= f.at && f.at >= a.at))) ? stateDraw(key, o)
     : !o.asPhoto && D.sheets[key] ? sheetDraw(key, o)
     : !o.asPhoto && D.strands[key] ? strandDraw(key, o)
@@ -2691,14 +2719,14 @@ export function program({ script, vectors, boxes, geometry, sizes, layout, photo
       }
       if (activeDemo) {
         const a = activeDemo, allowed = (k) => { if (!a.demo.actors.includes(k)) throw Error("undeclared actor"); };
-        const api = { check: allowed, point: (k, xy) => { allowed(k); const q = objects.point(k, xy || D.seats[k], poses[k] || atPose(k)); return demoPosition(q.x, q.y); } };
+        const api = { check: allowed, point: (k, xy) => { allowed(k); if (demoFraction(xy)) return api.point01(k, xy); const q = objects.point(k, xy || D.seats[k], poses[k] || atPose(k)); return demoPosition(q.x, q.y); } };
         api.point01 = (k, xy) => { allowed(k); const s = sizeOf(k); return api.point(k, [xy[0]*s.width, xy[1]*s.height]); };
         const frame = demoFrame(clips[a.demoIndex], span(t, a.at, a.at + a.len), { width: W, height: H, font: env.font, mono: env.mono, palette: env.palette }, api, ctx, { pale: paleHere, ink: INK });
         for (const k of a.demo.actors) draw(k, { ...(poses[k] || atPose(k)), ...demoDrawingPose(frame.draws.get(k), sizeOf(k)) }, true);
         ctx.save(); const f = a.focus, b = f.bounds, s = sizeOf(f.k);
         const pts = [[b[0], b[1]], [b[0] + b[2], b[1]], [b[0], b[1] + b[3]], [b[0] + b[2], b[1] + b[3]]].map(([x, y]) => api.point(f.k, [x * s.width, y * s.height]));
         const x0 = Math.min(...pts.map((p) => p.x)), y0 = Math.min(...pts.map((p) => p.y));
-        ctx.beginPath(); ctx.rect(x0, y0, Math.max(...pts.map((p) => p.x)) - x0, Math.max(...pts.map((p) => p.y)) - y0); ctx.clip();
+        if (!a.demo.unclipped) { ctx.beginPath(); ctx.rect(x0, y0, Math.max(...pts.map((p) => p.x)) - x0, Math.max(...pts.map((p) => p.y)) - y0); ctx.clip(); }
         try { frame.paint(); } finally { ctx.restore(); }
       }
       return spot;

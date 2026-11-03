@@ -48,7 +48,10 @@ export function solveJoints(script, geometry, sizes, { floorY = 790, centerX = 9
     const L = geometry[k].sliceOf ? (parseFloat(geometry[k].label) || whole * sizes[k].width / s.width) : whole
     // Its width and thickness as the script gives them (a merchant's sizes); else its width from the photo — which
     // a steep angle distorts, so never more than a third of its length — and 2 cm thick, or square if narrow.
-    const W = +o.w > 0 ? +o.w : size ? size[1] : Math.max(1, Math.min(whole / 3, whole * s.height / s.width)), T = +o.thick > 0 ? +o.thick : size ? size[2] : W <= 6 ? W : 2
+    // A given size's other two sides are what is left once the side its cm names is taken out: an A4 sheet
+    // [21, 29.7, 0.1] with cm 21 is 29.7 wide, not the 21 that the sorted size has second.
+    const rest = size && size.filter((_, j) => j !== (+o.cm > 0 ? size.reduce((best, v, i) => Math.abs(v - whole) < Math.abs(size[best] - whole) ? i : best, 0) : 0))
+    const W = +o.w > 0 ? +o.w : rest ? rest[0] : Math.max(1, Math.min(whole / 3, whole * s.height / s.width)), T = +o.thick > 0 ? +o.thick : rest ? rest[1] : W <= 6 ? W : 2
     return { L, W, T }
   }
   // Its extent along x, y, z for an orientation: which axis its length, width and thickness run along.
