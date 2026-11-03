@@ -51,12 +51,25 @@ export function usedRequirements(script, cast = []) {
     if (!used.has(tool.k)) continue
     const count = facts.filter(f => f.part === tool.k).reduce((sum, f) => sum + f.count, 0)
     const name = ({ tape: 'tape measure', board: 'cutting board', square: 'try square', level: 'spirit level' })[tool.k] || tool.k.replace(/-/g, ' ')
-    // An observed tool may already have supplied its readable name above.
+    // An observed tool may already have supplied its readable name above, and a supply may already give the same count
+    // of the same fastener ("16 screws, 7 cm").
     if (needs.some(n => normal(n) === normal(name)) && !count) continue
+    if (count && needs.some(n => ` ${normal(n)} `.includes(` ${normal(`${count} ${count > 1 && !/s$/.test(name) ? name + 's' : name}`)} `))) continue
     add(count ? count + ' ' + (count > 1 && !/s$/.test(name) ? name + 's' : name) + (+tool.cm > 0 ? ' · ' + Math.round(tool.cm * 10) + ' mm' : '') : name)
   }
   return needs
 }
+// Whether the build's sizes rest on a guess: something estimated from the photo is cut or joined. Sizes in a film read as
+// facts, so the end card says so. A recipe's or a toy brick's estimated size changes nothing the viewer has to make.
+export function sizesEstimated(script) {
+  const estimated = new Set((script.objects || []).filter(o => o.measurements?.cm?.status === 'estimated').map(o => o.k))
+  const acts = (script.steps || []).flatMap(s => s.do || [])
+  const parts = new Map(acts.filter(a => a.v === 'cut' && Array.isArray(a.into)).flatMap(a => a.into.map(p => [p.k, a.k])))
+  const stock = k => parts.get(k) ?? k
+  return acts.some(a => a.v === 'cut' && Array.isArray(a.into) && estimated.has(a.k))
+    || (script.joints || []).some(j => estimated.has(stock(j.a)) || estimated.has(stock(j.b)))
+}
+
 // How long each verb takes; a step lasts its verbs one after another, and at least STEP.
 const LENGTH = { place: 0.55, pour: 1.7, sprinkle: 1.5, cut: 1.2, stir: 1.5, heat: 1.6, work: 3.2, use: 2.2, measure: 1.8, demonstrate: 3.2, reshape: 2.4, fold: 2.6, strand: 2.4 }
 // A use that puts in several fasteners, and a cut into several parts, take longer — a board's cut most: it is marked,
@@ -508,7 +521,7 @@ export function program({ script, vectors, boxes, geometry, sizes, layout, photo
     steps: script.steps.map((s) => ({ t: s.t, c: s.c })), starts: times.starts, acts, placedAt,
     // The end card's lists: all inputs the film used (including photographed stock), and the cut
     // list (each length a cut makes, with how many; spare stock left out).
-    need: usedRequirements(script, cast),
+    need: usedRequirements(script, cast), sizesEstimated: sizesEstimated(script),
     cutList: Object.entries(acts.filter((a) => a.v === 'cut' && Array.isArray(a.into)).flatMap((a) => a.into.filter((p) => !spare(p, a)).map((p) => String(p.label || (p.cm ? p.cm + ' cm' : p.k))))
       .reduce((all, l) => ({ ...all, [l]: (all[l] || 0) + 1 }), {})).map(([l, n]) => (n > 1 ? n + " × " : "") + l),
     // A recipe cooked on heat gets its own reference: a time bar, a segment a step, coloured by the heat it is on then
@@ -2893,6 +2906,7 @@ export function program({ script, vectors, boxes, geometry, sizes, layout, photo
     items.forEach((item, j) => text(item, x + Math.floor(j / rows) * columnWidth, 458 + (j % rows) * rowHeight,
       fit(item, Math.min(28, rowHeight * 0.8), "600", width), "600", INK));
   });
+  if (D.sizesEstimated) text("Sizes are estimated from your photo: measure your materials first.", W / 2, 776, 26, "600", INK, "center");
   const by = lists.length ? 800 : 540;
   ctx.fillStyle = ACCENT; ctx.beginPath(); ctx.roundRect(W / 2 - 230, by, 460, 64, 12); ctx.fill();
   text("Made from your photo.", W / 2, by + 44, 34, "700", INK, "center");
