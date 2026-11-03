@@ -192,10 +192,49 @@ export function solveJoints(script, geometry, sizes, { floorY = 790, centerX = 9
     return null
   }
 
+  // Parts already glued, their faces together, travel with a part placed again (a flower glued to its stem, the stem
+  // then stood in a vase): as one piece, the way the part itself moved. Not what it is being placed on: glue goes on
+  // before the parts close, so a part placed on its own partner is closing that joint, not moving it.
+  const made = new Set()
+  const gluedTo = (k, a) => {
+    const staying = new Set([a.to, a.and, ...(Array.isArray(a.also) ? a.also : [])]), group = [k]
+    const meet = (j) => {
+      const A = B[j.a], R = B[j.b], f = faceFrame(A, j.face), g = faceFrame(R, j.otherFace)
+      const plane = (b, q) => b.p[q.axis] + (q.sign > 0 ? b.e[q.axis] : 0)
+      return f.axis === g.axis && f.sign === -g.sign && Math.abs(plane(A, f) - plane(R, g)) <= 0.01
+        && [f.along, f.across].every((ax) => Math.min(A.p[ax] + A.e[ax], R.p[ax] + R.e[ax]) - Math.max(A.p[ax], R.p[ax]) > 0.01)
+    }
+    for (const m of group) for (const j of script.joints || []) {
+      const other = j.a === m ? j.b : j.b === m ? j.a : null
+      if (other && j.method === 'glue' && made.has(j.id) && B[j.a] && B[j.b] && !B[other].turn && !transients.has(other)
+        && !staying.has(other) && !group.includes(other) && meet(j)) group.push(other)
+    }
+    return group.slice(1)
+  }
+  // Things put in one container with no position of their own (stems in a vase) stand side by side across it, not all
+  // at its middle: each is placed for good by its last place.
+  const lastPlace = new Map((script.steps || []).flatMap((s) => s.do || []).filter((a) => a?.v === 'place').map((a) => [a.k, a]))
+  const sharing = (a) => a.rel !== 'in' || a.at != null || a.cm != null || a.side != null || lastPlace.get(a.k) !== a ? []
+    : [...lastPlace.values()].filter((b) => b.rel === 'in' && b.to === a.to && b.at == null && b.cm == null && b.side == null && geometry[b.k] && isBoard(b.k))
+  let moving = null
+  const carry = () => {
+    if (!moving) return
+    const { k, was, parts } = moving, now = B[k]; moving = null
+    if (now.turn) return
+    const to = { [was.o.L]: now.o.L, [was.o.W]: now.o.W, [was.o.T]: now.o.T }
+    for (const x of parts) {
+      const q = B[x], p = {}, e = {}
+      for (const ax of ['x', 'y', 'z']) { p[to[ax]] = now.p[to[ax]] + q.p[ax] - was.p[ax]; e[to[ax]] = q.e[ax] }
+      B[x] = { ...q, o: { L: to[q.o.L], W: to[q.o.W], T: to[q.o.T] }, e, p }
+      order.splice(order.indexOf(x), 1); order.push(x)
+    }
+  }
   const laid = []
   for (const step of script.steps || [])
     for (const a of step.do || []) {
       const k = a.k
+      carry()
+      if (typeof a.joint === 'string') made.add(a.joint)
       if (!geometry[k] || laid.includes(a)) continue
       if (a.v !== 'place') {
         for (const held of [a.with, a.part, ...(a.demo?.actors || []), a.v === 'stir' && geometry[k]?.motion ? k : null])
@@ -208,7 +247,11 @@ export function solveJoints(script, geometry, sizes, { floorY = 790, centerX = 9
       if (!isBoard(k)) continue
       // A place moves it to where it goes, whatever happened to it before (laid on the bench to be marked or glued,
       // then mounted): the last place is where it ends up.
-      if (B[k]) { delete B[k]; order.splice(order.indexOf(k), 1) }
+      if (B[k]) {
+        const parts = B[k].turn ? [] : gluedTo(k, a)
+        if (parts.length) moving = { k, was: B[k], parts }
+        delete B[k]; order.splice(order.indexOf(k), 1)
+      }
       const to = a.to && B[a.to] ? a.to : a.to && geometry[a.to] && isBoard(a.to) ? (onFloor(a.to), a.to) : null
       if (a.rel === 'wall') {
         // Against the wall, lying level along x, its lower face at the height given.
@@ -331,10 +374,25 @@ export function solveJoints(script, geometry, sizes, { floorY = 790, centerX = 9
           p[L === 'z' ? 'x' : L] = along({ ...a, at: a.at || 'middle' }, T.p[L === 'z' ? 'x' : L], T.e[L === 'z' ? 'x' : L], e[L === 'z' ? 'x' : L])
           const ax = L === 'z' ? 'y' : Wax
           p[ax] = a.side === 'front' || a.side === 'left' ? T.p[ax] : a.side === 'back' || a.side === 'right' ? hi(to, ax) - e[ax] : T.p[ax] + (T.e[ax] - e[ax]) / 2
+          const together = sharing(a)
+          if (together.length > 1) {
+            const narrow = e.x <= e.y ? 'x' : 'y'
+            const slot = T.p[narrow] + T.e[narrow] * (together.indexOf(a) + 0.5) / together.length - e[narrow] / 2
+            if (e[narrow] <= T.e[narrow]) p[narrow] = Math.min(Math.max(slot, T.p[narrow]), hi(to, narrow) - e[narrow])
+          }
           box(k, o, p)
         }
       }
     }
+  carry()
+
+  // Two parts in the same space, most of the smaller inside the other: the film would show them as one.
+  const overlapCheck = order.filter((k) => !transients.has(k) && !B[k].turn)
+  const volume = (k) => B[k].e.x * B[k].e.y * B[k].e.z
+  for (const [i, u] of overlapCheck.entries()) for (const v of overlapCheck.slice(i + 1)) {
+    const shared = ['x', 'y', 'z'].reduce((n, ax) => n * Math.max(0, Math.min(hi(u, ax), hi(v, ax)) - Math.max(B[u].p[ax], B[v].p[ax])), 1)
+    if (shared > 0.5 * Math.min(volume(u), volume(v))) diagnostics.push({ code: 'parts-overlap', part: v, message: `${u} and ${v} land in the same place: give each its own position (at, cm or side), or a container wide enough for them` })
+  }
 
   // Supports put under a build that rests on the floor (feet or legs under a base lying there) would stand in the
   // floor: the build, everything joined to them by placings, is lifted onto them. `raise` lets the engine show what was

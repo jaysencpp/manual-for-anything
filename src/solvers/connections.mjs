@@ -57,6 +57,7 @@ export function checkConnections(script, world, tolerance = 0.01) {
       const hint = through && overlap && Math.abs(reverseA - reverseB) <= tolerance
         ? ` The parts touch on the opposite side: use entry face ${opposite[j.face]} on ${j.a} and receiving face ${opposite[j.otherFace]} on ${j.b}, keeping the placement.`
         : aligned ? ` On ${j.b}'s existing parallel placement relative to ${placement.to}, explicitly set align:"${alignFace}" to align their ${alignFace} edges; then recheck every joint. Keep the entry faces.`
+        : j.method === 'glue' ? ` Put the glue on first, then add a place action that brings these faces together${entry.axis === 'z' ? `: ${entry.sign < 0 ? j.a : j.b} rel:"on" to:${entry.sign < 0 ? j.b : j.a}` : ''}. Parts glued together then move as one when either is placed again.`
         : ` Position ${j.b} relative to ${j.a}; an independent floor placement does not define a second row. Change the placement, not just the face names.`
       fail('no-contact', `Joint surfaces do not touch: ${j.a} exit plane ${entry.axis}=${+planeA.toFixed(2)} cm, ${j.b} receiving plane ${other.axis}=${+planeB.toFixed(2)} cm (separation ${+Math.abs(planeA - planeB).toFixed(2)} cm).${hint}`,
         { axis: entry.axis, exitPlane: planeA, receivingPlane: planeB, separation: Math.abs(planeA - planeB) })

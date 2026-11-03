@@ -238,3 +238,69 @@ test('screws as long as the depth their joints agree on; joints that disagree ta
   settle(d); assert.deepEqual(d.joints.map((j) => j.depthCm), [14, 14])
   assert.deepEqual(errorsOf(d), [])
 })
+
+// A flower glued to its stem, then the stem stood in a vase: the flower was left behind and the joint reported as open,
+// so the order a person would really work in failed planning.
+test('parts glued together move as one when either is placed again', () => {
+  const sites = [{ x: 0.5, lat: 0 }]
+  const place = (id, k, rel, to) => ({ id, intent: 'place', v: 'place', k, rel, ...(to ? { to } : {}) })
+  const glue = { id: 'g', intent: 'glue', v: 'use', k: 'flower', to: 'stem', joint: 'j', sites }
+  const plan = (steps) => ({ view: 'plan', objects: [['stem', 16, 2, 0.5], ['flower', 5, 5, 0.5], ['vase', 20, 20, 2]].map(([k, cm, w, thick]) => ({ k, n: k, cm, w, thick })),
+    tools: [], joints: [{ id: 'j', a: 'flower', b: 'stem', face: 'lower', otherFace: 'upper', method: 'glue', sites }], steps: steps.map((a) => ({ do: [a] })) })
+  const geometry = { stem: {}, flower: {}, vase: {} }, sizes = { stem: { width: 160, height: 20 }, flower: { width: 50, height: 50 }, vase: { width: 200, height: 200 } }
+  const layout = (steps) => solve(plan(steps), geometry, sizes, { unchecked: true })
+  const open = (l) => l.diagnostics.filter((d) => d.code === 'no-contact')
+
+  const moved = layout([place('s', 'stem', 'floor'), place('v', 'vase', 'floor'), glue, place('f', 'flower', 'on', 'stem'), place('i', 'stem', 'in', 'vase')])
+  assert.deepEqual(open(moved), [])
+  const { stem, flower, vase } = moved.world
+  assert.equal(stem.p.z, vase.e.z); assert.equal(flower.p.z, stem.p.z + stem.e.z)
+  assert.ok(flower.p.x + flower.e.x > stem.p.x && flower.p.x < stem.p.x + stem.e.x, 'still over its stem')
+  assert.ok(moved.order.indexOf('flower') > moved.order.indexOf('stem'), 'drawn over the stem it travelled with')
+
+  // Placing a part on its own partner closes the joint: the partner stays where it is.
+  const closed = layout([place('s', 'stem', 'floor'), place('p', 'flower', 'floor'), glue, place('f', 'flower', 'on', 'stem')])
+  assert.deepEqual(open(closed), [])
+  assert.equal(closed.world.stem.p.z, 0)
+
+  // Glue spread on parts that never met holds nothing together: the stem goes alone and the joint stays open.
+  const apart = layout([place('p', 'flower', 'floor'), place('s', 'stem', 'floor'), place('v', 'vase', 'floor'), glue, place('i', 'stem', 'in', 'vase')])
+  assert.equal(open(apart).length, 1)
+  assert.match(open(apart)[0].message, /Put the glue on first, then add a place action .*flower rel:"on" to:stem/)
+  assert.equal(apart.world.flower.p.z, 0)
+
+  // A joint not made yet moves nothing, even with the faces together.
+  const unglued = layout([place('s', 'stem', 'floor'), place('v', 'vase', 'floor'), place('f', 'flower', 'on', 'stem'), place('i', 'stem', 'in', 'vase'), glue])
+  assert.equal(open(unglued).length, 1)
+})
+
+// A paper bouquet stood three stems in one cone: all at its middle, so its three flowers drew as one.
+test('things put in one container stand apart, and parts that still land together are reported', () => {
+  const part = (k, cm, w, thick) => ({ k, n: k, cm, w, thick })
+  const layout = (objects, steps) => solve({ view: 'plan', objects, tools: [], joints: [], steps: steps.map((a) => ({ do: [a] })) },
+    Object.fromEntries(objects.map((o) => [o.k, {}])), Object.fromEntries(objects.map((o) => [o.k, { width: o.cm * 10, height: o.w * 10 }])), { unchecked: true })
+  const put = (k, extra = {}) => ({ id: k, intent: 'place', v: 'place', k, rel: 'in', to: 'vase', ...extra })
+  const floor = { id: 'v', intent: 'place', v: 'place', k: 'vase', rel: 'floor' }
+  const overlaps = (l) => l.diagnostics.filter((d) => d.code === 'parts-overlap')
+  const vase = part('vase', 30, 30, 2), stems = ['a', 'b', 'c'].map((k) => part(k, 16, 1, 0.5))
+
+  const spread = layout([vase, ...stems], [floor, put('a'), put('b'), put('c')])
+  const lows = ['a', 'b', 'c'].map((k) => spread.world[k].p.y - spread.world.vase.p.y)
+  assert.deepEqual(lows, [4.5, 14.5, 24.5]); assert.deepEqual(overlaps(spread), [])
+
+  // One thing alone stays centred, and one given its own position keeps it.
+  const alone = layout([vase, stems[0]], [floor, put('a')])
+  assert.equal(alone.world.a.p.y - alone.world.vase.p.y, 14.5)
+  const told = layout([vase, ...stems], [floor, put('a', { cm: 1 }), put('b'), put('c')])
+  assert.deepEqual(['b', 'c'].map((k) => told.world[k].p.y - told.world.vase.p.y), [7, 22])
+
+  // Too wide to fit side by side: inside the container, and reported rather than hidden.
+  const wide = ['a', 'b', 'c'].map((k) => part(k, 16, 20, 0.5))
+  const full = layout([vase, ...wide], [floor, put('a'), put('b'), put('c')])
+  for (const k of ['a', 'b', 'c']) { const { p, e } = full.world[k], { p: q, e: f } = full.world.vase; for (const ax of ['x', 'y']) { assert.ok(p[ax] >= q[ax]); assert.ok(p[ax] + e[ax] <= q[ax] + f[ax]) } }
+  assert.match(overlaps(full)[0].message, /land in the same place/)
+
+  // Parts stacked, or merely touching, are not in the same place.
+  const stacked = layout([vase, part('a', 16, 1, 0.5), part('b', 16, 1, 0.5)], [floor, put('a'), { id: 'b', intent: 'place', v: 'place', k: 'b', rel: 'on', to: 'a' }])
+  assert.deepEqual(overlaps(stacked), [])
+})

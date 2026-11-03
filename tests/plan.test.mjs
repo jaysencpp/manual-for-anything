@@ -266,6 +266,36 @@ test('a regressing geometry patch is rolled back and the remaining whole repair 
   assert.equal(JSON.parse(readFileSync(join(dir, 'selected-attempt.json'))).attempt, 2)
 })
 
+// A paper bouquet failed this way: the geometry is only checked once the rest passes, so the last repair brought out
+// a fault the planner was never told about, and there was nothing left to tell it with.
+test('a fault the last repair brings out gets one more repair, once', async (t) => {
+  const dir = () => { const d = mkdtempSync(join(tmpdir(), 'meta-plan-unheard-')); t.after(() => rmSync(d, { recursive: true, force: true })); return d }
+  const photo = fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url))
+  const original = fixture(); for (const o of original.objects) o.b = [1, 1, 10, 10]
+  const broken = structuredClone(original); broken.steps[0].do[0].k = 'nothing-at-all'
+  const answers = [broken, { remove: [2, 3] }, original, original]
+  const contact = 'joint j: Joint surfaces do not touch: a exit plane x=0 cm, b receiving plane x=24 cm'
+
+  const told = await answering(t, answers)
+  let checks = 0
+  const result = await planPhoto(photo, dir(), { ...told.options, checkPlan: () => checks++ ? [] : [contact] })
+  assert.equal(result.validation.valid, true)
+  assert.deepEqual(told.asked.map((a) => a.schema), ['InstructionPlan', 'InstructionPlanPatch', 'InstructionPlan', 'InstructionPlan'])
+  assert.doesNotMatch(told.asked[2].prompt, /exit plane x=0 cm/)
+  assert.match(told.asked[3].prompt, /exit plane x=0 cm/)
+
+  // Only once, however many new faults keep coming.
+  const again = await answering(t, answers)
+  let fault = 0
+  await assert.rejects(planPhoto(photo, dir(), { ...again.options, checkPlan: () => [`${contact} (${fault++})`] }), /after 4 attempt/)
+  assert.equal(again.asked.length, 4)
+
+  // A fault it has already been told about gets no more than before.
+  const heard = await answering(t, [original, { remove: [2, 3] }, original])
+  await assert.rejects(planPhoto(photo, dir(), { ...heard.options, checkPlan: () => [contact] }), /after 3 attempt/)
+  assert.equal(heard.asked.length, 3)
+})
+
 test('an unnumbered partial patch cannot replace the manual and delete its creation steps', async (t) => {
   const dir = mkdtempSync(join(tmpdir(), 'meta-plan-unnumbered-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
   const original = fixture(); for (const o of original.objects) o.b = [1, 1, 10, 10]
