@@ -574,6 +574,8 @@ export function program({ script, vectors, boxes, geometry, sizes, layout, photo
     // joint solver (joints.mjs) projected them — a clean box its real size, in its wood's colour, its grain along it,
     // the photo's perspective left behind; and its colour.
     boards: layout.boards || {},
+    // (a sheet laid out as a board — paper, card, cloth — is drawn plain: no wood grain on a sheet of paper)
+    plainBoard: Object.fromEntries((script.objects || []).filter((o) => o.part?.family === 'sheet' && (layout.boards || {})[o.k]).map((o) => [o.k, true])),
     // When the work is turned over, and how it lies then (joints.mjs).
     turns: layout.flip ? times.turns : [], flip: layout.flip || null,
     board: Object.fromEntries(Object.keys(layout.boards || {}).filter((k) => geometry[k])
@@ -1359,7 +1361,7 @@ export function program({ script, vectors, boxes, geometry, sizes, layout, photo
       const P = f.pts;
       ctx.fillStyle = f.kind === "upper" ? c : f.kind === "front" ? mix([c, c, c, INK]) : mix([c, c, INK]);
       ctx.beginPath(); P.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.closePath(); ctx.fill();
-      if ((f.kind === "upper" || D.view === "front") && (!f.shaped || f.box)) {
+      if ((f.kind === "upper" || D.view === "front") && (!f.shaped || f.box) && !D.plainBoard[key]) {
         // Grain: lines between the two edges that run along the board. (A shaped face: in its own frame, f.box, and
         // kept inside its outline.)
         const G = f.box || P;
