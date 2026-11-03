@@ -335,7 +335,9 @@ async function startExample(name, ownerId, admission) {
   cpSync(join(fixtures, name), runDir, { recursive: true })
   relayout(runDir) // (laid out by today's solvers, as a fresh run would be)
   const full = readRun(runDir)
-  job.saved = { ...full, marks: full.timings.marks || {} }
+  job.saved = { ...full, marks: { ...full.timings.marks } }
+  // (a problem film saved before its layout was marked in time loads where its plan was done, or it never plays)
+  if (full.script.mode === 'problem' && !('layout' in job.saved.marks) && 'script: done' in job.saved.marks) job.saved.marks.layout = job.saved.marks['script: done']
   await job.persist()
   const marks = Object.entries(job.saved.marks).sort((a, b) => a[1] - b[1])
   const last = marks.at(-1)?.[1] ?? 0

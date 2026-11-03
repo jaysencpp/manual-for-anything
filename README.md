@@ -15,7 +15,8 @@ npm start
 ```
 
 Open <http://localhost:8080/examples> to watch saved manuals, including the **Colour Bridge**, the
-**Paper Snowflake** and a **Sitting Cat Drawing**. No API key needed.
+**Paper Snowflake**, a **Sitting Cat Drawing** and a **Ladder sliding down a wall**, a written problem. No API key
+needed.
 
 To make manuals from your own photos, run this instead. It asks for your Meta Model API key the first time and saves it
 in `.env.local`. Uploads make paid API calls.
@@ -50,6 +51,7 @@ position and size of each part of the drawing.
 | **Bricks** | Placement by stud, including slopes, round bricks, plates, tiles, grilles and studs on the side; a check that each brick rests on at least one stud |
 | **Paper and other sheets** | Valley and mountain folds, creases, turning over, cuts through layers, opening out |
 | **Drawing on a sheet** | Pencil, pen, marker, crayon or chalk strokes as lines, curves, closed shapes and ellipses, at the sheet's real size |
+| **Written problems** | Diagrams drawn to scale, with labelled lengths checked against the points, right angles checked, and points that move between steps |
 
 ## Using it
 
@@ -76,7 +78,7 @@ Revising, retrying and new ideas need `npm run live`, because they make paid cal
 
 Deterministic solvers then work out the geometry from the plan, and a fixed engine animates every step. Films play on a
 browser canvas, with model-written drawing code running in a sandboxed iframe. Written problems skip segmentation and go
-straight to an explanation.
+straight to an explanation, with a diagram for each step where a picture helps.
 
 ### Keeping it correct and safe
 

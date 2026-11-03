@@ -269,8 +269,9 @@ async function mainRun() {
     const times = problemTimeline(script.problem), audit = validateProblem(script.problem)
     writeFileSync(join(runDir, 'problem-audit.json'), JSON.stringify(audit, null, 1))
     calls.script ||= {}
-    writeFileSync(join(runDir, 'timings.json'), JSON.stringify({ ...configuration(), mode: 'problem', efforts, photo, begin: marks['script: done'], marks, calls: { script: { ...calls.script, text: undefined } }, cost: calls.script.cost ?? calls.script.knownCost ?? 0, costIncomplete: !!calls.script.costIncomplete, filmSeconds: times.duration }, null, 1))
+    // (marked before the timings are written, so a saved problem film has the mark its playback loads the film at)
     mark('layout')
+    writeFileSync(join(runDir, 'timings.json'), JSON.stringify({ ...configuration(), mode: 'problem', efforts, photo, begin: marks['script: done'], marks, calls: { script: { ...calls.script, text: undefined } }, cost: calls.script.cost ?? calls.script.knownCost ?? 0, costIncomplete: !!calls.script.costIncomplete, filmSeconds: times.duration }, null, 1))
     return
   }
   // The plan laid out on the cut-outs, with the tools it asks for (drawn by tools.mjs, not by a model).

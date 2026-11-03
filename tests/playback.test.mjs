@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { readPlayback, savePlayback, initialPlayback } from '../public/playback.mjs'
+import { readPlayback, savePlayback, initialPlayback, makingStatus } from '../public/playback.mjs'
 
 test('a finished film reopens paused at its saved position with every drawing ready', () => {
   assert.deepEqual(initialPlayback({ restore: true, ready: true, finished: true, saved: { t: 42 }, duration: 60 }),
@@ -33,4 +33,22 @@ test('playback positions stay separate by film and unavailable storage does not 
   const blocked = { getItem() { throw Error('blocked') }, setItem() { throw Error('full') } }
   assert.equal(readPlayback(blocked, 'first'), null)
   assert.doesNotThrow(() => savePlayback(blocked, 'first', { t: 23 }))
+})
+
+test('the status while a film is made follows its stages, and a written problem is never said to be cut out', () => {
+  const at = (...names) => makingStatus(new Set(names))
+  // a photo of things
+  assert.equal(at('start'), 'Reading your photo')
+  assert.equal(at('start', 'script: object list'), 'Writing the steps')
+  assert.equal(at('start', 'script: object list', 'script: repair 1'), 'A part did not fit: fixing the plan')
+  assert.equal(at('script: object list', 'script: done'), 'Cutting each thing out of the photo')
+  assert.equal(at('script: object list', 'script: done', 'SAM: cut-outs'), 'Laying out the film')
+  assert.equal(at('script: done', 'layout'), 'Finishing the object drawings')
+  // a written problem, as its stages really come (no object list, no cut-outs)
+  const problem = ['start', 'perception: problem']
+  assert.equal(at(...problem), 'Working out the solution')
+  assert.equal(at(...problem, 'script: repair 1'), 'A step did not check out: fixing the solution')
+  assert.equal(at(...problem, 'script: repair 1', 'script: done'), 'Laying out the film')
+  assert.equal(at(...problem, 'script: done', 'layout'), 'Starting the film')
+  for (const stage of ['script: done', 'layout']) assert.doesNotMatch(at(...problem, 'script: done', stage), /cut|drawing/i)
 })

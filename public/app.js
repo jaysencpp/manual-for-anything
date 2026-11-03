@@ -4,7 +4,7 @@
 import { drawThumb, dimensionLabel } from '/thumbs.js'
 import { preparePhoto, uploadPhoto } from '/photo.mjs'
 import { setupAccount, loadFilms, selectProject, refreshProjects, updateProject } from '/library.mjs'
-import { readPlayback, savePlayback, initialPlayback } from '/playback.mjs'
+import { readPlayback, savePlayback, initialPlayback, makingStatus } from '/playback.mjs'
 const $ = (id) => document.getElementById(id)
 const fetch = async (...args) => {
   const response = await window.fetch(...args)
@@ -307,14 +307,7 @@ function showHome(path = "/") {
 }
 // ---- what is being done now, over the picture, until the film starts (the log is folded away on a phone) ----
 let nowTimer = null, stages = new Set()
-// (worked out from what is in so far: the stages come in a different order on a fresh photo and on a picked project)
-function status() {
-  if (film) return now(null)
-  if (stages.has('layout')) return now('Finishing the object drawings')
-  if (!stages.has('script: done')) return now(!stages.has('script: object list') ? 'Reading your photo'
-    : [...stages].some((n) => /^script: (repair|patch) /.test(n)) ? 'A part did not fit: fixing the plan' : 'Writing the steps')
-  now(stages.has('SAM: cut-outs') ? 'Laying out the film' : 'Cutting each thing out of the photo')
-}
+function status() { now(film ? null : makingStatus(stages)) }
 function now(text) {
   const el = $('now'); clearInterval(nowTimer)
   el.hidden = !text; if (!text) return
