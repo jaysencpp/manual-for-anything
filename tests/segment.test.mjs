@@ -7,7 +7,7 @@ import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import sharp from 'sharp'
-import { associate, overlap, maskEvidence } from '../src/pipeline/mask-selection.mjs'
+import { associate, coloursDistinguish, looksLike, maskEvidence, namedColour, overlap, settleColours } from '../src/pipeline/mask-selection.mjs'
 import { Segmenter, segmentPhoto, principalAxis, rotated } from '../src/pipeline/segment.mjs'
 
 // The protocol's own example record: a 5 × 5 box at (10, 20) and its one_bit mask.
@@ -120,6 +120,107 @@ test('the cut-out pipeline writes every file and preserves the missing-mask fall
     const meta = await sharp(join(dir, `${key}.png`)).metadata()
     assert.equal(meta.channels, 4); assert.equal(meta.width, size.width); assert.equal(meta.height, size.height)
   }
+})
+
+// Two instances of one class: a 5 × 5 mask on the photo's left half and one on its right half.
+const twoInstances = (req, res, body) => {
+  const text = body.input[0].content[0].text
+  const at = (id, x) => `${id}<|box;x1=${x};y1=20;x2=${x + 4};y2=24;w=100;h=80|><|mask;x=0;y=0;data=5,5,!!!!!(QO(0lu8?|>`
+  answer(res, text === 'brick' ? `<0f>${at(1, 10)},${at(2, 60)}` : '')
+}
+async function redAndBluePhoto(t) {
+  const dir = mkdtempSync(join(tmpdir(), 'segment-colours-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
+  const file = join(dir, 'photo.png')
+  await sharp({ create: { width: 100, height: 80, channels: 3, background: '#d62128' } })
+    .composite([{ input: { create: { width: 50, height: 80, channels: 3, background: '#0a68c8' } }, left: 50, top: 0 }]).png().toFile(file)
+  return { dir, file, read: name => JSON.parse(readFileSync(join(dir, name), 'utf8')) }
+}
+
+test('objects take the cut-outs of their named colours when their boxes sit on each other', async t => {
+  const { env } = await stub(t, twoInstances), { dir, file, read } = await redAndBluePhoto(t)
+  const result = await segmentPhoto(file, { objects: [
+    { key: 'red-brick', name: 'red plastic brick', segment: 'brick', box: [55, 15, 15, 15] },
+    { key: 'blue-brick', name: 'blue plastic brick', segment: 'brick', box: [5, 15, 15, 15] },
+  ] }, dir, { env })
+  const geometry = read('geometry.json')
+  assert.equal(geometry['red-brick'].color, '#d62128'); assert.equal(geometry['blue-brick'].color, '#0a68c8')
+  assert.deepEqual(result.colourMismatches, [])
+  assert.match(result.log, /matched by colour instead of box/)
+})
+
+test('an object with no instance of its named colour keeps its match and reports it', async t => {
+  const { env } = await stub(t, twoInstances), { dir, file, read } = await redAndBluePhoto(t)
+  const result = await segmentPhoto(file, { objects: [
+    { key: 'green-brick', name: 'green plastic brick', segment: 'brick', box: [55, 15, 15, 15] },
+    { key: 'red-brick', name: 'red plastic brick', segment: 'brick', box: [5, 15, 15, 15] },
+  ] }, dir, { env })
+  assert.deepEqual(result.colourMismatches, ['green-brick'])
+  assert.equal(read('geometry.json')['green-brick'].color, '#0a68c8')
+  assert.equal(read('geometry.json')['red-brick'].color, '#d62128')
+  assert.match(read('perception.json')['green-brick'].warnings.join(), /named green, but its cut-out does not look green/)
+})
+
+test('a class that matches nothing tries a simpler term before falling back to boxes', async t => {
+  const { seen, env } = await stub(t, twoInstances), { dir, file, read } = await redAndBluePhoto(t)
+  const result = await segmentPhoto(file, { objects: [
+    { key: 'red-brick', name: 'red plastic brick', segment: 'plastic brick', box: [5, 15, 15, 15] },
+    { key: 'blue-brick', name: 'blue plastic brick', segment: 'plastic brick', box: [55, 15, 15, 15] },
+  ] }, dir, { env })
+  assert.ok(seen.some(request => request.body.input[0].content[0].text === 'brick'))
+  assert.match(result.log, /class "plastic brick": 0 found, 0 confident/)
+  assert.match(result.log, /class "brick" instead: 2 found, 2 confident/)
+  assert.equal(read('perception.json')['red-brick'].method, 'semantic')
+  assert.deepEqual(result.colourMismatches, [])
+})
+
+test('colours are checked on cut-outs that fell back to their boxes', async t => {
+  const { env } = await stub(t, twoInstances), { dir, file, read } = await redAndBluePhoto(t)
+  const result = await segmentPhoto(file, { objects: [
+    { key: 'right', name: 'red plastic block', segment: 'plastic block', box: [5, 15, 15, 15] },
+    { key: 'wrong', name: 'yellow plastic block', segment: 'plastic block', box: [55, 15, 15, 15] },
+  ] }, dir, { env })
+  assert.equal(read('perception.json').right.method, 'box')
+  assert.deepEqual(result.colourMismatches, ['wrong'])
+})
+
+test('names only compare colours when colour tells a class apart', async t => {
+  const { env } = await stub(t, twoInstances), { dir, file, read } = await redAndBluePhoto(t)
+  const result = await segmentPhoto(file, { objects: [
+    { key: 'green-brick', name: 'green plastic brick', segment: 'brick', box: [55, 15, 15, 15] },
+    { key: 'other-brick', name: 'plastic brick', segment: 'brick', box: [5, 15, 15, 15] },
+  ] }, dir, { env })
+  assert.deepEqual(result.colourMismatches, [])
+  assert.equal(read('geometry.json')['green-brick'].color, '#0a68c8')
+})
+
+test('colour names read from object names and photo colours', () => {
+  assert.equal(namedColour('light green plastic building brick'), 'green')
+  assert.equal(namedColour('Blue-handled scissors'), null)
+  assert.equal(namedColour('dark bottle with white cap behind Crown Royal'), null)
+  assert.equal(namedColour('blue bag behind bananas'), 'blue')
+  assert.equal(namedColour('gray stone'), 'grey')
+  assert.equal(namedColour('wooden board'), null)
+  assert.equal(coloursDistinguish(['red brick', 'light green brick']), true)
+  assert.equal(coloursDistinguish(['red brick', 'red brick', 'brick']), false)
+  // The average colours of the bricks SAM cut out of a real photo.
+  const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16))
+  for (const [word, colour, expected] of [['yellow', '#eeb507', true], ['red', '#eeb507', false], ['green', '#05ba06', true], ['blue', '#5090bc', true],
+    ['green', '#5090bc', false], ['red', '#d62128', true], ['yellow', '#d62128', false], ['blue', '#0a68c8', true], ['orange', '#0a68c8', false]])
+    assert.equal(looksLike(word, hex(colour)), expected, `${word} ${colour}`)
+  assert.equal(looksLike('white', [240, 240, 235]), true); assert.equal(looksLike('black', [20, 20, 22]), true); assert.equal(looksLike('grey', [120, 120, 125]), true)
+  assert.equal(looksLike('red', [120, 120, 125]), false)
+})
+
+test('a colour match prefers the nearest free instance and takes each once', () => {
+  const candidates = [[0, 0, 10, 10], [100, 0, 110, 10], [200, 0, 210, 10]], scores = [0.9, 0.9, 0.9]
+  const red = [214, 33, 40], blue = [10, 104, 200]
+  const moved = settleColours(['red brick', 'red brick', 'blue brick'], [[95, 0, 115, 10], [190, 0, 215, 10], [0, 0, 10, 10]], candidates, scores, [blue, red, red],
+    { 0: 1, 1: 0, 2: 2 })
+  assert.deepEqual(moved.assigned, { 0: 1, 1: 2, 2: 0 })
+  assert.deepEqual(moved.mismatched, [])
+  const low = settleColours(['red brick', 'blue brick'], [[0, 0, 10, 10], [100, 0, 110, 10]], candidates, [0.9, 0.9, 0.2], [blue, blue, red], { 0: 0, 1: 1 })
+  assert.deepEqual(low.mismatched, [0], 'a low-confidence instance is not taken')
+  assert.deepEqual(low.assigned, { 0: 0, 1: 1 })
 })
 
 test('a long slanted object is found along its axis and turned level about its middle', () => {

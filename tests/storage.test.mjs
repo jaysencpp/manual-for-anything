@@ -6,6 +6,8 @@ import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { createServer } from 'node:http'
 import { once } from 'node:events'
+import fsPromises from 'node:fs/promises'
+import { syncBuiltinESMExports } from 'node:module'
 import { FilmRepository } from '../src/server/repository.mjs'
 import { LocalFiles, AzureFiles, FilmFiles, configuredFiles } from '../src/server/storage.mjs'
 
@@ -35,6 +37,36 @@ test('local files and SQLite survive cache loss, deduplicate bytes and keep inte
   second.close()
   assert.throws(() => new FilmRepository(join(dir, 'app.sqlite'), 'azure:some-other-store'), /different file store/)
   await assert.rejects(archive.read('one', '../app.sqlite'), /Invalid stored/)
+})
+
+test('shutdown waits for background cache pruning before removing its parent directory', async t => {
+  const { archive } = await fixture(t)
+  const path = archive.allocate('pruning'); await mkdir(path)
+  archive.finished('pruning'); archive.maxCached = 0
+  const realRm = fsPromises.rm
+  let release, entered
+  const blocked = new Promise(resolve => { release = resolve })
+  const started = new Promise(resolve => { entered = resolve })
+  let parentRemoved = false
+  const removal = t.mock.method(fsPromises, 'rm', async (target, options) => {
+    if (target === path) { entered(); await blocked }
+    if (target === archive.cache) parentRemoved = true
+    return realRm(target, options)
+  })
+  syncBuiltinESMExports()
+  let pruning, closing
+  try {
+    pruning = archive.prune(); await started
+    closing = archive.close()
+    // Let shutdown reach its directory-removal step while pruning is held open.
+    await new Promise(resolve => setImmediate(resolve))
+    assert.equal(parentRemoved, false, 'cache parent must remain until pruning finishes')
+    release(); await pruning; await closing
+    assert.equal(parentRemoved, true)
+  } finally {
+    release(); await Promise.allSettled([pruning, closing])
+    removal.mock.restore(); syncBuiltinESMExports()
+  }
 })
 
 test('concurrent local publications share an immutable blob and remove temporary files', async t => {

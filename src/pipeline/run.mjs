@@ -98,6 +98,7 @@ async function mainRun() {
     perception: true, perceptionEffort: efforts.perception, repairEffort: efforts.repair, signal: runAbort.signal,
     onMode: (mode) => { problemMode = mode === 'problem'; mark(`perception: ${mode}`) },
     onPerceptionRepair: () => mark('perception: repair'),
+    onBoxesCorrected: (form) => mark(`perception: boxes corrected (${form})`),
     onPerceptionText: (text) => { if (!marks['script: first object'] && /"b"\s*:\s*\[[^\]]*\]/.test(text)) mark('script: first object') },
     onRepairRejected: () => mark('script: repair rejected'),
     onPlanAttempt: ({ attempt, patch }) => { if (attempt) mark(`script: ${patch ? 'patch' : 'repair'} ${attempt}`) },
@@ -163,6 +164,7 @@ async function mainRun() {
     const sam = standIn ? { segment: 0, scores: {}, log: 'saved cut-outs' } : await segmentPhoto(photo.path, JSON.parse(readFileSync(join(samDir, 'boxes.json'), 'utf8')), samDir, { signal: runAbort.signal })
     writeFileSync(join(samDir, 'sam.log'), sam.log)
     mark('SAM: cut-outs')
+    for (const key of sam.colourMismatches || []) mark(`SAM: colour mismatch ${key}`)
     calls.sam = { segment: sam.segment, scores: sam.scores }
     copyFileSync(photo.path, join(samDir, 'photo.png'))
     const screens = JSON.parse(readFileSync(join(samDir, 'screens.json'), 'utf8'))

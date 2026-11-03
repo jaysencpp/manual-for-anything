@@ -6,7 +6,7 @@ import { join } from 'node:path'
 import { setTimeout as delay } from 'node:timers/promises'
 import { buildObjectPrompt, decodeMaskToRaster, formats } from '@meta-sam/parser'
 import sharp from 'sharp'
-import { associate, maskEvidence } from './mask-selection.mjs'
+import { associate, coloursDistinguish, looksLike, maskEvidence, namedColour, settleColours } from './mask-selection.mjs'
 
 const PAD = 6, MAX_BOX_OBJECTS = 16, RETRIES = 3, TIMEOUT_MS = 120000, TRANSIENT = new Set([408, 429, 500, 502, 503, 504])
 
@@ -167,7 +167,12 @@ export async function segmentPhoto(photoPath, plan, out, { env = process.env, si
   const start = performance.now(), objects = plan.objects
   const boxes = objects.map(({ box: [x, y, w, h] }) => [Math.max(0, x - PAD), Math.max(0, y - PAD), Math.min(width, x + w + PAD), Math.min(height, y + h + PAD)])
   const masks = boxes.map(() => new Uint8Array(width * height)), scores = boxes.map(() => 0)
-  const cache = new Map(), used = new Map(), semantic = {}, retried = {}
+  const cache = new Map(), used = new Map(), semantic = {}, retried = {}, colourWarnings = {}
+  const averageColour = mask => {
+    let red = 0, green = 0, blue = 0, pixels = 0
+    mask.forEach((on, p) => { if (on) { red += photo[p * 3]; green += photo[p * 3 + 1]; blue += photo[p * 3 + 2]; pixels++ } })
+    return pixels ? [red / pixels, green / pixels, blue / pixels] : null
+  }
 
   // A spatial label like "front timber board" can retrieve the ground instead of the object. Plans provide a short
   // visual class separately: each class is asked once and its instances associated with the rough boxes. Everything
@@ -176,8 +181,25 @@ export async function segmentPhoto(photoPath, plan, out, { env = process.env, si
   objects.forEach((o, i) => { if (o.segment) groups.set(o.segment, [...(groups.get(o.segment) || []), i]) })
   const [boxed] = await Promise.all([segmenter.byBoxes(boxes),
     limited([...groups.keys()], 7, async query => { cache.set(query, await segmenter.find(query)) })])
+  // A class that matched nothing would leave every object to its box's mask, so a simpler term ("brick" for "building
+  // brick") gets one more try.
+  const confident = found => found.scores.filter(score => score >= 0.5).length
+  await limited([...groups.keys()], 7, async query => {
+    const first = cache.get(query), simpler = query.trim().split(/\s+/).at(-1)
+    log(`class "${query}": ${first.boxes.length} found, ${confident(first)} confident`)
+    if (confident(first) || simpler === query) return
+    const again = await segmenter.find(simpler)
+    log(`class "${simpler}" instead: ${again.boxes.length} found, ${confident(again)} confident`)
+    if (confident(again)) cache.set(query, again)
+  })
   for (const [query, indices] of groups) {
-    const found = cache.get(query), matches = associate(indices.map(i => boxes[i]), found.boxes, found.scores)
+    const found = cache.get(query), requests = indices.map(i => boxes[i]), names = indices.map(i => objects[i].name)
+    let matches = associate(requests, found.boxes, found.scores)
+    if (coloursDistinguish(names)) {
+      const settled = settleColours(names, requests, found.boxes, found.scores, found.masks.map(averageColour), matches)
+      matches = settled.assigned
+      if (settled.moved.length) log(`matched by colour instead of box: ${JSON.stringify(settled.moved.map(local => objects[indices[local]].key))}`)
+    }
     used.set(query, new Set(Object.values(matches)))
     for (const [local, j] of Object.entries(matches)) {
       const i = indices[local]
@@ -214,6 +236,17 @@ export async function segmentPhoto(photoPath, plan, out, { env = process.env, si
     masks[i] = filled; scores[i] = 0
   })
   if (empty.length) log(`no mask found, cut out as the box: ${JSON.stringify(empty)}`)
+
+  // Checked on the final cut-outs, wherever each one came from.
+  for (const indices of groups.values()) {
+    if (!coloursDistinguish(indices.map(i => objects[i].name))) continue
+    for (const i of indices) {
+      const word = namedColour(objects[i].name), colour = averageColour(masks[i])
+      if (!word || !colour || looksLike(word, colour)) continue
+      colourWarnings[objects[i].key] = `named ${word}, but its cut-out does not look ${word}`
+      log(`${objects[i].key}: ${colourWarnings[objects[i].key]}`)
+    }
+  }
   const seconds = +((performance.now() - start) / 1000).toFixed(2)
   log(`${boxes.length} objects segmented in ${seconds}s`)
 
@@ -308,6 +341,7 @@ export async function segmentPhoto(photoPath, plan, out, { env = process.env, si
       evidence[objects[j].key].warnings.push(`coarse mask nearly duplicates ${objects[i].key}`)
     }
   }
+  for (const [key, warning] of Object.entries(colourWarnings)) evidence[key].warnings.push(warning)
   writeFileSync(join(out, 'perception.json'), JSON.stringify(evidence, null, 1))
-  return { segment: seconds, scores: scoreByKey, log: lines.join('\n') }
+  return { segment: seconds, scores: scoreByKey, colourMismatches: Object.keys(colourWarnings), log: lines.join('\n') }
 }

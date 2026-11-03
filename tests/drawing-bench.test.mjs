@@ -110,6 +110,15 @@ test('local HTTP stub → model client → real browser → blind review → rep
   assert.equal(read(join(out, 'report.json')).groups.find(g => g.effort === 'minimal').passAt1, 1)
   const browser = await openDrawingBrowser(service.url)
   t.after(() => browser.close())
+  await browser.evaluate(`new Promise((resolve, reject) => {
+    const ready = () => document.getElementById('message').textContent.startsWith('Ready.')
+    if (ready()) return resolve(true)
+    const observer = new MutationObserver(() => {
+      if (ready()) { observer.disconnect(); clearTimeout(timer); resolve(true) }
+    })
+    const timer = setTimeout(() => { observer.disconnect(); reject(new Error('Review gallery did not become ready')) }, 10000)
+    observer.observe(document.getElementById('message'), { childList: true })
+  })`)
   const initial = await browser.evaluate(`({thumbs:document.querySelectorAll('.thumb').length, reportHidden:document.getElementById('report').hidden, text:document.getElementById('message').textContent})`)
   assert.equal(initial.thumbs, 5); assert.equal(initial.reportHidden, true); assert.match(initial.text, /Ready/)
   await browser.evaluate(`document.getElementById('sample').value=${JSON.stringify(good.id)}; document.getElementById('sample').dispatchEvent(new Event('change')); document.getElementById('sample').closest('section').scrollIntoView(); true`)
