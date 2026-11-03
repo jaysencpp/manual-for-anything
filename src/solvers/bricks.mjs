@@ -1,5 +1,5 @@
 // The brick solver, for builds of toy bricks: every brick on a stud grid, placed the way a builder says it ("on the
-// log, from its second stud, turned"), checked so the build could really stand, and drawn by the engine from its
+// log, from its second stud, turned"), checked so each rests on a stud (not for balance), and drawn by the engine from its
 // numbers in IKEA's iso view — never from the photo, whose angles can't line up. Its output is the joint solver's
 // (layout.mjs → solveJoints), so the engine's placing, camera, shadows and draw order all work as for boards.
 //
@@ -93,6 +93,8 @@ export function solveBricks(script, geometry, sizes, options = {}) {
     put(a.k, b)
   }
 
+  const diagnostics = nearMisses(B).map((message) => ({ code: 'brick-near-miss', message }))
+
   // The view: IKEA's iso, as the joint solver draws it (x right and down, y away right and up, z up), in cm.
   const unit = 4
   // Three ways to look at it (viewOf, below): "oblique" (the default: the front square to the viewer, so a row of bricks is level and a
@@ -148,7 +150,30 @@ export function solveBricks(script, geometry, sizes, options = {}) {
   // Each measured gap on the frame: its two ends on the table at the front of the row.
   const dims = gaps.map((g) => ({ k: g.k, label: `${g.studs} stud${g.studs === 1 ? '' : 's'}`,
     from: toScreen(project(g.x0 * STUD, g.y * STUD, 0)), to: toScreen(project(g.x1 * STUD, g.y * STUD, 0)) }))
-  return { order: [...order].sort((a, b) => depth(a) - depth(b)), extras: extras.filter((x) => !B[x]), transients: [], poses, boards, floorY, view: 'iso', grid: B, notes, dims }
+  return { order: [...order].sort((a, b) => depth(a) - depth(b)), extras: extras.filter((x) => !B[x]), transients: [], poses, boards, floorY, view: 'iso', grid: B, notes, dims, diagnostics }
+}
+
+// A brick that overhangs its supports and stops exactly at the edge of another brick's top, at its own level, reaches for
+// that brick and misses it by a stud: a bridge that rests on one pillar only. It has no stud on that brick, so a plan
+// that meant to bridge the two must move it. Overhangs reaching nothing and bricks butted over a seam are fine.
+function nearMisses(B) {
+  const out = []
+  for (const [k, a] of Object.entries(B)) {
+    const under = Object.entries(B).filter(([q, o]) => q !== k && o.z + o.h === a.z)
+    const overlaps = (o) => a.x < o.x + o.w && o.x < a.x + a.w && a.y < o.y + o.d && o.y < a.y + a.d
+    const supports = under.filter(([, o]) => overlaps(o)).map(([, o]) => o)
+    if (!supports.length) continue
+    for (const [pos, size, across, width] of [['x', 'w', 'y', 'd'], ['y', 'd', 'x', 'w']]) {
+      const low = Math.min(...supports.map((o) => o[pos])), high = Math.max(...supports.map((o) => o[pos] + o[size]))
+      for (const [q, o] of under) {
+        if (a[across] >= o[across] + o[width] || o[across] >= a[across] + a[width]) continue
+        const missedAfter = a[pos] + a[size] === o[pos] && a[pos] + a[size] > high
+        const missedBefore = o[pos] + o[size] === a[pos] && a[pos] < low
+        if (missedAfter || missedBefore) out.push(`${k}: overhangs and stops at the edge of ${q} without resting on it. To bridge them, move it one stud so it sits on studs of both`)
+      }
+    }
+  }
+  return out
 }
 
 // A way of looking at a build in cm (x right, y away, z up): "oblique" (the front square to the viewer, depth half as
