@@ -1,0 +1,462 @@
+{
+ "mode": "problem",
+ "problem": {
+  "answer": "The top slides down 1 m.",
+  "assumptions": [],
+  "expression": "3² + h² = 5²",
+  "status": "solved",
+  "steps": [
+   {
+    "explanation": "The wall and ground make a right angle. The ladder is the hypotenuse, the distance from the wall is one side, and the height up the wall is the other side.",
+    "expression": "Right triangle: hypotenuse = 5 m, base = 3 m, height = h",
+    "title": "Picture the right triangle",
+    "diagram": {
+     "units": "m",
+     "points": [
+      {
+       "id": "corner",
+       "x": 0,
+       "y": 0
+      },
+      {
+       "id": "wall",
+       "x": 0,
+       "y": 5
+      },
+      {
+       "id": "ground",
+       "x": 5.5,
+       "y": 0
+      },
+      {
+       "id": "foot",
+       "x": 3,
+       "y": 0
+      },
+      {
+       "id": "top",
+       "x": 0,
+       "y": 4
+      }
+     ],
+     "segments": [
+      {
+       "from": "corner",
+       "to": "wall",
+       "surface": true
+      },
+      {
+       "from": "corner",
+       "to": "ground",
+       "surface": true
+      },
+      {
+       "from": "foot",
+       "to": "top",
+       "label": "5 m",
+       "accent": true
+      },
+      {
+       "from": "corner",
+       "to": "foot",
+       "label": "3 m",
+       "accent": false
+      },
+      {
+       "from": "corner",
+       "to": "top",
+       "label": "h",
+       "accent": false,
+       "dashed": true
+      }
+     ],
+     "angles": [
+      {
+       "at": "corner",
+       "from": "foot",
+       "to": "top",
+       "right": true
+      }
+     ]
+    }
+   },
+   {
+    "explanation": "Pythagoras says the square of the hypotenuse equals the sum of the squares of the other two sides.",
+    "expression": "3² + h² = 5²",
+    "title": "Use Pythagoras"
+   },
+   {
+    "explanation": "Work out the squares: 3² is 9 and 5² is 25.",
+    "expression": "9 + h² = 25",
+    "title": "Work out the squares"
+   },
+   {
+    "explanation": "Subtract 9 from both sides to get h² by itself.",
+    "expression": "h² = 25 − 9 = 16",
+    "title": "Find h²"
+   },
+   {
+    "explanation": "Take the square root. Height is positive, so use h = 4, not −4.",
+    "expression": "h = √16 = 4 m",
+    "title": "Find the first height",
+    "diagram": {
+     "units": "m",
+     "points": [
+      {
+       "id": "corner",
+       "x": 0,
+       "y": 0
+      },
+      {
+       "id": "wall",
+       "x": 0,
+       "y": 5
+      },
+      {
+       "id": "ground",
+       "x": 5.5,
+       "y": 0
+      },
+      {
+       "id": "foot",
+       "x": 3,
+       "y": 0
+      },
+      {
+       "id": "top",
+       "x": 0,
+       "y": 4
+      }
+     ],
+     "segments": [
+      {
+       "from": "corner",
+       "to": "wall",
+       "surface": true
+      },
+      {
+       "from": "corner",
+       "to": "ground",
+       "surface": true
+      },
+      {
+       "from": "foot",
+       "to": "top",
+       "label": "5 m",
+       "accent": false
+      },
+      {
+       "from": "corner",
+       "to": "foot",
+       "label": "3 m",
+       "accent": false
+      },
+      {
+       "from": "corner",
+       "to": "top",
+       "label": "4 m",
+       "accent": true,
+       "dashed": true
+      }
+     ],
+     "angles": [
+      {
+       "at": "corner",
+       "from": "foot",
+       "to": "top",
+       "right": true
+      }
+     ]
+    }
+   },
+   {
+    "explanation": "The foot slides 1 m further out, so its new distance is 3 m + 1 m = 4 m.",
+    "expression": "New base = 3 m + 1 m = 4 m",
+    "title": "Move the foot out",
+    "diagram": {
+     "units": "m",
+     "points": [
+      {
+       "id": "corner",
+       "x": 0,
+       "y": 0
+      },
+      {
+       "id": "wall",
+       "x": 0,
+       "y": 5
+      },
+      {
+       "id": "ground",
+       "x": 5.5,
+       "y": 0
+      },
+      {
+       "id": "foot",
+       "x": 4,
+       "y": 0
+      },
+      {
+       "id": "top",
+       "x": 0,
+       "y": 3
+      },
+      {
+       "id": "foot0",
+       "x": 3,
+       "y": 0
+      },
+      {
+       "id": "top0",
+       "x": 0,
+       "y": 4
+      }
+     ],
+     "segments": [
+      {
+       "from": "corner",
+       "to": "wall",
+       "surface": true
+      },
+      {
+       "from": "corner",
+       "to": "ground",
+       "surface": true
+      },
+      {
+       "from": "foot",
+       "to": "top",
+       "label": "5 m",
+       "accent": false
+      },
+      {
+       "from": "corner",
+       "to": "foot",
+       "label": "4 m",
+       "accent": true
+      },
+      {
+       "from": "corner",
+       "to": "top",
+       "label": "h",
+       "accent": false,
+       "dashed": true
+      },
+      {
+       "from": "foot0",
+       "to": "top0",
+       "dashed": true
+      }
+     ],
+     "angles": [
+      {
+       "at": "corner",
+       "from": "foot",
+       "to": "top",
+       "right": true
+      }
+     ]
+    }
+   },
+   {
+    "explanation": "Use Pythagoras again with the same 5 m ladder and the new 4 m base.",
+    "expression": "4² + h² = 5²",
+    "title": "Use Pythagoras again"
+   },
+   {
+    "explanation": "Work out 4² = 16 and 5² = 25, then subtract 16 from both sides.",
+    "expression": "h² = 25 − 16 = 9",
+    "title": "Find the new h²"
+   },
+   {
+    "explanation": "Take the square root and keep the positive height.",
+    "expression": "h = √9 = 3 m",
+    "title": "Find the new height",
+    "diagram": {
+     "units": "m",
+     "points": [
+      {
+       "id": "corner",
+       "x": 0,
+       "y": 0
+      },
+      {
+       "id": "wall",
+       "x": 0,
+       "y": 5
+      },
+      {
+       "id": "ground",
+       "x": 5.5,
+       "y": 0
+      },
+      {
+       "id": "foot",
+       "x": 4,
+       "y": 0
+      },
+      {
+       "id": "top",
+       "x": 0,
+       "y": 3
+      },
+      {
+       "id": "foot0",
+       "x": 3,
+       "y": 0
+      },
+      {
+       "id": "top0",
+       "x": 0,
+       "y": 4
+      }
+     ],
+     "segments": [
+      {
+       "from": "corner",
+       "to": "wall",
+       "surface": true
+      },
+      {
+       "from": "corner",
+       "to": "ground",
+       "surface": true
+      },
+      {
+       "from": "foot",
+       "to": "top",
+       "label": "5 m",
+       "accent": false
+      },
+      {
+       "from": "corner",
+       "to": "foot",
+       "label": "4 m",
+       "accent": false
+      },
+      {
+       "from": "corner",
+       "to": "top",
+       "label": "3 m",
+       "accent": true,
+       "dashed": true
+      },
+      {
+       "from": "foot0",
+       "to": "top0",
+       "dashed": true
+      }
+     ],
+     "angles": [
+      {
+       "at": "corner",
+       "from": "foot",
+       "to": "top",
+       "right": true
+      }
+     ]
+    }
+   },
+   {
+    "explanation": "Compare the two heights: it was 4 m up the wall and is now 3 m up the wall. This 1 m drop matches the 1 m foot movement only for these particular numbers.",
+    "expression": "Slide down = 4 m − 3 m = 1 m",
+    "title": "Find how far it slid",
+    "diagram": {
+     "units": "m",
+     "points": [
+      {
+       "id": "corner",
+       "x": 0,
+       "y": 0
+      },
+      {
+       "id": "wall",
+       "x": 0,
+       "y": 5
+      },
+      {
+       "id": "ground",
+       "x": 5.5,
+       "y": 0
+      },
+      {
+       "id": "foot",
+       "x": 4,
+       "y": 0
+      },
+      {
+       "id": "top",
+       "x": 0,
+       "y": 3
+      },
+      {
+       "id": "foot0",
+       "x": 3,
+       "y": 0
+      },
+      {
+       "id": "top0",
+       "x": 0,
+       "y": 4
+      }
+     ],
+     "segments": [
+      {
+       "from": "corner",
+       "to": "wall",
+       "surface": true
+      },
+      {
+       "from": "corner",
+       "to": "ground",
+       "surface": true
+      },
+      {
+       "from": "foot",
+       "to": "top",
+       "label": "5 m",
+       "accent": false
+      },
+      {
+       "from": "corner",
+       "to": "foot",
+       "label": "4 m",
+       "accent": false
+      },
+      {
+       "from": "corner",
+       "to": "top",
+       "label": "3 m",
+       "accent": false,
+       "dashed": true
+      },
+      {
+       "from": "foot0",
+       "to": "top0",
+       "dashed": true
+      },
+      {
+       "from": "top",
+       "to": "top0",
+       "label": "1 m",
+       "accent": true
+      }
+     ],
+     "angles": [
+      {
+       "at": "corner",
+       "from": "foot",
+       "to": "top",
+       "right": true
+      }
+     ]
+    }
+   }
+  ],
+  "subject": "Geometry — Pythagoras' theorem",
+  "title": "Sliding ladder height",
+  "transcription": "A 5 m ladder leans against a wall with its foot 3 m from the wall. How high up the wall does it reach? If the foot slides 1 m further out, how far does the top slide down?",
+  "uncertainties": [],
+  "verification": "Check: 3² + 4² = 9 + 16 = 25 = 5², and 4² + 3² = 16 + 9 = 25 = 5². Both triangles satisfy Pythagoras, and 4 m − 3 m = 1 m."
+ }
+}

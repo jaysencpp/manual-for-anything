@@ -11,7 +11,11 @@ import { plain } from './script.mjs'
 
 export function relayout(dir) {
   const read = (p) => JSON.parse(readFileSync(join(dir, p), 'utf8'))
-  const script = plain(read('script.json')), screens = read('screens/screens.json')
+  // (a written problem has no build to lay out: its film is drawn from the problem alone. Laying it out as one made
+  // every saved problem fail to open as an example.)
+  const saved = read('script.json')
+  if (saved.mode === 'problem') return
+  const script = plain(saved), screens = read('screens/screens.json')
   delete screens.photo
   const { geometry, sizes } = withTools(script, read('screens/geometry.json'),
     Object.fromEntries(Object.entries(screens).map(([k, s]) => [k, { width: s.width, height: s.height }])), {})
