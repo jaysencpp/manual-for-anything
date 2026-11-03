@@ -1,0 +1,144 @@
+{
+ "provider": "meta",
+ "model": "muse-wonder-1.0",
+ "mode": "problem",
+ "efforts": {
+  "base": "minimal",
+  "plan": "minimal",
+  "perception": "minimal",
+  "repair": "low",
+  "drawing": "minimal",
+  "catalogue": "low"
+ },
+ "photo": {
+  "path": "script/photo.png",
+  "width": 597,
+  "height": 295
+ },
+ "begin": 19.18,
+ "marks": {
+  "start": 0.01,
+  "perception: problem": 1.9,
+  "script: repair 1": 8.5,
+  "script: done": 19.18
+ },
+ "calls": {
+  "script": {
+   "provider": "meta",
+   "model": "muse-wonder-1.0",
+   "seconds": 19.157401389,
+   "firstTokenSeconds": 1.80456142,
+   "output": 2609,
+   "thinking": 639,
+   "usage": {
+    "prompt_tokens": 30382,
+    "completion_tokens": 2609
+   },
+   "cost": 0.173708,
+   "costEstimated": true,
+   "attempts": 1,
+   "knownCost": 0.173708,
+   "costIncomplete": false,
+   "planAttempts": 2,
+   "patches": 0,
+   "firstPassValid": false,
+   "promptVersion": "0774117abd",
+   "effort": "minimal",
+   "validationHistory": [
+    {
+     "valid": false,
+     "errors": [
+      "step 1: an angle mark names its corner and two other points of the diagram"
+     ],
+     "warnings": [],
+     "check": {
+      "status": "not_checked",
+      "detail": "General mathematical correctness is not independently checked."
+     }
+    },
+    {
+     "valid": true,
+     "errors": [],
+     "warnings": [
+      "General mathematical correctness is not independently checked."
+     ],
+     "check": {
+      "status": "not_checked",
+      "detail": "General mathematical correctness is not independently checked."
+     }
+    }
+   ],
+   "perception": {
+    "provider": "meta",
+    "model": "muse-wonder-1.0",
+    "seconds": 1.88781799,
+    "firstTokenSeconds": 1.80456142,
+    "output": 89,
+    "thinking": 69,
+    "usage": {
+     "completion_tokens": 89,
+     "prompt_tokens": 1070,
+     "total_tokens": 1159,
+     "completion_tokens_details": {
+      "reasoning_tokens": 69
+     },
+     "prompt_tokens_details": {
+      "cached_tokens": 0
+     }
+    },
+    "cost": 0.00606,
+    "costEstimated": true,
+    "attempts": 1
+   },
+   "requests": [
+    {
+     "provider": "meta",
+     "model": "muse-wonder-1.0",
+     "seconds": 6.597705055999999,
+     "firstTokenSeconds": 3.878374843,
+     "output": 505,
+     "thinking": 133,
+     "usage": {
+      "completion_tokens": 505,
+      "prompt_tokens": 14451,
+      "total_tokens": 14956,
+      "completion_tokens_details": {
+       "reasoning_tokens": 133
+      },
+      "prompt_tokens_details": {
+       "cached_tokens": 0
+      }
+     },
+     "cost": 0.067904,
+     "costEstimated": true,
+     "attempts": 1
+    },
+    {
+     "provider": "meta",
+     "model": "muse-wonder-1.0",
+     "seconds": 10.667301253999998,
+     "firstTokenSeconds": 5.450814584,
+     "output": 2015,
+     "thinking": 437,
+     "usage": {
+      "completion_tokens": 2015,
+      "prompt_tokens": 14861,
+      "total_tokens": 16876,
+      "completion_tokens_details": {
+       "reasoning_tokens": 437
+      },
+      "prompt_tokens_details": {
+       "cached_tokens": 0
+      }
+     },
+     "cost": 0.099744,
+     "costEstimated": true,
+     "attempts": 1
+    }
+   ]
+  }
+ },
+ "cost": 0.173708,
+ "costIncomplete": false,
+ "filmSeconds": 47.4
+}

@@ -56,7 +56,7 @@ test('every example streams, and every program it sends plays', async () => {
   try {
     const listed = await fetch(`${server.url}/api/examples`).then(r => r.json())
     assert.deepEqual(listed.map(e => e.name).sort(), [
-      'eff644fe8c1940acbf39710424d45ee1', 'colour-bridge', 'fbb4f34f20e941ee8d92f629bc9f64e2', 'pencil-cat',
+      'eff644fe8c1940acbf39710424d45ee1', 'colour-bridge', 'fbb4f34f20e941ee8d92f629bc9f64e2', 'pencil-cat', 'ladder-problem',
     ].sort())
     assert.equal((await fetch(`${server.url}/api/films?example=wood8`, { method: 'POST' })).status, 404)
     for (const name of examples) {
@@ -71,9 +71,12 @@ test('every example streams, and every program it sends plays', async () => {
       assert.deepEqual(reloaded.slice(1), all.slice(1), 'reloading reuses the same generated film')
       assert.ok(types.indexOf('objects') < types.indexOf('film'), name)
       const saved = readRun(`${here}../examples/published/${name}`)
-      const { geometry } = withTools(saved.script, saved.rawGeometry, saved.cutSizes, {})
-      if (requiredDrawingKeys(saved.layout, geometry).length) {
-        assert.ok(all.findIndex(e => e.type === 'stage' && e.name === 'drawings: all') < types.indexOf('film'), `${name}: drawings must finish before playback`)
+      // (a written problem has no build and no drawings to wait for)
+      if (saved.script.mode !== 'problem') {
+        const { geometry } = withTools(saved.script, saved.rawGeometry, saved.cutSizes, {})
+        if (requiredDrawingKeys(saved.layout, geometry).length) {
+          assert.ok(all.findIndex(e => e.type === 'stage' && e.name === 'drawings: all') < types.indexOf('film'), `${name}: drawings must finish before playback`)
+        }
       }
       const film = all.find((e) => e.type === 'film')
       const screens = Object.fromEntries(Object.entries(film.screens).map(([k, s]) => [k, { width: s.width, height: s.height }]))
