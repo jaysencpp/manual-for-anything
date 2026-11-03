@@ -162,6 +162,11 @@ class Job extends Stream {
     this.finishing = true; clearTimeout(this.checkpointTimer)
     for (const timer of this.exampleTimers || []) clearTimeout(timer)
     try {
+      if (!this.run && 'layout' in this.marks) {
+        this.loadRun()
+        if (this.run) this.publishFilm()
+        else if (!error) { console.error(`Could not read the finished film ${this.id}:`, this.runError); error = 'Could not read the finished film. Please try again.' }
+      }
       const missing = this.missingDrawings()
       if (!error && this.run && missing.length) error = drawingFailure(missing)
       await this.persist()
@@ -176,6 +181,20 @@ class Job extends Stream {
       repository.save(this.id, { ...previous.state, finished: true, status: 'failed' }, [...previous.events, event])
       this.events.push(event); this.broadcast(event)
     } finally { this.releaseSource?.(); archive.finished(this.id); this.finishing = false; this.admission?.release() }
+  }
+  // The run, once its layout is marked. A live run goes on writing (timings.json last) while the server is still
+  // reading its marks, so a read can meet a half-written file: it is tried again at each later mark and at the finish,
+  // when every file is complete. (A film that never loaded was once finished as done, with no film.)
+  loadRun() {
+    try { this.run = readRun(this.runDir) } catch (error) { this.runError = error; return }
+    this.runError = null
+    const saved = this.example ? this.saved : null
+    // (an example's panel and faces that were written after its run have no marks: they were in from the start)
+    if (saved) {
+      if (saved.panel && !('panel: checked' in saved.marks)) this.panel = saved.panel
+      for (const [k, f] of Object.entries(saved.faces)) if (!(`face: ${k}` in saved.marks)) this.faces[k] = f
+      if (saved.reveal) this.finale = saved.reveal
+    } else if (this.run.reveal) this.finale = this.run.reveal
   }
   arrived(what, key, value) {
     if (value == null) return
@@ -220,13 +239,7 @@ class Job extends Stream {
         this.pending.add('plan:'); this.send('update', { what: 'plan' })
       }
     } else if (name === 'layout') {
-      this.run = readRun(this.runDir)
-      // (an example's panel and faces that were written after its run have no marks: they were in from the start)
-      if (saved) {
-        if (saved.panel && !('panel: checked' in saved.marks)) this.panel = saved.panel
-        for (const [k, f] of Object.entries(saved.faces)) if (!(`face: ${k}` in saved.marks)) this.faces[k] = f
-        if (saved.reveal) this.finale = saved.reveal
-      } else if (this.run.reveal) this.finale = this.run.reveal
+      this.loadRun()
     } else if (name.startsWith('drawing: ') && !name.endsWith('FAILED')) {
       const key = name.slice(9)
       this.arrived('drawing', key, saved ? saved.vectors[key] : this.maybe(`draw/${key}/drawing.json`))
@@ -238,6 +251,7 @@ class Job extends Stream {
       const file = join(this.runDir, 'finale/finale.ok.js')
       this.arrived('finale', null, saved ? saved.finale : existsSync(file) ? readFileSync(file, 'utf8') : null)
     }
+    if (!this.run && name !== 'layout' && 'layout' in this.marks) this.loadRun()
     this.publishFilm()
   }
   requiredDrawings() {

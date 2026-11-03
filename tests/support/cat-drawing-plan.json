@@ -1,0 +1,810 @@
+{
+ "assembly": null,
+ "contractVersion": 2,
+ "cuts": [],
+ "design": {
+  "joins": "No joins; the pencil line work lies on the sheet.",
+  "parts": [
+   {
+    "cm": 21,
+    "from": "paper-sheet-1",
+    "k": "paper-sheet-1",
+    "n": 1
+   }
+  ],
+  "purpose": "Draw a sitting cat in HB pencil line work on the flat A4 sheet for display.",
+  "size": [
+   21,
+   29.7,
+   0.1
+  ],
+  "standard": "A4 portrait sheet 21 × 29.7 cm, lying flat; coordinates in cm from the top-left corner, x across, y down",
+  "stands": "The sheet lies flat and is drawn on without folding, cutting or colour."
+ },
+ "end": "Display the finished cat drawing",
+ "finale": [
+  {
+   "by": 0,
+   "k": "paper-sheet-1",
+   "to": null,
+   "v": "spin"
+  }
+ ],
+ "goals": [
+  {
+   "k": "paper-sheet-1",
+   "state": "step7"
+  }
+ ],
+ "ideas": [
+  {
+   "kind": "other",
+   "pitch": "HB pencil sitting cat, built stroke by stroke",
+   "title": "Sitting Cat Drawing"
+  },
+  {
+   "kind": "other",
+   "pitch": "HB pencil standing cat outline on A4",
+   "title": "Standing Cat Sketch"
+  },
+  {
+   "kind": "other",
+   "pitch": "HB pencil sleeping cat outline on A4",
+   "title": "Sleeping Cat Sketch"
+  }
+ ],
+ "joints": [],
+ "makes": [],
+ "materials": [],
+ "mode": "physical",
+ "pick": 0,
+ "rigs": [],
+ "steps": [
+  {
+   "c": "Lay the A4 sheet flat, portrait, 21 × 29.7 cm",
+   "claims": [
+    "a1"
+   ],
+   "do": [
+    {
+     "id": "a1",
+     "intent": "place",
+     "k": "paper-sheet-1",
+     "rel": "floor",
+     "to": null,
+     "v": "place"
+    }
+   ],
+   "t": "Lay sheet flat"
+  },
+  {
+   "c": "Draw an 8 cm circle for the head, centred 10 cm from the top",
+   "claims": [
+    "a2"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "paper-sheet-1",
+       "pencil"
+      ],
+      "technique": "trace",
+      "sheet": "paper-sheet-1",
+      "tool": "pencil",
+      "strokes": [
+       {
+        "ellipse": [
+         0.5,
+         0.3367,
+         0.1905,
+         0.1347
+        ]
+       }
+      ]
+     },
+     "effects": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step1"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "clearance": 0.1,
+      "k": "paper-sheet-1"
+     },
+     "id": "a2",
+     "intent": "Draw the head circle clockwise from the top, pencil tip following the growing line and lifting at the end",
+     "k": "paper-sheet-1",
+     "label": "8 cm",
+     "requires": [
+      {
+       "k": "paper-sheet-1",
+       "state": "blank"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw head circle"
+  },
+  {
+   "c": "Draw two ear triangles to tips 3.8 cm from the top",
+   "claims": [
+    "a3"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "paper-sheet-1",
+       "pencil"
+      ],
+      "technique": "trace",
+      "sheet": "paper-sheet-1",
+      "tool": "pencil",
+      "strokes": [
+       {
+        "points": [
+         [
+          0.3476,
+          0.2559
+         ],
+         [
+          0.3714,
+          0.1279
+         ],
+         [
+          0.4667,
+          0.2088
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.6524,
+          0.2559
+         ],
+         [
+          0.6286,
+          0.1279
+         ],
+         [
+          0.5333,
+          0.2088
+         ]
+        ]
+       }
+      ]
+     },
+     "effects": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step2"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "clearance": 0.1,
+      "k": "paper-sheet-1"
+     },
+     "id": "a3",
+     "intent": "Draw left then right ear triangles, pencil lifting between triangles",
+     "k": "paper-sheet-1",
+     "label": "3.8 cm",
+     "requires": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step1"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw both ears"
+  },
+  {
+   "c": "Draw shaded 1 × 1.4 cm eye ovals and a 0.8 cm nose triangle",
+   "claims": [
+    "a4"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "paper-sheet-1",
+       "pencil"
+      ],
+      "technique": "trace",
+      "sheet": "paper-sheet-1",
+      "tool": "pencil",
+      "strokes": [
+       {
+        "ellipse": [
+         0.4238,
+         0.3165,
+         0.0238,
+         0.0236
+        ],
+        "fill": true
+       },
+       {
+        "ellipse": [
+         0.5762,
+         0.3165,
+         0.0238,
+         0.0236
+        ],
+        "fill": true
+       },
+       {
+        "points": [
+         [
+          0.481,
+          0.3737
+         ],
+         [
+          0.519,
+          0.3737
+         ],
+         [
+          0.5,
+          0.3906
+         ]
+        ],
+        "closed": true,
+        "fill": true
+       }
+      ]
+     },
+     "effects": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step3"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "clearance": 0.1,
+      "k": "paper-sheet-1"
+     },
+     "id": "a4",
+     "intent": "Shade both eye ovals and draw the downward nose triangle, lifting between features",
+     "k": "paper-sheet-1",
+     "label": "1 × 1.4 cm",
+     "requires": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step2"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw eyes nose"
+  },
+  {
+   "c": "Draw mouth curves and three whiskers each side to x = 5 cm and 16 cm",
+   "claims": [
+    "a5"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "paper-sheet-1",
+       "pencil"
+      ],
+      "technique": "trace",
+      "sheet": "paper-sheet-1",
+      "tool": "pencil",
+      "strokes": [
+       {
+        "points": [
+         [
+          0.5,
+          0.3906
+         ],
+         [
+          0.5,
+          0.404
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.5,
+          0.404
+         ],
+         [
+          0.481,
+          0.4209
+         ],
+         [
+          0.4571,
+          0.4209
+         ]
+        ],
+        "smooth": true
+       },
+       {
+        "points": [
+         [
+          0.5,
+          0.404
+         ],
+         [
+          0.519,
+          0.4209
+         ],
+         [
+          0.5429,
+          0.4209
+         ]
+        ],
+        "smooth": true
+       },
+       {
+        "points": [
+         [
+          0.4381,
+          0.3906
+         ],
+         [
+          0.2381,
+          0.3636
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.4381,
+          0.3906
+         ],
+         [
+          0.2381,
+          0.3973
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.4381,
+          0.3906
+         ],
+         [
+          0.2381,
+          0.431
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.5619,
+          0.3906
+         ],
+         [
+          0.7619,
+          0.3636
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.5619,
+          0.3906
+         ],
+         [
+          0.7619,
+          0.3973
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.5619,
+          0.3906
+         ],
+         [
+          0.7619,
+          0.431
+         ]
+        ]
+       }
+      ]
+     },
+     "effects": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step4"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "clearance": 0.1,
+      "k": "paper-sheet-1"
+     },
+     "id": "a5",
+     "intent": "Draw the mouth line and curves, then three whiskers per side, lifting between strokes",
+     "k": "paper-sheet-1",
+     "label": "16 cm",
+     "requires": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step3"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw mouth whiskers"
+  },
+  {
+   "c": "Draw body curves out to x = 6 cm and 15 cm, base at y = 25 cm",
+   "claims": [
+    "a6"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "paper-sheet-1",
+       "pencil"
+      ],
+      "technique": "trace",
+      "sheet": "paper-sheet-1",
+      "tool": "pencil",
+      "strokes": [
+       {
+        "points": [
+         [
+          0.4048,
+          0.4545
+         ],
+         [
+          0.3095,
+          0.5724
+         ],
+         [
+          0.2857,
+          0.7071
+         ],
+         [
+          0.3143,
+          0.8418
+         ]
+        ],
+        "smooth": true
+       },
+       {
+        "points": [
+         [
+          0.3143,
+          0.8418
+         ],
+         [
+          0.6857,
+          0.8418
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.5952,
+          0.4545
+         ],
+         [
+          0.6905,
+          0.5724
+         ],
+         [
+          0.7143,
+          0.7071
+         ],
+         [
+          0.6857,
+          0.8418
+         ]
+        ],
+        "smooth": true
+       }
+      ]
+     },
+     "effects": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step5"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "clearance": 0.1,
+      "k": "paper-sheet-1"
+     },
+     "id": "a6",
+     "intent": "Draw left and right body curves joined by the flat base, lifting between sides",
+     "k": "paper-sheet-1",
+     "label": "25 cm",
+     "requires": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step4"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw body outline"
+  },
+  {
+   "c": "Draw two paw ovals 2 cm wide, 1 cm tall over the base",
+   "claims": [
+    "a7"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "paper-sheet-1",
+       "pencil"
+      ],
+      "technique": "trace",
+      "sheet": "paper-sheet-1",
+      "tool": "pencil",
+      "strokes": [
+       {
+        "ellipse": [
+         0.4286,
+         0.8418,
+         0.0476,
+         0.0168
+        ]
+       },
+       {
+        "ellipse": [
+         0.5714,
+         0.8418,
+         0.0476,
+         0.0168
+        ]
+       }
+      ]
+     },
+     "effects": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step6"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "clearance": 0.1,
+      "k": "paper-sheet-1"
+     },
+     "id": "a7",
+     "intent": "Draw the two front paw ovals over the base line, lifting between paws",
+     "k": "paper-sheet-1",
+     "label": "2 cm",
+     "requires": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step5"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw front paws"
+  },
+  {
+   "c": "Draw the tail curve from y = 23.5 cm out to x = 18.5 cm, curl at 15.5 cm",
+   "claims": [
+    "a8"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "paper-sheet-1",
+       "pencil"
+      ],
+      "technique": "trace",
+      "sheet": "paper-sheet-1",
+      "tool": "pencil",
+      "strokes": [
+       {
+        "points": [
+         [
+          0.7143,
+          0.7912
+         ],
+         [
+          0.881,
+          0.7071
+         ],
+         [
+          0.8571,
+          0.5387
+         ],
+         [
+          0.8,
+          0.5219
+         ],
+         [
+          0.819,
+          0.5522
+         ]
+        ],
+        "smooth": true
+       }
+      ]
+     },
+     "effects": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step7"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "clearance": 0.1,
+      "k": "paper-sheet-1"
+     },
+     "id": "a8",
+     "intent": "Draw the smooth tail curve ending in a small curl, pencil following the line",
+     "k": "paper-sheet-1",
+     "label": "18.5 cm",
+     "requires": [
+      {
+       "k": "paper-sheet-1",
+       "state": "step6"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw curled tail"
+  },
+  {
+   "c": "Set the pencil down beside the finished sheet",
+   "claims": [
+    "a9"
+   ],
+   "do": [
+    {
+     "id": "a9",
+     "intent": "place",
+     "k": "pencil",
+     "rel": "floor",
+     "to": null,
+     "v": "place"
+    }
+   ],
+   "t": "Set pencil down"
+  }
+ ],
+ "sub": "HB pencil line drawing on A4",
+ "supplies": [
+  "HB pencil (not in photo)"
+ ],
+ "tag": "21 × 29.7 cm · Pencil only · Easy",
+ "title": "Sitting Cat Drawing",
+ "tools": [
+  {
+   "k": "pencil",
+   "use": "pencil"
+  }
+ ],
+ "view": "plan",
+ "objects": [
+  {
+   "b": [
+    131,
+    37,
+    193,
+    288
+   ],
+   "cm": 21,
+   "k": "paper-sheet-1",
+   "measurements": {
+    "cm": {
+     "source": "user-reported A4 size, not independently confirmed",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "user-reported A4 size, not independently confirmed",
+     "status": "estimated"
+    }
+   },
+   "n": "white sheet of paper",
+   "segment": "paper sheet",
+   "part": {
+    "family": "sheet",
+    "size": [
+     21,
+     29.7,
+     0.1
+    ]
+   },
+   "state": "blank",
+   "states": [
+    {
+     "id": "blank",
+     "label": "Blank sheet"
+    },
+    {
+     "id": "step1",
+     "label": "Head drawn"
+    },
+    {
+     "id": "step2",
+     "label": "Ears added"
+    },
+    {
+     "id": "step3",
+     "label": "Eyes and nose added"
+    },
+    {
+     "id": "step4",
+     "label": "Mouth and whiskers added"
+    },
+    {
+     "id": "step5",
+     "label": "Body added"
+    },
+    {
+     "id": "step6",
+     "label": "Front paws added"
+    },
+    {
+     "id": "step7",
+     "label": "Finished cat"
+    }
+   ]
+  }
+ ]
+}

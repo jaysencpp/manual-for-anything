@@ -72,7 +72,14 @@ test('Closed Alpha screen links to X, hides project creation, and lets provision
   const server = await hosted(t)
   const browser = await openDrawingBrowser(server.base, undefined, { renderModule: null }); t.after(browser.close)
   await browser.viewport(390, 844)
-  await browser.evaluate(`new Promise(resolve=>{const timer=setInterval(()=>{if(!document.getElementById('sign-in').hidden){clearInterval(timer);resolve(true)}},20)})`)
+  // (polled from here, a short call at a time: one call waiting in the page met the browser's 15 s limit on a slow
+  // Windows runner)
+  const until = async (expression, what) => {
+    for (const deadline = Date.now() + 60000; Date.now() < deadline; await new Promise(resolve => setTimeout(resolve, 100)))
+      if (await browser.evaluate(expression).catch(() => false)) return
+    assert.fail(`timed out waiting for ${what}`)
+  }
+  await until(`!document.getElementById('sign-in').hidden`, 'the sign-in form')
   const screen = await browser.evaluate(`({
     badge:document.getElementById('release-status').textContent,
     badgeVisible:!document.getElementById('release-status').hidden,
@@ -86,12 +93,7 @@ test('Closed Alpha screen links to X, hides project creation, and lets provision
   assert.equal(screen.contact, 'https://x.com/josendev'); assert.equal(screen.label, '@josendev on X')
   assert.deepEqual(screen.visibleMain, ['sign-in']); assert.equal(screen.libraryHidden, true); assert.equal(screen.overflow, false)
   await browser.evaluate(`document.getElementById('login-username').value='tester';document.getElementById('login-password').value='closed alpha offline password';document.getElementById('login-form').requestSubmit();true`)
-  const deadline = Date.now() + 10000
-  let signedIn = false
-  while (Date.now() < deadline && !signedIn) {
-    try { signedIn = await browser.evaluate(`!document.getElementById('home').hidden`) } catch { /* Navigation replaces the JS context. */ }
-    if (!signedIn) await new Promise(resolve => setTimeout(resolve, 50))
-  }
-  assert.equal(signedIn, true, 'operator-provisioned account signs in through the real form')
+  // (navigation replaces the page's context, so a call can fail on the way: until counts that as not yet)
+  await until(`!document.getElementById('home').hidden`, 'the operator-provisioned account to sign in through the real form')
   assert.equal(await browser.evaluate(`document.getElementById('sign-in').hidden && !document.getElementById('release-status').hidden && !document.getElementById('library').hidden && document.documentElement.scrollWidth<=innerWidth`), true)
 })
