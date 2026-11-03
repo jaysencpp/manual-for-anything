@@ -8,8 +8,9 @@
 // plate or tile 1); shape brick, plate, tile (no studs), round (a cylinder), slope (falls to the front, studs on the
 // back row), log (rounded ridges down its face), grille (slots down its face); "side_studs" for studs on its face.
 // World axes in studs (x right, y away) and plates (z up); a stud is 0.8 cm, a plate 0.32 cm.
+// Plans count rows from the back, as the prompt tells them: a larger row is nearer the viewer, so it is a smaller y.
 // Placing it, for "place" k:
-//   floor  — on the table: the first at the origin, later ones beside the build, a stud apart;
+//   floor  — on the table: "studs": [x, row] for its back-left corner, else beside the build, a stud apart;
 //   on     — on `to`: "studs": [i, j], where its corner sits on `to`'s stud grid (from `to`'s back left stud), else
 //            centred on it; "turn": 90 turns it a quarter (w and d swap). It sits on the highest brick under it.
 // The checks: it must sit on at least one stud of what is under it (moved onto the nearest that does), and never in
@@ -63,7 +64,7 @@ export function solveBricks(script, geometry, sizes, options = {}) {
     const s = Array.isArray(a.studs) && a.studs.length >= 2 ? a.studs.map(Number) : null
     if (!to || a.rel === 'floor') {
       // On the table: where the script says on its grid (on whatever is already there), else beside the build.
-      b = s ? { ...b, x: s[0], y: s[1] } : { ...b, x: order.length ? Math.ceil(floorRight) + 1 : 0, y: 0 }
+      b = s ? { ...b, x: s[0], y: -s[1] - b.d } : { ...b, x: order.length ? Math.ceil(floorRight) + 1 : 0, y: -b.d }
       b.z = restOn(b)
       // Set on the table at a stud the script gave, beside a brick already there in its row: the film measures how far
       // apart they are, corner to corner, as the script counts it ("6 studs to the right" of it).
@@ -79,7 +80,7 @@ export function solveBricks(script, geometry, sizes, options = {}) {
       // On at least one of its studs: the offset kept within reach of it.
       const nx = Math.min(Math.max(ox, 1 - b.w), to.w - 1), ny = Math.min(Math.max(oy, 1 - b.d), to.d - 1)
       if (nx !== ox || ny !== oy) notes.push(`${a.k}: moved onto ${a.to}'s studs (${ox},${oy} → ${nx},${ny})`)
-      b = { ...b, x: to.x + nx, y: to.y + ny }
+      b = { ...b, x: to.x + nx, y: to.y + to.d - ny - b.d }
       b.z = restOn(b)
       // Never in another brick: slid along x, then y, to the nearest place that is free and still on `to`.
       if (clash(b)) {
