@@ -34,11 +34,18 @@ export function usedRequirements(script, cast = []) {
   const readable = (value, fallback) => /[\p{L}\p{N}]/u.test(value || '') ? value.trim() : fallback.replace(/-/g, ' ')
   const needs = [], add = value => { if (value && !needs.some(n => normal(n) === normal(value))) needs.push(value) }
   for (const supply of script.supplies || []) add(supply)
+  // A supply may already name an object ("400 g chopped tomatoes" for tomatoes). Objects are only compared whole: "green
+  // brick" is not "lime green brick", and two things with one name are counted.
+  const supplies = [...needs], counted = new Map()
   for (const object of [...(script.objects || []), ...(script.materials || [])]) {
     if (!used.has(object.k)) continue
-    const aliases = [readable(object.n, object.k), object.k.replace(/-/g, ' ')].map(normal)
-    if (!needs.some(n => aliases.some(alias => ` ${normal(n)} `.includes(` ${alias} `)))) add(readable(object.n, object.k))
+    const name = readable(object.n, object.k), aliases = [name, object.k.replace(/-/g, ' ')].map(normal)
+    if (supplies.some(n => aliases.some(alias => ` ${normal(n)} `.includes(` ${alias} `)))) continue
+    const same = [...counted.keys()].find(n => normal(n) === normal(name))
+    if (same) counted.set(same, counted.get(same) + 1)
+    else counted.set(name, 1)
   }
+  for (const [name, count] of counted) add(count > 1 ? `${count} × ${name}` : name)
   const facts = operationFacts(script)
   for (const tool of script.tools || []) {
     if (!used.has(tool.k)) continue

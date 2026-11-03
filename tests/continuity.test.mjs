@@ -101,3 +101,16 @@ test('packaged food going into cookware is emptied in; other things placed in th
   assert.ok(after.every((alpha) => alpha < 0.9), `it is used up, not left on the rim: ${after}`)
   assert.equal(add.v, 'sprinkle'); assert.equal(add.unpacked, true); assert.equal(add.color, foodColor('turkey'))
 })
+
+test('the summary keeps objects whose names contain each other, and counts repeats', () => {
+  const place = (k) => ({ v: 'place', k })
+  const objects = [['red-a', 'red 2×4 brick'], ['lime', 'lime green 2×4 brick'], ['green', 'green 2×4 brick'], ['sky', 'light blue 2×4 brick'],
+    ['blue', 'blue 2×4 brick'], ['red-b', 'red 2×4 brick'], ['spare', 'yellow 2×4 brick']].map(([k, n]) => ({ k, n }))
+  const script = { objects, steps: [{ do: objects.slice(0, 6).map(o => place(o.k)) }] }
+  assert.deepEqual(usedRequirements(script), ['2 × red 2×4 brick', 'lime green 2×4 brick', 'green 2×4 brick', 'light blue 2×4 brick', 'blue 2×4 brick'])
+})
+
+test('a supply that names an object still stands for it', () => {
+  const script = { supplies: ['400 g chopped tomatoes'], objects: [{ k: 'tin', n: 'tomatoes' }], steps: [{ do: [{ v: 'place', k: 'tin' }] }] }
+  assert.deepEqual(usedRequirements(script), ['400 g chopped tomatoes'])
+})
