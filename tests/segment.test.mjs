@@ -7,7 +7,7 @@ import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import sharp from 'sharp'
-import { associate, coloursDistinguish, looksLike, maskEvidence, namedColour, overlap, settleColours } from '../src/pipeline/mask-selection.mjs'
+import { associate, coloursDistinguish, looksLike, maskEvidence, namedColour, namedShade, overlap, settleColours, shadeCost } from '../src/pipeline/mask-selection.mjs'
 import { Segmenter, segmentPhoto, principalAxis, rotated } from '../src/pipeline/segment.mjs'
 
 // The protocol's own example record: a 5 × 5 box at (10, 20) and its one_bit mask.
@@ -209,6 +209,80 @@ test('colour names read from object names and photo colours', () => {
     assert.equal(looksLike(word, hex(colour)), expected, `${word} ${colour}`)
   assert.equal(looksLike('white', [240, 240, 235]), true); assert.equal(looksLike('black', [20, 20, 22]), true); assert.equal(looksLike('grey', [120, 120, 125]), true)
   assert.equal(looksLike('red', [120, 120, 125]), false)
+})
+
+const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16))
+const corners = ([x, y, w, h]) => [x, y, x + w, y + h]
+
+test('shades are read from names and compared within a colour', () => {
+  assert.equal(namedColour('lime green plastic building brick at the upper left'), 'green')
+  assert.equal(namedColour('lime plastic brick'), 'green')
+  assert.equal(namedShade('lime green plastic building brick at the upper left'), 'lime')
+  assert.equal(namedShade('light green brick'), 'lime')
+  assert.equal(namedShade('green plastic building brick at the top center'), 'green')
+  assert.equal(namedShade('light blue brick'), 'light blue')
+  assert.equal(namedShade('dark red masonry brick'), 'dark red')
+  assert.equal(namedShade('wooden board'), null)
+  assert.equal(coloursDistinguish(['lime brick', 'green brick']), true)
+  assert.equal(coloursDistinguish(['green brick', 'green block']), false)
+  assert.ok(shadeCost('lime brick', hex('#82ba08')) < shadeCost('lime brick', hex('#05ba06')))
+  assert.ok(shadeCost('green brick', hex('#05ba06')) < shadeCost('green brick', hex('#82ba08')))
+  assert.ok(shadeCost('orange brick', hex('#d55506')) < shadeCost('orange brick', hex('#b46908')))
+  assert.ok(shadeCost('light blue brick', hex('#5090bc')) < shadeCost('light blue brick', hex('#0a68c8')))
+  assert.ok(shadeCost('dark red brick', hex('#6a1c2e')) < shadeCost('dark red brick', hex('#d62128')))
+})
+
+test('a real run with similar colours gives every brick its own shade', () => {
+  // A paid run on the tower photo: the model's boxes, and SAM's instances with their average colours. By position alone
+  // and by colour family, lime and green were swapped, and so were orange and the small yellow.
+  const bricks = [
+    ['red plastic building brick on the left', [39, 168, 191, 116], [22, 89, 100, 79], '#b60b05'],
+    ['lime green plastic building brick at the upper left', [131, 101, 192, 128], [81, 37, 76, 79], '#82ba08'],
+    ['green plastic building brick at the top center', [276, 42, 198, 138], [148, 10, 161, 112], '#05ba06'],
+    ['light blue plastic building brick at the upper right', [262, 130, 190, 125], [247, 59, 146, 79], '#5090bc'],
+    ['yellow plastic building brick leaning in the left foreground', [108, 150, 260, 166], [53, 87, 159, 177], '#eeb507'],
+    ['orange plastic building brick in the center', [185, 195, 130, 120], [185, 103, 64, 83], '#d55506'],
+    ['yellow plastic building brick in the center right', [248, 225, 105, 85], [247, 132, 62, 83], '#b46908'],
+    ['red plastic building brick leaning in the right foreground', [268, 198, 203, 110], [267, 114, 172, 162], '#d62128'],
+    ['blue plastic building brick on the right', [375, 205, 95, 100], [372, 126, 88, 80], '#0a68c8'],
+    ['blue plastic building brick at the bottom center', [172, 225, 105, 85], [168, 180, 82, 90], '#06519f'],
+  ]
+  // (segmentPhoto pads each box by 6 pixels within the 474 × 316 photo before matching)
+  const padded = ([x, y, w, h]) => [Math.max(0, x - 6), Math.max(0, y - 6), Math.min(474, x + w + 6), Math.min(316, y + h + 6)]
+  const names = bricks.map(b => b[0]), requests = bricks.map(b => padded(b[1])), candidates = bricks.map(b => corners(b[2]))
+  const scores = bricks.map(() => 0.97), colours = bricks.map(b => hex(b[3]))
+  const { assigned, mismatched } = settleColours(names, requests, candidates, scores, colours, associate(requests, candidates, scores))
+  assert.deepEqual(names.map((_, i) => bricks[assigned[i]][3]), bricks.map(b => b[3]))
+  assert.deepEqual(mismatched, [])
+})
+
+test('two objects of one shade stay with their box matches', () => {
+  const candidates = [[0, 0, 10, 10], [100, 0, 110, 10]], red = hex('#d62128'), darker = hex('#b60b05')
+  const { assigned, moved } = settleColours(['red brick', 'red block', 'blue brick'], [[100, 0, 110, 10], [0, 0, 10, 10], [50, 0, 60, 10]], [...candidates, [50, 0, 60, 10]], [0.9, 0.9, 0.9], [red, darker, hex('#0a68c8')], { 0: 1, 1: 0, 2: 2 })
+  assert.deepEqual(assigned, { 0: 1, 1: 0, 2: 2 })
+  assert.deepEqual(moved, [])
+})
+
+test('of two objects in one shade, a clearly larger box takes the clearly larger instance', () => {
+  const small = [0, 0, 20, 20], large = [100, 0, 180, 80], yellow = hex('#eeb507'), amber = hex('#b46908')
+  const swapped = settleColours(['yellow brick', 'yellow block', 'blue brick'], [[0, 0, 60, 60], [100, 0, 120, 20], [300, 0, 310, 10]], [small, large, [300, 0, 310, 10]], [0.9, 0.9, 0.9], [amber, yellow, hex('#0a68c8')], { 0: 0, 1: 1, 2: 2 })
+  assert.deepEqual(swapped.assigned, { 0: 1, 1: 0, 2: 2 })
+  const similar = settleColours(['yellow brick', 'yellow block', 'blue brick'], [[0, 0, 60, 60], [100, 0, 165, 60], [300, 0, 310, 10]], [small, large, [300, 0, 310, 10]], [0.9, 0.9, 0.9], [amber, yellow, hex('#0a68c8')], { 0: 0, 1: 1, 2: 2 })
+  assert.deepEqual(similar.assigned, { 0: 0, 1: 1, 2: 2 }, 'boxes of similar size keep their matches')
+})
+
+test('objects without a colour keep their matches while shades sort themselves out', () => {
+  const candidates = [[0, 0, 10, 10], [100, 0, 110, 10], [200, 0, 210, 10]], scores = [0.9, 0.9, 0.9]
+  const colours = [hex('#05ba06'), hex('#82ba08'), hex('#888888')]
+  const { assigned } = settleColours(['lime brick', 'green brick', 'plain brick'], [[0, 0, 10, 10], [100, 0, 110, 10], [200, 0, 210, 10]], candidates, scores, colours, { 0: 0, 1: 1, 2: 2 })
+  assert.deepEqual(assigned, { 0: 1, 1: 0, 2: 2 })
+})
+
+test('a closer shade left free is taken over a poorer one', () => {
+  const candidates = [[0, 0, 10, 10], [100, 0, 110, 10], [200, 0, 210, 10]]
+  const { assigned, moved } = settleColours(['lime brick', 'red brick'], [[0, 0, 10, 10], [200, 0, 210, 10]], candidates, [0.9, 0.9, 0.9], [hex('#05ba06'), hex('#82ba08'), hex('#d62128')], { 0: 0, 1: 2 })
+  assert.deepEqual(assigned, { 0: 1, 1: 2 })
+  assert.deepEqual(moved, [0])
 })
 
 test('a colour match prefers the nearest free instance and takes each once', () => {
