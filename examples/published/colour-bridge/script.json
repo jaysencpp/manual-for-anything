@@ -232,7 +232,7 @@
    "t": "Finish right pillar"
   },
   {
-   "c": "Bridge from the left pillar toward the right pillar.",
+   "c": "Bridge the two pillars, one stud on each.",
    "claims": [
     "a7"
    ],
@@ -243,7 +243,7 @@
      "k": "brick-10",
      "rel": "on",
      "studs": [
-      2,
+      3,
       0
      ],
      "to": "brick-6",

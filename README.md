@@ -32,7 +32,7 @@ so a fold or a brick lands where the numbers say it should. These are real frame
 | | |
 | --- | --- |
 | ![Boxes and labels around all ten bricks in a photo of a pile of toy bricks](docs/screenshots/bricks-found.png) | ![A finished brick bridge across two pillars with two steps in front, titled Colour Bridge, with its size, time and difficulty](docs/screenshots/bricks-finished.png) |
-| **It starts from your photo.** It finds what's useful in the picture and cuts each thing out. | **Bricks** sit on a stud grid and are checked so the build could really stand. |
+| **It starts from your photo.** It finds what's useful in the picture and cuts each thing out. | **Bricks** sit on a stud grid, and each one must rest on the studs below it. |
 | ![A square of paper folded corner to corner, with an arrow beside a before-and-after diagram](docs/screenshots/paper-fold.png) | ![A paper wedge being folded through its top point, with a 30° label](docs/screenshots/paper-angle.png) |
 | **Paper folds** are calculated layer by layer, so each one lands exactly where it should. | **Captions and labels carry the numbers**, such as a fold's angle. |
 | ![A notch being cut from the folded paper wedge, beside a before-and-after diagram](docs/screenshots/paper-cut.png) | ![The finished snowflake, 21 cm across, with its repeating pattern](docs/screenshots/paper-finished.png) |
@@ -44,7 +44,7 @@ Both of these come from saved generation runs.
 
 | Material | What it works out |
 | --- | --- |
-| **Bricks** | Placement by stud, including slopes, round bricks, plates, tiles, grilles and studs on the side; a check that the build can stand |
+| **Bricks** | Placement by stud, including slopes, round bricks, plates, tiles, grilles and studs on the side; a check that each brick rests on at least one stud |
 | **Paper and other sheets** | Valley and mountain folds, creases, turning over, cuts through layers, opening out |
 
 ## Using it
