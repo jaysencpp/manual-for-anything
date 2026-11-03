@@ -56,7 +56,7 @@ test('every example streams, and every program it sends plays', async () => {
   try {
     const listed = await fetch(`${server.url}/api/examples`).then(r => r.json())
     assert.deepEqual(listed.map(e => e.name).sort(), [
-      'eff644fe8c1940acbf39710424d45ee1', 'aebcd944e8ab4759a77609000a2aebb2', 'fbb4f34f20e941ee8d92f629bc9f64e2',
+      'eff644fe8c1940acbf39710424d45ee1', 'colour-bridge', 'fbb4f34f20e941ee8d92f629bc9f64e2',
     ].sort())
     assert.equal((await fetch(`${server.url}/api/films?example=wood8`, { method: 'POST' })).status, 404)
     for (const name of examples) {
@@ -93,7 +93,7 @@ test('photos are refused unless the server runs with --live', async () => {
   try {
     const res = await fetch(`${server.url}/api/films`, { method: 'POST', headers: { 'Content-Type': 'image/png' }, body: new Uint8Array(8) })
     assert.equal(res.status, 403)
-    const example = await fetch(`${server.url}/api/films?example=aebcd944e8ab4759a77609000a2aebb2`, { method: 'POST' }).then((r) => r.json())
+    const example = await fetch(`${server.url}/api/films?example=colour-bridge`, { method: 'POST' }).then((r) => r.json())
     const revise = await fetch(`${server.url}/api/films/${example.id}/refine`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: 'Make it smaller.' }) })
     assert.equal(revise.status, 403)
     assert.equal((await fetch(`${server.url}/assets/fonts/..%2F..%2Fserver.mjs`)).status, 404)

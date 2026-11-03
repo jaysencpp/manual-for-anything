@@ -1,0 +1,58 @@
+{
+ "brick-1": {
+  "width": 100,
+  "height": 79,
+  "regions": []
+ },
+ "brick-2": {
+  "width": 76,
+  "height": 79,
+  "regions": []
+ },
+ "brick-3": {
+  "width": 161,
+  "height": 112,
+  "regions": []
+ },
+ "brick-4": {
+  "width": 150,
+  "height": 86,
+  "regions": []
+ },
+ "brick-5": {
+  "width": 88,
+  "height": 80,
+  "regions": []
+ },
+ "brick-6": {
+  "width": 64,
+  "height": 83,
+  "regions": []
+ },
+ "brick-7": {
+  "width": 62,
+  "height": 83,
+  "regions": []
+ },
+ "brick-8": {
+  "width": 159,
+  "height": 177,
+  "regions": []
+ },
+ "brick-9": {
+  "width": 82,
+  "height": 90,
+  "regions": []
+ },
+ "brick-10": {
+  "width": 172,
+  "height": 162,
+  "regions": []
+ },
+ "photo": {
+  "path": "/tmp/manual-files/colour-bridge/script/photo.png",
+  "width": 474,
+  "height": 316,
+  "regions": []
+ }
+}

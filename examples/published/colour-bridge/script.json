@@ -1,0 +1,636 @@
+{
+ "assembly": null,
+ "contractVersion": 2,
+ "cuts": [],
+ "design": {
+  "joins": "Bricks join on their studs; no fasteners.",
+  "parts": [
+   {
+    "cm": 3.2,
+    "from": "brick-1",
+    "k": "brick-1",
+    "n": 1
+   },
+   {
+    "cm": 3.2,
+    "from": "brick-2",
+    "k": "brick-2",
+    "n": 1
+   },
+   {
+    "cm": 3.2,
+    "from": "brick-3",
+    "k": "brick-3",
+    "n": 1
+   },
+   {
+    "cm": 3.2,
+    "from": "brick-4",
+    "k": "brick-4",
+    "n": 1
+   },
+   {
+    "cm": 3.2,
+    "from": "brick-5",
+    "k": "brick-5",
+    "n": 1
+   },
+   {
+    "cm": 3.2,
+    "from": "brick-6",
+    "k": "brick-6",
+    "n": 1
+   },
+   {
+    "cm": 3.2,
+    "from": "brick-7",
+    "k": "brick-7",
+    "n": 1
+   },
+   {
+    "cm": 3.2,
+    "from": "brick-8",
+    "k": "brick-8",
+    "n": 1
+   },
+   {
+    "cm": 3.2,
+    "from": "brick-9",
+    "k": "brick-9",
+    "n": 1
+   },
+   {
+    "cm": 3.2,
+    "from": "brick-10",
+    "k": "brick-10",
+    "n": 1
+   }
+  ],
+  "purpose": "A display bridge for a toy car or figure, built from all ten 2×4 bricks.",
+  "size": [
+   8,
+   1.6,
+   3.84
+  ],
+  "standard": "Each 2×4 brick is 3.2 × 1.6 cm and 0.96 cm high; two 3-brick pillars support a bridged top.",
+  "stands": "Two wide pillars stand at the ends; the top bricks overlap each pillar by at least one stud and are stacked two high."
+ },
+ "end": "Roll a toy car across",
+ "finale": [
+  {
+   "by": 360,
+   "k": "brick-8",
+   "to": null,
+   "v": "spin"
+  }
+ ],
+ "goals": [],
+ "ideas": [
+  {
+   "kind": "other",
+   "pitch": "Two-pillar bridge with stepped approaches",
+   "title": "Colour Bridge"
+  },
+  {
+   "kind": "other",
+   "pitch": "Stepped pyramid tower using all ten bricks",
+   "title": "Pyramid Tower"
+  },
+  {
+   "kind": "other",
+   "pitch": "Two-storey house wall with bridge roof",
+   "title": "Brick House"
+  }
+ ],
+ "joints": [],
+ "materials": [],
+ "mode": "physical",
+ "pick": 0,
+ "steps": [
+  {
+   "c": "Place the red brick at the left pillar base.",
+   "claims": [
+    "a1"
+   ],
+   "do": [
+    {
+     "id": "a1",
+     "intent": "place",
+     "k": "brick-1",
+     "rel": "floor",
+     "studs": [
+      0,
+      0
+     ],
+     "v": "place"
+    }
+   ],
+   "t": "Place left base"
+  },
+  {
+   "c": "Place the green brick at the right pillar base.",
+   "claims": [
+    "a2"
+   ],
+   "do": [
+    {
+     "id": "a2",
+     "intent": "place",
+     "k": "brick-3",
+     "rel": "floor",
+     "studs": [
+      6,
+      0
+     ],
+     "v": "place"
+    }
+   ],
+   "t": "Place right base"
+  },
+  {
+   "c": "Stack the lime brick on the left base.",
+   "claims": [
+    "a3"
+   ],
+   "do": [
+    {
+     "id": "a3",
+     "intent": "place",
+     "k": "brick-2",
+     "rel": "on",
+     "studs": [
+      0,
+      0
+     ],
+     "to": "brick-1",
+     "v": "place"
+    }
+   ],
+   "t": "Stack left pillar"
+  },
+  {
+   "c": "Stack the light blue brick on the right base.",
+   "claims": [
+    "a4"
+   ],
+   "do": [
+    {
+     "id": "a4",
+     "intent": "place",
+     "k": "brick-4",
+     "rel": "on",
+     "studs": [
+      0,
+      0
+     ],
+     "to": "brick-3",
+     "v": "place"
+    }
+   ],
+   "t": "Stack right pillar"
+  },
+  {
+   "c": "Stack the orange brick on the left pillar.",
+   "claims": [
+    "a5"
+   ],
+   "do": [
+    {
+     "id": "a5",
+     "intent": "place",
+     "k": "brick-6",
+     "rel": "on",
+     "studs": [
+      0,
+      0
+     ],
+     "to": "brick-2",
+     "v": "place"
+    }
+   ],
+   "t": "Finish left pillar"
+  },
+  {
+   "c": "Stack the dark blue brick on the right pillar.",
+   "claims": [
+    "a6"
+   ],
+   "do": [
+    {
+     "id": "a6",
+     "intent": "place",
+     "k": "brick-5",
+     "rel": "on",
+     "studs": [
+      0,
+      0
+     ],
+     "to": "brick-4",
+     "v": "place"
+    }
+   ],
+   "t": "Finish right pillar"
+  },
+  {
+   "c": "Bridge the two pillars, one stud on each.",
+   "claims": [
+    "a7"
+   ],
+   "do": [
+    {
+     "id": "a7",
+     "intent": "place",
+     "k": "brick-10",
+     "rel": "on",
+     "studs": [
+      3,
+      0
+     ],
+     "to": "brick-6",
+     "v": "place"
+    }
+   ],
+   "t": "Lay bridge brick"
+  },
+  {
+   "c": "Stack the yellow brick on the bridge brick.",
+   "claims": [
+    "a8"
+   ],
+   "do": [
+    {
+     "id": "a8",
+     "intent": "place",
+     "k": "brick-8",
+     "rel": "on",
+     "studs": [
+      0,
+      0
+     ],
+     "to": "brick-10",
+     "v": "place"
+    }
+   ],
+   "t": "Reinforce bridge"
+  },
+  {
+   "c": "Place the blue brick as a step before the left pillar.",
+   "claims": [
+    "a9"
+   ],
+   "do": [
+    {
+     "id": "a9",
+     "intent": "place",
+     "k": "brick-9",
+     "rel": "floor",
+     "studs": [
+      0,
+      3
+     ],
+     "v": "place"
+    }
+   ],
+   "t": "Add front step"
+  },
+  {
+   "c": "Place the yellow brick as a step before the right pillar.",
+   "claims": [
+    "a10"
+   ],
+   "do": [
+    {
+     "id": "a10",
+     "intent": "place",
+     "k": "brick-7",
+     "rel": "floor",
+     "studs": [
+      6,
+      3
+     ],
+     "v": "place"
+    }
+   ],
+   "t": "Add second step"
+  }
+ ],
+ "sub": "Two pillars, bridged top, steps",
+ "supplies": [],
+ "tag": "8 × 1.6 × 3.8 cm · 5 min · Easy",
+ "title": "Colour Bridge",
+ "tools": [],
+ "view": "iso",
+ "objects": [
+  {
+   "b": [
+    38,
+    142,
+    154,
+    100
+   ],
+   "cm": 3.2,
+   "k": "brick-1",
+   "measurements": {
+    "cm": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    }
+   },
+   "n": "red 2×4 brick",
+   "segment": "plastic building brick",
+   "part": {
+    "family": "brick",
+    "plates": 3,
+    "shape": "brick",
+    "studs": [
+     4,
+     2
+    ]
+   }
+  },
+  {
+   "b": [
+    154,
+    53,
+    155,
+    115
+   ],
+   "cm": 3.2,
+   "k": "brick-2",
+   "measurements": {
+    "cm": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    }
+   },
+   "n": "lime green 2×4 brick",
+   "segment": "plastic building brick",
+   "part": {
+    "family": "brick",
+    "plates": 3,
+    "shape": "brick",
+    "studs": [
+     4,
+     2
+    ]
+   }
+  },
+  {
+   "b": [
+    283,
+    6,
+    190,
+    134
+   ],
+   "cm": 3.2,
+   "k": "brick-3",
+   "measurements": {
+    "cm": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    }
+   },
+   "n": "green 2×4 brick",
+   "segment": "plastic building brick",
+   "part": {
+    "family": "brick",
+    "plates": 3,
+    "shape": "brick",
+    "studs": [
+     4,
+     2
+    ]
+   }
+  },
+  {
+   "b": [
+    251,
+    95,
+    165,
+    95
+   ],
+   "cm": 3.2,
+   "k": "brick-4",
+   "measurements": {
+    "cm": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    }
+   },
+   "n": "light blue 2×4 brick",
+   "segment": "plastic building brick",
+   "part": {
+    "family": "brick",
+    "plates": 3,
+    "shape": "brick",
+    "studs": [
+     4,
+     2
+    ]
+   }
+  },
+  {
+   "b": [
+    378,
+    205,
+    96,
+    88
+   ],
+   "cm": 3.2,
+   "k": "brick-5",
+   "measurements": {
+    "cm": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    }
+   },
+   "n": "dark blue 2×4 brick",
+   "segment": "plastic building brick",
+   "part": {
+    "family": "brick",
+    "plates": 3,
+    "shape": "brick",
+    "studs": [
+     4,
+     2
+    ]
+   }
+  },
+  {
+   "b": [
+    190,
+    173,
+    105,
+    107
+   ],
+   "cm": 3.2,
+   "k": "brick-6",
+   "measurements": {
+    "cm": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    }
+   },
+   "n": "orange 2×4 brick",
+   "segment": "plastic building brick",
+   "part": {
+    "family": "brick",
+    "plates": 3,
+    "shape": "brick",
+    "studs": [
+     4,
+     2
+    ]
+   }
+  },
+  {
+   "b": [
+    245,
+    205,
+    82,
+    96
+   ],
+   "cm": 3.2,
+   "k": "brick-7",
+   "measurements": {
+    "cm": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    }
+   },
+   "n": "yellow 2×4 brick",
+   "segment": "plastic building brick",
+   "part": {
+    "family": "brick",
+    "plates": 3,
+    "shape": "brick",
+    "studs": [
+     4,
+     2
+    ]
+   }
+  },
+  {
+   "b": [
+    55,
+    172,
+    192,
+    138
+   ],
+   "cm": 3.2,
+   "k": "brick-8",
+   "measurements": {
+    "cm": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    }
+   },
+   "n": "yellow 2×4 brick",
+   "segment": "plastic building brick",
+   "part": {
+    "family": "brick",
+    "plates": 3,
+    "shape": "brick",
+    "studs": [
+     4,
+     2
+    ]
+   }
+  },
+  {
+   "b": [
+    180,
+    195,
+    86,
+    109
+   ],
+   "cm": 3.2,
+   "k": "brick-9",
+   "measurements": {
+    "cm": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    }
+   },
+   "n": "blue 2×4 brick",
+   "segment": "plastic building brick",
+   "part": {
+    "family": "brick",
+    "plates": 3,
+    "shape": "brick",
+    "studs": [
+     4,
+     2
+    ]
+   }
+  },
+  {
+   "b": [
+    270,
+    183,
+    204,
+    130
+   ],
+   "cm": 3.2,
+   "k": "brick-10",
+   "measurements": {
+    "cm": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    },
+    "w": {
+     "source": "estimated from single photo",
+     "status": "estimated"
+    }
+   },
+   "n": "red 2×4 brick",
+   "segment": "plastic building brick",
+   "part": {
+    "family": "brick",
+    "plates": 3,
+    "shape": "brick",
+    "studs": [
+     4,
+     2
+    ]
+   }
+  }
+ ],
+ "artworkMode": "complete"
+}
