@@ -37,32 +37,66 @@ export function associate(requests, candidates, scores, excluded = []) {
 
 // The colour a name gives its object ("light green plastic brick": green), or null. "Blue-handled scissors" and "dark
 // bottle with white cap" name only a part's colour, so they give none.
-const COLOUR_WORD = /\b(red|orange|yellow|green|blue|purple|pink|brown|black|white|gr[ae]y)\b(?!-)/i
-const DESCRIBES_SOMETHING_ELSE = /\b(?:with|behind|beside|near|next to|in front of|under|on|in|of|from|and)\b/i
-export const namedColour = name => COLOUR_WORD.exec(String(name || '').split(DESCRIBES_SOMETHING_ELSE)[0])?.[1].toLowerCase().replace('gray', 'grey') ?? null
+const COLOUR_WORD = /\b(red|orange|yellow|lime|green|blue|purple|pink|brown|black|white|gr[ae]y)\b(?!-)/i
+const DESCRIBES_SOMETHING_ELSE = /\b(?:with|behind|beside|near|next to|in front of|under|on|in|at|of|from|and)\b/i
+const namedPart = name => String(name || '').split(DESCRIBES_SOMETHING_ELSE)[0]
+export const namedColour = name => {
+  const word = COLOUR_WORD.exec(namedPart(name))?.[1].toLowerCase().replace('gray', 'grey')
+  return word === 'lime' ? 'green' : word ?? null
+}
+
+// The shade within that colour: "lime" and "light green" differ from "green", "light blue" and "dark blue" from "blue".
+export function namedShade(name) {
+  const part = namedPart(name).toLowerCase(), word = namedColour(part)
+  if (!word) return null
+  if (/\b(?:lime|light green)\b/.test(part)) return 'lime'
+  const modifier = /\b(light|pale|sky)\b/.test(part) ? 'light ' : /\b(dark|navy|deep)\b/.test(part) ? 'dark ' : ''
+  return modifier + word
+}
+
+const hsv = ([r, g, b]) => {
+  const high = Math.max(r, g, b), low = Math.min(r, g, b), span = high - low
+  const hue = span ? (high === r ? (g - b) / span + 6 : high === g ? (b - r) / span + 2 : (r - g) / span + 4) * 60 % 360 : 0
+  return { hue, saturation: high ? span / high : 0, value: high / 255 }
+}
 
 // Hue ranges in degrees, generous where neighbours blur: a shiny or shaded thing's average colour is never exact.
-const HUES = { red: [335, 25], orange: [10, 50], yellow: [35, 78], green: [65, 175], blue: [165, 265], purple: [255, 315], pink: [305, 350] }
-export function looksLike(word, [r, g, b]) {
-  const high = Math.max(r, g, b), low = Math.min(r, g, b), value = high / 255, saturation = high ? (high - low) / high : 0
+const HUES = { red: [335, 25], orange: [10, 50], yellow: [30, 78], green: [65, 175], blue: [165, 265], purple: [255, 315], pink: [305, 350] }
+export function looksLike(word, colour) {
+  const { hue, saturation, value } = hsv(colour)
   if (word === 'black') return value < 0.3
   if (word === 'white') return saturation < 0.2 && value > 0.7
   if (word === 'grey') return saturation < 0.2 && value >= 0.25
   if (saturation < 0.2 || value < 0.15) return false
-  const span = high - low
-  const hue = (high === r ? (g - b) / span + 6 : high === g ? (b - r) / span + 2 : (r - g) / span + 4) * 60 % 360
   if (word === 'brown') return hue <= 55 && value < 0.75 || hue >= 345 && value < 0.5
   const [from, to] = HUES[word]
   return from <= to ? hue >= from && hue <= to : hue >= from || hue <= to
 }
 
-// Colour only tells objects apart when a class's objects are named by at least two different colours.
-export const coloursDistinguish = names => new Set(names.map(namedColour).filter(Boolean)).size >= 2
+// How far a colour is from the shade a name asks for: hue first, and saturation or brightness when the name says light
+// or dark. Lower is closer; only comparisons between candidates mean anything.
+const SHADE_HUES = { red: 0, orange: 25, yellow: 50, lime: 80, green: 120, blue: 215, purple: 280, pink: 330, brown: 25 }
+export function shadeCost(name, colour) {
+  const shade = namedShade(name), word = namedColour(name), { hue, saturation, value } = hsv(colour)
+  const missed = looksLike(word, colour) ? 0 : 0.5, base = shade.replace(/^(light|dark) /, '')
+  if (!(base in SHADE_HUES)) return missed
+  const apart = Math.abs(hue - SHADE_HUES[base]), distance = Math.min(apart, 360 - apart) / 60
+  if (shade.startsWith('light ')) return missed + distance + Math.abs(saturation - 0.55) * 0.6
+  if (shade.startsWith('dark ')) return missed + distance + Math.abs(value - 0.45) * 0.6
+  return missed + distance
+}
+
+// Colour only tells objects apart when a class's objects are named by at least two different shades.
+export const coloursDistinguish = names => new Set(names.map(namedShade).filter(Boolean)).size >= 2
 
 // Boxes can sit on the wrong thing, so a box match that contradicts the object's name gives way to the nearest free
-// instance of that colour. An object with no such instance keeps its match and is reported, since we have no better one.
+// instance of that colour. Then closer shades win: "lime" and "green" both pass as green, so each takes the instance
+// nearest its own shade. Equal shades stay with their box matches unless their sizes clearly say otherwise: a box several
+// times the size of another belongs on the larger of the two instances, even when both boxes are misplaced.
+const SHADE_MARGIN = 0.1, CLEARLY_LARGER = 1.5
+const area = b => Math.max(0, b[2] - b[0]) * Math.max(0, b[3] - b[1])
 export function settleColours(names, requests, candidates, scores, colours, assigned) {
-  const settled = { ...assigned }, words = names.map(namedColour), moved = [], mismatched = []
+  const settled = { ...assigned }, words = names.map(namedColour), moved = new Set()
   const fits = (i, j) => colours[j] != null && looksLike(words[i], colours[j])
   const wrong = names.flatMap((_, i) => words[i] && !(i in assigned && fits(i, assigned[i])) ? [i] : [])
   for (const i of wrong) delete settled[i]
@@ -73,13 +107,38 @@ export function settleColours(names, requests, candidates, scores, colours, assi
     pairs.push([Math.hypot(rx - cx, ry - cy), i, j])
   })
   pairs.sort((a, b) => a[0] - b[0] || a[1] - b[1] || a[2] - b[2])
-  for (const [, i, j] of pairs) if (!(i in settled) && !held.has(j)) { settled[i] = j; held.add(j); moved.push(i) }
+  for (const [, i, j] of pairs) if (!(i in settled) && !held.has(j)) { settled[i] = j; held.add(j); moved.add(i) }
+  const usable = j => !held.has(j) && scores[j] >= 0.5 && colours[j] != null
   for (const i of wrong) {
     if (i in settled) continue
-    mismatched.push(i)
-    if (i in assigned && !held.has(assigned[i])) { settled[i] = assigned[i]; held.add(assigned[i]) }
+    if (i in assigned && !held.has(assigned[i])) { settled[i] = assigned[i]; held.add(assigned[i]); continue }
+    // Its match went to another object: the closest instance left, so that the shades below can still sort it out.
+    const left = candidates.map((_, j) => j).filter(usable).sort((a, b) => shadeCost(names[i], colours[a]) - shadeCost(names[i], colours[b]))
+    if (left.length) { settled[i] = left[0]; held.add(left[0]); moved.add(i) }
   }
-  return { assigned: settled, moved, mismatched }
+
+  const named = names.flatMap((_, i) => words[i] && i in settled && colours[settled[i]] != null ? [i] : [])
+  const cost = (i, j) => shadeCost(names[i], colours[j])
+  for (let changed = true, rounds = 0; changed && rounds < 50; rounds++) {
+    changed = false
+    for (const i of named) candidates.forEach((_, j) => {
+      if (!usable(j) || cost(i, settled[i]) - cost(i, j) <= SHADE_MARGIN) return
+      held.delete(settled[i]); settled[i] = j; held.add(j); moved.add(i); changed = true
+    })
+    for (const i of named) for (const k of named) {
+      if (i >= k) continue
+      const a = settled[i], b = settled[k]
+      if (cost(i, a) + cost(k, b) - cost(i, b) - cost(k, a) <= SHADE_MARGIN) continue
+      settled[i] = b; settled[k] = a; moved.add(i); moved.add(k); changed = true
+    }
+  }
+  for (const i of named) for (const k of named) {
+    if (namedShade(names[i]) !== namedShade(names[k]) || area(requests[i]) < CLEARLY_LARGER * area(requests[k])) continue
+    if (area(candidates[settled[k]]) < CLEARLY_LARGER * area(candidates[settled[i]])) continue
+    [settled[i], settled[k]] = [settled[k], settled[i]]; moved.add(i); moved.add(k)
+  }
+  const mismatched = names.flatMap((_, i) => words[i] && !(i in settled && fits(i, settled[i])) ? [i] : [])
+  return { assigned: settled, moved: [...moved], mismatched }
 }
 
 // Segmentation evidence is not identity or scale confirmation.
