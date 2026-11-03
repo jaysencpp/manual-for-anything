@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { program, timeline, usedRequirements, unpacksInto, foodColor } from '../src/film/engine.mjs'
+import { program, sizesEstimated, timeline, usedRequirements, unpacksInto, foodColor } from '../src/film/engine.mjs'
 import { withTools } from '../src/solvers/tools.mjs'
 import { solveBuild } from '../src/solvers/layout.mjs'
 import { physicalPlan } from './support/physical-plan.mjs'
@@ -114,3 +114,23 @@ test('a supply that names an object still stands for it', () => {
   const script = { supplies: ['400 g chopped tomatoes'], objects: [{ k: 'tin', n: 'tomatoes' }], steps: [{ do: [{ v: 'place', k: 'tin' }] }] }
   assert.deepEqual(usedRequirements(script), ['400 g chopped tomatoes'])
 })
+
+test('a supply giving the same count of a fastener is not listed twice', () => {
+  const tools = [{ k: 'screws', cm: 7 }]
+  const uses = (n) => ({ do: [{ v: 'use', k: 'board', part: 'screws', n }] })
+  const objects = [{ k: 'board', n: 'pine board' }]
+  assert.deepEqual(usedRequirements({ supplies: ['16 screws, 7 cm'], objects, tools, steps: [uses(16)] }), ['16 screws, 7 cm', 'pine board'])
+  assert.deepEqual(usedRequirements({ objects, tools, steps: [uses(16)] }), ['pine board', '16 screws · 70 mm'])
+  assert.deepEqual(usedRequirements({ supplies: ['8 screws, 7 cm'], objects, tools, steps: [uses(16)] }), ['8 screws, 7 cm', 'pine board', '16 screws · 70 mm'], 'different counts both stay')
+})
+
+test('sizes count as estimated only when an estimated thing is cut or joined', () => {
+  const measured = (status) => ({ measurements: { cm: { status } } })
+  const cut = { do: [{ v: 'cut', k: 'board', into: [{ k: 'side', cm: 40 }] }] }
+  assert.equal(sizesEstimated({ objects: [{ k: 'board', ...measured('estimated') }], steps: [cut] }), true)
+  assert.equal(sizesEstimated({ objects: [{ k: 'board', ...measured('confirmed') }], steps: [cut] }), false)
+  assert.equal(sizesEstimated({ objects: [{ k: 'a', ...measured('estimated') }, { k: 'b', ...measured('confirmed') }], joints: [{ a: 'b', b: 'a' }], steps: [] }), true)
+  assert.equal(sizesEstimated({ objects: [{ k: 'board', ...measured('estimated') }], joints: [{ a: 'side', b: 'side' }], steps: [{ do: [{ v: 'cut', k: 'board', into: [{ k: 'side', cm: 40 }] }] }] }), true, 'a joint on a cut part')
+  assert.equal(sizesEstimated({ objects: [{ k: 'can', ...measured('estimated') }], steps: [{ do: [{ v: 'pour', k: 'can', to: 'pot' }] }] }), false, 'a recipe')
+})
+
