@@ -157,7 +157,30 @@ test('an object with no instance of its named colour keeps its match and reports
   assert.deepEqual(result.colourMismatches, ['green-brick'])
   assert.equal(read('geometry.json')['green-brick'].color, '#0a68c8')
   assert.equal(read('geometry.json')['red-brick'].color, '#d62128')
-  assert.match(read('perception.json')['green-brick'].warnings.join(), /named green, but no green instance was found/)
+  assert.match(read('perception.json')['green-brick'].warnings.join(), /named green, but its cut-out does not look green/)
+})
+
+test('a class that matches nothing tries a simpler term before falling back to boxes', async t => {
+  const { seen, env } = await stub(t, twoInstances), { dir, file, read } = await redAndBluePhoto(t)
+  const result = await segmentPhoto(file, { objects: [
+    { key: 'red-brick', name: 'red plastic brick', segment: 'plastic brick', box: [5, 15, 15, 15] },
+    { key: 'blue-brick', name: 'blue plastic brick', segment: 'plastic brick', box: [55, 15, 15, 15] },
+  ] }, dir, { env })
+  assert.ok(seen.some(request => request.body.input[0].content[0].text === 'brick'))
+  assert.match(result.log, /class "plastic brick": 0 found, 0 confident/)
+  assert.match(result.log, /class "brick" instead: 2 found, 2 confident/)
+  assert.equal(read('perception.json')['red-brick'].method, 'semantic')
+  assert.deepEqual(result.colourMismatches, [])
+})
+
+test('colours are checked on cut-outs that fell back to their boxes', async t => {
+  const { env } = await stub(t, twoInstances), { dir, file, read } = await redAndBluePhoto(t)
+  const result = await segmentPhoto(file, { objects: [
+    { key: 'right', name: 'red plastic block', segment: 'plastic block', box: [5, 15, 15, 15] },
+    { key: 'wrong', name: 'yellow plastic block', segment: 'plastic block', box: [55, 15, 15, 15] },
+  ] }, dir, { env })
+  assert.equal(read('perception.json').right.method, 'box')
+  assert.deepEqual(result.colourMismatches, ['wrong'])
 })
 
 test('names only compare colours when colour tells a class apart', async t => {

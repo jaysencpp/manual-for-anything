@@ -7,7 +7,7 @@ import { join } from 'node:path'
 import { stageEfforts, effortArgs } from '../src/pipeline/efforts.mjs'
 import { solveJoints } from '../src/solvers/joints.mjs'
 import { checkConnections } from '../src/solvers/connections.mjs'
-import { offScaleBoxes, preparePhoto, writePlan } from '../src/pipeline/plan.mjs'
+import { correctBoxes, offScaleBoxes, preparePhoto, writePlan } from '../src/pipeline/plan.mjs'
 import { stubModel, wood8Plan } from './support/stub-model.mjs'
 import { groupedInventoryProblems } from '../src/pipeline/validate.mjs'
 import { settleOperations } from '../src/solvers/contracts.mjs'
@@ -74,51 +74,82 @@ test('a stray off-photo detection is omitted before segmentation and planning wi
   }
 })
 
-// The model's answer in a real run on a 474 × 316 photo: about twice the photo's size.
-const TOWER_OBJECTS = [[38, 105, 187, 112], [158, 62, 181, 140], [309, 12, 280, 135], [560, 118, 190, 145], [113, 168, 247, 215],
-  [370, 205, 165, 125], [514, 252, 127, 137], [361, 426, 135, 106], [577, 240, 287, 209], [784, 200, 160, 132]]
-  .map((b, i) => ({ k: `brick-${i + 1}`, b }))
+// Real answers from saved runs, and where those things really are.
+const named = (boxes) => boxes.map((b, i) => ({ k: `o${i + 1}`, b }))
+const iou = (a, b) => {
+  const w = Math.max(0, Math.min(a[0] + a[2], b[0] + b[2]) - Math.max(a[0], b[0])), h = Math.max(0, Math.min(a[1] + a[3], b[1] + b[3]) - Math.max(a[1], b[1]))
+  return (w * h) / (a[2] * a[3] + b[2] * b[3] - w * h)
+}
+const TOWER = { width: 474, height: 316 }
+const TOWER_ANSWER = named([[38, 198, 166, 118], [148, 100, 182, 148], [290, 22, 318, 176], [546, 144, 224, 150], [116, 254, 276, 290],
+  [382, 240, 138, 150], [518, 340, 150, 118], [560, 328, 348, 244], [352, 498, 168, 158], [772, 354, 138, 136]])
+const BOTTLES = { width: 800, height: 1000 }
+const BOTTLE_ANSWER = [[0, 415, 223, 463], [276, 328, 496, 569], [553, 210, 777, 694], [821, 231, 1000, 674]]
 
-test('boxes at another scale are told apart from a stray box and small overshoots', () => {
-  const size = { width: 474, height: 316 }
-  assert.deepEqual(offScaleBoxes(TOWER_OBJECTS, size).map(o => o.k), ['brick-3', 'brick-4', 'brick-5', 'brick-6', 'brick-7', 'brick-8', 'brick-9', 'brick-10'])
-  const inside = [[10, 10, 50, 50], [80, 10, 50, 50], [150, 10, 50, 50], [220, 10, 50, 50], [290, 10, 50, 50], [10, 100, 50, 50], [80, 100, 50, 50], [150, 100, 50, 50]].map((b, i) => ({ k: `o${i}`, b }))
-  assert.deepEqual(offScaleBoxes(inside, size), [])
-  assert.deepEqual(offScaleBoxes([...inside, { k: 'stray', b: [560, 118, 190, 145] }], size), [], 'one stray box')
-  assert.deepEqual(offScaleBoxes([...inside, { k: 'a', b: [440, 10, 60, 50] }, { k: 'b', b: [440, 80, 60, 50] }], size), [], 'small overshoots are trimmed')
-  assert.deepEqual(offScaleBoxes([{ k: 'sheet', b: [0, 0, 600, 300] }], size), [], 'one large box is trimmed')
+test('boxes in another form are told apart from a stray box and small overshoots', () => {
+  assert.equal(offScaleBoxes(TOWER_ANSWER, TOWER).length, 8)
+  const inside = named([[10, 10, 50, 50], [80, 10, 50, 50], [150, 10, 50, 50], [220, 10, 50, 50], [290, 10, 50, 50], [10, 100, 50, 50], [80, 100, 50, 50], [150, 100, 50, 50]])
+  assert.deepEqual(offScaleBoxes(inside, TOWER), [])
+  assert.deepEqual(offScaleBoxes([...inside, { k: 'stray', b: [560, 118, 190, 145] }], TOWER), [], 'one stray box')
+  assert.deepEqual(offScaleBoxes([...inside, { k: 'a', b: [440, 10, 60, 50] }, { k: 'b', b: [440, 80, 60, 50] }], TOWER), [], 'small overshoots are trimmed')
+  assert.deepEqual(offScaleBoxes([{ k: 'sheet', b: [0, 0, 600, 300] }], TOWER), [], 'one large box is trimmed')
 })
 
-test('off-scale boxes are read again before segmentation, with the photo size in the request', async (t) => {
-  const dir = mkdtempSync(join(tmpdir(), 'perception-off-scale-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
+test('an answer drawn larger than the photo is divided back onto the things in it', () => {
+  const { objects, form } = correctBoxes(TOWER_ANSWER, TOWER)
+  assert.equal(form, 'scale')
+  assert.deepEqual(offScaleBoxes(objects, TOWER), [])
+  // Saved cut-outs of the yellow, green and light blue bricks.
+  for (const [i, brick] of [[4, [52, 86, 161, 179]], [2, [147, 9, 163, 114]], [3, [246, 58, 148, 81]]]) assert.ok(iou(objects[i].b, brick) > 0.5, `object ${i}: ${objects[i].b}`)
+})
+
+test('an answer with right edges in a wider frame lands on the bottles', () => {
+  const { objects, form } = correctBoxes(named(BOTTLE_ANSWER), BOTTLES)
+  assert.equal(form, 'edges')
+  // The same bottles in another run's boxes, checked by eye against the photo.
+  for (const [i, bottle] of [[0, [0, 388, 180, 492]], [1, [218, 313, 203, 569]], [2, [414, 197, 189, 704]], [3, [652, 218, 148, 647]]]) assert.ok(iou(objects[i].b, bottle) > 0.7, `object ${i}: ${objects[i].b}`)
+})
+
+test('boxes with no consistent form are not corrected', () => {
+  assert.equal(correctBoxes(named([[-400, 10, 50, 50], [-300, 10, 50, 50], [10, 10, 50, 50]]), TOWER), null)
+})
+
+test('correctable boxes reach segmentation without a second reading', async (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'perception-corrected-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
   const photo = await preparePhoto(fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url)), dir)
-  const doubled = wood8Plan().objects.map(o => ({ ...o, b: o.b.map(v => v * 2) }))
-  let readings = 0
-  const seen = [], answers = { InstructionPlan: wood8Plan(), get PhotoPerception() {
-    return { mode: 'physical', objects: readings++ ? wood8Plan().objects : doubled }
-  } }
-  const stub = await stubModel({ answers, seen }); t.after(stub.close)
-  const published = []
+  const expected = wood8Plan().objects, doubled = expected.map(o => ({ ...o, b: o.b.map(v => v * 2) }))
+  const seen = [], stub = await stubModel({ seen, answers: { PhotoPerception: { mode: 'physical', objects: doubled }, InstructionPlan: wood8Plan() } }); t.after(stub.close)
+  let published, form
   const result = await writePlan(dir, photo, { provider: 'meta', apiKey: 'stub', baseURL: stub.url, perception: true,
-    onObjects: objects => published.push(objects) })
+    onObjects: objects => { published = objects }, onBoxesCorrected: value => { form = value } })
+  assert.equal(result.validation.valid, true)
+  assert.deepEqual(seen.map(r => r.name), ['PhotoPerception', 'InstructionPlan'])
+  assert.ok(form)
+  assert.deepEqual(offScaleBoxes(published, photo), [])
+  assert.equal(published.length, expected.length)
+  assert.ok(published.every(o => o.b[0] + o.b[2] <= photo.width && o.b[1] + o.b[3] <= photo.height))
+  assert.equal(JSON.parse(readFileSync(join(dir, 'perception-validation.json'))).correctedBoxes, form)
+})
+
+test('boxes that cannot be corrected are read again, then fail before segmentation', async (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'perception-uncorrectable-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
+  const photo = await preparePhoto(fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url)), dir)
+  const far = wood8Plan().objects.map((o, i) => ({ ...o, b: [-photo.width - 100, 10 + i, 50, 50] }))
+  let readings = 0
+  const seen = [], answers = { InstructionPlan: wood8Plan(), get PhotoPerception() { return { mode: 'physical', objects: readings++ ? wood8Plan().objects : far } } }
+  const stub = await stubModel({ answers, seen }); t.after(stub.close)
+  const result = await writePlan(dir, photo, { provider: 'meta', apiKey: 'stub', baseURL: stub.url, perception: true })
   assert.equal(result.validation.valid, true)
   assert.deepEqual(seen.map(r => r.name), ['PhotoPerception', 'PhotoPerception', 'InstructionPlan'])
   assert.match(seen[1].prompt, new RegExp(`x\\+width at most ${photo.width} and y\\+height at most ${photo.height}`))
-  assert.deepEqual(published, [wood8Plan().objects])
-  assert.equal(JSON.parse(readFileSync(join(dir, 'perception-validation-0.json'))).valid, false)
-  assert.equal(JSON.parse(readFileSync(join(dir, 'perception-validation-1.json'))).valid, true)
-})
 
-test('boxes still off-scale after the second reading fail without reaching segmentation', async (t) => {
-  const dir = mkdtempSync(join(tmpdir(), 'perception-still-off-scale-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
-  const photo = await preparePhoto(fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url)), dir)
-  const doubled = wood8Plan().objects.map(o => ({ ...o, b: o.b.map(v => v * 2) }))
-  const seen = [], stub = await stubModel({ seen, answers: { PhotoPerception: { mode: 'physical', objects: doubled } } }); t.after(stub.close)
+  const again = mkdtempSync(join(tmpdir(), 'perception-still-uncorrectable-')); t.after(() => rmSync(again, { recursive: true, force: true }))
+  const seenAgain = [], stubAgain = await stubModel({ seen: seenAgain, answers: { PhotoPerception: { mode: 'physical', objects: far } } }); t.after(stubAgain.close)
   let published = false
-  await assert.rejects(writePlan(dir, photo, { provider: 'meta', apiKey: 'stub', baseURL: stub.url, perception: true,
-    onObjects: () => { published = true } }), /Invalid photo perception: .*boxes run far past/)
+  await assert.rejects(writePlan(again, await preparePhoto(fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url)), again), { provider: 'meta', apiKey: 'stub', baseURL: stubAgain.url, perception: true,
+    onObjects: () => { published = true } }), /Invalid photo perception/)
   assert.equal(published, false)
-  assert.deepEqual(seen.map(r => r.name), ['PhotoPerception', 'PhotoPerception'])
+  assert.deepEqual(seenAgain.map(r => r.name), ['PhotoPerception', 'PhotoPerception'])
 })
 
 test('an inventory entirely outside the photo still retries and fails without publishing', async (t) => {

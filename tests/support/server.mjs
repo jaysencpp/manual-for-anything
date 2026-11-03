@@ -9,7 +9,9 @@ import { once } from 'node:events'
 export function spawnServer(args = [], env = {}) {
   const owned = !env.MANUAL_DATA_DIR
   const dataDir = env.MANUAL_DATA_DIR || mkdtempSync(join(tmpdir(), 'manual-server-test-'))
-  const child = spawn(process.execPath, [fileURLToPath(new URL('../../src/server/server.mjs', import.meta.url)), ...args], {
+  // Regression tests use historical fixtures; web tests select the published examples explicitly.
+  const examples = args.includes('--examples-dir') ? [] : ['--examples-dir', fileURLToPath(new URL('../../examples/fixtures', import.meta.url))]
+  const child = spawn(process.execPath, [fileURLToPath(new URL('../../src/server/server.mjs', import.meta.url)), ...examples, ...args], {
     env: { ...process.env, NODE_ENV: 'test', AUTH_MODE: 'local', APP_ORIGIN: '', FILE_STORAGE: 'local', MANUAL_DATA_DIR: dataDir, ...env },
   })
   child.serverErrors = ''

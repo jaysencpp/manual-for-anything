@@ -98,6 +98,7 @@ async function mainRun() {
     perception: true, perceptionEffort: efforts.perception, repairEffort: efforts.repair, signal: runAbort.signal,
     onMode: (mode) => { problemMode = mode === 'problem'; mark(`perception: ${mode}`) },
     onPerceptionRepair: () => mark('perception: repair'),
+    onBoxesCorrected: (form) => mark(`perception: boxes corrected (${form})`),
     onPerceptionText: (text) => { if (!marks['script: first object'] && /"b"\s*:\s*\[[^\]]*\]/.test(text)) mark('script: first object') },
     onRepairRejected: () => mark('script: repair rejected'),
     onPlanAttempt: ({ attempt, patch }) => { if (attempt) mark(`script: ${patch ? 'patch' : 'repair'} ${attempt}`) },
