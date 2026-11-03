@@ -1,0 +1,776 @@
+{
+ "assembly": null,
+ "contractVersion": 2,
+ "cuts": [],
+ "design": {
+  "joins": "No joints; pencil line work only.",
+  "parts": [
+   {
+    "cm": 29.7,
+    "from": "sheet-of-paper-1",
+    "k": "sheet-of-paper-1",
+    "n": 1
+   }
+  ],
+  "purpose": "Draw a sitting cat in pencil on the A4 sheet for display.",
+  "size": [
+   21,
+   29.7,
+   0.1
+  ],
+  "standard": "A4 portrait sheet, 21 x 29.7 cm, lying flat in plan view.",
+  "stands": "The sheet lies flat; no structure is built."
+ },
+ "end": "Display the finished cat drawing",
+ "finale": [
+  {
+   "by": 0,
+   "k": "sheet-of-paper-1",
+   "to": null,
+   "v": "spin"
+  }
+ ],
+ "goals": [
+  {
+   "k": "sheet-of-paper-1",
+   "state": "cat-complete"
+  }
+ ],
+ "ideas": [
+  {
+   "kind": "other",
+   "pitch": "Trace a complete sitting cat in pencil line work",
+   "title": "Sitting Cat Drawing"
+  },
+  {
+   "kind": "other",
+   "pitch": "Draw only the cat head as a simple portrait",
+   "title": "Cat Head Portrait"
+  },
+  {
+   "kind": "other",
+   "pitch": "Draw a small sitting cat centred on the page",
+   "title": "Mini Cat Sketch"
+  }
+ ],
+ "joints": [],
+ "makes": [],
+ "materials": [],
+ "mode": "physical",
+ "pick": 0,
+ "rigs": [],
+ "steps": [
+  {
+   "c": "Place the A4 sheet flat, portrait orientation",
+   "claims": [
+    "a1"
+   ],
+   "do": [
+    {
+     "id": "a1",
+     "intent": "place",
+     "k": "sheet-of-paper-1",
+     "rel": "floor",
+     "to": null,
+     "v": "place"
+    }
+   ],
+   "t": "Place sheet flat"
+  },
+  {
+   "c": "Draw an 8 cm circle, centre 10 cm from top",
+   "claims": [
+    "a2"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "sheet-of-paper-1",
+       "pencil"
+      ],
+      "sheet": "sheet-of-paper-1",
+      "strokes": [
+       {
+        "ellipse": [
+         0.5,
+         0.337,
+         0.19,
+         0.135
+        ]
+       }
+      ],
+      "technique": "trace",
+      "tool": "pencil"
+     },
+     "effects": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "head"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "k": "sheet-of-paper-1"
+     },
+     "id": "a2",
+     "intent": "Draw the head",
+     "k": "sheet-of-paper-1",
+     "label": "8 cm",
+     "requires": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "blank"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw head circle"
+  },
+  {
+   "c": "Draw two triangular ears on the head",
+   "claims": [
+    "a3"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "sheet-of-paper-1",
+       "pencil"
+      ],
+      "sheet": "sheet-of-paper-1",
+      "strokes": [
+       {
+        "closed": true,
+        "points": [
+         [
+          0.348,
+          0.256
+         ],
+         [
+          0.371,
+          0.128
+         ],
+         [
+          0.467,
+          0.209
+         ]
+        ]
+       },
+       {
+        "closed": true,
+        "points": [
+         [
+          0.652,
+          0.256
+         ],
+         [
+          0.629,
+          0.128
+         ],
+         [
+          0.533,
+          0.209
+         ]
+        ]
+       }
+      ],
+      "technique": "trace",
+      "tool": "pencil"
+     },
+     "effects": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "ears"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "k": "sheet-of-paper-1"
+     },
+     "id": "a3",
+     "intent": "Draw the ears",
+     "k": "sheet-of-paper-1",
+     "requires": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "head"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw ears"
+  },
+  {
+   "c": "Draw shaded eyes and a 0.8 cm nose",
+   "claims": [
+    "a4"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "sheet-of-paper-1",
+       "pencil"
+      ],
+      "sheet": "sheet-of-paper-1",
+      "strokes": [
+       {
+        "ellipse": [
+         0.424,
+         0.316,
+         0.024,
+         0.024
+        ],
+        "fill": true
+       },
+       {
+        "ellipse": [
+         0.576,
+         0.316,
+         0.024,
+         0.024
+        ],
+        "fill": true
+       },
+       {
+        "closed": true,
+        "points": [
+         [
+          0.481,
+          0.367
+         ],
+         [
+          0.519,
+          0.367
+         ],
+         [
+          0.5,
+          0.394
+         ]
+        ]
+       }
+      ],
+      "technique": "trace",
+      "tool": "pencil"
+     },
+     "effects": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "face"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "k": "sheet-of-paper-1"
+     },
+     "id": "a4",
+     "intent": "Draw eyes and nose",
+     "k": "sheet-of-paper-1",
+     "label": "0.8 cm",
+     "requires": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "ears"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw eyes nose"
+  },
+  {
+   "c": "Draw mouth curves and six whiskers",
+   "claims": [
+    "a5"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "sheet-of-paper-1",
+       "pencil"
+      ],
+      "sheet": "sheet-of-paper-1",
+      "strokes": [
+       {
+        "points": [
+         [
+          0.5,
+          0.394
+         ],
+         [
+          0.5,
+          0.404
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.5,
+          0.404
+         ],
+         [
+          0.457,
+          0.421
+         ]
+        ],
+        "smooth": true
+       },
+       {
+        "points": [
+         [
+          0.5,
+          0.404
+         ],
+         [
+          0.543,
+          0.421
+         ]
+        ],
+        "smooth": true
+       },
+       {
+        "points": [
+         [
+          0.438,
+          0.391
+         ],
+         [
+          0.238,
+          0.364
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.438,
+          0.391
+         ],
+         [
+          0.238,
+          0.397
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.438,
+          0.391
+         ],
+         [
+          0.238,
+          0.431
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.562,
+          0.391
+         ],
+         [
+          0.762,
+          0.364
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.562,
+          0.391
+         ],
+         [
+          0.762,
+          0.397
+         ]
+        ]
+       },
+       {
+        "points": [
+         [
+          0.562,
+          0.391
+         ],
+         [
+          0.762,
+          0.431
+         ]
+        ]
+       }
+      ],
+      "technique": "trace",
+      "tool": "pencil"
+     },
+     "effects": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "whiskers"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "k": "sheet-of-paper-1"
+     },
+     "id": "a5",
+     "intent": "Draw mouth and whiskers",
+     "k": "sheet-of-paper-1",
+     "requires": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "face"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw mouth whiskers"
+  },
+  {
+   "c": "Draw body curves joining flat base at 25 cm",
+   "claims": [
+    "a6"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "sheet-of-paper-1",
+       "pencil"
+      ],
+      "sheet": "sheet-of-paper-1",
+      "strokes": [
+       {
+        "points": [
+         [
+          0.405,
+          0.455
+         ],
+         [
+          0.286,
+          0.707
+         ],
+         [
+          0.333,
+          0.842
+         ]
+        ],
+        "smooth": true
+       },
+       {
+        "points": [
+         [
+          0.595,
+          0.455
+         ],
+         [
+          0.714,
+          0.707
+         ],
+         [
+          0.667,
+          0.842
+         ]
+        ],
+        "smooth": true
+       },
+       {
+        "points": [
+         [
+          0.333,
+          0.842
+         ],
+         [
+          0.667,
+          0.842
+         ]
+        ]
+       }
+      ],
+      "technique": "trace",
+      "tool": "pencil"
+     },
+     "effects": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "body"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "k": "sheet-of-paper-1"
+     },
+     "id": "a6",
+     "intent": "Draw the body",
+     "k": "sheet-of-paper-1",
+     "label": "25 cm",
+     "requires": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "whiskers"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw body"
+  },
+  {
+   "c": "Draw two 2 cm wide front paw ovals",
+   "claims": [
+    "a7"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "sheet-of-paper-1",
+       "pencil"
+      ],
+      "sheet": "sheet-of-paper-1",
+      "strokes": [
+       {
+        "ellipse": [
+         0.429,
+         0.842,
+         0.048,
+         0.017
+        ]
+       },
+       {
+        "ellipse": [
+         0.571,
+         0.842,
+         0.048,
+         0.017
+        ]
+       }
+      ],
+      "technique": "trace",
+      "tool": "pencil"
+     },
+     "effects": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "paws"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "k": "sheet-of-paper-1"
+     },
+     "id": "a7",
+     "intent": "Draw front paws",
+     "k": "sheet-of-paper-1",
+     "label": "2 cm",
+     "requires": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "body"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw front paws"
+  },
+  {
+   "c": "Draw tail curve ending in small curl",
+   "claims": [
+    "a8"
+   ],
+   "do": [
+    {
+     "demo": {
+      "actors": [
+       "sheet-of-paper-1",
+       "pencil"
+      ],
+      "sheet": "sheet-of-paper-1",
+      "strokes": [
+       {
+        "points": [
+         [
+          0.714,
+          0.791
+         ],
+         [
+          0.881,
+          0.707
+         ],
+         [
+          0.857,
+          0.539
+         ],
+         [
+          0.8,
+          0.522
+         ]
+        ],
+        "smooth": true
+       }
+      ],
+      "technique": "trace",
+      "tool": "pencil"
+     },
+     "effects": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "cat-complete"
+      }
+     ],
+     "focus": {
+      "bounds": [
+       0,
+       0,
+       1,
+       1
+      ],
+      "k": "sheet-of-paper-1"
+     },
+     "id": "a8",
+     "intent": "Draw the tail",
+     "k": "sheet-of-paper-1",
+     "requires": [
+      {
+       "k": "sheet-of-paper-1",
+       "state": "paws"
+      }
+     ],
+     "v": "demonstrate"
+    }
+   ],
+   "t": "Draw tail"
+  },
+  {
+   "c": "Set the pencil down beside the sheet",
+   "claims": [
+    "a9"
+   ],
+   "do": [
+    {
+     "id": "a9",
+     "intent": "place",
+     "k": "pencil",
+     "rel": "floor",
+     "to": null,
+     "v": "place"
+    }
+   ],
+   "t": "Set pencil down"
+  }
+ ],
+ "sub": "Pencil line drawing on A4",
+ "supplies": [],
+ "tag": "21 x 29.7 cm · 15 min · Easy",
+ "title": "Sitting Cat Drawing",
+ "tools": [
+  {
+   "k": "pencil",
+   "use": "pencil"
+  }
+ ],
+ "view": "plan",
+ "objects": [
+  {
+   "b": [
+    132,
+    46,
+    196,
+    313
+   ],
+   "cm": 29.7,
+   "k": "sheet-of-paper-1",
+   "measurements": {
+    "cm": {
+     "source": "user-reported A4 dimensions, treated as 21.0 x 29.7 cm; photo dimensions estimated from a single photo, not independently confirmed",
+     "status": "estimated"
+    }
+   },
+   "n": "white sheet of paper",
+   "segment": "sheet of paper",
+   "part": {
+    "family": "sheet",
+    "size": [
+     21,
+     29.7,
+     0.1
+    ]
+   },
+   "state": "blank",
+   "states": [
+    {
+     "id": "blank",
+     "label": "Blank sheet"
+    },
+    {
+     "id": "head",
+     "label": "Head drawn"
+    },
+    {
+     "id": "ears",
+     "label": "Ears drawn"
+    },
+    {
+     "id": "face",
+     "label": "Eyes and nose drawn"
+    },
+    {
+     "id": "whiskers",
+     "label": "Mouth and whiskers drawn"
+    },
+    {
+     "id": "body",
+     "label": "Body drawn"
+    },
+    {
+     "id": "paws",
+     "label": "Front paws drawn"
+    },
+    {
+     "id": "cat-complete",
+     "label": "Finished sitting cat"
+    }
+   ]
+  }
+ ],
+ "artworkMode": "complete"
+}
