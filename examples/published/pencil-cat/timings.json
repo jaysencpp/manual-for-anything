@@ -1,0 +1,207 @@
+{
+ "provider": "meta",
+ "model": "muse-wonder-1.0",
+ "sam": "api",
+ "effort": "minimal",
+ "planEffort": "minimal",
+ "efforts": {
+  "base": "minimal",
+  "plan": "minimal",
+  "perception": "minimal",
+  "repair": "low",
+  "drawing": "minimal",
+  "catalogue": "low"
+ },
+ "drawingStyle": "layered",
+ "noThinking": false,
+ "finaleEnabled": true,
+ "photo": {
+  "path": "script/photo.png",
+  "width": 471,
+  "height": 360
+ },
+ "begin": 5.88,
+ "costEstimated": true,
+ "firstFrameIfWaitingForAll": 18.48,
+ "filmSeconds": 50.3,
+ "needs": [
+  {
+   "what": "cut-outs (lift off the photo)",
+   "ready": 7.5,
+   "neededAt": 6.88,
+   "slack": -0.62
+  },
+  {
+   "what": "drawings (turn into drawings)",
+   "ready": 19.78,
+   "neededAt": 7.18,
+   "slack": -12.6
+  },
+  {
+   "what": "steps + layout (first step)",
+   "ready": 19.78,
+   "neededAt": 11.48,
+   "slack": -8.3
+  },
+  {
+   "what": "finale",
+   "ready": 19.78,
+   "neededAt": 47.58,
+   "slack": 27.8
+  }
+ ],
+ "marks": {
+  "start": 0.01,
+  "script: first object": 5.15,
+  "perception: physical": 5.88,
+  "script: object list": 5.88,
+  "SAM: cut-outs": 7.5,
+  "project: 0": 14.33,
+  "catalogue: done": 14.4,
+  "script: done": 19.77,
+  "layout": 19.78,
+  "finale: checked": 19.78,
+  "drawings: all": 19.78,
+  "panel: none wanted": 22.18
+ },
+ "calls": {
+  "sam": {
+   "segment": 1.58,
+   "scores": {
+    "sheet-of-paper-1": 0.9532163739204407
+   }
+  },
+  "catalogue": {
+   "provider": "meta",
+   "model": "muse-wonder-1.0",
+   "seconds": 8.51568739,
+   "firstTokenSeconds": 5.378993683000001,
+   "output": 914,
+   "thinking": 427,
+   "usage": {
+    "completion_tokens": 914,
+    "prompt_tokens": 5549,
+    "total_tokens": 6463,
+    "completion_tokens_details": {
+     "reasoning_tokens": 427
+    },
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    }
+   },
+   "cost": 0.040476,
+   "costEstimated": true,
+   "attempts": 1
+  },
+  "script": {
+   "provider": "meta",
+   "model": "muse-wonder-1.0",
+   "seconds": 19.751269442999998,
+   "firstTokenSeconds": 5.023342397,
+   "output": 3461,
+   "thinking": 758,
+   "usage": {
+    "prompt_tokens": 16191,
+    "completion_tokens": 3461
+   },
+   "cost": 0.133984,
+   "costEstimated": true,
+   "attempts": 1,
+   "knownCost": 0.133984,
+   "costIncomplete": false,
+   "planAttempts": 1,
+   "patches": 0,
+   "firstPassValid": true,
+   "promptVersion": "65e2853592",
+   "effort": "minimal",
+   "validationHistory": [
+    {
+     "valid": true,
+     "errors": [],
+     "warnings": [
+      "sheet-of-paper-1.cm: unconfirmed measurement",
+      "step 2: the caption gives 10 cm, but no action carries it",
+      "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+     ],
+     "soft": []
+    }
+   ],
+   "perception": {
+    "provider": "meta",
+    "model": "muse-wonder-1.0",
+    "seconds": 5.866658198,
+    "firstTokenSeconds": 5.023342397,
+    "output": 449,
+    "thinking": 332,
+    "usage": {
+     "completion_tokens": 449,
+     "prompt_tokens": 1446,
+     "total_tokens": 1895,
+     "completion_tokens_details": {
+      "reasoning_tokens": 332
+     },
+     "prompt_tokens_details": {
+      "cached_tokens": 0
+     }
+    },
+    "cost": 0.014764,
+    "costEstimated": true,
+    "attempts": 1
+   },
+   "requests": [
+    {
+     "provider": "meta",
+     "model": "muse-wonder-1.0",
+     "seconds": 13.84453319,
+     "firstTokenSeconds": 5.402853525,
+     "output": 3012,
+     "thinking": 426,
+     "usage": {
+      "completion_tokens": 3012,
+      "prompt_tokens": 14745,
+      "total_tokens": 17757,
+      "completion_tokens_details": {
+       "reasoning_tokens": 426
+      },
+      "prompt_tokens_details": {
+       "cached_tokens": 0
+      }
+     },
+     "cost": 0.11922,
+     "costEstimated": true,
+     "attempts": 1
+    }
+   ]
+  },
+  "finale": {
+   "provider": "deterministic",
+   "seconds": 0,
+   "cost": 0
+  },
+  "panel": {
+   "provider": "meta",
+   "model": "muse-wonder-1.0",
+   "seconds": 2.3935003130000005,
+   "firstTokenSeconds": 2.289479521999998,
+   "output": 44,
+   "thinking": 29,
+   "usage": {
+    "completion_tokens": 44,
+    "prompt_tokens": 3864,
+    "total_tokens": 3908,
+    "completion_tokens_details": {
+     "reasoning_tokens": 29
+    },
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    }
+   },
+   "cost": 0.016336,
+   "costEstimated": true,
+   "attempts": 1,
+   "problem": null
+  }
+ },
+ "cost": 0.191,
+ "costIncomplete": false
+}

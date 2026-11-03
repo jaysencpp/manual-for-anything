@@ -14,8 +14,8 @@ npm install
 npm start
 ```
 
-Open <http://localhost:8080/examples> to watch saved manuals, including the **Colour Bridge** and
-**Paper Snowflake**. No API key needed.
+Open <http://localhost:8080/examples> to watch saved manuals, including the **Colour Bridge**, the
+**Paper Snowflake** and a **Sitting Cat Drawing**. No API key needed.
 
 To make manuals from your own photos, run this instead. It asks for your Meta Model API key the first time and saves it
 in `.env.local`. Uploads make paid API calls.
@@ -37,8 +37,11 @@ so a fold or a brick lands where the numbers say it should. These are real frame
 | **Paper folds** are calculated layer by layer, so each one lands exactly where it should. | **Captions and labels carry the numbers**, such as a fold's angle. |
 | ![A notch being cut from the folded paper wedge, beside a before-and-after diagram](docs/screenshots/paper-cut.png) | ![The finished snowflake, 21 cm across, with its repeating pattern](docs/screenshots/paper-finished.png) |
 | **Cuts go through every layer** of the folded sheet. | **The unfolded pattern follows from the folds**, so the result is worked out rather than drawn by hand. |
+| ![A pencil drawing whiskers on a cat's face, on an A4 sheet, in step 5 of the Sitting Cat Drawing](docs/screenshots/pencil-drawing.png) | ![The finished cat drawing on the sheet, with the pencil put away in the parts column](docs/screenshots/pencil-finished.png) |
+| **Pencil drawings are traced line by line.** The pencil moves along each stroke while the line grows behind it. | **Every line stays on the sheet**, at the place and size the captions give, until the picture is finished. |
 
-Both of these come from saved generation runs.
+All of these come from saved generation runs. The cat came from one photo of a blank sheet and a note giving the
+position and size of each part of the drawing.
 
 ### What each solver understands
 
@@ -46,6 +49,7 @@ Both of these come from saved generation runs.
 | --- | --- |
 | **Bricks** | Placement by stud, including slopes, round bricks, plates, tiles, grilles and studs on the side; a check that each brick rests on at least one stud |
 | **Paper and other sheets** | Valley and mountain folds, creases, turning over, cuts through layers, opening out |
+| **Drawing on a sheet** | Pencil, pen, marker, crayon or chalk strokes as lines, curves, closed shapes and ellipses, at the sheet's real size |
 
 ## Using it
 

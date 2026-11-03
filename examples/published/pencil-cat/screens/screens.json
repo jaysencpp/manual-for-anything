@@ -1,0 +1,13 @@
+{
+ "sheet-of-paper-1": {
+  "width": 196,
+  "height": 277,
+  "regions": []
+ },
+ "photo": {
+  "path": "script/photo.png",
+  "width": 471,
+  "height": 360,
+  "regions": []
+ }
+}

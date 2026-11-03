@@ -56,7 +56,7 @@ test('every example streams, and every program it sends plays', async () => {
   try {
     const listed = await fetch(`${server.url}/api/examples`).then(r => r.json())
     assert.deepEqual(listed.map(e => e.name).sort(), [
-      'eff644fe8c1940acbf39710424d45ee1', 'colour-bridge', 'fbb4f34f20e941ee8d92f629bc9f64e2',
+      'eff644fe8c1940acbf39710424d45ee1', 'colour-bridge', 'fbb4f34f20e941ee8d92f629bc9f64e2', 'pencil-cat',
     ].sort())
     assert.equal((await fetch(`${server.url}/api/films?example=wood8`, { method: 'POST' })).status, 404)
     for (const name of examples) {

@@ -42,6 +42,10 @@ export function solveJoints(script, geometry, sizes, { floorY = 790, centerX = 9
   const dims = (k) => {
     if (geometry[k].sheet) { const [L, W] = geometry[k].sheet.size; return { L, W, T: 0.05 } }
     const of = geometry[k].sliceOf || k, s = sizes[of], o = objects[of] || {}
+    // A sheet lies as its size says, w across and d from its far edge to its near one, whichever side its cm names:
+    // an A4 sheet [21, 29.7, 0.1] with cm 29.7 lies portrait (laid along its cm, a cat traced on it came out squat).
+    const sheet = !geometry[k].sliceOf && o.part?.family === 'sheet' && Array.isArray(o.part.size) && o.part.size.length === 3 && o.part.size.every((v) => +v > 0)
+    if (sheet) { const [L, W, T] = o.part.size.map(Number); return { L, W, T } }
     // (a part's own size in cm, when the plan gives one — a log [38, 14, 12] — sets its width and thickness)
     const size = Array.isArray(o.part?.size) && o.part.size.length === 3 && o.part.size.every((v) => +v > 0) ? o.part.size.map(Number).sort((a, b) => b - a) : null
     const whole = +o.cm > 0 ? +o.cm : s.width / 4
