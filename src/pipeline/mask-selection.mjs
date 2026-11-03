@@ -141,6 +141,22 @@ export function settleColours(names, requests, candidates, scores, colours, assi
   return { assigned: settled, moved: [...moved], mismatched }
 }
 
+// When a class has exactly as many confident instances as objects, every instance belongs to one of them, so an object
+// whose box is too far off to match anything takes what is left instead of falling back to a mask of that box.
+export function claimLeftovers(requests, candidates, scores, assigned) {
+  const confident = candidates.flatMap((_, j) => scores[j] >= 0.5 ? [j] : [])
+  if (confident.length !== requests.length) return assigned
+  const settled = { ...assigned }, used = new Set(Object.values(settled)), middle = b => [(b[0] + b[2]) / 2, (b[1] + b[3]) / 2], pairs = []
+  requests.forEach((request, i) => {
+    if (i in settled) return
+    const [rx, ry] = middle(request)
+    for (const j of confident) if (!used.has(j)) { const [cx, cy] = middle(candidates[j]); pairs.push([Math.hypot(rx - cx, ry - cy), i, j]) }
+  })
+  pairs.sort((a, b) => a[0] - b[0] || a[1] - b[1] || a[2] - b[2])
+  for (const [, i, j] of pairs) if (!(i in settled) && !used.has(j)) { settled[i] = j; used.add(j) }
+  return settled
+}
+
 // Segmentation evidence is not identity or scale confirmation.
 export function maskEvidence(requestBox, maskBox, confidence, method) {
   const agreement = overlap(requestBox, maskBox), warnings = []
