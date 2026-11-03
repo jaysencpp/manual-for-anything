@@ -184,7 +184,7 @@ async function serve(env) {
     child.stdout.on('data', (c) => { const m = /localhost:(\d+)/.exec(String(c)); if (m) done(+m[1]) })
     child.on('exit', (code) => fail(new Error(`server exited ${code}`)))
   })
-  return { url: `http://localhost:${port}`, stop: () => child.kill() }
+  return { url: `http://localhost:${port}`, stop: () => child.kill(), errors: () => child.serverErrors }
 }
 async function events(url) {
   const res = await fetch(url), reader = res.body.getReader(), all = []
@@ -208,7 +208,10 @@ test('a photo film writes its catalogue alongside; a pick is a film on the same 
   const all = await events(`${server.url}/api/films/${id}/events`)
   const types = all.map((e) => e.type)
   assert.equal(types.at(-1), 'done', JSON.stringify(all.filter((e) => e.type === 'stage').map((e) => e.name)))
-  assert.ok(types.includes('film') && types.includes('catalogue'))
+  // (this has failed now and then on Windows only: say what arrived, so a failure can be told from the log alone)
+  const arrived = () => JSON.stringify({ types, stages: all.filter((e) => e.type === 'stage').map((e) => e.name), serverErrors: server.errors().slice(-2000) })
+  assert.ok(types.includes('film'), `no film event: ${arrived()}`)
+  assert.ok(types.includes('catalogue'), `no catalogue event: ${arrived()}`)
   const projects = all.filter((e) => e.type === 'project')
   assert.deepEqual(projects.map((e) => e.i), wood8Catalogue().projects.map((_, i) => i))
   assert.ok(types.indexOf('objects') < types.indexOf('project'))
