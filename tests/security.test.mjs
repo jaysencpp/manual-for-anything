@@ -115,11 +115,12 @@ test('every paid creation route rejects exhausted allowances before restoring fi
 test('simultaneous examples bypass generation slots, retain hourly allowances and respect deadlines', async t => {
   const server = await startServer(['--speed', '0.001'], { JOB_TIMEOUT_SECONDS: '1', MAX_ACTIVE_JOBS: '1', HOURLY_EXAMPLES_PER_USER: '5' }); t.after(server.stop)
   const replies = await Promise.all(Array.from({ length: 5 }, () => fetch(server.base + '/api/films?example=wood8', { method: 'POST' })))
-  assert.equal(replies.filter(r => r.status === 200).length, 5)
+  const results = await Promise.all(replies.map(async response => ({ status: response.status, body: await response.json() })))
+  assert.deepEqual(results.map(r => r.status), [200, 200, 200, 200, 200], JSON.stringify(results) + '\n' + server.child.serverErrors)
   const blocked = await fetch(server.base + '/api/films?example=wood8', { method: 'POST' })
   assert.equal(blocked.status, 429)
   assert.match((await blocked.json()).error, /allowance/)
-  const id = (await replies.find(r => r.status === 200).json()).id
+  const id = results[0].body.id
   const events = await fetch(`${server.base}/api/films/${id}/events`)
   const reader = events.body.getReader(); let text = ''
   try {

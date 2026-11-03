@@ -1,5 +1,5 @@
 // Durable file bytes. SQLite stores references; Azure credentials never reach the browser.
-import { readFile, writeFile, mkdir, rename, readdir, rm } from 'node:fs/promises'
+import { readFile, writeFile, mkdir, link, readdir, rm } from 'node:fs/promises'
 import { join, dirname, relative, sep, resolve } from 'node:path'
 import { tmpdir } from 'node:os'
 import { createHash, randomUUID } from 'node:crypto'
@@ -22,7 +22,12 @@ export class LocalFiles {
   async put(digest, bytes) {
     const file = join(this.root, blobKey(digest)); await mkdir(dirname(file), { recursive: true })
     const temp = `${file}.${randomUUID()}.tmp`
-    try { await writeFile(temp, bytes); await rename(temp, file) } finally { await rm(temp, { force: true }) }
+    try {
+      await writeFile(temp, bytes)
+      // Publish complete, immutable bytes without replacing another replay's blob.
+      // Concurrent renames over the same destination can fail on Windows.
+      try { await link(temp, file) } catch (error) { if (error.code !== 'EEXIST') throw error }
+    } finally { await rm(temp, { force: true }) }
   }
   async get(digest) { return readFile(join(this.root, blobKey(digest))) }
 }
