@@ -23,8 +23,10 @@ export class JobLimits {
     const reject = (message, retryAfter) => { throw Object.assign(Error(message), { status: 429, retryAfter }) }
     // Saved replays make no model calls and must not occupy paid generation slots.
     const generation = kind === 'live'
-    if (generation && (this.active >= this.global || (this.owners.get(owner) || 0) >= this.perUser))
-      reject('A manual is already being made. Please try again when it finishes.', 30)
+    if (generation && (this.owners.get(owner) || 0) >= this.perUser)
+      reject('Your last manual is still being made. You can start another as soon as its film is ready to play.', 30)
+    if (generation && this.active >= this.global)
+      reject('The server is busy finishing other manuals. Please try again in a minute.', 30)
     const [globalLimit, userLimit, windowMs] = this.allowances[kind], now = this.now()
     const expires = (Math.floor(now / windowMs) + 1) * windowMs
     const scopes = [['global', globalLimit], [`user:${owner}`, userLimit]]
@@ -40,17 +42,23 @@ export class JobLimits {
       this.db.exec('COMMIT')
     } catch (error) { this.db.exec('ROLLBACK'); throw error }
     if (generation) { this.active++; this.owners.set(owner, (this.owners.get(owner) || 0) + 1) }
-    let released = false
+    let released = false, ownerReleased = !generation
     const lease = {
       job: null,
       attach: job => { lease.job = job; job.admission = lease },
+      // Once the film plays, its owner may start another while the rest (catalogue, panels) finishes.
+      // The server-wide slot stays held until the job ends, so paid work remains capped.
+      releaseOwner: () => {
+        if (ownerReleased) return
+        ownerReleased = true
+        const count = this.owners.get(owner) - 1
+        if (count) this.owners.set(owner, count); else this.owners.delete(owner)
+      },
       release: () => {
         if (released) return
         released = true
-        if (generation) {
-          this.active--; const count = this.owners.get(owner) - 1
-          if (count) this.owners.set(owner, count); else this.owners.delete(owner)
-        }
+        lease.releaseOwner()
+        if (generation) this.active--
         // Invalid requests refund the allowance; started/failed jobs still count.
         if (!lease.job) for (const [scope] of scopes) this.db.prepare(`UPDATE job_allowances SET used=MAX(0,used-1)
           WHERE kind=? AND scope=? AND expires=?`).run(kind, scope, expires)

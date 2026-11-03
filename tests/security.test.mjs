@@ -94,6 +94,25 @@ test('admission reserves atomically, refunds invalid requests, preserves quotas 
   } finally { db.close() }
 })
 
+test('a playable film frees its owner for another while the server-wide slot stays held until it ends', () => {
+  const db = new DatabaseSync(':memory:')
+  try {
+    const limits = new JobLimits(db, { MAX_ACTIVE_JOBS: '2', MAX_ACTIVE_JOBS_PER_USER: '1' })
+    const first = limits.reserve('alice', 'live'); first.attach({})
+    assert.throws(() => limits.reserve('alice', 'live'), e => e.status === 429 && /still being made/.test(e.message))
+    first.releaseOwner(); first.releaseOwner()
+    const second = limits.reserve('alice', 'live'); second.attach({})
+    assert.equal(limits.active, 2)
+    assert.throws(() => limits.reserve('bob', 'live'), e => e.status === 429 && /server is busy/.test(e.message))
+    first.release(); first.release()
+    assert.equal(limits.active, 1)
+    assert.equal(limits.owners.get('alice'), 1, 'the early release is not counted twice')
+    second.release()
+    assert.equal(limits.active, 0)
+    assert.equal(limits.owners.size, 0)
+  } finally { db.close() }
+})
+
 test('every paid creation route rejects exhausted allowances before restoring files, creating jobs or making calls', async t => {
   const dir = await mkdtemp(join(tmpdir(), 'manual-limits-')); t.after(() => rm(dir, { recursive: true, force: true }))
   const repo = new FilmRepository(join(dir, 'app.sqlite'), 'local')

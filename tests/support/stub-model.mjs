@@ -20,15 +20,21 @@ export function wood8Catalogue() {
 }
 export function wood8Plan() { return { cuts: [], assembly: null, ...read('../../examples/fixtures/wood8/script.json') } }
 
-// answers: {Catalogue: object, InstructionPlan: object} by the request's schema name; chunk: characters a piece.
+// answers: {Catalogue: object, InstructionPlan: object} by the request's schema name; chunk: characters a piece. An
+// answer can be a function of the call's number for that name (1, 2, …); a string it returns is streamed as it is.
 export async function stubModel({ port = 0, delay = 0, chunk = 160, answers = { Catalogue: wood8Catalogue(), InstructionPlan: wood8Plan() }, seen = [] } = {}) {
+  const calls = {}
   const server = createServer(async (req, res) => {
+    res.on('error', () => {}) // (a client that stops reading mid-stream)
     let body = ''; for await (const c of req) body += c
     let request = {}
     try { request = JSON.parse(body) } catch {}
     const name = request.response_format?.json_schema?.name
     seen.push({ name, prompt: request.messages?.[1]?.content?.[0]?.text ?? '', effort: request.reasoning_effort, schema: request.response_format?.json_schema?.schema })
-    const answer = answers[name] || (name === 'PhotoPerception' && answers.InstructionPlan ? {
+    calls[name] = (calls[name] || 0) + 1
+    let given = answers[name] // (read once: a test's getter can count its calls)
+    if (typeof given === 'function') given = given(calls[name])
+    const answer = given || (name === 'PhotoPerception' && answers.InstructionPlan ? {
       mode: answers.InstructionPlan.mode || 'physical', objects: answers.InstructionPlan.objects || [],
     } : null)
     if (!answer) { res.writeHead(400, { 'Content-Type': 'application/json' }); return res.end(JSON.stringify({ error: { message: 'the stub answers only perception, catalogue and plan' } })) }
@@ -40,9 +46,9 @@ export async function stubModel({ port = 0, delay = 0, chunk = 160, answers = { 
     }
     if (name === 'InstructionPlan' && output.mode !== 'problem' && request.response_format?.json_schema?.schema?.required?.includes('assembly'))
       output = { cuts: [], assembly: null, ...output }
-    const text = JSON.stringify(output)
+    const text = typeof output === 'string' ? output : JSON.stringify(output)
     res.writeHead(200, { 'Content-Type': 'text/event-stream' })
-    for (let i = 0; i < text.length; i += chunk) {
+    for (let i = 0; i < text.length && !res.destroyed; i += chunk) {
       res.write(`data: ${JSON.stringify({ choices: [{ delta: { content: text.slice(i, i + chunk) } }] })}\n\n`)
       if (delay) await new Promise((done) => setTimeout(done, delay))
     }
