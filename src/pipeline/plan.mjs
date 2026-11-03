@@ -399,7 +399,12 @@ Declare every referenced tool and cut part; place supports before placing object
   // problems that would stop the film, not for soft ones a film is made with — the whole plan, up to maxRepairs times
   // (the patch not counted). What it ends with, passing or not.
   const repaired = async (r) => {
-    let patches = 0, wholes = 0
+    let patches = 0, wholes = 0, extra = false
+    // (what the planner has been told: the geometry is only checked once the rest passes, so the last repair can bring
+    // out a fault no request ever named. Such a fault that would stop the film gets one more whole repair)
+    const told = new Set()
+    const tell = (x) => { for (const e of x.validation.errors || []) told.add(e); return x }
+    const unheard = (x) => !extra && !(x.softOnly && !x.geometry) && (x.validation.errors || []).some((e) => !told.has(e))
     const select = (before, candidate) => {
       const newErrors = (candidate.validation.errors || []).filter((e) => !before.validation.errors.includes(e))
       const refinements = newErrors.filter((e) => reshapeRepairProgress(before, candidate, e))
@@ -415,15 +420,18 @@ Declare every referenced tool and cut part; place supports before placing object
       if (!patches && patchable(r)) {
         patches++
         // (a patch request that fails — the API, the network — leaves the plan as it was, for the whole repair)
-        const p = await ask(patchPrompt(r), r.script).catch((error) => { if (options.signal?.aborted) throw error; return { validation: { broken: error.message } } })
+        const p = await ask(patchPrompt(tell(r)), r.script).catch((error) => { if (options.signal?.aborted) throw error; return { validation: { broken: error.message } } })
         // (a patch that does not parse leaves the plan as it was, for the whole repair)
         const previous = r
         r = select(r, p)
         if (r.softOnly && r !== previous && !r.geometry) break
         continue
       }
-      if (wholes >= maxRepairs) break
-      wholes++; r = select(r, await ask(wholePrompt(r)))
+      if (wholes >= maxRepairs) {
+        if (!unheard(r)) break
+        extra = true
+      }
+      wholes++; r = select(r, await ask(wholePrompt(tell(r))))
     }
     return r
   }
