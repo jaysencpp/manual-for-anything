@@ -43,6 +43,51 @@ test('finished crochet size is independent of skein envelope while rigid stock s
   assert.match(designProblems(script).join('; '), /only 20 cm/)
 })
 
+// A bouquet plan failed all three attempts on this: rebuilding the supplies dropped the states of a skewer it demonstrated on.
+test('a supply keeps its states through validation and the film script', async () => {
+  const { settleOperations, settleStates } = await import('../src/solvers/contracts.mjs')
+  const { plain } = await import('../src/pipeline/script.mjs')
+  const supplyPlan = () => {
+    const script = sheetExample(), stock = script.objects[0]
+    script.objects = [{ k: 'scissors', n: 'Scissors', segment: 'scissors', b: [0, 0, 100, 50], cm: 18,
+      measurements: { cm: { status: 'estimated', source: 'photo estimate' } }, toolKind: 'scissors' }]
+    script.tools = script.tools.filter(o => o.k !== 'scissors')
+    script.materials = [{ k: stock.k, n: 'Required extra card sheet', family: 'sheet', size: [40, 30, 0.1] }]
+    script.supplies = ['One 40 × 30 cm sheet of card']
+    return { script, k: stock.k }
+  }
+  const settled = (script) => { settleOperations(script); settleStates(script); return script }
+  const ids = (script, k) => script.objects.find(o => o.k === k).states?.map(s => s.id)
+
+  // The planner leaves the states out and settling declares them.
+  const demonstrated = supplyPlan()
+  demonstrated.script.steps.push({ t: 'Press', c: 'Press the card flat.', claims: ['press'], do: [{ id: 'press', v: 'demonstrate', intent: 'press', k: demonstrated.k,
+    focus: { k: demonstrated.k, bounds: [0, 0, 1, 1] }, demo: { actors: [demonstrated.k], draw: `(ctx, p, env, scene) => { scene.draw('${demonstrated.k}') }` } }] })
+  settled(demonstrated.script)
+  assert.deepEqual(validatePlan(demonstrated.script).errors, [])
+  assert.deepEqual(ids(demonstrated.script, demonstrated.k), ['press', 'as-found'])
+  const before = structuredClone(demonstrated.script)
+  settlePlanningInputs(demonstrated.script); assert.deepEqual(demonstrated.script, before)
+  const film = plain(demonstrated.script).objects.find(o => o.k === demonstrated.k)
+  assert.equal(film.state, 'as-found')
+  assert.deepEqual(film.states.map(s => s.id), ['press', 'as-found'])
+
+  // A reshape's drawings of its states, declared at the top level as a patch gives them, survive as well.
+  const look = { width: 40, height: 30, shapes: [{ d: 'M0 0H40V30H0Z', fill: '#eee', stroke: '#333' }] }
+  const reshaped = supplyPlan()
+  reshaped.script.states = [{ k: reshaped.k, state: 'flat', states: [{ id: 'flat', label: 'Flat', appearance: look }, { id: 'curled', label: 'Curled', appearance: look }] }]
+  reshaped.script.steps.push({ t: 'Curl', c: 'Curl the card.', claims: ['curl'], do: [{ id: 'curl', v: 'reshape', intent: 'Curl the card', k: reshaped.k,
+    requires: [{ k: reshaped.k, state: 'flat' }], effects: [{ k: reshaped.k, state: 'curled' }] }] })
+  settled(reshaped.script)
+  assert.deepEqual(validatePlan(reshaped.script).errors, [])
+  assert.deepEqual(reshaped.script.objects.find(o => o.k === reshaped.k).states.find(s => s.id === 'curled').appearance, look)
+
+  // A supply with no declaration behind it is still refused, states or not.
+  const undeclared = structuredClone(demonstrated.script)
+  delete undeclared.materials; delete undeclared.cuts
+  assert.match(validatePlan(undeclared).errors.join('; '), /supply actor must match/)
+})
+
 test('declared supply sheets compile, retain photo identity, and execute cuts and joins in Chrome', { skip: !chromePresent, timeout: 120000 }, async t => {
   const script = sheetExample(), stock = script.objects[0]
   script.objects = [{ k: 'scissors', n: 'Scissors', segment: 'scissors', b: [0, 0, 100, 50], cm: 18,
