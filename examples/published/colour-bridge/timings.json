@@ -1,0 +1,243 @@
+{
+ "provider": "meta",
+ "model": "muse-wonder-1.0",
+ "sam": "api",
+ "effort": "minimal",
+ "planEffort": "minimal",
+ "efforts": {
+  "base": "minimal",
+  "plan": "minimal",
+  "perception": "minimal",
+  "repair": "low",
+  "drawing": "minimal",
+  "catalogue": "low"
+ },
+ "drawingStyle": "layered",
+ "noThinking": false,
+ "finaleEnabled": true,
+ "photo": {
+  "path": "/tmp/manual-files/colour-bridge/script/photo.png",
+  "width": 474,
+  "height": 316
+ },
+ "begin": 13.43,
+ "costEstimated": true,
+ "firstFrameIfWaitingForAll": 27.71,
+ "filmSeconds": 37.2,
+ "needs": [
+  {
+   "what": "cut-outs (lift off the photo)",
+   "ready": 16.33,
+   "neededAt": 14.43,
+   "slack": -1.9
+  },
+  {
+   "what": "drawings (turn into drawings)",
+   "ready": 29.01,
+   "neededAt": 14.73,
+   "slack": -14.28
+  },
+  {
+   "what": "steps + layout (first step)",
+   "ready": 29,
+   "neededAt": 19.03,
+   "slack": -9.97
+  },
+  {
+   "what": "finale",
+   "ready": 29.01,
+   "neededAt": 42.03,
+   "slack": 13.02
+  }
+ ],
+ "marks": {
+  "start": 0.01,
+  "script: first object": 10.93,
+  "perception: physical": 13.43,
+  "script: object list": 13.43,
+  "SAM: cut-outs": 16.33,
+  "project: 0": 28.54,
+  "script: done": 29,
+  "layout": 29,
+  "finale: checked": 29.01,
+  "drawings: all": 29.01,
+  "project: 1": 31.2,
+  "panel: none wanted": 31.45,
+  "project: 2": 32.49,
+  "project: 3": 33.35,
+  "project: 4": 34.28,
+  "project: 5": 35.1,
+  "project: 6": 35.79,
+  "project: 7": 36.9,
+  "project: 8": 37.94,
+  "project: 9": 38.88,
+  "project: 10": 39.61,
+  "project: 11": 40.64,
+  "project: 12": 41.59,
+  "project: 13": 42.44,
+  "project: 14": 43.48,
+  "project: 15": 44.48,
+  "project: 16": 45.46,
+  "project: 17": 46.43,
+  "project: 18": 47.24,
+  "project: 19": 48.13,
+  "catalogue: done": 48.25
+ },
+ "calls": {
+  "sam": {
+   "segment": 2.64,
+   "scores": {
+    "brick-1": 0.96875,
+    "brick-2": 0.9649122953414917,
+    "brick-3": 0.9804878830909729,
+    "brick-4": 0.9726027250289917,
+    "brick-5": 0.9726027250289917,
+    "brick-6": 0.9569892287254333,
+    "brick-7": 0.9532163739204407,
+    "brick-8": 0.976608157157898,
+    "brick-9": 0.976608157157898,
+    "brick-10": 0.976608157157898
+   }
+  },
+  "script": {
+   "provider": "meta",
+   "model": "muse-wonder-1.0",
+   "seconds": 28.986929338000003,
+   "firstTokenSeconds": 10.876959133,
+   "output": 3725,
+   "thinking": 1615,
+   "usage": {
+    "prompt_tokens": 14691,
+    "completion_tokens": 3725
+   },
+   "cost": 0.133264,
+   "costEstimated": true,
+   "attempts": 1,
+   "knownCost": 0.133264,
+   "costIncomplete": false,
+   "planAttempts": 1,
+   "patches": 0,
+   "firstPassValid": true,
+   "promptVersion": "3a0e9212b6",
+   "effort": "minimal",
+   "validationHistory": [
+    {
+     "valid": true,
+     "errors": [],
+     "warnings": [
+      "brick-1.cm: unconfirmed measurement",
+      "brick-2.cm: unconfirmed measurement",
+      "brick-3.cm: unconfirmed measurement",
+      "brick-4.cm: unconfirmed measurement",
+      "brick-5.cm: unconfirmed measurement",
+      "brick-6.cm: unconfirmed measurement",
+      "brick-7.cm: unconfirmed measurement",
+      "brick-8.cm: unconfirmed measurement",
+      "brick-9.cm: unconfirmed measurement",
+      "brick-10.cm: unconfirmed measurement",
+      "Real-world dimensions and quantities are model estimates until confirmed; validation does not establish physical safety or instructional correctness."
+     ],
+     "soft": []
+    }
+   ],
+   "perception": {
+    "provider": "meta",
+    "model": "muse-wonder-1.0",
+    "seconds": 13.413165192000001,
+    "firstTokenSeconds": 10.876959133,
+    "output": 1493,
+    "thinking": 771,
+    "usage": {
+     "completion_tokens": 1493,
+     "prompt_tokens": 684,
+     "total_tokens": 2177,
+     "completion_tokens_details": {
+      "reasoning_tokens": 771
+     },
+     "prompt_tokens_details": {
+      "cached_tokens": 0
+     }
+    },
+    "cost": 0.032596,
+    "costEstimated": true,
+    "attempts": 1
+   },
+   "requests": [
+    {
+     "provider": "meta",
+     "model": "muse-wonder-1.0",
+     "seconds": 15.561666380999998,
+     "firstTokenSeconds": 10.318357354,
+     "output": 2232,
+     "thinking": 844,
+     "usage": {
+      "completion_tokens": 2232,
+      "prompt_tokens": 14007,
+      "total_tokens": 16239,
+      "completion_tokens_details": {
+       "reasoning_tokens": 844
+      },
+      "prompt_tokens_details": {
+       "cached_tokens": 0
+      }
+     },
+     "cost": 0.100668,
+     "costEstimated": true,
+     "attempts": 1
+    }
+   ]
+  },
+  "finale": {
+   "provider": "deterministic",
+   "seconds": 0,
+   "cost": 0
+  },
+  "panel": {
+   "provider": "meta",
+   "model": "muse-wonder-1.0",
+   "seconds": 2.4470224640000016,
+   "firstTokenSeconds": 2.3821957050000018,
+   "output": 64,
+   "thinking": 49,
+   "usage": {
+    "completion_tokens": 64,
+    "prompt_tokens": 3826,
+    "total_tokens": 3890,
+    "completion_tokens_details": {
+     "reasoning_tokens": 49
+    },
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    }
+   },
+   "cost": 0.016584,
+   "costEstimated": true,
+   "attempts": 1,
+   "problem": null
+  },
+  "catalogue": {
+   "provider": "meta",
+   "model": "muse-wonder-1.0",
+   "seconds": 34.815219114,
+   "firstTokenSeconds": 12.36308233,
+   "output": 7366,
+   "thinking": 1012,
+   "usage": {
+    "completion_tokens": 7366,
+    "prompt_tokens": 4989,
+    "total_tokens": 12355,
+    "completion_tokens_details": {
+     "reasoning_tokens": 1012
+    },
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    }
+   },
+   "cost": 0.167276,
+   "costEstimated": true,
+   "attempts": 1
+  }
+ },
+ "cost": 0.317,
+ "costIncomplete": false
+}

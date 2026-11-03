@@ -14,7 +14,7 @@ npm install
 npm start
 ```
 
-Open <http://localhost:8080/examples> to watch saved manuals, including the **Stepped Display Tower** and
+Open <http://localhost:8080/examples> to watch saved manuals, including the **Colour Bridge** and
 **Paper Snowflake**. No API key needed.
 
 To make manuals from your own photos, run this instead. It asks for your Meta Model API key the first time and saves it
@@ -31,7 +31,7 @@ so a fold or a brick lands where the numbers say it should. These are real frame
 
 | | |
 | --- | --- |
-| ![Boxes and labels around each brick in a photo of a pile of toy bricks](docs/screenshots/bricks-found.png) | ![A finished three-level brick tower, titled Stepped Display Tower, with its size, time and difficulty](docs/screenshots/bricks-finished.png) |
+| ![Boxes and labels around all ten bricks in a photo of a pile of toy bricks](docs/screenshots/bricks-found.png) | ![A finished brick bridge across two pillars with two steps in front, titled Colour Bridge, with its size, time and difficulty](docs/screenshots/bricks-finished.png) |
 | **It starts from your photo.** It finds what's useful in the picture and cuts each thing out. | **Bricks** sit on a stud grid and are checked so the build could really stand. |
 | ![A square of paper folded corner to corner, with an arrow beside a before-and-after diagram](docs/screenshots/paper-fold.png) | ![A paper wedge being folded through its top point, with a 30° label](docs/screenshots/paper-angle.png) |
 | **Paper folds** are calculated layer by layer, so each one lands exactly where it should. | **Captions and labels carry the numbers**, such as a fold's angle. |
