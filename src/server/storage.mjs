@@ -157,11 +157,19 @@ export class FilmFiles {
   pin(id) { const w = this.work.get(id); if (w) w.pins = (w.pins || 0) + 1 }
   unpin(id) { const w = this.work.get(id); if (w) w.pins = Math.max(0, (w.pins || 0) - 1) }
   finished(id) { const entry = this.work.get(id); if (entry) entry.active = false }
-  async prune() {
-    const idle = [...this.work].filter(([, w]) => !w.active && !w.pins).sort((a, b) => a[1].touched - b[1].touched)
-    for (const [id, entry] of idle.slice(0, Math.max(0, idle.length - this.maxCached))) {
-      this.work.delete(id); await rm(entry.path, { recursive: true, force: true })
-    }
+  prune() {
+    // Serialize directory removals and retain the operation so shutdown can wait
+    // for the background prune started after a restore.
+    return this.pruning = (this.pruning || Promise.resolve()).catch(() => {}).then(async () => {
+      const idle = [...this.work].filter(([, w]) => !w.active && !w.pins).sort((a, b) => a[1].touched - b[1].touched)
+      for (const [id, entry] of idle.slice(0, Math.max(0, idle.length - this.maxCached))) {
+        this.work.delete(id); await rm(entry.path, { recursive: true, force: true })
+      }
+    })
   }
-  async close() { await Promise.allSettled([...this.saving.values(), ...this.loading.values()]); await rm(this.cache, { recursive: true, force: true }) }
+  async close() {
+    await Promise.allSettled([...this.saving.values(), ...this.loading.values()])
+    await this.pruning
+    await rm(this.cache, { recursive: true, force: true })
+  }
 }
