@@ -6,14 +6,17 @@ export function positiveInteger(env, key, fallback, max = 1000000) {
 }
 
 export class JobLimits {
-  constructor(db, env = {}, now = Date.now) {
+  // unmetered: a developer's own server, reachable only from their machine, has no usage allowances unless one is
+  // set explicitly. The limits on jobs running at once stay, since they protect the machine.
+  constructor(db, env = {}, now = Date.now, { unmetered = false } = {}) {
     this.db = db; this.now = now; this.active = 0; this.owners = new Map()
     this.global = positiveInteger(env, 'MAX_ACTIVE_JOBS', 2)
     this.perUser = positiveInteger(env, 'MAX_ACTIVE_JOBS_PER_USER', 1)
     this.timeoutMs = positiveInteger(env, 'JOB_TIMEOUT_SECONDS', 900, 86400) * 1000
+    const allowance = (key, fallback) => unmetered && env[key] === undefined ? Infinity : positiveInteger(env, key, fallback)
     this.allowances = {
-      live: [positiveInteger(env, 'DAILY_JOBS', 100), positiveInteger(env, 'DAILY_JOBS_PER_USER', 20), 86400000],
-      example: [positiveInteger(env, 'HOURLY_EXAMPLES', 120), positiveInteger(env, 'HOURLY_EXAMPLES_PER_USER', 30), 3600000],
+      live: [allowance('DAILY_JOBS', 100), allowance('DAILY_JOBS_PER_USER', 20), 86400000],
+      example: [allowance('HOURLY_EXAMPLES', 120), allowance('HOURLY_EXAMPLES_PER_USER', 30), 3600000],
     }
     db.exec(`CREATE TABLE IF NOT EXISTS job_allowances (
       kind TEXT NOT NULL, scope TEXT NOT NULL, expires INTEGER NOT NULL, used INTEGER NOT NULL,

@@ -85,7 +85,8 @@ export function checkSheets(script) {
   for (const s of list(script?.steps)) for (const a of list(s?.do)) {
     if (a.v === 'fold' && marked.has(a.k)) errors.push(`${a.id}: folding a path-worked sheet needs a demonstration with the resulting state`)
     if (a.v === 'place' && joined.has(a.k)) errors.push(`${a.id}: moving a joined assembly needs a demonstration with the resulting state`)
-    if (parts.has(a.k) && (a.tilt > 0 || a.stand && a.stand !== 'flat' || a.turn)) errors.push(`${a.id || a.k}: a non-flat sheet pose needs a demonstration with the resulting state`)
+    // (a tool's work with "turn" only shows its underside: script.mjs sets it on work from below, and the sheet stays flat)
+    if (parts.has(a.k) && a.v !== 'use' && (a.tilt > 0 || a.stand && a.stand !== 'flat' || a.turn)) errors.push(`${a.id || a.k}: a non-flat sheet pose needs a demonstration with the resulting state`)
     if (a.v === 'use' && a.path) {
       if (folded.has(a.k) || a.to && folded.has(a.to)) errors.push(`${a.id}: path work on a folded sheet needs a demonstration with the resulting state`)
       marked.add(a.k); if (a.to) marked.add(a.to)

@@ -250,3 +250,17 @@ test('Chrome is found where each platform installs it', () => {
   assert.equal(chromeExecutable({ CHROME_BIN: '/custom/chrome' }, 'darwin', found()), '/custom/chrome')
   assert.equal(chromeExecutable({ PATH: '/usr/bin' }, 'linux', found(join('/usr/bin', 'chromium'))), join('/usr/bin', 'chromium'))
 })
+
+test('a local server has no usage allowance unless one is set, and keeps its limit on jobs at once', () => {
+  const unmetered = new JobLimits(new DatabaseSync(':memory:'), {}, () => 1000, { unmetered: true })
+  for (let i = 0; i < 25; i++) { const lease = unmetered.reserve('local', 'live'); lease.attach({}); lease.release() }
+  const held = unmetered.reserve('local', 'live')
+  assert.throws(() => unmetered.reserve('local', 'live'), /still being made/)
+  held.release()
+
+  const explicit = new JobLimits(new DatabaseSync(':memory:'), { DAILY_JOBS_PER_USER: '1' }, () => 1000, { unmetered: true })
+  const first = explicit.reserve('local', 'live'); first.attach({}); first.release()
+  assert.throws(() => explicit.reserve('local', 'live'), /allowance/)
+
+  assert.equal(new JobLimits(new DatabaseSync(':memory:')).allowances.live[1], 20)
+})

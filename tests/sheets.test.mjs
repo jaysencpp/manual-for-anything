@@ -131,3 +131,11 @@ test('schemas stay inside provider nesting bounds and catalogue accepts honest d
   assert.deepEqual(project.supplies, ['matching thread'])
   assert.deepEqual(project.confirmations, ['measure usable stock'])
 })
+
+test('work shown from underneath leaves a sheet flat, while a tilted or turned pose still needs a demonstration', () => {
+  const objects = [{ k: 'paper', n: 'paper', part: { family: 'sheet', size: [15, 15, 0.02], outline: [[0, 0], [15, 0], [15, 15], [0, 15]] } }]
+  const errors = (action) => checkSheets({ objects, steps: [{ do: [action] }] }).filter((e) => e.includes('non-flat sheet pose'))
+  assert.deepEqual(errors({ id: 'a1', v: 'use', k: 'paper', face: 'lower', with: 'pin', turn: true }), [])
+  assert.equal(errors({ id: 'a1', v: 'place', k: 'paper', turn: true }).length, 1)
+  assert.equal(errors({ id: 'a1', v: 'place', k: 'paper', tilt: 10 }).length, 1)
+})

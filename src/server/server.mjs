@@ -69,7 +69,8 @@ try { await files.init() } catch { throw Error('Could not initialize file storag
 const repository = new FilmRepository(join(dataDir, 'app.sqlite'), files.identity)
 const authentication = new Authentication(repository.db, process.env)
 repository.interruptRunning()
-const jobLimits = new JobLimits(repository.db, process.env)
+// (--host 0.0.0.0 lets others on the network spend on models, so only a server on this machine alone is unmetered)
+const jobLimits = new JobLimits(repository.db, process.env, Date.now, { unmetered: authentication.mode === 'local' && ['127.0.0.1', 'localhost', '::1'].includes(HOST) })
 const archive = new FilmFiles(repository, files)
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.png': 'image/png', '.ttf': 'font/ttf', '.json': 'application/json', '.svg': 'image/svg+xml' }
 // The player runs model-written code: its document is sandboxed (public/index.html's iframe) and may load nothing but its
