@@ -10,7 +10,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { recordingCanvas } from '../scripts/offline-canvas.mjs'
 import { drawThumb, checkLook, dimensions, dimensionLabel } from '../src/film/thumbs.mjs'
-import { streamedItems, checkProject, writeCatalogue } from '../src/pipeline/catalogue.mjs'
+import { streamedItems, checkProject, writeCatalogue, runawayWatch } from '../src/pipeline/catalogue.mjs'
 import { preparePhoto, writePlan, onInventory } from '../src/pipeline/plan.mjs'
 import { stubModel, wood8Catalogue, wood8Plan } from './support/stub-model.mjs'
 
@@ -226,6 +226,50 @@ test('a photo film writes its catalogue alongside; a pick is a film on the same 
   assert.equal((await fetch(`${server.url}/thumbs.js`)).headers.get('content-type'), 'text/javascript; charset=utf-8')
 })
 
+
+// A model slipping out of its JSON: the key swallows its colon and the rest is reasoning, then a loop, in one string.
+const runaway = (before = '') => `{"projects":[${before}{"kind":"build","title":"Gate","confirmations:" \t: 0, "-> wait: tool output is corrupted. ${'Done.   Stop.   Close.   '.repeat(4000)}`
+
+test('a string far longer than any catalogue field is caught as it streams, and real answers are not', () => {
+  const watch = runawayWatch()
+  assert.equal(watch(JSON.stringify(wood8Catalogue())), false)
+  const text = runaway(), seen = runawayWatch()
+  const at = [...Array(Math.ceil(text.length / 100)).keys()].find((n) => seen(text.slice(0, (n + 1) * 100)))
+  assert.ok(at !== undefined && (at + 1) * 100 < 2000, `stopped after ${(at + 1) * 100} characters`)
+  assert.equal(runawayWatch()(`{"a":"${'x\\"'.repeat(300)}","b":"${'y'.repeat(900)}"}`), false, 'escaped quotes neither end a string nor run two together')
+  assert.equal(runawayWatch()(`{"a":"${'x\\"'.repeat(400)}`), true)
+})
+
+test('a runaway catalogue answer is stopped early and asked once more when no project was shown', async (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'catalogue-runaway-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
+  const good = { projects: wood8Catalogue().projects }
+  const seen = [], stub = await stubModel({ chunk: 97, answers: { Catalogue: (n) => n === 1 ? runaway() : good }, seen }); t.after(stub.close)
+  const photo = await preparePhoto(fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url)), join(dir, 'script'))
+  const catalogue = await writeCatalogue(dir, photo, { apiKey: 'stub', baseURL: stub.url, inventory: wood8Catalogue().objects })
+  assert.equal(seen.length, 2)
+  assert.equal(catalogue.status, 'ready')
+  assert.equal(catalogue.projects.length, good.projects.length)
+  assert.match(catalogue.problems.join(), /ran away/)
+  const partial = JSON.parse(readFileSync(join(dir, 'catalogue', 'out.partial.json'), 'utf8'))
+  assert.ok(partial.aborted && partial.result.length < 3000, `read ${partial.result.length} characters before stopping`)
+})
+
+test('a runaway after projects were shown keeps them without another call; twice with none fails', async (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'catalogue-runaway-kept-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
+  const first = wood8Catalogue().projects[0]
+  const seen = [], stub = await stubModel({ chunk: 97, answers: { Catalogue: () => runaway(`${JSON.stringify(first)},`) }, seen }); t.after(stub.close)
+  const photo = await preparePhoto(fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url)), join(dir, 'script'))
+  const shown = []
+  const catalogue = await writeCatalogue(dir, photo, { apiKey: 'stub', baseURL: stub.url, inventory: wood8Catalogue().objects, onProject: (i, p) => shown.push(p.title) })
+  assert.equal(seen.length, 1)
+  assert.deepEqual(shown, [first.title]); assert.deepEqual(catalogue.projects.map((p) => p.title), [first.title])
+  assert.equal(catalogue.status, 'ready'); assert.equal(catalogue.call.costIncomplete, true)
+
+  const none = [], loop = await stubModel({ chunk: 97, answers: { Catalogue: () => runaway() }, seen: none }); t.after(loop.close)
+  const again = mkdtempSync(join(tmpdir(), 'catalogue-runaway-none-')); t.after(() => rmSync(again, { recursive: true, force: true }))
+  await assert.rejects(writeCatalogue(again, photo, { apiKey: 'stub', baseURL: loop.url, inventory: wood8Catalogue().objects }), /ran away twice/)
+  assert.equal(none.length, 2)
+})
 
 test('an empty catalogue is recorded explicitly without retrying and explains tool-only supplies', async t => {
   const dir = mkdtempSync(join(tmpdir(), 'catalogue-empty-')); t.after(() => rmSync(dir, { recursive: true, force: true }))

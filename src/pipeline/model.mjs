@@ -111,6 +111,7 @@ export async function generate(dir, prompt, options = {}) {
         if (choice?.delta?.refusal) throw new Error('Meta declined this request')
         if (typeof choice?.delta?.content === 'string' && choice.delta.content) {
           text += choice.delta.content; onText(text)
+          options.signal?.throwIfAborted() // (stopped from onText: read no more of what is already buffered)
         }
         if (choice?.finish_reason) finish = choice.finish_reason
       }

@@ -252,6 +252,7 @@ class Job extends Stream {
   }
   publishFilm() {
     if (this.events.some(e => e.type === 'film') || !this.playable) return
+    this.admission?.releaseOwner()
     const { screens, times } = this.run
     this.send('film', { duration: times.duration, starts: times.starts, finale: times.finale,
       steps: stepsOf(this.run.script),

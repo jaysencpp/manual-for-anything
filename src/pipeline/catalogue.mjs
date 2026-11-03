@@ -102,6 +102,24 @@ const estimated = (o) => {
   return fields.length ? { estimated: fields } : {}
 }
 
+// Every string in a catalogue answer is short (titles, pitches, supplies: at most a few hundred characters). A model
+// that slips out of its JSON keeps writing inside one string, its reasoning and then a loop, for minutes, and nothing
+// after it parses. Watch the stream and say when any one string has run past the limit, so the call can be stopped.
+export const RUNAWAY_STRING = 1000
+export function runawayWatch(max = RUNAWAY_STRING) {
+  let i = 0, quoted = false, escaped = false, from = 0
+  return (text) => {
+    for (; i < text.length; i++) {
+      const c = text[i]
+      if (quoted) {
+        if (escaped) escaped = false; else if (c === '\\') escaped = true; else if (c === '"') quoted = false
+        else if (i - from > max) return true
+      } else if (c === '"') { quoted = true; from = i }
+    }
+    return false
+  }
+}
+
 export async function writeCatalogue(dir, photo, options = {}) {
   const count = options.count ?? 20
   const out = join(dir, 'catalogue')
@@ -150,18 +168,35 @@ export async function writeCatalogue(dir, photo, options = {}) {
   // (the model reads the photo from this folder: the JPEG preparePhoto wrote beside the PNG)
   const jpeg = photo.path.replace(/\.png$/, '.jpg')
   if (existsSync(jpeg) && resolve(jpeg) !== resolve(out, 'photo.jpg')) copyFileSync(jpeg, join(out, 'photo.jpg'))
-  const response = await generate(out, prompt, { ...options, out: 'out.json', maxTokens: options.maxTokens ?? 32000,
-    model: options.model ?? process.env.CATALOGUE_MODEL ?? undefined,
-    responseFormat: { type: 'json_schema', json_schema: { name: 'Catalogue', schema: catalogueSchema(count, { withObjects: !inventory }) } }, images: ['photo.jpg'],
-    onText: (text) => { options.onText?.(text); stream(text) } })
-  let answer = null
-  try { answer = json(response.text) } catch (error) { problems.push(`the answer is not JSON: ${error.message}`) }
+  // A runaway answer is stopped at once. With no project shown yet, it is asked once more; otherwise the projects
+  // already shown are kept.
+  let response = null, answer = null
+  for (let attempt = 1; attempt <= 2 && !response; attempt++) {
+    const stop = new AbortController(), runaway = runawayWatch()
+    let ranAway = false
+    seen = 0
+    try {
+      response = await generate(out, prompt, { ...options, out: attempt === 1 ? 'out.json' : 'retry.json', maxTokens: options.maxTokens ?? 32000,
+        model: options.model ?? process.env.CATALOGUE_MODEL ?? undefined, signal: AbortSignal.any([stop.signal, ...(options.signal ? [options.signal] : [])]),
+        responseFormat: { type: 'json_schema', json_schema: { name: 'Catalogue', schema: catalogueSchema(count, { withObjects: !inventory }) } }, images: ['photo.jpg'],
+        onText: (text) => {
+          options.onText?.(text); stream(text)
+          if (!ranAway && runaway(text)) { ranAway = true; stop.abort() }
+        } })
+    } catch (error) {
+      if (!ranAway || options.signal?.aborted) throw error
+      problems.push(`the answer ran away inside a string (over ${RUNAWAY_STRING} characters) and was stopped`)
+      if (projects.length) break
+    }
+  }
+  if (response) try { answer = json(response.text) } catch (error) { problems.push(`the answer is not JSON: ${error.message}`) }
+  if (!response && !projects.length) throw new Error('The catalogue answer ran away twice')
   if (answer) {
     publishObjects(answer.objects)
     if (!objects) throw new Error(`The catalogue's objects do not pass: ${validateObjects(fitBoxes(answer.objects, photo), photo).join('; ') || 'none given'}`)
     publishProjects(Array.isArray(answer.projects) ? answer.projects : [])
   } else if (!objects) throw new Error('The catalogue answer could not be read')
-  const { text, ...call } = response
+  const { text, ...call } = response || { costIncomplete: true, stopped: 'runaway' }
   const catalogue = { status: projects.length ? 'ready' : 'empty', photo: { width: photo.width, height: photo.height }, objects, projects, problems, call }
   writeFileSync(join(dir, 'catalogue.json'), JSON.stringify(catalogue, null, 1))
   return catalogue
