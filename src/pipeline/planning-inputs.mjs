@@ -45,7 +45,12 @@ export function settlePlanningInputs(script) {
     keys.add(o.k)
   }
   if (supplied.length || list(script.objects).some(o => o?.source === 'additional-supply')) {
-    const next = [...photographed, ...supplied]
+    // (a supply's identity and size come from its declaration; the states it passes through come from the plan)
+    const planned = new Map(list(script.objects).map(o => [o?.k, o]))
+    const next = [...photographed, ...supplied.map(o => {
+      const { states, state } = planned.get(o.k) || {}
+      return { ...o, ...(states != null && { states }), ...(state != null && { state }) }
+    })]
     if (JSON.stringify(next) !== JSON.stringify(script.objects)) {
       script.objects = next; notes.push('Declared additional materials compiled as separate supply actors')
     }

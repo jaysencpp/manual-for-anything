@@ -96,7 +96,8 @@ export function validatePlan(script, photo, { confirmedMeasurements = script?.me
   // list too long for a part with no timber sizes; errors stop the plan)
   const errors = [...validateObjects(script.objects, photo), ...contract.errors], warnings = [...contract.warnings], soft = []
   const supplies = new Map(suppliedObjects(script).map(o => [o.k, o]))
-  for (const o of list(script.objects)) if (o?.source === 'additional-supply' && JSON.stringify(o) !== JSON.stringify(supplies.get(o.k))) errors.push(`${o.k}: supply actor must match its explicit materials declaration`)
+  const declaredSupply = ({ states, state, ...o }) => JSON.stringify(o)
+  for (const o of list(script.objects)) if (o?.source === 'additional-supply' && declaredSupply(o) !== JSON.stringify(supplies.get(o.k))) errors.push(`${o.k}: supply actor must match its explicit materials declaration`)
   if (supplies.size) warnings.push('Additional materials are required supplies, not objects observed in the photo.')
   if (list(script.makes).length) warnings.push('Skein dimensions do not establish available yarn quantity; confirm sufficient yarn for the finished piece.')
   // Explicit caption contradictions fail validation for every current plan.
