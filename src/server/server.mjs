@@ -344,7 +344,7 @@ function follow(stream, script, argv) {
     while ((line = out.indexOf('\n')) >= 0) {
       const text = out.slice(0, line); out = out.slice(line + 1)
       const m = /^\s*([\d.]+)s {2}(.+)$/.exec(text)
-      if (m && !stream.finishing && !stream.finished) { try { stream.mark(m[2].trim(), +m[1]) } catch (error) { console.error(error) } }
+      if (m && !stream.finishing && !stream.finished) { try { stream.mark(m[2].trim(), +m[1]) } catch (error) { console.error(`Could not process the mark "${m[2].trim()}":`, error) } }
     }
   })
   child.stderr.on('data', (chunk) => { log = (log + chunk).slice(-1000000) })
