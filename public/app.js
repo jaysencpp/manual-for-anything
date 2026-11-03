@@ -193,6 +193,7 @@ function label(name) {
   if (name.startsWith('catalogue: FAILED')) return ['Could not write the other ideas', true]
   let m
   if ((m = /^drawing: (.+?)( FAILED)?$/.exec(name))) return m[2] ? [`Could not draw ${names[m[1]] || m[1]}`, true] : `Drew ${names[m[1]] || m[1]}`
+  if ((m = /^SAM: colour mismatch (.+)$/.exec(name))) return [`Could not find a cut-out matching the colour of ${names[m[1]] || m[1]}: check this one`, true]
   if ((m = /^face: (.+)$/.exec(name))) return `Drew the faces of ${names[m[1]] || m[1]}`
   if ((m = /^script: kept with (\d+) problems?, repairing$/.exec(name))) return [`The plan has ${m[1]} ${+m[1] === 1 ? 'problem' : 'problems'}: the film starts with it while it is fixed`, true]
   if ((m = /^script: kept with (\d+) problems?$/.exec(name))) return [`The plan still has ${m[1]} ${+m[1] === 1 ? 'problem' : 'problems'} after its repair; made anyway`, true]

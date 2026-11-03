@@ -7,7 +7,7 @@ import { join } from 'node:path'
 import { stageEfforts, effortArgs } from '../src/pipeline/efforts.mjs'
 import { solveJoints } from '../src/solvers/joints.mjs'
 import { checkConnections } from '../src/solvers/connections.mjs'
-import { preparePhoto, writePlan } from '../src/pipeline/plan.mjs'
+import { offScaleBoxes, preparePhoto, writePlan } from '../src/pipeline/plan.mjs'
 import { stubModel, wood8Plan } from './support/stub-model.mjs'
 import { groupedInventoryProblems } from '../src/pipeline/validate.mjs'
 import { settleOperations } from '../src/solvers/contracts.mjs'
@@ -52,25 +52,73 @@ test('invalid perception is saved and never published to segmentation or used fo
   assert.equal(JSON.parse(readFileSync(join(dir, 'perception-validation.json'))).valid, false)
 })
 
-test('off-photo detections are omitted before segmentation and planning without a repair request', async (t) => {
+test('a stray off-photo detection is omitted before segmentation and planning without a repair request', async (t) => {
   const dir = mkdtempSync(join(tmpdir(), 'perception-off-photo-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
   const photo = await preparePhoto(fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url)), dir)
-  const outside = [[photo.width + 15, 218, 185, 647], [-30, 20, 30, 40], [20, photo.height, 30, 40], [20, -40, 30, 40]]
-    .map((b, i) => ({ k: `off-photo-${i}`, n: 'Bottle', segment: 'glass bottle', b, cm: 27 }))
-  const seen = [], stub = await stubModel({ seen, answers: {
-    PhotoPerception: { mode: 'physical', objects: [...wood8Plan().objects, ...outside] }, InstructionPlan: wood8Plan(),
-  } }); t.after(stub.close)
-  let published
+  for (const b of [[photo.width + 15, 218, 185, 647], [-30, 20, 30, 40], [20, photo.height, 30, 40], [20, -40, 30, 40]]) {
+    const stray = { k: 'off-photo', n: 'Bottle', segment: 'glass bottle', b, cm: 27 }
+    const seen = [], stub = await stubModel({ seen, answers: {
+      PhotoPerception: { mode: 'physical', objects: [...wood8Plan().objects, stray] }, InstructionPlan: wood8Plan(),
+    } }); t.after(stub.close)
+    let published
+    const result = await writePlan(dir, photo, { provider: 'meta', apiKey: 'stub', baseURL: stub.url, perception: true,
+      onObjects: objects => { published = objects } })
+    assert.equal(result.validation.valid, true)
+    assert.deepEqual(published, wood8Plan().objects)
+    assert.deepEqual(result.script.objects.map(o => o.k), published.map(o => o.k))
+    assert.deepEqual(seen.map(r => r.name), ['PhotoPerception', 'InstructionPlan'])
+    assert.doesNotMatch(seen[1].prompt, /off-photo/)
+    const validation = JSON.parse(readFileSync(join(dir, 'perception-validation.json')))
+    assert.equal(validation.valid, true)
+    assert.deepEqual(validation.omittedObjects.map(o => o.k), ['off-photo'])
+  }
+})
+
+// The model's answer in a real run on a 474 × 316 photo: about twice the photo's size.
+const TOWER_OBJECTS = [[38, 105, 187, 112], [158, 62, 181, 140], [309, 12, 280, 135], [560, 118, 190, 145], [113, 168, 247, 215],
+  [370, 205, 165, 125], [514, 252, 127, 137], [361, 426, 135, 106], [577, 240, 287, 209], [784, 200, 160, 132]]
+  .map((b, i) => ({ k: `brick-${i + 1}`, b }))
+
+test('boxes at another scale are told apart from a stray box and small overshoots', () => {
+  const size = { width: 474, height: 316 }
+  assert.deepEqual(offScaleBoxes(TOWER_OBJECTS, size).map(o => o.k), ['brick-3', 'brick-4', 'brick-5', 'brick-6', 'brick-7', 'brick-8', 'brick-9', 'brick-10'])
+  const inside = [[10, 10, 50, 50], [80, 10, 50, 50], [150, 10, 50, 50], [220, 10, 50, 50], [290, 10, 50, 50], [10, 100, 50, 50], [80, 100, 50, 50], [150, 100, 50, 50]].map((b, i) => ({ k: `o${i}`, b }))
+  assert.deepEqual(offScaleBoxes(inside, size), [])
+  assert.deepEqual(offScaleBoxes([...inside, { k: 'stray', b: [560, 118, 190, 145] }], size), [], 'one stray box')
+  assert.deepEqual(offScaleBoxes([...inside, { k: 'a', b: [440, 10, 60, 50] }, { k: 'b', b: [440, 80, 60, 50] }], size), [], 'small overshoots are trimmed')
+  assert.deepEqual(offScaleBoxes([{ k: 'sheet', b: [0, 0, 600, 300] }], size), [], 'one large box is trimmed')
+})
+
+test('off-scale boxes are read again before segmentation, with the photo size in the request', async (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'perception-off-scale-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
+  const photo = await preparePhoto(fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url)), dir)
+  const doubled = wood8Plan().objects.map(o => ({ ...o, b: o.b.map(v => v * 2) }))
+  let readings = 0
+  const seen = [], answers = { InstructionPlan: wood8Plan(), get PhotoPerception() {
+    return { mode: 'physical', objects: readings++ ? wood8Plan().objects : doubled }
+  } }
+  const stub = await stubModel({ answers, seen }); t.after(stub.close)
+  const published = []
   const result = await writePlan(dir, photo, { provider: 'meta', apiKey: 'stub', baseURL: stub.url, perception: true,
-    onObjects: objects => { published = objects } })
+    onObjects: objects => published.push(objects) })
   assert.equal(result.validation.valid, true)
-  assert.deepEqual(published, wood8Plan().objects)
-  assert.deepEqual(result.script.objects.map(o => o.k), published.map(o => o.k))
-  assert.deepEqual(seen.map(r => r.name), ['PhotoPerception', 'InstructionPlan'])
-  assert.doesNotMatch(seen[1].prompt, /off-photo-/)
-  const validation = JSON.parse(readFileSync(join(dir, 'perception-validation.json')))
-  assert.equal(validation.valid, true)
-  assert.deepEqual(validation.omittedObjects.map(o => o.k), outside.map(o => o.k))
+  assert.deepEqual(seen.map(r => r.name), ['PhotoPerception', 'PhotoPerception', 'InstructionPlan'])
+  assert.match(seen[1].prompt, new RegExp(`x\\+width at most ${photo.width} and y\\+height at most ${photo.height}`))
+  assert.deepEqual(published, [wood8Plan().objects])
+  assert.equal(JSON.parse(readFileSync(join(dir, 'perception-validation-0.json'))).valid, false)
+  assert.equal(JSON.parse(readFileSync(join(dir, 'perception-validation-1.json'))).valid, true)
+})
+
+test('boxes still off-scale after the second reading fail without reaching segmentation', async (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'perception-still-off-scale-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
+  const photo = await preparePhoto(fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url)), dir)
+  const doubled = wood8Plan().objects.map(o => ({ ...o, b: o.b.map(v => v * 2) }))
+  const seen = [], stub = await stubModel({ seen, answers: { PhotoPerception: { mode: 'physical', objects: doubled } } }); t.after(stub.close)
+  let published = false
+  await assert.rejects(writePlan(dir, photo, { provider: 'meta', apiKey: 'stub', baseURL: stub.url, perception: true,
+    onObjects: () => { published = true } }), /Invalid photo perception: .*boxes run far past/)
+  assert.equal(published, false)
+  assert.deepEqual(seen.map(r => r.name), ['PhotoPerception', 'PhotoPerception'])
 })
 
 test('an inventory entirely outside the photo still retries and fails without publishing', async (t) => {

@@ -73,6 +73,20 @@ export const fitBoxes = (objects, photo) => Array.isArray(objects) ? objects.map
   return x1 - x0 >= 2 && y1 - y0 >= 2 && (x0 !== b[0] || y0 !== b[1] || x1 !== b[0] + b[2] || y1 !== b[1] + b[3]) ? { ...o, b: [x0, y0, x1 - x0, y1 - y0] } : o
 }) : objects
 
+const hasBox = (o) => Array.isArray(o?.b) && o.b.length === 4 && o.b.every(Number.isFinite) && o.b[2] > 0 && o.b[3] > 0
+const outsidePhoto = ([x, y, w, h], photo) => x >= photo.width || y >= photo.height || x + w <= 0 || y + h <= 0
+
+// Trimming suits a box that slightly overshoots. Several boxes far past the edge mean the model used another scale (it
+// has answered in about twice the photo's size, at any photo size): trimming and omitting them would keep boxes that sit
+// on the wrong things, so segmentation would hand objects the wrong cut-outs. Returns those boxes, or [] for a stray one.
+export function offScaleBoxes(objects, photo) {
+  const boxed = (Array.isArray(objects) ? objects : []).filter(hasBox)
+  const marginX = 0.1 * photo.width, marginY = 0.1 * photo.height
+  const far = boxed.filter(({ b, b: [x, y, w, h] }) => outsidePhoto(b, photo)
+    || x < -marginX || y < -marginY || x + w > photo.width + marginX || y + h > photo.height + marginY)
+  return far.length >= 2 && far.length > boxed.length / 4 ? far : []
+}
+
 // A project picked from the catalogue (catalogue.mjs) is planned on the catalogue's inventory: what segmentation was
 // given. The plan may add what the project needs to an object (its part, states), never change what identifies it.
 const IDENTITY = ['k', 'n', 'segment', 'b', 'cm', 'w', 'thick', 'tip', 'measurements']
@@ -149,19 +163,18 @@ export async function writePlan(dir, photo, options = {}) {
         }
         throw new Error(`Invalid photo perception: ${error.message}`)
       }
-      // Perception has not published keys yet, so an off-photo detection can be omitted without
+      // Perception has not published keys yet, so a stray off-photo detection can be omitted without
       // breaking plan references. Keep malformed boxes for validation; trim partial overlaps as usual.
-      const omittedObjects = []
+      const omittedObjects = [], offScale = read.mode === 'physical' ? offScaleBoxes(read.objects, photo) : []
       if (read.mode === 'physical') {
         read.objects = fit(read.objects.filter((o) => {
-          const b = o?.b
-          const outside = Array.isArray(b) && b.length === 4 && b.every(Number.isFinite) && b[2] > 0 && b[3] > 0
-            && (b[0] >= photo.width || b[1] >= photo.height || b[0] + b[2] <= 0 || b[1] + b[3] <= 0)
-          if (outside) omittedObjects.push({ k: o.k, b, reason: 'box is entirely outside the photo' })
+          const outside = hasBox(o) && outsidePhoto(o.b, photo)
+          if (outside) omittedObjects.push({ k: o.k, b: o.b, reason: 'box is entirely outside the photo' })
           return !outside
         }))
       }
       const errors = read.mode === 'physical' ? validateObjects(read.objects, photo) : read.objects.length ? ['a written problem cannot publish physical objects'] : []
+      if (offScale.length) errors.push(`${offScale.length} boxes run far past this ${photo.width} × ${photo.height} photo, such as ${offScale.slice(0, 3).map((o) => `${o.k} [${o.b.join(',')}]`).join(', ')}. Give every b as [x,y,width,height] in this photo's own pixels, with x+width at most ${photo.width} and y+height at most ${photo.height}, and include every object again`)
       const grouped = read.mode === 'physical' ? groupedInventoryProblems(read.objects) : []
       errors.push(...grouped)
       if (read.objects.some((o) => ['contents', 'part', 'state', 'states'].some((field) => o?.[field] != null))) errors.push('perception must omit contents, part, state and states; identify the physical objects here and defer geometry and state metadata to planning')
