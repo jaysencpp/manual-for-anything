@@ -26,6 +26,18 @@ export function groupedInventoryProblems(objects) {
   })
 }
 
+// Names reach every caption, so "brick-2" or "Item 3" tells a viewer nothing. A name counts as a placeholder when it just
+// repeats a numbered key, or differs from another name only by the next number. "Board 40" beside "Board 60" is a
+// real description, as is a plain key like "mug".
+export function placeholderNames(objects) {
+  const numbered = list(objects).map((o) => {
+    const match = /^(.*?)[\s#-]*(\d+)$/.exec(String(o?.n || '').trim())
+    return match ? { o, base: match[1].toLowerCase(), number: +match[2] } : null
+  }).filter(Boolean)
+  return numbered.filter(({ o, base, number }) => String(o.n).trim().toLowerCase().replace(/\s+/g, '-') === String(o.k).toLowerCase()
+    || numbered.some((other) => other.o !== o && other.base === base && Math.abs(other.number - number) === 1)).map(({ o }) => o)
+}
+
 export function validateObjects(objects, photo) {
   const errors = [], keys = new Set()
   if (!Array.isArray(objects) || !objects.length) return ['objects must be a nonempty array']

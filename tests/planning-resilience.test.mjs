@@ -9,7 +9,7 @@ import { solveJoints } from '../src/solvers/joints.mjs'
 import { checkConnections } from '../src/solvers/connections.mjs'
 import { correctBoxes, offScaleBoxes, preparePhoto, writePlan } from '../src/pipeline/plan.mjs'
 import { stubModel, wood8Plan } from './support/stub-model.mjs'
-import { groupedInventoryProblems } from '../src/pipeline/validate.mjs'
+import { groupedInventoryProblems, placeholderNames } from '../src/pipeline/validate.mjs'
 import { settleOperations } from '../src/solvers/contracts.mjs'
 import { PERCEPTION_SCHEMA, PLAN_SCHEMA } from '../src/pipeline/plan-schema.mjs'
 
@@ -150,6 +150,38 @@ test('boxes that cannot be corrected are read again, then fail before segmentati
     onObjects: () => { published = true } }), /Invalid photo perception/)
   assert.equal(published, false)
   assert.deepEqual(seenAgain.map(r => r.name), ['PhotoPerception', 'PhotoPerception'])
+})
+
+test('placeholder names are told apart from real descriptions', () => {
+  const keys = (objects) => placeholderNames(objects).map(o => o.k)
+  assert.deepEqual(keys([{ k: 'brick-1', n: 'brick-1' }, { k: 'brick-2', n: 'brick-2' }]), ['brick-1', 'brick-2'])
+  assert.deepEqual(keys([{ k: 'a', n: 'Item 1' }, { k: 'b', n: 'Item 2' }]), ['a', 'b'])
+  assert.deepEqual(keys([{ k: 'brick-7', n: 'brick-7' }]), ['brick-7'])
+  assert.deepEqual(keys([{ k: 'mug', n: 'mug' }, { k: 'brick-1', n: 'red brick' }, { k: 'brick-2', n: 'blue brick' }]), [])
+  assert.deepEqual(keys([{ k: 'a', n: 'Board 40' }, { k: 'b', n: 'Board 60' }, { k: 'c', n: 'M6 bolt' }, { k: 'd', n: 'Size 10 hook' }]), [])
+})
+
+test('placeholder names are read again before segmentation, and fail if they persist', async (t) => {
+  const dir = mkdtempSync(join(tmpdir(), 'perception-placeholder-')); t.after(() => rmSync(dir, { recursive: true, force: true }))
+  const photo = await preparePhoto(fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url)), dir)
+  const numbered = wood8Plan().objects.map((o, i) => ({ ...o, n: `board-${i + 1}` }))
+  let readings = 0
+  const seen = [], answers = { InstructionPlan: wood8Plan(), get PhotoPerception() { return { mode: 'physical', objects: readings++ ? wood8Plan().objects : numbered } } }
+  const stub = await stubModel({ answers, seen }); t.after(stub.close)
+  const published = []
+  const result = await writePlan(dir, photo, { provider: 'meta', apiKey: 'stub', baseURL: stub.url, perception: true, onObjects: objects => published.push(objects) })
+  assert.equal(result.validation.valid, true)
+  assert.deepEqual(seen.map(r => r.name), ['PhotoPerception', 'PhotoPerception', 'InstructionPlan'])
+  assert.match(seen[0].prompt, /k is an internal key/)
+  assert.match(seen[1].prompt, /n is a placeholder/)
+  assert.deepEqual(published, [wood8Plan().objects])
+
+  const again = mkdtempSync(join(tmpdir(), 'perception-still-placeholder-')); t.after(() => rmSync(again, { recursive: true, force: true }))
+  const stubAgain = await stubModel({ answers: { PhotoPerception: { mode: 'physical', objects: numbered } } }); t.after(stubAgain.close)
+  let reached = false
+  await assert.rejects(writePlan(again, await preparePhoto(fileURLToPath(new URL('../examples/photos/wood8.png', import.meta.url)), again), { provider: 'meta', apiKey: 'stub', baseURL: stubAgain.url, perception: true,
+    onObjects: () => { reached = true } }), /Invalid photo perception: .*placeholder/)
+  assert.equal(reached, false)
 })
 
 test('an inventory entirely outside the photo still retries and fails without publishing', async (t) => {

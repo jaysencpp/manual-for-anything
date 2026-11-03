@@ -6,7 +6,7 @@ import { join } from 'node:path'
 import { setTimeout as delay } from 'node:timers/promises'
 import { buildObjectPrompt, decodeMaskToRaster, formats } from '@meta-sam/parser'
 import sharp from 'sharp'
-import { associate, coloursDistinguish, looksLike, maskEvidence, namedColour, settleColours } from './mask-selection.mjs'
+import { associate, claimLeftovers, coloursDistinguish, looksLike, maskEvidence, namedColour, settleColours } from './mask-selection.mjs'
 
 const PAD = 6, MAX_BOX_OBJECTS = 16, RETRIES = 3, TIMEOUT_MS = 120000, TRANSIENT = new Set([408, 429, 500, 502, 503, 504])
 
@@ -194,7 +194,7 @@ export async function segmentPhoto(photoPath, plan, out, { env = process.env, si
   })
   for (const [query, indices] of groups) {
     const found = cache.get(query), requests = indices.map(i => boxes[i]), names = indices.map(i => objects[i].name)
-    let matches = associate(requests, found.boxes, found.scores)
+    let matches = claimLeftovers(requests, found.boxes, found.scores, associate(requests, found.boxes, found.scores))
     if (coloursDistinguish(names)) {
       const settled = settleColours(names, requests, found.boxes, found.scores, found.masks.map(averageColour), matches)
       matches = settled.assigned

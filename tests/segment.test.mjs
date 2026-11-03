@@ -7,7 +7,7 @@ import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import sharp from 'sharp'
-import { associate, coloursDistinguish, looksLike, maskEvidence, namedColour, namedShade, overlap, settleColours, shadeCost } from '../src/pipeline/mask-selection.mjs'
+import { associate, claimLeftovers, coloursDistinguish, looksLike, maskEvidence, namedColour, namedShade, overlap, settleColours, shadeCost } from '../src/pipeline/mask-selection.mjs'
 import { Segmenter, segmentPhoto, principalAxis, rotated } from '../src/pipeline/segment.mjs'
 
 // The protocol's own example record: a 5 × 5 box at (10, 20) and its one_bit mask.
@@ -269,6 +269,15 @@ test('of two objects in one shade, a clearly larger box takes the clearly larger
   assert.deepEqual(swapped.assigned, { 0: 1, 1: 0, 2: 2 })
   const similar = settleColours(['yellow brick', 'yellow block', 'blue brick'], [[0, 0, 60, 60], [100, 0, 165, 60], [300, 0, 310, 10]], [small, large, [300, 0, 310, 10]], [0.9, 0.9, 0.9], [amber, yellow, hex('#0a68c8')], { 0: 0, 1: 1, 2: 2 })
   assert.deepEqual(similar.assigned, { 0: 0, 1: 1, 2: 2 }, 'boxes of similar size keep their matches')
+})
+
+test('an object too far from any instance takes the one left when instances and objects are equal in number', () => {
+  const requests = [[0, 0, 10, 10], [300, 300, 310, 310]], candidates = [[0, 0, 10, 10], [100, 0, 110, 10]]
+  const matched = associate(requests, candidates, [0.9, 0.9])
+  assert.deepEqual(matched, { 0: 0 })
+  assert.deepEqual(claimLeftovers(requests, candidates, [0.9, 0.9], matched), { 0: 0, 1: 1 })
+  assert.deepEqual(claimLeftovers(requests, candidates, [0.9, 0.2], matched), { 0: 0 }, 'a low-confidence instance does not count')
+  assert.deepEqual(claimLeftovers(requests, [...candidates, [200, 0, 210, 10]], [0.9, 0.9, 0.9], matched), { 0: 0 }, 'with spare instances, the leftover could be anything')
 })
 
 test('objects without a colour keep their matches while shades sort themselves out', () => {
