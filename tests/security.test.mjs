@@ -209,12 +209,19 @@ test('the page CSP allows real playback of an example with no violations', { ski
 test('following the steps never scrolls the player out of view, which would pause it', { skip: !chromePresent, timeout: 120000 }, async t => {
   const server = await startServer(['--speed', '100']); t.after(server.stop)
   const { id } = await (await fetch(`${server.base}/api/films?example=groceries`, { method: 'POST' })).json()
-  await new Promise(done => setTimeout(done, 1500))
   const browser = await openDrawingBrowser(`${server.base}/films/${id}`, undefined, { renderModule: null }); t.after(browser.close)
   await browser.viewport(1000, 300)
-  await new Promise(done => setTimeout(done, 2000))
-  await browser.evaluate(`(()=>{const s=document.getElementById('scrub');s.value=550;s.dispatchEvent(new Event('input'));return 1})()`)
-  await new Promise(done => setTimeout(done, 1200))
+  // Wait on the page, not the clock (a slow Windows runner missed fixed delays). The scrubber seeks by the duration
+  // the player has reported, and before that a seek goes to 0: seek again until the film has really moved past half.
+  const until = async (expression, what) => {
+    for (const deadline = Date.now() + 60000; Date.now() < deadline; await new Promise(done => setTimeout(done, 200)))
+      if (await browser.evaluate(expression).catch(() => false)) return
+    assert.fail(`timed out waiting for ${what}`)
+  }
+  await until(`document.getElementById('steps').children.length>0`, 'the film\'s steps')
+  await until(`(()=>{const s=document.getElementById('scrub');s.value=550;s.dispatchEvent(new Event('input'));return parseFloat(document.getElementById('fill').style.width)>=50})()`, 'the seek to reach a step below the fold')
+  // (time for a smooth scroll to the highlighted step to happen, if the page wrongly started one)
+  await new Promise(done => setTimeout(done, 1000))
   const box = await browser.evaluate(`(()=>{const r=document.querySelector('iframe').getBoundingClientRect();return {top:r.top,scrollY,step:[...document.getElementById('steps').children].findIndex(li=>li.classList.contains('on')),fill:parseFloat(document.getElementById('fill').style.width)}})()`)
   assert.ok(box.fill >= 50, `seek reached a step below the fold (${box.fill}%)`)
   assert.ok(box.step >= 0, 'a step is highlighted')
