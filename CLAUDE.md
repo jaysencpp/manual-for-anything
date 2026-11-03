@@ -24,6 +24,7 @@ The project is for Meta's Global AI Developer Hackathon and is MIT licensed; fon
 - `examples/` holds the saved films and photos used for offline examples.
 - `benchmarks/` holds benchmark tools and published data. `scripts/` holds operator and developer commands.
 - `tests/` holds all tests, with shared helpers and data in `tests/support/`.
+- `docs/screenshots/` holds the README images, captured from the saved examples.
 
 The native renderer, MP4 export and image critic were removed. Use browser playback and recording-canvas checks.
 The old render-count estimator was also removed: its motion-blur counts did not measure browser playback cost.
