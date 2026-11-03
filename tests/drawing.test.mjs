@@ -16,15 +16,20 @@ const plan = () => JSON.parse(readFileSync(new URL('./support/cat-drawing-plan.j
 const GEOMETRY = { 'paper-sheet-1': { origin: [130, 49], box: [130, 49, 196, 277], turn: 0, center: [226.3, 187.1], seat: [98, 34], base: [98, 275], ends: [[192, 275], [2, 1]], color: '#f0f0f0' } }
 const SIZES = { 'paper-sheet-1': { width: 196, height: 277 } }
 
-test('a sheet whose cm is its short side keeps its given size: an A4 sheet is 21 × 29.7, not 21 × 21', () => {
+test('a sheet keeps its given size and lies as it says: an A4 sheet is 21 across and 29.7 deep, whichever side its cm names', () => {
   const s = plan(), { geometry, sizes } = withTools(s, GEOMETRY, SIZES, {})
   const layout = solveBuild(s, geometry, sizes)
   assert.deepEqual(sizeProblems(s, layout), [])
   const board = layout.world['paper-sheet-1']
   assert.deepEqual([board.e.x, board.e.y].sort((a, b) => a - b), [21, 29.7])
-  // (the same plan before the fix: cm 21 and the sorted size's second side, 21, made it square)
-  s.objects[0].part.size = [29.7, 21, 0.1]
-  assert.deepEqual(sizeProblems(s, solveBuild(s, geometry, sizes)), [])
+  // A sheet lies as its size says (w across, d deep), whichever side its cm names: portrait, so a traced picture is not
+  // squashed. (A real run gave cm 29.7, and the solver laid the sheet along it, landscape.)
+  for (const cm of [21, 29.7]) {
+    s.objects[0].cm = cm
+    const laid = solveBuild(s, geometry, sizes)
+    assert.deepEqual(sizeProblems(s, laid), [])
+    assert.deepEqual([laid.world['paper-sheet-1'].e.x, laid.world['paper-sheet-1'].e.y], [21, 29.7], `cm ${cm}`)
+  }
 })
 
 test('the traced cat plan validates, and the technique refuses what it cannot draw', () => {
@@ -63,6 +68,8 @@ test('the film draws the pencil along each stroke and keeps every finished line 
   const layout = solveBuild(s, geometry, sizes), times = timeline(s)
   const source = program({ script: s, geometry, sizes, vectors, boxes: { 'paper-sheet-1': GEOMETRY['paper-sheet-1'].box }, layout, photo: { width: 471, height: 360 } })
   assert.deepEqual(refusedIn(source), [])
+  // (a sheet laid out as a board is plain paper: no wood grain)
+  assert.match(source, /"plainBoard":\{"paper-sheet-1":true\}/)
   const draw = new Function(`return (${source})`)(), env = offlineEnv(), oldPath = globalThis.Path2D
   globalThis.Path2D = class {}
   try {
