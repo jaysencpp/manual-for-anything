@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises'
+import { mkdtemp, mkdir, writeFile, rm, stat, readdir } from 'node:fs/promises'
+import { createHash } from 'node:crypto'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { createServer } from 'node:http'
@@ -34,6 +35,19 @@ test('local files and SQLite survive cache loss, deduplicate bytes and keep inte
   second.close()
   assert.throws(() => new FilmRepository(join(dir, 'app.sqlite'), 'azure:some-other-store'), /different file store/)
   await assert.rejects(archive.read('one', '../app.sqlite'), /Invalid stored/)
+})
+
+test('concurrent local publications share an immutable blob and remove temporary files', async t => {
+  const { files } = await fixture(t)
+  const bytes = Buffer.from('shared replay artifact'), digest = createHash('sha256').update(bytes).digest('hex')
+  await Promise.all(Array.from({ length: 20 }, () => files.put(digest, bytes)))
+  assert.deepEqual(await files.get(digest), bytes)
+  const published = join(files.root, 'objects', digest), before = await stat(published, { bigint: true })
+  await Promise.all(Array.from({ length: 20 }, () => files.put(digest, bytes)))
+  const after = await stat(published, { bigint: true })
+  assert.equal(after.ino, before.ino, 'existing immutable blob is never replaced')
+  assert.equal(after.mtimeNs, before.mtimeNs)
+  assert.deepEqual(await readdir(join(files.root, 'objects')), [digest])
 })
 
 test('failed Azure publication cannot commit a file manifest or a completed film', async t => {

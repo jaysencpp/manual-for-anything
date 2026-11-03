@@ -60,7 +60,8 @@ if (!EFFORTS.includes(EFFORT)) { console.error(`--effort must be one of ${EFFORT
 const PLAN_EFFORT = flag('--plan-effort', process.env.PLAN_EFFORT || EFFORT)
 if (!EFFORTS.includes(PLAN_EFFORT)) { console.error(`--plan-effort must be one of ${EFFORTS.join(', ')}`); process.exit(1) }
 const STAGE_EFFORTS = stageEfforts(args), DRAWING_STYLE = selectDrawingStyle(args)
-const pipeline = join(here, '../pipeline'), web = join(here, '../../public'), assets = join(here, '../../assets'), fixtures = join(here, '../../examples/fixtures')
+const pipeline = join(here, '../pipeline'), web = join(here, '../../public'), assets = join(here, '../../assets')
+const fixtures = resolve(flag('--examples-dir', join(here, '../../examples/published')))
 const dataDir = resolve(process.env.MANUAL_DATA_DIR || join(here, '../../data'))
 mkdirSync(dataDir, { recursive: true, mode: 0o700 })
 const files = await configuredFiles(process.env, dataDir)

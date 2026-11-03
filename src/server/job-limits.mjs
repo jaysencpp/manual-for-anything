@@ -21,7 +21,9 @@ export class JobLimits {
   }
   reserve(owner, kind) {
     const reject = (message, retryAfter) => { throw Object.assign(Error(message), { status: 429, retryAfter }) }
-    if (this.active >= this.global || (this.owners.get(owner) || 0) >= this.perUser)
+    // Saved replays make no model calls and must not occupy paid generation slots.
+    const generation = kind === 'live'
+    if (generation && (this.active >= this.global || (this.owners.get(owner) || 0) >= this.perUser))
       reject('A manual is already being made. Please try again when it finishes.', 30)
     const [globalLimit, userLimit, windowMs] = this.allowances[kind], now = this.now()
     const expires = (Math.floor(now / windowMs) + 1) * windowMs
@@ -37,7 +39,7 @@ export class JobLimits {
         ON CONFLICT(kind,scope,expires) DO UPDATE SET used=used+1`).run(kind, scope, expires)
       this.db.exec('COMMIT')
     } catch (error) { this.db.exec('ROLLBACK'); throw error }
-    this.active++; this.owners.set(owner, (this.owners.get(owner) || 0) + 1)
+    if (generation) { this.active++; this.owners.set(owner, (this.owners.get(owner) || 0) + 1) }
     let released = false
     const lease = {
       job: null,
@@ -45,8 +47,10 @@ export class JobLimits {
       release: () => {
         if (released) return
         released = true
-        this.active--; const count = this.owners.get(owner) - 1
-        if (count) this.owners.set(owner, count); else this.owners.delete(owner)
+        if (generation) {
+          this.active--; const count = this.owners.get(owner) - 1
+          if (count) this.owners.set(owner, count); else this.owners.delete(owner)
+        }
         // Invalid requests refund the allowance; started/failed jobs still count.
         if (!lease.job) for (const [scope] of scopes) this.db.prepare(`UPDATE job_allowances SET used=MAX(0,used-1)
           WHERE kind=? AND scope=? AND expires=?`).run(kind, scope, expires)

@@ -70,11 +70,18 @@ test('admission reserves atomically, refunds invalid requests, preserves quotas 
   try {
     const limits = new JobLimits(db, env, () => now)
     const first = limits.reserve('alice', 'live')
-    assert.throws(() => limits.reserve('alice', 'example'), e => e.status === 429)
+    const replay = limits.reserve('alice', 'example'); replay.attach({})
+    assert.equal(limits.active, 1)
+    assert.throws(() => limits.reserve('alice', 'live'), e => e.status === 429)
     const second = limits.reserve('bob', 'live')
+    const busyReplay = limits.reserve('alice', 'example'); busyReplay.attach({}); busyReplay.release()
+    assert.equal(limits.active, 2, 'examples can open even when generation is full')
     assert.throws(() => limits.reserve('charlie', 'live'), e => e.status === 429)
     first.release(); first.release(); second.release()
     assert.equal(limits.active, 0)
+    replay.release(); replay.release()
+    assert.equal(limits.active, 0)
+    assert.equal(limits.owners.size, 0)
     for (let i = 0; i < 2; i++) { const lease = limits.reserve('alice', 'live'); lease.attach({}); lease.release() }
     const restarted = new JobLimits(db, env, () => now)
     assert.throws(() => restarted.reserve('alice', 'live'), e => e.status === 429 && e.retryAfter > 0)
@@ -105,18 +112,21 @@ test('every paid creation route rejects exhausted allowances before restoring fi
   assert.equal(check.list('local').films.length, 1); check.close()
 })
 
-test('simultaneous example requests obey admission and the deadline releases the slot', async t => {
-  const server = await startServer(['--speed', '0.001'], { JOB_TIMEOUT_SECONDS: '1', MAX_ACTIVE_JOBS: '1' }); t.after(server.stop)
+test('simultaneous examples bypass generation slots, retain hourly allowances and respect deadlines', async t => {
+  const server = await startServer(['--speed', '0.001'], { JOB_TIMEOUT_SECONDS: '1', MAX_ACTIVE_JOBS: '1', HOURLY_EXAMPLES_PER_USER: '5' }); t.after(server.stop)
   const replies = await Promise.all(Array.from({ length: 5 }, () => fetch(server.base + '/api/films?example=wood8', { method: 'POST' })))
-  assert.equal(replies.filter(r => r.status === 200).length, 1)
-  assert.equal(replies.filter(r => r.status === 429).length, 4)
-  const id = (await replies.find(r => r.status === 200).json()).id
+  const results = await Promise.all(replies.map(async response => ({ status: response.status, body: await response.json() })))
+  assert.deepEqual(results.map(r => r.status), [200, 200, 200, 200, 200], JSON.stringify(results) + '\n' + server.child.serverErrors)
+  const blocked = await fetch(server.base + '/api/films?example=wood8', { method: 'POST' })
+  assert.equal(blocked.status, 429)
+  assert.match((await blocked.json()).error, /allowance/)
+  const id = results[0].body.id
   const events = await fetch(`${server.base}/api/films/${id}/events`)
   const reader = events.body.getReader(); let text = ''
   try {
     while (!text.includes('exceeded the job time limit')) { const next = await reader.read(); assert.equal(next.done, false); text += new TextDecoder().decode(next.value) }
   } finally { await reader.cancel() }
-  assert.equal((await fetch(server.base + '/api/films?example=wood8', { method: 'POST' })).status, 200)
+  assert.equal((await fetch(server.base + '/api/films?example=wood8', { method: 'POST' })).status, 429)
   const policy = (await fetch(server.base + '/player.html')).headers.get('content-security-policy')
   assert.match(policy, /sandbox allow-scripts;/); assert.match(policy, /frame-ancestors 'self'/); assert.doesNotMatch(policy, /allow-same-origin/)
 })

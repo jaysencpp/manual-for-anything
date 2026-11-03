@@ -1,0 +1,48 @@
+{
+ "bottle-1": {
+  "width": 187,
+  "height": 42,
+  "regions": []
+ },
+ "bottle-2": {
+  "width": 223,
+  "height": 446,
+  "regions": []
+ },
+ "bottle-3": {
+  "width": 372,
+  "height": 116,
+  "regions": []
+ },
+ "bottle-4": {
+  "width": 535,
+  "height": 206,
+  "regions": []
+ },
+ "bottle-5": {
+  "width": 586,
+  "height": 99,
+  "regions": []
+ },
+ "bottle-6": {
+  "width": 537,
+  "height": 181,
+  "regions": []
+ },
+ "bottle-7": {
+  "width": 405,
+  "height": 73,
+  "regions": []
+ },
+ "bottle-8": {
+  "width": 335,
+  "height": 152,
+  "regions": []
+ },
+ "photo": {
+  "path": "/tmp/manual-files-PKKBb5/56aaef58f54f4a1aa7e31951c5110cfd/script/photo.png",
+  "width": 800,
+  "height": 1000,
+  "regions": []
+ }
+}
